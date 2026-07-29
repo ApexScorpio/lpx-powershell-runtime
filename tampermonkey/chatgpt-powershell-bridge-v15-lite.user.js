@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.5
+// @version      2026.07.29.15.3.6
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.5';
+    const VERSION = '15.3.6';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -202,12 +202,14 @@
             '  "protocol": "PSB_JOB_FILE_V1",',
             '  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",',
             '  "file": "nome-unico-do-comando.ps1",',
+            '  "fileId": "file_00000000000000000000000000000000",',
             '  "purpose": "objetivo claro e curto"',
             '}',
             '',
             'REGRAS OBRIGATÓRIAS:',
             '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
+            '2A. Inclui sempre no manifesto o fileId real devolvido quando o anexo foi criado.',
             '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
             '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
             '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
@@ -2197,6 +2199,7 @@
         const jobId = String(manifest.jobId || '').trim();
         const fileName = String(manifest.file || '').trim();
         const fileUrl = String(manifest.fileUrl || manifest.url || '').trim();
+        const fileId = String(manifest.fileId || '').trim();
         const commandBase64 = String(manifest.commandBase64 || '').trim();
         const inlineCommand = typeof manifest.command === 'string'
             ? manifest.command
@@ -2204,7 +2207,7 @@
 
         if (
             !jobId ||
-            (!fileName && !fileUrl && !commandBase64 && !inlineCommand)
+            (!fileName && !fileUrl && !fileId && !commandBase64 && !inlineCommand)
         ) {
             setStatus(
                 `Manifesto ${protocol || 'PowerShell'} incompleto: falta jobId e uma fonte de comando.`
@@ -2224,7 +2227,30 @@
         try {
             let command = '';
 
-            if (protocol === 'PSB_JOB_FILE_V1' && !fileUrl) {
+            if (protocol === 'PSB_JOB_FILE_V1' && fileId) {
+                if (!/^file[_-][A-Za-z0-9_-]+$/.test(fileId)) {
+                    throw new Error(
+                        'O fileId do anexo tem um formato inválido.'
+                    );
+                }
+
+                const directFileUrl =
+                    location.origin +
+                    '/backend-api/files/' +
+                    encodeURIComponent(fileId) +
+                    '/download';
+
+                setStatus(
+                    'A descarregar diretamente o anexo ' +
+                    (fileName || fileId) +
+                    ' através do fileId…'
+                );
+
+                command = await downloadAttachment({
+                    href: directFileUrl
+                });
+            }
+            else if (protocol === 'PSB_JOB_FILE_V1' && !fileUrl) {
                 const anchor = findAttachmentLink(assistant, fileName);
 
                 if (anchor) {
