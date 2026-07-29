@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.4
+// @version      2026.07.29.15.3.5
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.4';
+    const VERSION = '15.3.5';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -45,6 +45,7 @@
     let settleTimer = 0;
     let activeJobId = '';
     let activeManifest = null;
+    let lastAttachmentDiagnostic = '';
     let observer = null;
     let observerRoot = null;
     let lastStatus = 'A iniciar…';
@@ -962,54 +963,71 @@
 
         const markerName = 'data-lpx-psb15-probe';
         const resultName = 'data-lpx-psb15-result';
+        const diagnosticName = 'data-lpx-psb15-diagnostic';
         const marker = `probe-${randomId()}`;
         const wanted = String(fileName || '').trim().toLowerCase();
 
+        lastAttachmentDiagnostic = '';
+
         root.setAttribute(markerName, marker);
         root.removeAttribute(resultName);
+        root.removeAttribute(diagnosticName);
 
         function scanPage(probeMarker, wantedName) {
             const markerName = 'data-lpx-psb15-probe';
             const resultName = 'data-lpx-psb15-result';
+            const diagnosticName = 'data-lpx-psb15-diagnostic';
 
-            const root = [...document.querySelectorAll(
-                `[${markerName}]`
-            )].find(node =>
+            const probeRoot = [
+                ...document.querySelectorAll(`[${markerName}]`)
+            ].find(node =>
                 node.getAttribute(markerName) === probeMarker
             );
 
-            if (!root) {
+            if (!probeRoot) {
                 return;
             }
 
             const candidates = [];
             const seen = new WeakSet();
-            let visited = 0;
 
-            function addUrl(url, key, sourceText) {
-                let value = String(url || '')
+            let visited = 0;
+            let reactRoots = 0;
+            let filenameNodes = 0;
+            let sandboxNodes = 0;
+
+            function addCandidate(rawValue, key = '', context = '') {
+                let value = String(rawValue || '')
                     .trim()
                     .replace(/\\u0026/gi, '&')
                     .replace(/\\\//g, '/')
                     .replace(/&amp;/gi, '&');
 
-                if (!value || /^sandbox:/i.test(value)) {
+                if (!value) {
+                    return;
+                }
+
+                if (/^sandbox:/i.test(value)) {
+                    sandboxNodes++;
                     return;
                 }
 
                 if (/^file-service:\/\//i.test(value)) {
-                    const id = value.replace(/^file-service:\/\//i, '');
+                    const fileId = value.replace(
+                        /^file-service:\/\//i,
+                        ''
+                    );
 
-                    if (id) {
+                    if (fileId) {
                         value =
                             location.origin +
                             '/backend-api/files/' +
-                            encodeURIComponent(id) +
+                            encodeURIComponent(fileId) +
                             '/download';
                     }
                 }
 
-                if (/^file[_-][A-Za-z0-9_-]{10,}$/.test(value)) {
+                if (/^file[_-][A-Za-z0-9_-]{8,}$/.test(value)) {
                     value =
                         location.origin +
                         '/backend-api/files/' +
@@ -1040,55 +1058,61 @@
 
                 let score = 0;
 
+                const source = [
+                    value,
+                    key,
+                    context
+                ].join(' ').toLowerCase();
+
                 if (
                     wantedName &&
                     (
-                        lower.includes(wantedName) ||
-                        lower.includes(
+                        source.includes(wantedName) ||
+                        source.includes(
                             encodeURIComponent(wantedName)
                                 .toLowerCase()
-                        ) ||
-                        String(sourceText || '')
-                            .toLowerCase()
-                            .includes(wantedName)
+                        )
                     )
                 ) {
-                    score += 2600;
+                    score += 3000;
                 }
 
                 if (/files\.oaiusercontent\.com/i.test(value)) {
-                    score += 1800;
+                    score += 2200;
                 } else if (/oaiusercontent\.com/i.test(value)) {
-                    score += 1500;
+                    score += 1900;
                 }
 
                 if (/\/backend-api\/files\//i.test(value)) {
-                    score += 1700;
+                    score += 2100;
                 } else if (/\/backend-api\//i.test(value)) {
-                    score += 1200;
+                    score += 1500;
                 }
 
                 if (/^blob:/i.test(value)) {
-                    score += 900;
+                    score += 1100;
                 }
 
                 if (
                     /url|href|download|attachment|asset|content|file|pointer/i
                         .test(key)
                 ) {
-                    score += 350;
+                    score += 450;
                 }
 
                 if (score <= 0) {
                     return;
                 }
 
-                const previous = candidates.find(
-                    entry => entry.url === value
+                const existing = candidates.find(
+                    candidate => candidate.url === value
                 );
 
-                if (previous) {
-                    previous.score = Math.max(previous.score, score);
+                if (existing) {
+                    existing.score = Math.max(
+                        existing.score,
+                        score
+                    );
                 } else {
                     candidates.push({
                         url: value,
@@ -1097,26 +1121,44 @@
                 }
             }
 
-            function inspectString(value, key) {
-                const text = String(value || '')
+            function inspectString(rawValue, key = '', context = '') {
+                const text = String(rawValue || '')
                     .replace(/\\u0026/gi, '&')
                     .replace(/\\\//g, '/')
                     .replace(/&amp;/gi, '&');
 
-                const matches = text.match(
-                    /(?:https?:\/\/|blob:https?:\/\/|\/backend-api\/)[^\s"'<>\\]+|file-service:\/\/[A-Za-z0-9_-]+|file[_-][A-Za-z0-9_-]{10,}/gi
-                ) || [];
+                const decodedValues = [text];
 
-                for (const match of matches) {
-                    addUrl(match, key, text);
+                try {
+                    const decoded = decodeURIComponent(text);
+
+                    if (decoded !== text) {
+                        decodedValues.push(decoded);
+                    }
+                } catch {
+                    // Continua apenas com o valor original.
+                }
+
+                for (const inspected of decodedValues) {
+                    const matches = inspected.match(
+                        /(?:https?:\/\/|blob:https?:\/\/|\/backend-api\/)[^\s"'<>\\]+|file-service:\/\/[A-Za-z0-9_-]+|file[_-][A-Za-z0-9_-]{8,}/gi
+                    ) || [];
+
+                    for (const match of matches) {
+                        addCandidate(
+                            match,
+                            key,
+                            context || inspected
+                        );
+                    }
                 }
             }
 
             function walk(value, depth = 0, key = '') {
                 if (
-                    depth > 10 ||
-                    visited > 6000 ||
-                    candidates.length > 200
+                    depth > 12 ||
+                    visited > 12000 ||
+                    candidates.length > 300
                 ) {
                     return;
                 }
@@ -1158,13 +1200,13 @@
 
                 keys.sort((left, right) => {
                     const important =
-                        /url|href|download|attachment|asset|content|file|pointer/i;
+                        /url|href|download|attachment|asset|content|file|pointer|id/i;
 
                     return Number(important.test(right)) -
                         Number(important.test(left));
                 });
 
-                for (const childKey of keys.slice(0, 180)) {
+                for (const childKey of keys.slice(0, 240)) {
                     if (
                         childKey === 'ownerDocument' ||
                         childKey === 'parentNode' ||
@@ -1187,10 +1229,84 @@
                 }
             }
 
-            const nodes = [
-                root,
-                ...root.querySelectorAll('*')
-            ].slice(0, 1400);
+            const allNodes = [
+                ...document.querySelectorAll('*')
+            ];
+
+            const selectedNodes = new Set([
+                probeRoot,
+                ...probeRoot.querySelectorAll('*'),
+                ...allNodes.slice(-12000)
+            ]);
+
+            for (const node of allNodes) {
+                if (!(node instanceof Element)) {
+                    continue;
+                }
+
+                const href = node.getAttribute('href') || '';
+
+                const label = [
+                    node.textContent || '',
+                    href,
+                    node.getAttribute('aria-label') || '',
+                    node.getAttribute('title') || '',
+                    node.getAttribute('download') || '',
+                    node.getAttribute('data-testid') || ''
+                ].join(' ')
+                    .replace(/\s+/g, ' ')
+                    .trim()
+                    .toLowerCase();
+
+                const filenameMatch =
+                    wantedName &&
+                    label.includes(wantedName);
+
+                const sandboxMatch = /^sandbox:/i.test(href);
+
+                const attachmentMatch =
+                    /download|attachment|anexo|ficheiro|file/i.test(
+                        node.getAttribute('data-testid') || ''
+                    );
+
+                if (
+                    !filenameMatch &&
+                    !sandboxMatch &&
+                    !attachmentMatch
+                ) {
+                    continue;
+                }
+
+                if (filenameMatch) {
+                    filenameNodes++;
+                }
+
+                if (sandboxMatch) {
+                    sandboxNodes++;
+                }
+
+                selectedNodes.add(node);
+
+                let current = node;
+
+                for (
+                    let depth = 0;
+                    current && depth < 16;
+                    depth++, current = current.parentElement
+                ) {
+                    selectedNodes.add(current);
+
+                    for (
+                        const child of [
+                            ...current.querySelectorAll('*')
+                        ].slice(0, 350)
+                    ) {
+                        selectedNodes.add(child);
+                    }
+                }
+            }
+
+            const nodes = [...selectedNodes].slice(0, 16000);
 
             for (const node of nodes) {
                 if (!(node instanceof Element)) {
@@ -1200,24 +1316,27 @@
                 for (const attribute of node.getAttributeNames()) {
                     inspectString(
                         node.getAttribute(attribute),
-                        `attribute.${attribute}`
+                        `attribute.${attribute}`,
+                        node.textContent || ''
                     );
                 }
 
-                let keys = [];
+                let ownKeys = [];
 
                 try {
-                    keys = Object.getOwnPropertyNames(node);
+                    ownKeys = Object.getOwnPropertyNames(node);
                 } catch {
-                    keys = [];
+                    ownKeys = [];
                 }
 
-                for (const key of keys) {
+                for (const key of ownKeys) {
                     if (
                         key.startsWith('__reactProps$') ||
                         key.startsWith('__reactFiber$') ||
                         key.startsWith('__reactContainer$')
                     ) {
+                        reactRoots++;
+
                         try {
                             walk(node[key], 0, key);
                         } catch {
@@ -1231,7 +1350,20 @@
                 (left, right) => right.score - left.score
             );
 
-            root.setAttribute(
+            probeRoot.setAttribute(
+                diagnosticName,
+                encodeURIComponent([
+                    `allNodes=${allNodes.length}`,
+                    `selectedNodes=${nodes.length}`,
+                    `filenameNodes=${filenameNodes}`,
+                    `sandboxNodes=${sandboxNodes}`,
+                    `reactRoots=${reactRoots}`,
+                    `visited=${visited}`,
+                    `candidates=${candidates.length}`
+                ].join(';'))
+            );
+
+            probeRoot.setAttribute(
                 resultName,
                 candidates.length
                     ? encodeURIComponent(candidates[0].url)
@@ -1252,26 +1384,43 @@
             } else {
                 const script = document.createElement('script');
                 script.textContent = source;
+
                 (document.head || document.documentElement)
                     .appendChild(script);
+
                 script.remove();
             }
         } catch {
             try {
                 const script = document.createElement('script');
                 script.textContent = source;
+
                 (document.head || document.documentElement)
                     .appendChild(script);
+
                 script.remove();
             } catch {
-                // Sem acesso ao contexto da página.
+                // Sem acesso ao contexto real da pagina.
             }
         }
 
         const encoded = root.getAttribute(resultName) || '';
 
+        const encodedDiagnostic =
+            root.getAttribute(diagnosticName) || '';
+
+        try {
+            lastAttachmentDiagnostic = encodedDiagnostic
+                ? decodeURIComponent(encodedDiagnostic)
+                : 'diagnostic=unavailable';
+        } catch {
+            lastAttachmentDiagnostic =
+                'diagnostic=decode-failed';
+        }
+
         root.removeAttribute(markerName);
         root.removeAttribute(resultName);
+        root.removeAttribute(diagnosticName);
 
         if (!encoded) {
             return '';
@@ -2091,7 +2240,9 @@
                     throw new Error(
                         'Não foi possível obter diretamente o conteúdo do anexo ' +
                         fileName +
-                        '. A pesquisa isolada e a pesquisa no contexto real da página não encontraram um URL utilizável.'
+                        '. Diagnóstico: ' +
+                        (lastAttachmentDiagnostic || 'indisponível') +
+                        '.'
                     );
                 }
             }
