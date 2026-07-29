@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.12
+// @version      2026.07.29.15.3.13
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.3.12';
+    const VERSION = '15.3.13';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -2233,6 +2233,48 @@
     }
 
 
+    const CHATGPT_FETCH_TIMEOUT_MS =
+        12 * 1000;
+
+    async function fetchWithTimeout(
+        url,
+        init = {},
+        timeoutMs = CHATGPT_FETCH_TIMEOUT_MS
+    ) {
+        const controller =
+            new AbortController();
+
+        const timer =
+            setTimeout(
+                () => controller.abort(),
+                timeoutMs
+            );
+
+        try {
+            return await fetch(
+                url,
+                {
+                    ...init,
+                    signal: controller.signal
+                }
+            );
+        } catch (error) {
+            if (controller.signal.aborted) {
+                throw new Error(
+                    'Timeout ao consultar ' +
+                    String(url) +
+                    ' após ' +
+                    timeoutMs +
+                    ' ms.'
+                );
+            }
+
+            throw error;
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+
     let chatgptAccessTokenCache = '';
 
     function rawConversationUuid() {
@@ -2252,7 +2294,7 @@
             return chatgptAccessTokenCache;
         }
 
-        const response = await fetch(
+        const response = await fetchWithTimeout(
             '/api/auth/session',
             {
                 method: 'GET',
@@ -2313,7 +2355,7 @@
                 headers.set('Accept', '*/*');
             }
 
-            response = await fetch(
+            response = await fetchWithTimeout(
                 url,
                 {
                     ...init,
@@ -2851,11 +2893,234 @@
         }
     }
 
+
+    async function resolveExplicitFileId(
+        fileId,
+        fileName,
+        jobId
+    ) {
+        const queue =
+            attachmentUrlsFromValue(fileId)
+                .map(url => ({
+                    url,
+                    source: 'manifest.fileId'
+                }));
+
+        const attempted =
+            new Set();
+
+        const statuses = [];
+
+        for (
+            let index = 0;
+            index < queue.length &&
+            index < 12;
+            index++
+        ) {
+            const candidate =
+                queue[index];
+
+            if (
+                !candidate ||
+                !candidate.url ||
+                attempted.has(candidate.url)
+            ) {
+                continue;
+            }
+
+            attempted.add(candidate.url);
+
+            setStatus(
+                'A resolver diretamente o fileId do anexo ' +
+                (index + 1) +
+                '/' +
+                queue.length +
+                '…'
+            );
+
+            let response = null;
+
+            try {
+                response =
+                    await chatgptApiFetch(
+                        candidate.url,
+                        {
+                            method: 'GET',
+                            redirect: 'follow'
+                        }
+                    );
+            } catch (error) {
+                statuses.push(
+                    'fetch-error:' +
+                    String(
+                        error &&
+                        error.message ||
+                        error
+                    )
+                );
+            }
+
+            if (
+                response &&
+                response.ok
+            ) {
+                const contentType =
+                    String(
+                        response.headers.get(
+                            'content-type'
+                        ) || ''
+                    ).toLowerCase();
+
+                if (
+                    contentType.includes(
+                        'application/json'
+                    )
+                ) {
+                    try {
+                        const metadata =
+                            await response.json();
+
+                        const nested =
+                            collectConversationFileCandidates(
+                                metadata,
+                                fileName,
+                                jobId,
+                                ''
+                            ).candidates;
+
+                        for (const item of nested) {
+                            if (
+                                item &&
+                                item.url &&
+                                !attempted.has(item.url) &&
+                                !queue.some(
+                                    queued =>
+                                        queued.url ===
+                                        item.url
+                                )
+                            ) {
+                                queue.push(item);
+                            }
+                        }
+
+                        statuses.push(
+                            String(response.status) +
+                            'j'
+                        );
+                    } catch (error) {
+                        statuses.push(
+                            String(response.status) +
+                            '-json-error:' +
+                            String(
+                                error &&
+                                error.message ||
+                                error
+                            )
+                        );
+                    }
+                } else {
+                    const body =
+                        await response.text();
+
+                    if (
+                        usablePowerShellPayload(
+                            body,
+                            contentType
+                        )
+                    ) {
+                        lastAttachmentDiagnostic = [
+                            'explicitFileId=ok',
+                            'transport=fetch',
+                            'selected=' +
+                                (index + 1),
+                            'HTTP=' +
+                                response.status
+                        ].join(';');
+
+                        return body;
+                    }
+
+                    statuses.push(
+                        String(response.status) +
+                        '-rejected-' +
+                        attachmentPayloadRejection(
+                            body,
+                            contentType
+                        )
+                    );
+                }
+            } else {
+                statuses.push(
+                    'HTTP=' +
+                    Number(
+                        response &&
+                        response.status ||
+                        0
+                    )
+                );
+            }
+
+            const gmResult =
+                await gmDownloadText(
+                    candidate.url
+                );
+
+            if (
+                gmResult.ok &&
+                usablePowerShellPayload(
+                    gmResult.text,
+                    ''
+                )
+            ) {
+                lastAttachmentDiagnostic = [
+                    'explicitFileId=ok',
+                    'transport=GM',
+                    'selected=' +
+                        (index + 1),
+                    'HTTP=' +
+                        gmResult.status
+                ].join(';');
+
+                return gmResult.text;
+            }
+
+            if (gmResult.ok) {
+                statuses.push(
+                    String(gmResult.status) +
+                    '-gm-rejected-' +
+                    attachmentPayloadRejection(
+                        gmResult.text,
+                        ''
+                    )
+                );
+            }
+        }
+
+        lastAttachmentDiagnostic = [
+            'explicitFileId=failed',
+            'fileId=' + fileId,
+            'attempts=' +
+                statuses
+                    .slice(0, 20)
+                    .join(',')
+        ].join(';');
+
+        return '';
+    }
+
     async function resolveAttachmentFromConversationApi(
         fileName,
         jobId,
         suppliedFileId
     ) {
+        if (suppliedFileId) {
+            return await resolveExplicitFileId(
+                suppliedFileId,
+                fileName,
+                jobId
+            );
+        }
+
         const conversationId =
             rawConversationUuid();
 
@@ -3114,7 +3379,7 @@
         }
 
         try {
-            const response = await fetch(href, {
+            const response = await fetchWithTimeout(href, {
                 credentials: 'include',
                 cache: 'no-store'
             });
