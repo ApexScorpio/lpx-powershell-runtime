@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.9
+// @version      2026.07.29.15.3.10
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.9';
+    const VERSION = '15.3.10';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -3213,16 +3213,20 @@
                 }
 
                 if (!command) {
-                    throw new Error(
-                        'Não foi possível obter diretamente o conteúdo do anexo ' +
-                        fileName +
-                        '. Diagnóstico: ' +
-                        (
-                            lastAttachmentDiagnostic ||
-                            'indisponível'
-                        ) +
-                        '.'
+                    setStatus(
+                        'A resolução direta não encontrou o conteúdo. ' +
+                        'A acionar o cartão do anexo e a usar o watcher local…'
                     );
+
+                    await queueDownloadedFileJob(
+                        assistant,
+                        manifest,
+                        fileName,
+                        jobId,
+                        protocol
+                    );
+
+                    return;
                 }
             }
             else if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
