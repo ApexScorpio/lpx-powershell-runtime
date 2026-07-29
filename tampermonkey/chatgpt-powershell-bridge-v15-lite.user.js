@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.3
+// @version      2026.07.29.15.3.4
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -10,6 +10,7 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_deleteValue
+// @grant        unsafeWindow
 // @connect      127.0.0.1
 // @connect      chatgpt.com
 // @connect      chat.openai.com
@@ -24,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.3';
+    const VERSION = '15.3.4';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -954,6 +955,334 @@
         ) || assistant;
     }
 
+    function extractAttachmentUrlInPageWorld(root, fileName) {
+        if (!(root instanceof Element)) {
+            return '';
+        }
+
+        const markerName = 'data-lpx-psb15-probe';
+        const resultName = 'data-lpx-psb15-result';
+        const marker = `probe-${randomId()}`;
+        const wanted = String(fileName || '').trim().toLowerCase();
+
+        root.setAttribute(markerName, marker);
+        root.removeAttribute(resultName);
+
+        function scanPage(probeMarker, wantedName) {
+            const markerName = 'data-lpx-psb15-probe';
+            const resultName = 'data-lpx-psb15-result';
+
+            const root = [...document.querySelectorAll(
+                `[${markerName}]`
+            )].find(node =>
+                node.getAttribute(markerName) === probeMarker
+            );
+
+            if (!root) {
+                return;
+            }
+
+            const candidates = [];
+            const seen = new WeakSet();
+            let visited = 0;
+
+            function addUrl(url, key, sourceText) {
+                let value = String(url || '')
+                    .trim()
+                    .replace(/\\u0026/gi, '&')
+                    .replace(/\\\//g, '/')
+                    .replace(/&amp;/gi, '&');
+
+                if (!value || /^sandbox:/i.test(value)) {
+                    return;
+                }
+
+                if (/^file-service:\/\//i.test(value)) {
+                    const id = value.replace(/^file-service:\/\//i, '');
+
+                    if (id) {
+                        value =
+                            location.origin +
+                            '/backend-api/files/' +
+                            encodeURIComponent(id) +
+                            '/download';
+                    }
+                }
+
+                if (/^file[_-][A-Za-z0-9_-]{10,}$/.test(value)) {
+                    value =
+                        location.origin +
+                        '/backend-api/files/' +
+                        encodeURIComponent(value) +
+                        '/download';
+                }
+
+                if (value.startsWith('/')) {
+                    try {
+                        value = new URL(value, location.origin).href;
+                    } catch {
+                        return;
+                    }
+                }
+
+                if (!/^(?:https?:|blob:)/i.test(value)) {
+                    return;
+                }
+
+                const lower = value.toLowerCase();
+
+                if (
+                    lower.includes('github.com/') ||
+                    lower.includes('raw.githubusercontent.com')
+                ) {
+                    return;
+                }
+
+                let score = 0;
+
+                if (
+                    wantedName &&
+                    (
+                        lower.includes(wantedName) ||
+                        lower.includes(
+                            encodeURIComponent(wantedName)
+                                .toLowerCase()
+                        ) ||
+                        String(sourceText || '')
+                            .toLowerCase()
+                            .includes(wantedName)
+                    )
+                ) {
+                    score += 2600;
+                }
+
+                if (/files\.oaiusercontent\.com/i.test(value)) {
+                    score += 1800;
+                } else if (/oaiusercontent\.com/i.test(value)) {
+                    score += 1500;
+                }
+
+                if (/\/backend-api\/files\//i.test(value)) {
+                    score += 1700;
+                } else if (/\/backend-api\//i.test(value)) {
+                    score += 1200;
+                }
+
+                if (/^blob:/i.test(value)) {
+                    score += 900;
+                }
+
+                if (
+                    /url|href|download|attachment|asset|content|file|pointer/i
+                        .test(key)
+                ) {
+                    score += 350;
+                }
+
+                if (score <= 0) {
+                    return;
+                }
+
+                const previous = candidates.find(
+                    entry => entry.url === value
+                );
+
+                if (previous) {
+                    previous.score = Math.max(previous.score, score);
+                } else {
+                    candidates.push({
+                        url: value,
+                        score
+                    });
+                }
+            }
+
+            function inspectString(value, key) {
+                const text = String(value || '')
+                    .replace(/\\u0026/gi, '&')
+                    .replace(/\\\//g, '/')
+                    .replace(/&amp;/gi, '&');
+
+                const matches = text.match(
+                    /(?:https?:\/\/|blob:https?:\/\/|\/backend-api\/)[^\s"'<>\\]+|file-service:\/\/[A-Za-z0-9_-]+|file[_-][A-Za-z0-9_-]{10,}/gi
+                ) || [];
+
+                for (const match of matches) {
+                    addUrl(match, key, text);
+                }
+            }
+
+            function walk(value, depth = 0, key = '') {
+                if (
+                    depth > 10 ||
+                    visited > 6000 ||
+                    candidates.length > 200
+                ) {
+                    return;
+                }
+
+                if (typeof value === 'string') {
+                    inspectString(value, key);
+                    return;
+                }
+
+                if (
+                    !value ||
+                    (
+                        typeof value !== 'object' &&
+                        typeof value !== 'function'
+                    )
+                ) {
+                    return;
+                }
+
+                try {
+                    if (seen.has(value)) {
+                        return;
+                    }
+
+                    seen.add(value);
+                } catch {
+                    return;
+                }
+
+                visited++;
+
+                let keys = [];
+
+                try {
+                    keys = Object.getOwnPropertyNames(value);
+                } catch {
+                    return;
+                }
+
+                keys.sort((left, right) => {
+                    const important =
+                        /url|href|download|attachment|asset|content|file|pointer/i;
+
+                    return Number(important.test(right)) -
+                        Number(important.test(left));
+                });
+
+                for (const childKey of keys.slice(0, 180)) {
+                    if (
+                        childKey === 'ownerDocument' ||
+                        childKey === 'parentNode' ||
+                        childKey === 'parentElement' ||
+                        childKey === 'children' ||
+                        childKey === 'childNodes'
+                    ) {
+                        continue;
+                    }
+
+                    try {
+                        walk(
+                            value[childKey],
+                            depth + 1,
+                            `${key}.${childKey}`
+                        );
+                    } catch {
+                        // Continua a pesquisa.
+                    }
+                }
+            }
+
+            const nodes = [
+                root,
+                ...root.querySelectorAll('*')
+            ].slice(0, 1400);
+
+            for (const node of nodes) {
+                if (!(node instanceof Element)) {
+                    continue;
+                }
+
+                for (const attribute of node.getAttributeNames()) {
+                    inspectString(
+                        node.getAttribute(attribute),
+                        `attribute.${attribute}`
+                    );
+                }
+
+                let keys = [];
+
+                try {
+                    keys = Object.getOwnPropertyNames(node);
+                } catch {
+                    keys = [];
+                }
+
+                for (const key of keys) {
+                    if (
+                        key.startsWith('__reactProps$') ||
+                        key.startsWith('__reactFiber$') ||
+                        key.startsWith('__reactContainer$')
+                    ) {
+                        try {
+                            walk(node[key], 0, key);
+                        } catch {
+                            // Continua.
+                        }
+                    }
+                }
+            }
+
+            candidates.sort(
+                (left, right) => right.score - left.score
+            );
+
+            root.setAttribute(
+                resultName,
+                candidates.length
+                    ? encodeURIComponent(candidates[0].url)
+                    : ''
+            );
+        }
+
+        const source =
+            `(${scanPage.toString()})` +
+            `(${JSON.stringify(marker)},${JSON.stringify(wanted)});`;
+
+        try {
+            if (
+                typeof unsafeWindow !== 'undefined' &&
+                typeof unsafeWindow.Function === 'function'
+            ) {
+                unsafeWindow.Function(source)();
+            } else {
+                const script = document.createElement('script');
+                script.textContent = source;
+                (document.head || document.documentElement)
+                    .appendChild(script);
+                script.remove();
+            }
+        } catch {
+            try {
+                const script = document.createElement('script');
+                script.textContent = source;
+                (document.head || document.documentElement)
+                    .appendChild(script);
+                script.remove();
+            } catch {
+                // Sem acesso ao contexto da página.
+            }
+        }
+
+        const encoded = root.getAttribute(resultName) || '';
+
+        root.removeAttribute(markerName);
+        root.removeAttribute(resultName);
+
+        if (!encoded) {
+            return '';
+        }
+
+        try {
+            return decodeURIComponent(encoded);
+        } catch {
+            return '';
+        }
+    }
     function findAttachmentLink(assistant, fileName) {
         const wanted = String(fileName || '').trim().toLowerCase();
         const turn = turnContainer(assistant);
@@ -1205,8 +1534,19 @@
 
         candidates.sort((a, b) => b.score - a.score);
 
-        return candidates.length
-            ? { href: candidates[0].url }
+        if (candidates.length) {
+            return {
+                href: candidates[0].url
+            };
+        }
+
+        const pageWorldHref = extractAttachmentUrlInPageWorld(
+            turn,
+            fileName
+        );
+
+        return pageWorldHref
+            ? { href: pageWorldHref }
             : null;
     }
 
@@ -1748,14 +2088,11 @@
                 }
 
                 if (!command) {
-                    await queueDownloadedFileJob(
-                        assistant,
-                        manifest,
-                        fileName,
-                        jobId,
-                        protocol
+                    throw new Error(
+                        'Não foi possível obter diretamente o conteúdo do anexo ' +
+                        fileName +
+                        '. A pesquisa isolada e a pesquisa no contexto real da página não encontraram um URL utilizável.'
                     );
-                    return;
                 }
             }
             else if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
