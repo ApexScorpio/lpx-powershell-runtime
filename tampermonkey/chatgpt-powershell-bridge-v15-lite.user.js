@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.2
+// @version      2026.07.29.15.3.3
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.2';
+    const VERSION = '15.3.3';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -65,6 +65,7 @@
     }
 
     const TAB_ID = tabId();
+    const INSTANCE_ID = `instance-${randomId()}`;
 
     function conversationId() {
         const path = location.pathname.replace(/\/+$/, '') || '/';
@@ -136,12 +137,13 @@
         const claims = cleanClaims();
         const existing = claims[id];
 
-        if (existing && existing.tabId !== TAB_ID) {
+        if (existing) {
             return false;
         }
 
         claims[id] = {
             tabId: TAB_ID,
+            instanceId: INSTANCE_ID,
             conversation: conversationId(),
             expiresAt: Date.now() + CLAIM_TTL_MS
         };
@@ -152,8 +154,15 @@
 
     function releaseClaim(id) {
         const claims = cleanClaims();
+        const existing = claims[id];
 
-        if (claims[id]?.tabId === TAB_ID) {
+        if (
+            existing?.instanceId === INSTANCE_ID ||
+            (
+                !existing?.instanceId &&
+                existing?.tabId === TAB_ID
+            )
+        ) {
             delete claims[id];
             GM_setValue(CLAIMS_KEY, claims);
         }
