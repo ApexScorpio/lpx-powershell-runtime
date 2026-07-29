@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.0.4
-// @description  Executa PowerShell através da bridge local, publica o resultado no GitHub e envia automaticamente o protocolo correto ao ChatGPT.
+// @version      2026.07.29.15.1.0
+// @description  Executa PowerShell legível através da bridge local; o browser normaliza UTF-8/LF e calcula Base64 e SHA-256 automaticamente.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @run-at       document-idle
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.0.4';
+    const VERSION = '15.1.0';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -180,26 +180,23 @@
 
     function protocolPromptText() {
         return [
-            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15',
+            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_1',
             '',
             `Esta conversa está ligada à LPX PowerShell Bridge v${VERSION}.`,
             '',
-            'Sempre que for necessário executar PowerShell, responde com UM ÚNICO bloco de código JSON válido neste formato:',
-            '{',
-            '  "protocol": "PSB_JOB_V2",',
-            '  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",',
-            '  "commandBase64": "<PowerShell completo em UTF-8 sem BOM, codificado em Base64>",',
-            '  "sha256": "<SHA-256 lowercase dos bytes UTF-8 exatamente descodificados>",',
-            '  "purpose": "<objetivo claro e curto>"',
-            '}',
+            'Sempre que for necessário executar PowerShell, responde com UM ÚNICO bloco de código POWERSHELL legível neste formato:',
+            '# PSB_JOB_V3',
+            '# jobId: PSB-AAAAMMDD-HHMM-DESCRICAO-001',
+            '# purpose: objetivo claro e curto',
+            '<PowerShell completo>',
             '',
             'REGRAS OBRIGATÓRIAS:',
-            '1. Usa commandBase64. Não uses anexos, links sandbox nem o campo file por defeito.',
-            '2. Não envies o PowerShell bruto em blocos powershell enquanto a bridge estiver ativa.',
+            '1. Não geres Base64, SHA-256, anexos, links sandbox nem JSON para jobs PowerShell.',
+            '2. O userscript extrai o bloco, converte as quebras de linha para LF, remove BOM, codifica UTF-8/Base64 e calcula SHA-256 localmente.',
             '3. O jobId tem de ser único em cada execução.',
-            '4. O sha256 tem de corresponder exatamente ao comando descodificado, incluindo quebras de linha.',
-            '5. Usa UTF-8 sem BOM e quebras de linha LF antes de gerar Base64 e SHA-256.',
-            '6. Não acrescentes comentários, texto ou outro JSON dentro do bloco do manifesto.',
+            '4. Mantém exatamente as três linhas de cabeçalho no início do bloco.',
+            '5. Não escrevas texto fora do único bloco PowerShell quando estiveres a enviar um job.',
+            '6. O protocolo antigo PSB_JOB_V2 continua aceite apenas para compatibilidade.',
             '7. Depois de receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
             '8. Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
             '9. Mantém os comandos temporários; guarda apenas decisões, causas e soluções técnicas consolidadas.',
@@ -235,10 +232,10 @@
             return;
         }
 
-        setStatus('A enviar ao ChatGPT o formato obrigatório PSB_JOB_V2…');
+        setStatus('A enviar ao ChatGPT o formato obrigatório PSB_JOB_V3…');
         await sendMessage(protocolPromptText());
         GM_setValue(key, true);
-        setStatus('Protocolo PSB_JOB_V2 enviado. A bridge está pronta.');
+        setStatus('Protocolo PSB_JOB_V3 enviado. A bridge está pronta.');
     }
     function token() {
         return String(GM_getValue(TOKEN_KEY, '')).trim();
@@ -380,7 +377,7 @@
 
                     baselineCurrentAssistant();
                     setEnabled(true);
-                    setStatus('Ativa. A preparar o protocolo PSB_JOB_V2…');
+                    setStatus('Ativa. A preparar o protocolo PSB_JOB_V3…');
 
                     try {
                         await sendProtocolPrompt(false);
@@ -497,7 +494,7 @@
         }
 
         for (const manifest of manifestsIn(latest)) {
-            if (manifest.protocol === 'PSB_JOB_V2' && manifest.jobId) {
+            if (['PSB_JOB_V2', 'PSB_JOB_V3'].includes(manifest.protocol) && manifest.jobId) {
                 markHandled(String(manifest.jobId));
             }
 
@@ -547,13 +544,84 @@
         });
     }
 
+    function parseV3PowerShellBlock(text) {
+        const normalized = String(text || '')
+            .replace(/\r\n?/g, '\n')
+            .replace(/^\uFEFF/, '');
+
+        const lines = normalized.split('\n');
+        const markerIndex = lines.findIndex(line => /^\s*#\s*PSB_JOB_V3\s*$/i.test(line));
+
+        if (markerIndex < 0) {
+            return null;
+        }
+
+        let jobId = '';
+        let purpose = '';
+        let commandStart = markerIndex + 1;
+
+        for (let index = markerIndex + 1; index < lines.length; index++) {
+            const line = lines[index];
+            const jobMatch = line.match(/^\s*#\s*jobId\s*:\s*(.+?)\s*$/i);
+            const purposeMatch = line.match(/^\s*#\s*purpose\s*:\s*(.*?)\s*$/i);
+
+            if (jobMatch) {
+                jobId = jobMatch[1].trim();
+                commandStart = index + 1;
+                continue;
+            }
+
+            if (purposeMatch) {
+                purpose = purposeMatch[1].trim();
+                commandStart = index + 1;
+                continue;
+            }
+
+            if (!line.trim()) {
+                commandStart = index + 1;
+                continue;
+            }
+
+            break;
+        }
+
+        const command = lines
+            .slice(commandStart)
+            .join('\n')
+            .replace(/^\n+/, '');
+
+        if (!jobId || !command.trim()) {
+            return null;
+        }
+
+        return {
+            protocol: 'PSB_JOB_V3',
+            jobId,
+            purpose,
+            command
+        };
+    }
+
     function manifestsIn(assistant) {
         const manifests = [];
 
         for (const pre of assistant.querySelectorAll('pre')) {
             const text = String(pre.innerText || pre.textContent || '').trim();
 
-            if (!text || (!text.includes('PSB_JOB_V2') && !text.includes('PSB_LEARN_V1'))) {
+            if (!text) {
+                continue;
+            }
+
+            if (text.includes('PSB_JOB_V3')) {
+                const value = parseV3PowerShellBlock(text);
+
+                if (value) {
+                    manifests.push(value);
+                    continue;
+                }
+            }
+
+            if (!text.includes('PSB_JOB_V2') && !text.includes('PSB_LEARN_V1')) {
                 continue;
             }
 
@@ -564,7 +632,7 @@
                     manifests.push(value);
                 }
             } catch {
-                // Apenas JSON válido é aceite.
+                // Apenas JSON válido é aceite no protocolo antigo.
             }
         }
 
@@ -596,13 +664,13 @@
 
         if (!manifests.length) {
             if (forced) {
-                setStatus('O último turno não contém PSB_JOB_V2 nem PSB_LEARN_V1.');
+                setStatus('O último turno não contém PSB_JOB_V3, PSB_JOB_V2 nem PSB_LEARN_V1.');
             }
             return;
         }
 
         for (const manifest of manifests) {
-            if (manifest.protocol === 'PSB_JOB_V2') {
+            if (manifest.protocol === 'PSB_JOB_V3' || manifest.protocol === 'PSB_JOB_V2') {
                 await processJobManifest(assistant, manifest, forced);
             } else if (manifest.protocol === 'PSB_LEARN_V1') {
                 await processKnowledgeManifest(manifest, forced);
@@ -716,13 +784,37 @@
         return new TextDecoder('utf-8').decode(bytes);
     }
 
+    function normalizePowerShellCommand(text) {
+        return String(text || '')
+            .replace(/^\uFEFF/, '')
+            .replace(/\r\n?/g, '\n');
+    }
+
+    function utf8Bytes(text) {
+        return new TextEncoder().encode(normalizePowerShellCommand(text));
+    }
+
     async function sha256(text) {
-        const bytes = new TextEncoder().encode(text);
+        const bytes = utf8Bytes(text);
         const digest = await crypto.subtle.digest('SHA-256', bytes);
 
         return [...new Uint8Array(digest)]
             .map(value => value.toString(16).padStart(2, '0'))
             .join('');
+    }
+
+    function encodeBase64Utf8(text) {
+        const bytes = utf8Bytes(text);
+        const chunkSize = 0x8000;
+        let binary = '';
+
+        for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+            binary += String.fromCharCode(
+                ...bytes.subarray(offset, offset + chunkSize)
+            );
+        }
+
+        return btoa(binary);
     }
 
     function decodeBase64Utf8(value) {
@@ -737,6 +829,7 @@
     }
 
     async function processJobManifest(assistant, manifest, forced) {
+        const protocol = String(manifest.protocol || '').trim();
         const jobId = String(manifest.jobId || '').trim();
         const fileName = String(manifest.file || '').trim();
         const commandBase64 = String(manifest.commandBase64 || '').trim();
@@ -749,7 +842,7 @@
             (!fileName && !commandBase64 && !inlineCommand)
         ) {
             setStatus(
-                'Manifesto PSB_JOB_V2 incompleto: falta jobId e uma fonte de comando.'
+                `Manifesto ${protocol || 'PowerShell'} incompleto: falta jobId e uma fonte de comando.`
             );
             return;
         }
@@ -766,12 +859,16 @@
         try {
             let command = '';
 
-            if (commandBase64) {
-                setStatus('A descodificar o comando incorporado no manifesto…');
+            if (protocol === 'PSB_JOB_V3') {
+                setStatus('A normalizar localmente o PowerShell legível…');
+                command = inlineCommand;
+            }
+            else if (commandBase64) {
+                setStatus('A descodificar o comando do protocolo antigo…');
                 command = decodeBase64Utf8(commandBase64);
             }
             else if (inlineCommand) {
-                setStatus('A preparar o comando incorporado no manifesto…');
+                setStatus('A preparar o comando incorporado no manifesto antigo…');
                 command = inlineCommand;
             }
             else {
@@ -791,17 +888,27 @@
                 command = await downloadAttachment(anchor);
             }
 
+            command = normalizePowerShellCommand(command);
+
             if (!command.trim()) {
-                throw new Error('O anexo PowerShell está vazio.');
+                throw new Error('O comando PowerShell está vazio.');
             }
 
-            if (manifest.sha256) {
-                const actualHash = await sha256(command);
+            const localHash = await sha256(command);
+            const localBase64 = encodeBase64Utf8(command);
+            const byteLength = utf8Bytes(command).length;
 
-                if (actualHash.toLowerCase() !== String(manifest.sha256).toLowerCase()) {
-                    throw new Error('O SHA-256 do anexo não coincide com o manifesto.');
-                }
+            if (
+                protocol === 'PSB_JOB_V2' &&
+                manifest.sha256 &&
+                localHash.toLowerCase() !== String(manifest.sha256).toLowerCase()
+            ) {
+                throw new Error('O SHA-256 do protocolo antigo não coincide com o comando.');
             }
+
+            setStatus(
+                `Job ${jobId}: UTF-8/LF local · ${byteLength} bytes · SHA ${localHash.slice(0, 12)}…`
+            );
 
             const response = await request({
                 method: 'POST',
@@ -809,6 +916,10 @@
                 headers: authHeaders(),
                 data: JSON.stringify({
                     command,
+                    commandBase64: localBase64,
+                    sha256: localHash,
+                    sourceProtocol: protocol,
+                    byteLength,
                     jobId,
                     commandKey: jobId,
                     signature: jobId,
@@ -829,8 +940,7 @@
 
             activeJobId = String(data.jobId);
             activeManifest = manifest;
-            setStatus(`Job ${activeJobId} em execução. Esta aba continua leve; só existe polling enquanto o job está ativo.`);
-
+            setStatus(`Job ${activeJobId} em execução. Base64 e SHA-256 foram calculados localmente.`);
             await monitorActiveJob();
         } catch (error) {
             releaseClaim(jobId);

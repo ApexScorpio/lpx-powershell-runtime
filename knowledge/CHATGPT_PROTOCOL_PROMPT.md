@@ -1,25 +1,38 @@
-# Prompt obrigatório — LPX PowerShell Bridge v15
+# LPX PowerShell Bridge — protocolo global V15.1
 
-Este texto é enviado automaticamente ao ChatGPT uma vez por conversa e por versão do userscript.
+Marcador enviado automaticamente para cada conversa:
 
-## Formato de execução
+`LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_1`
 
-```json
-{
-  "protocol": "PSB_JOB_V2",
-  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",
-  "commandBase64": "<PowerShell completo em UTF-8 sem BOM, codificado em Base64>",
-  "sha256": "<SHA-256 lowercase dos bytes UTF-8 exatamente descodificados>",
-  "purpose": "<objetivo claro e curto>"
-}
+## Formato obrigatório para novos jobs
+
+O ChatGPT envia apenas um bloco PowerShell legível:
+
+```powershell
+# PSB_JOB_V3
+# jobId: PSB-AAAAMMDD-HHMM-DESCRICAO-001
+# purpose: objetivo claro e curto
+$ErrorActionPreference = 'Stop'
+# restante comando
 ```
 
-## Regras
+O userscript é responsável por:
 
-- Usar `commandBase64`; não depender de anexos ou links sandbox.
-- Não enviar PowerShell bruto enquanto a bridge estiver ativa.
-- Usar um `jobId` único.
-- Calcular Base64 e SHA-256 sobre os mesmos bytes UTF-8 sem BOM e com LF.
-- Depois de `PSBRIDGE_RESULT_V2`, ler primeiro o URL `result`.
-- Consultar `log` apenas quando necessário e nunca reproduzir o log completo na conversa.
-- Manter comandos temporários; conservar apenas conhecimento técnico consolidado.
+1. extrair o bloco PowerShell;
+2. remover um eventual BOM;
+3. converter CRLF/CR para LF;
+4. codificar o texto em UTF-8;
+5. gerar Base64 localmente;
+6. calcular o SHA-256 localmente;
+7. enviar o comando e os metadados à bridge;
+8. acompanhar o job e devolver apenas os URLs públicos do resultado.
+
+O ChatGPT deixa de gerar Base64 e SHA-256. Isto elimina falhas de `atob`, caracteres fora de Latin-1 e hashes que não correspondem ao comando.
+
+## Compatibilidade
+
+`PSB_JOB_V2` continua aceite para conversas antigas, incluindo `commandBase64`, `command`, `file` e validação opcional de `sha256`.
+
+## Resultado
+
+Após a execução, a conversa recebe `PSBRIDGE_RESULT_V2`. Deve ler primeiro o URL `result`, usar `log` apenas quando necessário e nunca reproduzir o log completo.
