@@ -34,4 +34,4 @@ Tokens, credenciais, segredos OAuth e caminhos de utilizador sÃ£o removidos an
 - Comandos completos: temporÃ¡rios e locais; nÃ£o publicados
 - Multi-conversa: suportada por tabId + conversationId
 - RepositÃ³rio pÃºblico: ApexScorpio/lpx-powershell-runtime
-- Atualizado: 2026-07-29 11:51:36 +01:00
+- Atualizado: 2026-07-29 11:53:31 +01:00
