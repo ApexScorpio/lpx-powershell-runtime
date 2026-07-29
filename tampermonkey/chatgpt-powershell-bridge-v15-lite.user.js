@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.2.0
+// @version      2026.07.29.15.3.0
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.2.0';
+    const VERSION = '15.3.0';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -33,6 +33,8 @@
     const ENABLED_KEY = 'lpxPsb15:enabled';
     const BOUND_CONVERSATION_KEY = 'lpxPsb15:conversation';
     const PROMPT_SENT_PREFIX = 'lpxPsb15:protocolPrompt:';
+    const PANEL_GEOMETRY_KEY = 'lpxPsb15:panelGeometry';
+    const PANEL_COLLAPSED_KEY = 'lpxPsb15:panelCollapsed';
     const CLAIM_TTL_MS = 30 * 60 * 1000;
     const POLL_MS = 750;
     const SETTLE_MS = 900;
@@ -180,7 +182,7 @@
 
     function protocolPromptText() {
         return [
-            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_2',
+            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_3',
             '',
             `Esta conversa está ligada à LPX PowerShell Bridge v${VERSION}.`,
             '',
@@ -197,7 +199,7 @@
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
             '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
             '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
-            '5. O userscript descarrega o anexo, normaliza UTF-8/LF e calcula Base64 e SHA-256 localmente.',
+            '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
             '6. PSB_JOB_V2 e PSB_JOB_V3 continuam aceites apenas para compatibilidade e recuperação.',
             '7. Depois de receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
             '8. Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
@@ -234,10 +236,10 @@
             return;
         }
 
-        setStatus('A enviar ao ChatGPT o formato obrigatório PSB_JOB_V3…');
+        setStatus('A enviar ao ChatGPT o formato obrigatório PSB_JOB_FILE_V1…');
         await sendMessage(protocolPromptText());
         GM_setValue(key, true);
-        setStatus('Protocolo PSB_JOB_V3 enviado. A bridge está pronta.');
+        setStatus('Protocolo PSB_JOB_FILE_V1 enviado. A bridge está pronta.');
     }
     function token() {
         return String(GM_getValue(TOKEN_KEY, '')).trim();
@@ -289,8 +291,14 @@
             right: 16px;
             bottom: 16px;
             z-index: 2147483647;
-            width: 330px;
+            width: 380px;
+            min-width: 300px;
+            min-height: 118px;
+            max-width: calc(100vw - 20px);
+            max-height: calc(100vh - 20px);
             padding: 10px;
+            resize: both;
+            overflow: auto;
             border: 1px solid #46505c;
             border-radius: 10px;
             background: #11151a;
@@ -299,9 +307,43 @@
             font: 12px/1.35 Arial, sans-serif;
         }
 
-        #lpx-psb15-title {
-            font-weight: 700;
+        #lpx-psb15-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 6px;
+            cursor: move;
+            user-select: none;
+            touch-action: none;
+        }
+
+        #lpx-psb15-title {
+            flex: 1;
+            font-weight: 700;
+        }
+
+        #lpx-psb15-window-actions {
+            display: flex;
+            gap: 4px;
+        }
+
+        #lpx-psb15-window-actions button {
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        #lpx-psb15.collapsed {
+            height: auto !important;
+            min-height: 0;
+            resize: none;
+            overflow: hidden;
+        }
+
+        #lpx-psb15.collapsed #lpx-psb15-status,
+        #lpx-psb15.collapsed #lpx-psb15-actions {
+            display: none;
         }
 
         #lpx-psb15-status {
@@ -348,12 +390,154 @@
         return node;
     }
 
+
+    function panelIsCollapsed() {
+        return Boolean(GM_getValue(PANEL_COLLAPSED_KEY, false));
+    }
+
+    function applyPanelCollapsedState() {
+        panel.classList.toggle('collapsed', panelIsCollapsed());
+
+        const buttonNode = panel.querySelector('#lpx-psb15-collapse');
+        if (buttonNode) {
+            buttonNode.textContent = panelIsCollapsed() ? '+' : '−';
+            buttonNode.title = panelIsCollapsed() ? 'Expandir' : 'Minimizar';
+        }
+    }
+
+    function togglePanelCollapsed() {
+        GM_setValue(PANEL_COLLAPSED_KEY, !panelIsCollapsed());
+        render();
+    }
+
+    function panelGeometry() {
+        const value = GM_getValue(PANEL_GEOMETRY_KEY, null);
+        return value && typeof value === 'object' ? value : {};
+    }
+
+    function savePanelGeometry() {
+        if (panelIsCollapsed()) {
+            return;
+        }
+
+        const rectangle = panel.getBoundingClientRect();
+        GM_setValue(PANEL_GEOMETRY_KEY, {
+            left: rectangle.left,
+            top: rectangle.top,
+            width: rectangle.width,
+            height: rectangle.height
+        });
+    }
+
+    function applyPanelGeometry() {
+        const value = panelGeometry();
+
+        if (Number.isFinite(value.width)) {
+            panel.style.width = Math.max(300, value.width) + 'px';
+        }
+
+        if (Number.isFinite(value.height)) {
+            panel.style.height = Math.max(118, value.height) + 'px';
+        }
+
+        if (Number.isFinite(value.left) && Number.isFinite(value.top)) {
+            const maximumLeft = Math.max(0, window.innerWidth - panel.offsetWidth);
+            const maximumTop = Math.max(0, window.innerHeight - panel.offsetHeight);
+
+            panel.style.left = Math.min(Math.max(0, value.left), maximumLeft) + 'px';
+            panel.style.top = Math.min(Math.max(0, value.top), maximumTop) + 'px';
+            panel.style.right = 'auto';
+            panel.style.bottom = 'auto';
+        }
+    }
+
+    function installPanelInteractions() {
+        applyPanelGeometry();
+
+        panel.addEventListener('pointerdown', event => {
+            const header = event.target.closest('#lpx-psb15-header');
+
+            if (!header || event.target.closest('button')) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const rectangle = panel.getBoundingClientRect();
+            const offsetX = event.clientX - rectangle.left;
+            const offsetY = event.clientY - rectangle.top;
+
+            panel.style.left = rectangle.left + 'px';
+            panel.style.top = rectangle.top + 'px';
+            panel.style.right = 'auto';
+            panel.style.bottom = 'auto';
+
+            const move = moveEvent => {
+                const maximumLeft = Math.max(0, window.innerWidth - panel.offsetWidth);
+                const maximumTop = Math.max(0, window.innerHeight - panel.offsetHeight);
+
+                panel.style.left = Math.min(
+                    Math.max(0, moveEvent.clientX - offsetX),
+                    maximumLeft
+                ) + 'px';
+
+                panel.style.top = Math.min(
+                    Math.max(0, moveEvent.clientY - offsetY),
+                    maximumTop
+                ) + 'px';
+            };
+
+            const finish = () => {
+                window.removeEventListener('pointermove', move, true);
+                window.removeEventListener('pointerup', finish, true);
+                window.removeEventListener('pointercancel', finish, true);
+                savePanelGeometry();
+            };
+
+            window.addEventListener('pointermove', move, true);
+            window.addEventListener('pointerup', finish, true);
+            window.addEventListener('pointercancel', finish, true);
+        }, true);
+
+        if (globalThis.ResizeObserver) {
+            const resizeObserver = new ResizeObserver(() => {
+                window.clearTimeout(panel.__lpxResizeTimer);
+                panel.__lpxResizeTimer = window.setTimeout(savePanelGeometry, 250);
+            });
+
+            resizeObserver.observe(panel);
+        }
+
+        window.addEventListener('resize', () => {
+            applyPanelGeometry();
+            savePanelGeometry();
+        });
+    }
+
     function render() {
         panel.replaceChildren();
 
         const title = document.createElement('div');
         title.id = 'lpx-psb15-title';
         title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'}`;
+
+        const header = document.createElement('div');
+        header.id = 'lpx-psb15-header';
+
+        const windowActions = document.createElement('div');
+        windowActions.id = 'lpx-psb15-window-actions';
+
+        const collapseButton = button(panelIsCollapsed() ? '+' : '−', togglePanelCollapsed);
+        collapseButton.id = 'lpx-psb15-collapse';
+        collapseButton.title = panelIsCollapsed() ? 'Expandir' : 'Minimizar';
+
+        const closeButton = button('×', () => {
+            void shutdownBridge();
+        }, 'danger');
+        closeButton.title = 'Fechar e desligar a bridge';
+
+        windowActions.append(collapseButton, closeButton);
+        header.append(title, windowActions);
 
         const status = document.createElement('div');
         status.id = 'lpx-psb15-status';
@@ -408,10 +592,15 @@
 
             button('ADMIN', () => {
                 void setAdmin();
-            }, 'admin')
+            }, 'admin'),
+
+            button('Mostrar PowerShell', () => {
+                void showPowerShell();
+            })
         );
 
-        panel.append(title, status, actions);
+        panel.append(header, status, actions);
+        applyPanelCollapsedState();
     }
 
     function configureToken() {
@@ -461,6 +650,76 @@
             }
 
             throw error;
+        }
+    }
+
+
+    async function rememberConversation() {
+        if (!token()) {
+            return;
+        }
+
+        try {
+            await request({
+                method: 'POST',
+                url: BRIDGE_URL + '/remember-conversation',
+                headers: authHeaders(),
+                data: JSON.stringify({ url: location.href }),
+                timeout: 5000
+            });
+        } catch {
+            // Best effort.
+        }
+    }
+
+    async function showPowerShell() {
+        try {
+            const response = await request({
+                method: 'POST',
+                url: BRIDGE_URL + '/show-console',
+                headers: authHeaders(),
+                data: '{}',
+                timeout: 8000
+            });
+
+            const data = parseJson(response);
+
+            if (!data.ok) {
+                throw new Error(data.error || ('HTTP ' + response.status));
+            }
+
+            setStatus('Janela PowerShell aberta. Os comandos e resultados locais serão mostrados em tempo real.');
+        } catch (error) {
+            setStatus('Não foi possível abrir o PowerShell: ' + error.message);
+        }
+    }
+
+    async function shutdownBridge() {
+        if (!window.confirm('Fechar o painel e desligar completamente a PowerShell Bridge?')) {
+            return;
+        }
+
+        try {
+            setEnabled(false);
+
+            const response = await request({
+                method: 'POST',
+                url: BRIDGE_URL + '/shutdown',
+                headers: authHeaders(),
+                data: '{}',
+                timeout: 8000
+            });
+
+            const data = parseJson(response);
+
+            if (!data.ok) {
+                throw new Error(data.error || ('HTTP ' + response.status));
+            }
+
+            setStatus('Bridge desligada.');
+            window.setTimeout(() => panel.remove(), 350);
+        } catch (error) {
+            setStatus('Falha ao desligar a bridge: ' + error.message);
         }
     }
 
@@ -748,6 +1007,127 @@
         return null;
     }
 
+
+    function findAttachmentControl(assistant, fileName) {
+        const wanted = String(fileName || '').trim().toLowerCase();
+        const root = turnContainer(assistant);
+
+        if (!wanted || !root) {
+            return null;
+        }
+
+        const nodes = [...root.querySelectorAll('*')].filter(node => {
+            if (node.closest('pre, code')) {
+                return false;
+            }
+
+            const text = String(node.textContent || '').trim().toLowerCase();
+            return text && text.includes(wanted);
+        });
+
+        for (const node of nodes) {
+            let current = node;
+
+            for (let depth = 0; current && depth < 6; depth++, current = current.parentElement) {
+                const controls = [
+                    ...(current.matches?.('button, a[href], [role="button"]') ? [current] : []),
+                    ...current.querySelectorAll('button, a[href], [role="button"]')
+                ];
+
+                const preferred = controls.find(control => {
+                    const label = [
+                        control.textContent || '',
+                        control.getAttribute('aria-label') || '',
+                        control.getAttribute('title') || '',
+                        control.getAttribute('download') || ''
+                    ].join(' ').toLowerCase();
+
+                    return /download|descarregar|transferir|ficheiro|arquivo/.test(label);
+                });
+
+                if (preferred) {
+                    return preferred;
+                }
+
+                if (controls.length === 1) {
+                    return controls[0];
+                }
+            }
+        }
+
+        return null;
+    }
+
+    function triggerAttachmentDownload(assistant, fileName) {
+        const control = findAttachmentControl(assistant, fileName);
+
+        if (!control) {
+            return false;
+        }
+
+        control.scrollIntoView({ block: 'center', inline: 'nearest' });
+
+        try {
+            control.dispatchEvent(new MouseEvent('mousedown', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            }));
+
+            control.dispatchEvent(new MouseEvent('mouseup', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            }));
+
+            control.click();
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
+    async function queueDownloadedFileJob(assistant, manifest, fileName, jobId, protocol) {
+        setStatus('A acionar o download local de ' + fileName + '…');
+
+        if (!triggerAttachmentDownload(assistant, fileName)) {
+            throw new Error(
+                'O cartão do anexo foi encontrado, mas não foi possível acionar o download automaticamente.'
+            );
+        }
+
+        const response = await request({
+            method: 'POST',
+            url: BRIDGE_URL + '/run-file',
+            headers: authHeaders(),
+            data: JSON.stringify({
+                file: fileName,
+                downloadStartedAt: Date.now() - 5000,
+                sourceProtocol: protocol,
+                jobId,
+                commandKey: jobId,
+                signature: jobId,
+                purpose: String(manifest.purpose || ''),
+                clientId: TAB_ID,
+                tabId: TAB_ID,
+                conversationId: conversationId(),
+                clientVersion: VERSION
+            }),
+            timeout: 125000
+        });
+
+        const data = parseJson(response);
+
+        if (![200, 202].includes(Number(response.status)) || !data.jobId) {
+            throw new Error(data.error || ('A bridge rejeitou o ficheiro: HTTP ' + response.status + '.'));
+        }
+
+        activeJobId = String(data.jobId);
+        activeManifest = manifest;
+        setStatus('Job ' + activeJobId + ' em execução a partir do ficheiro descarregado localmente.');
+        await monitorActiveJob();
+    }
+
     async function downloadAttachment(anchor) {
         const href = anchor?.href || anchor?.getAttribute('href');
 
@@ -862,8 +1242,31 @@
         try {
             let command = '';
 
-            if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
-                setStatus(`A descarregar o ficheiro ${fileName || fileUrl}…`);
+            if (protocol === 'PSB_JOB_FILE_V1' && !fileUrl) {
+                const anchor = findAttachmentLink(assistant, fileName);
+
+                if (anchor) {
+                    try {
+                        setStatus('A descarregar diretamente o ficheiro ' + fileName + '…');
+                        command = await downloadAttachment(anchor);
+                    } catch {
+                        command = '';
+                    }
+                }
+
+                if (!command) {
+                    await queueDownloadedFileJob(
+                        assistant,
+                        manifest,
+                        fileName,
+                        jobId,
+                        protocol
+                    );
+                    return;
+                }
+            }
+            else if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
+                setStatus('A descarregar o ficheiro ' + (fileName || fileUrl) + '…');
                 command = await downloadAttachment({ href: fileUrl });
             }
             else if (protocol === 'PSB_JOB_V3') {
@@ -879,20 +1282,7 @@
                 command = inlineCommand;
             }
             else {
-                setStatus(`A obter o anexo ${fileName}…`);
-
-                const anchor = findAttachmentLink(
-                    assistant,
-                    fileName
-                );
-
-                if (!anchor) {
-                    throw new Error(
-                        `Não foi encontrado o link do anexo ${fileName}. Confirma que o link de download está na mesma resposta do manifesto.`
-                    );
-                }
-
-                command = await downloadAttachment(anchor);
+                throw new Error('Não foi encontrada uma fonte de comando utilizável.');
             }
 
             command = normalizePowerShellCommand(command);
@@ -1188,6 +1578,7 @@
     window.addEventListener('focus', () => {
         installObserver();
         scheduleCandidate(candidateAssistant || document.body);
+        void rememberConversation();
     }, true);
 
     window.addEventListener('popstate', () => {
@@ -1203,8 +1594,21 @@
         }
     });
 
+    const autoRequested = new URLSearchParams(location.search).get('lpxBridge') === '1';
+
+    if (autoRequested && token()) {
+        baselineCurrentAssistant();
+        setEnabled(true);
+
+        const cleanUrl = new URL(location.href);
+        cleanUrl.searchParams.delete('lpxBridge');
+        history.replaceState(history.state, '', cleanUrl.href);
+    }
+
+    installPanelInteractions();
     render();
     installObserver();
+    void rememberConversation();
 
     void healthCheck(true)
         .then(data => {
