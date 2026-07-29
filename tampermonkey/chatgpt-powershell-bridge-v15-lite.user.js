@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.0
+// @version      2026.07.29.15.3.1
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.0';
+    const VERSION = '15.3.1';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -1008,95 +1008,319 @@
     }
 
 
-    function findAttachmentControl(assistant, fileName) {
-        const wanted = String(fileName || '').trim().toLowerCase();
-        const root = turnContainer(assistant);
-
-        if (!wanted || !root) {
-            return null;
+    function attachmentControlLabel(node) {
+        if (!(node instanceof Element)) {
+            return '';
         }
 
-        const nodes = [...root.querySelectorAll('*')].filter(node => {
-            if (node.closest('pre, code')) {
-                return false;
-            }
-
-            const text = String(node.textContent || '').trim().toLowerCase();
-            return text && text.includes(wanted);
-        });
-
-        for (const node of nodes) {
-            let current = node;
-
-            for (let depth = 0; current && depth < 6; depth++, current = current.parentElement) {
-                const controls = [
-                    ...(current.matches?.('button, a[href], [role="button"]') ? [current] : []),
-                    ...current.querySelectorAll('button, a[href], [role="button"]')
-                ];
-
-                const preferred = controls.find(control => {
-                    const label = [
-                        control.textContent || '',
-                        control.getAttribute('aria-label') || '',
-                        control.getAttribute('title') || '',
-                        control.getAttribute('download') || ''
-                    ].join(' ').toLowerCase();
-
-                    return /download|descarregar|transferir|ficheiro|arquivo/.test(label);
-                });
-
-                if (preferred) {
-                    return preferred;
-                }
-
-                if (controls.length === 1) {
-                    return controls[0];
-                }
-            }
-        }
-
-        return null;
+        return [
+            node.textContent || '',
+            node.getAttribute('aria-label') || '',
+            node.getAttribute('title') || '',
+            node.getAttribute('download') || '',
+            node.getAttribute('data-testid') || '',
+            node.getAttribute('href') || ''
+        ].join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
     }
 
-    function triggerAttachmentDownload(assistant, fileName) {
-        const control = findAttachmentControl(assistant, fileName);
+    function findAttachmentControls(assistant, fileName) {
+        const wanted = String(fileName || '').trim().toLowerCase();
+        const roots = [
+            turnContainer(assistant),
+            assistant,
+            document
+        ].filter(Boolean);
 
-        if (!control) {
-            return false;
+        const selector = [
+            'button',
+            'a[href]',
+            '[role="button"]',
+            '[tabindex]',
+            '[data-testid*="download"]',
+            '[data-testid*="attachment"]',
+            '[data-testid*="file"]'
+        ].join(', ');
+
+        const found = [];
+        const seen = new Set();
+
+        function add(node, priority = 0) {
+            if (!(node instanceof HTMLElement) || seen.has(node)) {
+                return;
+            }
+
+            seen.add(node);
+
+            const label = attachmentControlLabel(node);
+            let score = priority;
+
+            if (wanted && label.includes(wanted)) {
+                score += 200;
+            }
+
+            if (node.matches('button, a[href], [role="button"]')) {
+                score += 80;
+            }
+
+            if (/download|descarregar|transferir|attachment|anexo|file|ficheiro/.test(label)) {
+                score += 50;
+            }
+
+            if (node.hasAttribute('data-testid')) {
+                score += 20;
+            }
+
+            found.push({
+                node,
+                score
+            });
         }
 
-        control.scrollIntoView({ block: 'center', inline: 'nearest' });
+        for (const root of roots) {
+            const textNodes = [...root.querySelectorAll('*')].filter(node => {
+                if (node.closest('pre, code')) {
+                    return false;
+                }
+
+                const text = String(node.textContent || '')
+                    .replace(/\s+/g, ' ')
+                    .trim()
+                    .toLowerCase();
+
+                return wanted && text.includes(wanted);
+            });
+
+            for (const textNode of textNodes) {
+                add(textNode, 120);
+
+                let current = textNode;
+
+                for (
+                    let depth = 0;
+                    current && depth < 9;
+                    depth++, current = current.parentElement
+                ) {
+                    add(current, 110 - depth * 7);
+
+                    for (const control of current.querySelectorAll(selector)) {
+                        add(control, 100 - depth * 5);
+                    }
+                }
+            }
+        }
+
+        for (const control of document.querySelectorAll(selector)) {
+            const label = attachmentControlLabel(control);
+
+            if (
+                (wanted && label.includes(wanted)) ||
+                /download|descarregar|transferir/.test(label)
+            ) {
+                add(control, 30);
+            }
+        }
+
+        return found
+            .sort((left, right) => right.score - left.score)
+            .map(entry => entry.node)
+            .slice(0, 16);
+    }
+
+    function invokeReactAttachmentClick(control) {
+        let current = control;
+
+        for (
+            let depth = 0;
+            current && depth < 9;
+            depth++, current = current.parentElement
+        ) {
+            for (const key of Object.keys(current)) {
+                if (!key.startsWith('__reactProps$')) {
+                    continue;
+                }
+
+                const props = current[key];
+
+                if (!props || typeof props.onClick !== 'function') {
+                    continue;
+                }
+
+                try {
+                    const nativeEvent = new MouseEvent('click', {
+                        bubbles: true,
+                        cancelable: true,
+                        composed: true,
+                        view: window
+                    });
+
+                    props.onClick({
+                        type: 'click',
+                        target: current,
+                        currentTarget: current,
+                        nativeEvent,
+                        button: 0,
+                        buttons: 0,
+                        detail: 1,
+                        defaultPrevented: false,
+                        preventDefault() {},
+                        stopPropagation() {},
+                        persist() {}
+                    });
+
+                    return true;
+                } catch {
+                    // Continua a tentar os restantes elementos.
+                }
+            }
+        }
+
+        return false;
+    }
+
+    function fireAttachmentControl(control) {
+        if (!(control instanceof HTMLElement)) {
+            return false;
+        }
 
         try {
-            control.dispatchEvent(new MouseEvent('mousedown', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            }));
-
-            control.dispatchEvent(new MouseEvent('mouseup', {
-                bubbles: true,
-                cancelable: true,
-                view: window
-            }));
-
-            control.click();
-            return true;
+            control.scrollIntoView({
+                block: 'center',
+                inline: 'nearest'
+            });
         } catch {
-            return false;
+            // Best effort.
         }
+
+        try {
+            control.focus({
+                preventScroll: true
+            });
+        } catch {
+            // O elemento pode não aceitar foco.
+        }
+
+        const rectangle = control.getBoundingClientRect();
+        const clientX = rectangle.left + Math.max(1, rectangle.width / 2);
+        const clientY = rectangle.top + Math.max(1, rectangle.height / 2);
+
+        const down = {
+            bubbles: true,
+            cancelable: true,
+            composed: true,
+            view: window,
+            clientX,
+            clientY,
+            button: 0,
+            buttons: 1
+        };
+
+        const up = {
+            ...down,
+            buttons: 0
+        };
+
+        let attempted = false;
+
+        try {
+            if (globalThis.PointerEvent) {
+                control.dispatchEvent(
+                    new PointerEvent('pointerdown', down)
+                );
+
+                control.dispatchEvent(
+                    new PointerEvent('pointerup', up)
+                );
+            }
+
+            control.dispatchEvent(
+                new MouseEvent('mousedown', down)
+            );
+
+            control.dispatchEvent(
+                new MouseEvent('mouseup', up)
+            );
+
+            control.dispatchEvent(
+                new MouseEvent('click', {
+                    ...up,
+                    detail: 1
+                })
+            );
+
+            attempted = true;
+        } catch {
+            // Tenta os métodos seguintes.
+        }
+
+        try {
+            HTMLElement.prototype.click.call(control);
+            attempted = true;
+        } catch {
+            // Alguns elementos não expõem click nativo.
+        }
+
+        try {
+            control.dispatchEvent(
+                new KeyboardEvent('keydown', {
+                    key: 'Enter',
+                    code: 'Enter',
+                    bubbles: true,
+                    cancelable: true,
+                    composed: true
+                })
+            );
+
+            control.dispatchEvent(
+                new KeyboardEvent('keyup', {
+                    key: 'Enter',
+                    code: 'Enter',
+                    bubbles: true,
+                    cancelable: true,
+                    composed: true
+                })
+            );
+
+            attempted = true;
+        } catch {
+            // Best effort.
+        }
+
+        return invokeReactAttachmentClick(control) || attempted;
     }
 
-    async function queueDownloadedFileJob(assistant, manifest, fileName, jobId, protocol) {
-        setStatus('A acionar o download local de ' + fileName + '…');
+    async function queueDownloadedFileJob(
+        assistant,
+        manifest,
+        fileName,
+        jobId,
+        protocol
+    ) {
+        const controls = findAttachmentControls(
+            assistant,
+            fileName
+        );
 
-        if (!triggerAttachmentDownload(assistant, fileName)) {
+        if (!controls.length) {
             throw new Error(
-                'O cartão do anexo foi encontrado, mas não foi possível acionar o download automaticamente.'
+                'Não foi encontrado nenhum elemento acionável no cartão do anexo ' +
+                fileName +
+                '.'
             );
         }
 
-        const response = await request({
+        setStatus(
+            'Watcher local preparado. A tentar ' +
+            controls.length +
+            ' elementos do cartão de ' +
+            fileName +
+            '…'
+        );
+
+        let requestFinished = false;
+        let requestResult = null;
+        let requestError = null;
+
+        const requestPromise = request({
             method: 'POST',
             url: BRIDGE_URL + '/run-file',
             headers: authHeaders(),
@@ -1114,17 +1338,84 @@
                 clientVersion: VERSION
             }),
             timeout: 125000
+        }).then(response => {
+            requestFinished = true;
+            requestResult = response;
+            return response;
+        }, error => {
+            requestFinished = true;
+            requestError = error;
+            return null;
         });
 
+        let attempts = 0;
+
+        for (const control of controls) {
+            attempts++;
+
+            setStatus(
+                'A acionar o cartão do anexo · tentativa ' +
+                attempts +
+                '/' +
+                controls.length +
+                '…'
+            );
+
+            fireAttachmentControl(control);
+
+            for (let waitIndex = 0; waitIndex < 6; waitIndex++) {
+                if (requestFinished) {
+                    break;
+                }
+
+                await wait(175);
+            }
+
+            if (requestFinished) {
+                break;
+            }
+        }
+
+        if (!requestFinished) {
+            setStatus(
+                'Foram acionados ' +
+                attempts +
+                ' elementos. A aguardar que o Chrome termine o download…'
+            );
+        }
+
+        await requestPromise;
+
+        if (requestError) {
+            throw requestError;
+        }
+
+        const response = requestResult;
         const data = parseJson(response);
 
-        if (![200, 202].includes(Number(response.status)) || !data.jobId) {
-            throw new Error(data.error || ('A bridge rejeitou o ficheiro: HTTP ' + response.status + '.'));
+        if (
+            ![200, 202].includes(Number(response.status)) ||
+            !data.jobId
+        ) {
+            throw new Error(
+                data.error ||
+                (
+                    'A bridge rejeitou o ficheiro: HTTP ' +
+                    response.status +
+                    '.'
+                )
+            );
         }
 
         activeJobId = String(data.jobId);
         activeManifest = manifest;
-        setStatus('Job ' + activeJobId + ' em execução a partir do ficheiro descarregado localmente.');
+
+        setStatus(
+            'Job ' +
+            activeJobId +
+            ' em execução a partir do ficheiro descarregado localmente.'
+        );
+
         await monitorActiveJob();
     }
 
