@@ -1,0 +1,121 @@
+
+============================================================
+ INSTALAR FLUXO ROBUSTO DE PARTILHA WHATSAPP
+============================================================
+Ser� aberto o grupo Timi ptm.
+Ser� colada uma imagem t�cnica com a legenda 000000.
+O bot�o correto ser� validado, mas n�o ser� clicado.
+O preview ser� descartado e o grupo reaberto.
+Nenhuma mensagem ser� enviada.
+
+--- BACKUP DE SEGURAN�A ---
+Backup: %USERPROFILE%\Documents\Scrips\_COFRE_ARQUIVO_HISTORICO\WHATSAPP_PARTILHA_PRE_FLUXO_ROBUSTO_20260729_161010.py
+SHA256 original: FBA1B4844B40299E99E37394F7097D2CFBAEF035C834B867E386F052A94EA73C
+
+--- APLICAR PATCH CIR�RGICO ---
+PATCH_APLICADO: SUCESSO
+PREVIEW_ONLY_INSTALADO: True
+CANVAS_INSTALADO: True
+LEGENDA_INSTALADA: True
+BOTAO_INSTALADO: True
+CAPTION_TEXT_BOX_ANTIGO_REMOVIDO: True
+PREVIEW_ANTIGO_REMOVIDO: True
+CONTENTEDITABLE_GENERICO_REMOVIDO: True
+ENVIO_POR_ENTER_REMOVIDO: True
+
+--- COMPILA��O AP�S PATCH ---
+COMPILA��O: SUCESSO
+
+--- VERIFICAR ALTERA��ES INSTALADAS ---
+preview_only: True
+media-editor-canvas: True
+media-caption-input-container: True
+Enviar selecionado: True
+Fechar preview: True
+Descartar preview: True
+Confirma��o por data-id: True
+Sem caption-text-box antigo: True
+Sem media-editor-image-preview antigo: True
+Sem contenteditable gen�rico: True
+
+--- EXECUTAR TESTE SEGURO ---
+
+============================================================
+ FASE 1 — ESTADO PERSISTENTE ANTES DO PREVIEW
+============================================================
+[16:10:30] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:10:32] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+[16:10:34] [WhatsApp Session] A abrir o Google Chrome real com depuração CDP.
+[16:10:35] [WhatsApp Session] A aguardar o Chrome e o endpoint CDP; 2 processo(s) ativo(s).
+[16:10:37] [WhatsApp Session] A aguardar o Chrome e o endpoint CDP; 7 processo(s) ativo(s).
+[16:10:37] [WhatsApp Session] Endpoint CDP disponível: http://127.0.0.1:50891.
+[16:10:38] [WhatsApp Share] Sincronização ativa: 0
+[16:10:43] [WhatsApp Share] Sincronização ativa: 100
+[16:10:44] [WhatsApp Share] Lista lateral visível: 140 conversa(s).
+[16:10:44] [WhatsApp Share] Conversas visíveis; a confirmar estabilidad durante 8 segundos.
+[16:10:52] [WhatsApp Share] WhatsApp totalmente carregado e estável.
+ESTADO_WHATSAPP_VERIFICAÇÃO: LOADED
+[16:10:53] [WhatsApp Share] Grupo confirmado no cabeçalho: 'Timi ptm' (1 mensagem(ns) renderizada(s)).
+[16:10:54] [WhatsApp Session] Processos Chrome ligados ao perfil: 8.
+[16:10:56] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:10:58] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+ANTES: {"group": "Timi ptm", "signature": {"count": 1, "lastText": "163 kB\nTESTE TÉCNICO — NÃO ENVIAR171576\n11:33", "lastDataId": "3EB05ACDD1075C808E1427"}, "composeText": ""}
+
+============================================================
+ FASE 2 — PREVIEW COMPLETO SEM ENVIO
+============================================================
+[16:11:01] [WhatsApp Share] A iniciar WhatsApp para partilhar no grupo: TIMI PTM
+[16:11:02] [WhatsApp Share] A iniciar sessao persistente comum (backup_restored=False)...
+[16:11:02] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:11:04] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+[16:11:06] [WhatsApp Session] A abrir o Google Chrome real com depuração CDP.
+[16:11:07] [WhatsApp Session] A aguardar o Chrome e o endpoint CDP; 7 processo(s) ativo(s).
+[16:11:07] [WhatsApp Session] Endpoint CDP disponível: http://127.0.0.1:61288.
+[16:11:08] [WhatsApp Share] WhatsApp Web aberto com o perfil WHATSAPP_SESSION\active.
+[16:11:09] [WhatsApp Share] A monitorizar estado do WhatsApp Web...
+[16:11:09] [WhatsApp Share] Sincronização ativa: 0
+[16:11:13] [WhatsApp Share] Sincronização ativa: 100
+[16:11:14] [WhatsApp Share] Lista lateral visível: 140 conversa(s).
+[16:11:14] [WhatsApp Share] Conversas visíveis; a confirmar estabilidad durante 8 segundos.
+[16:11:22] [WhatsApp Share] WhatsApp totalmente carregado e estável.
+[16:11:22] [WhatsApp Share] WhatsApp pronto. A prosseguir com a partilha...
+[16:11:22] [WhatsApp Share] A localizar o grupo 'TIMI PTM' através da lista/pesquisa do WhatsApp...
+[16:11:23] [WhatsApp Share] Grupo confirmado no cabeçalho: 'Timi ptm' (1 mensagem(ns) renderizada(s)).
+[16:11:23] [WhatsApp Share] Estado anterior da conversa: {'count': 1, 'lastText': 'TESTE TÉCNICO — NÃO ENVIAR171576\n11:33', 'lastDataId': '3EB05ACDD1075C808E1427'}
+[16:11:23] [WhatsApp Share] A copiar imagem para o clipboard: TESTE_TIMI_NAO_ENVIAR.png
+[16:11:23] [WhatsApp Share] ✅ Imagem copiada para o clipboard: TESTE_TIMI_NAO_ENVIAR.png
+[16:11:23] [WhatsApp Share] A colar imagem no WhatsApp (Control+V)...
+[16:11:24] [WhatsApp Share] Preview multimédia confirmado através de media-editor-canvas.
+[16:11:24] [WhatsApp Share] Legenda confirmada no preview: '000000'
+[16:11:24] [WhatsApp Share] Botão de envio multimédia confirmado: 'Enviar 1 selecionado'
+[16:11:24] [WhatsApp Share] MODO PREVIEW: o botão de envio não será clicado.
+[16:11:25] [WhatsApp Share] ❌ Erro na partilha WhatsApp: A caixa de composição não regressou ao estado anterior ao teste.
+[16:11:25] [WhatsApp Session] Processos Chrome ligados ao perfil: 9.
+[16:11:28] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:11:30] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+Traceback (most recent call last):
+  File "S:\tmp\timi_test_partilha_preview.py", line 352, in <module>
+    main()
+    ~~~~^^
+  File "S:\tmp\timi_test_partilha_preview.py", line 234, in main
+    raise RuntimeError(
+        "O fluxo preview_only devolveu False."
+    )
+RuntimeError: O fluxo preview_only devolveu False.
+PREVIEW_RESULTADO: False
+RESULTADO_TESTE: FALHA
+
+============================================================
+ RESULTADO FINAL: FALHA
+============================================================
+O teste seguro terminou com o c�digo 20.
+
+A restaurar o script anterior...
+SCRIPT ANTERIOR RESTAURADO E COMPILADO.
+O teste seguro terminou com o c�digo 20.
+At S:\tmp\powershell-bridge-command-1785337810464-06ae493ef4330545.ps1:1442 char:9
++         throw "O teste seguro terminou com o c�digo $LASTEXITCODE."
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (O teste seguro terminou com o c�digo 20.:String) [], RuntimeException
+    + FullyQualifiedErrorId : O teste seguro terminou com o c�digo 20.
+ 

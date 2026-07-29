@@ -1,0 +1,13 @@
+PATCH079_STARTED
+Cloning into 'S:\tmp\lpx-unified-resolver-v1540-079'...
+PATCHER_JAVASCRIPT_CHECK_OK
+PATCH_V1540_APPLIED
+FULL_JAVASCRIPT_CHECK_OK
+warning: in the working copy of 'tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js', LF will be replaced by CRLF the next time Git touches it
+[main 3e558fc] feat: consolidate attachment resolution across DOM React and page context
+ 1 file changed, 580 insertions(+), 72 deletions(-)
+To https://github.com/ApexScorpio/lpx-powershell-runtime.git
+   e09608e..3e558fc  main -> main
+COMMIT: 3e558fc526ba753e691befa8e7f6a408a3303309
+USERSCRIPT_VERSION: 15.4.0
+UNIFIED_ATTACHMENT_RESOLVER_PUBLISHED

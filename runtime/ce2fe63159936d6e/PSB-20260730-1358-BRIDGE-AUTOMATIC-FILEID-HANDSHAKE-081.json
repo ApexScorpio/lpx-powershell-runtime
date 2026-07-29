@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-1358-BRIDGE-AUTOMATIC-FILEID-HANDSHAKE-081",
+  "conversationKey": "ce2fe63159936d6e",
+  "purpose": "Implementar o fluxo automático de duas respostas com fileId real",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-30T13:05:35.520Z",
+  "endedAt": "2026-07-30T13:05:42.086Z",
+  "elapsedMs": 6566,
+  "outputLength": 710,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "e14ab35692bd9678ec31b958d9836c47c0c6229920a1af68808db61c3692bb49",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce2fe63159936d6e/PSB-20260730-1358-BRIDGE-AUTOMATIC-FILEID-HANDSHAKE-081.txt",
+  "createdAt": "2026-07-30T13:05:42.087Z"
+}

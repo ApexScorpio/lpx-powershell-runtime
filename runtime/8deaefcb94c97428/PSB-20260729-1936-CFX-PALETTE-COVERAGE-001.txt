@@ -1,0 +1,44 @@
+============================================================
+ TITAN - COBERTURA REAL DAS PALETAS CFX
+ Nenhuma paleta, macro, grupo ou ficheiro ser� alterado.
+============================================================
+Titan=19.2
+Show="Tiago F Sardinha 2026"
+Blind original=False
+
+[1/4] Medir os grupos 10000 e 20000
+Grupo 10000 / All Blinders=12
+Grupo 20000 / ALL Rig=108
+
+[2/4] Abrir cada paleta em modo Edit e ler os fixtures associados
+Paleta=1 | Existe=True | Legend="Open" | TitanId=2902 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=2 | Existe=True | Legend="Red" | TitanId=2905 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=3 | Existe=True | Legend="" | TitanId=2908 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=4 | Existe=True | Legend="Yellow" | TitanId=2911 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=5 | Existe=True | Legend="" | TitanId=2914 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=6 | Existe=True | Legend="Green" | TitanId=2917 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=7 | Existe=True | Legend="" | TitanId=2923 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=8 | Existe=False | Legend="" | TitanId= | EditHTTP= | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=9 | Existe=False | Legend="" | TitanId= | EditHTTP= | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=10 | Existe=False | Legend="" | TitanId= | EditHTTP= | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=11 | Existe=False | Legend="" | TitanId= | EditHTTP= | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=12 | Existe=True | Legend="HIGH 2 Red" | TitanId=74220 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=901 | Existe=True | Legend="High" | TitanId=83430 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+Paleta=902 | Existe=True | Legend="Low" | TitanId=83432 | EditHTTP=200 | Fixtures=0 | Exatamente10000=False | Exatamente20000=False | Comuns10000=0/12 | Comuns20000=0/108
+
+[3/4] Simular os primeiros passos da macro CFX.High.White
+Depois de RecallGroupNumeric(20000): selecionados=108
+Palette.ApplyPalette(1): HTTP=200 | Sucesso=True
+Depois de ApplyPalette(1): selecionados=108 | Continua exatamente grupo 20000=True
+
+[4/4] Resumo do diagn�stico
+============================================================
+ RESULTADO FINAL
+ Paletas fonte 1-12 que cont�m exatamente All Blinders=0/12
+ Paletas fonte 1-12 que cont�m exatamente ALL Rig=0/12
+ Paleta 901 fixtures=0
+ Paleta 902 fixtures=0
+ Recall 20000 selecionou=108/108
+ Aplicar paleta 1 manteve sele��o ALL Rig=True
+ Nenhuma paleta ou macro foi gravada ou modificada.
+============================================================

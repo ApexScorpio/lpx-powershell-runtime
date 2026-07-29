@@ -1,0 +1,7 @@
+At S:\tmp\powershell-bridge-command-PSB-20260730-1150-BRIDGE-UNIFIED-RESOLVER-V1540-078.ps1:22 char:16
++ $PatchSource = @'
++                ~~
+The string is missing the terminator: '@.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+ 

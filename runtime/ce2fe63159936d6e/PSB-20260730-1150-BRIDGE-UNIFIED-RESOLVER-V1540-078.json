@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-1150-BRIDGE-UNIFIED-RESOLVER-V1540-078",
+  "conversationKey": "ce2fe63159936d6e",
+  "purpose": "Criar um resolvedor consolidado de anexos com API, DOM, React Fiber e contexto da página",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-30T10:51:23.499Z",
+  "endedAt": "2026-07-30T10:51:24.603Z",
+  "elapsedMs": 1104,
+  "outputLength": 342,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "4986eac772dae76ab0c04eec34e45875d7a60881612bb4ee85fa192875fa8364",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce2fe63159936d6e/PSB-20260730-1150-BRIDGE-UNIFIED-RESOLVER-V1540-078.txt",
+  "createdAt": "2026-07-30T10:51:24.616Z"
+}

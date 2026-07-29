@@ -1,0 +1,21 @@
+============================================================
+ TITAN - TESTE DIRETO DOS GRUPOS 10000 E 20000
+ Nenhuma macro ou ficheiro ser� alterado.
+============================================================
+Titan=19.2
+Show="Tiago F Sardinha 2026"
+
+[1/6] Guardar a sele��o atual
+Fixtures originalmente selecionados=0
+
+[2/6] Localizar os handles dos grupos e fixtures
+Handles totais=1 | Fixtures mapeados=0 | Handles de grupo 10000/20000=0
+
+[3/6] Chamar diretamente o grupo 10000
+Selection.Context.Clear falhou. HTTP=500
+At S:\tmp\powershell-bridge-command-PSB-20260729-1912-CFX-TEST-GROUPS-001.ps1:169 char:9
++         throw (
++         ~~~~~~~
+    + CategoryInfo          : OperationStopped: (Selection.Context.Clear falhou. HTTP=500:String) [], RuntimeException
+    + FullyQualifiedErrorId : Selection.Context.Clear falhou. HTTP=500
+ 

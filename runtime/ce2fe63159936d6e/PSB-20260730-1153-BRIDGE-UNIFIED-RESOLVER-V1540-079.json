@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-1153-BRIDGE-UNIFIED-RESOLVER-V1540-079",
+  "conversationKey": "ce2fe63159936d6e",
+  "purpose": "Recuperar a publicação consolidada v15.4.0 sem here-string truncada",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-30T11:01:02.532Z",
+  "endedAt": "2026-07-30T11:01:09.761Z",
+  "elapsedMs": 7229,
+  "outputLength": 650,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "5b9218d375e275af737560741a347549bfcb9479379c8cde87b5c1fcb99e91b1",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce2fe63159936d6e/PSB-20260730-1153-BRIDGE-UNIFIED-RESOLVER-V1540-079.txt",
+  "createdAt": "2026-07-30T11:01:09.764Z"
+}

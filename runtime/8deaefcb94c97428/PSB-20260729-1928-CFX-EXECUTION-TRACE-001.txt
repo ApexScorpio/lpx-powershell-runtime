@@ -1,0 +1,54 @@
+============================================================
+ TITAN - RASTREIO FUNCIONAL DE UMA MACRO CFX
+ Nenhuma macro, grupo ou ficheiro ser� alterado.
+============================================================
+Titan=19.2
+Show="Tiago F Sardinha 2026"
+
+[1/6] Medir exatamente os dois grupos
+Grupo 10000 / All Blinders=12 fixtures
+Grupo 20000 / ALL Rig=108 fixtures
+Fixtures comuns=12
+Grupos exatamente iguais=False
+Grupo 10000 est� totalmente dentro do grupo 20000=True
+
+[2/6] Localizar o user number da macro CFX real
+Macro=UserMacro.Macro42 | Fun��o=CFX.High.White | UserNumber=42
+
+[3/6] Mostrar a sequ�ncia realmente guardada nessa macro
+  Passo 1 | pausa=0.2 | ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)
+  Passo 2 | pausa=0.2 | Programmer.SetBlindMode(false, 0)
+  Passo 3 | pausa=0.2 | Group.RecallGroupNumeric(20000)
+  Passo 4 | pausa=0.2 | Palette.ApplyPalette("paletteHandleUN=1", false)
+  Passo 5 | pausa=0.2 | ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")
+  Passo 6 | pausa=0.2 | Palette.MergeCurrentPalette()
+  Passo 7 | pausa=0.2 | Programmer.Editor.ClearAll(false, false)
+  Passo 8 | pausa=0.2 | ActionScript.SetProperty.Boolean("Programmer.BlindActive", false)
+  Passo 9 | pausa=0.2 | Programmer.SetBlindMode(false, 0)
+Sequ�ncia: chamadas a 10000=0 | chamadas a 20000=1
+
+[4/6] Limpar sele��o e executar a macro pela API oficial
+StartMacro: HTTP=200 | Sucesso=True
+
+[5/6] Observar a sele��o durante 3 segundos
+  t=14 ms | selecionados=0 | estado=VAZIA | comuns10000=0/12 | comuns20000=0/108
+
+[6/6] Limpar apenas a sele��o criada pelo teste
+
+============================================================
+ RESULTADO FINAL
+ Grupo 10000 / All Blinders=12 fixtures
+ Grupo 20000 / ALL Rig=108 fixtures
+ Grupo 10000 contido totalmente em 20000=True
+ Macro executada=UserMacro.Macro42 / user number 42
+ Macro XML cont�m chamada a 10000=0
+ Macro XML cont�m chamada a 20000=1
+ Durante a execu��o apareceu exatamente o grupo 10000=False
+ Durante a execu��o apareceu exatamente o grupo 20000=False
+ Durante a execu��o apareceu subconjunto de 10000=False
+ Durante a execu��o apareceu subconjunto de 20000=False
+ M�ximo de fixtures selecionados durante a macro=0
+ Mudan�as de sele��o observadas=1
+ Sele��o deixada vazia no final=True
+ Nenhuma macro, grupo, paleta, show ou ficheiro foi alterado.
+============================================================

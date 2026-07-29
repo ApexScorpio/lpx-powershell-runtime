@@ -1,0 +1,33 @@
+============================================================
+ TITAN - CONFIRMAR EXISTENCIA DOS GRUPOS 10000 E 20000
+ Nenhuma macro, grupo ou ficheiro sera alterado.
+============================================================
+Titan=19.2
+Show="Tiago F Sardinha 2026"
+Selecao inicial=0 fixtures
+
+[1/4] Procurar os grupos nas paginas de handles
+Paginas de grupos acessiveis=51
+  Workspace=Groups | Pagina=0 | UserNumber=10000 | TitanId=4492 | Legend="All Blinders" | Type=groupHandle
+  Workspace=Groups | Pagina=0 | UserNumber=20000 | TitanId=4465 | Legend="ALL Rig" | Type=groupHandle
+
+[2/4] Resolver os handles dos grupos por endpoint
+Grupo 10000 | respostas validas=0
+Grupo 20000 | respostas validas=0
+
+[3/4] Testar RecallGroupNumeric com os parametros possiveis
+
+[4/4] Comparar os resultados dos dois grupos
+
+============================================================
+ RESULTADO FINAL
+ Grupo 10000 localizado=True
+ Grupo 20000 localizado=True
+ Recall 10000 com HTTP sucesso=1
+ Recall 20000 com HTTP sucesso=1
+ Recall 10000 que alterou a selecao=1
+ Recall 20000 que alterou a selecao=1
+ Selecao inicial=0 | Selecao final=108
+ NOTA: o endpoint Selection.Context.Clear foi removido porque devolve HTTP 500 nesta versao.
+ Nenhuma macro, grupo ou ficheiro foi alterado.
+============================================================
