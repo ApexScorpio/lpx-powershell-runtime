@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.13
+// @version      2026.07.29.15.3.14
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.3.13';
+    const VERSION = '15.3.14';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -3108,6 +3108,441 @@
         return '';
     }
 
+
+    function lpxDiagnosticClean(value, limit = 320) {
+        let output = String(value || '')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        output = output
+            .replace(
+                /(Bearer\s+)[A-Za-z0-9._~-]+/gi,
+                '$1[REDACTED]'
+            )
+            .replace(
+                /([?&](?:token|access_token|sig|signature|auth|authorization|key)=)[^&\s]+/gi,
+                '$1[REDACTED]'
+            )
+            .replace(
+                /(https?:\/\/[^?\s]+)\?[^\s]+/gi,
+                '$1?[REDACTED]'
+            );
+
+        return output.slice(0, limit);
+    }
+
+    function lpxCaptureAttachmentReality(
+        assistant,
+        fileName,
+        jobId
+    ) {
+        const turn = turnContainer(assistant);
+
+        const report = {
+            protocol:
+                'PSBRIDGE_ATTACHMENT_DIAGNOSTIC_V2',
+            jobId,
+            fileName,
+            bridgeVersion: VERSION,
+            pathname: location.pathname,
+            capturedAt:
+                new Date().toISOString(),
+            turnFound:
+                turn instanceof Element,
+            matches: [],
+            reactFindings: []
+        };
+
+        if (!(turn instanceof Element)) {
+            return report;
+        }
+
+        report.turn = {
+            tag:
+                String(
+                    turn.tagName || ''
+                ).toLowerCase(),
+            messageId:
+                lpxDiagnosticClean(
+                    turn.getAttribute(
+                        'data-message-id'
+                    ) || ''
+                ),
+            testId:
+                lpxDiagnosticClean(
+                    turn.getAttribute(
+                        'data-testid'
+                    ) || ''
+                ),
+            authorRole:
+                lpxDiagnosticClean(
+                    turn.getAttribute(
+                        'data-message-author-role'
+                    ) || ''
+                )
+        };
+
+        const wantedFile =
+            String(fileName || '')
+                .toLowerCase();
+
+        const wantedJob =
+            String(jobId || '')
+                .toLowerCase();
+
+        const selector = [
+            'a[href]',
+            'button',
+            '[role="button"]',
+            '[role="link"]',
+            '[download]',
+            '[data-testid]',
+            '[data-file-id]',
+            '[data-id]'
+        ].join(', ');
+
+        const all =
+            [...turn.querySelectorAll('*')];
+
+        const matchedNodes = [];
+
+        for (
+            let index = 0;
+            index < all.length;
+            index++
+        ) {
+            const node = all[index];
+
+            const textValue =
+                String(
+                    node.innerText ||
+                    node.textContent ||
+                    ''
+                )
+                    .replace(/\s+/g, ' ')
+                    .trim();
+
+            const href =
+                String(
+                    node.getAttribute &&
+                    node.getAttribute('href') ||
+                    ''
+                );
+
+            const haystack =
+                (
+                    textValue +
+                    ' ' +
+                    href
+                ).toLowerCase();
+
+            const relevant =
+                (
+                    wantedFile &&
+                    haystack.includes(
+                        wantedFile
+                    )
+                ) ||
+                (
+                    wantedJob &&
+                    haystack.includes(
+                        wantedJob
+                    )
+                ) ||
+                node.matches?.(selector);
+
+            if (!relevant) {
+                continue;
+            }
+
+            matchedNodes.push(node);
+
+            if (report.matches.length >= 8) {
+                continue;
+            }
+
+            const attributes = {};
+
+            for (
+                const attributeName of [
+                    'href',
+                    'download',
+                    'role',
+                    'aria-label',
+                    'title',
+                    'data-testid',
+                    'data-file-id',
+                    'data-id',
+                    'data-state'
+                ]
+            ) {
+                if (
+                    node.hasAttribute &&
+                    node.hasAttribute(
+                        attributeName
+                    )
+                ) {
+                    attributes[attributeName] =
+                        lpxDiagnosticClean(
+                            node.getAttribute(
+                                attributeName
+                            )
+                        );
+                }
+            }
+
+            report.matches.push({
+                index,
+                tag:
+                    String(
+                        node.tagName || ''
+                    ).toLowerCase(),
+                text:
+                    lpxDiagnosticClean(
+                        textValue,
+                        260
+                    ),
+                attributes,
+                datasetKeys:
+                    node.dataset
+                        ? Object.keys(
+                            node.dataset
+                        ).slice(0, 20)
+                        : [],
+                ownProperties:
+                    Object.getOwnPropertyNames(
+                        node
+                    )
+                        .filter(
+                            name =>
+                                /^__react/i.test(
+                                    name
+                                )
+                        )
+                        .slice(0, 20),
+                html:
+                    lpxDiagnosticClean(
+                        node.outerHTML || '',
+                        600
+                    )
+            });
+        }
+
+        const seen = new WeakSet();
+        let inspected = 0;
+
+        function inspect(
+            value,
+            path,
+            depth
+        ) {
+            if (
+                depth > 7 ||
+                inspected > 6000 ||
+                report.reactFindings.length >= 30
+            ) {
+                return;
+            }
+
+            inspected++;
+
+            if (
+                typeof value === 'string'
+            ) {
+                const lower =
+                    value.toLowerCase();
+
+                if (
+                    (
+                        wantedFile &&
+                        lower.includes(
+                            wantedFile
+                        )
+                    ) ||
+                    (
+                        wantedJob &&
+                        lower.includes(
+                            wantedJob
+                        )
+                    ) ||
+                    /file-service:\/\/|file[_-][A-Za-z0-9_-]{8,}|\/backend-api\/files\/|oaiusercontent\.com|sandbox:\/mnt\/data\//i
+                        .test(value)
+                ) {
+                    report.reactFindings.push({
+                        path:
+                            lpxDiagnosticClean(
+                                path,
+                                240
+                            ),
+                        value:
+                            lpxDiagnosticClean(
+                                value,
+                                420
+                            )
+                    });
+                }
+
+                return;
+            }
+
+            if (
+                value === null ||
+                value === undefined ||
+                (
+                    typeof value !== 'object' &&
+                    typeof value !== 'function'
+                )
+            ) {
+                return;
+            }
+
+            if (seen.has(value)) {
+                return;
+            }
+
+            seen.add(value);
+
+            let keys = [];
+
+            try {
+                keys =
+                    Object.keys(value)
+                        .slice(0, 140);
+            } catch {
+                return;
+            }
+
+            for (const key of keys) {
+                let child;
+
+                try {
+                    child = value[key];
+                } catch {
+                    continue;
+                }
+
+                inspect(
+                    child,
+                    path + '.' + key,
+                    depth + 1
+                );
+            }
+        }
+
+        const reactNodes = [
+            turn,
+            assistant,
+            ...matchedNodes.slice(0, 30)
+        ].filter(
+            node =>
+                node instanceof Element
+        );
+
+        for (
+            let nodeIndex = 0;
+            nodeIndex < reactNodes.length;
+            nodeIndex++
+        ) {
+            const node =
+                reactNodes[nodeIndex];
+
+            let properties = [];
+
+            try {
+                properties =
+                    Object.getOwnPropertyNames(
+                        node
+                    );
+            } catch {
+                properties = [];
+            }
+
+            for (
+                const propertyName of
+                properties
+            ) {
+                if (
+                    !/^__react/i.test(
+                        propertyName
+                    )
+                ) {
+                    continue;
+                }
+
+                let value;
+
+                try {
+                    value =
+                        node[propertyName];
+                } catch {
+                    continue;
+                }
+
+                inspect(
+                    value,
+                    'node[' +
+                    nodeIndex +
+                    '].' +
+                    propertyName,
+                    0
+                );
+            }
+        }
+
+        report.inspectedElements =
+            all.length;
+
+        report.matchedElements =
+            matchedNodes.length;
+
+        report.inspectedReactValues =
+            inspected;
+
+        return report;
+    }
+
+    async function lpxSendAttachmentReality(
+        assistant,
+        fileName,
+        jobId
+    ) {
+        const diagnostic =
+            lpxCaptureAttachmentReality(
+                assistant,
+                fileName,
+                jobId
+            );
+
+        const sentKey =
+            'lpxPsb15:realAttachmentDiagnostic:' +
+            simpleHash(jobId);
+
+        if (GM_getValue(sentKey, false)) {
+            return;
+        }
+
+        GM_setValue(sentKey, true);
+
+        const message = [
+            'PSBRIDGE_ATTACHMENT_DIAGNOSTIC_V2',
+            'job: ' + jobId,
+            'file: ' + fileName,
+            'data:',
+            JSON.stringify(
+                diagnostic,
+                null,
+                2
+            ),
+            'instruction: analisa estes dados reais do cartão e das propriedades React. Não repitas qualquer tentativa de download antes de corrigires com base nestes dados.'
+        ].join('\n');
+
+        setStatus(
+            'Diagnóstico real capturado. A enviar os dados automaticamente para a conversa…'
+        );
+
+        await sendMessage(message);
+    }
+
     async function resolveAttachmentFromConversationApi(
         fileName,
         jobId,
@@ -3491,6 +3926,19 @@
                 protocol === 'PSB_JOB_FILE_V1' &&
                 !fileUrl
             ) {
+                setStatus(
+                    'Modo diagnóstico: a capturar o cartão real sem tentar descarregar…'
+                );
+
+                await lpxSendAttachmentReality(
+                    assistant,
+                    fileName,
+                    jobId
+                );
+
+                releaseClaim(jobId);
+                return;
+
                 setStatus(
                     'A consultar a API autenticada da conversa para localizar ' +
                     fileName +
