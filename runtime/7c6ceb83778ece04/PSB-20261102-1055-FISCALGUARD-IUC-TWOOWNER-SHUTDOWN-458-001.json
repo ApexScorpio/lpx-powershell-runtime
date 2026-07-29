@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-1055-FISCALGUARD-IUC-TWOOWNER-SHUTDOWN-458-001",
+  "conversationKey": "7c6ceb83778ece04",
+  "purpose": "Continuar diretamente do PSB-457. PROVEN_SHUTDOWN_SESSION_DESTRUCTION=0, mas antes de tocar no owner real PID29996 reproduzir num ambiente totalmente descartavel o comportamento WebView2 de DOIS processos WPF independentes a partilhar o MESMO UDF. Criar harness temporario exclusivamente em D:\\AssistenteFiscal\\Temporarios, usando as DLL WebView2 ja existentes na derivacao holder, sem downloads. Owner A cria WebView e reporta BrowserProcessId; Owner B cria segundo WebView no mesmo UDF e deve repor",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T12:07:31.778Z",
+  "endedAt": "2026-11-02T12:07:40.239Z",
+  "elapsedMs": 8461,
+  "outputLength": 2388,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "aebf37634a9ba4c80bb28f157e629ca172b194b303a7a5a2eee3788a1026b2e6",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c6ceb83778ece04/PSB-20261102-1055-FISCALGUARD-IUC-TWOOWNER-SHUTDOWN-458-001.txt",
+  "createdAt": "2026-11-02T12:07:40.241Z"
+}

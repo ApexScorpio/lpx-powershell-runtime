@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0031-FISCALGUARD-SSH-048",
+  "conversationKey": "8a9ae5c36f33ea43",
+  "purpose": "Diagnosticar SSH e estado Git do Codespace sem modificar ficheiros, sessoes ou dados AT",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T00:45:32.737Z",
+  "endedAt": "2026-10-31T00:45:33.318Z",
+  "elapsedMs": 581,
+  "outputLength": 702,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "03eb11702fd6bd556c3db30a212df53805e34f10b1e03547b6b240874c981a28",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/8a9ae5c36f33ea43/PSB-20261031-0031-FISCALGUARD-SSH-048.txt",
+  "createdAt": "2026-10-31T00:45:33.320Z"
+}

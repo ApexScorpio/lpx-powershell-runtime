@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-0837-MAESTRO-IO-PATHS-453",
+  "conversationKey": "1e1af50da7d9f475",
+  "purpose": "Auditar confirmacao das capturas inicial, scroll e encerramento, sem alterar producao.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-01T09:00:17.085Z",
+  "endedAt": "2026-11-01T09:00:18.191Z",
+  "elapsedMs": 1106,
+  "outputLength": 2446,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "edb9425989c87e3c94ce56432f1238cb5690ffdb7db9ee269f5fa6266de50fc5",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1e1af50da7d9f475/PSB-20261101-0837-MAESTRO-IO-PATHS-453.txt",
+  "createdAt": "2026-11-01T09:00:18.192Z"
+}

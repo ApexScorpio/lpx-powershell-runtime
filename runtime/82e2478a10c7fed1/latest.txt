@@ -1,0 +1,15 @@
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-1630-POKEGUIDE-LIVEREAD-064.ps1:279 char:9
++     try {
++         ~
+Missing closing '}' in statement block or type definition.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-1630-POKEGUIDE-LIVEREAD-064.ps1:280 char:48
++         Log "JOB_ERROR=$($_.Exception.Message)"
++                                                ~
+The Try statement is missing its Catch or Finally block.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-1630-POKEGUIDE-LIVEREAD-064.ps1:277 char:7
++ catch {
++       ~
+Missing closing '}' in statement block or type definition.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndCurlyBrace
+ 

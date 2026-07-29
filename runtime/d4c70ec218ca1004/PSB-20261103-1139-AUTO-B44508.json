@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261103-1139-AUTO-B44508",
+  "conversationKey": "d4c70ec218ca1004",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-03T11:39:11.859Z",
+  "endedAt": "2026-11-03T11:39:15.542Z",
+  "elapsedMs": 3683,
+  "outputLength": 675,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "09d304e5e2f11e4dab6a87b94aa37fa5283079d95f3cc5a629fbff7870d96520",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d4c70ec218ca1004/PSB-20261103-1139-AUTO-B44508.txt",
+  "createdAt": "2026-11-03T11:39:15.544Z"
+}

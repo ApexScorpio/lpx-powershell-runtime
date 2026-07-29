@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-1220-FISCALGUARD-IUC-WEBVIEW-LOADERFIX-460-001",
+  "conversationKey": "7c6ceb83778ece04",
+  "purpose": "Continuar diretamente do PSB-459. Falha comprovada: System.DllNotFoundException / 0x8007007E para WebView2Loader.dll num harness x64 que usava referencias diretas às assemblies WebView2 e apenas preservava o loader sob runtimes\\win-x64\\native. Corrigir SOMENTE essa causa no harness descartavel: copiar o WebView2Loader.dll x64 ja existente no Programa do holder para a mesma pasta do EXE do harness, sem downloads e sem alterar qualquer versao FiscalGuard. Executar apenas UM owner WebView2 num UDF ",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T12:19:59.973Z",
+  "endedAt": "2026-11-02T12:20:09.471Z",
+  "elapsedMs": 9498,
+  "outputLength": 3114,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "1264fef1667ac13f8415c22e7c93400a1e6fb16a9a7f436a8c2361d2606682dd",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c6ceb83778ece04/PSB-20261102-1220-FISCALGUARD-IUC-WEBVIEW-LOADERFIX-460-001.txt",
+  "createdAt": "2026-11-02T12:20:09.473Z"
+}

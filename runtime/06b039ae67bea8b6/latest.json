@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2258-POKEGUIDE-ADVICE-100",
+  "conversationKey": "06b039ae67bea8b6",
+  "purpose": "Certificar os conselhos IA, o estado de combate e a suite Red/Blue/Green",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T22:58:50.582Z",
+  "endedAt": "2026-10-31T23:00:14.508Z",
+  "elapsedMs": 83926,
+  "outputLength": 4909,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "a9a6bdef59dc8bba27df15d7623d4611df5939df1d913e0c3f559216e8e449de",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/06b039ae67bea8b6/PSB-20261031-2258-POKEGUIDE-ADVICE-100.txt",
+  "createdAt": "2026-10-31T23:00:14.510Z"
+}

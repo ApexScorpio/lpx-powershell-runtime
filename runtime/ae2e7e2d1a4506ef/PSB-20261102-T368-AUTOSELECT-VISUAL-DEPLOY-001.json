@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-T368-AUTOSELECT-VISUAL-DEPLOY-001",
+  "conversationKey": "ae2e7e2d1a4506ef",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T23:52:54.428Z",
+  "endedAt": "2026-11-02T23:53:27.749Z",
+  "elapsedMs": 33321,
+  "outputLength": 6800,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f471e639b5ae7c4ace169fa5b07b75ec428cbb30ef828dc50d679d9de33a6a8e",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ae2e7e2d1a4506ef/PSB-20261102-T368-AUTOSELECT-VISUAL-DEPLOY-001.txt",
+  "createdAt": "2026-11-02T23:53:27.752Z"
+}

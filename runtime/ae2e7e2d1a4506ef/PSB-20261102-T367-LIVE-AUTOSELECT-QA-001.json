@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-T367-LIVE-AUTOSELECT-QA-001",
+  "conversationKey": "ae2e7e2d1a4506ef",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T23:48:45.783Z",
+  "endedAt": "2026-11-02T23:48:49.244Z",
+  "elapsedMs": 3461,
+  "outputLength": 5693,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "ee62ad83e1451beb7c82a35b828d0152f69d6230151c334dc01a614a5db83594",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ae2e7e2d1a4506ef/PSB-20261102-T367-LIVE-AUTOSELECT-QA-001.txt",
+  "createdAt": "2026-11-02T23:48:49.247Z"
+}

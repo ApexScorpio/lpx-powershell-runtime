@@ -1,0 +1,7 @@
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261101-0902-MAESTRO-AUTH-CONSUMER-454.ps1:487 char:7
++ catch {
++       ~
+Missing closing '}' in statement block or type definition.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndCurlyBrace
+ 

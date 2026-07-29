@@ -1,0 +1,7 @@
+{
+    "JobId":  "PSB-20260811-1626-VALIDAR-GH013-GUARD-APEXSCORPIO-001",
+    "Success":  true,
+    "Purpose":  "Validar execu��o, publica��o runtime e recupera��o do bloqueio GH013",
+    "Timestamp":  "2026-08-11T16:25:49.4212742+01:00",
+    "BridgeTest":  "OK"
+}

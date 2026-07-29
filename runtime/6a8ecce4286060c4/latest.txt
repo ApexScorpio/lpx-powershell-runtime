@@ -1,0 +1,55 @@
+[2026-10-31 17:22:17.601] ============================================================
+[2026-10-31 17:22:17.613] TIMI - Reforco dos testes logados
+[2026-10-31 17:22:17.615] JOB=PSB-20261031-1707-MAESTRO-TESTES-BLOBS-246
+[2026-10-31 17:22:17.617] BRANCH_ISOLADA=timi/maestro-observabilidade-segura-20261031
+[2026-10-31 17:22:17.619] REVISAO_EXATA=cd24ab28b8d49d5ddac4fd61b6590b7ea55ff6e6
+[2026-10-31 17:22:17.620] TESTES_ESPERADOS=9
+[2026-10-31 17:22:17.621] GIT_FILTER=blob:limit=64k
+[2026-10-31 17:22:17.622] BACKUP_FUNCIONAL=456eea0_INTOCADO
+[2026-10-31 17:22:17.623] CODIGO_PRODUCAO=NAO_MODIFICAR
+[2026-10-31 17:22:17.624] BONCHAT_MAESTRO_WHATSAPP_ANTIGRAVITY=NAO_INTERAGIR
+[2026-10-31 17:22:17.625] SEM_CLIQUES_LOGIN_SCROLL_ENVIO_REINICIOS
+[2026-10-31 17:22:17.626] ============================================================
+[2026-10-31 17:22:17.627] [1/4] VALIDAR AMBIENTE
+[2026-10-31 17:22:17.810] AMBIENTE_VALIDADO=SIM
+[2026-10-31 17:22:17.825] HISTORY_APPEND=OK
+[2026-10-31 17:22:17.826] [2/4] OBTER FICHEIROS PYTHON COM BLOBS
+[2026-10-31 17:22:20.195] BLOB_DISPONIVEL=tools/timi_real_telemetry_observer.py
+[2026-10-31 17:22:20.242] BLOB_DISPONIVEL=tests/test_timi_real_telemetry_observer.py
+[2026-10-31 17:22:20.337] FICHEIROS_ISOLADOS_DISPONIVEIS=2
+[2026-10-31 17:22:20.338] REVISAO_CONFIRMADA=SIM
+[2026-10-31 17:22:20.340] HISTORY_APPEND=OK
+[2026-10-31 17:22:20.341] [3/4] EXECUTAR NOVE TESTES OFFLINE
+[2026-10-31 17:22:20.794] TESTE | test_absent_markers_do_not_become_success (test_timi_real_telemetry_observer.ObserverContracts.test_absent_markers_do_not_become_success) ... ok
+[2026-10-31 17:22:20.797] TESTE | test_capture_cannot_create_ghost_when_unavailable (test_timi_real_telemetry_observer.ObserverContracts.test_capture_cannot_create_ghost_when_unavailable) ... ok
+[2026-10-31 17:22:20.798] TESTE | test_does_not_leak_raw_lines_or_codes (test_timi_real_telemetry_observer.ObserverContracts.test_does_not_leak_raw_lines_or_codes) ... ok
+[2026-10-31 17:22:20.800] TESTE | test_evidence_directory_name_is_specific (test_timi_real_telemetry_observer.ObserverContracts.test_evidence_directory_name_is_specific) ... ok
+[2026-10-31 17:22:20.802] TESTE | test_exactly_expected_sources (test_timi_real_telemetry_observer.ObserverContracts.test_exactly_expected_sources) ... ok
+[2026-10-31 17:22:20.803] TESTE | test_ignores_non_allowlisted_logs (test_timi_real_telemetry_observer.ObserverContracts.test_ignores_non_allowlisted_logs) ... ok
+[2026-10-31 17:22:20.805] TESTE | test_log_read_errors_are_not_a_pass (test_timi_real_telemetry_observer.ObserverContracts.test_log_read_errors_are_not_a_pass) ... ok
+[2026-10-31 17:22:20.806] TESTE | test_original_whatsapp_logs_distinguish_replacement_from_reconciliation (test_timi_real_telemetry_observer.ObserverContracts.test_original_whatsapp_logs_distinguish_replacement_from_reconciliation) ... ok
+[2026-10-31 17:22:20.807] TESTE | test_private_preview_refuses_wrong_checkout_before_io (test_timi_real_telemetry_observer.ObserverContracts.test_private_preview_refuses_wrong_checkout_before_io) ... ok
+[2026-10-31 17:22:20.809] TESTE | System.Management.Automation.RemoteException
+[2026-10-31 17:22:20.811] TESTE | ----------------------------------------------------------------------
+[2026-10-31 17:22:20.813] TESTE | Ran 9 tests in 0.098s
+[2026-10-31 17:22:20.814] TESTE | System.Management.Automation.RemoteException
+[2026-10-31 17:22:20.815] TESTE | OK
+[2026-10-31 17:22:20.818] PYTHON_EXIT=0
+[2026-10-31 17:22:20.821] NOVE_TESTES_EXECUTADOS=True
+[2026-10-31 17:22:20.822] SUITE_APROVADA=True
+[2026-10-31 17:22:20.826] HISTORY_APPEND=OK
+[2026-10-31 17:22:20.827] [4/4] FINALIZAR
+[2026-10-31 17:22:20.828] TESTES_DE_INTERFACE=NAO_EXECUTADOS
+[2026-10-31 17:22:20.829] ENVIOS_WHATSAPP=ZERO
+[2026-10-31 17:22:20.830] MODIFICACOES_DE_PRODUCAO=ZERO
+[2026-10-31 17:22:20.893] TEMPORARIOS_DESTE_JOB=ELIMINADOS
+[2026-10-31 17:22:20.895] HISTORY_APPEND=OK
+[2026-10-31 17:22:20.897] ============================================================
+[2026-10-31 17:22:20.898] FIM - TIMI - Reforco dos testes logados
+[2026-10-31 17:22:20.898] JOB=PSB-20261031-1707-MAESTRO-TESTES-BLOBS-246
+[2026-10-31 17:22:20.899] RESULTADO=NOVE_TESTES_OFFLINE_APROVADOS
+[2026-10-31 17:22:20.900] EXIT_CODE=0
+[2026-10-31 17:22:20.902] BACKUP_FUNCIONAL_456eea0=INTOCADO
+[2026-10-31 17:22:20.902] MAESTRO_BONCHAT_WHATSAPP_ANTIGRAVITY=NAO_INTERROMPIDOS
+[2026-10-31 17:22:20.904] ============================================================
+CLIPBOARD=OK

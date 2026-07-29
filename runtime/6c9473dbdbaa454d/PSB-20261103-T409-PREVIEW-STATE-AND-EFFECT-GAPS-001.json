@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261103-T409-PREVIEW-STATE-AND-EFFECT-GAPS-001",
+  "conversationKey": "6c9473dbdbaa454d",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-03T14:16:00.068Z",
+  "endedAt": "2026-11-03T14:16:02.410Z",
+  "elapsedMs": 2342,
+  "outputLength": 5148,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "e08acd73979c24f9bae51b82a1ef7f40859530d41071a49878448d64295fc9e0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6c9473dbdbaa454d/PSB-20261103-T409-PREVIEW-STATE-AND-EFFECT-GAPS-001.txt",
+  "createdAt": "2026-11-03T14:16:02.467Z"
+}

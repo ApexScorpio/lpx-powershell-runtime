@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-0640-POKEGUIDE-OUTDOORCACHE-132",
+  "conversationKey": "3810d4cf51967fa1",
+  "purpose": "Certificar T175, invalidacao da cache multimapa e regressao Red/Blue/Green.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-01T05:22:11.782Z",
+  "endedAt": "2026-11-01T05:23:08.600Z",
+  "elapsedMs": 56818,
+  "outputLength": 4186,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "03a31fbdcd79c79b36827256b92300ba4e1c4a833a1c69799f30ca62e4999ff7",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3810d4cf51967fa1/PSB-20261101-0640-POKEGUIDE-OUTDOORCACHE-132.txt",
+  "createdAt": "2026-11-01T05:23:08.602Z"
+}

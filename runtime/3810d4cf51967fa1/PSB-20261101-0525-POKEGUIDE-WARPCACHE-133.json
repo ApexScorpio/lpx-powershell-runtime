@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-0525-POKEGUIDE-WARPCACHE-133",
+  "conversationKey": "3810d4cf51967fa1",
+  "purpose": "Certificar T176, caches de warps estaticos e rotas remotas das tres ROMs.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-01T05:27:48.184Z",
+  "endedAt": "2026-11-01T05:28:44.944Z",
+  "elapsedMs": 56760,
+  "outputLength": 4260,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "eb0c2f1cc619870b961dc65858a8a2b4030d983563bd9738eea0d2750aa8a8a9",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3810d4cf51967fa1/PSB-20261101-0525-POKEGUIDE-WARPCACHE-133.txt",
+  "createdAt": "2026-11-01T05:28:44.947Z"
+}

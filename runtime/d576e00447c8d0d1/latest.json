@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261030-2233-POKEGUIDE-EVENTCOVERAGE-030",
+  "conversationKey": "d576e00447c8d0d1",
+  "purpose": "Certificar as 507 flags e identificar eventos sem evidencia direta nas ROMs Red Blue Green",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-30T22:35:28.105Z",
+  "endedAt": "2026-10-30T22:35:45.312Z",
+  "elapsedMs": 17207,
+  "outputLength": 1311,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "aa140e22ce5444c05f363de532b423553467d329af89576b9ac8e6f2c01f7b68",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d576e00447c8d0d1/PSB-20261030-2233-POKEGUIDE-EVENTCOVERAGE-030.txt",
+  "createdAt": "2026-10-30T22:35:45.313Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-1822-FISCALGUARD-IUC-CLEANUP-306-001",
+  "conversationKey": "f4ddab0141b6ff96",
+  "purpose": "Concluir a limpeza exclusiva dos residuos PSB304, mesmo quando os ficheiros de teste ja foram parcialmente eliminados.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-11-01T18:13:08.247Z",
+  "endedAt": "2026-11-01T18:13:09.478Z",
+  "elapsedMs": 1231,
+  "outputLength": 1315,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "bb1ba250b5d6b929c58b2184f0a6bd0eae224eee1750572bb2e88c98860f421c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f4ddab0141b6ff96/PSB-20261101-1822-FISCALGUARD-IUC-CLEANUP-306-001.txt",
+  "createdAt": "2026-11-01T18:13:09.480Z"
+}

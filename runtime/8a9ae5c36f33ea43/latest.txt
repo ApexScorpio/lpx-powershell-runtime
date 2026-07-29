@@ -1,0 +1,15 @@
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-0031-FISCALGUARD-SSH-048.ps1:133 char:9
++     try {
++         ~
+Missing closing '}' in statement block or type definition.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-0031-FISCALGUARD-SSH-048.ps1:330 char:12
++         Reg
++            ~
+The Try statement is missing its Catch or Finally block.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-0031-FISCALGUARD-SSH-048.ps1:3 char:3
++ & {
++   ~
+Missing closing '}' in statement block or type definition.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndCurlyBrace
+ 

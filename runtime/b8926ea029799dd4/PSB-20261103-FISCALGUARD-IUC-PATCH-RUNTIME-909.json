@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261103-FISCALGUARD-IUC-PATCH-RUNTIME-909",
+  "conversationKey": "b8926ea029799dd4",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-11-03T21:51:15.358Z",
+  "endedAt": "2026-11-03T21:51:16.860Z",
+  "elapsedMs": 1502,
+  "outputLength": 1197,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "533e7f964784bcf691619269b7371c9fb8d4f4b992aceba6806d4ac70d96cd04",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/b8926ea029799dd4/PSB-20261103-FISCALGUARD-IUC-PATCH-RUNTIME-909.txt",
+  "createdAt": "2026-11-03T21:51:16.862Z"
+}

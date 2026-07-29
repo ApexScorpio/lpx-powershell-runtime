@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0938-FISCALGUARD-DL-067",
+  "conversationKey": "6291734f67454638",
+  "purpose": "Validar flag de captura privada, testar coletor e obter evidencia cadastral sem repeticoes nem perda de sessoes",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T09:40:03.142Z",
+  "endedAt": "2026-10-31T09:45:13.954Z",
+  "elapsedMs": 310812,
+  "outputLength": 2716,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "a9a79777b10cbb6647ffa5be214aea6da5340cc98f9b1a1030dbcfa2d2cfb66f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6291734f67454638/PSB-20261031-0938-FISCALGUARD-DL-067.txt",
+  "createdAt": "2026-10-31T09:45:13.956Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0738-MAESTRO-SCROLL-RECOVERY-AUDIT-142",
+  "conversationKey": "d0d699d229dd2a57",
+  "purpose": "Identificar o percurso real de recuperacao do scroll no motor local e determinar por que falhou o teste 141.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T07:38:57.963Z",
+  "endedAt": "2026-10-31T07:38:59.971Z",
+  "elapsedMs": 2008,
+  "outputLength": 4437,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "b0b2e3cc8a80eced74085147a9d3e7390ef9183af5d181dc0ce7d26794d5f3e8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d0d699d229dd2a57/PSB-20261031-0738-MAESTRO-SCROLL-RECOVERY-AUDIT-142.txt",
+  "createdAt": "2026-10-31T07:38:59.973Z"
+}

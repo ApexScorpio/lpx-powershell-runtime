@@ -1,0 +1,47 @@
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261101-0826-MAESTRO-WRITE-ACK-GUARD-450.ps1:514 char:16
++         throw 'TEST_SYNTAX_INVALID'
++                ~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'TEST_SYNTAX_INVALID'
+    }
+    $MemoryResults = @(
+        & ([scriptblock]::Create($TestSource)) -EnginePath $Engine
+    )
+    if ($MemoryResults.Count -ne 1) {
+        throw 'MEMORY_OUTPUT_COUNT_INVALID'
+    }
+    $Memory = $MemoryResults[0]
+    foreach ($Detail in $Memory.FixtureDetails) {
+        Emit $Detail
+        Add-History 'STEP_2_FIXTURE' $Detail
+    }
+    $MemoryPass = (
+        $Memory.FixtureCount -eq 6 -and
+        $Memory.FixturePasses -eq 6 -and
+        $Memory.Local.OrderRecognized
+    )
+    Emit "MEMORY_FIXTURES=$($Memory.FixturePasses)/$($Memory.FixtureCount)"
+    Emit "MEMORY_PREFLIGHT_PASS=$MemoryPass"
+    Emit "LOCAL_WRITE_ACK_GATE=$($Memory.Local.Gate)"
+    Add-History 'STEP_2' (
+        "Memory fixtures=$($Memory.FixturePasses)/6; preflight=$MemoryPass; source gate=$($Memory.Local.Gate)"
+    )
+    if (-not $MemoryPass) {
+        throw 'MEMORY_PREFLIGHT_FAILED'
+    }
+    $Stage = 'STEP_3'
+    Emit '[3/5]' in expression or statement.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261101-0826-MAESTRO-WRITE-ACK-GUARD-450.ps1:741 char:37
++         Write-Host 'CLIPBOARD=FAILED'
++                                     ~
+The string is missing the terminator: '.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261101-0826-MAESTRO-WRITE-ACK-GUARD-450.ps1:90 char:5
++ try {
++     ~
+Missing closing '}' in statement block or type definition.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261101-0826-MAESTRO-WRITE-ACK-GUARD-450.ps1:758 char:15
++ exit $ExitCode
++               ~
+The Try statement is missing its Catch or Finally block.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 

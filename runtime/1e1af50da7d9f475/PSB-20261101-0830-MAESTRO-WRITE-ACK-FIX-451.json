@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-0830-MAESTRO-WRITE-ACK-FIX-451",
+  "conversationKey": "1e1af50da7d9f475",
+  "purpose": "Corrigir e instalar a regressao de confirmacao das capturas, sem alterar a producao.",
+  "status": "failed",
+  "exitCode": 2,
+  "startedAt": "2026-11-01T08:31:58.512Z",
+  "endedAt": "2026-11-01T08:31:59.986Z",
+  "elapsedMs": 1474,
+  "outputLength": 2327,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7ea9c8ed48842f97e2c872cc283814a0ffdf961ff452917b36eb31386a8b058a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1e1af50da7d9f475/PSB-20261101-0830-MAESTRO-WRITE-ACK-FIX-451.txt",
+  "createdAt": "2026-11-01T08:31:59.988Z"
+}

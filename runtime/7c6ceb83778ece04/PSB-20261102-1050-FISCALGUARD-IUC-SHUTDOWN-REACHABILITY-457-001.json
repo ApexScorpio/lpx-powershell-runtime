@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-1050-FISCALGUARD-IUC-SHUTDOWN-REACHABILITY-457-001",
+  "conversationKey": "7c6ceb83778ece04",
+  "purpose": "Continuar diretamente do PSB-456 sem repetir a auditoria geral. PSB-456 encontrou 3 Kill(true) apenas em PonteCodespacesAT.cs e 3 Delete/Move em metodos Guardar, mas NAO provou que esses hits pertençam ao caminho de shutdown real. Este job e exclusivamente passivo e deve resolver: (1) qual objeto Process e alvo de cada Kill(true), se foi criado localmente por Process.Start e se o metodo contem qualquer referencia WebView2/Financas; (2) quais expressoes exatas sao passadas a Directory/File Delete",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T11:28:52.573Z",
+  "endedAt": "2026-11-02T11:28:54.676Z",
+  "elapsedMs": 2103,
+  "outputLength": 3881,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "d5d76e0fbf732112716b52a4ea4bfd272ca499717a8f8c5eda83eb40e4aa9904",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c6ceb83778ece04/PSB-20261102-1050-FISCALGUARD-IUC-SHUTDOWN-REACHABILITY-457-001.txt",
+  "createdAt": "2026-11-02T11:28:54.678Z"
+}

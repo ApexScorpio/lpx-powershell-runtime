@@ -1,0 +1,19 @@
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-2030-FISCALGUARD-FIELDS-215.ps1:500 char:44
++         $Campos['SYNTAX_FAIL'] -eq '0' -and
++                                            ~
+You must provide a value expression following the '-and' operator.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-2030-FISCALGUARD-FIELDS-215.ps1:500 char:44
++         $Campos['SYNTAX_FAIL'] -eq '0' -and
++                                            ~
+Missing closing ')' in expression.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-2030-FISCALGUARD-FIELDS-215.ps1:352 char:5
++ try {
++     ~
+Missing closing '}' in statement block or type definition.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-2030-FISCALGUARD-FIELDS-215.ps1:500 char:44
++         $Campos['SYNTAX_FAIL'] -eq '0' -and
++                                            ~
+The Try statement is missing its Catch or Finally block.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression
+ 

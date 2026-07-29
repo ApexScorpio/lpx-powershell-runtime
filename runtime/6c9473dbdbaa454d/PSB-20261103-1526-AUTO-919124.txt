@@ -1,0 +1,7 @@
+You cannot call a method on a null-valued expression.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261103-1526-AUTO-919124.ps1:10 char:9
++         $script:linhas.Add($linha)
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+ 

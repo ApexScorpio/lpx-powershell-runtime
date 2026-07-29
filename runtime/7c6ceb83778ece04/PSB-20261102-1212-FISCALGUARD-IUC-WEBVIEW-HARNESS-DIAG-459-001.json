@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-1212-FISCALGUARD-IUC-WEBVIEW-HARNESS-DIAG-459-001",
+  "conversationKey": "7c6ceb83778ece04",
+  "purpose": "Continuar diretamente do PSB-458 sem repetir o ensaio de dois owners. PSB-458 compilou o harness mas OWNER_A_READY=0 e nao publicou a excecao real. Fazer diagnostico minimo com UM unico WebView descartavel em D:. Primeiro inventariar no Programa do holder os Microsoft.Web.WebView2*.dll e WebView2Loader.dll existentes, incluindo paths relativos e machine architecture do loader sem alterar nada. Depois criar harness temporario de um owner, referenciando as mesmas assemblies geridas e copiando EXAT",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T12:11:49.959Z",
+  "endedAt": "2026-11-02T12:11:59.316Z",
+  "elapsedMs": 9357,
+  "outputLength": 3252,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "79b21f3c09ae9e0c84a6a9f8c2a5cb51a4cac614d952f490ad16353fa8f564f6",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c6ceb83778ece04/PSB-20261102-1212-FISCALGUARD-IUC-WEBVIEW-HARNESS-DIAG-459-001.txt",
+  "createdAt": "2026-11-02T12:11:59.319Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-0833-MAESTRO-WRITE-ACK-PARAMFIX-452",
+  "conversationKey": "1e1af50da7d9f475",
+  "purpose": "Validar e instalar teste permanente de confirmacao de screenshots sem alterar o motor.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-01T08:34:50.770Z",
+  "endedAt": "2026-11-01T08:34:52.019Z",
+  "elapsedMs": 1249,
+  "outputLength": 2744,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "2a637824c922ab7db382cffdc902b2fafe1e57b875a372664b77ab113b618d08",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1e1af50da7d9f475/PSB-20261101-0833-MAESTRO-WRITE-ACK-PARAMFIX-452.txt",
+  "createdAt": "2026-11-01T08:34:52.021Z"
+}

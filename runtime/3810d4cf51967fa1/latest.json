@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-0550-POKEGUIDE-LASTMAPLANDING-135",
+  "conversationKey": "3810d4cf51967fa1",
+  "purpose": "Certificar T178 - landing D365, flags remotas e ROM Red/Blue/Green.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-01T05:39:49.992Z",
+  "endedAt": "2026-11-01T05:40:51.868Z",
+  "elapsedMs": 61876,
+  "outputLength": 4855,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7627a3c3ce16e08c6ed2fd2f2e07c2cecf83e7152a448a0d8fbc59d274acbe1f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3810d4cf51967fa1/PSB-20261101-0550-POKEGUIDE-LASTMAPLANDING-135.txt",
+  "createdAt": "2026-11-01T05:40:51.870Z"
+}

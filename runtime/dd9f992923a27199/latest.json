@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2139-MAESTRO-GUARD-MEMBERS-296",
+  "conversationKey": "dd9f992923a27199",
+  "purpose": "Validar approved_callers, image_labels e client_labels da protecao local sem alterar producao.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T21:39:23.820Z",
+  "endedAt": "2026-10-31T21:39:25.286Z",
+  "elapsedMs": 1466,
+  "outputLength": 4365,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "159c1a76e97c16dfc3f8a216b40d6e1653b0eaed6e7f8ac325ae903bad97b83f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/dd9f992923a27199/PSB-20261031-2139-MAESTRO-GUARD-MEMBERS-296.txt",
+  "createdAt": "2026-10-31T21:39:25.287Z"
+}

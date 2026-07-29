@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-1814-FISCALGUARD-IUC-WINSDK-304-001",
+  "conversationKey": "f4ddab0141b6ff96",
+  "purpose": "Diagnosticar a falha TEMP_ENVIRONMENT do PSB303 e, se resolvida, validar o importador C# original offline com cinco documentos ficticios.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-11-01T18:07:34.896Z",
+  "endedAt": "2026-11-01T18:07:49.577Z",
+  "elapsedMs": 14681,
+  "outputLength": 2008,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "10cfbee42275dd982a338fa6691854f648b8075015a85740dd0154517b18e75c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f4ddab0141b6ff96/PSB-20261101-1814-FISCALGUARD-IUC-WINSDK-304-001.txt",
+  "createdAt": "2026-11-01T18:07:49.579Z"
+}

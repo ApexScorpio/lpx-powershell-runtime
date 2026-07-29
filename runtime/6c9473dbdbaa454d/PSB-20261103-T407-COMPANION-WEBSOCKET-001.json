@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261103-T407-COMPANION-WEBSOCKET-001",
+  "conversationKey": "6c9473dbdbaa454d",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-03T11:44:11.807Z",
+  "endedAt": "2026-11-03T11:44:14.177Z",
+  "elapsedMs": 2370,
+  "outputLength": 4185,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "6f4507eda6a3334429365ca7807997ab6de7d41fc9262b9eb4e5ab8df3531627",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6c9473dbdbaa454d/PSB-20261103-T407-COMPANION-WEBSOCKET-001.txt",
+  "createdAt": "2026-11-03T11:44:14.180Z"
+}

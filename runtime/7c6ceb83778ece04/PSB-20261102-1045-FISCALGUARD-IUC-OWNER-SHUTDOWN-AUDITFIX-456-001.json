@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-1045-FISCALGUARD-IUC-OWNER-SHUTDOWN-AUDITFIX-456-001",
+  "conversationKey": "7c6ceb83778ece04",
+  "purpose": "Repetir exclusivamente a auditoria passiva que o PSB-455 nunca executou. PSB-454 provou holder PID8880 vivo, browser root Financas PID8388 e owner antigo PID29996 vivo. Antes de qualquer detach/fecho do owner antigo, auditar o source REAL ativo para riscos de shutdown capazes de destruir a sessao apesar do holder: kill explicito de msedgewebview2, taskkill, Kill(entireProcessTree:true), job objects KillOnJobClose, apagamento/movimento do UDF WebView2/Financas, limpeza global de browsing data/coo",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T11:24:56.074Z",
+  "endedAt": "2026-11-02T11:24:58.126Z",
+  "elapsedMs": 2052,
+  "outputLength": 4128,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "0560646676dc7315d2006a77045c433cadb4606d89a86dea1467ec7fff01a2f4",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c6ceb83778ece04/PSB-20261102-1045-FISCALGUARD-IUC-OWNER-SHUTDOWN-AUDITFIX-456-001.txt",
+  "createdAt": "2026-11-02T11:24:58.128Z"
+}

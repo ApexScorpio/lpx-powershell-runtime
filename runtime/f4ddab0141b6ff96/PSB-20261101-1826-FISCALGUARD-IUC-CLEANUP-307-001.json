@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261101-1826-FISCALGUARD-IUC-CLEANUP-307-001",
+  "conversationKey": "f4ddab0141b6ff96",
+  "purpose": "Identificar o ultimo residuo do PSB304 e eliminar apenas a pasta temporaria comprovada, sem tocar em producao.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-11-01T18:15:51.144Z",
+  "endedAt": "2026-11-01T18:15:53.073Z",
+  "elapsedMs": 1929,
+  "outputLength": 1774,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3efe062280e36dd1115e374469d268d55a055b520c3bbc06ed7ae07ca1190b15",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f4ddab0141b6ff96/PSB-20261101-1826-FISCALGUARD-IUC-CLEANUP-307-001.txt",
+  "createdAt": "2026-11-01T18:15:53.075Z"
+}

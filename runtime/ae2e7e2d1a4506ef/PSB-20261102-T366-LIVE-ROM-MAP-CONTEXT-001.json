@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-T366-LIVE-ROM-MAP-CONTEXT-001",
+  "conversationKey": "ae2e7e2d1a4506ef",
+  "purpose": "Execução PSB_JOB_V3",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T23:44:31.904Z",
+  "endedAt": "2026-11-02T23:44:34.211Z",
+  "elapsedMs": 2307,
+  "outputLength": 4654,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3771372dcb7d0d7d0806e898f2163a6ce07a4978e230314334979c835a95ad41",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ae2e7e2d1a4506ef/PSB-20261102-T366-LIVE-ROM-MAP-CONTEXT-001.txt",
+  "createdAt": "2026-11-02T23:44:34.214Z"
+}

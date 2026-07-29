@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261102-0040-POKEGUIDE-T247-GREEN-DELTA-001",
+  "conversationKey": "4c5a29c8d27906c6",
+  "purpose": "Identificar os efeitos perdidos e novos na ROM Green durante o A/B T246",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-11-02T00:36:42.168Z",
+  "endedAt": "2026-11-02T00:36:45.332Z",
+  "elapsedMs": 3164,
+  "outputLength": 6949,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fd1cc6fb5d3cbf5be807a00d6c3268733acbffb754e426d9b4e646147ea80cfc",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/4c5a29c8d27906c6/PSB-20261102-0040-POKEGUIDE-T247-GREEN-DELTA-001.txt",
+  "createdAt": "2026-11-02T00:36:45.335Z"
+}
