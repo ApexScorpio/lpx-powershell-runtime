@@ -1,38 +1,24 @@
-# LPX PowerShell Bridge — protocolo global V15.1
+# LPX PowerShell Bridge — protocolo ativo
 
-Marcador enviado automaticamente para cada conversa:
+Versão: **15.2.0**
 
-`LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_1`
+Para executar PowerShell sem aumentar o histórico da conversa:
 
-## Formato obrigatório para novos jobs
+1. Criar o comando completo num ficheiro `.ps1` anexado.
+2. Usar um nome de ficheiro único.
+3. Na resposta, colocar apenas um manifesto pequeno:
 
-O ChatGPT envia apenas um bloco PowerShell legível:
-
-```powershell
-# PSB_JOB_V3
-# jobId: PSB-AAAAMMDD-HHMM-DESCRICAO-001
-# purpose: objetivo claro e curto
-$ErrorActionPreference = 'Stop'
-# restante comando
+```json
+{
+  "protocol": "PSB_JOB_FILE_V1",
+  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",
+  "file": "nome-unico-do-comando.ps1",
+  "purpose": "objetivo claro e curto"
+}
 ```
 
-O userscript é responsável por:
-
-1. extrair o bloco PowerShell;
-2. remover um eventual BOM;
-3. converter CRLF/CR para LF;
-4. codificar o texto em UTF-8;
-5. gerar Base64 localmente;
-6. calcular o SHA-256 localmente;
-7. enviar o comando e os metadados à bridge;
-8. acompanhar o job e devolver apenas os URLs públicos do resultado.
-
-O ChatGPT deixa de gerar Base64 e SHA-256. Isto elimina falhas de `atob`, caracteres fora de Latin-1 e hashes que não correspondem ao comando.
-
-## Compatibilidade
-
-`PSB_JOB_V2` continua aceite para conversas antigas, incluindo `commandBase64`, `command`, `file` e validação opcional de `sha256`.
-
-## Resultado
-
-Após a execução, a conversa recebe `PSBRIDGE_RESULT_V2`. Deve ler primeiro o URL `result`, usar `log` apenas quando necessário e nunca reproduzir o log completo.
+4. Incluir na mesma resposta um link normal para descarregar o ficheiro.
+5. Não colocar o PowerShell, Base64 ou SHA-256 no texto da conversa.
+6. O userscript descarrega o ficheiro e calcula UTF-8/LF, Base64 e SHA-256 localmente.
+7. `PSB_JOB_V2` e `PSB_JOB_V3` permanecem disponíveis apenas para compatibilidade.
+8. Depois de `PSBRIDGE_RESULT_V2`, ler primeiro o resultado JSON público e usar o log apenas quando necessário.

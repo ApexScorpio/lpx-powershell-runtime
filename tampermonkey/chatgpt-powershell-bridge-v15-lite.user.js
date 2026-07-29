@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.1.0
-// @description  Executa PowerShell legível através da bridge local; o browser normaliza UTF-8/LF e calcula Base64 e SHA-256 automaticamente.
+// @version      2026.07.29.15.2.0
+// @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @run-at       document-idle
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.1.0';
+    const VERSION = '15.2.0';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -180,23 +180,25 @@
 
     function protocolPromptText() {
         return [
-            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_1',
+            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_2',
             '',
             `Esta conversa está ligada à LPX PowerShell Bridge v${VERSION}.`,
             '',
-            'Sempre que for necessário executar PowerShell, responde com UM ÚNICO bloco de código POWERSHELL legível neste formato:',
-            '# PSB_JOB_V3',
-            '# jobId: PSB-AAAAMMDD-HHMM-DESCRICAO-001',
-            '# purpose: objetivo claro e curto',
-            '<PowerShell completo>',
+            'Sempre que for necessário executar PowerShell, cria o comando num ficheiro .ps1 anexado e responde apenas com um manifesto JSON pequeno:',
+            '{',
+            '  "protocol": "PSB_JOB_FILE_V1",',
+            '  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",',
+            '  "file": "nome-unico-do-comando.ps1",',
+            '  "purpose": "objetivo claro e curto"',
+            '}',
             '',
             'REGRAS OBRIGATÓRIAS:',
-            '1. Não geres Base64, SHA-256, anexos, links sandbox nem JSON para jobs PowerShell.',
-            '2. O userscript extrai o bloco, converte as quebras de linha para LF, remove BOM, codifica UTF-8/Base64 e calcula SHA-256 localmente.',
-            '3. O jobId tem de ser único em cada execução.',
-            '4. Mantém exatamente as três linhas de cabeçalho no início do bloco.',
-            '5. Não escrevas texto fora do único bloco PowerShell quando estiveres a enviar um job.',
-            '6. O protocolo antigo PSB_JOB_V2 continua aceite apenas para compatibilidade.',
+            '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
+            '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
+            '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
+            '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
+            '5. O userscript descarrega o anexo, normaliza UTF-8/LF e calcula Base64 e SHA-256 localmente.',
+            '6. PSB_JOB_V2 e PSB_JOB_V3 continuam aceites apenas para compatibilidade e recuperação.',
             '7. Depois de receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
             '8. Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
             '9. Mantém os comandos temporários; guarda apenas decisões, causas e soluções técnicas consolidadas.',
@@ -377,7 +379,7 @@
 
                     baselineCurrentAssistant();
                     setEnabled(true);
-                    setStatus('Ativa. A preparar o protocolo PSB_JOB_V3…');
+                    setStatus('Ativa. A preparar o protocolo PSB_JOB_FILE_V1…');
 
                     try {
                         await sendProtocolPrompt(false);
@@ -494,7 +496,7 @@
         }
 
         for (const manifest of manifestsIn(latest)) {
-            if (['PSB_JOB_V2', 'PSB_JOB_V3'].includes(manifest.protocol) && manifest.jobId) {
+            if (['PSB_JOB_FILE_V1', 'PSB_JOB_V2', 'PSB_JOB_V3'].includes(manifest.protocol) && manifest.jobId) {
                 markHandled(String(manifest.jobId));
             }
 
@@ -621,7 +623,7 @@
                 }
             }
 
-            if (!text.includes('PSB_JOB_V2') && !text.includes('PSB_LEARN_V1')) {
+            if (!text.includes('PSB_JOB_FILE_V1') && !text.includes('PSB_JOB_V2') && !text.includes('PSB_LEARN_V1')) {
                 continue;
             }
 
@@ -664,13 +666,13 @@
 
         if (!manifests.length) {
             if (forced) {
-                setStatus('O último turno não contém PSB_JOB_V3, PSB_JOB_V2 nem PSB_LEARN_V1.');
+                setStatus('O último turno não contém PSB_JOB_FILE_V1, PSB_JOB_V3, PSB_JOB_V2 nem PSB_LEARN_V1.');
             }
             return;
         }
 
         for (const manifest of manifests) {
-            if (manifest.protocol === 'PSB_JOB_V3' || manifest.protocol === 'PSB_JOB_V2') {
+            if (manifest.protocol === 'PSB_JOB_FILE_V1' || manifest.protocol === 'PSB_JOB_V3' || manifest.protocol === 'PSB_JOB_V2') {
                 await processJobManifest(assistant, manifest, forced);
             } else if (manifest.protocol === 'PSB_LEARN_V1') {
                 await processKnowledgeManifest(manifest, forced);
@@ -832,6 +834,7 @@
         const protocol = String(manifest.protocol || '').trim();
         const jobId = String(manifest.jobId || '').trim();
         const fileName = String(manifest.file || '').trim();
+        const fileUrl = String(manifest.fileUrl || manifest.url || '').trim();
         const commandBase64 = String(manifest.commandBase64 || '').trim();
         const inlineCommand = typeof manifest.command === 'string'
             ? manifest.command
@@ -839,7 +842,7 @@
 
         if (
             !jobId ||
-            (!fileName && !commandBase64 && !inlineCommand)
+            (!fileName && !fileUrl && !commandBase64 && !inlineCommand)
         ) {
             setStatus(
                 `Manifesto ${protocol || 'PowerShell'} incompleto: falta jobId e uma fonte de comando.`
@@ -859,7 +862,11 @@
         try {
             let command = '';
 
-            if (protocol === 'PSB_JOB_V3') {
+            if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
+                setStatus(`A descarregar o ficheiro ${fileName || fileUrl}…`);
+                command = await downloadAttachment({ href: fileUrl });
+            }
+            else if (protocol === 'PSB_JOB_V3') {
                 setStatus('A normalizar localmente o PowerShell legível…');
                 command = inlineCommand;
             }
@@ -881,7 +888,7 @@
 
                 if (!anchor) {
                     throw new Error(
-                        `Não foi encontrado o link do anexo ${fileName}.`
+                        `Não foi encontrado o link do anexo ${fileName}. Confirma que o link de download está na mesma resposta do manifesto.`
                     );
                 }
 
@@ -940,7 +947,7 @@
 
             activeJobId = String(data.jobId);
             activeManifest = manifest;
-            setStatus(`Job ${activeJobId} em execução. Base64 e SHA-256 foram calculados localmente.`);
+            setStatus(`Job ${activeJobId} em execução. O ficheiro ficou fora do histórico; Base64 e SHA-256 foram calculados localmente.`);
             await monitorActiveJob();
         } catch (error) {
             releaseClaim(jobId);
