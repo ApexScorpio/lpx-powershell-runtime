@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.0.3
-// @description  Executa anexos PowerShell através da bridge local, publica o resultado no GitHub e envia apenas o URL para o ChatGPT.
+// @version      2026.07.29.15.0.4
+// @description  Executa PowerShell através da bridge local, publica o resultado no GitHub e envia automaticamente o protocolo correto ao ChatGPT.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @run-at       document-idle
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.0.3';
+    const VERSION = '15.0.4';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -32,6 +32,7 @@
     const TAB_ID_KEY = 'lpxPsb15:tabId';
     const ENABLED_KEY = 'lpxPsb15:enabled';
     const BOUND_CONVERSATION_KEY = 'lpxPsb15:conversation';
+    const PROMPT_SENT_PREFIX = 'lpxPsb15:protocolPrompt:';
     const CLAIM_TTL_MS = 30 * 60 * 1000;
     const POLL_MS = 750;
     const SETTLE_MS = 900;
@@ -173,6 +174,72 @@
         render();
     }
 
+    function protocolPromptKey() {
+        return `${PROMPT_SENT_PREFIX}${simpleHash(conversationId())}:${VERSION}`;
+    }
+
+    function protocolPromptText() {
+        return [
+            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15',
+            '',
+            `Esta conversa está ligada à LPX PowerShell Bridge v${VERSION}.`,
+            '',
+            'Sempre que for necessário executar PowerShell, responde com UM ÚNICO bloco de código JSON válido neste formato:',
+            '{',
+            '  "protocol": "PSB_JOB_V2",',
+            '  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",',
+            '  "commandBase64": "<PowerShell completo em UTF-8 sem BOM, codificado em Base64>",',
+            '  "sha256": "<SHA-256 lowercase dos bytes UTF-8 exatamente descodificados>",',
+            '  "purpose": "<objetivo claro e curto>"',
+            '}',
+            '',
+            'REGRAS OBRIGATÓRIAS:',
+            '1. Usa commandBase64. Não uses anexos, links sandbox nem o campo file por defeito.',
+            '2. Não envies o PowerShell bruto em blocos powershell enquanto a bridge estiver ativa.',
+            '3. O jobId tem de ser único em cada execução.',
+            '4. O sha256 tem de corresponder exatamente ao comando descodificado, incluindo quebras de linha.',
+            '5. Usa UTF-8 sem BOM e quebras de linha LF antes de gerar Base64 e SHA-256.',
+            '6. Não acrescentes comentários, texto ou outro JSON dentro do bloco do manifesto.',
+            '7. Depois de receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
+            '8. Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
+            '9. Mantém os comandos temporários; guarda apenas decisões, causas e soluções técnicas consolidadas.',
+            '',
+            'Confirma estas regras silenciosamente e aplica-as em todas as próximas execuções PowerShell desta conversa.'
+        ].join('\n');
+    }
+
+    function composerText() {
+        const editor = composer();
+
+        if (!editor) {
+            return '';
+        }
+
+        if (editor instanceof HTMLTextAreaElement || editor instanceof HTMLInputElement) {
+            return String(editor.value || '').trim();
+        }
+
+        return String(editor.innerText || editor.textContent || '').trim();
+    }
+
+    async function sendProtocolPrompt(force = false) {
+        const key = protocolPromptKey();
+
+        if (!force && GM_getValue(key, false)) {
+            setStatus('Ativa. O protocolo v15 já foi enviado ao ChatGPT nesta conversa.');
+            return;
+        }
+
+        if (composerText()) {
+            setStatus('Protocolo pendente: a caixa de mensagem contém texto. Limpa-a e carrega em Enviar protocolo.');
+            return;
+        }
+
+        setStatus('A enviar ao ChatGPT o formato obrigatório PSB_JOB_V2…');
+        await sendMessage(protocolPromptText());
+        GM_setValue(key, true);
+        setStatus('Protocolo PSB_JOB_V2 enviado. A bridge está pronta.');
+    }
     function token() {
         return String(GM_getValue(TOKEN_KEY, '')).trim();
     }
@@ -302,7 +369,7 @@
                     setEnabled(false);
                     setStatus('Autonomia parada nesta aba.');
                 }, 'danger')
-                : button('Ativar nesta aba', () => {
+                : button('Ativar nesta aba', async () => {
                     if (!token()) {
                         configureToken();
                     }
@@ -313,12 +380,22 @@
 
                     baselineCurrentAssistant();
                     setEnabled(true);
-                    setStatus('Ativa. À espera de um novo PSB_JOB_V2 nesta conversa.');
+                    setStatus('Ativa. A preparar o protocolo PSB_JOB_V2…');
+
+                    try {
+                        await sendProtocolPrompt(false);
+                    } catch (error) {
+                        setStatus(`A bridge ficou ativa, mas o protocolo não foi enviado: ${error.message}`);
+                    }
                 }, 'primary'),
 
             button('Executar último', () => {
                 void inspectCandidate(true);
             }, 'warning'),
+
+            button('Enviar protocolo', () => {
+                void sendProtocolPrompt(true);
+            }),
 
             button('Token', configureToken),
 
@@ -1019,6 +1096,12 @@
                 `GitHub ${data.githubConfigured ? 'OK' : 'não configurado'} · ` +
                 `${enabled() ? 'autonomia ativa nesta aba' : 'autonomia parada'}.`
             );
+
+            if (enabled()) {
+                window.setTimeout(() => {
+                    void sendProtocolPrompt(false);
+                }, 900);
+            }
         })
         .catch(() => {
             setStatus('Bridge indisponível. Liga-a pelo atalho do Ambiente de Trabalho.');
