@@ -1,0 +1,7 @@
+BonChat writer hash changed; evidence monitor not installed.
+At S:\tmp\powershell-bridge-command-PSB-20260817-0924-INSTALAR-PROVAS-VISUAIS-ARRANQUE-TIMI-1109-001.ps1:74 char:44
++ ... nChatSha) { throw 'BonChat writer hash changed; evidence monitor not  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (BonChat writer ... not installed.:String) [], RuntimeException
+    + FullyQualifiedErrorId : BonChat writer hash changed; evidence monitor not installed.
+ 

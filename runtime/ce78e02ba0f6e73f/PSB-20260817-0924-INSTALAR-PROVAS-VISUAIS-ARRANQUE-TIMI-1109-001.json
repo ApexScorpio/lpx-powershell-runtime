@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-0924-INSTALAR-PROVAS-VISUAIS-ARRANQUE-TIMI-1109-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Capturar e publicar provas visuais do arranque real TIMI das 11:09",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-17T08:28:54.594Z",
+  "endedAt": "2026-08-17T08:28:55.448Z",
+  "elapsedMs": 854,
+  "outputLength": 545,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "6647c88d43efc781eedc6aedea124653009e27c8e585b3a5bb499a50bc934ac5",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260817-0924-INSTALAR-PROVAS-VISUAIS-ARRANQUE-TIMI-1109-001.txt",
+  "createdAt": "2026-08-17T08:28:55.452Z"
+}

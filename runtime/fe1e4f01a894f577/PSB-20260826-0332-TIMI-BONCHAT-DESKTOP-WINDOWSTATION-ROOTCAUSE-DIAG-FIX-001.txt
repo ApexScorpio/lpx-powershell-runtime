@@ -1,0 +1,19 @@
+Cloning into 'S:\tmp\LPX-TIMI-BONCHAT-DESKTOP-f2635c741732448ea3ff6fbc44c973c9\repo'...
+HEAD=0940e0f3887b5e1a10ee198a31281c6db0d02895
+targetUnmodified=True
+windowStation={"Name":"WinSta0","Error":0,"Handle":216}
+currentDesktop={"Name":"Default","Error":0,"Handle":220}
+inputDesktop={"Name":"Default","Error":0,"Handle":2520}
+bridge={"pid":0,"tid":25592,"processName":"Idle","processPath":null,"sessionId":null,"sessionError":87,"desktop":{"Name":"Default","Error":0,"Handle":220}}
+python={"pid":0,"tid":0,"processName":"Idle","processPath":null,"sessionId":null,"sessionError":87,"desktop":null}
+bonChatWindow={"Hwnd":19926108,"Pid":31116,"Tid":7904,"Title":"BonChat","Class":"Qt5QWindowIcon","Left":-8,"Top":-8,"Right":1928,"Bottom":1040}
+bonChat={"pid":0,"tid":7904,"processName":"Idle","processPath":null,"sessionId":null,"sessionError":87,"desktop":{"Name":"Default","Error":0,"Handle":220}}
+foregroundWindow={"Hwnd":1181842,"Pid":7016,"Tid":7056,"Title":"Manifesto JSON PSB JOB File - Google Chrome","Class":"Chrome_WidgetWin_1","Left":-8,"Top":-8,"Right":1928,"Bottom":1040}
+foregroundProcess={"pid":0,"tid":7056,"processName":"Idle","processPath":null,"sessionId":null,"sessionError":87,"desktop":{"Name":"Default","Error":0,"Handle":220}}
+explorerProcesses={"pid":0,"tid":12920,"processName":"Idle","processPath":null,"sessionId":null,"sessionError":87,"desktop":{"Name":"Default","Error":0,"Handle":220}}
+persistentProjectMutation=false
+gitMutationPerformed=false
+currentVsInputDesktopMismatch=False
+bonChatVsInputDesktopMismatch=False
+bridgeVsBonChatSessionMismatch=False
+verdict=BONCHAT_DESKTOP_SESSION_MATCH_NEXT_FOCUS_SECURITY_LAYER_NEEDED

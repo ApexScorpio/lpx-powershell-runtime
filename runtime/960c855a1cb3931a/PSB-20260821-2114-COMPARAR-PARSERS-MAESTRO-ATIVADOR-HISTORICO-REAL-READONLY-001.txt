@@ -1,0 +1,13 @@
+{
+    "Protocol":  "LPX_TIMI_COMPARE_MAESTRO_ACTIVATOR_REAL_HISTORY_READONLY_V1",
+    "Status":  "FAILED",
+    "Stage":  "LOCAL_SOURCE",
+    "Error":  "Historico real nao localizado a partir das fontes/tarefas TIMI",
+    "CodesExposed":  false,
+    "RepositoryModified":  false,
+    "BikesActivationAttempted":  false,
+    "TIMIExecuted":  false,
+    "WhatsAppTouched":  false,
+    "SchedulerModified":  false,
+    "WokegeTouched":  false
+}

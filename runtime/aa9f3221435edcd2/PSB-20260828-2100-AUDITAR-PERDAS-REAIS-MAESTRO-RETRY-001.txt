@@ -1,0 +1,100 @@
+=== AUDITORIA SEMANTICA MAESTRO BACKUP -> ATIVO (READ-ONLY) ===
+
+
+responsibility                                oldPresent activeEquivalent status            evidence                   
+--------------                                ---------- ---------------- ------            --------                   
+MAESTRO single-instance lock lifecycle              True             True MOVED_OR_REPLACED create=True remove=True    
+Working-day / holiday gate                          True            False POTENTIALLY_LOST  active workday/holiday l...
+Detect code already found for current shift         True             True MOVED_OR_REPLACED maestro=True timi_histor...
+Avoid duplicate activation for same shift/day       True             True MOVED_OR_REPLACED maestro=True activation_...
+Continuous Maestro orchestration loop               True             True MOVED_OR_REPLACED active main/execute_cycl...
+Morning/night shift policy                          True             True MOVED_OR_REPLACED function=True hours_11_1...
+
+
+
+=== EVIDENCIA LOCK NO MAESTRO ATIVO ===
+
+line text                                                                       
+---- ----                                                                       
+  23 LOCK_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "MAESTRO_TIMI.lock")
+  27 os.makedirs(os.path.dirname(LOCK_FILE), exist_ok=True)                     
+ 150 # Gravar lock                                                              
+ 151 with open(LOCK_FILE, "w", encoding="utf-8") as f:                          
+ 164 if os.path.exists(LOCK_FILE):                                              
+ 165 os.remove(LOCK_FILE)                                                       
+
+
+
+=== EVIDENCIA WORKDAY/HOLIDAY NO MAESTRO ATIVO ===
+Nenhuma.
+
+=== EVIDENCIA CODIGO/TURNO NO MAESTRO ATIVO ===
+
+line text                                                                                                              
+---- ----                                                                                                              
+  11 from timi_history import has_code_for_shift, get_code_for_shift                                                   
+  42 def get_current_shift() -> str:                                                                                   
+ 119 shift = get_current_shift()                                                                                       
+ 120 if force and shift == "OFF_HOURS":                                                                                
+ 121 shift = "MORNING"                                                                                                 
+ 124 log(f"?? Turno em execu��o: {shift}", source="MAESTRO")                                                           
+ 127 if has_code_for_shift(shift):                                                                                     
+ 128 code = get_code_for_shift(shift)                                                                                  
+ 129 log(f"?? C�digo j� existente no hist�rico para o turno {shift}: {code}. A avan�ar para ativa��o/partilha.", sou...
+ 134 if not has_code_for_shift(shift):                                                                                 
+ 139 if has_code_for_shift(shift):                                                                                     
+ 140 code = get_code_for_shift(shift)                                                                                  
+
+
+
+=== EVIDENCIA DEDUP DE ATIVACAO ===
+-- MAESTRO_TIMI.py --
+
+line text                                                                         
+---- ----                                                                         
+ 122 log("? MODO FOR�ADO ATIVADO: A executar ciclo imediato...", source="MAESTRO")
+
+
+-- MODULO DE ATIVACAO --
+
+line text                                                                     
+---- ----                                                                     
+ 262 msg = toast.inner_text() if toast.is_visible(timeout=3000) else "Ativado"
+
+
+
+=== EVIDENCIA LOOP ATIVO ===
+
+line text                                                          
+---- ----                                                          
+  51 def run_script(script_name: str, source_tag: str) -> bool:    
+ 109 def execute_cycle(force: bool = False):                       
+ 132 bonchat_ok = run_script("Codigo TIMI - BonChat.py", "BONCHAT")
+ 136 run_script("Codigo TIMI - Whatsapp.py", "WHATSAPP")           
+ 142 run_script("Codigo TIMI - Ativa�ao Site.py", "ATIVACAO")      
+ 145 run_script("Partilha Codigo TImi - Whatsapp.py", "PARTILHA")  
+ 149 def main():                                                   
+ 157 while True:                                                   
+ 161 time.sleep(30)                                                
+
+
+
+=== CONFLITO DE LOCK COM LIVEVIEW ===
+
+line text                                                   
+---- ----                                                   
+  62 lock_path = os.path.join(BASE_DIR, "MAESTRO_TIMI.lock")
+  63 if os.path.exists(lock_path):                          
+  65 with open(lock_path, "r") as f:                        
+
+
+
+=== RESUMO ===
+MAESTRO single-instance lock lifecycle: MOVED_OR_REPLACED | create=True remove=True
+Working-day / holiday gate: POTENTIALLY_LOST | active workday/holiday logic=False
+Detect code already found for current shift: MOVED_OR_REPLACED | maestro=True timi_history=True
+Avoid duplicate activation for same shift/day: MOVED_OR_REPLACED | maestro=True activation_module=True
+Continuous Maestro orchestration loop: MOVED_OR_REPLACED | active main/execute_cycle/while logic=True
+Morning/night shift policy: MOVED_OR_REPLACED | function=True hours_11_13_19_22=True
+
+READ-ONLY concluido. Nenhum ficheiro foi alterado.

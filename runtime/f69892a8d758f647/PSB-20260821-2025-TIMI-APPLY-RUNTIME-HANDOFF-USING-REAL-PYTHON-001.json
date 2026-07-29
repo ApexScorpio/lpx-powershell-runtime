@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260821-2025-TIMI-APPLY-RUNTIME-HANDOFF-USING-REAL-PYTHON-001",
+  "conversationKey": "f69892a8d758f647",
+  "purpose": "Aplicar handoff runtime e exit codes validando com Python real",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-21T19:25:19.458Z",
+  "endedAt": "2026-08-21T19:29:06.239Z",
+  "elapsedMs": 226781,
+  "outputLength": 2059,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "0215080d0b08f250d0cc1bfe23433d291fdbafede59b88a5b27008efa5ab0308",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f69892a8d758f647/PSB-20260821-2025-TIMI-APPLY-RUNTIME-HANDOFF-USING-REAL-PYTHON-001.txt",
+  "createdAt": "2026-08-21T19:29:06.241Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260819-2336-TRACAR-PROCURA-HANDOFF-ATIVACAO-TIMI-READONLY-001",
+  "conversationKey": "0d433481e6204dae",
+  "purpose": "Traçar exclusivamente procura do código, handoff e ativação das bicicletas sem ativar um código expirado",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-19T22:37:22.881Z",
+  "endedAt": "2026-08-19T22:37:27.322Z",
+  "elapsedMs": 4441,
+  "outputLength": 473013,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "56432e0f3b264ed0c732f930ca004dbd339f6569fef518a09ff4ceccd8d778c8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/0d433481e6204dae/PSB-20260819-2336-TRACAR-PROCURA-HANDOFF-ATIVACAO-TIMI-READONLY-001.txt",
+  "createdAt": "2026-08-19T22:37:27.327Z"
+}

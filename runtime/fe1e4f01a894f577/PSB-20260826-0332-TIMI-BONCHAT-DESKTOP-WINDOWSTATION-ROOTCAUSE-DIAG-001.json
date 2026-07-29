@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260826-0332-TIMI-BONCHAT-DESKTOP-WINDOWSTATION-ROOTCAUSE-DIAG-001",
+  "conversationKey": "fe1e4f01a894f577",
+  "purpose": "Diagnosticar desktop e window station do bridge, BonChat e foreground",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-26T02:29:27.601Z",
+  "endedAt": "2026-08-26T02:31:00.231Z",
+  "elapsedMs": 92630,
+  "outputLength": 573,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "0ce51a5545f7273c0c0eda6e182c4717026744b83ddcace2d2e8cf810be6c8a1",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/fe1e4f01a894f577/PSB-20260826-0332-TIMI-BONCHAT-DESKTOP-WINDOWSTATION-ROOTCAUSE-DIAG-001.txt",
+  "createdAt": "2026-08-26T02:31:00.233Z"
+}

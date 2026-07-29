@@ -1,0 +1,72 @@
+{
+    "Protocol":  "LPX_TIMI_FIX_PROBE_ALTERNATE_WHATSAPP_SESSION_READONLY_V1",
+    "Status":  "SUCCEEDED",
+    "LocalNow":  "2026-08-19T23:20:19.4852888+01:00",
+    "GitHubAccount":  "ApexScorpio",
+    "ActiveCommit":  "badf4318aa34ff83e3176caf52412066b48bcba3",
+    "SessionRoot":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\WHATSAPP_SESSION",
+    "CandidateCount":  2,
+    "Candidates":  [
+                       {
+                           "Name":  "active",
+                           "OriginalPath":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\WHATSAPP_SESSION\\active",
+                           "LastWriteTime":  "2026-07-28T17:25:27.2831846+01:00",
+                           "CopyOk":  true,
+                           "RobocopyExitCode":  1,
+                           "ProbeExitCode":  0,
+                           "ProbeStdErr":  "",
+                           "Probe":  {
+                                         "python":  "S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+                                         "profile":  "S:\\tmp\\LPX-TIMI-WA-SESSION-PROBE-FIX\\copy-active-8632e84b5aed4b8d818dd5e1cdb134ba",
+                                         "launchOk":  true,
+                                         "classification":  "NO_USABLE_APP_SHELL",
+                                         "url":  "https://web.whatsapp.com/",
+                                         "title":  "",
+                                         "main":  0,
+                                         "side":  0,
+                                         "paneSide":  0,
+                                         "canvas":  0,
+                                         "dataRef":  0,
+                                         "contenteditable":  0,
+                                         "titleSpans":  0,
+                                         "bodyLength":  185,
+                                         "errorType":  null,
+                                         "error":  null
+                                     }
+                       },
+                       {
+                           "Name":  "backup_good",
+                           "OriginalPath":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\WHATSAPP_SESSION\\backup_good",
+                           "LastWriteTime":  "2026-07-28T16:28:31.0071637+01:00",
+                           "CopyOk":  true,
+                           "RobocopyExitCode":  1,
+                           "ProbeExitCode":  0,
+                           "ProbeStdErr":  "",
+                           "Probe":  {
+                                         "python":  "S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+                                         "profile":  "S:\\tmp\\LPX-TIMI-WA-SESSION-PROBE-FIX\\copy-backup_good-fb04147a5d9c4721967af043a9606226",
+                                         "launchOk":  true,
+                                         "classification":  "NO_USABLE_APP_SHELL",
+                                         "url":  "https://web.whatsapp.com/",
+                                         "title":  "",
+                                         "main":  0,
+                                         "side":  0,
+                                         "paneSide":  0,
+                                         "canvas":  0,
+                                         "dataRef":  0,
+                                         "contenteditable":  0,
+                                         "titleSpans":  0,
+                                         "bodyLength":  147,
+                                         "errorType":  null,
+                                         "error":  null
+                                     }
+                       }
+                   ],
+    "AuthenticatedCandidateFound":  false,
+    "SelectedName":  null,
+    "SelectedOriginalPath":  null,
+    "OriginalProfilesModified":  false,
+    "RepositoryModified":  false,
+    "SchedulerModified":  false,
+    "WokegeTouched":  false
+}

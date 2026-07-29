@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260821-2042-TIMI-FINAL-CALLGRAPH-PROFILE-PATHS-READONLY-001",
+  "conversationKey": "f69892a8d758f647",
+  "purpose": "Validar chamadas do Maestro e paths de perfis sem executar o TIMI",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-21T19:42:27.937Z",
+  "endedAt": "2026-08-21T19:44:51.223Z",
+  "elapsedMs": 143286,
+  "outputLength": 6194,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3b6d2986814cc74e233839c59d591108eee14a6aae9e83fac5b23816550a1897",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f69892a8d758f647/PSB-20260821-2042-TIMI-FINAL-CALLGRAPH-PROFILE-PATHS-READONLY-001.txt",
+  "createdAt": "2026-08-21T19:44:51.226Z"
+}

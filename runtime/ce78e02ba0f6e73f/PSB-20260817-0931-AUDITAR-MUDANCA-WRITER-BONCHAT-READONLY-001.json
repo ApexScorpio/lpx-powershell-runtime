@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-0931-AUDITAR-MUDANCA-WRITER-BONCHAT-READONLY-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Auditar em readonly a mudança inesperada do writer BonChat antes das provas visuais",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-17T08:30:17.671Z",
+  "endedAt": "2026-08-17T08:30:29.370Z",
+  "elapsedMs": 11699,
+  "outputLength": 21997,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "cc8b7247d7e30c3bde9a282cd457e329e54e415c47d4ba66ec73cdfa9f347789",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260817-0931-AUDITAR-MUDANCA-WRITER-BONCHAT-READONLY-001.txt",
+  "createdAt": "2026-08-17T08:30:29.372Z"
+}

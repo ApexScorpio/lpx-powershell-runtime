@@ -1,0 +1,15 @@
+{
+    "Protocol":  "LPX_TIMI_COMPARE_PARSERS_GITHUB_RUNTIME_READONLY_V1",
+    "Status":  "FAILED",
+    "Stage":  "COMPARE",
+    "Error":  "  File \"\u003cstring\u003e\", line 11",
+    "CodesExposed":  false,
+    "RepositoryModified":  false,
+    "BikesActivationAttempted":  false,
+    "TIMIExecuted":  false,
+    "BonChatExecuted":  false,
+    "ActivatorExecuted":  false,
+    "WhatsAppTouched":  false,
+    "SchedulerModified":  false,
+    "WokegeTouched":  false
+}

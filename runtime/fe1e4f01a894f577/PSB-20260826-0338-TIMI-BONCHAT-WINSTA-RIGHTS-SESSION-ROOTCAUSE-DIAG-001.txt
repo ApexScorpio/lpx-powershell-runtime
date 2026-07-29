@@ -1,0 +1,22 @@
+Cloning into 'S:\tmp\LPX-TIMI-BONCHAT-DESKTOP-ba40495b54c2435e8d61a336996b8e0e\repo'...
+HEAD=0940e0f3887b5e1a10ee198a31281c6db0d02895
+targetUnmodified=True
+windowStation={"Name":"WinSta0","Error":0,"Handle":208}
+currentDesktop={"Name":"Default","Error":0,"Handle":212}
+inputDesktop={"Name":"Default","Error":0,"Handle":2720}
+windowStationRights=[{"ObjectType":"WindowStation","ObjectName":"WinSta0","RightName":"WINSTA_ENUMDESKTOPS","DesiredAccess":1,"Opened":true,"Error":0},{"ObjectType":"WindowStation","ObjectName":"WinSta0","RightName":"WINSTA_READATTRIBUTES","DesiredAccess":2,"Opened":true,"Error":0},{"ObjectType":"WindowStation","ObjectName":"WinSta0","RightName":"WINSTA_WRITEATTRIBUTES","DesiredAccess":16,"Opened":true,"Error":0},{"ObjectType":"WindowStation","ObjectName":"WinSta0","RightName":"WINSTA_ENUMERATE","DesiredAccess":256,"Opened":true,"Error":0},{"ObjectType":"WindowStation","ObjectName":"WinSta0","RightName":"WINSTA_READSCREEN","DesiredAccess":512,"Opened":true,"Error":0},{"ObjectType":"WindowStation","ObjectName":"WinSta0","RightName":"WINSTA_ACCESSCLIPBOARD","DesiredAccess":4,"Opened":true,"Error":0}]
+desktopRights=[{"ObjectType":"Desktop","ObjectName":"Default","RightName":"DESKTOP_READOBJECTS","DesiredAccess":1,"Opened":true,"Error":0},{"ObjectType":"Desktop","ObjectName":"Default","RightName":"DESKTOP_WRITEOBJECTS","DesiredAccess":128,"Opened":true,"Error":0},{"ObjectType":"Desktop","ObjectName":"Default","RightName":"DESKTOP_SWITCHDESKTOP","DesiredAccess":256,"Opened":true,"Error":0},{"ObjectType":"Desktop","ObjectName":"Default","RightName":"DESKTOP_ENUMERATE","DesiredAccess":64,"Opened":true,"Error":0},{"ObjectType":"Desktop","ObjectName":"Default","RightName":"DESKTOP_CREATEWINDOW","DesiredAccess":2,"Opened":true,"Error":0},{"ObjectType":"Desktop","ObjectName":"Default","RightName":"DESKTOP_HOOKCONTROL","DesiredAccess":8,"Opened":true,"Error":0}]
+cursorSamePositionProbe={"GetBeforeOk":true,"GetBeforeError":0,"BeforeX":1108,"BeforeY":988,"SetSameOk":false,"SetSameError":0,"GetAfterOk":true,"GetAfterError":0,"AfterX":1108,"AfterY":988}
+bridge={"pid":25736,"tid":30464,"processName":"powershell","processPath":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","sessionId":1,"sessionError":0,"desktop":{"Name":"Default","Error":0,"Handle":212}}
+python={"pid":10080,"tid":0,"processName":"python","processPath":"S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python310\\python.exe","sessionId":1,"sessionError":0,"desktop":null}
+bonChatWindow={"Hwnd":60558424,"Pid":34636,"Tid":32560,"Title":"BonChat","Class":"Qt5QWindowIcon","Left":-8,"Top":-8,"Right":1928,"Bottom":1040}
+bonChat={"pid":34636,"tid":32560,"processName":"BonChat","processPath":"s:\\Users\\lopes\\AppData\\Roaming\\BonChat\\BonChat.exe","sessionId":1,"sessionError":0,"desktop":{"Name":"Default","Error":0,"Handle":212}}
+foregroundWindow={"Hwnd":1181842,"Pid":7016,"Tid":7056,"Title":"Manifesto JSON PSB JOB File - Google Chrome","Class":"Chrome_WidgetWin_1","Left":-8,"Top":-8,"Right":1928,"Bottom":1040}
+foregroundProcess={"pid":7016,"tid":7056,"processName":"chrome","processPath":null,"sessionId":1,"sessionError":0,"desktop":{"Name":"Default","Error":0,"Handle":212}}
+explorerProcesses={"pid":10632,"tid":12920,"processName":"explorer","processPath":"C:\\WINDOWS\\Explorer.EXE","sessionId":1,"sessionError":0,"desktop":{"Name":"Default","Error":0,"Handle":212}}
+persistentProjectMutation=false
+gitMutationPerformed=false
+currentVsInputDesktopMismatch=False
+bonChatVsInputDesktopMismatch=False
+bridgeVsBonChatSessionMismatch=False
+verdict=CURSOR_WRITE_DENIED_DESPITE_WINSTA_DESKTOP_ACCESS_NEXT_TOKEN_ACL_LAYER

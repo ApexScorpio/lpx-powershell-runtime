@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260825-1810-TIMI-INDEPENDENT-VIEWPORT-CODE-CHECK-EPHEMERAL-001",
+  "conversationKey": "bf91a2dd309589a0",
+  "purpose": "Verificar código visível nos viewports com OCR independente",
+  "status": "failed",
+  "exitCode": 318,
+  "startedAt": "2026-08-25T17:14:41.327Z",
+  "endedAt": "2026-08-25T17:15:18.703Z",
+  "elapsedMs": 37376,
+  "outputLength": 218,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f1340f152d0025347222698fa1f14b712a4bf529e67dd28c01c7bda091780edf",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/bf91a2dd309589a0/PSB-20260825-1810-TIMI-INDEPENDENT-VIEWPORT-CODE-CHECK-EPHEMERAL-001.txt",
+  "createdAt": "2026-08-25T17:15:18.707Z"
+}

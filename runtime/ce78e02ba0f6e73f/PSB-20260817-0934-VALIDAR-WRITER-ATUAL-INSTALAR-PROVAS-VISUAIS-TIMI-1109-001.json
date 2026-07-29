@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-0934-VALIDAR-WRITER-ATUAL-INSTALAR-PROVAS-VISUAIS-TIMI-1109-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Validar o writer atual e instalar provas visuais do ciclo TIMI das 11:09",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-17T08:38:01.916Z",
+  "endedAt": "2026-08-17T08:38:02.600Z",
+  "elapsedMs": 684,
+  "outputLength": 561,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "255964964f045ddcbc3d5ecd46d1d7baba5470af0ea9d5a67772ea85241f3374",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260817-0934-VALIDAR-WRITER-ATUAL-INSTALAR-PROVAS-VISUAIS-TIMI-1109-001.txt",
+  "createdAt": "2026-08-17T08:38:02.604Z"
+}

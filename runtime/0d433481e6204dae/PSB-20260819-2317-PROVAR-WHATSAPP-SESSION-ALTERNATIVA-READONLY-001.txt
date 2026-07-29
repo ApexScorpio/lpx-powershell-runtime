@@ -1,0 +1,34 @@
+{
+    "Protocol":  "LPX_TIMI_PROBE_ALTERNATE_WHATSAPP_SESSION_READONLY_V1",
+    "Status":  "SUCCEEDED",
+    "LocalNow":  "2026-08-19T23:17:27.3367826+01:00",
+    "GitHubAccount":  "ApexScorpio",
+    "ActiveCommit":  "badf4318aa34ff83e3176caf52412066b48bcba3",
+    "SessionRootExists":  true,
+    "CandidateCount":  2,
+    "Candidates":  [
+                       {
+                           "Name":  "active",
+                           "Path":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\WHATSAPP_SESSION\\active",
+                           "LastWriteTime":  "2026-07-28T17:25:27.2831846+01:00",
+                           "CopyOk":  true,
+                           "ProbeExitCode":  1,
+                           "Probe":  null
+                       },
+                       {
+                           "Name":  "backup_good",
+                           "Path":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\WHATSAPP_SESSION\\backup_good",
+                           "LastWriteTime":  "2026-07-28T16:28:31.0071637+01:00",
+                           "CopyOk":  true,
+                           "ProbeExitCode":  1,
+                           "Probe":  null
+                       }
+                   ],
+    "AuthenticatedCandidateFound":  false,
+    "SelectedName":  null,
+    "SelectedPath":  null,
+    "OriginalProfilesModified":  false,
+    "RepositoryModified":  false,
+    "SchedulerModified":  false,
+    "WokegeTouched":  false
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260826-0332-TIMI-BONCHAT-DESKTOP-WINDOWSTATION-ROOTCAUSE-DIAG-FIX-001",
+  "conversationKey": "fe1e4f01a894f577",
+  "purpose": "Repetir diagnóstico de desktop e window station sem colisão com PID",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-26T02:34:49.892Z",
+  "endedAt": "2026-08-26T02:36:20.095Z",
+  "elapsedMs": 90203,
+  "outputLength": 1671,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fe61c97ab9fc4b5325c2407cd1fe499ba7ed68d05c5a5483735eb528c99575b1",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/fe1e4f01a894f577/PSB-20260826-0332-TIMI-BONCHAT-DESKTOP-WINDOWSTATION-ROOTCAUSE-DIAG-FIX-001.txt",
+  "createdAt": "2026-08-26T02:36:20.097Z"
+}

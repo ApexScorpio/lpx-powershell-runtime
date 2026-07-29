@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260824-1300-IDLE-EMPIRE-RESUME-GITHUB-PERSIST-001",
+  "conversationKey": "7b3206031de7ab5a",
+  "purpose": "Retomar e guardar login Idle-Empire encriptado no GitHub",
+  "status": "cancelled",
+  "exitCode": -1,
+  "startedAt": "2026-08-24T12:06:44.024Z",
+  "endedAt": "2026-08-24T12:22:30.787Z",
+  "elapsedMs": 946763,
+  "outputLength": 22,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "430aff8afa0d32139fe14c5c4056bacad1f5fc37f0b69ced9cf92cd1c5c3b3cd",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7b3206031de7ab5a/PSB-20260824-1300-IDLE-EMPIRE-RESUME-GITHUB-PERSIST-001.txt",
+  "createdAt": "2026-08-24T12:22:30.798Z"
+}

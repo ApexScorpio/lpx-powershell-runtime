@@ -1,0 +1,25 @@
+{
+    "Protocol":  "LPX_TIMI_OPEN_WHATSAPP_RELINK_QR_V1",
+    "Status":  "SUCCEEDED",
+    "LocalNow":  "2026-08-19T23:23:08.6496216+01:00",
+    "GitHubAccount":  "ApexScorpio",
+    "ActiveCommit":  "badf4318aa34ff83e3176caf52412066b48bcba3",
+    "Profile":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\chrome_profile_acc2_backup_NEW",
+    "Chrome":  {
+                   "AlreadyOpen":  false,
+                   "LaunchedPid":  31252,
+                   "MatchingProcessCount":  8,
+                   "WindowExpectedVisible":  true
+               },
+    "Runtime":  {
+                    "ResidentIntentionallyPaused":  true,
+                    "WhatsAppRelinkRequired":  true,
+                    "NightMarkedSuccessful":  false
+                },
+    "Changes":  [
+                    "Stopped resident V3 PID 28556",
+                    "Opened WhatsApp relink window PID 31252"
+                ],
+    "ProtectedTaskModified":  false,
+    "WokegeTouched":  false
+}

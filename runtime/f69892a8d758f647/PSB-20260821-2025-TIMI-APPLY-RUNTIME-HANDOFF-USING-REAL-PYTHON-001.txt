@@ -1,0 +1,37 @@
+HEAD_BEFORE=1a085c33045dad62a5b2f6273bec74a1a3ccc802
+ACTIVATION_BLOB_BEFORE=fb7665b1b3fe5c948b6c6915baa6b9cce434f987
+SHARE_BLOB_BEFORE=bf93f8846a383d5e6c086ef9e0c80e4c4894fc12
+WORKING_PYTHON_FOUND=True
+WORKING_PYTHON_EXE=%USERPROFILE%\AppData\Local\Programs\Python\Python310\python.exe
+WORKING_PYTHON_PREFIX=
+ACTIVATION_USES_RUNTIME_DATA=True
+ACTIVATION_PROFILE_PRESERVED=True
+ACTIVATION_NO_CODE_IS_NONZERO=True
+ACTIVATION_STRICT_CONFIRM_PRESERVED=True
+ACTIVATION_RIDE_GO_PRESERVED=True
+SHARE_USES_RUNTIME_DATA=True
+SHARE_RUNTIME_VOUCHER_HISTORY_CONFIG=True
+SHARE_SYS_PROFILE_BACKUP_PRESERVED=True
+SHARE_FAILURE_PROPAGATES_NONZERO=True
+warning: in the working copy of 'Codigo TIMI - Ativaçao Site.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Partilha Codigo TImi - Whatsapp.py', LF will be replaced by CRLF the next time Git touches it
+CHANGED_FILE_COUNT=2
+CHANGED_FILE="Codigo TIMI - Ativa\303\247ao Site.py"
+CHANGED_FILE=Partilha Codigo TImi - Whatsapp.py
+warning: in the working copy of 'Codigo TIMI - Ativaçao Site.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Partilha Codigo TImi - Whatsapp.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Codigo TIMI - Ativaçao Site.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Partilha Codigo TImi - Whatsapp.py', LF will be replaced by CRLF the next time Git touches it
+COMMIT_CREATED=2eae5759d09094f33e71f074d46b1e5afd72678a
+To https://github.com/ApexScorpio/TIMI-ativador.git
+   1a085c3..2eae575  HEAD -> active
+REMOTE_HEAD_AFTER=2eae5759d09094f33e71f074d46b1e5afd72678a
+PUSH_VERIFIED=True
+ACTIVATION_BLOB_AFTER=ee1334e3cd49da2b8d5f444cb240b3a683ce90c3
+SHARE_BLOB_AFTER=68dd8aa5dc4c3c4ddc981b91e8313eb70b82d9c9
+MAESTRO_MODIFIED=False
+BONCHAT_MODIFIED=False
+LAUNCHER_MODIFIED=False
+RETRY_10MIN_MODIFIED=False
+TIMI_STARTED_BY_FIX=False
+FIX_SCOPE=runtime-data-handoff-and-real-exitcodes-only

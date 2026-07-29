@@ -1,0 +1,142 @@
+=== RASTREIO DE LOGICA MAESTRO - READ-ONLY ===
+
+check_lock: 0 definicao(oes) ativas
+remove_lock: 0 definicao(oes) ativas
+is_working_day: 0 definicao(oes) ativas
+check_if_code_found_today: 0 definicao(oes) ativas
+check_if_activated_today: 0 definicao(oes) ativas
+maestro_loop: 0 definicao(oes) ativas
+
+=== PROCURA POR RESPONSABILIDADES EQUIVALENTES ===
+
+-- MAESTRO_TIMI.lock (2) --
+  liveview_daemon.py:62  lock_path = os.path.join(BASE_DIR, "MAESTRO_TIMI.lock")
+  MAESTRO_TIMI.py:23  LOCK_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "MAESTRO_TIMI.lock")
+
+-- CURRENT_RUN_ID (5) --
+  liveview_daemon.py:23  RUN_ID_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "CURRENT_RUN_ID.txt")
+  liveview_daemon.py:41  self.run_id = self._read_current_run_id()
+  liveview_daemon.py:47  def _read_current_run_id(self) -> str:
+  liveview_daemon.py:294  "run_id": self._read_current_run_id(),
+  MAESTRO_TIMI.py:24  RUN_ID_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "CURRENT_RUN_ID.txt")
+
+-- get_current_shift (2) --
+  MAESTRO_TIMI.py:42  def get_current_shift() -> str:
+  MAESTRO_TIMI.py:119  shift = get_current_shift()
+
+-- current_shift (2) --
+  MAESTRO_TIMI.py:42  def get_current_shift() -> str:
+  MAESTRO_TIMI.py:119  shift = get_current_shift()
+
+-- append_code (6) --
+  Codigo TIMI - BonChat.py:38  from timi_history import append_code, has_code_for_shift, get_current_pt_date_str
+  Codigo TIMI - BonChat.py:507  append_code(code, shift="MORNING", source="BONCHAT SNIPER")
+  Codigo TIMI - Whatsapp.py:62  from timi_history import append_code
+  Codigo TIMI - Whatsapp.py:70  append_code(code, shift=shift, source="WHATSAPP EXTRACTOR")
+  timi_history.py:70  def append_code(code: str, shift: str = "MORNING", source: str = "SNIPER GHOST", history_file: str = DEFAULT_HISTORY_FILE) -> str:
+  _legacy\diagnostics\test_battery_history.py:11  line = timi_history.append_code("889900", shift="MORNING", source="TEST_RUNNER", history_file=test_file)
+
+-- timi_history (19) --
+  Codigo TIMI - Ativa�ao Site.py:82  from timi_history import get_code_for_shift
+  Codigo TIMI - Ativa�ao Site.py:88  log(f"?? C�digo can�nico encontrado via timi_history para o turno {shift}: {code}")
+  Codigo TIMI - BonChat.py:38  from timi_history import append_code, has_code_for_shift, get_current_pt_date_str
+  Codigo TIMI - Whatsapp.py:62  from timi_history import append_code
+  Codigo TIMI - Whatsapp.py:71  log(f"Hist�rico: {code} ({msg_time_str} - {shift}) registado com sucesso via timi_history.")
+  MAESTRO_TIMI.py:11  from timi_history import has_code_for_shift, get_code_for_shift
+  Partilha Codigo TImi - Whatsapp.py:35  """Identifica o c�digo do turno atual atrav�s de timi_history."""
+  Partilha Codigo TImi - Whatsapp.py:37  from timi_history import get_code_for_shift
+  Partilha Codigo TImi - Whatsapp.py:43  log(f"?? Voucher can�nico localizado via timi_history para {shift}: {code}")
+  _legacy\diagnostics\test_battery_history.py:3  import timi_history
+  _legacy\diagnostics\test_battery_history.py:11  line = timi_history.append_code("889900", shift="MORNING", source="TEST_RUNNER", history_file=test_file)
+  _legacy\diagnostics\test_battery_history.py:16  code = timi_history.get_code_for_shift("MORNING", history_file=test_file)
+  _legacy\diagnostics\test_battery_history.py:19  has_c = timi_history.has_code_for_shift("MORNING", history_file=test_file)
+  _legacy\diagnostics\test_battery_history.py:24  p = timi_history.parse_entry(legacy_line)
+  _legacy\experiments\organize_legacy_conservatively.py:32  "timi_history.py",
+  _validation\test_full_production_suite.py:55  import timi_history
+  _validation\test_full_production_suite.py:56  entry = timi_history.parse_entry("[2026-08-28 19:15:00] 654321 | 28 de agosto | 19:00-22:00 | TEST_SNIPER")
+  _validation\test_real_suite.py:17  import timi_history
+  _validation\test_real_suite.py:68  entry = timi_history.parse_entry("[2026-08-28 19:15:00] 654321 | 28 de agosto | 19:00-22:00 | TEST_SNIPER")
+
+-- lock_path (3) --
+  liveview_daemon.py:62  lock_path = os.path.join(BASE_DIR, "MAESTRO_TIMI.lock")
+  liveview_daemon.py:63  if os.path.exists(lock_path):
+  liveview_daemon.py:65  with open(lock_path, "r") as f:
+
+-- RUN_ID (11) --
+  liveview_daemon.py:23  RUN_ID_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "CURRENT_RUN_ID.txt")
+  liveview_daemon.py:41  self.run_id = self._read_current_run_id()
+  liveview_daemon.py:47  def _read_current_run_id(self) -> str:
+  liveview_daemon.py:48  if os.path.exists(RUN_ID_FILE):
+  liveview_daemon.py:50  with open(RUN_ID_FILE, "r", encoding="utf-8") as f:
+  liveview_daemon.py:294  "run_id": self._read_current_run_id(),
+  MAESTRO_TIMI.py:24  RUN_ID_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "CURRENT_RUN_ID.txt")
+  MAESTRO_TIMI.py:110  run_id = f"RUN-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}"
+  MAESTRO_TIMI.py:112  with open(RUN_ID_FILE, "w", encoding="utf-8") as f:
+  MAESTRO_TIMI.py:113  f.write(run_id)
+  MAESTRO_TIMI.py:116  log(f"Novo ciclo de execu��o iniciado: {run_id}", source="MAESTRO", ev_type="MAESTRO")
+
+=== MAESTRO ATIVO: IMPORTS + DEFINICOES ===
+  MAESTRO_TIMI.py:1  import os
+  MAESTRO_TIMI.py:2  import sys
+  MAESTRO_TIMI.py:3  import time
+  MAESTRO_TIMI.py:4  import datetime
+  MAESTRO_TIMI.py:5  import subprocess
+  MAESTRO_TIMI.py:6  import threading
+  MAESTRO_TIMI.py:7  import psutil
+  MAESTRO_TIMI.py:8  import json
+  MAESTRO_TIMI.py:9  import logging
+  MAESTRO_TIMI.py:11  from timi_history import has_code_for_shift, get_code_for_shift
+  MAESTRO_TIMI.py:12  from ghost_telemetry import get_telemetry
+  MAESTRO_TIMI.py:14  telemetry = get_telemetry()
+  MAESTRO_TIMI.py:21  BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+  MAESTRO_TIMI.py:22  LOG_FILE = os.path.join(BASE_DIR, "_runtime", "logs", "MAESTRO_TIMI.log")
+  MAESTRO_TIMI.py:23  LOCK_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "MAESTRO_TIMI.lock")
+  MAESTRO_TIMI.py:24  RUN_ID_FILE = os.path.join(BASE_DIR, "_runtime", "temp", "CURRENT_RUN_ID.txt")
+  MAESTRO_TIMI.py:30  level=logging.INFO,
+  MAESTRO_TIMI.py:31  format='%(asctime)s [%(levelname)s] %(message)s',
+  MAESTRO_TIMI.py:32  handlers=[
+  MAESTRO_TIMI.py:38  def log(msg: str, source: str = "MAESTRO", ev_type: str = "LOG"):
+  MAESTRO_TIMI.py:42  def get_current_shift() -> str:
+  MAESTRO_TIMI.py:43  now = datetime.datetime.now()
+  MAESTRO_TIMI.py:44  hour = now.hour
+  MAESTRO_TIMI.py:51  def run_script(script_name: str, source_tag: str) -> bool:
+  MAESTRO_TIMI.py:52  script_path = os.path.join(BASE_DIR, script_name)
+  MAESTRO_TIMI.py:57  cmd = [sys.executable, "-u", script_path]
+  MAESTRO_TIMI.py:58  from timi_desktop_isolation import ensure_ghost_desktop, FULL_DESKTOP_PATH
+  MAESTRO_TIMI.py:65  proc = subprocess.Popen(
+  MAESTRO_TIMI.py:67  stdout=subprocess.PIPE,
+  MAESTRO_TIMI.py:68  stderr=subprocess.PIPE,
+  MAESTRO_TIMI.py:69  text=True,
+  MAESTRO_TIMI.py:70  encoding='utf-8',
+  MAESTRO_TIMI.py:71  errors='replace',
+  MAESTRO_TIMI.py:72  cwd=BASE_DIR,
+  MAESTRO_TIMI.py:73  startupinfo=si
+  MAESTRO_TIMI.py:75  child_pid = proc.pid
+  MAESTRO_TIMI.py:78  def stream_pipe(pipe, is_err):
+  MAESTRO_TIMI.py:80  clean = line.strip()
+  MAESTRO_TIMI.py:86  t_out = threading.Thread(target=stream_pipe, args=(proc.stdout, False), daemon=True)
+  MAESTRO_TIMI.py:87  t_err = threading.Thread(target=stream_pipe, args=(proc.stderr, True), daemon=True)
+  MAESTRO_TIMI.py:91  ret = proc.wait(timeout=600)
+  MAESTRO_TIMI.py:109  def execute_cycle(force: bool = False):
+  MAESTRO_TIMI.py:110  run_id = f"RUN-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}"
+  MAESTRO_TIMI.py:119  shift = get_current_shift()
+  MAESTRO_TIMI.py:121  shift = "MORNING"
+  MAESTRO_TIMI.py:128  code = get_code_for_shift(shift)
+  MAESTRO_TIMI.py:132  bonchat_ok = run_script("Codigo TIMI - BonChat.py", "BONCHAT")
+  MAESTRO_TIMI.py:140  code = get_code_for_shift(shift)
+  MAESTRO_TIMI.py:149  def main():
+  MAESTRO_TIMI.py:154  force_once = "-f" in sys.argv or "--force" in sys.argv
+  MAESTRO_TIMI.py:160  force_once = False # nos ciclos seguintes segue a pol�tica de turnos
+
+=== MODULOS TIMI ATIVOS ===
+  _legacy\diagnostics\audit_real_state.py  (2162 bytes)
+  _legacy\diagnostics\test_battery_history.py  (1422 bytes)
+  Codigo TIMI - Ativa�ao Site.py  (15158 bytes)
+  Codigo TIMI - BonChat.py  (23024 bytes)
+  Codigo TIMI - Whatsapp.py  (6030 bytes)
+  MAESTRO_TIMI.py  (6263 bytes)
+  Partilha Codigo TImi - Whatsapp.py  (12747 bytes)
+  timi_desktop_isolation.py  (6726 bytes)
+  timi_history.py  (5331 bytes)
+
+READ-ONLY concluido. Nenhum ficheiro foi modificado.

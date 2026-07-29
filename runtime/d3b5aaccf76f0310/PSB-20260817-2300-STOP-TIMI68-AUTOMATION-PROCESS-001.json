@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-2300-STOP-TIMI68-AUTOMATION-PROCESS-001",
+  "conversationKey": "d3b5aaccf76f0310",
+  "purpose": "Parar o processo de automação TIMI68 sem fechar o BonChat nem a Bridge",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-18T20:06:06.214Z",
+  "endedAt": "2026-08-18T20:06:07.501Z",
+  "elapsedMs": 1287,
+  "outputLength": 305,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "e87e8e6f2d6bbdaf9828b58a5f91ee76b3858457172d1b5485e4c08c69c4d2a5",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d3b5aaccf76f0310/PSB-20260817-2300-STOP-TIMI68-AUTOMATION-PROCESS-001.txt",
+  "createdAt": "2026-08-18T20:06:07.505Z"
+}

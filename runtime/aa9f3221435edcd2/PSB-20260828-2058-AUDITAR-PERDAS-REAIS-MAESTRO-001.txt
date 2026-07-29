@@ -1,0 +1,15 @@
+At S:\tmp\powershell-bridge-command-PSB-20260828-2058-AUDITAR-PERDAS-REAIS-MAESTRO-001.ps1:120 char:10
++     ) -or
++          ~
+Missing closing ')' in expression.
+At S:\tmp\powershell-bridge-command-PSB-20260828-2058-AUDITAR-PERDAS-REAIS-MAESTRO-001.ps1:121 char:5
++     Has-Any $activationText @(
++     ~~~~~~~
+Unexpected token 'Has-Any' in expression or statement.
+At S:\tmp\powershell-bridge-command-PSB-20260828-2058-AUDITAR-PERDAS-REAIS-MAESTRO-001.ps1:130 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInExpression
+ 

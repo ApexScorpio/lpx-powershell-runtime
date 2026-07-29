@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260813-1436-CLEAN-TARGETED-APP-CACHES-TEMP-AND-STALE-DISCORD-FIXED-001",
+  "conversationKey": "25d210701adfef2b",
+  "purpose": "Corrigir a limpeza de caches temporários e validar Discord antigo sem abortar",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-13T13:38:12.002Z",
+  "endedAt": "2026-08-13T13:38:44.946Z",
+  "elapsedMs": 32944,
+  "outputLength": 31747,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "5bf8bc07842b4a75b0c9500a85f81f2ee07e22ef8582208a8782c83825fbcf89",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/25d210701adfef2b/PSB-20260813-1436-CLEAN-TARGETED-APP-CACHES-TEMP-AND-STALE-DISCORD-FIXED-001.txt",
+  "createdAt": "2026-08-13T13:38:44.949Z"
+}

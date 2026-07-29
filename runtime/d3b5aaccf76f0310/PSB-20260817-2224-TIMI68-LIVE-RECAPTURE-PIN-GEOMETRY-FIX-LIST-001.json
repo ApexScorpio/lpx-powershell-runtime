@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-2224-TIMI68-LIVE-RECAPTURE-PIN-GEOMETRY-FIX-LIST-001",
+  "conversationKey": "d3b5aaccf76f0310",
+  "purpose": "Corrigir o erro de tipos, manter o BonChat maximizado e recapturar todas as ocorrências de Theodore e Marcia",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-17T21:24:00.601Z",
+  "endedAt": "2026-08-17T21:24:51.100Z",
+  "elapsedMs": 50499,
+  "outputLength": 555,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7341cda1c2a8fda921ff426f6f31dd588d2e6c24362a3188e44fe91b2f797e03",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d3b5aaccf76f0310/PSB-20260817-2224-TIMI68-LIVE-RECAPTURE-PIN-GEOMETRY-FIX-LIST-001.txt",
+  "createdAt": "2026-08-17T21:24:51.102Z"
+}

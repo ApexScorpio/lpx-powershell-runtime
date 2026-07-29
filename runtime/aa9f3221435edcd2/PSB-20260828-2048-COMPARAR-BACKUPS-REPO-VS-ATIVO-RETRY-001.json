@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260828-2048-COMPARAR-BACKUPS-REPO-VS-ATIVO-RETRY-001",
+  "conversationKey": "aa9f3221435edcd2",
+  "purpose": "Repetir read-only a comparacao da pasta BACKUPS do projeto com a versao ativa e identificar ficheiros perdidos ou alterados",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-28T19:45:27.743Z",
+  "endedAt": "2026-08-28T19:45:28.954Z",
+  "elapsedMs": 1211,
+  "outputLength": 3229,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "54311d86bb4ad4501cf22a4dc189b091831292fbe310da6d8957babb9daa5432",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/aa9f3221435edcd2/PSB-20260828-2048-COMPARAR-BACKUPS-REPO-VS-ATIVO-RETRY-001.txt",
+  "createdAt": "2026-08-28T19:45:28.958Z"
+}

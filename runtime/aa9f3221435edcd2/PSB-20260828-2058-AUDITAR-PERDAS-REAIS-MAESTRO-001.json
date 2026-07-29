@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260828-2058-AUDITAR-PERDAS-REAIS-MAESTRO-001",
+  "conversationKey": "aa9f3221435edcd2",
+  "purpose": "Auditar read-only quais responsabilidades do MAESTRO antigo foram realmente perdidas e quais foram movidas ou substituidas",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-28T19:49:47.170Z",
+  "endedAt": "2026-08-28T19:49:47.526Z",
+  "elapsedMs": 356,
+  "outputLength": 693,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "a5d406e95248efb6b44a72e4d5b76c111d92e7e7c1562eba38bd7c1922f9962b",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/aa9f3221435edcd2/PSB-20260828-2058-AUDITAR-PERDAS-REAIS-MAESTRO-001.txt",
+  "createdAt": "2026-08-28T19:49:47.530Z"
+}

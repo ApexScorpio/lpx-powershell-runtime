@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260814-0127-FIX-COUNT-ANTIGRAVITY-RECLAIMABILITY-AUDIT-001",
+  "conversationKey": "9af49741c60fc1d4",
+  "purpose": "Corrigir erro Count e determinar espaço recuperável no Antigravity sem alterar nada",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-14T00:26:44.342Z",
+  "endedAt": "2026-08-14T00:27:30.961Z",
+  "elapsedMs": 46619,
+  "outputLength": 37205,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "8d2a144a6890273b067413d8638b6f2b3ddb4f623e97657bba74f58f495adbe8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9af49741c60fc1d4/PSB-20260814-0127-FIX-COUNT-ANTIGRAVITY-RECLAIMABILITY-AUDIT-001.txt",
+  "createdAt": "2026-08-14T00:27:30.964Z"
+}

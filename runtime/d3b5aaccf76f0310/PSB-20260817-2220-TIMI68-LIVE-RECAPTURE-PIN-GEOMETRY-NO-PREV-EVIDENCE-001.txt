@@ -1,0 +1,8 @@
+Os tipos de argumentos n�o correspondem
+At S:\tmp\powershell-bridge-command-PSB-20260817-2220-TIMI68-LIVE-RECAPTURE-PIN-GEOMETRY-NO-PREV-EVIDENCE-001.ps1:72 
+char:12
++     return @($result)
++            ~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 

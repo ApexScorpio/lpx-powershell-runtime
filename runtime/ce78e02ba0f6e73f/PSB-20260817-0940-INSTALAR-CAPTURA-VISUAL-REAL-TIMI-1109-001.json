@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Instalar captura de screenshots reais do ciclo TIMI das 11:09",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-17T08:40:53.908Z",
+  "endedAt": "2026-08-17T08:40:54.375Z",
+  "elapsedMs": 467,
+  "outputLength": 2314,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "30ed31891216a33f90dc0e495963502cca354491eaa3720b6d549e688006eea1",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001.txt",
+  "createdAt": "2026-08-17T08:40:54.377Z"
+}

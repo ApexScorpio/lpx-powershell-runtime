@@ -1,0 +1,72 @@
+{
+    "JobId":  "PSB-20260817-2226-TIMI68-LIVE-RECAPTURE-FIX-HWND-ENUMERATION-001",
+    "Protocol":  "LPX_TIMI68_LIVE_RECAPTURE_FIX_HWND_ENUMERATION_V1",
+    "Status":  "NO_OCCURRENCES_FOUND",
+    "Objective":  "Recapturar o TIMI-68 diretamente das janelas BonChat, manter cada janela maximizada durante a captura e extrair todas as ocorr�ncias de Theodore e Marcia sem depender de evid�ncia anterior.",
+    "Evidence":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260817-2226-TIMI68-LIVE-RECAPTURE-FIX-HWND-ENUMERATION-001",
+    "BonChatWindowsInitial":  [
+                                  {
+                                      "Hwnd":  5310314,
+                                      "Pid":  7748,
+                                      "Process":  "BonChat",
+                                      "Title":  "BonChat (99+)",
+                                      "Left":  1920,
+                                      "Top":  -881,
+                                      "Right":  2860,
+                                      "Bottom":  -261,
+                                      "Width":  940,
+                                      "Height":  620,
+                                      "IsMaximized":  false
+                                  },
+                                  {
+                                      "Hwnd":  5441956,
+                                      "Pid":  18872,
+                                      "Process":  "BonChat",
+                                      "Title":  "BonChat (1)",
+                                      "Left":  2880,
+                                      "Top":  -881,
+                                      "Right":  3820,
+                                      "Bottom":  -261,
+                                      "Width":  940,
+                                      "Height":  620,
+                                      "IsMaximized":  false
+                                  }
+                              ],
+    "BonChatWindowsFinal":  [
+                                {
+                                    "Hwnd":  5310314,
+                                    "Pid":  7748,
+                                    "Process":  "BonChat",
+                                    "Title":  "BonChat (99+)",
+                                    "Left":  1902,
+                                    "Top":  -1095,
+                                    "Right":  3838,
+                                    "Bottom":  -47,
+                                    "Width":  1936,
+                                    "Height":  1048,
+                                    "IsMaximized":  true
+                                },
+                                {
+                                    "Hwnd":  5441956,
+                                    "Pid":  18872,
+                                    "Process":  "BonChat",
+                                    "Title":  "BonChat (1)",
+                                    "Left":  1902,
+                                    "Top":  -1095,
+                                    "Right":  3838,
+                                    "Bottom":  -47,
+                                    "Width":  1936,
+                                    "Height":  1048,
+                                    "IsMaximized":  true
+                                }
+                            ],
+    "GeometryRepinEvents":  2,
+    "PossibleGeometryRestorerFiles":  76,
+    "OccurrenceCandidates":  0,
+    "TheodoreCandidates":  0,
+    "MarciaCandidates":  0,
+    "MatchesFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260817-2226-TIMI68-LIVE-RECAPTURE-FIX-HWND-ENUMERATION-001\\theodore-marcia-occurrences.json",
+    "RawSnapshotsFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260817-2226-TIMI68-LIVE-RECAPTURE-FIX-HWND-ENUMERATION-001\\uia-snapshots.jsonl",
+    "GeometryEventsFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260817-2226-TIMI68-LIVE-RECAPTURE-FIX-HWND-ENUMERATION-001\\geometry-events.jsonl",
+    "PossibleRestorersFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260817-2226-TIMI68-LIVE-RECAPTURE-FIX-HWND-ENUMERATION-001\\possible-geometry-restorers.json"
+}

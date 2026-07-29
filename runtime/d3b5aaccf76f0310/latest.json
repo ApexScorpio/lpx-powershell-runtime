@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260818-2108-TIMI-BIKES-NO-ACTIVATION-TODAY-READONLY-DIAGNOSIS-001",
+  "conversationKey": "d3b5aaccf76f0310",
+  "purpose": "Diagnosticar porque hoje não houve nova ativação das bicicletas sem executar qualquer ativação",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-18T20:13:30.355Z",
+  "endedAt": "2026-08-18T20:33:32.405Z",
+  "elapsedMs": 1202050,
+  "outputLength": 37,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "427b13057150604898505a2a5c8d061fad1d95a4f0e2128cbf40aab089866ef8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d3b5aaccf76f0310/PSB-20260818-2108-TIMI-BIKES-NO-ACTIVATION-TODAY-READONLY-DIAGNOSIS-001.txt",
+  "createdAt": "2026-08-18T20:33:32.442Z"
+}

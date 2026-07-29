@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260821-2126-COMPARAR-PARSERS-GH-API-AUTH-PARSEFIX-READONLY-001",
+  "conversationKey": "960c855a1cb3931a",
+  "purpose": "Repetir comparação autenticada corrigindo apenas o erro de parsing PowerShell",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-21T20:26:36.041Z",
+  "endedAt": "2026-08-21T20:26:39.717Z",
+  "elapsedMs": 3676,
+  "outputLength": 502,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3449e1d5f5956dba197f5faeba30d5c41f3f4a53ca13619a3b0db1f696cdda5c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/960c855a1cb3931a/PSB-20260821-2126-COMPARAR-PARSERS-GH-API-AUTH-PARSEFIX-READONLY-001.txt",
+  "createdAt": "2026-08-21T20:26:39.720Z"
+}

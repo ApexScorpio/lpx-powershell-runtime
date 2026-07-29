@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-0943-FIX-INSTALAR-PROVAS-VISUAIS-REAIS-TIMI-1109-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Corrigir e instalar provas visuais reais do ciclo TIMI das 11:09",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-17T08:43:17.476Z",
+  "endedAt": "2026-08-17T08:43:21.628Z",
+  "elapsedMs": 4152,
+  "outputLength": 1599,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "6abd8961dc62dc0d5758dcceed02a50c291712272928813918eb171a781baf30",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260817-0943-FIX-INSTALAR-PROVAS-VISUAIS-REAIS-TIMI-1109-001.txt",
+  "createdAt": "2026-08-17T08:43:21.631Z"
+}

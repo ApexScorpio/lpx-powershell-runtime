@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260826-0325-TIMI-BONCHAT-FORCE-FOREGROUND-WHEEL-DELIVERY-DIAG-001",
+  "conversationKey": "fe1e4f01a894f577",
+  "purpose": "Forçar foreground real do BonChat e validar entrega do wheel",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-26T02:24:37.049Z",
+  "endedAt": "2026-08-26T02:26:24.923Z",
+  "elapsedMs": 107874,
+  "outputLength": 2400,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "06891b08ad19755c265c3627ec1b9c2e046ca4ce79c93081e096feaa8b0ae266",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/fe1e4f01a894f577/PSB-20260826-0325-TIMI-BONCHAT-FORCE-FOREGROUND-WHEEL-DELIVERY-DIAG-001.txt",
+  "createdAt": "2026-08-26T02:26:24.926Z"
+}

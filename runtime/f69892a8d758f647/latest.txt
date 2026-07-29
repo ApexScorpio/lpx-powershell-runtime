@@ -1,0 +1,107 @@
+REMOTE_ACTIVE_HEAD=2eae5759d09094f33e71f074d46b1e5afd72678a
+EXPECTED_HEAD_MATCH=True
+SCRIPTS_MAP_FOUND=True
+SCRIPTS_MAP_LINE=    "sniper": os.path.join(BASE_PATH, "Codigo TIMI - BonChat.py"),
+SCRIPTS_MAP_LINE=    "ativacao": os.path.join(BASE_PATH, "Codigo TIMI - Ativa�ao Site.py"),
+SCRIPTS_MAP_LINE=    "partilha": os.path.join(BASE_PATH, "Partilha Codigo TImi - Whatsapp.py"),
+SCRIPTS_MAP_LINE=    "busca_wa": os.path.join(BASE_PATH, "Codigo TIMI - Whatsapp.py")
+RUN_SCRIPT_CALL_COUNT=5
+---RUN_SCRIPT_CALL_CONTEXT_L218---
+M_L216:    return env
+M_L217:
+M_L218:def run_script(script_name: str, args: list = []) -> bool:
+M_L219:    script_path = SCRIPTS.get(script_name)
+M_L220:    if not script_path or not os.path.exists(script_path):
+M_L221:        log(f"? Script n�o encontrado: {script_name}")
+M_L222:        return False
+M_L223:    log(f"?? A executar: {os.path.basename(script_path)}...")
+---RUN_SCRIPT_CALL_CONTEXT_L286---
+M_L284:            log("?? C�digo n�o encontrado no hist�rico. A iniciar pesquisa no BonChat (Sniper)...")
+M_L285:            # Executar o Sniper
+M_L286:            run_script("sniper")
+M_L287:            code_found = check_if_code_found_today(current_shift)
+M_L288:            source = "bonchat"
+M_L289:            if code_found:
+M_L290:                newly_captured = True
+M_L291:            
+---RUN_SCRIPT_CALL_CONTEXT_L295---
+M_L293:                log("?? Sniper n�o capturou c�digo novo. A tentar busca no WhatsApp...")
+M_L294:                # Executar a busca no WhatsApp
+M_L295:                run_script("busca_wa")
+M_L296:                code_found = check_if_code_found_today(current_shift)
+M_L297:                source = "whatsapp"
+M_L298:        
+M_L299:        if code_found:
+M_L300:            already_activated = False
+---RUN_SCRIPT_CALL_CONTEXT_L307---
+M_L305:            else:
+M_L306:                log("?? SUCESSO: C�digo encontrado! A prosseguir com a ativa��o no site...")
+M_L307:                activation_success = run_script("ativacao")
+M_L308:            
+M_L309:            if activation_success:
+M_L310:                if already_activated:
+M_L311:                    log("? Processo conclu�do (c�digo apenas capturado e registado).")
+M_L312:                else:
+---RUN_SCRIPT_CALL_CONTEXT_L317---
+M_L315:                if source == "bonchat" or newly_captured:
+M_L316:                    log("?? A partilhar c�digo novo no grupo TIMI PTM...")
+M_L317:                    share_ok = run_script("partilha")
+M_L318:                    if not share_ok:
+M_L319:                        log("PARTILHA_WHATSAPP_FALHOU: ciclo n�o pode ser marcado como conclu�do.")
+M_L320:                        return False
+M_L321:                log("?? Ciclo conclu�do com sucesso. Encerrando Maestro.")
+M_L322:                return True
+MAESTRO_ACTIVATION_REFERENCE_LINE_COUNT=9
+MAESTRO_SHARE_REFERENCE_LINE_COUNT=5
+ACT_REF=L53:    "ativacao": os.path.join(BASE_PATH, "Codigo TIMI - Ativa�ao Site.py"),
+ACT_REF=L176:    Verifica se j� houve uma ativa��o bem-sucedida hoje no log do Maestro.
+ACT_REF=L183:                if today_str in line and "? Ativa��o conclu�da com sucesso!" in line:
+ACT_REF=L186:        log(f"Erro ao verificar ativa��o no log: {e}")
+ACT_REF=L302:                log("?? SUCESSO: C�digo encontrado! ?? A ativa��o j� foi realizada hoje de manh�. Ignorando ativa��o no site.")
+ACT_REF=L306:                log("?? SUCESSO: C�digo encontrado! A prosseguir com a ativa��o no site...")
+ACT_REF=L307:                activation_success = run_script("ativacao")
+ACT_REF=L313:                    log("? Ativa��o conclu�da com sucesso!")
+ACT_REF=L324:                log("? Falha na ativa��o do c�digo no site. Re-tentando ciclo completo mais tarde...")
+SHARE_REF=L54:    "partilha": os.path.join(BASE_PATH, "Partilha Codigo TImi - Whatsapp.py"),
+SHARE_REF=L314:                # Se o c�digo foi capturado nesta execu��o pelo Sniper, partilhar no WhatsApp
+SHARE_REF=L316:                    log("?? A partilhar c�digo novo no grupo TIMI PTM...")
+SHARE_REF=L317:                    share_ok = run_script("partilha")
+SHARE_REF=L319:                        log("PARTILHA_WHATSAPP_FALHOU: ciclo n�o pode ser marcado como conclu�do.")
+MAESTRO_ACTIVATION_RUN_SCRIPT_CALL_PROVEN=False
+MAESTRO_SHARE_RUN_SCRIPT_CALL_PROVEN=False
+ACT_SYS_FOUND=True
+ACT_SYS_LINE=SYS_PATH = os.environ.get("TIMI_DATA_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "_runtime"))
+ACT_PROFILES_FOUND=True
+ACT_PROFILES_LINE=PROFILES_BASE = r"%USERPROFILE%\.gemini\antigravity\timi_profiles"
+SHR_SYS_FOUND=True
+SHR_SYS_LINE=SYS_PATH = r"%USERPROFILE%\Documents\Scrips\01_TIMI_SISTEMA_ATIVO"
+SHR_DATA_FOUND=True
+SHR_DATA_LINE=DATA_DIR = os.environ.get("TIMI_DATA_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "_runtime"))
+SHR_VOUCHERS_FOUND=True
+SHR_VOUCHERS_LINE=VOUCHERS_DIR = os.path.join(DATA_DIR, "VOUCHERS_CAPTURADOS")
+SHR_HISTORY_FOUND=True
+SHR_HISTORY_LINE=HISTORY_FILE = os.path.join(DATA_DIR, "HISTORICO_CODIGOS_TIMI.txt")
+SHR_PROFILE_FOUND=True
+SHR_PROFILE_LINE=PROFILE_DIR = os.path.join(SYS_PATH, "chrome_profile_acc2_backup_NEW")
+SHR_BACKUP_FOUND=True
+SHR_BACKUP_LINE=BACKUP_PROFILE_DIR = os.path.join(SYS_PATH, "chrome_profile_acc2_LASTGOOD")
+SHR_CONFIG_FOUND=True
+SHR_CONFIG_LINE=CONFIG_FILE = os.path.join(DATA_DIR, "config.json")
+RUNTIME_SHARE_PROFILE_PRESENT=True
+RUNTIME_SHARE_BACKUP_PRESENT=False
+RUNTIME_ACTIVATION_PROFILES_PRESENT=False
+RUNTIME_SHARE_PROFILE_FILE_COUNT=1254
+SHARE_PRIMARY_PROFILE_USES_DATA_DIR=False
+SHARE_PRIMARY_PROFILE_USES_OLD_SYS_PATH=True
+SHARE_OLD_SYS_PATH_RAW=%USERPROFILE%\Documents\Scrips\01_TIMI_SISTEMA_ATIVO
+SHARE_OLD_SYS_PATH_EXPANDED=%USERPROFILE%\Documents\Scrips\01_TIMI_SISTEMA_ATIVO
+SHARE_OLD_SYS_PATH_EXISTS=True
+SHARE_OLD_PROFILE_EXISTS=True
+SHARE_OLD_BACKUP_EXISTS=False
+ACTIVATION_PROFILE_ROOT_RAW=%USERPROFILE%\.gemini\antigravity\timi_profiles
+ACTIVATION_PROFILE_ROOT_EXPANDED=%USERPROFILE%\.gemini\antigravity\timi_profiles
+ACTIVATION_PROFILE_ROOT_EXISTS=True
+ACTIVATION_PROFILE_SUBDIR_COUNT=4
+READ_ONLY=True
+FILES_MODIFIED=False
+TIMI_STARTED_BY_AUDIT=False

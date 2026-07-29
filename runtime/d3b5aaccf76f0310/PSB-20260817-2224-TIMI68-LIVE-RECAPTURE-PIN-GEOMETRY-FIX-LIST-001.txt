@@ -1,0 +1,7 @@
+Where-Object : The input name "Hwnd" cannot be resolved to a property.
+At S:\tmp\powershell-bridge-command-PSB-20260817-2224-TIMI68-LIVE-RECAPTURE-PIN-GEOMETRY-FIX-LIST-001.ps1:117 char:35
++ ... fore = @(Get-TopWindows) | Where-Object Hwnd -eq $Window.Hwnd | Selec ...
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (                  :PSObject) [Where-Object], PSArgumentException
+    + FullyQualifiedErrorId : PropertyNotFound,Microsoft.PowerShell.Commands.WhereObjectCommand
+ 

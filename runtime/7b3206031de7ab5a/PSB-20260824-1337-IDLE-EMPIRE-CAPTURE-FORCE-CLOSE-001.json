@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260824-1337-IDLE-EMPIRE-CAPTURE-FORCE-CLOSE-001",
+  "conversationKey": "7b3206031de7ab5a",
+  "purpose": "Capturar login Idle-Empire e persistir estado encriptado no GitHub",
+  "status": "failed",
+  "exitCode": 11,
+  "startedAt": "2026-08-24T12:37:20.876Z",
+  "endedAt": "2026-08-24T12:42:59.486Z",
+  "elapsedMs": 338610,
+  "outputLength": 874,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "5cb0a7b9efb1be880fcb621a391a8d1c887a0ea47060865ffdd9bd77af45eead",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7b3206031de7ab5a/PSB-20260824-1337-IDLE-EMPIRE-CAPTURE-FORCE-CLOSE-001.txt",
+  "createdAt": "2026-08-24T12:42:59.491Z"
+}

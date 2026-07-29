@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260821-2124-COMPARAR-PARSERS-GH-API-AUTH-READONLY-001",
+  "conversationKey": "960c855a1cb3931a",
+  "purpose": "Comparar parsers via gh api autenticado sem clonar nem executar o TIMI",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-21T20:25:40.221Z",
+  "endedAt": "2026-08-21T20:25:40.627Z",
+  "elapsedMs": 406,
+  "outputLength": 516,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9f006ccd5170cd884094a00ef465d78d59442b3a0a3b3c0fdd3ceb2a2ce0656b",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/960c855a1cb3931a/PSB-20260821-2124-COMPARAR-PARSERS-GH-API-AUTH-READONLY-001.txt",
+  "createdAt": "2026-08-21T20:25:40.629Z"
+}

@@ -1,0 +1,37 @@
+At S:\tmp\powershell-bridge-command-PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001.ps1:636 char:38
++ ... itorTemplate.Replace('__WRITER_SHA_AT_INSTALL__',$writerShaAtInstall)
++                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token '__WRITER_SHA_AT_INSTALL__',$writerShaAtInstall)
+[IO.File]::WriteAllText($MonitorScript,$monitor,[Text.UTF8Encoding]::new($true))
+$tokens = $null
+$parseErrors = $null
+[void][Management.Automation.Language.Parser]::ParseFile($MonitorScript,[ref]$tokens,[ref]$parseErrors)
+if (@($parseErrors).Count -gt 0) {
+    throw ('Monitor' in expression or statement.
+At S:\tmp\powershell-bridge-command-PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001.ps1:651 char:26
++ $triggerTime = Get-Date '2026-08-17T11:08:30'
++                          ~~~~~~~~~~~~~~~~~~~~
+Unexpected token '2026-08-17T11:08:30'
+if ((Get-Date) -ge $triggerTime) { $triggerTime = (Get-Date).AddMinutes(1) }
+$action = New-ScheduledTaskAction `
+    -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" `
+    -Argument ('-NoProfile' in expression or statement.
+At S:\tmp\powershell-bridge-command-PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001.ps1:651 char:34
++ $triggerTime = Get-Date '2026-08-17T11:08:30'
++                                  ~
+You must provide a value expression following the '-' operator.
+At S:\tmp\powershell-bridge-command-PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001.ps1:651 char:34
++ $triggerTime = Get-Date '2026-08-17T11:08:30'
++                                  ~~~~~~~~~~~~
+Unexpected token '17T11:08:30'
+if ((Get-Date) -ge $triggerTime) { $triggerTime = (Get-Date).AddMinutes(1) }
+$action = New-ScheduledTaskAction `
+    -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" `
+    -Argument ('-NoProfile' in expression or statement.
+At S:\tmp\powershell-bridge-command-PSB-20260817-0940-INSTALAR-CAPTURA-VISUAL-REAL-TIMI-1109-001.ps1:706 char:49
++     observationEnds = '2026-08-17T11:15:00+01:00'
++                                                 ~
+The string is missing the terminator: '.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 

@@ -1,0 +1,9 @@
+Add-Type : (0) : N�o foi poss�vel localizar o ficheiro de metadados 'UIAutomationClient.dll'
+(1) : using System;
+At S:\tmp\powershell-bridge-command-PSB-20260826-0344-TIMI-BONCHAT-UIA-SCROLLPATTERN-DIAG-001.ps1:324 char:1
++ Add-Type -TypeDefinition $cs -ReferencedAssemblies @(
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Except 
+   ion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 

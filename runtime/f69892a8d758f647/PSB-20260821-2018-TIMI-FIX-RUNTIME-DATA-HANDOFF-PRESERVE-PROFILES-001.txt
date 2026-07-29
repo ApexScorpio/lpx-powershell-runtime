@@ -1,0 +1,13 @@
+HEAD_BEFORE=1a085c33045dad62a5b2f6273bec74a1a3ccc802
+ACTIVATION_BLOB_BEFORE=fb7665b1b3fe5c948b6c6915baa6b9cce434f987
+SHARE_BLOB_BEFORE=bf93f8846a383d5e6c086ef9e0c80e4c4894fc12
+ACTIVATION_PROFILES_LINE_PRESERVED=PROFILES_BASE = r"%USERPROFILE%\.gemini\antigravity\timi_profiles"
+Python n�o foi encontrado; executar sem argumentos para instalar a partir da Microsoft Store ou desativar este atalho a partir de Defini��es > Aplica��es > Defini��es avan�adas da aplica��o > Aliases de execu��o de aplica��es.
+ACTIVATION_COMPILE_FAILED:9009
+At S:\tmp\powershell-bridge-command-PSB-20260821-2018-TIMI-FIX-RUNTIME-DATA-HANDOFF-PRESERVE-PROFILES-001.ps1:173 
+char:34
++ ... ASTEXITCODE -ne 0){ throw "ACTIVATION_COMPILE_FAILED:$LASTEXITCODE" }
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (ACTIVATION_COMPILE_FAILED:9009:String) [], RuntimeException
+    + FullyQualifiedErrorId : ACTIVATION_COMPILE_FAILED:9009
+ 

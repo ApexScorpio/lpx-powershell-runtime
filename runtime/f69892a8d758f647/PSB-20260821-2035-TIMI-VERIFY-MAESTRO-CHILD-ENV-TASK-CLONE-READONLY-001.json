@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260821-2035-TIMI-VERIFY-MAESTRO-CHILD-ENV-TASK-CLONE-READONLY-001",
+  "conversationKey": "f69892a8d758f647",
+  "purpose": "Validar run_script, herança TIMI_DATA_DIR e clone active da tarefa sem executar o TIMI",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-21T19:36:34.558Z",
+  "endedAt": "2026-08-21T19:38:49.376Z",
+  "elapsedMs": 134818,
+  "outputLength": 1597,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "4628f1fb4b7eabf953be8a6796d6c32c754a063db5542c48a9c42ba771c60a62",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f69892a8d758f647/PSB-20260821-2035-TIMI-VERIFY-MAESTRO-CHILD-ENV-TASK-CLONE-READONLY-001.txt",
+  "createdAt": "2026-08-21T19:38:49.379Z"
+}

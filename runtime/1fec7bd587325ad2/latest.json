@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260817-0118-TIMI68-GROUP68-FULL-HISTORY-BOTTOM-TO-TOP-001",
+  "conversationKey": "1fec7bd587325ad2",
+  "purpose": "Capturar o histórico completo do grupo TIMI-68 do fundo até ao topo",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-17T00:18:19.736Z",
+  "endedAt": "2026-08-17T00:21:41.172Z",
+  "elapsedMs": 201436,
+  "outputLength": 854,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f1fe922ca140e2a7cb97d8dfa6fe0af5347a8e58fea32f89d135afde6efb3d35",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1fec7bd587325ad2/PSB-20260817-0118-TIMI68-GROUP68-FULL-HISTORY-BOTTOM-TO-TOP-001.txt",
+  "createdAt": "2026-08-17T00:21:41.175Z"
+}

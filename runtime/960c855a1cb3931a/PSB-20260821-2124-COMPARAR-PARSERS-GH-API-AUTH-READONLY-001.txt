@@ -1,0 +1,8 @@
+At S:\tmp\powershell-bridge-command-PSB-20260821-2124-COMPARAR-PARSERS-GH-API-AUTH-READONLY-001.ps1:246 char:31
++         throw "COMPARE_FAILED:$ec:$(Redact (($raw -join ' ').Trim())) ...
++                               ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to 
+delimit the name.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+ 

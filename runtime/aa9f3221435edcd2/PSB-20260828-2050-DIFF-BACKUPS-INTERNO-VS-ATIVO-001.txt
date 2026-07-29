@@ -1,0 +1,50 @@
+=== RESUMO DE PERDAS POTENCIAIS BACKUP -> ATIVO ===
+
+[DIFFERENT] Codigo TIMI - Ativa�ao Site - BACKUP.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\Codigo TIMI - Ativa�ao Site.py
+  linhas backup/ativo: 317/323
+  Funcoes/classes so no backup: nenhuma
+  CONSTANTES SO NO BACKUP: now_time, meses, hoje_str, lines, parts, raw_code, date_part, hours_range, match, start_time, end_time
+
+[DIFFERENT] MAESTRO_TIMI - BACKUP.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\MAESTRO_TIMI.py
+  linhas backup/ativo: 310/169
+  FUNCOES/CLASSES QUE EXISTEM SO NO BACKUP: check_lock, remove_lock, is_working_day, check_if_code_found_today, check_if_activated_today, maestro_loop
+  CONSTANTES SO NO BACKUP: pid, BASE_PATH, SCRIPTS, HISTORY_FILE, PYTHON_EXE, FERIADOS_2026, today, now_dt, hoje_iso, hoje_slash, meses_pt, dia, mes_nome, hoje_extenso, lines, parts, is_today, date_part, has_other_date, other_day_str, ts_match, ts_pt_match, hours_range, code_shift, ts_time_match, capture_time, entry_dt, today_str, result, current_shift, now_hour, newly_captured, now_shift, code_found, source, already_activated, activation_success, is_force
+
+[DIFFERENT] Codigo TIMI - Whatsapp - BACKUP.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\Codigo TIMI - Whatsapp.py
+  linhas backup/ativo: 160/155
+  Funcoes/classes so no backup: nenhuma
+  CONSTANTES SO NO BACKUP: history_path, date_str, msg_time, shift_detail, entry
+
+[DIFFERENT] Codigo TIMI - BonChat - BACKUP.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\Codigo TIMI - BonChat.py
+  linhas backup/ativo: 686/546
+  FUNCOES/CLASSES QUE EXISTEM SO NO BACKUP: configure_next_gemini, process_with_groq_fallback, process_voucher_ai, is_duplicate_voucher, position_on_top_monitor, bring_to_foreground, check_scale, parse_bonchat_date, worker_task, separator_engine
+  CONSTANTES SO NO BACKUP: log_format, GEMINI_KEYS, OPENROUTER_KEY, GROQ_KEY, CURRENT_KEY_IDX, key, AI_MODEL, img_p, raw_text, client, prompt, response, model, messages, max_tokens, content, clean_json, MODELS_TO_TRY, img_rgb, match, err_msg, date, TARGET_DATE, SCROLL_STEP, SCROLL_SLOW, TESSERACT_CMD, HISTORY_FILE, LIVE_VIEW, fore_hwnd, fore_thread, curr_thread, monitors, top_monitor, enhanced, header, results, best_res, temp_f, valid_code, gray, big_v, text_voucher, codes, sep_date, now, date_str, match_md, month, day, year, dt_lida, img_full, reset_pos, lparam_center, current_day_buffer, scroll_count, target_dt, executor, futures, stop_flag, img_sep, strip, strip_big, img_sharp, line, clean, lp_v, img_clip, ts_str, f_name, ai_data, hours, log_entry, review_name, lparam_scroll
+
+[DIFFERENT] Partilha Codigo TImi - Whatsapp - BACKUP.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\Partilha Codigo TImi - Whatsapp.py
+  linhas backup/ativo: 317/279
+  Funcoes/classes so no backup: nenhuma
+  CONSTANTES SO NO BACKUP: meses, hoje_str, valid_code, target_timestamp_str, now_time, current_shift, lines, parts, raw_header, date_part, shift_part, ts_match
+
+[IDENTICAL] telegram_notifier - BACKUP.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\telegram_notifier.py
+  linhas backup/ativo: 224/224
+  Funcoes/classes so no backup: nenhuma
+
+[DIFFERENT] Codigo TIMI - BonChat - PRE-MAIS-RECENTE-20260828-202652.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\Codigo TIMI - BonChat.py
+  linhas backup/ativo: 465/546
+  Funcoes/classes so no backup: nenhuma
+
+[DIFFERENT] Codigo TIMI - BonChat - PRE-GPTBRIDGE-MAIS-RECENTE-20260828-202353.py
+  ativo: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\Codigo TIMI - BonChat.py
+  linhas backup/ativo: 465/546
+  Funcoes/classes so no backup: nenhuma
+
+Relatorio detalhado TXT: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\_validation\BACKUPS_CONTENT_DIFF_READONLY.txt
+Relatorio JSON: %USERPROFILE%\.gemini\antigravity-ide\scratch\TIMI-ativador-repo\_validation\BACKUPS_CONTENT_DIFF_READONLY.json
+READ-ONLY: nenhum ficheiro de producao ou backup foi alterado.

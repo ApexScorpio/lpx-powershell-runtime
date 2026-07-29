@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260821-2018-TIMI-FIX-RUNTIME-DATA-HANDOFF-PRESERVE-PROFILES-001",
+  "conversationKey": "f69892a8d758f647",
+  "purpose": "Corrigir handoff de dados runtime e exit codes preservando os perfis validados",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-21T19:19:14.064Z",
+  "endedAt": "2026-08-21T19:21:35.494Z",
+  "elapsedMs": 141430,
+  "outputLength": 996,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "317c7ad683abed0e3e81e1404104cf1278b15ee2e29ff32238d8e8475659bb3e",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/f69892a8d758f647/PSB-20260821-2018-TIMI-FIX-RUNTIME-DATA-HANDOFF-PRESERVE-PROFILES-001.txt",
+  "createdAt": "2026-08-21T19:21:35.496Z"
+}

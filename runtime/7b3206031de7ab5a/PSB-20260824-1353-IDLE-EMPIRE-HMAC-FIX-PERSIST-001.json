@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260824-1353-IDLE-EMPIRE-HMAC-FIX-PERSIST-001",
+  "conversationKey": "7b3206031de7ab5a",
+  "purpose": "Corrigir HMAC e persistir login Idle-Empire encriptado no GitHub",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-24T12:53:07.185Z",
+  "endedAt": "2026-08-24T12:59:26.120Z",
+  "elapsedMs": 378935,
+  "outputLength": 629,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "c15352a4e4f7908ec30596aec48647a02ff0b81cab00b3d40300e5becc2bcfe3",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7b3206031de7ab5a/PSB-20260824-1353-IDLE-EMPIRE-HMAC-FIX-PERSIST-001.txt",
+  "createdAt": "2026-08-24T12:59:26.140Z"
+}

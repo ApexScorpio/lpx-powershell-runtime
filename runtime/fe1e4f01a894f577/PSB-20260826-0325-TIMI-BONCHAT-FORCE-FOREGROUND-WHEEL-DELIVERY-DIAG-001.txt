@@ -1,0 +1,14 @@
+Cloning into 'S:\tmp\LPX-TIMI-BONCHAT-FG-ba0e9d920f08405eb22d94cd7cc20fc1\repo'...
+HEAD=0940e0f3887b5e1a10ee198a31281c6db0d02895
+targetUnmodified=True
+window=1936x1048;zoomed=True
+bonChatHwnd=46860982;bonChatPid=16068
+forceForeground={"ForegroundBefore":1181842,"ForegroundAfter":1181842,"CurrentThread":23772,"ForegroundThread":7056,"TargetThread":22552,"AttachForeground":false,"AttachForegroundError":5,"AttachTarget":true,"AttachTargetError":5,"BringTop":true,"BringTopError":5,"SetForeground":false,"SetForegroundError":5,"SetActiveReturn":46860982,"SetActiveError":5,"SetFocusReturn":46860982,"SetFocusError":5,"AltUnlockUsed":true,"AltDownCount":1,"AltUpCount":1}
+foregroundVerified=False
+testedPairs=6
+effectivePairs=0
+results=[{"point":"center61","x":0.61,"y":0.55,"cursorOk":false,"cursorError":203,"clickOk":true,"clickCount":2,"clickError":0,"delta":120,"wheelOk":true,"wheelCount":12,"wheelError":0,"foregroundAfterWheel":1181842,"meanAbs":0.003759,"changedFraction":7.6E-05},{"point":"center61","x":0.61,"y":0.55,"cursorOk":false,"cursorError":203,"clickOk":true,"clickCount":2,"clickError":0,"delta":-120,"wheelOk":true,"wheelCount":12,"wheelError":0,"foregroundAfterWheel":1181842,"meanAbs":0.003807,"changedFraction":7.6E-05},{"point":"right78","x":0.78,"y":0.55,"cursorOk":false,"cursorError":0,"clickOk":true,"clickCount":2,"clickError":0,"delta":120,"wheelOk":true,"wheelCount":12,"wheelError":0,"foregroundAfterWheel":1181842,"meanAbs":0.003683,"changedFraction":7.6E-05},{"point":"right78","x":0.78,"y":0.55,"cursorOk":false,"cursorError":0,"clickOk":true,"clickCount":2,"clickError":0,"delta":-120,"wheelOk":true,"wheelCount":12,"wheelError":0,"foregroundAfterWheel":1181842,"meanAbs":0.003565,"changedFraction":7.6E-05},{"point":"low61","x":0.61,"y":0.72,"cursorOk":false,"cursorError":0,"clickOk":true,"clickCount":2,"clickError":0,"delta":120,"wheelOk":true,"wheelCount":12,"wheelError":0,"foregroundAfterWheel":1181842,"meanAbs":0.000462,"changedFraction":7.2E-05},{"point":"low61","x":0.61,"y":0.72,"cursorOk":false,"cursorError":0,"clickOk":true,"clickCount":2,"clickError":0,"delta":-120,"wheelOk":true,"wheelCount":12,"wheelError":0,"foregroundAfterWheel":1181842,"meanAbs":0.001375,"changedFraction":7.6E-05}]
+effectiveResults=
+persistentProjectMutation=false
+gitMutationPerformed=false
+verdict=BONCHAT_FOREGROUND_LOCK_STILL_PREVENTS_REAL_INPUT_TARGETING

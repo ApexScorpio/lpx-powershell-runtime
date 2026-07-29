@@ -1,0 +1,15 @@
+{
+    "JobId":  "PSB-20260817-2300-STOP-TIMI68-AUTOMATION-PROCESS-001",
+    "Protocol":  "LPX_STOP_TIMI68_AUTOMATION_PROCESS_V1",
+    "Found":  0,
+    "Stopped":  [
+
+                ],
+    "Failed":  [
+
+               ],
+    "Remaining":  [
+
+                  ],
+    "Status":  "STOPPED"
+}

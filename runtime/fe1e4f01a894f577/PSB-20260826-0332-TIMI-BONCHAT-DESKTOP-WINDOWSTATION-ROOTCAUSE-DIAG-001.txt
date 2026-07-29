@@ -1,0 +1,9 @@
+Cloning into 'S:\tmp\LPX-TIMI-BONCHAT-DESKTOP-354bd7f69b814039a4a402e7b99aa3b2\repo'...
+Cannot overwrite variable Pid because it is read-only or constant.
+At S:\tmp\powershell-bridge-command-PSB-20260826-0332-TIMI-BONCHAT-DESKTOP-WINDOWSTATION-ROOTCAUSE-DIAG-001.ps1:308 
+char:5
++     $bridgeMeta = Get-ProcMeta -Pid ([uint32]$PID) -Tid $currentTid
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (Pid:String) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : VariableNotWritable
+ 

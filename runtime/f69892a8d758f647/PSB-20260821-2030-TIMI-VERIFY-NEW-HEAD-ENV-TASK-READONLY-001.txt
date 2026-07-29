@@ -1,0 +1,69 @@
+REMOTE_ACTIVE_HEAD=2eae5759d09094f33e71f074d46b1e5afd72678a
+EXPECTED_HEAD_MATCH=True
+LAUNCHER_SETS_TIMI_DATA_DIR=True
+LAUNCHER_RUNS_MAESTRO_WITHOUT_FORCE=True
+LAUNCHER_CLONES_ACTIVE_BRANCH=False
+LAUNCHER_HAS_PINNED_OLD_COMMIT=False
+MAESTRO_BUILD_CHILD_ENV_FOUND=True
+CHILD_ENV_COPIES_PARENT_OS_ENVIRON=True
+CHILD_ENV_REMOVES_TIMI_DATA_DIR=False
+MAESTRO_RUN_SCRIPT_FOUND=False
+RUN_SCRIPT_USES_CHILD_ENV=False
+RUN_SCRIPT_CHECKS_CHILD_EXIT=False
+ACTIVATION_CONSUMES_TIMI_DATA_DIR=True
+ACTIVATION_NO_CODE_NONZERO=True
+ACTIVATION_STRICT_CONFIRM_PRESENT=True
+ACTIVATION_RIDE_GO_PRESENT=True
+SHARE_CONSUMES_TIMI_DATA_DIR=True
+SHARE_PROPAGATES_RESULT_EXIT=True
+SHARE_USES_RUNTIME_VOUCHERS=True
+SHARE_USES_RUNTIME_HISTORY=True
+MAESTRO_HAS_10MIN_SLEEP=True
+MAESTRO_HAS_10MIN_RETRY_TEXT=True
+MAESTRO_IMPLICIT_FORCE_PRESENT=False
+TASK_FOUND=True
+TASK_STATE=Ready
+TASK_LAST_RUN_TIME=2026-08-21 19:09:01
+TASK_LAST_RESULT=0
+TASK_NEXT_RUN_TIME=2026-08-22 11:09:00
+TASK_ACTION_COUNT=1
+TASK_ACTION_EXECUTE=powershell.exe
+TASK_ACTION_ARGUMENTS=-NoProfile -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create('$ErrorActionPreference=''Stop''
+$Repo=''ApexScorpio/TIMI-ativador''
+$Branch=''active''
+$Gh=''C:\Program Files\GitHub CLI\gh.exe''
+$RunBase=''S:\tmp\LPX-TIMI-GITHUB-RUN''
+
+if(-not (Test-Path -LiteralPath $Gh)){ exit 90 }
+try {
+    $u=& $Gh api user | ConvertFrom-Json
+    if([string]$u.login -ine ''ApexScorpio''){ exit 91 }
+} catch { exit 91 }
+
+if(-not (Test-Path -LiteralPath $RunBase)){
+    New-Item -ItemType Directory -Path $RunBase -Force | Out-Null
+}
+
+$runDir=Join-Path $RunBase (''run-''+[guid]::NewGuid().ToString(''N''))
+try {
+    & $Gh repo clone $Repo $runDir -- --quiet --depth 1 --single-branch --branch $Branch
+    if($LASTEXITCODE -ne 0){ exit 92 }
+
+    $launcher=Join-Path $runDir ''TIMI_GITHUB_RUNTIME_LAUNCHER.ps1''
+    if(-not (Test-Path -LiteralPath $launcher)){ exit 93 }
+
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher
+    exit $LASTEXITCODE
+}
+finally {
+    if(Test-Path -LiteralPath $runDir){
+        Remove-Item -LiteralPath $runDir -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}'))"
+TASK_TRIGGER_START=2026-08-18T11:09:00
+TASK_TRIGGER_START=2026-08-18T19:09:00
+RELEVANT_PROCESS_COUNT=0
+END_TO_END_STATIC_ENV_HANDOFF_VERIFIED=False
+READ_ONLY=True
+FILES_MODIFIED=False
+TIMI_STARTED_BY_AUDIT=False

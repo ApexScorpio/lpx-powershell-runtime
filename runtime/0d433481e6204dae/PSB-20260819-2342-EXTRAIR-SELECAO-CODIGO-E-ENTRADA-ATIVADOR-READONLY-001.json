@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260819-2342-EXTRAIR-SELECAO-CODIGO-E-ENTRADA-ATIVADOR-READONLY-001",
+  "conversationKey": "0d433481e6204dae",
+  "purpose": "Extrair exatamente a seleção do código no Maestro, escrita do BonChat e entrada do ativador sem ativar bicicletas",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-19T22:41:02.169Z",
+  "endedAt": "2026-08-19T22:41:06.368Z",
+  "elapsedMs": 4199,
+  "outputLength": 61053,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7c782633e5f98f4841ba8e3771965430e5b36858d950d75ec64571e7d90921bf",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/0d433481e6204dae/PSB-20260819-2342-EXTRAIR-SELECAO-CODIGO-E-ENTRADA-ATIVADOR-READONLY-001.txt",
+  "createdAt": "2026-08-19T22:41:06.370Z"
+}

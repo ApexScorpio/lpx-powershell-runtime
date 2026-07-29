@@ -1,0 +1,7 @@
+To https://github.com/ApexScorpio/TIMI-ativador.git
+   8a7f89d..ee9be88  active -> active
+{
+    "protocol":  "LPX_TIMI_RESTORE_MIGRATION_SCROLL_CADENCE_ACTIVE_V1",
+    "jobId":  "PSB-20260825-1826-TIMI-RESTORE-MIGRATION-SCROLL-CADENCE-ACTIVE-001",
+    "verdict":  "MIGRATION_SCROLL_CADENCE_RESTORED_SERIAL_ANALYSIS_PRESERVED"
+}
