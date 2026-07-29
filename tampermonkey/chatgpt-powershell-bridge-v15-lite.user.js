@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.0.1
+// @version      2026.07.29.15.0.2
 // @description  Executa anexos PowerShell através da bridge local, publica o resultado no GitHub e envia apenas o URL para o ChatGPT.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.0.1';
+    const VERSION = '15.0.2';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -540,20 +540,65 @@
     }
 
     function findAttachmentLink(assistant, fileName) {
-        const root = turnContainer(assistant);
         const wanted = String(fileName || '').trim().toLowerCase();
-        const anchors = [...root.querySelectorAll('a[href]')];
 
-        let match = anchors.find(anchor => {
-            const label = `${anchor.textContent || ''} ${anchor.getAttribute('download') || ''} ${anchor.href || ''}`.toLowerCase();
-            return wanted && label.includes(wanted);
-        });
+        function labelFor(anchor) {
+            let href = '';
 
-        if (!match && anchors.length === 1) {
-            match = anchors[0];
+            try {
+                href = decodeURIComponent(
+                    anchor.getAttribute('href') || anchor.href || ''
+                );
+            } catch {
+                href = anchor.getAttribute('href') || anchor.href || '';
+            }
+
+            return [
+                anchor.textContent || '',
+                anchor.getAttribute('download') || '',
+                anchor.getAttribute('aria-label') || '',
+                anchor.getAttribute('title') || '',
+                href
+            ].join(' ').toLowerCase();
         }
 
-        return match || null;
+        const roots = [
+            turnContainer(assistant),
+            assistant,
+            document
+        ].filter(Boolean);
+
+        for (const root of roots) {
+            const anchors = [...root.querySelectorAll('a[href]')];
+
+            const exact = anchors.find(anchor => {
+                return wanted && labelFor(anchor).includes(wanted);
+            });
+
+            if (exact) {
+                return exact;
+            }
+        }
+
+        const globalAnchors = [...document.querySelectorAll('a[href]')];
+
+        const attachmentAnchors = globalAnchors.filter(anchor => {
+            const label = labelFor(anchor);
+
+            return (
+                label.includes('sandbox:/mnt/data/') ||
+                label.includes('files.oaiusercontent.com') ||
+                label.includes('oaiusercontent.com') ||
+                label.includes('/backend-api/files/') ||
+                label.includes('/files/')
+            );
+        });
+
+        if (attachmentAnchors.length) {
+            return attachmentAnchors[attachmentAnchors.length - 1];
+        }
+
+        return null;
     }
 
     async function downloadAttachment(anchor) {
