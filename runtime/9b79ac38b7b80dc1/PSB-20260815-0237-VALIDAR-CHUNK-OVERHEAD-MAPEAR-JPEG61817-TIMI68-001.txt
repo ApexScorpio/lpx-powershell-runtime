@@ -1,0 +1,7 @@
+The property 'Count' cannot be found on this object. Verify that the property exists.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0237-VALIDAR-CHUNK-OVERHEAD-MAPEAR-JPEG61817-TIMI68-001.ps1:156 char:8
++     if($KnownThumbCalibrationPass -and $Solutions.Count -eq 1 -and $U ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict
+ 

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2121-BONCHAT-OBSERVER-CENTRAL-LANE-DRYRUN-V2-001",
+  "conversationKey": "bc8fd15f92e54f4a",
+  "purpose": "Validar lane central do observer BonChat com parâmetros reais",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T20:21:20.573Z",
+  "endedAt": "2026-08-10T20:21:22.230Z",
+  "elapsedMs": 1657,
+  "outputLength": 1441,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "8d135f8b339b56beb8cf1a2b94b82bc3de5e1394b0e96af97bc100550636c5f0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/bc8fd15f92e54f4a/PSB-20260810-2121-BONCHAT-OBSERVER-CENTRAL-LANE-DRYRUN-V2-001.txt",
+  "createdAt": "2026-08-10T20:21:22.232Z"
+}

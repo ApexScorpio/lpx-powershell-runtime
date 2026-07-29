@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001",
+  "conversationKey": "3262c24ee1a3dc4c",
+  "purpose": "Testar UTF8 e UTF16 deslocados dentro do envelope binário e ligar TIMI68 Theodore e Marcia sem expor texto privado",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-15T00:03:25.796Z",
+  "endedAt": "2026-08-15T00:03:48.920Z",
+  "elapsedMs": 23124,
+  "outputLength": 26429,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3c6188f84f2fa39155da5a8a144d719911870f0afd7e10af21bcf78ea4adcfb5",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3262c24ee1a3dc4c/PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001.txt",
+  "createdAt": "2026-08-15T00:03:48.925Z"
+}

@@ -1,0 +1,469 @@
+{
+    "Protocol":  "LPX_TIMI68_SHIFTED_TEXT_ENVELOPE_TARGET_BINDING_V1",
+    "JobId":  "PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001",
+    "Status":  "COMPLETED_READONLY",
+    "CanonicalObjectivesEmbedded":  true,
+    "GoldenRuleScreenshotEveryStep":  true,
+    "PrivacySafePublicOutput":  true,
+    "ScreenshotCount":  7,
+    "Classification":  "NO_TARGET_LITERAL_IN_SHIFTED_TEXT_LAYER",
+    "NextClassification":  "SHIFTED_UTF16_STRUCTURE_DOMINANT_NEXT_PARSE_ENVELOPE_FIELDS_AND_BIND_KEYS",
+    "StrongUtf16ProfileCount":  7666,
+    "StrongUtf8ProfileCount":  481,
+    "SampledProfileCount":  8169,
+    "SafeTargetHits":  [
+
+                       ],
+    "Conta1TopProfiles":  [
+                              {
+                                  "Family":  "user-nickname",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  2033
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  1142
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf8",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  338
+                              },
+                              {
+                                  "Family":  "group-reference",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  284
+                              },
+                              {
+                                  "Family":  "user-nickname",
+                                  "Encoding":  "utf8",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  143
+                              },
+                              {
+                                  "Family":  "user-nickname",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  21
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  19
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "0.9",
+                                  "Count":  10
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  7
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "0.9",
+                                  "Count":  4
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  1,
+                                  "ScoreBucket":  "1",
+                                  "Count":  3
+                              }
+                          ],
+    "Conta2TopProfiles":  [
+                              {
+                                  "Family":  "user-nickname",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  2490
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  1479
+                              },
+                              {
+                                  "Family":  "group-reference",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  127
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  30
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  12
+                              },
+                              {
+                                  "Family":  "user-nickname",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  10
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  1,
+                                  "ScoreBucket":  "1",
+                                  "Count":  4
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "0.9",
+                                  "Count":  4
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  1,
+                                  "ScoreBucket":  "0.9",
+                                  "Count":  2
+                              },
+                              {
+                                  "Family":  "group-reference",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  2
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "1",
+                                  "Count":  1
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  1,
+                                  "ScoreBucket":  "0.9",
+                                  "Count":  1
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  1,
+                                  "ScoreBucket":  "1",
+                                  "Count":  1
+                              },
+                              {
+                                  "Family":  "group-members",
+                                  "Encoding":  "utf16le",
+                                  "Offset":  0,
+                                  "ScoreBucket":  "0.9",
+                                  "Count":  1
+                              },
+                              {
+                                  "Family":  "message",
+                                  "Encoding":  "utf16be",
+                                  "Offset":  1,
+                                  "ScoreBucket":  "1",
+                                  "Count":  1
+                              }
+                          ],
+    "NoProcessStarted":  true,
+    "NoProcessTerminated":  true,
+    "NoNavigation":  true,
+    "NoTextSubmitted":  true,
+    "Steps":  [
+                  {
+                      "Step":  1,
+                      "Action":  "Readonly process census before shifted text-envelope probe",
+                      "Conta1ProcessCount":  1,
+                      "Conta2ProcessCount":  0,
+                      "OtherBonChatCount":  0,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-01-baseline-process-census.png"
+                  },
+                  {
+                      "Step":  2,
+                      "Action":  "Dynamically locate current metadata and message SSTables",
+                      "Conta1MetaCount":  4,
+                      "Conta1MessageCount":  4,
+                      "Conta2MetaCount":  4,
+                      "Conta2MessageCount":  3,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-02-targeted-current-files.png"
+                  },
+                  {
+                      "Step":  3,
+                      "Action":  "Probe Conta1 values for shifted UTF8 UTF16LE UTF16BE envelope structure and target markers",
+                      "FamilyCounts":  {
+                                           "group-reference":  284,
+                                           "user-nickname":  2197,
+                                           "group-members":  23,
+                                           "message":  39113
+                                       },
+                      "TargetHitCount":  0,
+                      "TopProfiles":  [
+                                          {
+                                              "Family":  "user-nickname",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  2033
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  1142
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf8",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  338
+                                          },
+                                          {
+                                              "Family":  "group-reference",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  284
+                                          },
+                                          {
+                                              "Family":  "user-nickname",
+                                              "Encoding":  "utf8",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  143
+                                          },
+                                          {
+                                              "Family":  "user-nickname",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  21
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  19
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "0.9",
+                                              "Count":  10
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  7
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "0.9",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  1,
+                                              "ScoreBucket":  "1",
+                                              "Count":  3
+                                          }
+                                      ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-03-conta1-shifted-text-probe.png"
+                  },
+                  {
+                      "Step":  4,
+                      "Action":  "Probe Conta2 values for shifted UTF8 UTF16LE UTF16BE envelope structure and target markers",
+                      "FamilyCounts":  {
+                                           "group-reference":  129,
+                                           "user-nickname":  6336,
+                                           "group-members":  36,
+                                           "message":  24900
+                                       },
+                      "TargetHitCount":  0,
+                      "TopProfiles":  [
+                                          {
+                                              "Family":  "user-nickname",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  2490
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  1479
+                                          },
+                                          {
+                                              "Family":  "group-reference",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  127
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  30
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  12
+                                          },
+                                          {
+                                              "Family":  "user-nickname",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  10
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  1,
+                                              "ScoreBucket":  "1",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "0.9",
+                                              "Count":  4
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  1,
+                                              "ScoreBucket":  "0.9",
+                                              "Count":  2
+                                          },
+                                          {
+                                              "Family":  "group-reference",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  2
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "1",
+                                              "Count":  1
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  1,
+                                              "ScoreBucket":  "0.9",
+                                              "Count":  1
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  1,
+                                              "ScoreBucket":  "1",
+                                              "Count":  1
+                                          },
+                                          {
+                                              "Family":  "group-members",
+                                              "Encoding":  "utf16le",
+                                              "Offset":  0,
+                                              "ScoreBucket":  "0.9",
+                                              "Count":  1
+                                          },
+                                          {
+                                              "Family":  "message",
+                                              "Encoding":  "utf16be",
+                                              "Offset":  1,
+                                              "ScoreBucket":  "1",
+                                              "Count":  1
+                                          }
+                                      ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-04-conta2-shifted-text-probe.png"
+                  },
+                  {
+                      "Step":  5,
+                      "Action":  "Bind target markers to safe LevelDB key identifiers without exposing decoded text",
+                      "Classification":  "NO_TARGET_LITERAL_IN_SHIFTED_TEXT_LAYER",
+                      "SafeTargetHits":  [
+
+                                         ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-05-target-binding-classification.png"
+                  },
+                  {
+                      "Step":  6,
+                      "Action":  "Choose next diagnostic path from shifted-text evidence",
+                      "NextClassification":  "SHIFTED_UTF16_STRUCTURE_DOMINANT_NEXT_PARSE_ENVELOPE_FIELDS_AND_BIND_KEYS",
+                      "StrongUtf16ProfileCount":  7666,
+                      "StrongUtf8ProfileCount":  481,
+                      "SampledProfileCount":  8169,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-06-next-path-classification.png"
+                  },
+                  {
+                      "Step":  7,
+                      "Action":  "Validate readonly TEST safety",
+                      "Conta1ProcessCount":  1,
+                      "Conta2ProcessCount":  0,
+                      "OtherBonChatCount":  0,
+                      "NoProcessStarted":  true,
+                      "NoProcessTerminated":  true,
+                      "NoNavigation":  true,
+                      "NoTextSubmitted":  true,
+                      "NoKeyboardInput":  true,
+                      "NoMouseClick":  true,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001\\step-07-final-readonly-safety.png"
+                  }
+              ],
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0101-TIMI68-SHIFTED-TEXT-ENVELOPE-AND-TARGET-BINDING-READONLY-001"
+}

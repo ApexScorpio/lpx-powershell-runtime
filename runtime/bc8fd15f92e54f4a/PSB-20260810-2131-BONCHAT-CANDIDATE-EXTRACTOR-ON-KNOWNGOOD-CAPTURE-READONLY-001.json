@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2131-BONCHAT-CANDIDATE-EXTRACTOR-ON-KNOWNGOOD-CAPTURE-READONLY-001",
+  "conversationKey": "bc8fd15f92e54f4a",
+  "purpose": "Testar extractor candidato numa captura BonChat conhecida e válida",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-10T20:27:34.110Z",
+  "endedAt": "2026-08-10T20:27:36.390Z",
+  "elapsedMs": 2280,
+  "outputLength": 752,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "8da60562f43ebe82acbc046878b104be7d37a3c013cc3e4ebb58ad31a2e74a2d",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/bc8fd15f92e54f4a/PSB-20260810-2131-BONCHAT-CANDIDATE-EXTRACTOR-ON-KNOWNGOOD-CAPTURE-READONLY-001.txt",
+  "createdAt": "2026-08-10T20:27:36.392Z"
+}

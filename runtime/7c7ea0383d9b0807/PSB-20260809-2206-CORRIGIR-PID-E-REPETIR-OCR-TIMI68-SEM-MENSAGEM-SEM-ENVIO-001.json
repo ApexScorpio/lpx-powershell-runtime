@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260809-2206-CORRIGIR-PID-E-REPETIR-OCR-TIMI68-SEM-MENSAGEM-SEM-ENVIO-001",
+  "conversationKey": "7c7ea0383d9b0807",
+  "purpose": "Corrigir variável PID e repetir OCR TIMI-68 sem mensagem nem envio",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-09T21:07:03.459Z",
+  "endedAt": "2026-08-09T21:07:03.920Z",
+  "elapsedMs": 461,
+  "outputLength": 594,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "11c2192524c735cd32f6fded2a5139b449a556c39fa8d2504d9bb966d0c06fbd",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c7ea0383d9b0807/PSB-20260809-2206-CORRIGIR-PID-E-REPETIR-OCR-TIMI68-SEM-MENSAGEM-SEM-ENVIO-001.txt",
+  "createdAt": "2026-08-09T21:07:03.922Z"
+}

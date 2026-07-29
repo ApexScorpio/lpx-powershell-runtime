@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260812-0200-MAPEAR-LINHAS-CHAT-E-DESCOBRIR-HISTORICO-SCROLLAVEL-READONLY-001",
+  "conversationKey": "4e0ef0cf0a5e73de",
+  "purpose": "Mapear linhas de chat e descobrir historico scrollavel readonly",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-12T00:54:33.299Z",
+  "endedAt": "2026-08-12T00:57:18.641Z",
+  "elapsedMs": 165342,
+  "outputLength": 5536,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "24c5c156e30b8ffc8036c36e5dbf9f23eb24a98e8bec5d944b6b45127e7c3304",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/4e0ef0cf0a5e73de/PSB-20260812-0200-MAPEAR-LINHAS-CHAT-E-DESCOBRIR-HISTORICO-SCROLLAVEL-READONLY-001.txt",
+  "createdAt": "2026-08-12T00:57:18.643Z"
+}

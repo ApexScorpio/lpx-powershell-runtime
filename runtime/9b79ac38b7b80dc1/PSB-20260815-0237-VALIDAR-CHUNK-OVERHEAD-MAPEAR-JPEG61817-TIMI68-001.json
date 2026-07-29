@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-0237-VALIDAR-CHUNK-OVERHEAD-MAPEAR-JPEG61817-TIMI68-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Validar o overhead por blocos e mapear de forma única o JPEG real da mensagem TIMI-68 seq 61817",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-15T01:34:06.212Z",
+  "endedAt": "2026-08-15T01:34:07.016Z",
+  "elapsedMs": 804,
+  "outputLength": 503,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9aa6705fbcd65fb32fc4e31a7f84f5fe364caa89f8bece938d4dda5b55f9371e",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-0237-VALIDAR-CHUNK-OVERHEAD-MAPEAR-JPEG61817-TIMI68-001.txt",
+  "createdAt": "2026-08-15T01:34:07.018Z"
+}

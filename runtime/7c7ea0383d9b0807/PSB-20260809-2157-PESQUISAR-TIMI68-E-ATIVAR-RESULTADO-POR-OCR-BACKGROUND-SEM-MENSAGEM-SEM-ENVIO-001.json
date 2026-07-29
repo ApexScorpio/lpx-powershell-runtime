@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260809-2157-PESQUISAR-TIMI68-E-ATIVAR-RESULTADO-POR-OCR-BACKGROUND-SEM-MENSAGEM-SEM-ENVIO-001",
+  "conversationKey": "7c7ea0383d9b0807",
+  "purpose": "Pesquisar TIMI-68 e ativar resultado por OCR em background sem mensagem nem envio",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-09T20:59:10.120Z",
+  "endedAt": "2026-08-09T20:59:10.560Z",
+  "elapsedMs": 440,
+  "outputLength": 498,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "26494961f5d871177b157bd6953ff6612760cb171a8b0c22c85be69b562cdaa4",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/7c7ea0383d9b0807/PSB-20260809-2157-PESQUISAR-TIMI68-E-ATIVAR-RESULTADO-POR-OCR-BACKGROUND-SEM-MENSAGEM-SEM-ENVIO-001.txt",
+  "createdAt": "2026-08-09T20:59:10.563Z"
+}

@@ -1,0 +1,509 @@
+{
+    "Protocol":  "LPX_TIMI68_AST_GUARD_DEPENDENCY_AUDIT_V1",
+    "JobId":  "PSB-20260814-0050-TIMI68-AST-GUARD-DEPENDENCY-AUDIT-001",
+    "Status":  "SUCCEEDED",
+    "ObserverHashValidated":  true,
+    "GuardFunctions":  [
+                           {
+                               "Name":  "ParseAst",
+                               "StartLine":  81,
+                               "EndLine":  89,
+                               "Parameters":  [
+                                                  "Path"
+                                              ],
+                               "CommandNames":  [
+                                                    "Get-Content"
+                                                ],
+                               "VariableNames":  [
+                                                     "a",
+                                                     "e",
+                                                     "null",
+                                                     "Path",
+                                                     "t"
+                                                 ],
+                               "SafeIdentifierLiterals":  [
+                                                              "Ast",
+                                                              "Errors",
+                                                              "Get-Content",
+                                                              "ParseFile",
+                                                              "Text",
+                                                              "UTF8"
+                                                          ]
+                           },
+                           {
+                               "Name":  "Fn",
+                               "StartLine":  90,
+                               "EndLine":  98,
+                               "Parameters":  [
+                                                  "parsed",
+                                                  "name"
+                                              ],
+                               "CommandNames":  [
+
+                                                ],
+                               "VariableNames":  [
+                                                     "f",
+                                                     "n",
+                                                     "name",
+                                                     "parsed",
+                                                     "true"
+                                                 ],
+                               "SafeIdentifierLiterals":  [
+                                                              "Ast",
+                                                              "Count",
+                                                              "Equals",
+                                                              "FindAll",
+                                                              "Name",
+                                                              "OrdinalIgnoreCase"
+                                                          ]
+                           }
+                       ],
+    "GuardCalls":  [
+                       {
+                           "Line":  103,
+                           "Command":  "ParseAst",
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "Elements":  [
+                                            {
+                                                "Kind":  "STRING",
+                                                "SafeIdentifier":  "ParseAst",
+                                                "Length":  8
+                                            },
+                                            {
+                                                "Kind":  "VARIABLE",
+                                                "Name":  "CaptureWorkerBackup"
+                                            }
+                                        ]
+                       },
+                       {
+                           "Line":  105,
+                           "Command":  "Fn",
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "Elements":  [
+                                            {
+                                                "Kind":  "STRING",
+                                                "SafeIdentifier":  "Fn",
+                                                "Length":  2
+                                            },
+                                            {
+                                                "Kind":  "VARIABLE",
+                                                "Name":  "parsed"
+                                            },
+                                            {
+                                                "Kind":  "STRING",
+                                                "SafeIdentifier":  "Nav",
+                                                "Length":  3
+                                            }
+                                        ]
+                       },
+                       {
+                           "Line":  106,
+                           "Command":  "Fn",
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "Elements":  [
+                                            {
+                                                "Kind":  "STRING",
+                                                "SafeIdentifier":  "Fn",
+                                                "Length":  2
+                                            },
+                                            {
+                                                "Kind":  "VARIABLE",
+                                                "Name":  "parsed"
+                                            },
+                                            {
+                                                "Kind":  "STRING",
+                                                "SafeIdentifier":  "TypeClear",
+                                                "Length":  9
+                                            }
+                                        ]
+                       }
+                   ],
+    "GuardRegionAssignments":  [
+                                   {
+                                       "Line":  103,
+                                       "LeftVariables":  [
+                                                             "parsed"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "PipelineAst",
+                                                     "Variables":  [
+                                                                       "CaptureWorkerBackup"
+                                                                   ],
+                                                     "Commands":  [
+                                                                      "ParseAst"
+                                                                  ],
+                                                     "Members":  [
+
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+                                                                             "ParseAst"
+                                                                         ],
+                                                     "ConstantTypes":  [
+                                                                           "System.String"
+                                                                       ]
+                                                 }
+                                   },
+                                   {
+                                       "Line":  105,
+                                       "LeftVariables":  [
+                                                             "nav"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "PipelineAst",
+                                                     "Variables":  [
+                                                                       "parsed"
+                                                                   ],
+                                                     "Commands":  [
+                                                                      "Fn"
+                                                                  ],
+                                                     "Members":  [
+
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+                                                                             "Fn",
+                                                                             "Nav"
+                                                                         ],
+                                                     "ConstantTypes":  [
+                                                                           "System.String"
+                                                                       ]
+                                                 }
+                                   },
+                                   {
+                                       "Line":  106,
+                                       "LeftVariables":  [
+                                                             "textEntryBoundary"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "PipelineAst",
+                                                     "Variables":  [
+                                                                       "parsed"
+                                                                   ],
+                                                     "Commands":  [
+                                                                      "Fn"
+                                                                  ],
+                                                     "Members":  [
+
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+                                                                             "Fn",
+                                                                             "TypeClear"
+                                                                         ],
+                                                     "ConstantTypes":  [
+                                                                           "System.String"
+                                                                       ]
+                                                 }
+                                   },
+                                   {
+                                       "Line":  108,
+                                       "LeftVariables":  [
+                                                             "prefix"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "CommandExpressionAst",
+                                                     "Variables":  [
+                                                                       "nav",
+                                                                       "parsed"
+                                                                   ],
+                                                     "Commands":  [
+
+                                                                  ],
+                                                     "Members":  [
+                                                                     "EndOffset",
+                                                                     "Extent",
+                                                                     "Substring",
+                                                                     "Text"
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+                                                                             "EndOffset",
+                                                                             "Extent",
+                                                                             "Substring",
+                                                                             "Text"
+                                                                         ],
+                                                     "ConstantTypes":  [
+                                                                           "System.Int32",
+                                                                           "System.String"
+                                                                       ]
+                                                 }
+                                   },
+                                   {
+                                       "Line":  110,
+                                       "LeftVariables":  [
+                                                             "pt"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "CommandExpressionAst",
+                                                     "Variables":  [
+                                                                       "null"
+                                                                   ],
+                                                     "Commands":  [
+
+                                                                  ],
+                                                     "Members":  [
+
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+
+                                                                         ],
+                                                     "ConstantTypes":  [
+
+                                                                       ]
+                                                 }
+                                   },
+                                   {
+                                       "Line":  110,
+                                       "LeftVariables":  [
+                                                             "pe"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "CommandExpressionAst",
+                                                     "Variables":  [
+                                                                       "null"
+                                                                   ],
+                                                     "Commands":  [
+
+                                                                  ],
+                                                     "Members":  [
+
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+
+                                                                         ],
+                                                     "ConstantTypes":  [
+
+                                                                       ]
+                                                 }
+                                   },
+                                   {
+                                       "Line":  111,
+                                       "LeftVariables":  [
+                                                             "pa"
+                                                         ],
+                                       "Right":  {
+                                                     "Kind":  "CommandExpressionAst",
+                                                     "Variables":  [
+                                                                       "pe",
+                                                                       "prefix",
+                                                                       "pt"
+                                                                   ],
+                                                     "Commands":  [
+
+                                                                  ],
+                                                     "Members":  [
+                                                                     "ParseInput"
+                                                                 ],
+                                                     "SafeIdentifiers":  [
+                                                                             "ParseInput"
+                                                                         ],
+                                                     "ConstantTypes":  [
+                                                                           "System.String"
+                                                                       ]
+                                                 }
+                                   }
+                               ],
+    "GuardRegionConditions":  [
+                                  {
+                                      "IfLine":  96,
+                                      "Clauses":  [
+                                                      {
+                                                          "ConditionLine":  96,
+                                                          "Condition":  {
+                                                                            "Kind":  "PipelineAst",
+                                                                            "Variables":  [
+                                                                                              "f"
+                                                                                          ],
+                                                                            "Commands":  [
+
+                                                                                         ],
+                                                                            "Members":  [
+                                                                                            "Count"
+                                                                                        ],
+                                                                            "SafeIdentifiers":  [
+                                                                                                    "Count"
+                                                                                                ],
+                                                                            "ConstantTypes":  [
+                                                                                                  "System.Int32",
+                                                                                                  "System.String"
+                                                                                              ]
+                                                                        },
+                                                          "ThrowLines":  [
+                                                                             96
+                                                                         ],
+                                                          "ExitLines":  [
+
+                                                                        ]
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "IfLine":  104,
+                                      "Clauses":  [
+                                                      {
+                                                          "ConditionLine":  104,
+                                                          "Condition":  {
+                                                                            "Kind":  "PipelineAst",
+                                                                            "Variables":  [
+                                                                                              "parsed"
+                                                                                          ],
+                                                                            "Commands":  [
+
+                                                                                         ],
+                                                                            "Members":  [
+                                                                                            "Count",
+                                                                                            "Errors"
+                                                                                        ],
+                                                                            "SafeIdentifiers":  [
+                                                                                                    "Count",
+                                                                                                    "Errors"
+                                                                                                ],
+                                                                            "ConstantTypes":  [
+                                                                                                  "System.Int32",
+                                                                                                  "System.String"
+                                                                                              ]
+                                                                        },
+                                                          "ThrowLines":  [
+                                                                             104
+                                                                         ],
+                                                          "ExitLines":  [
+
+                                                                        ]
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "IfLine":  107,
+                                      "Clauses":  [
+                                                      {
+                                                          "ConditionLine":  107,
+                                                          "Condition":  {
+                                                                            "Kind":  "PipelineAst",
+                                                                            "Variables":  [
+                                                                                              "nav",
+                                                                                              "textEntryBoundary"
+                                                                                          ],
+                                                                            "Commands":  [
+
+                                                                                         ],
+                                                                            "Members":  [
+                                                                                            "EndOffset",
+                                                                                            "Extent",
+                                                                                            "StartOffset"
+                                                                                        ],
+                                                                            "SafeIdentifiers":  [
+                                                                                                    "EndOffset",
+                                                                                                    "Extent",
+                                                                                                    "StartOffset"
+                                                                                                ],
+                                                                            "ConstantTypes":  [
+                                                                                                  "System.String"
+                                                                                              ]
+                                                                        },
+                                                          "ThrowLines":  [
+                                                                             107
+                                                                         ],
+                                                          "ExitLines":  [
+
+                                                                        ]
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "IfLine":  112,
+                                      "Clauses":  [
+                                                      {
+                                                          "ConditionLine":  112,
+                                                          "Condition":  {
+                                                                            "Kind":  "PipelineAst",
+                                                                            "Variables":  [
+                                                                                              "pe"
+                                                                                          ],
+                                                                            "Commands":  [
+
+                                                                                         ],
+                                                                            "Members":  [
+                                                                                            "Count"
+                                                                                        ],
+                                                                            "SafeIdentifiers":  [
+                                                                                                    "Count"
+                                                                                                ],
+                                                                            "ConstantTypes":  [
+                                                                                                  "System.Int32",
+                                                                                                  "System.String"
+                                                                                              ]
+                                                                        },
+                                                          "ThrowLines":  [
+                                                                             112
+                                                                         ],
+                                                          "ExitLines":  [
+
+                                                                        ]
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "IfLine":  115,
+                                      "Clauses":  [
+                                                      {
+                                                          "ConditionLine":  115,
+                                                          "Condition":  {
+                                                                            "Kind":  "PipelineAst",
+                                                                            "Variables":  [
+
+                                                                                          ],
+                                                                            "Commands":  [
+
+                                                                                         ],
+                                                                            "Members":  [
+
+                                                                                        ],
+                                                                            "SafeIdentifiers":  [
+                                                                                                    "LPXTimiObserverNativeV2"
+                                                                                                ],
+                                                                            "ConstantTypes":  [
+                                                                                                  "System.String"
+                                                                                              ]
+                                                                        },
+                                                          "ThrowLines":  [
+
+                                                                         ],
+                                                          "ExitLines":  [
+
+                                                                        ]
+                                                      }
+                                                  ]
+                                  }
+                              ],
+    "GuardRegionSafeIdentifierLiterals":  [
+                                              "Add-Type",
+                                              "Ast",
+                                              "Count",
+                                              "EndOffset",
+                                              "Equals",
+                                              "Errors",
+                                              "Extent",
+                                              "FindAll",
+                                              "Fn",
+                                              "Get-Content",
+                                              "Invoke-Expression",
+                                              "LPXTimiObserverNativeV2",
+                                              "Name",
+                                              "Nav",
+                                              "OrdinalIgnoreCase",
+                                              "ParseAst",
+                                              "ParseFile",
+                                              "ParseInput",
+                                              "StartOffset",
+                                              "Substring",
+                                              "Text",
+                                              "TypeClear",
+                                              "UTF8"
+                                          ],
+    "ObserverExecuted":  false,
+    "BonChatTouched":  false,
+    "GitTouched":  false,
+    "FilesModified":  false,
+    "PrivateMessageContentRead":  false,
+    "PrivateMessageContentOutput":  false,
+    "ObserverSourceTextOutput":  false,
+    "SecretsOutput":  false,
+    "Passed":  true
+}

@@ -1,0 +1,10 @@
+Observer missing: %USERPROFILE%\AppData\Local\LPX\Timi Auto 
+Reuniao\Automation\BonChat-TIMI68-Hardened\Candidate\LPX-TIMI68-Theodore-Marcia-Observer.ps1
+At S:\tmp\powershell-bridge-command-PSB-20260810-2131-BONCHAT-CANDIDATE-EXTRACTOR-ON-KNOWNGOOD-CAPTURE-READONLY-001.ps1
+:171 char:44
++ ... st-Path -LiteralPath $Observer)){throw "Observer missing: $Observer"}
++                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Observer missin...ia-Observer.ps1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Observer missing: %USERPROFILE%\AppData\Local\LPX\Timi Auto Reuniao\Automation\BonChat- 
+   TIMI68-Hardened\Candidate\LPX-TIMI68-Theodore-Marcia-Observer.ps1
+ 

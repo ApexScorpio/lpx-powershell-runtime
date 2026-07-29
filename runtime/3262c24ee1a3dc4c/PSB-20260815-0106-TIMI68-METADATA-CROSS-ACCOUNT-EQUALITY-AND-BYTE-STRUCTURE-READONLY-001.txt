@@ -1,0 +1,684 @@
+{
+    "Protocol":  "LPX_TIMI68_METADATA_CROSS_ACCOUNT_EQUALITY_BYTE_STRUCTURE_V1",
+    "JobId":  "PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001",
+    "Status":  "COMPLETED_READONLY",
+    "CanonicalObjectivesEmbedded":  true,
+    "GoldenRuleScreenshotEveryStep":  true,
+    "PrivacySafePublicOutput":  true,
+    "ScreenshotCount":  7,
+    "Conta1Stats":  [
+                        {
+                            "Family":  "user-nickname",
+                            "RecordCount":  6338,
+                            "LogicalKeyCount":  6338,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  35,
+                                                   "Count":  1102
+                                               },
+                                               {
+                                                   "Length":  37,
+                                                   "Count":  1020
+                                               },
+                                               {
+                                                   "Length":  39,
+                                                   "Count":  943
+                                               },
+                                               {
+                                                   "Length":  41,
+                                                   "Count":  562
+                                               },
+                                               {
+                                                   "Length":  33,
+                                                   "Count":  554
+                                               },
+                                               {
+                                                   "Length":  43,
+                                                   "Count":  357
+                                               },
+                                               {
+                                                   "Length":  49,
+                                                   "Count":  271
+                                               },
+                                               {
+                                                   "Length":  51,
+                                                   "Count":  238
+                                               },
+                                               {
+                                                   "Length":  47,
+                                                   "Count":  235
+                                               },
+                                               {
+                                                   "Length":  45,
+                                                   "Count":  225
+                                               },
+                                               {
+                                                   "Length":  53,
+                                                   "Count":  210
+                                               },
+                                               {
+                                                   "Length":  55,
+                                                   "Count":  161
+                                               },
+                                               {
+                                                   "Length":  31,
+                                                   "Count":  147
+                                               },
+                                               {
+                                                   "Length":  57,
+                                                   "Count":  88
+                                               },
+                                               {
+                                                   "Length":  29,
+                                                   "Count":  52
+                                               }
+                                           ],
+                            "EvenZeroFraction":  0.001553,
+                            "OddZeroFraction":  0.004671
+                        },
+                        {
+                            "Family":  "group-members",
+                            "RecordCount":  23,
+                            "LogicalKeyCount":  23,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  22,
+                                                   "Count":  15
+                                               },
+                                               {
+                                                   "Length":  30775,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  13975,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  174955,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  130765,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  115,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  55,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  1855,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  325,
+                                                   "Count":  1
+                                               }
+                                           ],
+                            "EvenZeroFraction":  0.003857,
+                            "OddZeroFraction":  0.003698
+                        },
+                        {
+                            "Family":  "group-reference",
+                            "RecordCount":  284,
+                            "LogicalKeyCount":  284,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  298,
+                                                   "Count":  284
+                                               }
+                                           ],
+                            "EvenZeroFraction":  0.000284,
+                            "OddZeroFraction":  0.00683
+                        }
+                    ],
+    "Conta2Stats":  [
+                        {
+                            "Family":  "user-nickname",
+                            "RecordCount":  6360,
+                            "LogicalKeyCount":  6360,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  35,
+                                                   "Count":  1103
+                                               },
+                                               {
+                                                   "Length":  37,
+                                                   "Count":  1023
+                                               },
+                                               {
+                                                   "Length":  39,
+                                                   "Count":  943
+                                               },
+                                               {
+                                                   "Length":  41,
+                                                   "Count":  567
+                                               },
+                                               {
+                                                   "Length":  33,
+                                                   "Count":  556
+                                               },
+                                               {
+                                                   "Length":  43,
+                                                   "Count":  358
+                                               },
+                                               {
+                                                   "Length":  49,
+                                                   "Count":  272
+                                               },
+                                               {
+                                                   "Length":  51,
+                                                   "Count":  241
+                                               },
+                                               {
+                                                   "Length":  47,
+                                                   "Count":  236
+                                               },
+                                               {
+                                                   "Length":  45,
+                                                   "Count":  225
+                                               },
+                                               {
+                                                   "Length":  53,
+                                                   "Count":  210
+                                               },
+                                               {
+                                                   "Length":  55,
+                                                   "Count":  162
+                                               },
+                                               {
+                                                   "Length":  31,
+                                                   "Count":  147
+                                               },
+                                               {
+                                                   "Length":  57,
+                                                   "Count":  89
+                                               },
+                                               {
+                                                   "Length":  29,
+                                                   "Count":  52
+                                               }
+                                           ],
+                            "EvenZeroFraction":  0.00202,
+                            "OddZeroFraction":  0.001727
+                        },
+                        {
+                            "Family":  "group-members",
+                            "RecordCount":  36,
+                            "LogicalKeyCount":  36,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  22,
+                                                   "Count":  24
+                                               },
+                                               {
+                                                   "Length":  55,
+                                                   "Count":  2
+                                               },
+                                               {
+                                                   "Length":  13975,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  8185,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  30775,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  174925,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  130765,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  325,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  115,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  1495,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  2845,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  1825,
+                                                   "Count":  1
+                                               }
+                                           ],
+                            "EvenZeroFraction":  0.003887,
+                            "OddZeroFraction":  0.00428
+                        },
+                        {
+                            "Family":  "group-reference",
+                            "RecordCount":  129,
+                            "LogicalKeyCount":  129,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  298,
+                                                   "Count":  129
+                                               }
+                                           ],
+                            "EvenZeroFraction":  0.000312,
+                            "OddZeroFraction":  0.00692
+                        }
+                    ],
+    "CrossAccount":  [
+                         {
+                             "Family":  "user-nickname",
+                             "CommonLogicalKeyCount":  6320,
+                             "EqualValueCount":  0,
+                             "DifferentValueCount":  6320,
+                             "SameLengthButDifferentValueCount":  6319,
+                             "EqualFraction":  0,
+                             "SameLengthDifferentFraction":  0.999842
+                         },
+                         {
+                             "Family":  "group-members",
+                             "CommonLogicalKeyCount":  23,
+                             "EqualValueCount":  0,
+                             "DifferentValueCount":  23,
+                             "SameLengthButDifferentValueCount":  21,
+                             "EqualFraction":  0,
+                             "SameLengthDifferentFraction":  0.913043
+                         },
+                         {
+                             "Family":  "group-reference",
+                             "CommonLogicalKeyCount":  122,
+                             "EqualValueCount":  0,
+                             "DifferentValueCount":  122,
+                             "SameLengthButDifferentValueCount":  122,
+                             "EqualFraction":  0,
+                             "SameLengthDifferentFraction":  1
+                         }
+                     ],
+    "StorageTransformation":  "NICKNAME_VALUES_SAME_LENGTH_BUT_DIFFERENT_ACROSS_ACCOUNTS_COMPATIBLE_WITH_PER_ACCOUNT_TRANSFORMATION",
+    "MaxNicknameZeroParitySkew":  0.003118,
+    "NextClassification":  "NEXT_INSPECT_BONCHAT_EXECUTABLE_CRYPTO_AND_STORAGE_IMPORTS",
+    "NoProcessStarted":  true,
+    "NoProcessTerminated":  true,
+    "NoNavigation":  true,
+    "NoTextSubmitted":  true,
+    "Steps":  [
+                  {
+                      "Step":  1,
+                      "Action":  "Readonly process census before metadata cross-account equality probe",
+                      "Conta1ProcessCount":  1,
+                      "Conta2ProcessCount":  0,
+                      "OtherBonChatCount":  0,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-01-baseline-process-census.png"
+                  },
+                  {
+                      "Step":  2,
+                      "Action":  "Load current Conta1 nickname and group metadata values and measure byte parity",
+                      "Files":  [
+                                    "0330C93CF896449200\\000956.ldb",
+                                    "0330C93CF896449200\\000929.ldb",
+                                    "0330C93CF896449200\\000912.ldb",
+                                    "0330C93CF896449200\\000862.ldb",
+                                    "0330C93CF896449200\\000861.ldb",
+                                    "0330C93CF896449200\\000837.ldb",
+                                    "0330C93CF896449200\\000822.ldb",
+                                    "0330C93CF896449200\\000798.ldb"
+                                ],
+                      "Stats":  [
+                                    {
+                                        "Family":  "user-nickname",
+                                        "RecordCount":  6338,
+                                        "LogicalKeyCount":  6338,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  35,
+                                                               "Count":  1102
+                                                           },
+                                                           {
+                                                               "Length":  37,
+                                                               "Count":  1020
+                                                           },
+                                                           {
+                                                               "Length":  39,
+                                                               "Count":  943
+                                                           },
+                                                           {
+                                                               "Length":  41,
+                                                               "Count":  562
+                                                           },
+                                                           {
+                                                               "Length":  33,
+                                                               "Count":  554
+                                                           },
+                                                           {
+                                                               "Length":  43,
+                                                               "Count":  357
+                                                           },
+                                                           {
+                                                               "Length":  49,
+                                                               "Count":  271
+                                                           },
+                                                           {
+                                                               "Length":  51,
+                                                               "Count":  238
+                                                           },
+                                                           {
+                                                               "Length":  47,
+                                                               "Count":  235
+                                                           },
+                                                           {
+                                                               "Length":  45,
+                                                               "Count":  225
+                                                           },
+                                                           {
+                                                               "Length":  53,
+                                                               "Count":  210
+                                                           },
+                                                           {
+                                                               "Length":  55,
+                                                               "Count":  161
+                                                           },
+                                                           {
+                                                               "Length":  31,
+                                                               "Count":  147
+                                                           },
+                                                           {
+                                                               "Length":  57,
+                                                               "Count":  88
+                                                           },
+                                                           {
+                                                               "Length":  29,
+                                                               "Count":  52
+                                                           }
+                                                       ],
+                                        "EvenZeroFraction":  0.001553,
+                                        "OddZeroFraction":  0.004671
+                                    },
+                                    {
+                                        "Family":  "group-members",
+                                        "RecordCount":  23,
+                                        "LogicalKeyCount":  23,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  22,
+                                                               "Count":  15
+                                                           },
+                                                           {
+                                                               "Length":  30775,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  13975,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  174955,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  130765,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  115,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  55,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  1855,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  325,
+                                                               "Count":  1
+                                                           }
+                                                       ],
+                                        "EvenZeroFraction":  0.003857,
+                                        "OddZeroFraction":  0.003698
+                                    },
+                                    {
+                                        "Family":  "group-reference",
+                                        "RecordCount":  284,
+                                        "LogicalKeyCount":  284,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  298,
+                                                               "Count":  284
+                                                           }
+                                                       ],
+                                        "EvenZeroFraction":  0.000284,
+                                        "OddZeroFraction":  0.00683
+                                    }
+                                ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-02-conta1-metadata-structure.png"
+                  },
+                  {
+                      "Step":  3,
+                      "Action":  "Load current Conta2 nickname and group metadata values and measure byte parity",
+                      "Files":  [
+                                    "34D67E4F55A92F0C00\\000405.ldb",
+                                    "34D67E4F55A92F0C00\\000404.ldb",
+                                    "34D67E4F55A92F0C00\\000352.ldb",
+                                    "34D67E4F55A92F0C00\\000336.ldb",
+                                    "34D67E4F55A92F0C00\\000295.ldb"
+                                ],
+                      "Stats":  [
+                                    {
+                                        "Family":  "user-nickname",
+                                        "RecordCount":  6360,
+                                        "LogicalKeyCount":  6360,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  35,
+                                                               "Count":  1103
+                                                           },
+                                                           {
+                                                               "Length":  37,
+                                                               "Count":  1023
+                                                           },
+                                                           {
+                                                               "Length":  39,
+                                                               "Count":  943
+                                                           },
+                                                           {
+                                                               "Length":  41,
+                                                               "Count":  567
+                                                           },
+                                                           {
+                                                               "Length":  33,
+                                                               "Count":  556
+                                                           },
+                                                           {
+                                                               "Length":  43,
+                                                               "Count":  358
+                                                           },
+                                                           {
+                                                               "Length":  49,
+                                                               "Count":  272
+                                                           },
+                                                           {
+                                                               "Length":  51,
+                                                               "Count":  241
+                                                           },
+                                                           {
+                                                               "Length":  47,
+                                                               "Count":  236
+                                                           },
+                                                           {
+                                                               "Length":  45,
+                                                               "Count":  225
+                                                           },
+                                                           {
+                                                               "Length":  53,
+                                                               "Count":  210
+                                                           },
+                                                           {
+                                                               "Length":  55,
+                                                               "Count":  162
+                                                           },
+                                                           {
+                                                               "Length":  31,
+                                                               "Count":  147
+                                                           },
+                                                           {
+                                                               "Length":  57,
+                                                               "Count":  89
+                                                           },
+                                                           {
+                                                               "Length":  29,
+                                                               "Count":  52
+                                                           }
+                                                       ],
+                                        "EvenZeroFraction":  0.00202,
+                                        "OddZeroFraction":  0.001727
+                                    },
+                                    {
+                                        "Family":  "group-members",
+                                        "RecordCount":  36,
+                                        "LogicalKeyCount":  36,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  22,
+                                                               "Count":  24
+                                                           },
+                                                           {
+                                                               "Length":  55,
+                                                               "Count":  2
+                                                           },
+                                                           {
+                                                               "Length":  13975,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  8185,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  30775,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  174925,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  130765,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  325,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  115,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  1495,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  2845,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  1825,
+                                                               "Count":  1
+                                                           }
+                                                       ],
+                                        "EvenZeroFraction":  0.003887,
+                                        "OddZeroFraction":  0.00428
+                                    },
+                                    {
+                                        "Family":  "group-reference",
+                                        "RecordCount":  129,
+                                        "LogicalKeyCount":  129,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  298,
+                                                               "Count":  129
+                                                           }
+                                                       ],
+                                        "EvenZeroFraction":  0.000312,
+                                        "OddZeroFraction":  0.00692
+                                    }
+                                ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-03-conta2-metadata-structure.png"
+                  },
+                  {
+                      "Step":  4,
+                      "Action":  "Compare identical logical metadata keys across accounts by hash and length only",
+                      "CrossAccount":  [
+                                           {
+                                               "Family":  "user-nickname",
+                                               "CommonLogicalKeyCount":  6320,
+                                               "EqualValueCount":  0,
+                                               "DifferentValueCount":  6320,
+                                               "SameLengthButDifferentValueCount":  6319,
+                                               "EqualFraction":  0,
+                                               "SameLengthDifferentFraction":  0.999842
+                                           },
+                                           {
+                                               "Family":  "group-members",
+                                               "CommonLogicalKeyCount":  23,
+                                               "EqualValueCount":  0,
+                                               "DifferentValueCount":  23,
+                                               "SameLengthButDifferentValueCount":  21,
+                                               "EqualFraction":  0,
+                                               "SameLengthDifferentFraction":  0.913043
+                                           },
+                                           {
+                                               "Family":  "group-reference",
+                                               "CommonLogicalKeyCount":  122,
+                                               "EqualValueCount":  0,
+                                               "DifferentValueCount":  122,
+                                               "SameLengthButDifferentValueCount":  122,
+                                               "EqualFraction":  0,
+                                               "SameLengthDifferentFraction":  1
+                                           }
+                                       ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-04-cross-account-metadata-equality.png"
+                  },
+                  {
+                      "Step":  5,
+                      "Action":  "Classify metadata storage transformation from cross-account equality",
+                      "StorageTransformation":  "NICKNAME_VALUES_SAME_LENGTH_BUT_DIFFERENT_ACROSS_ACCOUNTS_COMPATIBLE_WITH_PER_ACCOUNT_TRANSFORMATION",
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-05-storage-transformation-classification.png"
+                  },
+                  {
+                      "Step":  6,
+                      "Action":  "Choose next diagnostic path from equality and real byte-parity evidence",
+                      "MaxNicknameZeroParitySkew":  0.003118,
+                      "NextClassification":  "NEXT_INSPECT_BONCHAT_EXECUTABLE_CRYPTO_AND_STORAGE_IMPORTS",
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-06-next-path-classification.png"
+                  },
+                  {
+                      "Step":  7,
+                      "Action":  "Validate readonly TEST safety",
+                      "Conta1ProcessCount":  1,
+                      "Conta2ProcessCount":  0,
+                      "OtherBonChatCount":  0,
+                      "NoProcessStarted":  true,
+                      "NoProcessTerminated":  true,
+                      "NoNavigation":  true,
+                      "NoTextSubmitted":  true,
+                      "NoKeyboardInput":  true,
+                      "NoMouseClick":  true,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001\\step-07-final-readonly-safety.png"
+                  }
+              ],
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0106-TIMI68-METADATA-CROSS-ACCOUNT-EQUALITY-AND-BYTE-STRUCTURE-READONLY-001"
+}

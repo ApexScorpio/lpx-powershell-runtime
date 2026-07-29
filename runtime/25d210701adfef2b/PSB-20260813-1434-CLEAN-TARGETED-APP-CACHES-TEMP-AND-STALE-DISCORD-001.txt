@@ -1,0 +1,8 @@
+Os tipos de argumentos n�o correspondem
+At S:\tmp\powershell-bridge-command-PSB-20260813-1434-CLEAN-TARGETED-APP-CACHES-TEMP-AND-STALE-DISCORD-001.ps1:253 
+char:21
++         deletedGB = GB $deletedBytes
++                     ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 

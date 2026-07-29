@@ -1,0 +1,252 @@
+{
+    "Protocol":  "LPX_BONCHAT_OBSERVER_ZEROEVENTS_FLOW_DIAGNOSTIC_READONLY_V1",
+    "JobId":  "PSB-20260810-2125-BONCHAT-OBSERVER-ZEROEVENTS-FLOW-DIAGNOSTIC-READONLY-001",
+    "Status":  "SUCCEEDED",
+    "Observer":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Candidate\\LPX-TIMI68-Theodore-Marcia-Observer.ps1",
+    "ObserverHash":  "30B64D1A58AE822F9B98FD14FFDA631A3ABC50932243E6D82583095B5B2DC27A",
+    "ParserErrors":  0,
+    "Parameters":  [
+                       "RunOnce",
+                       "DryRun"
+                   ],
+    "Config":  {
+                   "Enabled":  false,
+                   "Mode":  "candidate-disabled",
+                   "Group":  "TIMI-68",
+                   "Authors":  [
+                                   "Theodore",
+                                   "Marcia"
+                               ],
+                   "PollSeconds":  10,
+                   "ObserverExe":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                   "DownloadRoot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\tmpt\\download",
+                   "QueueFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\State\\events.jsonl",
+                   "DryRunQueueFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\State\\dryrun-events.jsonl",
+                   "SeenFile":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\State\\seen.json",
+                   "ChatInjectionEnabled":  false,
+                   "MediaUploadEnabled":  false,
+                   "LearnEnabled":  false,
+                   "TaskExecutionEnabled":  false
+               },
+    "ExtractCalls":  [
+                         "ExtractTargetBlocks $ocr ([double]$main[0].Width)"
+                     ],
+    "DryRunLines":  [
+                        "[switch]$DryRun",
+                        "$sim=Join-Path $State \u0027dryrun-events.jsonl\u0027",
+                        "AppendEvent $event -Simulation:$DryRun",
+                        "if(-not$DryRun){",
+                        "if(-not$DryRun){"
+                    ],
+    "TimiGateLines":  [
+                          "$Base=\u0027S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\u0027",
+                          "$CaptureWorkerBackup=\u0027S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\BonChat-TIMI68-Hardened\\Backups\\LPX-BonChat-TIMI68-Hardened-before-V4-20260810-171654.ps1\u0027",
+                          "group=\u0027TIMI-68\u0027",
+                          "\u0027Analyze this Theodore/Marcia TIMI-68 message.\u0027,"
+                      ],
+    "Functions":  {
+                      "Exact":  "function Exact([string]$exe){\n    $raw=[string]$exe\n    if([string]::IsNullOrWhiteSpace($raw)){return @()}\n    $raw=$raw.Trim().Trim([char]34)\n    try{\n        $target=[IO.Path]::GetFullPath($raw).TrimEnd(\u0027\\\u0027)\n    }catch{\n        return @()\n    }\n\n    $r=@()\n    foreach($proc in @(Get-CimInstance Win32_Process)){\n        $ep=[string]$proc.ExecutablePath\n        if([string]::IsNullOrWhiteSpace($ep)){continue}\n        try{\n            $full=[IO.Path]::GetFullPath($ep.Trim().Trim([char]34)).TrimEnd(\u0027\\\u0027)\n        }catch{\n            continue\n        }\n        if([string]::Equals($full,$target,[StringComparison]::OrdinalIgnoreCase)){\n            $r += $proc\n        }\n    }\n    @($r)\n}",
+                      "Normalize":  "function Normalize([string]$s){\n    if($null -eq $s){return \u0027\u0027}\n    $x=$s.Normalize([Text.NormalizationForm]::FormKC)\n    [regex]::Replace($x,\u0027\\s+\u0027,\u0027 \u0027).Trim()\n}",
+                      "RecentMedia":  "function RecentMedia([string]$root,[datetime]$since){\n    if(-not(Test-Path -LiteralPath $root)){return @()}\n    $r=@()\n    foreach($f in @(Get-ChildItem -LiteralPath $root -File -Recurse -ErrorAction SilentlyContinue|\n        Where-Object{$_.LastWriteTime -ge $since}|\n        Sort-Object LastWriteTime)){\n        if($f.Length -lt 4){continue}\n        try{\n            $fs=[IO.File]::Open($f.FullName,\u0027Open\u0027,\u0027Read\u0027,\u0027ReadWrite\u0027)\n            try{\n                $b=New-Object byte[] 12\n                $n=$fs.Read($b,0,12)\n            }finally{$fs.Dispose()}\n\n            $mime=\u0027\u0027\n            if($n -ge 3 -and $b[0]-eq0xFF -and $b[1]-eq0xD8 -and $b[2]-eq0xFF){\n                $mime=\u0027image/jpeg\u0027\n            }elseif($n -ge 8 -and $b[0]-eq0x89 -and $b[1]-eq0x50 -and $b[2]-eq0x4E -and $b[3]-eq0x47){\n                $mime=\u0027image/png\u0027\n            }elseif($n -ge 12 -and [Text.Encoding]::ASCII.GetString($b,0,4)-eq\u0027RIFF\u0027 -and [Text.Encoding]::ASCII.GetString($b,8,4)-eq\u0027WEBP\u0027){\n                $mime=\u0027image/webp\u0027\n            }\n\n            if($mime){\n                $r += [pscustomobject]@{\n                    Path=$f.FullName\n                    Mime=$mime\n                    Length=$f.Length\n                    LastWriteTime=$f.LastWriteTime\n                    Sha256=(Get-FileHash -LiteralPath $f.FullName -Algorithm SHA256).Hash\n                }\n            }\n        }catch{}\n    }\n    @($r)\n}",
+                      "P":  "function P($o,[string]$n,$d=$null){\n    if($null -eq $o){return $d}\n    $p=$o.PSObject.Properties[$n]\n    if($null -eq $p){return $d}\n    $p.Value\n}",
+                      "ExtractTargetBlocks":  "function ExtractTargetBlocks($ocr,[double]$viewWidth){\n    $words=@(GetWords $ocr)\n    $rows=@(GetOcrRows $ocr)\n\n    # BonChat has a chat-list/sidebar and a conversation pane.\n    # Never accept Theodore/Marcia occurrences from the left list.\n    # Real message-author headers observed in the conversation pane are\n    # around 45% of a 940px window, while sidebar previews are around 13%.\n    $paneMin=[Math]::Max(260.0,$viewWidth*0.30)\n    $paneMax=$viewWidth*0.78\n\n    $authors=@($words|Where-Object{\n        $_.Text -match \u0027(?i)^theodore[::]?$|^m[a�]rcia[::]?$|^marcia[::]?$\u0027 -and\n        $_.Left -ge $paneMin -and\n        $_.Left -le $paneMax\n    }|Sort-Object Top,Left)\n\n    $blocks=@()\n\n    foreach($a in $authors){\n        $author=if($a.Text -match \u0027(?i)theodore\u0027){\u0027Theodore\u0027}else{\u0027Marcia\u0027}\n        $anchorX=[double]$a.Left\n        $anchorBottom=[double]$a.Top+[double]$a.Height\n\n        # Message text is indented slightly to the right of the author header.\n        $bodyMinX=$anchorX+8\n        $bodyMaxStart=$anchorX+90\n        $rightCap=$viewWidth-35\n\n        # Any later row returning to the author-header indentation is treated\n        # as the next message header, irrespective of author name.\n        $nextHeader=@($rows|Where-Object{\n            $_.MinY -gt ($anchorBottom+10) -and\n            $_.MinX -ge ($anchorX-8) -and\n            $_.MinX -le ($anchorX+7) -and\n            $_.MaxX -le ($anchorX+230)\n        }|Sort-Object MinY|Select-Object -First 1)\n\n        $hardEndY=if($nextHeader.Count -gt 0){\n            [double]$nextHeader[0].MinY-4\n        }else{\n            [double]$a.Top+320\n        }\n\n        $candidateRows=@($rows|Where-Object{\n            $_.MinY -gt ($anchorBottom+6) -and\n            $_.MinY -le $hardEndY -and\n            $_.MinX -ge $bodyMinX -and\n            $_.MinX -le $bodyMaxStart -and\n            $_.MaxX -le $rightCap\n        }|Sort-Object MinY,MinX)\n\n        $accepted=@()\n        $lastBottom=$null\n        foreach($r in $candidateRows){\n            if($null -ne $lastBottom){\n                $gap=[double]$r.MinY-[double]$lastBottom\n                if($gap -gt 48){break}\n            }\n            $accepted += $r\n            $lastBottom=[double]$r.MaxY\n        }\n\n        $parts=@($accepted|ForEach-Object{([string]$_.Text).Trim()}|Where-Object{\n            -not[string]::IsNullOrWhiteSpace($_)\n        })\n        $content=Normalize ($parts -join \"`n\")\n\n        $blocks += [pscustomobject]@{\n            Author=$author\n            Raw=($parts -join \"`n\")\n            Content=$content\n            Top=$a.Top\n            Left=$a.Left\n            StartLine=$a.Line\n            EndLine=if($accepted.Count -gt 0){[int]$accepted[-1].Line}else{[int]$a.Line}\n            Lane=\u0027central-conversation\u0027\n            PaneMin=$paneMin\n            PaneMax=$paneMax\n            BodyRows=$accepted.Count\n        }\n    }\n    @($blocks)\n}",
+                      "GetOcrRows":  "function GetOcrRows($ocr){\n    $rows=@()\n    $lines=@(P $ocr \u0027Lines\u0027 @())\n    for($li=0;$li -lt $lines.Count;$li++){\n        $line=$lines[$li]\n        $words=@(P $line \u0027Words\u0027 @())\n        if($words.Count -eq 0){continue}\n        $usable=@($words|Where-Object{-not[string]::IsNullOrWhiteSpace([string](P $_ \u0027Text\u0027 \u0027\u0027))})\n        if($usable.Count -eq 0){continue}\n\n        $lefts=@($usable|ForEach-Object{[double](P $_ \u0027Left\u0027 0)})\n        $tops=@($usable|ForEach-Object{[double](P $_ \u0027Top\u0027 0)})\n        $rights=@($usable|ForEach-Object{[double](P $_ \u0027Left\u0027 0)+[double](P $_ \u0027Width\u0027 0)})\n        $bottoms=@($usable|ForEach-Object{[double](P $_ \u0027Top\u0027 0)+[double](P $_ \u0027Height\u0027 0)})\n\n        $rows += [pscustomobject]@{\n            Line=$li\n            Text=[string](P $line \u0027Text\u0027 \u0027\u0027)\n            MinX=[double](($lefts|Measure-Object -Minimum).Minimum)\n            MaxX=[double](($rights|Measure-Object -Maximum).Maximum)\n            MinY=[double](($tops|Measure-Object -Minimum).Minimum)\n            MaxY=[double](($bottoms|Measure-Object -Maximum).Maximum)\n        }\n    }\n    @($rows)\n}",
+                      "GetWords":  "function GetWords($ocr){\n    $out=@()\n    $lines=@(P $ocr \u0027Lines\u0027 @())\n    for($li=0;$li -lt $lines.Count;$li++){\n        $line=$lines[$li]\n        $words=@(P $line \u0027Words\u0027 @())\n        foreach($w in $words){\n            $text=[string](P $w \u0027Text\u0027 \u0027\u0027)\n            if([string]::IsNullOrWhiteSpace($text)){continue}\n            $out += [pscustomobject]@{\n                Line=$li\n                Text=$text\n                Left=[double](P $w \u0027Left\u0027 0)\n                Top=[double](P $w \u0027Top\u0027 0)\n                Width=[double](P $w \u0027Width\u0027 0)\n                Height=[double](P $w \u0027Height\u0027 0)\n            }\n        }\n    }\n    @($out)\n}"
+                  },
+    "InterestingFlow":  [
+                            {
+                                "Line":  4,
+                                "Snippet":  "[CmdletBinding()]\nparam(\n    [switch]$RunOnce,\n    [switch]$DryRun\n)\n"
+                            },
+                            {
+                                "Line":  5,
+                                "Snippet":  "param(\n    [switch]$RunOnce,\n    [switch]$DryRun\n)\n\nSet-StrictMode -Version 2.0"
+                            },
+                            {
+                                "Line":  11,
+                                "Snippet":  "$ErrorActionPreference=\u0027Stop\u0027\n\n$Base=\u0027S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\u0027\n$State=Join-Path $Base \u0027State\u0027\n$Media=Join-Path $Base \u0027Media\u0027\n$Queue=Join-Path $State \u0027events.jsonl\u0027"
+                            },
+                            {
+                                "Line":  14,
+                                "Snippet":  "$State=Join-Path $Base \u0027State\u0027\n$Media=Join-Path $Base \u0027Media\u0027\n$Queue=Join-Path $State \u0027events.jsonl\u0027\n$Seen=Join-Path $State \u0027seen.json\u0027\n$ConfigPath=Join-Path $Base \u0027observer-config.json\u0027\n$CaptureWorkerBackup=\u0027S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\BonChat-TIMI68-Hardened\\Backups\\LPX-BonChat-TIMI68-Hardened-before-V4-20260810-171654.ps1\u0027"
+                            },
+                            {
+                                "Line":  15,
+                                "Snippet":  "$Media=Join-Path $Base \u0027Media\u0027\n$Queue=Join-Path $State \u0027events.jsonl\u0027\n$Seen=Join-Path $State \u0027seen.json\u0027\n$ConfigPath=Join-Path $Base \u0027observer-config.json\u0027\n$CaptureWorkerBackup=\u0027S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\BonChat-TIMI68-Hardened\\Backups\\LPX-BonChat-TIMI68-Hardened-before-V4-20260810-171654.ps1\u0027\n"
+                            },
+                            {
+                                "Line":  17,
+                                "Snippet":  "$Seen=Join-Path $State \u0027seen.json\u0027\n$ConfigPath=Join-Path $Base \u0027observer-config.json\u0027\n$CaptureWorkerBackup=\u0027S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\BonChat-TIMI68-Hardened\\Backups\\LPX-BonChat-TIMI68-Hardened-before-V4-20260810-171654.ps1\u0027\n\nforeach($d in @($Base,$State,$Media)){\n    if(-not(Test-Path -LiteralPath $d)){"
+                            },
+                            {
+                                "Line":  26,
+                                "Snippet":  "\nfunction P($o,[string]$n,$d=$null){\n    if($null -eq $o){return $d}\n    $p=$o.PSObject.Properties[$n]\n    if($null -eq $p){return $d}\n    $p.Value"
+                            },
+                            {
+                                "Line":  28,
+                                "Snippet":  "    if($null -eq $o){return $d}\n    $p=$o.PSObject.Properties[$n]\n    if($null -eq $p){return $d}\n    $p.Value\n}\nfunction Normalize([string]$s){"
+                            },
+                            {
+                                "Line":  32,
+                                "Snippet":  "}\nfunction Normalize([string]$s){\n    if($null -eq $s){return \u0027\u0027}\n    $x=$s.Normalize([Text.NormalizationForm]::FormKC)\n    [regex]::Replace($x,\u0027\\s+\u0027,\u0027 \u0027).Trim()\n}"
+                            },
+                            {
+                                "Line":  51,
+                                "Snippet":  "    $line=$event|ConvertTo-Json -Depth 30 -Compress\n    if($Simulation){\n        $sim=Join-Path $State \u0027dryrun-events.jsonl\u0027\n        Add-Content -LiteralPath $sim -Value $line -Encoding UTF8\n    }else{\n        Add-Content -LiteralPath $Queue -Value $line -Encoding UTF8"
+                            },
+                            {
+                                "Line":  108,
+                                "Snippet":  "  var l=new List\u003cW\u003e();\n  EnumWindows(delegate(IntPtr h,IntPtr z){\n   uint p;GetWindowThreadProcessId(h,out p);if((int)p!=pid)return true;\n   R r;bool ok=GetWindowRect(h,out r);\n   var s=new StringBuilder(256);GetClassName(h,s,s.Capacity);\n   l.Add(new W{Hwnd=h.ToInt64(),Width=ok?r.Right-r.Left:0,Height=ok?r.Bottom-r.Top:0,ClassName=s.ToString()});"
+                            },
+                            {
+                                "Line":  112,
+                                "Snippet":  "   var s=new StringBuilder(256);GetClassName(h,s,s.Capacity);\n   l.Add(new W{Hwnd=h.ToInt64(),Width=ok?r.Right-r.Left:0,Height=ok?r.Bottom-r.Top:0,ClassName=s.ToString()});\n   return true;\n  },IntPtr.Zero);\n  return l.ToArray();\n }"
+                            },
+                            {
+                                "Line":  114,
+                                "Snippet":  "   return true;\n  },IntPtr.Zero);\n  return l.ToArray();\n }\n}\n\"@"
+                            },
+                            {
+                                "Line":  122,
+                                "Snippet":  "function Exact([string]$exe){\n    $raw=[string]$exe\n    if([string]::IsNullOrWhiteSpace($raw)){return @()}\n    $raw=$raw.Trim().Trim([char]34)\n    try{\n        $target=[IO.Path]::GetFullPath($raw).TrimEnd(\u0027\\\u0027)"
+                            },
+                            {
+                                "Line":  127,
+                                "Snippet":  "        $target=[IO.Path]::GetFullPath($raw).TrimEnd(\u0027\\\u0027)\n    }catch{\n        return @()\n    }\n\n    $r=@()"
+                            },
+                            {
+                                "Line":  193,
+                                "Snippet":  "}\n\nfunction ExtractTargetBlocks($ocr,[double]$viewWidth){\n    $words=@(GetWords $ocr)\n    $rows=@(GetOcrRows $ocr)\n"
+                            },
+                            {
+                                "Line":  210,
+                                "Snippet":  "    }|Sort-Object Top,Left)\n\n    $blocks=@()\n\n    foreach($a in $authors){\n        $author=if($a.Text -match \u0027(?i)theodore\u0027){\u0027Theodore\u0027}else{\u0027Marcia\u0027}"
+                            },
+                            {
+                                "Line":  222,
+                                "Snippet":  "        $rightCap=$viewWidth-35\n\n        # Any later row returning to the author-header indentation is treated\n        # as the next message header, irrespective of author name.\n        $nextHeader=@($rows|Where-Object{\n            $_.MinY -gt ($anchorBottom+10) -and"
+                            },
+                            {
+                                "Line":  261,
+                                "Snippet":  "        $content=Normalize ($parts -join \"`n\")\n\n        $blocks += [pscustomobject]@{\n            Author=$author\n            Raw=($parts -join \"`n\")\n            Content=$content"
+                            },
+                            {
+                                "Line":  275,
+                                "Snippet":  "        }\n    }\n    @($blocks)\n}\nfunction RecentMedia([string]$root,[datetime]$since){\n    if(-not(Test-Path -LiteralPath $root)){return @()}"
+                            },
+                            {
+                                "Line":  277,
+                                "Snippet":  "    @($blocks)\n}\nfunction RecentMedia([string]$root,[datetime]$since){\n    if(-not(Test-Path -LiteralPath $root)){return @()}\n    $r=@()\n    foreach($f in @(Get-ChildItem -LiteralPath $root -File -Recurse -ErrorAction SilentlyContinue|"
+                            },
+                            {
+                                "Line":  278,
+                                "Snippet":  "}\nfunction RecentMedia([string]$root,[datetime]$since){\n    if(-not(Test-Path -LiteralPath $root)){return @()}\n    $r=@()\n    foreach($f in @(Get-ChildItem -LiteralPath $root -File -Recurse -ErrorAction SilentlyContinue|\n        Where-Object{$_.LastWriteTime -ge $since}|"
+                            },
+                            {
+                                "Line":  320,
+                                "Snippet":  "}\n\nif(-not[bool](P $lpxObserverConfigV3 \u0027Enabled\u0027 $false) -and -not$RunOnce){\n    exit 0\n}\n"
+                            },
+                            {
+                                "Line":  321,
+                                "Snippet":  "\nif(-not[bool](P $lpxObserverConfigV3 \u0027Enabled\u0027 $false) -and -not$RunOnce){\n    exit 0\n}\n\n$seenMap=@{}"
+                            },
+                            {
+                                "Line":  324,
+                                "Snippet":  "}\n\n$seenMap=@{}\nif(Test-Path -LiteralPath $Seen){\n    try{\n        $old=Get-Content -LiteralPath $Seen -Raw | ConvertFrom-Json"
+                            },
+                            {
+                                "Line":  325,
+                                "Snippet":  "\n$seenMap=@{}\nif(Test-Path -LiteralPath $Seen){\n    try{\n        $old=Get-Content -LiteralPath $Seen -Raw | ConvertFrom-Json\n        foreach($p in $old.PSObject.Properties){"
+                            },
+                            {
+                                "Line":  327,
+                                "Snippet":  "if(Test-Path -LiteralPath $Seen){\n    try{\n        $old=Get-Content -LiteralPath $Seen -Raw | ConvertFrom-Json\n        foreach($p in $old.PSObject.Properties){\n            $seenMap[$p.Name]=[string]$p.Value\n        }"
+                            },
+                            {
+                                "Line":  329,
+                                "Snippet":  "        $old=Get-Content -LiteralPath $Seen -Raw | ConvertFrom-Json\n        foreach($p in $old.PSObject.Properties){\n            $seenMap[$p.Name]=[string]$p.Value\n        }\n    }catch{}\n}"
+                            },
+                            {
+                                "Line":  334,
+                                "Snippet":  "}\n\n$exe=[string](P $lpxObserverConfigV3 \u0027ObserverExe\u0027 \u0027\u0027)\n$procs=@(Exact $exe)\nif($procs.Count -ne 1){exit 0}\n"
+                            },
+                            {
+                                "Line":  336,
+                                "Snippet":  "$exe=[string](P $lpxObserverConfigV3 \u0027ObserverExe\u0027 \u0027\u0027)\n$procs=@(Exact $exe)\nif($procs.Count -ne 1){exit 0}\n\n$processIdValue=[int]$procs[0].ProcessId\n$wins=@([LPXTimiObserverNativeV2]::Owned($processIdValue))"
+                            },
+                            {
+                                "Line":  344,
+                                "Snippet":  "}|Sort-Object @{Expression={$_.Width*$_.Height};Descending=$true}|Select-Object -First 1)\n\nif($main.Count -ne 1){exit 0}\n$hwnd=[IntPtr][int64]$main[0].Hwnd\n\n$tmp=Join-Path $State (\u0027capture-\u0027+[Guid]::NewGuid().ToString(\u0027N\u0027)+\u0027.png\u0027)"
+                            },
+                            {
+                                "Line":  352,
+                                "Snippet":  "    $ok=[bool](P $s \u0027Success\u0027 $false)\n    if(-not$ok -and $s -is [bool]){$ok=[bool]$s}\n    if(-not$ok){exit 0}\n\n    $ocr=Ocr $tmp\n    $ocrText=[string](P $ocr \u0027Text\u0027 \u0027\u0027)"
+                            },
+                            {
+                                "Line":  356,
+                                "Snippet":  "    $ocr=Ocr $tmp\n    $ocrText=[string](P $ocr \u0027Text\u0027 \u0027\u0027)\n    if($ocrText -notmatch \u0027(?i)timi[\\s\\-]*68\u0027){exit 0}\n\n    $blocks=@(ExtractTargetBlocks $ocr ([double]$main[0].Width))\n    $now=Get-Date"
+                            },
+                            {
+                                "Line":  358,
+                                "Snippet":  "    if($ocrText -notmatch \u0027(?i)timi[\\s\\-]*68\u0027){exit 0}\n\n    $blocks=@(ExtractTargetBlocks $ocr ([double]$main[0].Width))\n    $now=Get-Date\n    $recent=@(RecentMedia ([string](P $lpxObserverConfigV3 \u0027DownloadRoot\u0027 \u0027\u0027)) $now.AddMinutes(-3))\n"
+                            },
+                            {
+                                "Line":  360,
+                                "Snippet":  "    $blocks=@(ExtractTargetBlocks $ocr ([double]$main[0].Width))\n    $now=Get-Date\n    $recent=@(RecentMedia ([string](P $lpxObserverConfigV3 \u0027DownloadRoot\u0027 \u0027\u0027)) $now.AddMinutes(-3))\n\n    foreach($b in $blocks){\n        if([string]::IsNullOrWhiteSpace($b.Content)){continue}"
+                            },
+                            {
+                                "Line":  362,
+                                "Snippet":  "    $recent=@(RecentMedia ([string](P $lpxObserverConfigV3 \u0027DownloadRoot\u0027 \u0027\u0027)) $now.AddMinutes(-3))\n\n    foreach($b in $blocks){\n        if([string]::IsNullOrWhiteSpace($b.Content)){continue}\n        $normalized=Normalize $b.Content\n        $key=HashText ($b.Author+\u0027|\u0027+$normalized)"
+                            },
+                            {
+                                "Line":  366,
+                                "Snippet":  "        $normalized=Normalize $b.Content\n        $key=HashText ($b.Author+\u0027|\u0027+$normalized)\n        if($seenMap.ContainsKey($key)){continue}\n\n        $mediaMeta=@($recent|Select-Object -Last 8|ForEach-Object{\n            [pscustomobject]@{"
+                            },
+                            {
+                                "Line":  382,
+                                "Snippet":  "            eventId=(\u0027TIMI-\u0027+$now.ToString(\u0027yyyyMMdd-HHmmss\u0027)+\u0027-\u0027+$key.Substring(0,12))\n            observedAt=$now.ToString(\u0027o\u0027)\n            group=\u0027TIMI-68\u0027\n            author=$b.Author\n            content=$normalized\n            source=[ordered]@{"
+                            },
+                            {
+                                "Line":  395,
+                                "Snippet":  "            classification=\u0027unclassified\u0027\n            instructions=@(\n                \u0027Analyze this Theodore/Marcia TIMI-68 message.\u0027,\n                \u0027Treat factual or instructional content as TIMI knowledge with provenance.\u0027,\n                \u0027Detect tasks, challenges, deadlines, requests and actionable instructions.\u0027,\n                \u0027If actionable, solve or execute it autonomously using relevant TIMI knowledge and current conversation context.\u0027,"
+                            },
+                            {
+                                "Line":  404,
+                                "Snippet":  "        }\n\n        AppendEvent $event -Simulation:$DryRun\n        if(-not$DryRun){\n            $seenMap[$key]=$now.ToString(\u0027o\u0027)\n        }"
+                            },
+                            {
+                                "Line":  405,
+                                "Snippet":  "\n        AppendEvent $event -Simulation:$DryRun\n        if(-not$DryRun){\n            $seenMap[$key]=$now.ToString(\u0027o\u0027)\n        }\n    }"
+                            },
+                            {
+                                "Line":  406,
+                                "Snippet":  "        AppendEvent $event -Simulation:$DryRun\n        if(-not$DryRun){\n            $seenMap[$key]=$now.ToString(\u0027o\u0027)\n        }\n    }\n"
+                            },
+                            {
+                                "Line":  410,
+                                "Snippet":  "    }\n\n    if(-not$DryRun){\n        $seenObj=[ordered]@{}\n        foreach($k in @($seenMap.Keys|Sort-Object)){\n            $seenObj[$k]=$seenMap[$k]"
+                            },
+                            {
+                                "Line":  411,
+                                "Snippet":  "\n    if(-not$DryRun){\n        $seenObj=[ordered]@{}\n        foreach($k in @($seenMap.Keys|Sort-Object)){\n            $seenObj[$k]=$seenMap[$k]\n        }"
+                            },
+                            {
+                                "Line":  412,
+                                "Snippet":  "    if(-not$DryRun){\n        $seenObj=[ordered]@{}\n        foreach($k in @($seenMap.Keys|Sort-Object)){\n            $seenObj[$k]=$seenMap[$k]\n        }\n        AtomicJson $seenObj $Seen"
+                            },
+                            {
+                                "Line":  413,
+                                "Snippet":  "        $seenObj=[ordered]@{}\n        foreach($k in @($seenMap.Keys|Sort-Object)){\n            $seenObj[$k]=$seenMap[$k]\n        }\n        AtomicJson $seenObj $Seen\n    }"
+                            },
+                            {
+                                "Line":  415,
+                                "Snippet":  "            $seenObj[$k]=$seenMap[$k]\n        }\n        AtomicJson $seenObj $Seen\n    }\n}finally{\n    if(Test-Path -LiteralPath $tmp){"
+                            }
+                        ],
+    "Safety":  {
+                   "ObserverInvoked":  false,
+                   "BonChatTouched":  false,
+                   "FilesModified":  false,
+                   "ProductionTouched":  false
+               }
+}

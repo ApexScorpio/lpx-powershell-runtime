@@ -1,0 +1,57 @@
+%USERPROFILE%\AppData\Local\LPX\Timi Auto 
+Reuniao\Automation\TIMI68-Theodore-Marcia-Observer\Candidate\LPX-TIMI68-Theodore-Marcia-Observer.ps1 : A parameter 
+cannot be found that matches parameter name 'ConfigPath'.
+    + CategoryInfo          : InvalidArgument: (:) [LPX-TIMI68-Theodore-Marcia-Observer.ps1], ParentContainsErrorRecor 
+   dException
+    + FullyQualifiedErrorId : NamedParameterNotFound,LPX-TIMI68-Theodore-Marcia-Observer.ps1
+ 
+{
+    "Protocol":  "LPX_BONCHAT_OBSERVER_CENTRAL_LANE_PATCH_DRYRUN_V1",
+    "JobId":  "PSB-20260810-2116-BONCHAT-OBSERVER-CENTRAL-LANE-PATCH-DRYRUN-001",
+    "Status":  "SUCCEEDED",
+    "CandidateOnly":  true,
+    "Backup":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Candidate\\LPX-TIMI68-Theodore-Marcia-Observer.before-central-lane-20260810-211837.ps1",
+    "ParserErrors":  0,
+    "ObserverExitCode":  1,
+    "GeometryRule":  {
+                         "SidebarRejected":  "author Left \u003c max(260, 30% viewport width)",
+                         "ConversationPane":  "30%..78% viewport width",
+                         "BodyIndent":  "authorX+8 .. authorX+90",
+                         "NextHeader":  "row returns to authorX-8..authorX+7",
+                         "LargeGapStopPx":  48,
+                         "MaxBodySpanPx":  320
+                     },
+    "DryRun":  {
+                   "BytesAppended":  0,
+                   "ParsedEvents":  0,
+                   "Events":  [
+
+                              ]
+               },
+    "Safety":  {
+                   "ConfigEnabled":  false,
+                   "SeenUnchanged":  true,
+                   "GreetingWorkerUnchanged":  true,
+                   "ProductionServerUnchanged":  true,
+                   "ProductionUserscriptUnchanged":  true,
+                   "ProductionQueueTouched":  false,
+                   "BonChatInputTouched":  false,
+                   "ChatInjectionTouched":  false
+               },
+    "Before":  {
+                   "ObserverHash":  "BEA390E726ED314E42C4868EDB1233EB8993838884A4CF7DE6FF124E90D3C663",
+                   "SeenHash":  null,
+                   "GreetingWorkerHash":  "2F91BFA44109F22976C858790DF941AADD698A01B45E0B04DF5E86E8FD572F94",
+                   "ProductionServerHash":  "3DA25CE3BA407D7C94189003972DA765E36372AC531884E5214E21F91D382C56",
+                   "ProductionUserscriptHash":  "08A8149C3AD329C9D9770718EECC4C2FFB9D73B20026E4CCB373884A9FD3384F",
+                   "DryQueueLength":  0
+               },
+    "After":  {
+                  "ObserverHash":  "30B64D1A58AE822F9B98FD14FFDA631A3ABC50932243E6D82583095B5B2DC27A",
+                  "SeenHash":  null,
+                  "GreetingWorkerHash":  "2F91BFA44109F22976C858790DF941AADD698A01B45E0B04DF5E86E8FD572F94",
+                  "ProductionServerHash":  "3DA25CE3BA407D7C94189003972DA765E36372AC531884E5214E21F91D382C56",
+                  "ProductionUserscriptHash":  "08A8149C3AD329C9D9770718EECC4C2FFB9D73B20026E4CCB373884A9FD3384F",
+                  "DryQueueLength":  0
+              }
+}

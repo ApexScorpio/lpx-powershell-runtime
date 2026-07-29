@@ -1,0 +1,7 @@
+The property 'Count' cannot be found on this object. Verify that the property exists.
+At S:\tmp\powershell-bridge-command-PSB-20260814-0125-FIX-HOME-ANTIGRAVITY-RECLAIMABILITY-AUDIT-001.ps1:123 char:1
++ $result = [ordered]@{
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict
+ 

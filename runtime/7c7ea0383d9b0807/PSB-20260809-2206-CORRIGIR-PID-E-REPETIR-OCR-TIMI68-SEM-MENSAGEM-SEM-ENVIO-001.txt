@@ -1,0 +1,10 @@
+Join-Path : Cannot convert 'System.Object[]' to the type 'System.String' required by parameter 'ChildPath'. O m�todo 
+especificado n�o � suportado.
+At 
+S:\tmp\powershell-bridge-command-PSB-20260809-2206-CORRIGIR-PID-E-REPETIR-OCR-TIMI68-SEM-MENSAGEM-SEM-ENVIO-001.ps1:7 
+char:21
++     Join-Path $base 'BonChat-Conta-1\BonChat.exe',
++                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Join-Path], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : CannotConvertArgument,Microsoft.PowerShell.Commands.JoinPathCommand
+ 

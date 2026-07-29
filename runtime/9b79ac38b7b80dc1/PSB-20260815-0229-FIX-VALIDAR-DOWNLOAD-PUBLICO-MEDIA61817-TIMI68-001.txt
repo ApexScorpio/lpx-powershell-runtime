@@ -1,0 +1,46 @@
+{
+    "protocol":  "LPX_TIMI_BONCHAT_PUBLIC_MEDIA61817_FIX_V1",
+    "jobId":  "PSB-20260815-0229-FIX-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001",
+    "status":  "PUBLIC_MEDIA_NONIMAGE_RESPONSE",
+    "runDir":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-PUBLIC-MEDIA61817-FIX-20260815-023010",
+    "target":  {
+                   "seqno":  61817,
+                   "uid":  "4833fb85-8975-4b63-b1b0-264b2f2940cb",
+                   "mediaKey":  "group_253977dc18422e2ae0586d09e692fc86",
+                   "url":  "https://file.timi001.bonchat.download/group_253977dc18422e2ae0586d09e692fc86"
+               },
+    "http":  {
+                 "statusCode":  200,
+                 "contentType":  "",
+                 "contentLength":  706508,
+                 "finalUri":  "https://file.timi001.bonchat.download/group_253977dc18422e2ae0586d09e692fc86",
+                 "error":  null
+             },
+    "image":  {
+                  "kind":  null,
+                  "width":  null,
+                  "height":  null,
+                  "bytes":  706508,
+                  "sha256":  "19D46065544E35DEA82BF0B1229CFAD039ACC023720198BBB64F41E891D710CA",
+                  "localBenchPath":  null,
+                  "magicPrefix":  "cb0ddcc9726ab174e751daa9017db385"
+              },
+    "activeIntegrity":  {
+                            "activeIntact":  true,
+                            "sniperHashUnchanged":  true,
+                            "maestroHashUnchanged":  true,
+                            "historyHashUnchanged":  true
+                        },
+    "safety":  {
+                   "publicHttpGetOnly":  true,
+                   "noBonChatApiAuthentication":  true,
+                   "noCookiesOrTokensUsed":  true,
+                   "testBenchWriteOnly":  true,
+                   "bonchatUiInputSent":  false,
+                   "sniperExecuted":  false,
+                   "productionSourceModified":  false,
+                   "productionHistoryModified":  false,
+                   "activationScriptExecuted":  false,
+                   "siteActivationAttempted":  false
+               }
+}

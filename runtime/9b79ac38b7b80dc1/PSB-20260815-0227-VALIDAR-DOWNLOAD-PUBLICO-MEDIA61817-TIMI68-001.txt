@@ -1,0 +1,31 @@
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:75 char:85
++ ... verter]::ToString($Bytes[0..([Math]::Min(15,$Bytes.Length-1)))).Repla ...
++                                                                  ~
+Missing ']' after array index expression.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:74 char:28
++     if($Bytes.Length -ge 8){
++                            ~
+Missing closing '}' in statement block or type definition.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:72 char:36
++ if(Test-Path -LiteralPath $RawPath){
++                                    ~
+Missing closing '}' in statement block or type definition.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:75 char:103
++ ... Bytes[0..([Math]::Min(15,$Bytes.Length-1)))).Replace('-','')).ToLower ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:75 char:122
++ ... Math]::Min(15,$Bytes.Length-1)))).Replace('-','')).ToLowerInvariant()
++                                                                         ~
+An expression was expected after '('.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:76 char:5
++     }
++     ~
+Unexpected token '}' in expression or statement.
+At S:\tmp\powershell-bridge-command-PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.ps1:113 char:1
++ }
++ ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndSquareBracket
+ 

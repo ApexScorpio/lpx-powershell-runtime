@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001",
+  "conversationKey": "3262c24ee1a3dc4c",
+  "purpose": "Repetir a análise de framing corrigindo a conversão byte[][] do PowerShell 5.1 sem expor conteúdo privado",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-14T23:59:46.583Z",
+  "endedAt": "2026-08-15T00:00:29.811Z",
+  "elapsedMs": 43228,
+  "outputLength": 45379,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "54e38d3f60d86735eafc8f96cbbdaa7fd8746c12961f53879aceeee6f63e5b32",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3262c24ee1a3dc4c/PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001.txt",
+  "createdAt": "2026-08-15T00:00:29.816Z"
+}

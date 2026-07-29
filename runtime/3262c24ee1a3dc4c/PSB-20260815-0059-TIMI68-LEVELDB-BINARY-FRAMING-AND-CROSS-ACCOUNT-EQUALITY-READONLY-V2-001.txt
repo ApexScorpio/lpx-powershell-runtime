@@ -1,0 +1,723 @@
+{
+    "Protocol":  "LPX_TIMI68_LEVELDB_BINARY_FRAMING_CROSS_ACCOUNT_EQUALITY_V2",
+    "JobId":  "PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001",
+    "Status":  "COMPLETED_READONLY",
+    "CanonicalObjectivesEmbedded":  true,
+    "GoldenRuleScreenshotEveryStep":  true,
+    "PrivacySafePublicOutput":  true,
+    "ScreenshotCount":  7,
+    "Conta1Stats":  [
+                        {
+                            "Family":  "user-nickname",
+                            "Count":  0
+                        },
+                        {
+                            "Family":  "group-members",
+                            "Count":  0
+                        },
+                        {
+                            "Family":  "group-reference",
+                            "Count":  0
+                        },
+                        {
+                            "Family":  "message",
+                            "Count":  20000,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  25,
+                                                   "Count":  7054
+                                               },
+                                               {
+                                                   "Length":  97,
+                                                   "Count":  3727
+                                               },
+                                               {
+                                                   "Length":  22,
+                                                   "Count":  2106
+                                               },
+                                               {
+                                                   "Length":  51,
+                                                   "Count":  1944
+                                               },
+                                               {
+                                                   "Length":  27,
+                                                   "Count":  952
+                                               },
+                                               {
+                                                   "Length":  79,
+                                                   "Count":  923
+                                               },
+                                               {
+                                                   "Length":  1359,
+                                                   "Count":  595
+                                               },
+                                               {
+                                                   "Length":  245,
+                                                   "Count":  507
+                                               },
+                                               {
+                                                   "Length":  35,
+                                                   "Count":  226
+                                               },
+                                               {
+                                                   "Length":  123,
+                                                   "Count":  168
+                                               },
+                                               {
+                                                   "Length":  121,
+                                                   "Count":  111
+                                               },
+                                               {
+                                                   "Length":  43,
+                                                   "Count":  89
+                                               }
+                                           ],
+                            "UniqueLengthCount":  614,
+                            "UniqueValueHashCount":  5711,
+                            "DuplicateHashClassCount":  2051,
+                            "RecordsInDuplicateHashClasses":  16340,
+                            "CommonPrefixBytes":  3,
+                            "CommonSuffixBytes":  0,
+                            "ExactBsonCount":  0,
+                            "EmbeddedLengthPrefixCount":  0,
+                            "BestAesBlockOverhead":  25,
+                            "BestAesBlockAlignedCount":  7398,
+                            "BestAesBlockAlignedFraction":  0.4134
+                        }
+                    ],
+    "Conta2Stats":  [
+                        {
+                            "Family":  "user-nickname",
+                            "Count":  6360,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  35,
+                                                   "Count":  1103
+                                               },
+                                               {
+                                                   "Length":  37,
+                                                   "Count":  1023
+                                               },
+                                               {
+                                                   "Length":  39,
+                                                   "Count":  943
+                                               },
+                                               {
+                                                   "Length":  41,
+                                                   "Count":  567
+                                               },
+                                               {
+                                                   "Length":  33,
+                                                   "Count":  556
+                                               },
+                                               {
+                                                   "Length":  43,
+                                                   "Count":  358
+                                               },
+                                               {
+                                                   "Length":  49,
+                                                   "Count":  272
+                                               },
+                                               {
+                                                   "Length":  51,
+                                                   "Count":  241
+                                               },
+                                               {
+                                                   "Length":  47,
+                                                   "Count":  236
+                                               },
+                                               {
+                                                   "Length":  45,
+                                                   "Count":  225
+                                               },
+                                               {
+                                                   "Length":  53,
+                                                   "Count":  210
+                                               },
+                                               {
+                                                   "Length":  55,
+                                                   "Count":  162
+                                               }
+                                           ],
+                            "UniqueLengthCount":  36,
+                            "UniqueValueHashCount":  4242,
+                            "DuplicateHashClassCount":  609,
+                            "RecordsInDuplicateHashClasses":  2727,
+                            "CommonPrefixBytes":  8,
+                            "CommonSuffixBytes":  0,
+                            "ExactBsonCount":  0,
+                            "EmbeddedLengthPrefixCount":  0,
+                            "BestAesBlockOverhead":  3,
+                            "BestAesBlockAlignedCount":  1353,
+                            "BestAesBlockAlignedFraction":  0.2127
+                        },
+                        {
+                            "Family":  "group-members",
+                            "Count":  36,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  22,
+                                                   "Count":  24
+                                               },
+                                               {
+                                                   "Length":  55,
+                                                   "Count":  2
+                                               },
+                                               {
+                                                   "Length":  1825,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  130765,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  8185,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  174925,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  1495,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  30775,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  115,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  13975,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  325,
+                                                   "Count":  1
+                                               },
+                                               {
+                                                   "Length":  2845,
+                                                   "Count":  1
+                                               }
+                                           ],
+                            "UniqueLengthCount":  12,
+                            "UniqueValueHashCount":  13,
+                            "DuplicateHashClassCount":  1,
+                            "RecordsInDuplicateHashClasses":  24,
+                            "CommonPrefixBytes":  3,
+                            "CommonSuffixBytes":  0,
+                            "ExactBsonCount":  0,
+                            "EmbeddedLengthPrefixCount":  0,
+                            "BestAesBlockOverhead":  6,
+                            "BestAesBlockAlignedCount":  24,
+                            "BestAesBlockAlignedFraction":  0.6667
+                        },
+                        {
+                            "Family":  "group-reference",
+                            "Count":  129,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  298,
+                                                   "Count":  129
+                                               }
+                                           ],
+                            "UniqueLengthCount":  1,
+                            "UniqueValueHashCount":  129,
+                            "DuplicateHashClassCount":  0,
+                            "RecordsInDuplicateHashClasses":  0,
+                            "CommonPrefixBytes":  32,
+                            "CommonSuffixBytes":  0,
+                            "ExactBsonCount":  0,
+                            "EmbeddedLengthPrefixCount":  0,
+                            "BestAesBlockOverhead":  10,
+                            "BestAesBlockAlignedCount":  129,
+                            "BestAesBlockAlignedFraction":  1
+                        },
+                        {
+                            "Family":  "message",
+                            "Count":  20000,
+                            "TopLengths":  [
+                                               {
+                                                   "Length":  25,
+                                                   "Count":  6630
+                                               },
+                                               {
+                                                   "Length":  97,
+                                                   "Count":  4630
+                                               },
+                                               {
+                                                   "Length":  22,
+                                                   "Count":  1972
+                                               },
+                                               {
+                                                   "Length":  51,
+                                                   "Count":  1816
+                                               },
+                                               {
+                                                   "Length":  27,
+                                                   "Count":  888
+                                               },
+                                               {
+                                                   "Length":  79,
+                                                   "Count":  882
+                                               },
+                                               {
+                                                   "Length":  1359,
+                                                   "Count":  481
+                                               },
+                                               {
+                                                   "Length":  245,
+                                                   "Count":  402
+                                               },
+                                               {
+                                                   "Length":  35,
+                                                   "Count":  251
+                                               },
+                                               {
+                                                   "Length":  123,
+                                                   "Count":  128
+                                               },
+                                               {
+                                                   "Length":  107,
+                                                   "Count":  107
+                                               },
+                                               {
+                                                   "Length":  121,
+                                                   "Count":  90
+                                               }
+                                           ],
+                            "UniqueLengthCount":  571,
+                            "UniqueValueHashCount":  4925,
+                            "DuplicateHashClassCount":  1410,
+                            "RecordsInDuplicateHashClasses":  16485,
+                            "CommonPrefixBytes":  3,
+                            "CommonSuffixBytes":  0,
+                            "ExactBsonCount":  0,
+                            "EmbeddedLengthPrefixCount":  0,
+                            "BestAesBlockOverhead":  25,
+                            "BestAesBlockAlignedCount":  6954,
+                            "BestAesBlockAlignedFraction":  0.3857
+                        }
+                    ],
+    "CrossAccountEquality":  [
+                                 {
+                                     "Family":  "user-nickname",
+                                     "CommonKeyCount":  0,
+                                     "EqualValueCount":  0,
+                                     "DifferentValueCount":  0,
+                                     "EqualFraction":  0
+                                 },
+                                 {
+                                     "Family":  "group-members",
+                                     "CommonKeyCount":  0,
+                                     "EqualValueCount":  0,
+                                     "DifferentValueCount":  0,
+                                     "EqualFraction":  0
+                                 },
+                                 {
+                                     "Family":  "group-reference",
+                                     "CommonKeyCount":  0,
+                                     "EqualValueCount":  0,
+                                     "DifferentValueCount":  0,
+                                     "EqualFraction":  0
+                                 },
+                                 {
+                                     "Family":  "message",
+                                     "CommonKeyCount":  1476,
+                                     "EqualValueCount":  0,
+                                     "DifferentValueCount":  1476,
+                                     "EqualFraction":  0
+                                 }
+                             ],
+    "StorageModelClassification":  "BINARY_FRAMING_UNRESOLVED",
+    "NextClassification":  "NEXT_INSPECT_VALUE_PREFIX_POSITION_STATISTICS_AND_APP_BINARY_CODEC_IMPORTS",
+    "NoProcessStarted":  true,
+    "NoProcessTerminated":  true,
+    "NoNavigation":  true,
+    "NoTextSubmitted":  true,
+    "Steps":  [
+                  {
+                      "Step":  1,
+                      "Action":  "Readonly process census before binary framing analysis",
+                      "Conta1ProcessCount":  1,
+                      "Conta2ProcessCount":  0,
+                      "OtherBonChatCount":  0,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-01-baseline-process-census.png"
+                  },
+                  {
+                      "Step":  2,
+                      "Action":  "Measure Conta1 value framing without exposing bytes",
+                      "ParsedFiles":  10,
+                      "Stats":  [
+                                    {
+                                        "Family":  "user-nickname",
+                                        "Count":  0
+                                    },
+                                    {
+                                        "Family":  "group-members",
+                                        "Count":  0
+                                    },
+                                    {
+                                        "Family":  "group-reference",
+                                        "Count":  0
+                                    },
+                                    {
+                                        "Family":  "message",
+                                        "Count":  20000,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  25,
+                                                               "Count":  7054
+                                                           },
+                                                           {
+                                                               "Length":  97,
+                                                               "Count":  3727
+                                                           },
+                                                           {
+                                                               "Length":  22,
+                                                               "Count":  2106
+                                                           },
+                                                           {
+                                                               "Length":  51,
+                                                               "Count":  1944
+                                                           },
+                                                           {
+                                                               "Length":  27,
+                                                               "Count":  952
+                                                           },
+                                                           {
+                                                               "Length":  79,
+                                                               "Count":  923
+                                                           },
+                                                           {
+                                                               "Length":  1359,
+                                                               "Count":  595
+                                                           },
+                                                           {
+                                                               "Length":  245,
+                                                               "Count":  507
+                                                           },
+                                                           {
+                                                               "Length":  35,
+                                                               "Count":  226
+                                                           },
+                                                           {
+                                                               "Length":  123,
+                                                               "Count":  168
+                                                           },
+                                                           {
+                                                               "Length":  121,
+                                                               "Count":  111
+                                                           },
+                                                           {
+                                                               "Length":  43,
+                                                               "Count":  89
+                                                           }
+                                                       ],
+                                        "UniqueLengthCount":  614,
+                                        "UniqueValueHashCount":  5711,
+                                        "DuplicateHashClassCount":  2051,
+                                        "RecordsInDuplicateHashClasses":  16340,
+                                        "CommonPrefixBytes":  3,
+                                        "CommonSuffixBytes":  0,
+                                        "ExactBsonCount":  0,
+                                        "EmbeddedLengthPrefixCount":  0,
+                                        "BestAesBlockOverhead":  25,
+                                        "BestAesBlockAlignedCount":  7398,
+                                        "BestAesBlockAlignedFraction":  0.4134
+                                    }
+                                ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-02-conta1-binary-framing.png"
+                  },
+                  {
+                      "Step":  3,
+                      "Action":  "Measure Conta2 value framing without exposing bytes",
+                      "ParsedFiles":  8,
+                      "Stats":  [
+                                    {
+                                        "Family":  "user-nickname",
+                                        "Count":  6360,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  35,
+                                                               "Count":  1103
+                                                           },
+                                                           {
+                                                               "Length":  37,
+                                                               "Count":  1023
+                                                           },
+                                                           {
+                                                               "Length":  39,
+                                                               "Count":  943
+                                                           },
+                                                           {
+                                                               "Length":  41,
+                                                               "Count":  567
+                                                           },
+                                                           {
+                                                               "Length":  33,
+                                                               "Count":  556
+                                                           },
+                                                           {
+                                                               "Length":  43,
+                                                               "Count":  358
+                                                           },
+                                                           {
+                                                               "Length":  49,
+                                                               "Count":  272
+                                                           },
+                                                           {
+                                                               "Length":  51,
+                                                               "Count":  241
+                                                           },
+                                                           {
+                                                               "Length":  47,
+                                                               "Count":  236
+                                                           },
+                                                           {
+                                                               "Length":  45,
+                                                               "Count":  225
+                                                           },
+                                                           {
+                                                               "Length":  53,
+                                                               "Count":  210
+                                                           },
+                                                           {
+                                                               "Length":  55,
+                                                               "Count":  162
+                                                           }
+                                                       ],
+                                        "UniqueLengthCount":  36,
+                                        "UniqueValueHashCount":  4242,
+                                        "DuplicateHashClassCount":  609,
+                                        "RecordsInDuplicateHashClasses":  2727,
+                                        "CommonPrefixBytes":  8,
+                                        "CommonSuffixBytes":  0,
+                                        "ExactBsonCount":  0,
+                                        "EmbeddedLengthPrefixCount":  0,
+                                        "BestAesBlockOverhead":  3,
+                                        "BestAesBlockAlignedCount":  1353,
+                                        "BestAesBlockAlignedFraction":  0.2127
+                                    },
+                                    {
+                                        "Family":  "group-members",
+                                        "Count":  36,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  22,
+                                                               "Count":  24
+                                                           },
+                                                           {
+                                                               "Length":  55,
+                                                               "Count":  2
+                                                           },
+                                                           {
+                                                               "Length":  1825,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  130765,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  8185,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  174925,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  1495,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  30775,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  115,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  13975,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  325,
+                                                               "Count":  1
+                                                           },
+                                                           {
+                                                               "Length":  2845,
+                                                               "Count":  1
+                                                           }
+                                                       ],
+                                        "UniqueLengthCount":  12,
+                                        "UniqueValueHashCount":  13,
+                                        "DuplicateHashClassCount":  1,
+                                        "RecordsInDuplicateHashClasses":  24,
+                                        "CommonPrefixBytes":  3,
+                                        "CommonSuffixBytes":  0,
+                                        "ExactBsonCount":  0,
+                                        "EmbeddedLengthPrefixCount":  0,
+                                        "BestAesBlockOverhead":  6,
+                                        "BestAesBlockAlignedCount":  24,
+                                        "BestAesBlockAlignedFraction":  0.6667
+                                    },
+                                    {
+                                        "Family":  "group-reference",
+                                        "Count":  129,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  298,
+                                                               "Count":  129
+                                                           }
+                                                       ],
+                                        "UniqueLengthCount":  1,
+                                        "UniqueValueHashCount":  129,
+                                        "DuplicateHashClassCount":  0,
+                                        "RecordsInDuplicateHashClasses":  0,
+                                        "CommonPrefixBytes":  32,
+                                        "CommonSuffixBytes":  0,
+                                        "ExactBsonCount":  0,
+                                        "EmbeddedLengthPrefixCount":  0,
+                                        "BestAesBlockOverhead":  10,
+                                        "BestAesBlockAlignedCount":  129,
+                                        "BestAesBlockAlignedFraction":  1
+                                    },
+                                    {
+                                        "Family":  "message",
+                                        "Count":  20000,
+                                        "TopLengths":  [
+                                                           {
+                                                               "Length":  25,
+                                                               "Count":  6630
+                                                           },
+                                                           {
+                                                               "Length":  97,
+                                                               "Count":  4630
+                                                           },
+                                                           {
+                                                               "Length":  22,
+                                                               "Count":  1972
+                                                           },
+                                                           {
+                                                               "Length":  51,
+                                                               "Count":  1816
+                                                           },
+                                                           {
+                                                               "Length":  27,
+                                                               "Count":  888
+                                                           },
+                                                           {
+                                                               "Length":  79,
+                                                               "Count":  882
+                                                           },
+                                                           {
+                                                               "Length":  1359,
+                                                               "Count":  481
+                                                           },
+                                                           {
+                                                               "Length":  245,
+                                                               "Count":  402
+                                                           },
+                                                           {
+                                                               "Length":  35,
+                                                               "Count":  251
+                                                           },
+                                                           {
+                                                               "Length":  123,
+                                                               "Count":  128
+                                                           },
+                                                           {
+                                                               "Length":  107,
+                                                               "Count":  107
+                                                           },
+                                                           {
+                                                               "Length":  121,
+                                                               "Count":  90
+                                                           }
+                                                       ],
+                                        "UniqueLengthCount":  571,
+                                        "UniqueValueHashCount":  4925,
+                                        "DuplicateHashClassCount":  1410,
+                                        "RecordsInDuplicateHashClasses":  16485,
+                                        "CommonPrefixBytes":  3,
+                                        "CommonSuffixBytes":  0,
+                                        "ExactBsonCount":  0,
+                                        "EmbeddedLengthPrefixCount":  0,
+                                        "BestAesBlockOverhead":  25,
+                                        "BestAesBlockAlignedCount":  6954,
+                                        "BestAesBlockAlignedFraction":  0.3857
+                                    }
+                                ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-03-conta2-binary-framing.png"
+                  },
+                  {
+                      "Step":  4,
+                      "Action":  "Compare same logical keys across accounts by SHA256 equality only",
+                      "CrossAccountEquality":  [
+                                                   {
+                                                       "Family":  "user-nickname",
+                                                       "CommonKeyCount":  0,
+                                                       "EqualValueCount":  0,
+                                                       "DifferentValueCount":  0,
+                                                       "EqualFraction":  0
+                                                   },
+                                                   {
+                                                       "Family":  "group-members",
+                                                       "CommonKeyCount":  0,
+                                                       "EqualValueCount":  0,
+                                                       "DifferentValueCount":  0,
+                                                       "EqualFraction":  0
+                                                   },
+                                                   {
+                                                       "Family":  "group-reference",
+                                                       "CommonKeyCount":  0,
+                                                       "EqualValueCount":  0,
+                                                       "DifferentValueCount":  0,
+                                                       "EqualFraction":  0
+                                                   },
+                                                   {
+                                                       "Family":  "message",
+                                                       "CommonKeyCount":  1476,
+                                                       "EqualValueCount":  0,
+                                                       "DifferentValueCount":  1476,
+                                                       "EqualFraction":  0
+                                                   }
+                                               ],
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-04-cross-account-value-equality.png"
+                  },
+                  {
+                      "Step":  5,
+                      "Action":  "Classify deterministic framing versus per-account encryption",
+                      "StorageModelClassification":  "BINARY_FRAMING_UNRESOLVED",
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-05-storage-model-classification.png"
+                  },
+                  {
+                      "Step":  6,
+                      "Action":  "Choose next diagnostic branch from framing and cross-account equality",
+                      "NextClassification":  "NEXT_INSPECT_VALUE_PREFIX_POSITION_STATISTICS_AND_APP_BINARY_CODEC_IMPORTS",
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-06-next-path-classification.png"
+                  },
+                  {
+                      "Step":  7,
+                      "Action":  "Validate readonly TEST safety",
+                      "Conta1ProcessCount":  1,
+                      "Conta2ProcessCount":  0,
+                      "OtherBonChatCount":  0,
+                      "NoProcessStarted":  true,
+                      "NoProcessTerminated":  true,
+                      "NoNavigation":  true,
+                      "NoTextSubmitted":  true,
+                      "NoKeyboardInput":  true,
+                      "NoMouseClick":  true,
+                      "Screenshot":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001\\step-07-final-readonly-safety.png"
+                  }
+              ],
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-0059-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-V2-001"
+}

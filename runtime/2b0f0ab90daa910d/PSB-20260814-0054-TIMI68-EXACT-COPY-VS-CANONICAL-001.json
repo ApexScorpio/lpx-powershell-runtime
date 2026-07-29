@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260814-0054-TIMI68-EXACT-COPY-VS-CANONICAL-001",
+  "conversationKey": "2b0f0ab90daa910d",
+  "purpose": "Comparar execução de cópia byte-a-byte com o observer canonical",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-13T23:51:54.896Z",
+  "endedAt": "2026-08-13T23:52:06.897Z",
+  "elapsedMs": 12001,
+  "outputLength": 2861,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3929f2437024cf1efb0178d42914d87aa229207be4928e8efa71882b1e7efc4a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/2b0f0ab90daa910d/PSB-20260814-0054-TIMI68-EXACT-COPY-VS-CANONICAL-001.txt",
+  "createdAt": "2026-08-13T23:52:06.901Z"
+}

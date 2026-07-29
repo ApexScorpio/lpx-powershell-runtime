@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260814-0116-SEGMENTED-C-RECLAIM-ANTIGRAVITY-AUDIT-PHASE1-001",
+  "conversationKey": "9af49741c60fc1d4",
+  "purpose": "Auditar C e Antigravity/subagent por blocos limitados sem alterar nada",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-14T00:18:14.649Z",
+  "endedAt": "2026-08-14T00:20:15.943Z",
+  "elapsedMs": 121294,
+  "outputLength": 129365,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "76bc931b3bc38a26dd8fc219d31429705e3301ff5c4858293454396f8f2ca7fb",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9af49741c60fc1d4/PSB-20260814-0116-SEGMENTED-C-RECLAIM-ANTIGRAVITY-AUDIT-PHASE1-001.txt",
+  "createdAt": "2026-08-14T00:20:15.948Z"
+}

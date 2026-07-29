@@ -1,0 +1,36 @@
+{
+    "Protocol":  "LPX_BONCHAT_OBSERVER_CENTRAL_LANE_DRYRUN_V2",
+    "JobId":  "PSB-20260810-2121-BONCHAT-OBSERVER-CENTRAL-LANE-DRYRUN-V2-001",
+    "Status":  "SUCCEEDED",
+    "CandidateOnly":  true,
+    "DeclaredParameters":  [
+                               "RunOnce",
+                               "DryRun"
+                           ],
+    "ObserverExitCode":  0,
+    "DryRun":  {
+                   "BytesAppended":  0,
+                   "ParsedEvents":  0,
+                   "Events":  [
+
+                              ]
+               },
+    "ExpectedGeometry":  {
+                             "SidebarAuthorApproxX":  120,
+                             "ConversationAuthorApproxX":  429,
+                             "ConversationBodyApproxX":  "442+",
+                             "CentralLanePatchPresent":  true
+                         },
+    "Safety":  {
+                   "ConfigEnabled":  false,
+                   "ObserverUnchangedDuringValidation":  true,
+                   "ConfigUnchanged":  true,
+                   "SeenUnchanged":  true,
+                   "GreetingWorkerUnchanged":  true,
+                   "ProductionServerUnchanged":  true,
+                   "ProductionUserscriptUnchanged":  true,
+                   "ProductionQueueTouched":  false,
+                   "BonChatInputTouched":  false,
+                   "ChatInjectionTouched":  false
+               }
+}

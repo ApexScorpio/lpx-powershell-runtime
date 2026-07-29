@@ -1,0 +1,68 @@
+{
+    "protocol":  "LPX_TIMI_BONCHAT_CHUNK_OVERHEAD_IMAGE_MAP_FIX_COUNT_V1",
+    "jobId":  "PSB-20260815-0235-FIX-COUNT-CHUNK-OVERHEAD-JPEG61817-TIMI68-001",
+    "status":  "CHUNK_OVERHEAD_CALIBRATED_UNIQUE_TARGET_IMAGE",
+    "runDir":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-CHUNK-OVERHEAD-20260815-023521",
+    "target":  {
+                   "seqno":  61817,
+                   "uid":  "4833fb85-8975-4b63-b1b0-264b2f2940cb",
+                   "mediaKey":  "group_253977dc18422e2ae0586d09e692fc86",
+                   "cipherLength":  706508
+               },
+    "model":  {
+                  "chunkSize":  65536,
+                  "tagBytesPerChunk":  16,
+                  "equation":  "cipher = plain + 16 * ceil(plain/65536)",
+                  "knownThumbPlain":  55624,
+                  "knownThumbCipher":  55640,
+                  "knownThumbPredictedCipher":  55640,
+                  "knownThumbCalibrationPass":  true
+              },
+    "targetPlainSolutions":  [
+                                 {
+                                     "chunks":  11,
+                                     "plainLength":  706332,
+                                     "overheadBytes":  176
+                                 }
+                             ],
+    "exactImageCandidates":  [
+                                 {
+                                     "solution":  {
+                                                      "chunks":  11,
+                                                      "plainLength":  706332,
+                                                      "overheadBytes":  176
+                                                  },
+                                     "image":  {
+                                                   "file":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\tdata\\D877F783D5D3EF8C\\9a3fcd6a7a1e3bdd5dbfaf84663000b6",
+                                                   "name":  "9a3fcd6a7a1e3bdd5dbfaf84663000b6",
+                                                   "size":  706332,
+                                                   "kind":  "jpeg",
+                                                   "width":  4440,
+                                                   "height":  1868,
+                                                   "lastWriteUtc":  "2026-08-14T23:23:29.3999154Z",
+                                                   "sha256":  "C20369817C7D1F241404BEBE8F16F50CB81C08C184C9C1A6EC00130DD6A04F4F",
+                                                   "impliedCipherLength":  706508,
+                                                   "impliedChunks":  11
+                                               },
+                                     "exactCipherEquation":  true
+                                 }
+                             ],
+    "uniqueExactImage":  true,
+    "authenticCandidateBenchPath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-CHUNK-OVERHEAD-20260815-023521\\TIMI68-seq61817-authentic-candidate.jpg",
+    "activeIntegrity":  {
+                            "activeIntact":  true,
+                            "sniperHashUnchanged":  true,
+                            "maestroHashUnchanged":  true,
+                            "historyHashUnchanged":  true
+                        },
+    "safety":  {
+                   "cacheReadOnly":  true,
+                   "noDecryptionKeysReadOrEmitted":  true,
+                   "modelUsesOnlyLengths":  true,
+                   "proofCopiedToTestBenchOnly":  true,
+                   "productionSourceModified":  false,
+                   "productionHistoryModified":  false,
+                   "activationScriptExecuted":  false,
+                   "siteActivationAttempted":  false
+               }
+}

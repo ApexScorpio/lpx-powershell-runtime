@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2116-BONCHAT-OBSERVER-CENTRAL-LANE-PATCH-DRYRUN-001",
+  "conversationKey": "bc8fd15f92e54f4a",
+  "purpose": "Corrigir lane central do observer BonChat e validar em dry-run",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T20:18:36.792Z",
+  "endedAt": "2026-08-10T20:18:37.753Z",
+  "elapsedMs": 961,
+  "outputLength": 3155,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "a33364cb2d8d4d7f01883c812ba2f86e72ee2a70ee68051053dafad3a02a8e5b",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/bc8fd15f92e54f4a/PSB-20260810-2116-BONCHAT-OBSERVER-CENTRAL-LANE-PATCH-DRYRUN-001.txt",
+  "createdAt": "2026-08-10T20:18:37.755Z"
+}

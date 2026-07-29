@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260814-0050-TIMI68-AST-GUARD-DEPENDENCY-AUDIT-001",
+  "conversationKey": "2b0f0ab90daa910d",
+  "purpose": "Mapear exatamente as dependências da validação AST interna do observer",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-13T23:48:27.341Z",
+  "endedAt": "2026-08-13T23:48:29.101Z",
+  "elapsedMs": 1760,
+  "outputLength": 32918,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "ef44d98996b91d5268c93ed95b30807e08387b897ef3d97bd084971ab2af94ce",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/2b0f0ab90daa910d/PSB-20260814-0050-TIMI68-AST-GUARD-DEPENDENCY-AUDIT-001.txt",
+  "createdAt": "2026-08-13T23:48:29.104Z"
+}

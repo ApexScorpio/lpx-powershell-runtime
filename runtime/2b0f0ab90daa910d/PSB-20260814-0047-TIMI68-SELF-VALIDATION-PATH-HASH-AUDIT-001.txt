@@ -1,0 +1,509 @@
+{
+    "Protocol":  "LPX_TIMI68_SELF_VALIDATION_PATH_HASH_AUDIT_V1",
+    "JobId":  "PSB-20260814-0047-TIMI68-SELF-VALIDATION-PATH-HASH-AUDIT-001",
+    "Status":  "SUCCEEDED",
+    "ObserverHashValidated":  true,
+    "SpecialPathVariableReferences":  [
+
+                                      ],
+    "InterestingFileCommands":  [
+                                    {
+                                        "Line":  12,
+                                        "Command":  "Join-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "Base"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  13,
+                                        "Command":  "Join-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "Base"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  14,
+                                        "Command":  "Join-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "Base"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  15,
+                                        "Command":  "Join-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "Base"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  19,
+                                        "Command":  "Test-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "d"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  44,
+                                        "Command":  "Test-Path",
+                                        "EnclosingFunction":  "AppendEvent",
+                                        "VariableArguments":  [
+                                                                  "Sink"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  87,
+                                        "Command":  "Get-Content",
+                                        "EnclosingFunction":  "ParseAst",
+                                        "VariableArguments":  [
+                                                                  "Path"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  317,
+                                        "Command":  "Test-Path",
+                                        "EnclosingFunction":  "RecentMedia",
+                                        "VariableArguments":  [
+                                                                  "root"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  345,
+                                        "Command":  "Get-FileHash",
+                                        "EnclosingFunction":  "RecentMedia",
+                                        "VariableArguments":  [
+                                                                  "f"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  353,
+                                        "Command":  "Test-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "ConfigPath"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  354,
+                                        "Command":  "Get-Content",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "ConfigPath"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  379,
+                                        "Command":  "Join-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "State"
+                                                              ]
+                                    },
+                                    {
+                                        "Line":  442,
+                                        "Command":  "Test-Path",
+                                        "EnclosingFunction":  "\u003ctop-level\u003e",
+                                        "VariableArguments":  [
+                                                                  "tmp"
+                                                              ]
+                                    }
+                                ],
+    "IntegrityKeywordStringMetadata":  [
+                                           {
+                                               "Line":  11,
+                                               "Length":  93,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  14,
+                                               "Length":  20,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  39,
+                                               "Length":  11,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  true,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "HashText"
+                                           },
+                                           {
+                                               "Line":  115,
+                                               "Length":  23,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  116,
+                                               "Length":  1213,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  345,
+                                               "Length":  6,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  true,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "RecentMedia"
+                                           },
+                                           {
+                                               "Line":  345,
+                                               "Length":  12,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  true,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "RecentMedia"
+                                           },
+                                           {
+                                               "Line":  345,
+                                               "Length":  6,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  true,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "RecentMedia"
+                                           },
+                                           {
+                                               "Line":  345,
+                                               "Length":  4,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  true,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "RecentMedia"
+                                           },
+                                           {
+                                               "Line":  356,
+                                               "Length":  23,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  366,
+                                               "Length":  11,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  397,
+                                               "Length":  8,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  true,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  406,
+                                               "Length":  6,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  true,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  406,
+                                               "Length":  6,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  true,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  411,
+                                               "Length":  22,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  true,
+                                                                    "Candidate":  false,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           },
+                                           {
+                                               "Line":  424,
+                                               "Length":  14,
+                                               "KeywordFlags":  {
+                                                                    "Sha256":  false,
+                                                                    "Hash":  false,
+                                                                    "Validation":  false,
+                                                                    "Canonical":  false,
+                                                                    "Observer":  false,
+                                                                    "Candidate":  true,
+                                                                    "Integrity":  false
+                                                                },
+                                               "EnclosingFunction":  "\u003ctop-level\u003e"
+                                           }
+                                       ],
+    "ThrowSites":  [
+                       {
+                           "Line":  45,
+                           "EnclosingFunction":  "AppendEvent",
+                           "ConditionLine":  44,
+                           "ConditionVariableNames":  [
+                                                          "Sink"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Not"
+                                                  ],
+                           "ConditionCommandNames":  [
+                                                         "Test-Path"
+                                                     ],
+                           "ConditionMemberNames":  [
+
+                                                    ]
+                       },
+                       {
+                           "Line":  70,
+                           "EnclosingFunction":  "AppendEvent",
+                           "ConditionLine":  67,
+                           "ConditionVariableNames":  [
+                                                          "sinkExit"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Ine"
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+
+                                                    ]
+                       },
+                       {
+                           "Line":  76,
+                           "EnclosingFunction":  "AppendEvent",
+                           "ConditionLine":  75,
+                           "ConditionVariableNames":  [
+                                                          "passed"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Not"
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+
+                                                    ]
+                       },
+                       {
+                           "Line":  96,
+                           "EnclosingFunction":  "Fn",
+                           "ConditionLine":  96,
+                           "ConditionVariableNames":  [
+                                                          "f"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Ine"
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+                                                        "Count"
+                                                    ]
+                       },
+                       {
+                           "Line":  104,
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "ConditionLine":  104,
+                           "ConditionVariableNames":  [
+                                                          "parsed"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Igt"
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+                                                        "Count",
+                                                        "Errors"
+                                                    ]
+                       },
+                       {
+                           "Line":  107,
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "ConditionLine":  107,
+                           "ConditionVariableNames":  [
+                                                          "nav",
+                                                          "textEntryBoundary"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Ile"
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+                                                        "EndOffset",
+                                                        "Extent",
+                                                        "StartOffset"
+                                                    ]
+                       },
+                       {
+                           "Line":  112,
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "ConditionLine":  112,
+                           "ConditionVariableNames":  [
+                                                          "pe"
+                                                      ],
+                           "ConditionOperators":  [
+                                                      "Igt"
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+                                                        "Count"
+                                                    ]
+                       },
+                       {
+                           "Line":  356,
+                           "EnclosingFunction":  "\u003ctop-level\u003e",
+                           "ConditionLine":  353,
+                           "ConditionVariableNames":  [
+
+                                                      ],
+                           "ConditionOperators":  [
+
+                                                  ],
+                           "ConditionCommandNames":  [
+
+                                                     ],
+                           "ConditionMemberNames":  [
+
+                                                    ]
+                       }
+                   ],
+    "NonZeroExitSites":  [
+
+                         ],
+    "TopLevelIdentityAssignments":  [
+                                        {
+                                            "Line":  353,
+                                            "Variables":  [
+                                                              "ConfigPath",
+                                                              "lpxObserverConfigV3"
+                                                          ],
+                                            "Commands":  [
+                                                             "ConvertFrom-Json",
+                                                             "Get-Content",
+                                                             "Test-Path"
+                                                         ]
+                                        }
+                                    ],
+    "ObserverExecuted":  false,
+    "BonChatTouched":  false,
+    "GitTouched":  false,
+    "FilesModified":  false,
+    "PrivateMessageContentRead":  false,
+    "PrivateMessageContentOutput":  false,
+    "ObserverSourceTextOutput":  false,
+    "SecretsOutput":  false,
+    "Passed":  true
+}

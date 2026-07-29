@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-0058-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-001",
+  "conversationKey": "3262c24ee1a3dc4c",
+  "purpose": "Distinguir framing binário de cifragem comparando estrutura e igualdade entre contas sem expor conteúdo privado",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-14T23:57:46.150Z",
+  "endedAt": "2026-08-14T23:57:58.274Z",
+  "elapsedMs": 12124,
+  "outputLength": 461,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "2620f5bcd5f687da87b7dafe38a0d5e69b46e482876aebd112b92642054dcc8b",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3262c24ee1a3dc4c/PSB-20260815-0058-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-001.txt",
+  "createdAt": "2026-08-14T23:57:58.281Z"
+}

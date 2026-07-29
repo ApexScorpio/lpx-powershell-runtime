@@ -1,0 +1,90 @@
+{
+    "protocol":  "LPX_TIMI_BONCHAT_CIPHER_OVERHEAD_TARGET_IMAGE_V1",
+    "jobId":  "PSB-20260815-0233-CALIBRAR-OVERHEAD-CIFRA-MAPEAR-JPEG61817-TIMI68-001",
+    "status":  "OVERHEAD_CALIBRATED_NO_UNIQUE_TARGET_IMAGE",
+    "runDir":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-CIPHER-OVERHEAD-20260815-023214",
+    "target":  {
+                   "seqno":  61817,
+                   "uid":  "4833fb85-8975-4b63-b1b0-264b2f2940cb",
+                   "mediaKey":  "group_253977dc18422e2ae0586d09e692fc86",
+                   "cipher":  {
+                                  "url":  "https://file.timi001.bonchat.download/group_253977dc18422e2ae0586d09e692fc86",
+                                  "statusCode":  200,
+                                  "responseContentLength":  706508,
+                                  "actualLength":  706508,
+                                  "magicPrefix":  "cb0ddcc9726ab174e751daa9017db385",
+                                  "sha256":  "19D46065544E35DEA82BF0B1229CFAD039ACC023720198BBB64F41E891D710CA",
+                                  "error":  null,
+                                  "localBenchCipherPath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-CIPHER-OVERHEAD-20260815-023214\\target-61817.bin"
+                              },
+                   "expectedPlainSize":  706492
+               },
+    "calibration":  {
+                        "knownSeqno":  58148,
+                        "knownUid":  "83259239-a5f2-4a62-82fb-e0da3ee3654b",
+                        "knownThumb":  {
+                                           "mediaKey":  "group_9387cb14f247382a8fb41e85e6aff8f1",
+                                           "declaredPlainSize":  55624,
+                                           "localPlain":  {
+                                                              "file":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\tdata\\D877F783D5D3EF8C\\7ec9f169336cb7ca885037f0cb4ab489",
+                                                              "name":  "7ec9f169336cb7ca885037f0cb4ab489",
+                                                              "size":  55624,
+                                                              "lastWriteUtc":  "2026-08-10T21:45:32.1162575Z",
+                                                              "kind":  "jpeg",
+                                                              "width":  480,
+                                                              "height":  640,
+                                                              "sha256":  "41B2F064E78BA7692443FD7C4F90DF5D09B90E40DC02F6606043AF75AE166C42"
+                                                          },
+                                           "cipher":  {
+                                                          "url":  "https://file.timi001.bonchat.download/group_9387cb14f247382a8fb41e85e6aff8f1",
+                                                          "statusCode":  200,
+                                                          "responseContentLength":  55640,
+                                                          "actualLength":  55640,
+                                                          "magicPrefix":  "0e495e7488d459003fa89883cb308c66",
+                                                          "sha256":  "22545EC1B95A7268D99CD7F1B200D75A33FBEC3968C69ABB4231E922C96867FF",
+                                                          "error":  null,
+                                                          "localBenchCipherPath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-CIPHER-OVERHEAD-20260815-023214\\known-thumb-58148.bin"
+                                                      },
+                                           "overheadBytes":  16
+                                       },
+                        "knownMedia":  {
+                                           "mediaKey":  "group_4c3fc12b56b8f2b3a2a1f74a0d6783c8",
+                                           "declaredPlainSize":  12197450,
+                                           "cipher":  {
+                                                          "url":  "https://file.timi001.bonchat.download/group_4c3fc12b56b8f2b3a2a1f74a0d6783c8",
+                                                          "statusCode":  200,
+                                                          "responseContentLength":  11264217,
+                                                          "actualLength":  11264217,
+                                                          "magicPrefix":  "f191a1b4eeb06a361f9df7efca318e06",
+                                                          "sha256":  "3045EB637EFCD40EA6FD5E267E12466FBB7121354F798368923401DD2A3889D3",
+                                                          "error":  null,
+                                                          "localBenchCipherPath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\TIMI-Maestro-TestBench\\20260814-205639\\runs\\BONCHAT-TIMI68-CIPHER-OVERHEAD-20260815-023214\\known-media-58148.bin"
+                                                      },
+                                           "overheadBytes":  -933233
+                                       },
+                        "calibratedOverheadBytes":  16,
+                        "strongTwoObjectCalibration":  false
+                    },
+    "exactTargetImageCandidates":  [
+
+                                   ],
+    "uniqueExactImage":  false,
+    "authenticProofBenchPath":  null,
+    "activeIntegrity":  {
+                            "activeIntact":  true,
+                            "sniperHashUnchanged":  true,
+                            "maestroHashUnchanged":  true,
+                            "historyHashUnchanged":  true
+                        },
+    "safety":  {
+                   "publicHttpGetOnly":  true,
+                   "cipherObjectsNotDecrypted":  true,
+                   "cacheReadOnly":  true,
+                   "proofCopiedToTestBenchOnly":  true,
+                   "noCookiesOrTokensUsed":  true,
+                   "productionSourceModified":  false,
+                   "productionHistoryModified":  false,
+                   "activationScriptExecuted":  false,
+                   "siteActivationAttempted":  false
+               }
+}

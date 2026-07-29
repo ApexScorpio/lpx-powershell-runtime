@@ -1,0 +1,8 @@
+At S:\tmp\powershell-bridge-command-PSB-20260809-2157-PESQUISAR-TIMI68-E-ATIVAR-RESULTADO-POR-OCR-BACKGROUND-SEM-MENSAG
+EM-SEM-ENVIO-001.ps1:122 char:285
++ ... ng]$_.CommandLine -match '(?i)Timi Auto Reuniao Watcher\.ps1'}).Count ...
++                                                                  ~
+Missing closing ')' in expression.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInExpression
+ 

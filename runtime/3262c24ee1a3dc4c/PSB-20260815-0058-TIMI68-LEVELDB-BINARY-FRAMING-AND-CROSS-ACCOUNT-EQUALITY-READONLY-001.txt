@@ -1,0 +1,6 @@
+S:\tmp\powershell-bridge-command-PSB-20260815-0058-TIMI68-LEVELDB-BINARY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-00
+1.ps1 : Os tipos de argumentos n�o correspondem
+    + CategoryInfo          : OperationStopped: (:) [powershell-brid...EADONLY-001.ps1], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,powershell-bridge-command-PSB-20260815-0058-TIMI68-LEVELDB-BINA 
+   RY-FRAMING-AND-CROSS-ACCOUNT-EQUALITY-READONLY-001.ps1
+ 

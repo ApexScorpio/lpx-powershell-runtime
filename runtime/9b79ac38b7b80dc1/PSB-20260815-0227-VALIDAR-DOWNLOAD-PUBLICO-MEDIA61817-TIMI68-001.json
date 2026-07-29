@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Validar e guardar no test bench a imagem pública exata associada à mensagem TIMI-68 seq 61817",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-15T01:28:29.710Z",
+  "endedAt": "2026-08-15T01:28:30.174Z",
+  "elapsedMs": 464,
+  "outputLength": 1944,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fa2ca5aa8a7374da25aad8d937bc25a6474d7fc4a31d3f36d9ef26f5a3b13107",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-0227-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.txt",
+  "createdAt": "2026-08-15T01:28:30.177Z"
+}

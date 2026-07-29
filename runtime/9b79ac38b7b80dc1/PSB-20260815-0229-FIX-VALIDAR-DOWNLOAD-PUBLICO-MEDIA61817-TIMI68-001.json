@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-0229-FIX-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Corrigir o parser e validar o download público da imagem exata associada à mensagem TIMI-68 seq 61817",
+  "status": "failed",
+  "exitCode": 181,
+  "startedAt": "2026-08-15T01:30:09.974Z",
+  "endedAt": "2026-08-15T01:30:10.866Z",
+  "elapsedMs": 892,
+  "outputLength": 2220,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "d012d541bad4ff5bba1a0f3eddd7ab331a4db9b0c28f8d72ec302d5f5a3232e0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-0229-FIX-VALIDAR-DOWNLOAD-PUBLICO-MEDIA61817-TIMI68-001.txt",
+  "createdAt": "2026-08-15T01:30:10.868Z"
+}

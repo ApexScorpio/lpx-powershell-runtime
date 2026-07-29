@@ -1,0 +1,8 @@
+{
+    "JobId":  "PSB-20260811-1611-TESTE-BRIDGE-APEXSCORPIO-001",
+    "Test":  "BRIDGE_EXECUTION",
+    "Success":  true,
+    "Timestamp":  "2026-08-11T16:12:24.5303425+01:00",
+    "Computer":  "DESKTOPLPX",
+    "PowerShell":  "5.1.26100.8972"
+}
