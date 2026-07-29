@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.6
+// @version      2026.07.29.15.3.7
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.6';
+    const VERSION = '15.3.7';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -209,7 +209,7 @@
             'REGRAS OBRIGATÓRIAS:',
             '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
-            '2A. Inclui sempre no manifesto o fileId real devolvido quando o anexo foi criado.',
+            '2A. Inclui o fileId quando estiver disponível; a bridge consulta também a API autenticada da conversa.',
             '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
             '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
             '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
@@ -2112,6 +2112,731 @@
         await monitorActiveJob();
     }
 
+
+    let chatgptAccessTokenCache = '';
+
+    function rawConversationUuid() {
+        const match = location.pathname.match(
+            /(?:^|\/)c\/([A-Za-z0-9-]+)(?:\/|$)/
+        );
+
+        return match ? match[1] : '';
+    }
+
+    async function getChatgptAccessToken(forceRefresh = false) {
+        if (forceRefresh) {
+            chatgptAccessTokenCache = '';
+        }
+
+        if (chatgptAccessTokenCache) {
+            return chatgptAccessTokenCache;
+        }
+
+        const response = await fetch(
+            '/api/auth/session',
+            {
+                method: 'GET',
+                credentials: 'include',
+                cache: 'no-store',
+                headers: {
+                    Accept: 'application/json'
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                'Sessão ChatGPT indisponível: HTTP ' +
+                response.status +
+                '.'
+            );
+        }
+
+        const data = await response.json();
+
+        const accessToken = String(
+            data && (
+                data.accessToken ||
+                data.access_token
+            ) || ''
+        ).trim();
+
+        if (!accessToken) {
+            throw new Error(
+                'A sessão do ChatGPT não devolveu um accessToken.'
+            );
+        }
+
+        chatgptAccessTokenCache = accessToken;
+        return accessToken;
+    }
+
+    async function chatgptApiFetch(url, init = {}) {
+        let response = null;
+
+        for (let attempt = 0; attempt < 2; attempt++) {
+            const accessToken =
+                await getChatgptAccessToken(
+                    attempt > 0
+                );
+
+            const headers = new Headers(
+                init.headers || {}
+            );
+
+            headers.set(
+                'Authorization',
+                'Bearer ' + accessToken
+            );
+
+            if (!headers.has('Accept')) {
+                headers.set('Accept', '*/*');
+            }
+
+            response = await fetch(
+                url,
+                {
+                    ...init,
+                    headers,
+                    credentials: 'include',
+                    cache: 'no-store'
+                }
+            );
+
+            if (
+                ![401, 403].includes(
+                    Number(response.status)
+                )
+            ) {
+                return response;
+            }
+
+            chatgptAccessTokenCache = '';
+        }
+
+        return response;
+    }
+
+    function attachmentUrlsFromValue(value) {
+        let raw = String(value || '')
+            .trim()
+            .replace(/\\u0026/gi, '&')
+            .replace(/\\\//g, '/')
+            .replace(/&amp;/gi, '&');
+
+        const urls = [];
+
+        function add(candidate) {
+            const clean = String(candidate || '').trim();
+
+            if (
+                clean &&
+                !urls.includes(clean)
+            ) {
+                urls.push(clean);
+            }
+        }
+
+        if (!raw || /^sandbox:/i.test(raw)) {
+            return urls;
+        }
+
+        try {
+            raw = decodeURIComponent(raw);
+        } catch {
+            // Mantém o valor original.
+        }
+
+        if (/^https?:\/\//i.test(raw)) {
+            add(raw);
+            return urls;
+        }
+
+        if (/^\/backend-api\//i.test(raw)) {
+            try {
+                add(new URL(raw, location.origin).href);
+            } catch {
+                // URL inválido.
+            }
+
+            return urls;
+        }
+
+        if (/^file-service:\/\//i.test(raw)) {
+            raw = raw.replace(
+                /^file-service:\/\//i,
+                ''
+            );
+        }
+
+        if (
+            /^file[_-][A-Za-z0-9_-]{8,}$/.test(raw)
+        ) {
+            const encoded = encodeURIComponent(raw);
+
+            add(
+                location.origin +
+                '/backend-api/files/' +
+                encoded
+            );
+
+            add(
+                location.origin +
+                '/backend-api/files/' +
+                encoded +
+                '/download'
+            );
+        }
+
+        return urls;
+    }
+
+    function collectConversationFileCandidates(
+        root,
+        fileName,
+        jobId,
+        suppliedFileId
+    ) {
+        const wantedFile = String(
+            fileName || ''
+        ).trim().toLowerCase();
+
+        const wantedJob = String(
+            jobId || ''
+        ).trim().toLowerCase();
+
+        const candidates = new Map();
+        const seen = new WeakSet();
+
+        let visited = 0;
+
+        function add(rawValue, score, path, context) {
+            const raw = String(rawValue || '').trim();
+
+            if (!raw) {
+                return;
+            }
+
+            const values = [raw];
+
+            const matches = raw.match(
+                /https?:\/\/[^\s"'<>\\]+|\/backend-api\/[^\s"'<>\\]+|file-service:\/\/[A-Za-z0-9_-]+|file[_-][A-Za-z0-9_-]{8,}/gi
+            ) || [];
+
+            values.push(...matches);
+
+            for (const value of values) {
+                const urls =
+                    attachmentUrlsFromValue(value);
+
+                for (const url of urls) {
+                    const haystack = [
+                        value,
+                        path,
+                        context
+                    ].join(' ').toLowerCase();
+
+                    let finalScore = score;
+
+                    if (
+                        wantedFile &&
+                        haystack.includes(wantedFile)
+                    ) {
+                        finalScore += 3500;
+                    }
+
+                    if (
+                        wantedJob &&
+                        haystack.includes(wantedJob)
+                    ) {
+                        finalScore += 4000;
+                    }
+
+                    if (
+                        /asset_pointer|file_id|fileId|download_url|downloadUrl|attachment|url|href/i
+                            .test(path)
+                    ) {
+                        finalScore += 1500;
+                    }
+
+                    if (
+                        /files\.oaiusercontent\.com/i
+                            .test(url)
+                    ) {
+                        finalScore += 2200;
+                    }
+
+                    if (
+                        /\/backend-api\/files\//i
+                            .test(url)
+                    ) {
+                        finalScore += 1800;
+                    }
+
+                    if (
+                        /file-service:\/\//i
+                            .test(value)
+                    ) {
+                        finalScore += 1600;
+                    }
+
+                    const current =
+                        candidates.get(url);
+
+                    if (
+                        !current ||
+                        finalScore > current.score
+                    ) {
+                        candidates.set(
+                            url,
+                            {
+                                url,
+                                score: finalScore,
+                                source: path
+                            }
+                        );
+                    }
+                }
+            }
+        }
+
+        function walk(
+            value,
+            depth = 0,
+            path = '',
+            score = 0,
+            context = ''
+        ) {
+            if (
+                depth > 28 ||
+                visited > 60000 ||
+                candidates.size > 600
+            ) {
+                return;
+            }
+
+            if (typeof value === 'string') {
+                add(
+                    value,
+                    score,
+                    path,
+                    context
+                );
+
+                return;
+            }
+
+            if (
+                !value ||
+                (
+                    typeof value !== 'object' &&
+                    typeof value !== 'function'
+                )
+            ) {
+                return;
+            }
+
+            try {
+                if (seen.has(value)) {
+                    return;
+                }
+
+                seen.add(value);
+            } catch {
+                return;
+            }
+
+            visited++;
+
+            let shallow = '';
+
+            try {
+                shallow = Object.entries(value)
+                    .filter(([, child]) =>
+                        typeof child === 'string'
+                    )
+                    .slice(0, 60)
+                    .map(([key, child]) =>
+                        key + ':' + child
+                    )
+                    .join(' ')
+                    .toLowerCase();
+            } catch {
+                shallow = '';
+            }
+
+            let localScore = score;
+
+            if (
+                wantedFile &&
+                shallow.includes(wantedFile)
+            ) {
+                localScore += 3000;
+            }
+
+            if (
+                wantedJob &&
+                shallow.includes(wantedJob)
+            ) {
+                localScore += 3500;
+            }
+
+            for (const key of [
+                'asset_pointer',
+                'file_id',
+                'fileId',
+                'download_url',
+                'downloadUrl',
+                'url',
+                'href'
+            ]) {
+                if (
+                    typeof value[key] === 'string'
+                ) {
+                    add(
+                        value[key],
+                        localScore + 2500,
+                        path + '.' + key,
+                        shallow
+                    );
+                }
+            }
+
+            let entries = [];
+
+            try {
+                entries = Object.entries(value);
+            } catch {
+                return;
+            }
+
+            entries.sort(
+                ([left], [right]) => {
+                    const important =
+                        /asset|pointer|file|attachment|download|url|href|metadata|content|message/i;
+
+                    return (
+                        Number(important.test(right)) -
+                        Number(important.test(left))
+                    );
+                }
+            );
+
+            for (const [key, child] of entries) {
+                walk(
+                    child,
+                    depth + 1,
+                    path
+                        ? path + '.' + key
+                        : key,
+                    localScore,
+                    shallow
+                );
+            }
+        }
+
+        if (suppliedFileId) {
+            add(
+                suppliedFileId,
+                5000,
+                'manifest.fileId',
+                fileName + ' ' + jobId
+            );
+        }
+
+        walk(
+            root,
+            0,
+            'conversation',
+            0,
+            ''
+        );
+
+        return {
+            candidates: [
+                ...candidates.values()
+            ].sort(
+                (left, right) =>
+                    right.score - left.score
+            ),
+            visited
+        };
+    }
+
+    async function gmDownloadText(url) {
+        try {
+            const response = await request({
+                method: 'GET',
+                url,
+                responseType: 'arraybuffer',
+                timeout: 30000
+            });
+
+            if (
+                Number(response.status) < 200 ||
+                Number(response.status) >= 400
+            ) {
+                return {
+                    ok: false,
+                    status: Number(response.status),
+                    text: ''
+                };
+            }
+
+            const bytes =
+                response.response instanceof ArrayBuffer
+                    ? new Uint8Array(
+                        response.response
+                    )
+                    : new TextEncoder().encode(
+                        String(
+                            response.responseText || ''
+                        )
+                    );
+
+            return {
+                ok: true,
+                status: Number(response.status),
+                text:
+                    new TextDecoder('utf-8')
+                        .decode(bytes)
+            };
+        } catch {
+            return {
+                ok: false,
+                status: 0,
+                text: ''
+            };
+        }
+    }
+
+    async function resolveAttachmentFromConversationApi(
+        fileName,
+        jobId,
+        suppliedFileId
+    ) {
+        const conversationId =
+            rawConversationUuid();
+
+        if (!conversationId) {
+            lastAttachmentDiagnostic =
+                'conversationId=missing';
+
+            return '';
+        }
+
+        let conversationResponse;
+
+        try {
+            conversationResponse =
+                await chatgptApiFetch(
+                    '/backend-api/conversation/' +
+                    encodeURIComponent(
+                        conversationId
+                    ),
+                    {
+                        method: 'GET',
+                        headers: {
+                            Accept: 'application/json'
+                        }
+                    }
+                );
+        } catch (error) {
+            lastAttachmentDiagnostic =
+                'conversationFetch=error:' +
+                String(
+                    error &&
+                    error.message ||
+                    error
+                );
+
+            return '';
+        }
+
+        if (!conversationResponse || !conversationResponse.ok) {
+            lastAttachmentDiagnostic =
+                'conversationFetch=HTTP' +
+                Number(
+                    conversationResponse &&
+                    conversationResponse.status ||
+                    0
+                );
+
+            return '';
+        }
+
+        const conversation =
+            await conversationResponse.json();
+
+        const extraction =
+            collectConversationFileCandidates(
+                conversation,
+                fileName,
+                jobId,
+                suppliedFileId
+            );
+
+        const queue =
+            extraction.candidates.slice(0, 40);
+
+        const attempted = new Set();
+        const statuses = [];
+
+        for (
+            let index = 0;
+            index < queue.length && index < 40;
+            index++
+        ) {
+            const candidate = queue[index];
+
+            if (attempted.has(candidate.url)) {
+                continue;
+            }
+
+            attempted.add(candidate.url);
+
+            setStatus(
+                'A testar referência autenticada do anexo ' +
+                (index + 1) +
+                '/' +
+                queue.length +
+                '…'
+            );
+
+            let response = null;
+
+            try {
+                response = await chatgptApiFetch(
+                    candidate.url,
+                    {
+                        method: 'GET',
+                        redirect: 'follow'
+                    }
+                );
+            } catch {
+                response = null;
+            }
+
+            if (response && response.ok) {
+                const contentType = String(
+                    response.headers.get(
+                        'content-type'
+                    ) || ''
+                ).toLowerCase();
+
+                if (
+                    contentType.includes(
+                        'application/json'
+                    )
+                ) {
+                    try {
+                        const metadata =
+                            await response.json();
+
+                        const nested =
+                            collectConversationFileCandidates(
+                                metadata,
+                                fileName,
+                                jobId,
+                                ''
+                            ).candidates;
+
+                        for (const item of nested) {
+                            if (
+                                !attempted.has(item.url) &&
+                                !queue.some(
+                                    queued =>
+                                        queued.url ===
+                                        item.url
+                                )
+                            ) {
+                                queue.push(item);
+                            }
+                        }
+
+                        statuses.push(
+                            Number(response.status) +
+                            'j'
+                        );
+
+                        continue;
+                    } catch {
+                        statuses.push(
+                            Number(response.status) +
+                            'json-error'
+                        );
+                    }
+                } else {
+                    const text =
+                        await response.text();
+
+                    if (String(text || '').trim()) {
+                        lastAttachmentDiagnostic = [
+                            'conversationApi=ok',
+                            'visited=' +
+                                extraction.visited,
+                            'candidates=' +
+                                extraction.candidates.length,
+                            'selected=' +
+                                (index + 1),
+                            'HTTP=' +
+                                response.status
+                        ].join(';');
+
+                        return text;
+                    }
+                }
+            }
+
+            statuses.push(
+                Number(
+                    response &&
+                    response.status ||
+                    0
+                )
+            );
+
+            const gmResult =
+                await gmDownloadText(
+                    candidate.url
+                );
+
+            if (
+                gmResult.ok &&
+                String(
+                    gmResult.text || ''
+                ).trim()
+            ) {
+                lastAttachmentDiagnostic = [
+                    'conversationApi=ok',
+                    'transport=GM',
+                    'visited=' +
+                        extraction.visited,
+                    'candidates=' +
+                        extraction.candidates.length,
+                    'selected=' +
+                        (index + 1),
+                    'HTTP=' +
+                        gmResult.status
+                ].join(';');
+
+                return gmResult.text;
+            }
+        }
+
+        lastAttachmentDiagnostic = [
+            'conversationApi=ok',
+            'visited=' +
+                extraction.visited,
+            'candidates=' +
+                extraction.candidates.length,
+            'attempts=' +
+                statuses.slice(0, 40).join(',')
+        ].join(';');
+
+        return '';
+    }
+
     async function downloadAttachment(anchor) {
         const href = anchor?.href || anchor?.getAttribute('href');
 
@@ -2227,38 +2952,56 @@
         try {
             let command = '';
 
-            if (protocol === 'PSB_JOB_FILE_V1' && fileId) {
-                if (!/^file[_-][A-Za-z0-9_-]+$/.test(fileId)) {
-                    throw new Error(
-                        'O fileId do anexo tem um formato inválido.'
-                    );
-                }
 
-                const directFileUrl =
-                    location.origin +
-                    '/backend-api/files/' +
-                    encodeURIComponent(fileId) +
-                    '/download';
-
+            if (
+                protocol === 'PSB_JOB_FILE_V1' &&
+                !fileUrl
+            ) {
                 setStatus(
-                    'A descarregar diretamente o anexo ' +
-                    (fileName || fileId) +
-                    ' através do fileId…'
+                    'A consultar a API autenticada da conversa para localizar ' +
+                    fileName +
+                    '…'
                 );
 
-                command = await downloadAttachment({
-                    href: directFileUrl
-                });
-            }
-            else if (protocol === 'PSB_JOB_FILE_V1' && !fileUrl) {
-                const anchor = findAttachmentLink(assistant, fileName);
+                try {
+                    command =
+                        await resolveAttachmentFromConversationApi(
+                            fileName,
+                            jobId,
+                            fileId
+                        );
+                } catch (error) {
+                    lastAttachmentDiagnostic =
+                        'conversationResolver=error:' +
+                        String(
+                            error &&
+                            error.message ||
+                            error
+                        );
 
-                if (anchor) {
-                    try {
-                        setStatus('A descarregar diretamente o ficheiro ' + fileName + '…');
-                        command = await downloadAttachment(anchor);
-                    } catch {
-                        command = '';
+                    command = '';
+                }
+
+                if (!command) {
+                    const anchor =
+                        findAttachmentLink(
+                            assistant,
+                            fileName
+                        );
+
+                    if (anchor) {
+                        try {
+                            setStatus(
+                                'A tentar o URL encontrado no cartão do anexo…'
+                            );
+
+                            command =
+                                await downloadAttachment(
+                                    anchor
+                                );
+                        } catch {
+                            command = '';
+                        }
                     }
                 }
 
@@ -2267,7 +3010,10 @@
                         'Não foi possível obter diretamente o conteúdo do anexo ' +
                         fileName +
                         '. Diagnóstico: ' +
-                        (lastAttachmentDiagnostic || 'indisponível') +
+                        (
+                            lastAttachmentDiagnostic ||
+                            'indisponível'
+                        ) +
                         '.'
                     );
                 }
