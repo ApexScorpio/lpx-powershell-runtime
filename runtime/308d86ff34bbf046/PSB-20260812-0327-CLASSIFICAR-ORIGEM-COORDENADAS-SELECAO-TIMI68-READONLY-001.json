@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260812-0327-CLASSIFICAR-ORIGEM-COORDENADAS-SELECAO-TIMI68-READONLY-001",
+  "conversationKey": "308d86ff34bbf046",
+  "purpose": "Classificar origem coordenadas selecao TIMI68 readonly",
+  "status": "failed",
+  "exitCode": 513,
+  "startedAt": "2026-08-12T02:25:45.993Z",
+  "endedAt": "2026-08-12T02:25:48.093Z",
+  "elapsedMs": 2100,
+  "outputLength": 0,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "6c52010c173e4e9a170298c803153ecf31583ffb391371b56a1e5fc587cc95bc",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/308d86ff34bbf046/PSB-20260812-0327-CLASSIFICAR-ORIGEM-COORDENADAS-SELECAO-TIMI68-READONLY-001.txt",
+  "createdAt": "2026-08-12T02:25:48.095Z"
+}

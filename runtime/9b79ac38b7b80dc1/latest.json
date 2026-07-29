@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-1450-AUDITAR-SEPARADOR-28JUL-COM-RESOLUCAO-JANELA-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Auditar as condições exatas do separador de 28 de julho com resolução robusta da janela",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-15T13:45:38.478Z",
+  "endedAt": "2026-08-15T13:45:41.405Z",
+  "elapsedMs": 2927,
+  "outputLength": 1287,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "1b5cbac2198382c656206ce2ccbd108abc3c61ef657605ceafbda9de927d706e",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-1450-AUDITAR-SEPARADOR-28JUL-COM-RESOLUCAO-JANELA-001.txt",
+  "createdAt": "2026-08-15T13:45:41.411Z"
+}

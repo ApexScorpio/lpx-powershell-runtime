@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-1445-AUDITAR-CONDICOES-SEPARADOR-28JUL-PIXEL-A-PIXEL-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Auditar pixel a pixel as condições exatas do separador de 28 de julho",
+  "status": "failed",
+  "exitCode": 254,
+  "startedAt": "2026-08-15T13:43:04.769Z",
+  "endedAt": "2026-08-15T13:43:08.811Z",
+  "elapsedMs": 4042,
+  "outputLength": 743,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "1d0f2d89b1cecb2a6d5e8514fbc2e950ceb91128020349fd46fb3d308d428f05",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-1445-AUDITAR-CONDICOES-SEPARADOR-28JUL-PIXEL-A-PIXEL-001.txt",
+  "createdAt": "2026-08-15T13:43:08.814Z"
+}

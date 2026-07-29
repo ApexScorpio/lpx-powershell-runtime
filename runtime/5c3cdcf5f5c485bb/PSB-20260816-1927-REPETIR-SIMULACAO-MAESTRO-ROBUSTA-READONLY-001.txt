@@ -1,0 +1,95 @@
+{
+    "Protocol":  "LPX_TIMI68_CURRENT_MAESTRO_DECISION_ROBUST_READONLY_WRAPPER_V2",
+    "JobId":  "PSB-20260816-1927-REPETIR-SIMULACAO-MAESTRO-ROBUSTA-READONLY-001",
+    "Status":  "COMPLETED",
+    "ChildExitCode":  0,
+    "ChildStdout":  "{\"status\": \"COMPLETED\", \"verdict\": \"CURRENT_MAESTRO_DECISION_SIMULATED_ROBUSTLY_READONLY\", \"function_results\": {\"get_current_shift\": {\"ok\": true, \"value\": \"NIGHT\"}, \"check_if_code_found_today\": {\"ok\": false, \"error\": \"TypeError: check_if_code_found_today() missing 1 required positional argument: \u0027shift\u0027\", \"trace\": \"Traceback (most recent call last):\\n  File \\\"S:\\\\tmp\\\\LPX-TIMI-MAESTRO-DECISION-ROBUST-20260816-192115\\\\audit.py\\\", line 57, in safe_call\\n    return {\\\"ok\\\":True,\\\"value\\\":fn(*args,**kwargs)}\\n                              ~~^^^^^^^^^^^^^^^^\\nTypeError: check_if_code_found_today() missing 1 required positional argument: \u0027shift\u0027\\n\"}, \"check_if_activated_today\": {\"ok\": false, \"error\": \"NameError: name \u0027LOG_FILE\u0027 is not defined\", \"trace\": \"Traceback (most recent call last):\\n  File \\\"S:\\\\tmp\\\\LPX-TIMI-MAESTRO-DECISION-ROBUST-20260816-192115\\\\audit.py\\\", line 57, in safe_call\\n    return {\\\"ok\\\":True,\\\"value\\\":fn(*args,**kwargs)}\\n                              ~~^^^^^^^^^^^^^^^^\\n  File \\\"\u003cisolated-maestro-functions\u003e\\\", line 172, in check_if_activated_today\\nNameError: name \u0027LOG_FILE\u0027 is not defined\\n\"}, \"LAST_FOUND_CODE\": null, \"logs\": []}, \"independent_today_count\": 0, \"share_resolution\": {\"selected_code\": null, \"skipped\": \"NO_VALID_SELECTED_CODE\", \"logs\": []}, \"simulation\": {\"local_now\": \"2026-08-16T19:21:15.985158\", \"today\": \"2026-08-16\", \"current_shift\": \"NIGHT\", \"code_found_today\": false, \"selected_code\": null, \"already_activated_today\": false, \"share_image_ready_for_selected_code\": false, \"would_consider_activation\": false, \"would_consider_share_after_successful_activation\": false, \"safe_exact_code_contract\": false, \"no_subprocess_executed\": true, \"independent_today_codes\": [], \"selected_code_present_in_independent_today_rows\": false}, \"error_count\": 0}",
+    "ChildStderr":  "",
+    "Audit":  {
+                  "protocol":  "LPX_TIMI68_CURRENT_MAESTRO_DECISION_ROBUST_READONLY_V2",
+                  "status":  "COMPLETED",
+                  "mapping":  {
+                                  "sniper":  "Codigo TIMI - BonChat.py",
+                                  "ativacao":  "Codigo TIMI - Ativa�ao Site.py",
+                                  "partilha":  "Partilha Codigo TImi - Whatsapp.py",
+                                  "busca_wa":  "Codigo TIMI - Whatsapp.py"
+                              },
+                  "paths":  {
+                                "history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                "history_exists":  true,
+                                "vouchers":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\VOUCHERS_CAPTURADOS",
+                                "vouchers_exists":  true
+                            },
+                  "function_results":  {
+                                           "get_current_shift":  {
+                                                                     "ok":  true,
+                                                                     "value":  "NIGHT"
+                                                                 },
+                                           "check_if_code_found_today":  {
+                                                                             "ok":  false,
+                                                                             "error":  "TypeError: check_if_code_found_today() missing 1 required positional argument: \u0027shift\u0027",
+                                                                             "trace":  "Traceback (most recent call last):\n  File \"S:\\tmp\\LPX-TIMI-MAESTRO-DECISION-ROBUST-20260816-192115\\audit.py\", line 57, in safe_call\n    return {\"ok\":True,\"value\":fn(*args,**kwargs)}\n                              ~~^^^^^^^^^^^^^^^^\nTypeError: check_if_code_found_today() missing 1 required positional argument: \u0027shift\u0027\n"
+                                                                         },
+                                           "check_if_activated_today":  {
+                                                                            "ok":  false,
+                                                                            "error":  "NameError: name \u0027LOG_FILE\u0027 is not defined",
+                                                                            "trace":  "Traceback (most recent call last):\n  File \"S:\\tmp\\LPX-TIMI-MAESTRO-DECISION-ROBUST-20260816-192115\\audit.py\", line 57, in safe_call\n    return {\"ok\":True,\"value\":fn(*args,**kwargs)}\n                              ~~^^^^^^^^^^^^^^^^\n  File \"\u003cisolated-maestro-functions\u003e\", line 172, in check_if_activated_today\nNameError: name \u0027LOG_FILE\u0027 is not defined\n"
+                                                                        },
+                                           "LAST_FOUND_CODE":  null,
+                                           "logs":  [
+
+                                                    ]
+                                       },
+                  "independent_history":  {
+                                              "line_count":  121,
+                                              "today_count":  0,
+                                              "today_rows":  [
+
+                                                             ]
+                                          },
+                  "share_resolution":  {
+                                           "selected_code":  null,
+                                           "skipped":  "NO_VALID_SELECTED_CODE",
+                                           "logs":  [
+
+                                                    ]
+                                       },
+                  "simulation":  {
+                                     "local_now":  "2026-08-16T19:21:15.985158",
+                                     "today":  "2026-08-16",
+                                     "current_shift":  "NIGHT",
+                                     "code_found_today":  false,
+                                     "selected_code":  null,
+                                     "already_activated_today":  false,
+                                     "share_image_ready_for_selected_code":  false,
+                                     "would_consider_activation":  false,
+                                     "would_consider_share_after_successful_activation":  false,
+                                     "safe_exact_code_contract":  false,
+                                     "no_subprocess_executed":  true,
+                                     "independent_today_codes":  [
+
+                                                                 ],
+                                     "selected_code_present_in_independent_today_rows":  false
+                                 },
+                  "errors":  [
+
+                             ],
+                  "verdict":  "CURRENT_MAESTRO_DECISION_SIMULATED_ROBUSTLY_READONLY"
+              },
+    "Verdict":  "CURRENT_MAESTRO_DECISION_SIMULATED_ROBUSTLY_READONLY",
+    "Safety":  {
+                   "ProductionSourceModified":  false,
+                   "RealSharedHistoryReadOnly":  true,
+                   "RealVoucherDirectoryReadOnly":  true,
+                   "MaestroFunctionDefinitionsOnly":  true,
+                   "MainLoopNotExecuted":  true,
+                   "RunScriptNotExecuted":  true,
+                   "ShareResolverOnly":  true,
+                   "BonChatAccessed":  false,
+                   "BrowserLaunched":  false,
+                   "SiteAccessed":  false,
+                   "BicycleActivationExecuted":  false,
+                   "WhatsAppMessageSent":  false,
+                   "ScheduledTasksModified":  false
+               }
+}

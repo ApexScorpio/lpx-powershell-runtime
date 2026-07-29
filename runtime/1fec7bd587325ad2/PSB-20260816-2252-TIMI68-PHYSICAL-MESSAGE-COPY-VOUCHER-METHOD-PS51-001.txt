@@ -1,0 +1,1 @@
+{"protocol":"TIMI68_PHYSICAL_MESSAGE_COPY_VOUCHER_METHOD_V1","jobId":"PSB-20260816-2252-TIMI68-PHYSICAL-MESSAGE-COPY-VOUCHER-METHOD-PS51-001","status":"protected-timi-script-hash-changed","exitCode":40,"timiWriteOperations":0,"destination":"C:\\Users\\Public\\Documents\\TIMI68-THEODORE-MARCIA-PHYSICAL\\snapshot-20260816-225218","protectedChangedCount":1}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1954-TIMI68-APP-SCHEMA-TIMESTAMP-AUDIT-PHASE22-PS51-001",
+  "conversationKey": "92652359e8666001",
+  "purpose": "Mapear esquema real de timestamp da aplicação",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T18:58:46.019Z",
+  "endedAt": "2026-08-16T18:58:55.360Z",
+  "elapsedMs": 9341,
+  "outputLength": 272,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "059f21d25426759b3b235ad85a7de4930f51fdeeed39003047f17ac7f904d702",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/92652359e8666001/PSB-20260816-1954-TIMI68-APP-SCHEMA-TIMESTAMP-AUDIT-PHASE22-PS51-001.txt",
+  "createdAt": "2026-08-16T18:58:55.362Z"
+}

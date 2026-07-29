@@ -1,0 +1,62 @@
+{
+    "Protocol":  "LPX_TIMI68_EXACT_COPY_VS_CANONICAL_V1",
+    "JobId":  "PSB-20260814-0054-TIMI68-EXACT-COPY-VS-CANONICAL-001",
+    "Status":  "SUCCEEDED",
+    "ObserverHashValidated":  true,
+    "ExactCopyHashValidated":  true,
+    "WatchdogHashValidated":  true,
+    "SinkHashValidated":  true,
+    "WatchdogWasRunning":  true,
+    "WatchdogStopped":  true,
+    "WatchdogRestarted":  true,
+    "WatchdogProcessCountAfter":  1,
+    "ObserverQuietAchieved":  true,
+    "ExactCopy":  {
+                      "TimedOut":  false,
+                      "ExitCode":  0,
+                      "StdoutLength":  0,
+                      "StderrLength":  0,
+                      "ErrorMetadata":  {
+                                            "ScriptLineNumber":  null,
+                                            "FullyQualifiedErrorId":  null,
+                                            "Category":  null,
+                                            "HasValidationKeyword":  false,
+                                            "HasParameterBindingKeyword":  false,
+                                            "HasOcrKeyword":  false,
+                                            "HasSinkKeyword":  false,
+                                            "HasGitKeyword":  false
+                                        },
+                      "PrivateMainAdvanced":  false
+                  },
+    "Canonical":  {
+                      "TimedOut":  false,
+                      "ExitCode":  0,
+                      "StdoutLength":  0,
+                      "StderrLength":  0,
+                      "ErrorMetadata":  {
+                                            "ScriptLineNumber":  null,
+                                            "FullyQualifiedErrorId":  null,
+                                            "Category":  null,
+                                            "HasValidationKeyword":  false,
+                                            "HasParameterBindingKeyword":  false,
+                                            "HasOcrKeyword":  false,
+                                            "HasSinkKeyword":  false,
+                                            "HasGitKeyword":  false
+                                        },
+                      "PrivateMainAdvanced":  false
+                  },
+    "CopyAndCanonicalExitEqual":  true,
+    "BonChatTouched":  true,
+    "InstalledObserverModified":  false,
+    "InstalledConfigModified":  false,
+    "SinkModified":  false,
+    "HkcuRunModified":  false,
+    "OutboundBonChatMessageSent":  false,
+    "ComposerInteractionAuthorized":  false,
+    "PrivateMessageContentOutput":  false,
+    "ObserverRawStdoutOutput":  false,
+    "ObserverRawStderrOutput":  false,
+    "SecretsOutput":  false,
+    "TempFilesDeleted":  true,
+    "Passed":  true
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-2249-EXECUTAR-ATIVADOR-REAL-CAPTURAR-SEQUENCIA-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Executar ativador real e capturar sequência visual completa",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-16T21:50:58.664Z",
+  "endedAt": "2026-08-16T21:50:59.471Z",
+  "elapsedMs": 807,
+  "outputLength": 426,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7d00eb1cc1af6d8893956d3a36f0177c242b19a7a4a51f0d0116f87e21720e56",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260816-2249-EXECUTAR-ATIVADOR-REAL-CAPTURAR-SEQUENCIA-001.txt",
+  "createdAt": "2026-08-16T21:50:59.474Z"
+}

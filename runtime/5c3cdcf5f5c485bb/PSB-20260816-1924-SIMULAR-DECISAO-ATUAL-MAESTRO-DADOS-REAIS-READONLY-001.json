@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1924-SIMULAR-DECISAO-ATUAL-MAESTRO-DADOS-REAIS-READONLY-001",
+  "conversationKey": "5c3cdcf5f5c485bb",
+  "purpose": "Simular decisão atual do Maestro sobre dados reais em readonly",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T18:19:25.038Z",
+  "endedAt": "2026-08-16T18:19:25.938Z",
+  "elapsedMs": 900,
+  "outputLength": 3762,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "47f37c31987fc738e9036c8855ecffa8d25071030fb037f03df173b6244b48f0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/5c3cdcf5f5c485bb/PSB-20260816-1924-SIMULAR-DECISAO-ATUAL-MAESTRO-DADOS-REAIS-READONLY-001.txt",
+  "createdAt": "2026-08-16T18:19:25.941Z"
+}

@@ -1,0 +1,8 @@
+Cannot overwrite variable HOME because it is read-only or constant.
+At S:\tmp\powershell-bridge-command-PSB-20260814-0124-ANTIGRAVITY-RECLAIMABILITY-REFERENCE-AUDIT-PHASE3-001.ps1:72 
+char:1
++ $home = '%USERPROFILE%
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (HOME:String) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : VariableNotWritable
+ 

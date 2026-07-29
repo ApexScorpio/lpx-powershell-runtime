@@ -1,0 +1,12 @@
+{
+    "protocol":  "LPX_TIMI68_SEPARATOR_28JUL_CONDITION_AUDIT_WRAPPER_V1",
+    "jobId":  "PSB-20260815-1445-AUDITAR-CONDICOES-SEPARADOR-28JUL-PIXEL-A-PIXEL-001",
+    "status":  "AUDIT_FAILED",
+    "pythonExitCode":  1,
+    "stderr":  "Traceback (most recent call last):\r\n  File \"S:\\tmp\\lpx-sep28-audit-7ebf21b7c5ca4bfc8ed433da1680168e\\audit.py\", line 102, in \u003cmodule\u003e\r\n    raise RuntimeError(\"Historical BonChat selector failed\")\r\nRuntimeError: Historical BonChat selector failed\r\n",
+    "activeIntegrity":  {
+                            "activeIntact":  true,
+                            "sniperHashUnchanged":  true,
+                            "maestroHashUnchanged":  true
+                        }
+}

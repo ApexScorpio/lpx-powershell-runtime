@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1920-UNIFICAR-DATA-PATH-HISTORICO-E-VOUCHERS-DOWNSTREAM-001",
+  "conversationKey": "5c3cdcf5f5c485bb",
+  "purpose": "Unificar histórico e vouchers downstream no mesmo data path",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T18:17:23.011Z",
+  "endedAt": "2026-08-16T18:17:24.363Z",
+  "elapsedMs": 1352,
+  "outputLength": 8888,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "8d39255f9ba8e2892b53d13db9a6f78aca2dd091d8da2b1d8ff1ecfc146de865",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/5c3cdcf5f5c485bb/PSB-20260816-1920-UNIFICAR-DATA-PATH-HISTORICO-E-VOUCHERS-DOWNSTREAM-001.txt",
+  "createdAt": "2026-08-16T18:17:24.397Z"
+}

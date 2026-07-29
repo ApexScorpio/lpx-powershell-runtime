@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1923-VALIDAR-DECISAO-MAESTRO-COM-SHIFT-E-LOG-READONLY-001",
+  "conversationKey": "5c3cdcf5f5c485bb",
+  "purpose": "Validar decisão real do Maestro com shift e log em readonly",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T18:23:23.116Z",
+  "endedAt": "2026-08-16T18:23:24.062Z",
+  "elapsedMs": 946,
+  "outputLength": 6569,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "6c21fe87dd25d8a809f636d26a47d728f7b7c5ec17d63be70a221c9c82fc688c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/5c3cdcf5f5c485bb/PSB-20260816-1923-VALIDAR-DECISAO-MAESTRO-COM-SHIFT-E-LOG-READONLY-001.txt",
+  "createdAt": "2026-08-16T18:23:24.066Z"
+}

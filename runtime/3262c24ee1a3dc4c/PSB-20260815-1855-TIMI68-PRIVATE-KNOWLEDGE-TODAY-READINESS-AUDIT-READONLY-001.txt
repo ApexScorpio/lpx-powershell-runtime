@@ -1,0 +1,22 @@
+{
+    "JobId":  "PSB-20260815-1855-TIMI68-PRIVATE-KNOWLEDGE-TODAY-READINESS-AUDIT-READONLY-001",
+    "Protocol":  "LPX_TIMI68_PRIVATE_KNOWLEDGE_TODAY_READINESS_AUDIT_READONLY_V1",
+    "Status":  "COMPLETED_READONLY",
+    "Classification":  "PRIVATE_REPOSITORY_READ_UNAVAILABLE_OBSERVER_REMAINS_ACTIVE",
+    "Repository":  {
+                       "Target":  "ApexScorpio/TIMI-68",
+                       "CloneExitCode":  1,
+                       "StdoutLength":  2271,
+                       "StderrLength":  0,
+                       "RepositoryWriteAttempted":  false
+                   },
+    "RawPrivateContentPublished":  false,
+    "BonChatTouched":  false,
+    "BonChatInputOrSend":  false,
+    "GitWriteAttempted":  false,
+    "RuntimeRepositoryTouched":  false,
+    "Wokege159Touched":  false,
+    "ScreenshotCount":  4,
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-1855-TIMI68-PRIVATE-KNOWLEDGE-TODAY-READINESS-AUDIT-READONLY-001",
+    "Guardrails":  "READONLY private repository clone attempt only. No raw git output or private content is published. No add/commit/push, no BonChat interaction."
+}

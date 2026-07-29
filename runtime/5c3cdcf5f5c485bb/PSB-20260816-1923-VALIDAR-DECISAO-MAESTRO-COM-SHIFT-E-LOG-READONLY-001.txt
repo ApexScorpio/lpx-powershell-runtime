@@ -1,0 +1,87 @@
+{
+    "Protocol":  "LPX_TIMI68_MAESTRO_EXACT_DECISION_READONLY_WRAPPER_V1",
+    "JobId":  "PSB-20260816-1923-VALIDAR-DECISAO-MAESTRO-COM-SHIFT-E-LOG-READONLY-001",
+    "Status":  "COMPLETED",
+    "ChildExitCode":  0,
+    "ChildStdout":  "{\"status\": \"COMPLETED\", \"verdict\": \"MAESTRO_EXACT_CURRENT_DECISION_VALIDATED_READONLY\", \"runtime_globals\": {\"HISTORY_FILE\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\HISTORICO_CODIGOS_TIMI.txt\", \"HISTORY_FILE_exists\": true, \"LOG_FILE\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\TIMI_MAESTRO.log\", \"LOG_FILE_exists\": false, \"DATA_PATH\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\", \"current_shift\": \"NIGHT\"}, \"function_results\": {\"get_current_shift\": {\"ok\": true, \"value\": \"NIGHT\"}, \"check_if_code_found_today\": {\"ok\": true, \"value\": false}, \"LAST_FOUND_CODE\": null, \"check_if_activated_today\": {\"ok\": true, \"value\": false}}, \"independent_history\": {\"today_count\": 0, \"today_codes\": [], \"today_rows\": []}, \"simulation\": {\"current_shift\": \"NIGHT\", \"code_check_ok\": true, \"code_found_today\": false, \"selected_code\": null, \"activated_check_ok\": true, \"already_activated_today\": false, \"independent_today_count\": 0, \"selected_present_in_today_rows\": false, \"would_launch_activation_in_maestro\": false, \"no_subprocess_executed\": true, \"checks\": {\"shift_ok\": true, \"code_check_ok\": true, \"activated_check_ok\": true, \"independent_today_zero\": true, \"maestro_reports_no_code\": true, \"no_selected_code\": true, \"would_not_launch_activation\": true}}, \"error_count\": 0}",
+    "ChildStderr":  "",
+    "Audit":  {
+                  "protocol":  "LPX_TIMI68_MAESTRO_EXACT_DECISION_READONLY_V1",
+                  "status":  "COMPLETED",
+                  "runtime_globals":  {
+                                          "HISTORY_FILE":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                          "HISTORY_FILE_exists":  true,
+                                          "LOG_FILE":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\TIMI_MAESTRO.log",
+                                          "LOG_FILE_exists":  false,
+                                          "DATA_PATH":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador",
+                                          "current_shift":  "NIGHT"
+                                      },
+                  "function_results":  {
+                                           "get_current_shift":  {
+                                                                     "ok":  true,
+                                                                     "value":  "NIGHT"
+                                                                 },
+                                           "check_if_code_found_today":  {
+                                                                             "ok":  true,
+                                                                             "value":  false
+                                                                         },
+                                           "LAST_FOUND_CODE":  null,
+                                           "check_if_activated_today":  {
+                                                                            "ok":  true,
+                                                                            "value":  false
+                                                                        }
+                                       },
+                  "independent_history":  {
+                                              "today_count":  0,
+                                              "today_codes":  [
+
+                                                              ],
+                                              "today_rows":  [
+
+                                                             ]
+                                          },
+                  "simulation":  {
+                                     "current_shift":  "NIGHT",
+                                     "code_check_ok":  true,
+                                     "code_found_today":  false,
+                                     "selected_code":  null,
+                                     "activated_check_ok":  true,
+                                     "already_activated_today":  false,
+                                     "independent_today_count":  0,
+                                     "selected_present_in_today_rows":  false,
+                                     "would_launch_activation_in_maestro":  false,
+                                     "no_subprocess_executed":  true,
+                                     "checks":  {
+                                                    "shift_ok":  true,
+                                                    "code_check_ok":  true,
+                                                    "activated_check_ok":  true,
+                                                    "independent_today_zero":  true,
+                                                    "maestro_reports_no_code":  true,
+                                                    "no_selected_code":  true,
+                                                    "would_not_launch_activation":  true
+                                                }
+                                 },
+                  "errors":  [
+
+                             ],
+                  "verdict":  "MAESTRO_EXACT_CURRENT_DECISION_VALIDATED_READONLY"
+              },
+    "MaestroSourceUnchanged":  true,
+    "Verdict":  "MAESTRO_EXACT_CURRENT_DECISION_VALIDATED_READONLY",
+    "Safety":  {
+                   "ProductionSourceModified":  false,
+                   "ExactCurrentShiftPassedToCodeCheck":  true,
+                   "ActualLogFileProvidedToActivatedCheck":  true,
+                   "SharedHistoryReadOnly":  true,
+                   "MaestroDefinitionsOnly":  true,
+                   "MaestroLoopExecuted":  false,
+                   "RunScriptExecuted":  false,
+                   "BonChatAccessed":  false,
+                   "BrowserLaunched":  false,
+                   "SiteAccessed":  false,
+                   "BicycleActivationExecuted":  false,
+                   "ShareExecuted":  false,
+                   "WhatsAppMessageSent":  false,
+                   "ScheduledTasksModified":  false
+               }
+}

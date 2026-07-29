@@ -1,0 +1,12 @@
+{
+    "protocol":  "LPX_TIMI68_ROBUST_FINE_28JUL_SEPARATOR_WRAPPER_V1",
+    "jobId":  "PSB-20260815-1352-RETRY-SEPARADOR-28JUL-SCAN-FINO-ROBUSTO-001",
+    "status":  "SCAN_FAILED",
+    "pythonExitCode":  1,
+    "stderr":  "Traceback (most recent call last):\r\n  File \"S:\\tmp\\lpx-28jul-robust-043e7815f4dc4f9eb04815dc916e85ef\\scan.py\", line 310, in \u003cmodule\u003e\r\n    raise RuntimeError(\"Strong original-template voucher anchor not found in bounded search\")\r\nRuntimeError: Strong original-template voucher anchor not found in bounded search\r\n",
+    "activeIntegrity":  {
+                            "activeIntact":  true,
+                            "sniperHashUnchanged":  true,
+                            "maestroHashUnchanged":  true
+                        }
+}

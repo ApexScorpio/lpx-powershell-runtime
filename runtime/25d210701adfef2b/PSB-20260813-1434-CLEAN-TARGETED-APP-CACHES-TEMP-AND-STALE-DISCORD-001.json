@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260813-1434-CLEAN-TARGETED-APP-CACHES-TEMP-AND-STALE-DISCORD-001",
+  "conversationKey": "25d210701adfef2b",
+  "purpose": "Limpar caches temporários seguros e versão antiga do Discord se já estiver inativa",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-13T13:33:16.237Z",
+  "endedAt": "2026-08-13T13:33:18.329Z",
+  "elapsedMs": 2092,
+  "outputLength": 381,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fd98ca401008f9538cbad4d39213cfddda1d7fb17f24cfd1e89455fbc2262125",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/25d210701adfef2b/PSB-20260813-1434-CLEAN-TARGETED-APP-CACHES-TEMP-AND-STALE-DISCORD-001.txt",
+  "createdAt": "2026-08-13T13:33:18.332Z"
+}

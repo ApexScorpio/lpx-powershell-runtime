@@ -1,0 +1,66 @@
+{
+    "Protocol":  "LPX_TIMI68_INSTALL_ACTIVATION_DRYRUN_PRE_SUBMIT_WRAPPER_V1",
+    "JobId":  "PSB-20260816-1928-INSTALAR-DRYRUN-ATIVACAO-PRE-SUBMIT-001",
+    "Status":  "COMPLETED",
+    "ChildExitCode":  0,
+    "ChildStdout":  "{\"status\": \"COMPLETED\", \"verdict\": \"PATCH_KEPT_ACTIVATION_DRYRUN_PRE_SUBMIT_INSTALLED\", \"activation\": {\"path\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\Codigo TIMI - Ativa\\u00e7ao Site.py\", \"sha256_before\": \"443b74db8b90ffe1eb1c0a32c0c952438a1e2cdb9c53810ef658919c97c4748f\", \"marker_preexisting\": false, \"sha256_after\": \"690abd6ef0ab00abbb44404a6188d60a455b133b4bb2c30611499ea113dbf412\"}, \"patch\": {\"action\": \"INSTALLED\"}, \"checks\": {\"ast_valid\": true, \"marker_present\": true, \"default_false_present\": true, \"cli_switch_present\": true, \"cli_switch_stripped\": true, \"barrier_exit20\": true, \"barrier_message_present\": true, \"confirm_click_still_present\": true, \"barrier_before_confirm_click\": true, \"barrier_before_fallback\": true, \"exact_code_contract_preserved\": true, \"shift_failclosed_preserved\": true, \"shared_data_path_preserved\": true, \"normal_mode_default_safe\": true}, \"error_count\": 0}",
+    "ChildStderr":  "",
+    "Audit":  {
+                  "protocol":  "LPX_TIMI68_INSTALL_ACTIVATION_DRYRUN_PRE_SUBMIT_V1",
+                  "status":  "COMPLETED",
+                  "mapping":  {
+                                  "sniper":  "Codigo TIMI - BonChat.py",
+                                  "ativacao":  "Codigo TIMI - Ativa�ao Site.py",
+                                  "partilha":  "Partilha Codigo TImi - Whatsapp.py",
+                                  "busca_wa":  "Codigo TIMI - Whatsapp.py"
+                              },
+                  "activation":  {
+                                     "path":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - Ativa�ao Site.py",
+                                     "sha256_before":  "443b74db8b90ffe1eb1c0a32c0c952438a1e2cdb9c53810ef658919c97c4748f",
+                                     "marker_preexisting":  false,
+                                     "sha256_after":  "690abd6ef0ab00abbb44404a6188d60a455b133b4bb2c30611499ea113dbf412"
+                                 },
+                  "patch":  {
+                                "action":  "INSTALLED"
+                            },
+                  "checks":  {
+                                 "ast_valid":  true,
+                                 "marker_present":  true,
+                                 "default_false_present":  true,
+                                 "cli_switch_present":  true,
+                                 "cli_switch_stripped":  true,
+                                 "barrier_exit20":  true,
+                                 "barrier_message_present":  true,
+                                 "confirm_click_still_present":  true,
+                                 "barrier_before_confirm_click":  true,
+                                 "barrier_before_fallback":  true,
+                                 "exact_code_contract_preserved":  true,
+                                 "shift_failclosed_preserved":  true,
+                                 "shared_data_path_preserved":  true,
+                                 "normal_mode_default_safe":  true
+                             },
+                  "backup":  "S:\\tmp\\LPX-TIMI-INSTALL-ACTIVATION-DRYRUN-20260816-192545\\Codigo TIMI - Ativa�ao Site.py.bak",
+                  "errors":  [
+
+                             ],
+                  "verdict":  "PATCH_KEPT_ACTIVATION_DRYRUN_PRE_SUBMIT_INSTALLED"
+              },
+    "Verdict":  "PATCH_KEPT_ACTIVATION_DRYRUN_PRE_SUBMIT_INSTALLED",
+    "Safety":  {
+                   "AutomaticRollbackOnFailure":  true,
+                   "ActivatorSourceOnly":  true,
+                   "DryRunDefaultFalse":  true,
+                   "NormalProductionPathPreserved":  true,
+                   "ExistingExactCodeContractPreserved":  true,
+                   "NoBrowserLaunched":  true,
+                   "NoSiteAccessed":  true,
+                   "ActivatorNotExecuted":  true,
+                   "BicycleActivationExecuted":  false,
+                   "ConfirmClickExecuted":  false,
+                   "EnterFallbackExecuted":  false,
+                   "MaestroNotExecuted":  true,
+                   "ShareNotExecuted":  true,
+                   "WhatsAppMessageSent":  false,
+                   "ScheduledTasksModified":  false
+               }
+}

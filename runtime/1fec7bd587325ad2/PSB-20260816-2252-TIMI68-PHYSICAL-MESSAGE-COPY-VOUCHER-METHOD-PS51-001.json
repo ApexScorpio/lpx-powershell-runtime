@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-2252-TIMI68-PHYSICAL-MESSAGE-COPY-VOUCHER-METHOD-PS51-001",
+  "conversationKey": "1fec7bd587325ad2",
+  "purpose": "Copiar fisicamente mensagens com o método dos vouchers sem alterar o TIMI",
+  "status": "failed",
+  "exitCode": 40,
+  "startedAt": "2026-08-16T21:52:16.023Z",
+  "endedAt": "2026-08-16T21:52:43.715Z",
+  "elapsedMs": 27692,
+  "outputLength": 358,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "44ebde2290190914793deb2f95f091148070c4540163f47f9e55ff96d3dc08b0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1fec7bd587325ad2/PSB-20260816-2252-TIMI68-PHYSICAL-MESSAGE-COPY-VOUCHER-METHOD-PS51-001.txt",
+  "createdAt": "2026-08-16T21:52:43.718Z"
+}

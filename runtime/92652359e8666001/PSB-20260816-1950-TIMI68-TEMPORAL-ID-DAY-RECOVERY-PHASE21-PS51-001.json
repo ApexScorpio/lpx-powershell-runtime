@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1950-TIMI68-TEMPORAL-ID-DAY-RECOVERY-PHASE21-PS51-001",
+  "conversationKey": "92652359e8666001",
+  "purpose": "Recuperar datas por IDs temporais e finalizar documento de hoje",
+  "status": "failed",
+  "exitCode": 8,
+  "startedAt": "2026-08-16T18:52:47.546Z",
+  "endedAt": "2026-08-16T18:54:32.103Z",
+  "elapsedMs": 104557,
+  "outputLength": 788,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "541bbd0479a35cdf98fa9eb97aedfabaef95bc773a88880bfd1404efabff8e27",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/92652359e8666001/PSB-20260816-1950-TIMI68-TEMPORAL-ID-DAY-RECOVERY-PHASE21-PS51-001.txt",
+  "createdAt": "2026-08-16T18:54:32.108Z"
+}

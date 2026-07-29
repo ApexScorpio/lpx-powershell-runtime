@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-1359-FIX-LOGGING-SCAN-SEPARADOR-28JUL-DESDE-VOUCHER-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Corrigir logging e testar o separador exato de 28 de julho desde o voucher",
+  "status": "failed",
+  "exitCode": 252,
+  "startedAt": "2026-08-15T12:59:19.423Z",
+  "endedAt": "2026-08-15T13:01:32.822Z",
+  "elapsedMs": 133399,
+  "outputLength": 805,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "670ef8add828036fc5681dfa6689a1dcae3404e8f76c4c4564327e6be46f3fad",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-1359-FIX-LOGGING-SCAN-SEPARADOR-28JUL-DESDE-VOUCHER-001.txt",
+  "createdAt": "2026-08-15T13:01:32.825Z"
+}

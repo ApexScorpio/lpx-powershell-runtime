@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260815-1405-SCAN-DIRETO-SEPARADOR-28JUL-SEM-ANCHOR-001",
+  "conversationKey": "9b79ac38b7b80dc1",
+  "purpose": "Testar diretamente o separador exato de 28 de julho sem depender do anchor",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-15T13:03:51.349Z",
+  "endedAt": "2026-08-15T13:09:04.978Z",
+  "elapsedMs": 313629,
+  "outputLength": 201365,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "b268b88e5ada2c817c6f292499de713e91d3cc6a9faf0b844b8c50240e7ac4aa",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9b79ac38b7b80dc1/PSB-20260815-1405-SCAN-DIRETO-SEPARADOR-28JUL-SEM-ANCHOR-001.txt",
+  "createdAt": "2026-08-15T13:09:04.982Z"
+}

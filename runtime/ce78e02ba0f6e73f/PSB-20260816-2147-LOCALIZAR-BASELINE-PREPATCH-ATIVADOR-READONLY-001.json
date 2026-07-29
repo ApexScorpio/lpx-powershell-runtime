@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-2147-LOCALIZAR-BASELINE-PREPATCH-ATIVADOR-READONLY-001",
+  "conversationKey": "ce78e02ba0f6e73f",
+  "purpose": "Localizar baseline pré-patch em backups ou Git sem alterar nada",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T20:46:56.815Z",
+  "endedAt": "2026-08-16T20:47:34.186Z",
+  "elapsedMs": 37371,
+  "outputLength": 7008,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f3bc8927e7985955a813d7336d81c1e1ae09bda770666a77ce248b5d756b65eb",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/ce78e02ba0f6e73f/PSB-20260816-2147-LOCALIZAR-BASELINE-PREPATCH-ATIVADOR-READONLY-001.txt",
+  "createdAt": "2026-08-16T20:47:34.189Z"
+}

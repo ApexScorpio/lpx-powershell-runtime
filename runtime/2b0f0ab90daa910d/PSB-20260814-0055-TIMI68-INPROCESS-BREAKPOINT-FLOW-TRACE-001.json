@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260814-0055-TIMI68-INPROCESS-BREAKPOINT-FLOW-TRACE-001",
+  "conversationKey": "2b0f0ab90daa910d",
+  "purpose": "Medir o fluxo final do observer canonical com breakpoints sem modificar o ficheiro",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-13T23:55:10.492Z",
+  "endedAt": "2026-08-13T23:55:20.214Z",
+  "elapsedMs": 9722,
+  "outputLength": 1568,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9eb9d40e5db1612210f3f405bb1f4a12d55c7758532e6393555523356fa7a7ac",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/2b0f0ab90daa910d/PSB-20260814-0055-TIMI68-INPROCESS-BREAKPOINT-FLOW-TRACE-001.txt",
+  "createdAt": "2026-08-13T23:55:20.218Z"
+}

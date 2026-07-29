@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-2256-TIMI68-PHYSICAL-COPY-VALIDATE-AND-SEAL-PS51-001",
+  "conversationKey": "1fec7bd587325ad2",
+  "purpose": "Validar e selar a cópia física de Theodore e Marcia sem alterar o TIMI",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T21:55:06.969Z",
+  "endedAt": "2026-08-16T21:55:19.375Z",
+  "elapsedMs": 12406,
+  "outputLength": 552,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9423edce38347a9a052e0c2b2b7b72c86ca3a778f3116bf5920efed3069d101b",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1fec7bd587325ad2/PSB-20260816-2256-TIMI68-PHYSICAL-COPY-VALIDATE-AND-SEAL-PS51-001.txt",
+  "createdAt": "2026-08-16T21:55:19.378Z"
+}

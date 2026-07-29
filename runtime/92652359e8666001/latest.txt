@@ -1,0 +1,1 @@
+{"textFile":"TIMI68-Theodore-Marcia-Hoje-20260816-Final-20260816-200822.txt","marciaRows":1,"authoritativeRows":2,"unresolvedDate":0,"todayTotal":0,"htmlFile":"TIMI68-Theodore-Marcia-Hoje-20260816-Final-20260816-200822.html","date":"2026-08-16","theodoreRows":1,"status":"phase23-zero-document-created","opened":true}

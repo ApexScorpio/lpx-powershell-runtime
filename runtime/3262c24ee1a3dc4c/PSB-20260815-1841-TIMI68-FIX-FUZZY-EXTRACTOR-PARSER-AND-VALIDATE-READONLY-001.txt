@@ -1,0 +1,111 @@
+{
+    "JobId":  "PSB-20260815-1841-TIMI68-FIX-FUZZY-EXTRACTOR-PARSER-AND-VALIDATE-READONLY-001",
+    "Protocol":  "LPX_TIMI68_FIX_FUZZY_EXTRACTOR_PARSER_AND_VALIDATE_READONLY_V1",
+    "Status":  "COMPLETED_READONLY",
+    "Classification":  "CANONICAL_LANE_NEAR_MARCIA_TOKEN_EXISTS_BUT_DOES_NOT_FORM_VALID_FUZZY_MESSAGE_BLOCK",
+    "Coverage":  {
+                     "Ranges":  "33-36,37-80,81-140,141-200",
+                     "HistoricalTopPreviouslyProvenAtPosition":  156,
+                     "SearchScreenshotCount":  168,
+                     "OcrSucceededCount":  168
+                 },
+    "CandidateSummary":  {
+                             "CanonicalCandidateOccurrences":  2,
+                             "UniqueCandidateRows":  2,
+                             "FuzzyStructurallyValidCandidateRows":  0,
+                             "FuzzyValidBlockCount":  0,
+                             "ExactTheodoreBlockCount":  0
+                         },
+    "PerSourceSafeMetrics":  [
+                                 {
+                                     "Source":  "range-33-36",
+                                     "CanonicalCandidateOccurrences":  0,
+                                     "FuzzyValidBlockCount":  0,
+                                     "ExactTheodoreBlockCount":  0
+                                 },
+                                 {
+                                     "Source":  "range-37-80",
+                                     "CanonicalCandidateOccurrences":  0,
+                                     "FuzzyValidBlockCount":  0,
+                                     "ExactTheodoreBlockCount":  0
+                                 },
+                                 {
+                                     "Source":  "range-81-140",
+                                     "CanonicalCandidateOccurrences":  0,
+                                     "FuzzyValidBlockCount":  0,
+                                     "ExactTheodoreBlockCount":  0
+                                 },
+                                 {
+                                     "Source":  "range-141-200",
+                                     "CanonicalCandidateOccurrences":  2,
+                                     "FuzzyValidBlockCount":  0,
+                                     "ExactTheodoreBlockCount":  0
+                                 }
+                             ],
+    "CandidateSafeStructuralMetrics":  [
+                                           {
+                                               "Source":  "range-141-200",
+                                               "Position":  143,
+                                               "TokenEditDistance":  1,
+                                               "TokenLength":  5,
+                                               "JoinedWordCount":  1,
+                                               "XRatio":  0.4766,
+                                               "YRatio":  0.1952,
+                                               "RowFound":  true,
+                                               "RowWordCount":  1,
+                                               "RowTextLength":  5,
+                                               "RowNormalizedLength":  5,
+                                               "RowEditDistanceToMarcia":  1,
+                                               "RowMinXRatio":  0.4766,
+                                               "RowYRatio":  0.1952,
+                                               "ExactExtractorBlockCount":  0,
+                                               "ExactTheodoreBlockCount":  0,
+                                               "FuzzyExtractorBlockCount":  0,
+                                               "FuzzyMarciaValidBlockCount":  0,
+                                               "FuzzyStructurallyValid":  false,
+                                               "FuzzyContentLength":  null,
+                                               "FuzzyBodyRowCount":  null,
+                                               "FuzzyHeaderLeft":  null,
+                                               "FuzzyHeaderLaneMin":  null,
+                                               "FuzzyHeaderLaneMax":  null,
+                                               "FuzzyAuthorEditDistance":  null
+                                           },
+                                           {
+                                               "Source":  "range-141-200",
+                                               "Position":  163,
+                                               "TokenEditDistance":  2,
+                                               "TokenLength":  5,
+                                               "JoinedWordCount":  1,
+                                               "XRatio":  0.4766,
+                                               "YRatio":  0.4419,
+                                               "RowFound":  true,
+                                               "RowWordCount":  1,
+                                               "RowTextLength":  5,
+                                               "RowNormalizedLength":  5,
+                                               "RowEditDistanceToMarcia":  2,
+                                               "RowMinXRatio":  0.4766,
+                                               "RowYRatio":  0.4419,
+                                               "ExactExtractorBlockCount":  0,
+                                               "ExactTheodoreBlockCount":  0,
+                                               "FuzzyExtractorBlockCount":  0,
+                                               "FuzzyMarciaValidBlockCount":  0,
+                                               "FuzzyStructurallyValid":  false,
+                                               "FuzzyContentLength":  null,
+                                               "FuzzyBodyRowCount":  null,
+                                               "FuzzyHeaderLeft":  null,
+                                               "FuzzyHeaderLaneMin":  null,
+                                               "FuzzyHeaderLaneMax":  null,
+                                               "FuzzyAuthorEditDistance":  null
+                                           }
+                                       ],
+    "RawPrivateContentPublished":  false,
+    "BonChatWindowTouched":  false,
+    "BonChatTextInputOrSend":  false,
+    "NetworkTouched":  false,
+    "GitTouched":  false,
+    "RuntimeRepositoryTouched":  false,
+    "Wokege159Touched":  false,
+    "ScreenshotCount":  171,
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-1841-TIMI68-FIX-FUZZY-EXTRACTOR-PARSER-AND-VALIDATE-READONLY-001",
+    "Guardrails":  "READONLY OFFLINE ONLY. Re-OCRs existing saved TIMI68 search screenshots and validates only near-Marcia tokens already constrained to the canonical sender lane. The production extractor is not modified: a pure in-memory diagnostic clone changes only its isTarget predicate to accept Theodore exact or normalized Marcia edit-distance \u003c=2. No raw OCR token, author text, or message content is emitted; only edit distances, lengths, counts, source/position, geometry and structural block booleans are public. No BonChat/process/UI interaction, no network, no git/repository write. Every screenshot observation is immediately screenshotted."
+}

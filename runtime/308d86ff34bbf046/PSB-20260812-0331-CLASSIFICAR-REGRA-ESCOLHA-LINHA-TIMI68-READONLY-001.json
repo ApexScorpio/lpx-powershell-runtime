@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260812-0331-CLASSIFICAR-REGRA-ESCOLHA-LINHA-TIMI68-READONLY-001",
+  "conversationKey": "308d86ff34bbf046",
+  "purpose": "Classificar regra escolha linha TIMI68 readonly",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-12T02:30:01.165Z",
+  "endedAt": "2026-08-12T02:30:04.222Z",
+  "elapsedMs": 3057,
+  "outputLength": 0,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "34be7e3b82ed27f57bbd89a8c66df987986f5fd311dbe2643aeb06b386b23b6a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/308d86ff34bbf046/PSB-20260812-0331-CLASSIFICAR-REGRA-ESCOLHA-LINHA-TIMI68-READONLY-001.txt",
+  "createdAt": "2026-08-12T02:30:04.225Z"
+}

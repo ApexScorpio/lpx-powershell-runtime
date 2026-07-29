@@ -1,0 +1,61 @@
+{
+    "Protocol":  "LPX_TIMI68_CURRENT_MAESTRO_DECISION_READONLY_AUDIT_WRAPPER_V1",
+    "JobId":  "PSB-20260816-1924-SIMULAR-DECISAO-ATUAL-MAESTRO-DADOS-REAIS-READONLY-001",
+    "Status":  "COMPLETED",
+    "ChildExitCode":  0,
+    "ChildStdout":  "{\"status\": \"EXCEPTION\", \"verdict\": \"FAIL_CURRENT_DECISION_AUDIT\", \"current_decision\": {\"local_now\": \"2026-08-16T19:19:25.714058\", \"today\": \"2026-08-16\"}, \"share_resolution\": {}, \"history_today_count\": 0, \"voucher_count\": null, \"error_count\": 1}",
+    "ChildStderr":  "",
+    "Audit":  {
+                  "protocol":  "LPX_TIMI68_CURRENT_MAESTRO_DECISION_READONLY_AUDIT_V1",
+                  "status":  "EXCEPTION",
+                  "mapping":  {
+                                  "sniper":  "Codigo TIMI - BonChat.py",
+                                  "ativacao":  "Codigo TIMI - Ativa�ao Site.py",
+                                  "partilha":  "Partilha Codigo TImi - Whatsapp.py",
+                                  "busca_wa":  "Codigo TIMI - Whatsapp.py"
+                              },
+                  "paths":  {
+                                "history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                "history_exists":  true,
+                                "vouchers":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\VOUCHERS_CAPTURADOS",
+                                "vouchers_exists":  true
+                            },
+                  "maestro_actual_functions":  {
+
+                                               },
+                  "current_decision":  {
+                                           "local_now":  "2026-08-16T19:19:25.714058",
+                                           "today":  "2026-08-16"
+                                       },
+                  "share_resolution":  {
+
+                                       },
+                  "history_today":  [
+
+                                    ],
+                  "voucher_inventory":  {
+
+                                        },
+                  "errors":  [
+                                 "Traceback (most recent call last):\n  File \"S:\\tmp\\LPX-TIMI-MAESTRO-CURRENT-DECISION-20260816-191925\\audit.py\", line 143, in \u003cmodule\u003e\n    compile_functions(mtxt,candidate_names,ns)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"S:\\tmp\\LPX-TIMI-MAESTRO-CURRENT-DECISION-20260816-191925\\audit.py\", line 63, in compile_functions\n    exec(compile(mod,\"\u003cisolated-functions\u003e\",\"exec\"),namespace,namespace)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"\u003cisolated-functions\u003e\", line 203, in \u003cmodule\u003e\nNameError: name \u0027Optional\u0027 is not defined\n"
+                             ],
+                  "verdict":  "FAIL_CURRENT_DECISION_AUDIT"
+              },
+    "Verdict":  "FAIL_CURRENT_DECISION_AUDIT",
+    "Safety":  {
+                   "ProductionSourceModified":  false,
+                   "SharedHistoryReadOnly":  true,
+                   "VoucherDirectoryReadOnly":  true,
+                   "ExactMaestroDecisionFunctionsIsolated":  true,
+                   "ExactShareResolverIsolated":  true,
+                   "MaestroLoopExecuted":  false,
+                   "RunScriptExecuted":  false,
+                   "BonChatAccessed":  false,
+                   "BrowserLaunched":  false,
+                   "SiteAccessed":  false,
+                   "BicycleActivationExecuted":  false,
+                   "ShareExecuted":  false,
+                   "WhatsAppMessageSent":  false,
+                   "ScheduledTasksModified":  false
+               }
+}

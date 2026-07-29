@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-2254-TIMI68-TIMI-HASH-CHANGE-FORENSIC-READONLY-PS51-001",
+  "conversationKey": "1fec7bd587325ad2",
+  "purpose": "Identificar em readonly qual ficheiro TIMI mudou durante a cópia física",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T21:53:50.026Z",
+  "endedAt": "2026-08-16T21:53:55.017Z",
+  "elapsedMs": 4991,
+  "outputLength": 495,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "23d0fb2dd2afbd84a4082ed3a903ca1dbc6e07e328d029571c7e3ce2f6eea539",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1fec7bd587325ad2/PSB-20260816-2254-TIMI68-TIMI-HASH-CHANGE-FORENSIC-READONLY-PS51-001.txt",
+  "createdAt": "2026-08-16T21:53:55.021Z"
+}

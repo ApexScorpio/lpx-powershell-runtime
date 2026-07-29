@@ -1,0 +1,7 @@
+At S:\tmp\powershell-bridge-command-PSB-20260816-2249-EXECUTAR-ATIVADOR-REAL-CAPTURAR-SEQUENCIA-001.ps1:1 char:1
++ $ErrorActionPreference = 'Stop'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This script contains malicious content and has been blocked by your antivirus software.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ScriptContainedMaliciousContent
+ 

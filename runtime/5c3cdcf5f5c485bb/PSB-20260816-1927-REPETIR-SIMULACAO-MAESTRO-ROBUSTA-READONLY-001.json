@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1927-REPETIR-SIMULACAO-MAESTRO-ROBUSTA-READONLY-001",
+  "conversationKey": "5c3cdcf5f5c485bb",
+  "purpose": "Repetir simulação robusta da decisão atual do Maestro em readonly",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T18:21:15.310Z",
+  "endedAt": "2026-08-16T18:21:16.219Z",
+  "elapsedMs": 909,
+  "outputLength": 8317,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "71c3b3c7b5aad34d85d30d0a4e22e3b086f48a63542fa48fc9c799263e5df867",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/5c3cdcf5f5c485bb/PSB-20260816-1927-REPETIR-SIMULACAO-MAESTRO-ROBUSTA-READONLY-001.txt",
+  "createdAt": "2026-08-16T18:21:16.222Z"
+}

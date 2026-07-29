@@ -1,0 +1,49 @@
+{
+    "JobId":  "PSB-20260815-1901-TIMI68-PRIVATE-REPO-READ-TRANSPORT-DIAGNOSTIC-READONLY-001",
+    "Protocol":  "LPX_TIMI68_PRIVATE_REPO_READ_TRANSPORT_DIAGNOSTIC_READONLY_V1",
+    "Status":  "COMPLETED_READONLY",
+    "Classification":  "PRIOR_CLONE_FAILED_DUE_TO_WRAPPER_ARGUMENT_CONSTRUCTION_NOT_PRIVATE_REPO_AUTH",
+    "PriorClone":  {
+                       "Classification":  "GIT_USAGE_OR_ARGUMENT_PARSE",
+                       "StdoutLength":  2271,
+                       "StderrLength":  0,
+                       "RawOutputPrivateOnly":  true
+                   },
+    "SinkTransport":  {
+                          "CloneLikeCallCount":  1,
+                          "GitLikeCallCount":  9,
+                          "PrivateRepoLiteralCount":  1,
+                          "UsesHttps":  false,
+                          "UsesSsh":  false,
+                          "EmbeddedCredentialLiteral":  false,
+                          "HasMainBranchIndicator":  true,
+                          "ReferencesTokenOrCredentialMechanism":  false,
+                          "ReferencesGitTerminalPrompt":  false
+                      },
+    "LocalAuthShape":  {
+                           "GitHubTokenPresent":  false,
+                           "GhTokenPresent":  false,
+                           "GitAskPassPresent":  false,
+                           "CredentialHelperClass":  "GIT_CREDENTIAL_MANAGER"
+                       },
+    "ReadOnlyLsRemote":  {
+                             "ExitCode":  1,
+                             "Classification":  "GIT_USAGE_OR_ARGUMENT_PARSE",
+                             "StdoutLength":  2271,
+                             "StderrLength":  0,
+                             "RefLineCount":  39,
+                             "RawOutputPrivateOnly":  true
+                         },
+    "FilesModifiedOutsideEvidence":  false,
+    "BonChatTouched":  false,
+    "BonChatInputOrSend":  false,
+    "GitWriteAttempted":  false,
+    "GitCloneAttempted":  false,
+    "NetworkReadOnlyLsRemoteAttempted":  true,
+    "RuntimeRepositoryTouched":  false,
+    "Wokege159Touched":  false,
+    "RawPrivateContentPublished":  false,
+    "ScreenshotCount":  8,
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-1901-TIMI68-PRIVATE-REPO-READ-TRANSPORT-DIAGNOSTIC-READONLY-001",
+    "Guardrails":  "READONLY transport diagnosis. Reads only prior private diagnostic output and sink source locally, classifies error/auth shapes without exposing raw text, then performs only git ls-remote --heads against ApexScorpio/TIMI-68 with GIT_TERMINAL_PROMPT=0. No clone/add/commit/push, no repository mutation, no BonChat interaction, no token values, URLs with credentials, refs, private messages or raw git output are published. Every meaningful observation is immediately screenshotted."
+}

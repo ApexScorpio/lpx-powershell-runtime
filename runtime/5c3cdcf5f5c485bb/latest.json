@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-1928-INSTALAR-DRYRUN-ATIVACAO-PRE-SUBMIT-001",
+  "conversationKey": "5c3cdcf5f5c485bb",
+  "purpose": "Instalar dry-run da ativação antes do submit irreversível",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-16T18:25:45.033Z",
+  "endedAt": "2026-08-16T18:25:46.203Z",
+  "elapsedMs": 1170,
+  "outputLength": 4602,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9387d071eca6e0bc8238c60c2d3e61461cc632dad9e2670a646408992bdf27e8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/5c3cdcf5f5c485bb/PSB-20260816-1928-INSTALAR-DRYRUN-ATIVACAO-PRE-SUBMIT-001.txt",
+  "createdAt": "2026-08-16T18:25:46.207Z"
+}

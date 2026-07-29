@@ -1,0 +1,94 @@
+{
+    "Protocol":  "LPX_TIMI68_UNIFY_DOWNSTREAM_DATA_PATH_PATCH_WRAPPER_V1",
+    "JobId":  "PSB-20260816-1920-UNIFICAR-DATA-PATH-HISTORICO-E-VOUCHERS-DOWNSTREAM-001",
+    "Status":  "COMPLETED",
+    "ChildExitCode":  0,
+    "ChildStdout":  "{\"status\": \"COMPLETED\", \"verdict\": \"PATCH_KEPT_DOWNSTREAM_DATA_PATHS_UNIFIED\", \"migration\": {\"history\": \"COPIED_LEGACY_TO_SHARED_TARGET\", \"history_migrated\": true, \"target_history_sha256\": \"eed0b864895622d6b9ddd072b2414f3119e3a1eec446a191111216885ddc7dd4\", \"legacy_history_sha256_after\": \"eed0b864895622d6b9ddd072b2414f3119e3a1eec446a191111216885ddc7dd4\"}, \"checks\": {\"values\": {\"activation_marker\": true, \"share_marker\": true, \"activation_history_uses_timi_data_dir\": true, \"share_history_uses_timi_data_dir\": true, \"share_vouchers_uses_timi_data_dir\": true, \"activation_sys_path_preserved\": true, \"share_sys_path_preserved\": true, \"activation_exact_code_marker\": true, \"activation_shift_guard_marker\": true, \"share_exact_code_image_marker\": true, \"share_exit_marker\": true, \"maestro_exact_activation_handoff\": true, \"maestro_exact_share_handoff\": true, \"bonchat_binding_marker\": true, \"target_history_exists\": true, \"target_vouchers_exists\": true, \"asts_valid\": true, \"all_default_history_same\": true, \"all_default_vouchers_same\": true}, \"resolved_default\": {\"maestro_history\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\HISTORICO_CODIGOS_TIMI.txt\", \"bonchat_history\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\HISTORICO_CODIGOS_TIMI.txt\", \"activation_history\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\HISTORICO_CODIGOS_TIMI.txt\", \"share_history\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\HISTORICO_CODIGOS_TIMI.txt\", \"bonchat_vouchers\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\VOUCHERS_CAPTURADOS\", \"share_vouchers\": \"S:\\\\Users\\\\lopes\\\\Documents\\\\Scrips\\\\TIMI-ativador\\\\VOUCHERS_CAPTURADOS\"}, \"all_pass\": true}, \"error_count\": 0}",
+    "ChildStderr":  "",
+    "Audit":  {
+                  "protocol":  "LPX_TIMI68_UNIFY_DOWNSTREAM_DATA_PATH_PATCH_V1",
+                  "status":  "COMPLETED",
+                  "mapping":  {
+                                  "sniper":  "Codigo TIMI - BonChat.py",
+                                  "ativacao":  "Codigo TIMI - Ativa�ao Site.py",
+                                  "partilha":  "Partilha Codigo TImi - Whatsapp.py",
+                                  "busca_wa":  "Codigo TIMI - Whatsapp.py"
+                              },
+                  "paths_before":  {
+                                       "target_data":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador",
+                                       "target_history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                       "target_history_exists":  false,
+                                       "target_vouchers":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\VOUCHERS_CAPTURADOS",
+                                       "target_vouchers_exists":  true,
+                                       "legacy_sys":  "s:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO",
+                                       "legacy_history":  "s:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\HISTORICO_CODIGOS_TIMI.txt",
+                                       "legacy_history_exists":  true,
+                                       "legacy_history_sha256":  "eed0b864895622d6b9ddd072b2414f3119e3a1eec446a191111216885ddc7dd4",
+                                       "legacy_vouchers":  "s:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\VOUCHERS_CAPTURADOS",
+                                       "legacy_vouchers_exists":  true
+                                   },
+                  "migration":  {
+                                    "history":  "COPIED_LEGACY_TO_SHARED_TARGET",
+                                    "history_migrated":  true,
+                                    "target_history_sha256":  "eed0b864895622d6b9ddd072b2414f3119e3a1eec446a191111216885ddc7dd4",
+                                    "legacy_history_sha256_after":  "eed0b864895622d6b9ddd072b2414f3119e3a1eec446a191111216885ddc7dd4"
+                                },
+                  "backups":  {
+                                  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - Ativa�ao Site.py":  "S:\\tmp\\LPX-TIMI-UNIFY-DATA-PATH-20260816-191723\\Codigo TIMI - Ativa�ao Site.py.bak",
+                                  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Partilha Codigo TImi - Whatsapp.py":  "S:\\tmp\\LPX-TIMI-UNIFY-DATA-PATH-20260816-191723\\Partilha Codigo TImi - Whatsapp.py.bak"
+                              },
+                  "checks":  {
+                                 "values":  {
+                                                "activation_marker":  true,
+                                                "share_marker":  true,
+                                                "activation_history_uses_timi_data_dir":  true,
+                                                "share_history_uses_timi_data_dir":  true,
+                                                "share_vouchers_uses_timi_data_dir":  true,
+                                                "activation_sys_path_preserved":  true,
+                                                "share_sys_path_preserved":  true,
+                                                "activation_exact_code_marker":  true,
+                                                "activation_shift_guard_marker":  true,
+                                                "share_exact_code_image_marker":  true,
+                                                "share_exit_marker":  true,
+                                                "maestro_exact_activation_handoff":  true,
+                                                "maestro_exact_share_handoff":  true,
+                                                "bonchat_binding_marker":  true,
+                                                "target_history_exists":  true,
+                                                "target_vouchers_exists":  true,
+                                                "asts_valid":  true,
+                                                "all_default_history_same":  true,
+                                                "all_default_vouchers_same":  true
+                                            },
+                                 "resolved_default":  {
+                                                          "maestro_history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                                          "bonchat_history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                                          "activation_history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                                          "share_history":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\HISTORICO_CODIGOS_TIMI.txt",
+                                                          "bonchat_vouchers":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\VOUCHERS_CAPTURADOS",
+                                                          "share_vouchers":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\VOUCHERS_CAPTURADOS"
+                                                      },
+                                 "all_pass":  true
+                             },
+                  "errors":  [
+
+                             ],
+                  "verdict":  "PATCH_KEPT_DOWNSTREAM_DATA_PATHS_UNIFIED"
+              },
+    "Verdict":  "PATCH_KEPT_DOWNSTREAM_DATA_PATHS_UNIFIED",
+    "Safety":  {
+                   "AutomaticRollbackOnFailure":  true,
+                   "OnlyActivationAndShareDataPathsModified":  true,
+                   "LegacySysPathPreservedForConfigAndLogs":  true,
+                   "ExistingTargetHistoryNeverOverwritten":  true,
+                   "LegacyHistoryCopiedOnlyIfTargetMissing":  true,
+                   "LegacyVoucherDirectoryNotBulkCopied":  true,
+                   "BonChatNotExecuted":  true,
+                   "MaestroNotExecuted":  true,
+                   "ActivatorNotExecuted":  true,
+                   "ShareNotExecuted":  true,
+                   "BrowserLaunched":  false,
+                   "BicycleActivationExecuted":  false,
+                   "WhatsAppMessageSent":  false,
+                   "ScheduledTasksModified":  false
+               }
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260814-0125-FIX-HOME-ANTIGRAVITY-RECLAIMABILITY-AUDIT-001",
+  "conversationKey": "9af49741c60fc1d4",
+  "purpose": "Corrigir auditoria do Antigravity/subagent e determinar espaço recuperável sem alterar nada",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-14T00:25:15.598Z",
+  "endedAt": "2026-08-14T00:25:58.667Z",
+  "elapsedMs": 43069,
+  "outputLength": 398,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "4d14369d65d03117b8f748f7c2a0606a534fa5ffb2d92ef377f2d5b04c60d416",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/9af49741c60fc1d4/PSB-20260814-0125-FIX-HOME-ANTIGRAVITY-RECLAIMABILITY-AUDIT-001.txt",
+  "createdAt": "2026-08-14T00:25:58.669Z"
+}

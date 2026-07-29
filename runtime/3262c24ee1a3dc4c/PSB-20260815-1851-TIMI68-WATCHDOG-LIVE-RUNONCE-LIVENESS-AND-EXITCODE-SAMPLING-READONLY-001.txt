@@ -1,0 +1,49 @@
+{
+    "JobId":  "PSB-20260815-1851-TIMI68-WATCHDOG-LIVE-RUNONCE-LIVENESS-AND-EXITCODE-SAMPLING-READONLY-001",
+    "Protocol":  "LPX_TIMI68_WATCHDOG_LIVE_RUNONCE_LIVENESS_AND_EXITCODE_SAMPLING_READONLY_V1",
+    "Status":  "COMPLETED_READONLY",
+    "Classification":  "WATCHDOG_LIVE_RUNONCE_CHILD_OBSERVED_AND_EXITED_ZERO",
+    "Watchdog":  {
+                     "ProcessCount":  1,
+                     "AgeSeconds":  null,
+                     "MentionsRunOnce":  true,
+                     "MentionsGitHubCandidate":  true,
+                     "StartSleepSeconds":  [
+                                               15,
+                                               15
+                                           ],
+                     "StartSleepMilliseconds":  [
+                                                    250
+                                                ],
+                     "MaxStaticSleepSeconds":  15
+                 },
+    "Sampling":  {
+                     "WindowSeconds":  2.91,
+                     "SampleCount":  3,
+                     "DirectChildSeen":  true,
+                     "ObserverChildObserved":  true,
+                     "ObserverLeafMatched":  true,
+                     "RunOnceConfirmed":  true,
+                     "FirstSeenAfterMilliseconds":  1003,
+                     "ExitKnown":  true,
+                     "ExitCode":  0,
+                     "ExpectedCadenceCovered":  false
+                 },
+    "FilesModified":  false,
+    "ProcessesStarted":  false,
+    "ProcessesStopped":  false,
+    "ObserverModified":  false,
+    "WatchdogModified":  false,
+    "BonChatTouched":  false,
+    "BonChatInputOrSend":  false,
+    "NetworkTouched":  false,
+    "GitTouched":  false,
+    "RuntimeRepositoryTouched":  false,
+    "Wokege159Touched":  false,
+    "ProcessIdsOutput":  false,
+    "CommandLinesOutput":  false,
+    "RawPrivateContentPublished":  false,
+    "ScreenshotCount":  7,
+    "EvidenceDirectory":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Automation\\TIMI68-Theodore-Marcia-Observer\\Evidence\\PSB-20260815-1851-TIMI68-WATCHDOG-LIVE-RUNONCE-LIVENESS-AND-EXITCODE-SAMPLING-READONLY-001",
+    "Guardrails":  "READONLY passive watchdog liveness sampling only. Does not start/stop/attach/debug any process and does not invoke the observer. Samples the already-running watchdog for a transient direct observer child, confirms only structural command-line tokens without publishing command lines or PIDs, and if the child remains alive long enough reads its normal exit code. No BonChat interaction, no network, no git/repository write. State-change observations and periodic sampling checkpoints are immediately screenshotted."
+}

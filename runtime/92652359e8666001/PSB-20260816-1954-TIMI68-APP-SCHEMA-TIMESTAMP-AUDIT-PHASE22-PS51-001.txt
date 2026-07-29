@@ -1,0 +1,1 @@
+{"status":"phase22-app-schema-audit","scannedFiles":500,"indexedDbFiles":8,"messageSchemaFiles":493,"timeSchemaFiles":437,"linkedFiles":437,"highConfidenceMappings":23,"wireFields":150,"diagnosticFile":"TIMI68-App-Schema-Phase22-20260816-195855.json","elapsedSeconds":9}

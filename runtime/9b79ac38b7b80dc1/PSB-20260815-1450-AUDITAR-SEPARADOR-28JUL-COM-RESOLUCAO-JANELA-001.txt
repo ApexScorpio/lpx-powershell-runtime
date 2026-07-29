@@ -1,0 +1,27 @@
+{
+    "protocol":  "LPX_TIMI68_WINDOW_RESOLUTION_AUDIT_V1",
+    "jobId":  "PSB-20260815-1450-AUDITAR-SEPARADOR-28JUL-COM-RESOLUCAO-JANELA-001",
+    "status":  "NO_BONCHAT_WINDOW",
+    "selectorResults":  {
+                            "backup28Jul":  {
+                                                "available":  true,
+                                                "hwnd":  null,
+                                                "valid":  false
+                                            },
+                            "active":  {
+                                           "available":  true,
+                                           "hwnd":  null,
+                                           "valid":  false
+                                       }
+                        },
+    "enumeratedBonChatCandidates":  [
+
+                                    ],
+    "activeSha256":  "6384EC1E10115A343554B2295C75C9C6B4666C1476EEC9315EF409B92AE5090C",
+    "backupSha256":  "3FDD74CE5AA0B8A5ED597D7E9943C75686654F3C108CA9069572ED545F4BE3C0",
+    "activeIntegrity":  {
+                            "activeIntact":  true,
+                            "sniperHashUnchanged":  true,
+                            "maestroHashUnchanged":  true
+                        }
+}

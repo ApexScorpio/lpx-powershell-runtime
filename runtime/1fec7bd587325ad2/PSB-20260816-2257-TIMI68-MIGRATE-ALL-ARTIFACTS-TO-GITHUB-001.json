@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260816-2257-TIMI68-MIGRATE-ALL-ARTIFACTS-TO-GITHUB-001",
+  "conversationKey": "1fec7bd587325ad2",
+  "purpose": "Migrar todos os artefactos TIMI68 para o GitHub ApexScorpio e remover as cópias locais",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-16T21:59:24.942Z",
+  "endedAt": "2026-08-16T21:59:25.448Z",
+  "elapsedMs": 506,
+  "outputLength": 652,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "509cbcf7038e1ad40893115c644b3af213b4acf81842b7c32562eaf2e539c6ee",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/1fec7bd587325ad2/PSB-20260816-2257-TIMI68-MIGRATE-ALL-ARTIFACTS-TO-GITHUB-001.txt",
+  "createdAt": "2026-08-16T21:59:25.451Z"
+}
