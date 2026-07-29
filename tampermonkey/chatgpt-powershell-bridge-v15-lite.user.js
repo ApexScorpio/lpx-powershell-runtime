@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.10
+// @version      2026.07.29.15.3.11
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.10';
+    const VERSION = '15.3.11';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -36,7 +36,7 @@
     const PROMPT_SENT_PREFIX = 'lpxPsb15:protocolPrompt:';
     const PANEL_GEOMETRY_KEY = 'lpxPsb15:panelGeometry';
     const PANEL_COLLAPSED_KEY = 'lpxPsb15:panelCollapsed';
-    const CLAIM_TTL_MS = 30 * 60 * 1000;
+    const CLAIM_TTL_MS = 2 * 60 * 1000;
     const POLL_MS = 750;
     const SETTLE_MS = 900;
     const PUBLISH_WAIT_MS = 90 * 1000;
@@ -205,16 +205,33 @@
     function claim(id) {
         const claims = cleanClaims();
         const existing = claims[id];
+        const now = Date.now();
 
         if (existing) {
-            return false;
+            const sameConversation =
+                existing.conversation ===
+                conversationId();
+
+            const claimedAt =
+                Number(existing.claimedAt || 0);
+
+            const recent =
+                claimedAt > 0 &&
+                now - claimedAt < 30 * 1000;
+
+            if (!sameConversation || recent) {
+                return false;
+            }
+
+            delete claims[id];
         }
 
         claims[id] = {
             tabId: TAB_ID,
             instanceId: INSTANCE_ID,
             conversation: conversationId(),
-            expiresAt: Date.now() + CLAIM_TTL_MS
+            claimedAt: now,
+            expiresAt: now + CLAIM_TTL_MS
         };
 
         GM_setValue(CLAIMS_KEY, claims);
@@ -276,7 +293,7 @@
             'REGRAS OBRIGATÓRIAS:',
             '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
-            '2A. Não inventes nem reutilizes fileId. Omite-o, salvo se existir um asset_pointer explícito da própria conversa.',
+            '2A. Inclui fileId apenas quando a plataforma fornecer explicitamente o identificador do anexo desta mensagem; nunca o inventes nem reutilizes.',
             '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
             '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
             '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
@@ -1784,16 +1801,22 @@
     }
 
     function findAttachmentControls(assistant, fileName) {
-        const wanted = String(fileName || '').trim().toLowerCase();
-        const roots = [
-            turnContainer(assistant),
-            assistant,
-            document
-        ].filter(Boolean);
+        const wanted = String(fileName || '')
+            .trim()
+            .toLowerCase();
+
+        const turn = turnContainer(assistant);
+
+        if (
+            !wanted ||
+            !(turn instanceof Element)
+        ) {
+            return [];
+        }
 
         const selector = [
-            'button',
             'a[href]',
+            'button',
             '[role="button"]',
             '[tabindex]',
             '[data-testid*="download"]',
@@ -1805,29 +1828,55 @@
         const seen = new Set();
 
         function add(node, priority = 0) {
-            if (!(node instanceof HTMLElement) || seen.has(node)) {
+            if (
+                !(node instanceof HTMLElement) ||
+                seen.has(node) ||
+                !turn.contains(node) ||
+                node.closest('pre, code')
+            ) {
+                return;
+            }
+
+            const label =
+                attachmentControlLabel(node);
+
+            if (!label.includes(wanted)) {
                 return;
             }
 
             seen.add(node);
 
-            const label = attachmentControlLabel(node);
-            let score = priority;
+            const href = String(
+                node.getAttribute('href') || ''
+            ).trim();
 
-            if (wanted && label.includes(wanted)) {
-                score += 200;
+            let score = priority + 500;
+
+            if (/^sandbox:/i.test(href)) {
+                score += 2000;
             }
 
-            if (node.matches('button, a[href], [role="button"]')) {
-                score += 80;
+            if (node.matches('a[href]')) {
+                score += 900;
             }
 
-            if (/download|descarregar|transferir|attachment|anexo|file|ficheiro/.test(label)) {
-                score += 50;
+            if (
+                node.matches(
+                    'button, [role="button"]'
+                )
+            ) {
+                score += 500;
             }
 
-            if (node.hasAttribute('data-testid')) {
-                score += 20;
+            if (node.hasAttribute('download')) {
+                score += 700;
+            }
+
+            if (
+                /download|descarregar|transferir|attachment|anexo|file|ficheiro/
+                    .test(label)
+            ) {
+                score += 250;
             }
 
             found.push({
@@ -1836,54 +1885,20 @@
             });
         }
 
-        for (const root of roots) {
-            const textNodes = [...root.querySelectorAll('*')].filter(node => {
-                if (node.closest('pre, code')) {
-                    return false;
-                }
-
-                const text = String(node.textContent || '')
-                    .replace(/\s+/g, ' ')
-                    .trim()
-                    .toLowerCase();
-
-                return wanted && text.includes(wanted);
-            });
-
-            for (const textNode of textNodes) {
-                add(textNode, 120);
-
-                let current = textNode;
-
-                for (
-                    let depth = 0;
-                    current && depth < 9;
-                    depth++, current = current.parentElement
-                ) {
-                    add(current, 110 - depth * 7);
-
-                    for (const control of current.querySelectorAll(selector)) {
-                        add(control, 100 - depth * 5);
-                    }
-                }
-            }
-        }
-
-        for (const control of document.querySelectorAll(selector)) {
-            const label = attachmentControlLabel(control);
-
-            if (
-                (wanted && label.includes(wanted)) ||
-                /download|descarregar|transferir/.test(label)
-            ) {
-                add(control, 30);
-            }
+        for (
+            const control of
+            turn.querySelectorAll(selector)
+        ) {
+            add(control, 200);
         }
 
         return found
-            .sort((left, right) => right.score - left.score)
+            .sort(
+                (left, right) =>
+                    right.score - left.score
+            )
             .map(entry => entry.node)
-            .slice(0, 16);
+            .slice(0, 6);
     }
 
     function invokeReactAttachmentClick(control) {
@@ -2596,6 +2611,15 @@
             }
         }
 
+        if (suppliedFileId) {
+            add(
+                suppliedFileId,
+                20000,
+                'manifest.fileId',
+                fileName + ' ' + jobId
+            );
+        }
+
         const hasConversationMapping =
             Boolean(
                 root &&
@@ -3212,10 +3236,21 @@
                     }
                 }
 
+                if (!command && fileId) {
+                    throw new Error(
+                        'O fileId explícito não devolveu um ficheiro PowerShell válido. Diagnóstico: ' +
+                        (
+                            lastAttachmentDiagnostic ||
+                            'indisponível'
+                        ) +
+                        '.'
+                    );
+                }
+
                 if (!command) {
                     setStatus(
                         'A resolução direta não encontrou o conteúdo. ' +
-                        'A acionar o cartão do anexo e a usar o watcher local…'
+                        'A acionar apenas o cartão exato do anexo…'
                     );
 
                     await queueDownloadedFileJob(
