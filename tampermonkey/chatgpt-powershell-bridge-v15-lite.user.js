@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.11
+// @version      2026.07.29.15.3.12
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
+// @noframes
 // @run-at       document-idle
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -25,7 +26,12 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.11';
+    if (window.top !== window.self) {
+        return;
+    }
+
+
+    const VERSION = '15.3.12';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -112,15 +118,47 @@
         startupClaims &&
         typeof startupClaims === 'object'
     ) {
+        const startupConversation =
+            conversationId();
+
+        const startupNow =
+            Date.now();
+
         let claimsChanged = false;
 
         for (
             const [jobId, claimValue] of
             Object.entries(startupClaims)
         ) {
+            if (!claimValue) {
+                delete startupClaims[jobId];
+                claimsChanged = true;
+                continue;
+            }
+
+            const sameTab =
+                claimValue.tabId === TAB_ID;
+
+            const sameConversation =
+                claimValue.conversation ===
+                startupConversation;
+
+            const claimedAt =
+                Number(
+                    claimValue.claimedAt || 0
+                );
+
+            const orphanedSameConversation =
+                sameConversation &&
+                (
+                    claimedAt <= 0 ||
+                    startupNow - claimedAt >
+                        5000
+                );
+
             if (
-                claimValue &&
-                claimValue.tabId === TAB_ID
+                sameTab ||
+                orphanedSameConversation
             ) {
                 delete startupClaims[jobId];
                 claimsChanged = true;
