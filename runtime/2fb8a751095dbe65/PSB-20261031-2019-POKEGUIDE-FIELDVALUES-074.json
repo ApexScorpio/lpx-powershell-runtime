@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2019-POKEGUIDE-FIELDVALUES-074",
+  "conversationKey": "2fb8a751095dbe65",
+  "purpose": "Certificar valores exatos dos objetos diferentes nos mapas 226 e 227",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T20:20:07.760Z",
+  "endedAt": "2026-10-31T20:20:57.731Z",
+  "elapsedMs": 49971,
+  "outputLength": 5430,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "14b3bcedc4429e692a21c1b82fff5ecafbd1bd2506d830f68125976240de85bd",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/2fb8a751095dbe65/PSB-20261031-2019-POKEGUIDE-FIELDVALUES-074.txt",
+  "createdAt": "2026-10-31T20:20:57.733Z"
+}

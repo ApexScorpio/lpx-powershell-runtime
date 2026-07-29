@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0410-FISCALGUARD-COVERAGE-061",
+  "conversationKey": "3358517fee04bdb8",
+  "purpose": "Analisar amostras HTML do snapshot DPAPI ja existente, sem login, SSH ou recolha AT",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T04:10:59.116Z",
+  "endedAt": "2026-10-31T04:11:07.755Z",
+  "elapsedMs": 8639,
+  "outputLength": 2475,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f19b6e5c414065bd1a3e991009de1b469bec4c464a3a03dcb6b53f8fd6eef4b7",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3358517fee04bdb8/PSB-20261031-0410-FISCALGUARD-COVERAGE-061.txt",
+  "createdAt": "2026-10-31T04:11:07.756Z"
+}

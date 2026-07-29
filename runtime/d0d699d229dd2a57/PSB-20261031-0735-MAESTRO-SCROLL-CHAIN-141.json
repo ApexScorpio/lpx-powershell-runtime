@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0735-MAESTRO-SCROLL-CHAIN-141",
+  "conversationKey": "d0d699d229dd2a57",
+  "purpose": "Validar a cadeia real de scroll do BonChat e o contrato de evidencia visual, alterando apenas testes.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T07:35:56.080Z",
+  "endedAt": "2026-10-31T07:35:58.193Z",
+  "elapsedMs": 2113,
+  "outputLength": 5438,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "d67699db54f746bb8f62f5e85329f04af22e8f4267ec3b6080bb35d9427c4237",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d0d699d229dd2a57/PSB-20261031-0735-MAESTRO-SCROLL-CHAIN-141.txt",
+  "createdAt": "2026-10-31T07:35:58.195Z"
+}

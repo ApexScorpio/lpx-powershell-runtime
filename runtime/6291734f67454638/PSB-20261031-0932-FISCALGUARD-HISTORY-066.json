@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0932-FISCALGUARD-HISTORY-066",
+  "conversationKey": "6291734f67454638",
+  "purpose": "Auditar historico DPAPI e localizar snapshots com diagnosticos e pares DT/DD, sem login ou recolha AT",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T09:33:27.234Z",
+  "endedAt": "2026-10-31T09:33:35.740Z",
+  "elapsedMs": 8506,
+  "outputLength": 2213,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f3b351559dcefef984648cac2bc0057418ca281124a55b6c86d7497c2a676061",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6291734f67454638/PSB-20261031-0932-FISCALGUARD-HISTORY-066.txt",
+  "createdAt": "2026-10-31T09:33:35.742Z"
+}

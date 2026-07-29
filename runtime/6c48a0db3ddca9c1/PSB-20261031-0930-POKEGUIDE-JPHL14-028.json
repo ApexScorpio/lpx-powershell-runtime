@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0930-POKEGUIDE-JPHL14-028",
+  "conversationKey": "6c48a0db3ddca9c1",
+  "purpose": "Validar os destinos indirectos ROM0, as 3 ROMs reais e as suites Node.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T09:26:44.606Z",
+  "endedAt": "2026-10-31T09:27:20.297Z",
+  "elapsedMs": 35691,
+  "outputLength": 3623,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "75efaf90f87aa524bd02c914f7f1bf68ae0dd76aaa6fcf2d2e4a0280157245e8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6c48a0db3ddca9c1/PSB-20261031-0930-POKEGUIDE-JPHL14-028.txt",
+  "createdAt": "2026-10-31T09:27:20.299Z"
+}

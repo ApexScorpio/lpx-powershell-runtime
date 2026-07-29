@@ -1,0 +1,36 @@
+{
+    "Protocol":  "LPX_BONCHAT_CANDIDATE_EXTRACTOR_KNOWNGOOD_CAPTURE_READONLY_V1",
+    "JobId":  "PSB-20260810-2134-BONCHAT-CANDIDATE-EXTRACTOR-KNOWNGOOD-CAPTURE-V2-READONLY-001",
+    "Status":  "SUCCEEDED",
+    "Capture":  {
+                    "Hwnd":  2232646,
+                    "Width":  940,
+                    "Height":  620,
+                    "OcrChars":  659,
+                    "OcrLines":  45,
+                    "OcrWords":  100,
+                    "Timi68Visible":  true
+                },
+    "CandidateAuthors":  [
+                             {
+                                 "Text":  "Theodore",
+                                 "Left":  120,
+                                 "Top":  601,
+                                 "Line":  23
+                             }
+                         ],
+    "ExtractedBlocks":  [
+
+                        ],
+    "Counts":  {
+                   "Authors":  1,
+                   "Blocks":  0,
+                   "NonEmptyBlocks":  0
+               },
+    "Safety":  {
+                   "CandidateModified":  false,
+                   "ObserverInvoked":  false,
+                   "BonChatInputTouched":  false,
+                   "ProductionTouched":  false
+               }
+}

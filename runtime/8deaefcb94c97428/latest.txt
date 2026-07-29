@@ -1,0 +1,40 @@
+============================================================
+ TITAN - FIXTURES REAIS GUARDADOS NAS PALETAS CFX
+ MODO APENAS LEITURA
+============================================================
+Titan=19.2
+Show="Tiago F Sardinha 2026"
+
+[1/4] Medir os grupos de refer�ncia
+Grupo 10000 / All Blinders=12
+Grupo 20000 / ALL Rig=108
+
+[2/4] Localizar as paletas pelos handles reais
+Paleta 1 | N�O LOCALIZADA
+Paleta 2 | N�O LOCALIZADA
+Paleta 3 | N�O LOCALIZADA
+Paleta 4 | N�O LOCALIZADA
+Paleta 5 | N�O LOCALIZADA
+Paleta 6 | N�O LOCALIZADA
+Paleta 7 | N�O LOCALIZADA
+Paleta 8 | N�O LOCALIZADA
+Paleta 9 | N�O LOCALIZADA
+Paleta 10 | N�O LOCALIZADA
+Paleta 11 | N�O LOCALIZADA
+Paleta 12 | N�O LOCALIZADA
+Paleta 901 | N�O LOCALIZADA
+Paleta 902 | N�O LOCALIZADA
+
+[3/4] Abrir cada paleta por TitanId e ler toda a sele��o
+
+[4/4] Determinar a cobertura das paletas CFX 901 e 902
+============================================================
+ RESULTADO FINAL
+ Paleta 901 fixtures reais=N�O LOCALIZADA
+ Paleta 901 � exatamente All Blinders=False
+ Paleta 901 � exatamente ALL Rig=False
+ Paleta 902 fixtures reais=N�O LOCALIZADA
+ Paleta 902 � exatamente All Blinders=False
+ Paleta 902 � exatamente ALL Rig=False
+ Nenhuma macro, paleta, grupo, show ou ficheiro foi alterado.
+============================================================

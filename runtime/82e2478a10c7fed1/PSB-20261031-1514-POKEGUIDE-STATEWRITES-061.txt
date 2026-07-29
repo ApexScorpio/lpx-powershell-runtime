@@ -1,0 +1,31 @@
+============================================================
+POKEGUIDE - MAPEAMENTO COMPLETO DAS ROMS
+JOB_BEGIN=PSB-20261031-1514-POKEGUIDE-STATEWRITES-061
+MODE=STATIC_SCRIPT_STATE_OPERANDS
+ROM_VARIANTS=RED_BLUE_GREEN
+EXPECTED_READ_CANDIDATES=2_PER_ROM
+EXPECTED_WRITE_CANDIDATES=9_PER_ROM
+ROM_AND_SAVES=READ_ONLY
+MAIN_AND_RUNNING_POKEGUIDE=UNTOUCHED
+RETROARCH=NO_CONTACT_NO_RESTART
+ANTIGRAVITY_SESSIONS_TOKENS_BACKUPS=UNTOUCHED
+TIMI_MAESTRO_BONCHAT_CODEX=UNTOUCHED
+TEMP_FILES=D_ONLY
+HISTORY=APPEND_ONLY
+SCREENSHOTS=HEADLESS_NO_GUI_ACTIONS
+STEP_BEGIN=CLONE
+JOB_ERROR=Cannot validate argument on parameter 'ArgumentList'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.
+EXCLUSIVE_TEMP_CLEANED=TRUE
+RESULTADO=FAILED
+JOB_END=PSB-20261031-1514-POKEGUIDE-STATEWRITES-061
+FIM - POKEGUIDE - MAPEAMENTO COMPLETO DAS ROMS
+============================================================
+CLIPBOARD=COPIADO
+Start-Process : Cannot validate argument on parameter 'ArgumentList'. The argument is null or empty. Provide an 
+argument that is not null or empty, and then try the command again.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-1514-POKEGUIDE-STATEWRITES-061.ps1:39 char:53
++     $P = Start-Process -FilePath $Exe -ArgumentList $Args `
++                                                     ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Start-Process], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.StartProcessCommand
+ 

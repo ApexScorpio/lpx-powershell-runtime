@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-1451-POKEGUIDE-SCRIPTRAM-060",
+  "conversationKey": "82e2478a10c7fed1",
+  "purpose": "Repetir a certificacao T101 apos erro de sintaxe do job 059",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T15:05:41.689Z",
+  "endedAt": "2026-10-31T15:06:33.417Z",
+  "elapsedMs": 51728,
+  "outputLength": 3431,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "5f6c068d94621ba0484261a31e25255c8c456f589f0d10c700333630cba4a6fe",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/82e2478a10c7fed1/PSB-20261031-1451-POKEGUIDE-SCRIPTRAM-060.txt",
+  "createdAt": "2026-10-31T15:06:33.482Z"
+}

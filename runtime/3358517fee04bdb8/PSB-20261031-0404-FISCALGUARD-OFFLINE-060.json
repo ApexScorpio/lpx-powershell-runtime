@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0404-FISCALGUARD-OFFLINE-060",
+  "conversationKey": "3358517fee04bdb8",
+  "purpose": "Recuperar as seis metricas HTTP do snapshot DPAPI ja recolhido, sem login nem nova consulta AT",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T04:05:14.923Z",
+  "endedAt": "2026-10-31T04:05:22.884Z",
+  "elapsedMs": 7961,
+  "outputLength": 7249,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "71a957d5408530ac816c480411636240bc90eb1dcda5c2fbebb50dc2949e5dc8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/3358517fee04bdb8/PSB-20261031-0404-FISCALGUARD-OFFLINE-060.txt",
+  "createdAt": "2026-10-31T04:05:22.886Z"
+}

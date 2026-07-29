@@ -1,0 +1,33 @@
+From https://github.com/ApexScorpio/pokemon-red-telemetry
+ * branch            feature/pokeguide-world-action-tracker-20261028 -> FETCH_HEAD
+   31b213a..1f54733  feature/pokeguide-world-action-tracker-20261028 -> origin/feature/pokeguide-world-action-tracker-20261028
+===== POKEGUIDE - DIAGNOSTICO ROM0 =====
+JOB_BEGIN=PSB-20261030-1419-POKEGUIDE-ROM0DIAG-002
+REVISAO=1f5473393e856477cb404a5d64e97940ea8a8028
+===== POKEGUIDE - MANIFESTO - CERTIFICACAO ASM626 =====
+JOB_BEGIN=PSB-20261030-1419-POKEGUIDE-ROM0DIAG-002
+STEP=LOCATE_ORIGINAL_ROMS_READ_ONLY
+ROM_RED_FOUND=TRUE
+ROM_BLUE_FOUND=TRUE
+ROM_GREEN_FOUND=TRUE
+STEP=VERIFY_SHA_AND_WORLD_ROM
+ROM_RED_ROM0_INVARIANTS={"branchReferences":537,"branchClasses":537,"fixedCallReferences":1016,"fixedCallClasses":1016,"distinctBranch":1,"distinctCalls":58,"distinctUnion":59,"physicallyMapped":59,"semanticallyCertified":0,"invalidPhysicalExamples":[]}
+ERROR=Error: Global ROM mapping gap ledger discrepancy: red: ROM0_ALL_PHYSICAL_ADDRESSES_MISMATCH actual=undefined expected=true [branches=537, mapped=59, unique=59, calls=1016]
+    at assert (D:\Pokeguide\_qa\PSB-20261029-2115-POKEGUIDE-NATIVE-001\pokemon-red-telemetry\pokemon-ai-companion\scripts\certifyAsm626.js:40:38)
+    at main (D:\Pokeguide\_qa\PSB-20261029-2115-POKEGUIDE-NATIVE-001\pokemon-red-telemetry\pokemon-ai-companion\scripts\certifyAsm626.js:168:3)
+    at Object.<anonymous> (D:\Pokeguide\_qa\PSB-20261029-2115-POKEGUIDE-NATIVE-001\pokemon-red-telemetry\pokemon-ai-companion\scripts\certifyAsm626.js:254:5)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+EXCLUSIVE_TEMP_CLEANED=TRUE
+JOB_END=PSB-20261030-1419-POKEGUIDE-ROM0DIAG-002
+RESULT=FAILED
+
+NODE_EXIT=1
+ERRO=Auditoria reprovada; consultar ROM0_INVARIANTS e MISMATCH
+RESULTADO_FINAL=False
+===== FIM - POKEGUIDE - DIAGNOSTICO ROM0 =====

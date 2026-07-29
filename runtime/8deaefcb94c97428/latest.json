@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260729-1948-CFX-PALETTE-REAL-FIXTURES-001",
+  "conversationKey": "8deaefcb94c97428",
+  "purpose": "Ler corretamente os fixtures guardados nas paletas CFX usando GetAllSelectedFixtureIds e Palette.Edit por TitanId",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-29T18:27:00.188Z",
+  "endedAt": "2026-07-29T18:27:02.438Z",
+  "elapsedMs": 2250,
+  "outputLength": 1350,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3b42749b00990c56ec67af95079fe7d2208a03a1a643348ad87ff2549ac52414",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/8deaefcb94c97428/PSB-20260729-1948-CFX-PALETTE-REAL-FIXTURES-001.txt",
+  "createdAt": "2026-07-29T18:27:02.440Z"
+}

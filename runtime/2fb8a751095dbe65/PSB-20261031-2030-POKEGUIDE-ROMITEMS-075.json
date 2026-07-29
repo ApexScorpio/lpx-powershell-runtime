@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2030-POKEGUIDE-ROMITEMS-075",
+  "conversationKey": "2fb8a751095dbe65",
+  "purpose": "Certificar que os itens usam coordenadas da ROM ativa e nao referencias manuais incorretas",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T20:31:29.027Z",
+  "endedAt": "2026-10-31T20:32:08.513Z",
+  "elapsedMs": 39486,
+  "outputLength": 114649,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7333ea86533a1920bc61bf829262059a287bf0a539a496c605cf503422f59de8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/2fb8a751095dbe65/PSB-20261031-2030-POKEGUIDE-ROMITEMS-075.txt",
+  "createdAt": "2026-10-31T20:32:08.515Z"
+}

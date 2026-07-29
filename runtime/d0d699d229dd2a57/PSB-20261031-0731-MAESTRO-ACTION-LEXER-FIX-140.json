@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0731-MAESTRO-ACTION-LEXER-FIX-140",
+  "conversationKey": "d0d699d229dd2a57",
+  "purpose": "Corrigir falsos positivos da auditoria 139 e detetar chamadas de interface diretas e indiretas sem executar producao.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T07:32:17.227Z",
+  "endedAt": "2026-10-31T07:32:36.161Z",
+  "elapsedMs": 18934,
+  "outputLength": 32189,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "79ddb6cf0adfbf1444d2abbd10987f06301a604a3a1f623d033224b59ae9a5a4",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d0d699d229dd2a57/PSB-20261031-0731-MAESTRO-ACTION-LEXER-FIX-140.txt",
+  "createdAt": "2026-10-31T07:32:36.162Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-1649-MAESTRO-REGRESSAO-245",
+  "conversationKey": "6a8ecce4286060c4",
+  "purpose": "Executar 9 testes offline da telemetria WhatsApp corrigida numa pasta temporaria S, sem tocar no codigo funcional.",
+  "status": "failed",
+  "exitCode": 2,
+  "startedAt": "2026-10-31T17:05:41.105Z",
+  "endedAt": "2026-10-31T17:05:47.930Z",
+  "elapsedMs": 6825,
+  "outputLength": 2078,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "2d8c6487b5702d6878d0be7c05c0d4fa553bc87d16ba5fc524b3a9f52d539cfb",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6a8ecce4286060c4/PSB-20261031-1649-MAESTRO-REGRESSAO-245.txt",
+  "createdAt": "2026-10-31T17:05:47.931Z"
+}

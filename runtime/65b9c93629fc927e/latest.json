@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261030-0622-FISCALGUARD-TELEMETRIA-016",
+  "conversationKey": "65b9c93629fc927e",
+  "purpose": "Corrigir a instrumentacao da AT, executar testes, publicar a alteracao e verificar a telemetria na recolha real.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-30T06:23:46.838Z",
+  "endedAt": "2026-10-30T06:29:05.673Z",
+  "elapsedMs": 318835,
+  "outputLength": 3917,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "cc55db1878e40f41d48479948f0c673dfa73d0b8dae7de2fc47f6803f3638f06",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/65b9c93629fc927e/PSB-20261030-0622-FISCALGUARD-TELEMETRIA-016.txt",
+  "createdAt": "2026-10-30T06:29:05.676Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2134-BONCHAT-CANDIDATE-EXTRACTOR-KNOWNGOOD-CAPTURE-V2-READONLY-001",
+  "conversationKey": "bc8fd15f92e54f4a",
+  "purpose": "Repetir teste read-only do extractor com caminho correto do observer",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T20:29:56.620Z",
+  "endedAt": "2026-08-10T20:29:58.635Z",
+  "elapsedMs": 2015,
+  "outputLength": 1279,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "aebb63ac9cb3321a406766db130bac388a8696408247cf50f165fdefde2124e7",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/bc8fd15f92e54f4a/PSB-20260810-2134-BONCHAT-CANDIDATE-EXTRACTOR-KNOWNGOOD-CAPTURE-V2-READONLY-001.txt",
+  "createdAt": "2026-08-10T20:29:58.637Z"
+}

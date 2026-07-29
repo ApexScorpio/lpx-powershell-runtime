@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0728-MAESTRO-ACTION-LOG-COVERAGE-139",
+  "conversationKey": "d0d699d229dd2a57",
+  "purpose": "Auditar e testar a cobertura de telemetria por acao nos tres scripts reais, sem executar producao.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T07:29:16.838Z",
+  "endedAt": "2026-10-31T07:29:23.525Z",
+  "elapsedMs": 6687,
+  "outputLength": 29090,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "50c888383908fe2d3299248a3d75c0237a19f5c9323548148ee7e7b2cab580f1",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/d0d699d229dd2a57/PSB-20261031-0728-MAESTRO-ACTION-LOG-COVERAGE-139.txt",
+  "createdAt": "2026-10-31T07:29:23.527Z"
+}

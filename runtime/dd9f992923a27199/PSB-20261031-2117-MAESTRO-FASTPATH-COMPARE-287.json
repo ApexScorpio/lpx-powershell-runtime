@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2117-MAESTRO-FASTPATH-COMPARE-287",
+  "conversationKey": "dd9f992923a27199",
+  "purpose": "Comparar selecoes TIMI-68 com sucesso e falha, segundo o modo OCR e a prova visual.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T21:17:33.111Z",
+  "endedAt": "2026-10-31T21:17:34.632Z",
+  "elapsedMs": 1521,
+  "outputLength": 5559,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "53862876c649053b903e12a421adf3fc3dca4e9fc3a5bdd8f19c50671ea0f03f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/dd9f992923a27199/PSB-20261031-2117-MAESTRO-FASTPATH-COMPARE-287.txt",
+  "createdAt": "2026-10-31T21:17:34.634Z"
+}

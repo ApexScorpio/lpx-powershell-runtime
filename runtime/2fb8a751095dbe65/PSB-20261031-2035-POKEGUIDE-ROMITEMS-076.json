@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2035-POKEGUIDE-ROMITEMS-076",
+  "conversationKey": "2fb8a751095dbe65",
+  "purpose": "Recertificar a protecao dos itens apos corrigir as coordenadas do mapa 227",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T20:35:51.567Z",
+  "endedAt": "2026-10-31T20:36:49.527Z",
+  "elapsedMs": 57960,
+  "outputLength": 4507,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "5970b9df55033c5625ac506b4f51b167ea39ca0c4461ca1299c7c96d4fb6cc20",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/2fb8a751095dbe65/PSB-20261031-2035-POKEGUIDE-ROMITEMS-076.txt",
+  "createdAt": "2026-10-31T20:36:49.529Z"
+}

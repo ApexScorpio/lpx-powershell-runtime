@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2122-MAESTRO-AI-RESCUE-289",
+  "conversationKey": "dd9f992923a27199",
+  "purpose": "Auditar os tres cliques adicionais AI RESCUE e as coordenadas Qt, sem alterar codigo ou sessoes.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T21:23:09.271Z",
+  "endedAt": "2026-10-31T21:23:10.537Z",
+  "elapsedMs": 1266,
+  "outputLength": 4812,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "81d2b853a949cb570431fddbdf3813d52e5eada371d1439542fec416b24546a2",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/dd9f992923a27199/PSB-20261031-2122-MAESTRO-AI-RESCUE-289.txt",
+  "createdAt": "2026-10-31T21:23:10.539Z"
+}

@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260809-1948-FINALIZAR-HARDENING-BULLETPROOF-E-VALIDAR-MATRIZ-DE-ESTADOS-SEM-ENVIO-001",
+  "conversationKey": "50da3db3fcdee7d5",
+  "purpose": "Finalizar hardening bulletproof e validar matriz de estados sem envio",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-09T18:50:40.561Z",
+  "endedAt": "2026-08-09T18:50:45.494Z",
+  "elapsedMs": 4933,
+  "outputLength": 3402,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "79dfee96c7915a1dfabe4529c58272fd01c2354457207e9fd821c84800dc51f2",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/50da3db3fcdee7d5/PSB-20260809-1948-FINALIZAR-HARDENING-BULLETPROOF-E-VALIDAR-MATRIZ-DE-ESTADOS-SEM-ENVIO-001.txt",
+  "createdAt": "2026-08-09T18:50:45.498Z"
+}

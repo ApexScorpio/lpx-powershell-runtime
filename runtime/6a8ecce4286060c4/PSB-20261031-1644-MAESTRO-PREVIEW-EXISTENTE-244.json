@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-1644-MAESTRO-PREVIEW-EXISTENTE-244",
+  "conversationKey": "6a8ecce4286060c4",
+  "purpose": "Validar e publicar somente o preview historico ja criado pelo Job 237, sem executar Python nem alterar outras mudancas Git.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T16:46:17.140Z",
+  "endedAt": "2026-10-31T16:46:22.382Z",
+  "elapsedMs": 5242,
+  "outputLength": 2757,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f8e79297d47b14ed7269f70c658064a5e98468467d86995eaeb49969f600abc8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6a8ecce4286060c4/PSB-20261031-1644-MAESTRO-PREVIEW-EXISTENTE-244.txt",
+  "createdAt": "2026-10-31T16:46:22.384Z"
+}

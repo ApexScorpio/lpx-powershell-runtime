@@ -1,0 +1,12 @@
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-2110-MAESTRO-CLICK-REGRESSION-285.ps1:490 char:37
++         Write-Host 'CLIPBOARD=FAILED'
++                                     ~
+The string is missing the terminator: '.
+At D:\Temporarios\Lopes\powershell-bridge-command-PSB-20261031-2110-MAESTRO-CLICK-REGRESSION-285.ps1:259 char:1
++ '@
++ ~~
+The assignment expression is not valid. The input to an assignment operator must be an object that is able to accept 
+assignments, such as a variable or a property.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+ 

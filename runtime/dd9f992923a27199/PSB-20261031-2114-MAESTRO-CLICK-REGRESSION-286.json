@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2114-MAESTRO-CLICK-REGRESSION-286",
+  "conversationKey": "dd9f992923a27199",
+  "purpose": "Corrigir parser, instalar regressao permanente e validar quatro falhas de despacho, sem modificar producao.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T21:15:07.604Z",
+  "endedAt": "2026-10-31T21:15:08.713Z",
+  "elapsedMs": 1109,
+  "outputLength": 3042,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "44c488ee06083a5aa1acc9772ac32b98dd778b26970536f47e7412f13f4e8d3c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/dd9f992923a27199/PSB-20261031-2114-MAESTRO-CLICK-REGRESSION-286.txt",
+  "createdAt": "2026-10-31T21:15:08.715Z"
+}

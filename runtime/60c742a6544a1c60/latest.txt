@@ -1,0 +1,124 @@
+
+============================================================
+ INSTALAR FLUXO ROBUSTO DE PARTILHA POR AST
+============================================================
+1. Cria backup integral do script.
+2. Localiza estruturalmente o bloco copy_image_to_clipboard.
+3. Instala preview_only e seletores j� confirmados.
+4. Cola uma imagem e escreve 000000.
+5. Valida o bot�o de envio sem o clicar.
+6. Descarta o preview e reabre o grupo.
+7. Confirma que nenhuma mensagem foi enviada.
+
+--- SEGURAN�A INICIAL ---
+Backup: %USERPROFILE%\Documents\Scrips\_COFRE_ARQUIVO_HISTORICO\WHATSAPP_PARTILHA_PRE_AST_ROBUSTO_20260729_163240.py
+SHA256: FBA1B4844B40299E99E37394F7097D2CFBAEF035C834B867E386F052A94EA73C
+
+--- APLICAR PATCH AST ---
+PATCH_AST: SUCESSO
+BLOCO_COPY_IMAGE_LOCALIZADO: 1227 - 1370
+PREVIEW_ONLY: INSTALADO
+HELPERS_ROBUSTOS: INSTALADOS
+ENVIO_POR_ENTER: REMOVIDO
+SELETORES_ANTIGOS: REMOVIDOS
+--- COMPILA��O AP�S PATCH ---
+
+--- TESTE DE PREVIEW SEM ENVIO ---
+--- EXECUTAR TESTE SEGURO ---
+============================================================
+ ESTADO ANTES DO PREVIEW
+============================================================
+[16:32:45] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:32:48] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+[16:32:50] [WhatsApp Session] A abrir o Google Chrome real com depura��o CDP.
+[16:32:51] [WhatsApp Session] A aguardar o Chrome e o endpoint CDP; 9 processo(s) ativo(s).
+[16:32:51] [WhatsApp Session] Endpoint CDP dispon�vel: http://127.0.0.1:51809.
+[16:32:52] [WhatsApp Share] Sincroniza��o ativa: 0
+[16:32:57] [WhatsApp Share] Sincroniza��o ativa: 100
+[16:32:58] [WhatsApp Share] Lista lateral vis�vel: 140 conversa(s).
+[16:32:58] [WhatsApp Share] Conversas vis�veis; a confirmar estabilidad durante 8 segundos.
+[16:33:07] [WhatsApp Share] WhatsApp totalmente carregado e est�vel.
+[16:33:07] [WhatsApp Share] Grupo confirmado no cabe�alho: 'Timi ptm' (14 mensagem(ns) renderizada(s)).
+[16:33:08] [WhatsApp Session] Processos Chrome ligados ao perfil: 9.
+[16:33:11] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:33:13] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+ANTES: {"group": "Timi ptm", "signature": {"count": 15, "lastText": "TESTE T�CNICO - N�O ENVIAR171576\n11:33", "lastDataId": "3EB05ACDD1075C808E1427"}, "composeText": "000000"}
+
+============================================================
+ PREVIEW SEGURO - SEM CLICAR EM ENVIAR
+============================================================
+[16:33:15] [WhatsApp Share] A iniciar WhatsApp para partilhar no grupo: TIMI PTM
+[16:33:16] [WhatsApp Share] A iniciar sessao persistente comum (backup_restored=False)...
+[16:33:17] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:33:19] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+[16:33:21] [WhatsApp Session] A abrir o Google Chrome real com depura��o CDP.
+[16:33:22] [WhatsApp Session] A aguardar o Chrome e o endpoint CDP; 7 processo(s) ativo(s).
+[16:33:22] [WhatsApp Session] Endpoint CDP dispon�vel: http://127.0.0.1:62798.
+[16:33:23] [WhatsApp Share] WhatsApp Web aberto com o perfil WHATSAPP_SESSION\active.
+[16:33:24] [WhatsApp Share] A monitorizar estado do WhatsApp Web...
+[16:33:24] [WhatsApp Share] Sincroniza��o ativa: 0
+[16:33:27] [WhatsApp Share] Sincroniza��o ativa: 100
+[16:33:28] [WhatsApp Share] Lista lateral vis�vel: 140 conversa(s).
+[16:33:28] [WhatsApp Share] Conversas vis�veis; a confirmar estabilidad durante 8 segundos.
+[16:33:37] [WhatsApp Share] WhatsApp totalmente carregado e est�vel.
+[16:33:37] [WhatsApp Share] WhatsApp pronto. A prosseguir com a partilha...
+[16:33:37] [WhatsApp Share] A localizar o grupo 'TIMI PTM' atrav�s da lista/pesquisa do WhatsApp...
+[16:33:37] [WhatsApp Share] Grupo confirmado no cabe�alho: 'Timi ptm' (1 mensagem(ns) renderizada(s)).
+[16:33:37] [WhatsApp Share] A copiar imagem para o clipboard: TESTE_TIMI_NAO_ENVIAR_20260729_163240.png
+[16:33:37] [WhatsApp Share] Estado anterior da conversa: {'count': 1, 'lastText': 'TESTE T�CNICO - N�O ENVIAR171576\n11:33', 'lastDataId': '3EB05ACDD1075C808E1427'}
+[16:33:37] [WhatsApp Share] A copiar imagem para o clipboard: TESTE_TIMI_NAO_ENVIAR_20260729_163240.png
+[16:33:37] [WhatsApp Share] ? Imagem copiada para o clipboard: TESTE_TIMI_NAO_ENVIAR_20260729_163240.png
+[16:33:38] [WhatsApp Share] A colar imagem no WhatsApp (Control+V)...
+[16:33:38] [WhatsApp Share] Preview confirmado atrav�s de media-editor-canvas.
+[16:33:38] [WhatsApp Share] Legenda confirmada no preview: '000000'
+[16:33:39] [WhatsApp Share] Bot�o de envio multim�dia confirmado: 'Enviar 1 selecionado'
+[16:33:39] [WhatsApp Share] MODO PREVIEW: o bot�o de envio n�o ser� clicado.
+[16:33:40] [WhatsApp Share] Estado ap�s descartar o preview: {'count': 15, 'lastText': 'TESTE T�CNICO - N�O ENVIAR171576\n11:33', 'lastDataId': '3EB05ACDD1075C808E1427'}
+[16:33:40] [WhatsApp Session] Processos Chrome ligados ao perfil: 8.
+[16:33:43] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:33:45] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+[16:33:47] [WhatsApp Share] Preview descartado sem envio e conversa mantida inalterada.
+PREVIEW_RESULTADO: True
+
+============================================================
+ ESTADO DEPOIS DE REABRIR O GRUPO
+============================================================
+[16:33:49] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:33:51] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+[16:33:53] [WhatsApp Session] A abrir o Google Chrome real com depura��o CDP.
+[16:33:54] [WhatsApp Session] A aguardar o Chrome e o endpoint CDP; 7 processo(s) ativo(s).
+[16:33:54] [WhatsApp Session] Endpoint CDP dispon�vel: http://127.0.0.1:50248.
+[16:33:55] [WhatsApp Share] Sincroniza��o ativa: 0
+[16:33:59] [WhatsApp Share] Sincroniza��o ativa: 100
+[16:34:00] [WhatsApp Share] Lista lateral vis�vel: 140 conversa(s).
+[16:34:00] [WhatsApp Share] Conversas vis�veis; a confirmar estabilidad durante 8 segundos.
+[16:34:09] [WhatsApp Share] WhatsApp totalmente carregado e est�vel.
+[16:34:09] [WhatsApp Share] Grupo confirmado no cabe�alho: 'Timi ptm' (1 mensagem(ns) renderizada(s)).
+[16:34:10] [WhatsApp Session] Processos Chrome ligados ao perfil: 9.
+[16:34:14] [WhatsApp Session] Processos Chrome ligados ao perfil: 0.
+[16:34:16] [WhatsApp Session] Processos ainda ligados ao perfil: 0.
+DEPOIS: {"group": "Timi ptm", "signature": {"count": 1, "lastText": "TESTE T�CNICO - N�O ENVIAR171576\n11:33", "lastDataId": "3EB05ACDD1075C808E1427"}, "composeText": "000000"}
+VERIFICA��ES: {"mesmoGrupo": true, "mesmoUltimoId": true, "mesmoUltimoTexto": true, "mesmaCaixaTexto": true}
+BOT�O_DE_ENVIO_CLICADO: False
+NENHUMA_MENSAGEM_ENVIADA: True
+RESULTADO_TESTE: SUCESSO
+--- COMPILA��O FINAL ---
+
+--- RESULTADO DO FICHEIRO ---
+SHA256 anterior: FBA1B4844B40299E99E37394F7097D2CFBAEF035C834B867E386F052A94EA73C
+SHA256 atual:    BE2DED61BCD227C533B73A8121B50006226B79849E048D07D4FE259D896A494C
+SCRIPT_ALTERADO: True
+
+--- ESTADO GIT ---
+ M "Codigo TIMI - Whatsapp.py"
+ M "Partilha Codigo TImi - Whatsapp.py"
+
+============================================================
+ RESULTADO FINAL: SUCESSO
+============================================================
+Fluxo robusto instalado por an�lise AST.
+Imagem e legenda 000000 validadas no preview.
+Bot�o correto de envio encontrado e n�o clicado.
+Preview descartado.
+Grupo reaberto com a �ltima mensagem inalterada.
+Nenhuma mensagem foi enviada.

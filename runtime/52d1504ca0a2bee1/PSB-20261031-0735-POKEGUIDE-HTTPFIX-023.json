@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0735-POKEGUIDE-HTTPFIX-023",
+  "conversationKey": "52d1504ca0a2bee1",
+  "purpose": "Diagnosticar HTTP do preview existente com Invoke-WebRequest, sem iniciar nem alterar processos.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T07:36:40.209Z",
+  "endedAt": "2026-10-31T07:36:42.961Z",
+  "elapsedMs": 2752,
+  "outputLength": 2234,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9957763e23b98797fe243cb59848a8f844225420f86f1beb8a47fb3933d9bbcc",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/52d1504ca0a2bee1/PSB-20261031-0735-POKEGUIDE-HTTPFIX-023.txt",
+  "createdAt": "2026-10-31T07:36:42.991Z"
+}

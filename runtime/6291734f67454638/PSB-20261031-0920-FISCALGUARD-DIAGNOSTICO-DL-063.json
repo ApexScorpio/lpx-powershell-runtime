@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0920-FISCALGUARD-DIAGNOSTICO-DL-063",
+  "conversationKey": "6291734f67454638",
+  "purpose": "Analisar os pares DT/DD do cadastro fiscal, reutilizando a captura existente ou efetuando uma unica recolha segura",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T09:23:39.372Z",
+  "endedAt": "2026-10-31T09:23:40.896Z",
+  "elapsedMs": 1524,
+  "outputLength": 1350,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "65c6bed664ccb4f511647fc3821c53d69b2a77fedf083b31af96549c43cd5d1d",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6291734f67454638/PSB-20261031-0920-FISCALGUARD-DIAGNOSTICO-DL-063.txt",
+  "createdAt": "2026-10-31T09:23:40.899Z"
+}

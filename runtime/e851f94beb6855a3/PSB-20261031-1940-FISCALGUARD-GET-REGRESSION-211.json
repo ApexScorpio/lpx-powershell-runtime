@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-1940-FISCALGUARD-GET-REGRESSION-211",
+  "conversationKey": "e851f94beb6855a3",
+  "purpose": "Validar correcao de sintaxe e recolher anatomia GET predial",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T19:34:26.098Z",
+  "endedAt": "2026-10-31T19:38:58.720Z",
+  "elapsedMs": 272622,
+  "outputLength": 4777,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "de6701bd00130c03f90d587fa91962e3fd232f2950eb4a764fdfe87208a0fa48",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/e851f94beb6855a3/PSB-20261031-1940-FISCALGUARD-GET-REGRESSION-211.txt",
+  "createdAt": "2026-10-31T19:38:58.722Z"
+}

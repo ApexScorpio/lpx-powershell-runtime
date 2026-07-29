@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0742-POKEGUIDE-EDGEFIX-025",
+  "conversationKey": "52d1504ca0a2bee1",
+  "purpose": "Diagnosticar Edge headless e obter capturas desktop/mobile em perfil isolado no D.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T07:43:38.235Z",
+  "endedAt": "2026-10-31T07:44:08.045Z",
+  "elapsedMs": 29810,
+  "outputLength": 2724,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f0526b0b946ab338e1cf0c31a68b14d1aecde66abfd7459173e28c58206a27df",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/52d1504ca0a2bee1/PSB-20261031-0742-POKEGUIDE-EDGEFIX-025.txt",
+  "createdAt": "2026-10-31T07:44:08.048Z"
+}

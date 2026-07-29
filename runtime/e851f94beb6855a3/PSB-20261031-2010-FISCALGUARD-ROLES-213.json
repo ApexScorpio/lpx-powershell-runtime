@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-2010-FISCALGUARD-ROLES-213",
+  "conversationKey": "e851f94beb6855a3",
+  "purpose": "Validar e classificar controlos prediais sem os acionar",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-10-31T20:09:16.521Z",
+  "endedAt": "2026-10-31T20:13:49.143Z",
+  "elapsedMs": 272622,
+  "outputLength": 3407,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "7cbb2cb04ec17a7be01bf3621da1f5950ccdaa4021da4ed9663590425b69373c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/e851f94beb6855a3/PSB-20261031-2010-FISCALGUARD-ROLES-213.txt",
+  "createdAt": "2026-10-31T20:13:49.146Z"
+}

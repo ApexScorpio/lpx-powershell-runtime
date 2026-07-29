@@ -1,0 +1,17 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20261031-0925-FISCALGUARD-DL-064",
+  "conversationKey": "6291734f67454638",
+  "purpose": "Corrigir falha GravarFonte, auditar DPAPI existente e recolher pares DT/DD apenas se ainda faltarem",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-31T09:26:39.580Z",
+  "endedAt": "2026-10-31T09:26:48.444Z",
+  "elapsedMs": 8864,
+  "outputLength": 1692,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "355716f28c4f418ed4156d651a156dee3305b282bb2355bf63e8d5ec5bd12c99",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime/runtime/6291734f67454638/PSB-20261031-0925-FISCALGUARD-DL-064.txt",
+  "createdAt": "2026-10-31T09:26:48.446Z"
+}
