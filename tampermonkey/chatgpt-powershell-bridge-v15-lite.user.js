@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.0.2
+// @version      2026.07.29.15.0.3
 // @description  Executa anexos PowerShell através da bridge local, publica o resultado no GitHub e envia apenas o URL para o ChatGPT.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.0.2';
+    const VERSION = '15.0.3';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -648,12 +648,32 @@
             .join('');
     }
 
+    function decodeBase64Utf8(value) {
+        const clean = String(value || '').replace(/\s+/g, '');
+        const binary = atob(clean);
+        const bytes = Uint8Array.from(
+            binary,
+            character => character.charCodeAt(0)
+        );
+
+        return new TextDecoder('utf-8').decode(bytes);
+    }
+
     async function processJobManifest(assistant, manifest, forced) {
         const jobId = String(manifest.jobId || '').trim();
         const fileName = String(manifest.file || '').trim();
+        const commandBase64 = String(manifest.commandBase64 || '').trim();
+        const inlineCommand = typeof manifest.command === 'string'
+            ? manifest.command
+            : '';
 
-        if (!jobId || !fileName) {
-            setStatus('Manifesto PSB_JOB_V2 incompleto: faltam jobId ou file.');
+        if (
+            !jobId ||
+            (!fileName && !commandBase64 && !inlineCommand)
+        ) {
+            setStatus(
+                'Manifesto PSB_JOB_V2 incompleto: falta jobId e uma fonte de comando.'
+            );
             return;
         }
 
@@ -667,15 +687,32 @@
         }
 
         try {
-            setStatus(`A obter o anexo ${fileName}…`);
+            let command = '';
 
-            const anchor = findAttachmentLink(assistant, fileName);
-
-            if (!anchor) {
-                throw new Error(`Não foi encontrado o link do anexo ${fileName}.`);
+            if (commandBase64) {
+                setStatus('A descodificar o comando incorporado no manifesto…');
+                command = decodeBase64Utf8(commandBase64);
             }
+            else if (inlineCommand) {
+                setStatus('A preparar o comando incorporado no manifesto…');
+                command = inlineCommand;
+            }
+            else {
+                setStatus(`A obter o anexo ${fileName}…`);
 
-            const command = await downloadAttachment(anchor);
+                const anchor = findAttachmentLink(
+                    assistant,
+                    fileName
+                );
+
+                if (!anchor) {
+                    throw new Error(
+                        `Não foi encontrado o link do anexo ${fileName}.`
+                    );
+                }
+
+                command = await downloadAttachment(anchor);
+            }
 
             if (!command.trim()) {
                 throw new Error('O anexo PowerShell está vazio.');
