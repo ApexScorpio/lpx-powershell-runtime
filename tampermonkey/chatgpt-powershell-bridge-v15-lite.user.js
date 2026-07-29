@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.1
+// @version      2026.07.29.15.3.2
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -24,7 +24,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.1';
+    const VERSION = '15.3.2';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -947,66 +947,259 @@
 
     function findAttachmentLink(assistant, fileName) {
         const wanted = String(fileName || '').trim().toLowerCase();
+        const turn = turnContainer(assistant);
+        const candidates = [];
+        const seen = new WeakSet();
+        let visited = 0;
 
-        function labelFor(anchor) {
-            let href = '';
+        function cleanUrl(value) {
+            let text = String(value || '')
+                .trim()
+                .replace(/\\u0026/gi, '&')
+                .replace(/\\\//g, '/')
+                .replace(/&amp;/gi, '&');
 
-            try {
-                href = decodeURIComponent(
-                    anchor.getAttribute('href') || anchor.href || ''
-                );
-            } catch {
-                href = anchor.getAttribute('href') || anchor.href || '';
+            if (!text || /^sandbox:/i.test(text)) {
+                return '';
             }
 
-            return [
+            const match = text.match(
+                /(?:https?:\/\/|blob:https?:\/\/|\/backend-api\/)[^\s"'<>\\]+/i
+            );
+
+            if (match) {
+                text = match[0];
+            }
+
+            if (text.startsWith('/')) {
+                try {
+                    text = new URL(text, location.origin).href;
+                } catch {
+                    return '';
+                }
+            }
+
+            return /^(?:https?:|blob:)/i.test(text) ? text : '';
+        }
+
+        function add(value, key = '') {
+            const url = cleanUrl(value);
+
+            if (!url) {
+                return;
+            }
+
+            const lower = url.toLowerCase();
+
+            if (
+                lower.includes('raw.githubusercontent.com') ||
+                lower.includes('github.com/')
+            ) {
+                return;
+            }
+
+            let score = 0;
+
+            if (wanted && lower.includes(wanted)) {
+                score += 2000;
+            }
+
+            try {
+                if (
+                    wanted &&
+                    lower.includes(encodeURIComponent(wanted).toLowerCase())
+                ) {
+                    score += 1800;
+                }
+            } catch {
+                // Best effort.
+            }
+
+            if (/files\.oaiusercontent\.com/i.test(url)) {
+                score += 1200;
+            } else if (/oaiusercontent\.com/i.test(url)) {
+                score += 1000;
+            }
+
+            if (/\/backend-api\//i.test(url)) {
+                score += 1100;
+            }
+
+            if (/download|attachment|asset|content|file/i.test(lower)) {
+                score += 250;
+            }
+
+            if (/url|href|download|attachment|asset|content|file/i.test(key)) {
+                score += 180;
+            }
+
+            if (score > 0 && !candidates.some(item => item.url === url)) {
+                candidates.push({ url, score });
+            }
+        }
+
+        function walk(value, depth = 0, key = '') {
+            if (depth > 8 || visited > 2500) {
+                return;
+            }
+
+            if (typeof value === 'string') {
+                add(value, key);
+                return;
+            }
+
+            if (
+                !value ||
+                (
+                    typeof value !== 'object' &&
+                    typeof value !== 'function'
+                )
+            ) {
+                return;
+            }
+
+            try {
+                if (seen.has(value)) {
+                    return;
+                }
+
+                seen.add(value);
+            } catch {
+                return;
+            }
+
+            visited++;
+
+            let keys;
+
+            try {
+                keys = Object.keys(value).slice(0, 120);
+            } catch {
+                return;
+            }
+
+            keys.sort((a, b) => {
+                const important =
+                    /url|href|download|attachment|asset|content|file/i;
+
+                return Number(important.test(b)) -
+                    Number(important.test(a));
+            });
+
+            for (const childKey of keys) {
+                if (
+                    childKey === 'ownerDocument' ||
+                    childKey === 'parentNode' ||
+                    childKey === 'parentElement' ||
+                    childKey === 'children' ||
+                    childKey === 'childNodes'
+                ) {
+                    continue;
+                }
+
+                try {
+                    walk(
+                        value[childKey],
+                        depth + 1,
+                        `${key}.${childKey}`
+                    );
+                } catch {
+                    // Continua.
+                }
+            }
+        }
+
+        for (const anchor of turn.querySelectorAll('a[href]')) {
+            const label = [
                 anchor.textContent || '',
                 anchor.getAttribute('download') || '',
                 anchor.getAttribute('aria-label') || '',
                 anchor.getAttribute('title') || '',
-                href
+                anchor.getAttribute('href') || ''
             ].join(' ').toLowerCase();
-        }
 
-        const roots = [
-            turnContainer(assistant),
-            assistant,
-            document
-        ].filter(Boolean);
+            if (wanted && label.includes(wanted)) {
+                const href = cleanUrl(
+                    anchor.getAttribute('href') || anchor.href
+                );
 
-        for (const root of roots) {
-            const anchors = [...root.querySelectorAll('a[href]')];
-
-            const exact = anchors.find(anchor => {
-                return wanted && labelFor(anchor).includes(wanted);
-            });
-
-            if (exact) {
-                return exact;
+                if (href) {
+                    return { href };
+                }
             }
         }
 
-        const globalAnchors = [...document.querySelectorAll('a[href]')];
+        const controls = findAttachmentControls(
+            assistant,
+            fileName
+        );
 
-        const attachmentAnchors = globalAnchors.filter(anchor => {
-            const label = labelFor(anchor);
+        const nodes = new Set([
+            turn,
+            assistant,
+            ...controls
+        ]);
 
-            return (
-                label.includes('sandbox:/mnt/data/') ||
-                label.includes('files.oaiusercontent.com') ||
-                label.includes('oaiusercontent.com') ||
-                label.includes('/backend-api/files/') ||
-                label.includes('/files/')
-            );
-        });
+        for (const control of controls) {
+            let current = control;
 
-        if (attachmentAnchors.length) {
-            return attachmentAnchors[attachmentAnchors.length - 1];
+            for (
+                let depth = 0;
+                current && depth < 9;
+                depth++, current = current.parentElement
+            ) {
+                nodes.add(current);
+            }
         }
 
-        return null;
-    }
+        for (const node of nodes) {
+            if (!(node instanceof Element)) {
+                continue;
+            }
 
+            for (const attribute of [
+                'href',
+                'src',
+                'data-url',
+                'data-href',
+                'data-download-url',
+                'data-file-url'
+            ]) {
+                add(
+                    node.getAttribute(attribute),
+                    `attribute.${attribute}`
+                );
+            }
+
+            let keys = [];
+
+            try {
+                keys = Object.keys(node);
+            } catch {
+                keys = [];
+            }
+
+            for (const key of keys) {
+                if (
+                    key.startsWith('__reactProps$') ||
+                    key.startsWith('__reactFiber$') ||
+                    key.startsWith('__reactContainer$')
+                ) {
+                    try {
+                        walk(node[key], 0, key);
+                    } catch {
+                        // Continua.
+                    }
+                }
+            }
+        }
+
+        candidates.sort((a, b) => b.score - a.score);
+
+        return candidates.length
+            ? { href: candidates[0].url }
+            : null;
+    }
 
     function attachmentControlLabel(node) {
         if (!(node instanceof Element)) {
