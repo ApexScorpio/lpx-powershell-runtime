@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.8
+// @version      2026.07.29.15.3.9
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,7 +25,7 @@
 (() => {
     'use strict';
 
-    const VERSION = '15.3.8';
+    const VERSION = '15.3.9';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -276,7 +276,7 @@
             'REGRAS OBRIGATÓRIAS:',
             '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
-            '2A. Inclui o fileId quando estiver disponível; a bridge consulta também a API autenticada da conversa.',
+            '2A. Não inventes nem reutilizes fileId. Omite-o, salvo se existir um asset_pointer explícito da própria conversa.',
             '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
             '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
             '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
@@ -2344,12 +2344,6 @@
             add(
                 location.origin +
                 '/backend-api/files/' +
-                encoded
-            );
-
-            add(
-                location.origin +
-                '/backend-api/files/' +
                 encoded +
                 '/download'
             );
@@ -2602,22 +2596,66 @@
             }
         }
 
-        if (suppliedFileId) {
-            add(
-                suppliedFileId,
-                5000,
-                'manifest.fileId',
-                fileName + ' ' + jobId
+        const hasConversationMapping =
+            Boolean(
+                root &&
+                root.mapping &&
+                typeof root.mapping === 'object'
+            );
+
+        let matchedMessages = [];
+
+        if (hasConversationMapping) {
+            matchedMessages = Object.values(
+                root.mapping
+            )
+                .map(node =>
+                    node && node.message
+                )
+                .filter(Boolean)
+                .filter(message => {
+                    try {
+                        const serialized =
+                            JSON.stringify(message)
+                                .toLowerCase();
+
+                        return Boolean(
+                            (
+                                wantedFile &&
+                                serialized.includes(
+                                    wantedFile
+                                )
+                            ) ||
+                            (
+                                wantedJob &&
+                                serialized.includes(
+                                    wantedJob
+                                )
+                            )
+                        );
+                    } catch {
+                        return false;
+                    }
+                });
+
+            for (const message of matchedMessages) {
+                walk(
+                    message,
+                    0,
+                    'matchedMessage',
+                    6000,
+                    wantedFile + ' ' + wantedJob
+                );
+            }
+        } else {
+            walk(
+                root,
+                0,
+                'metadata',
+                0,
+                ''
             );
         }
-
-        walk(
-            root,
-            0,
-            'conversation',
-            0,
-            ''
-        );
 
         return {
             candidates: [
@@ -2626,8 +2664,82 @@
                 (left, right) =>
                     right.score - left.score
             ),
-            visited
+            visited,
+            matchedMessages:
+                matchedMessages.length
         };
+    }
+
+
+    function attachmentPayloadRejection(
+        value,
+        contentType = ''
+    ) {
+        const body = String(value || '')
+            .replace(/^\uFEFF/, '')
+            .trim();
+
+        const type = String(
+            contentType || ''
+        ).toLowerCase();
+
+        if (!body) {
+            return 'empty';
+        }
+
+        if (
+            type.includes('text/html') ||
+            type.includes('application/xhtml')
+        ) {
+            return 'html-content-type';
+        }
+
+        const beginning =
+            body.slice(0, 12000);
+
+        if (
+            /^(?:<!doctype\s+html|<html\b|<head\b|<body\b)/i
+                .test(beginning)
+        ) {
+            return 'html-document';
+        }
+
+        if (
+            /<script\b[\s>]/i.test(beginning) &&
+            (
+                /\bwindow\./i.test(beginning) ||
+                /\bdocument\./i.test(beginning) ||
+                /\bvar\s+_paq\b/i.test(beginning)
+            )
+        ) {
+            return 'html-script';
+        }
+
+        if (
+            /chrome\.userScripts/i.test(beginning) ||
+            (
+                /schema\.org/i.test(beginning) &&
+                /<title\b/i.test(beginning)
+            )
+        ) {
+            return 'web-page';
+        }
+
+        if (/^<\?xml\b/i.test(beginning)) {
+            return 'xml-document';
+        }
+
+        return '';
+    }
+
+    function usablePowerShellPayload(
+        value,
+        contentType = ''
+    ) {
+        return !attachmentPayloadRejection(
+            value,
+            contentType
+        );
     }
 
     async function gmDownloadText(url) {
@@ -2837,9 +2949,17 @@
                     const text =
                         await response.text();
 
-                    if (String(text || '').trim()) {
+                    const rejection =
+                        attachmentPayloadRejection(
+                            text,
+                            contentType
+                        );
+
+                    if (!rejection) {
                         lastAttachmentDiagnostic = [
                             'conversationApi=ok',
+                            'matchedMessages=' +
+                                extraction.matchedMessages,
                             'visited=' +
                                 extraction.visited,
                             'candidates=' +
@@ -2852,6 +2972,12 @@
 
                         return text;
                     }
+
+                    statuses.push(
+                        Number(response.status) +
+                        '-rejected-' +
+                        rejection
+                    );
                 }
             }
 
@@ -2870,13 +2996,16 @@
 
             if (
                 gmResult.ok &&
-                String(
-                    gmResult.text || ''
-                ).trim()
+                usablePowerShellPayload(
+                    gmResult.text,
+                    ''
+                )
             ) {
                 lastAttachmentDiagnostic = [
                     'conversationApi=ok',
                     'transport=GM',
+                    'matchedMessages=' +
+                        extraction.matchedMessages,
                     'visited=' +
                         extraction.visited,
                     'candidates=' +
@@ -2888,6 +3017,17 @@
                 ].join(';');
 
                 return gmResult.text;
+            }
+
+            if (gmResult.ok) {
+                statuses.push(
+                    Number(gmResult.status) +
+                    '-gm-rejected-' +
+                    attachmentPayloadRejection(
+                        gmResult.text,
+                        ''
+                    )
+                );
             }
         }
 
@@ -3106,6 +3246,23 @@
             }
 
             command = normalizePowerShellCommand(command);
+
+            if (
+                protocol === 'PSB_JOB_FILE_V1' &&
+                !usablePowerShellPayload(
+                    command,
+                    ''
+                )
+            ) {
+                throw new Error(
+                    'O conteúdo descarregado foi rejeitado: ' +
+                    attachmentPayloadRejection(
+                        command,
+                        ''
+                    ) +
+                    '.'
+                );
+            }
 
             if (!command.trim()) {
                 throw new Error('O comando PowerShell está vazio.');
