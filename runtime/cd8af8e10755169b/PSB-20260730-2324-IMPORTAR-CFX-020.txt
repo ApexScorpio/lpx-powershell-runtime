@@ -1,0 +1,25 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR OS 24 MACROS CFX — TRANSPORTE HTTP ALTERNATIVO
+================================================================================================================
+Este job testa POST form e GET com escape correto no endpoint oficial; só importa os 24 CFX depois de um XML original ser aceite.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+Teste ImportXml por transportes alternativos: HIGH 1 White — reimportação do XML original...
+Todos os transportes alternativos rejeitaram o backup XML validado: POST_FORM_TYPED_FULL: HTTP 500: {"type":"https://api.avolites.com","title":"Error: 's' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.","status":500} | POST_FORM_TYPED_MACRO: HTTP 500: {"type":"https://api.avolites.com","title":"Error: 's' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.","status":500} | GET_TYPED_ESCAPED_FULL: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500} | GET_TYPED_ESCAPED_MACRO: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500} | POST_FORM_LEGACY_FULL: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Parameter count mismatch.","status":500} | POST_FORM_LEGACY_MACRO: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Parameter count mismatch.","status":500}
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785450402350-8763e0e9e2f77a49.ps1:702 char:5
++     throw "Todos os transportes alternativos rejeitaram o backup XML  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Todos os transp...","status":500}:String) [], RuntimeException
+    + FullyQualifiedErrorId : Todos os transportes alternativos rejeitaram o backup XML validado: POST_FORM_TYPED_FULL    : HTTP 500: {"type":"https://api.avolites.com","title":"Error: 's' is an invalid start of a value. Path: $ | LineN    umber: 0 | BytePositionInLine: 0.","status":500} | POST_FORM_TYPED_MACRO: HTTP 500: {"type":"https://api.avolites.    com","title":"Error: 's' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.","status    ":500} | GET_TYPED_ESCAPED_FULL: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an A    ction Script","status":500} | GET_TYPED_ESCAPED_MACRO: HTTP 500: {"type":"https://api.avolites.com","title":"Error    : Error executing an Action Script","status":500} | POST_FORM_LEGACY_FULL: HTTP 500: {"type":"https://api.avolites    .com","title":"Error: Parameter count mismatch.","status":500} | POST_FORM_LEGACY_MACRO: HTTP 500: {"type":"https:    //api.avolites.com","title":"Error: Parameter count mismatch.","status":500}
+ 

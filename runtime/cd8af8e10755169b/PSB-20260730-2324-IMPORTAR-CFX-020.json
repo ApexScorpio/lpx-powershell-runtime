@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2324-IMPORTAR-CFX-020",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Testar transportes HTTP alternativos e importar com segurança os 24 macros CFX",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-30T22:26:42.359Z",
+  "endedAt": "2026-07-30T22:26:46.649Z",
+  "elapsedMs": 4290,
+  "outputLength": 3347,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3f76edbf42d2a84cee6e37bfb9f62c15d47f1aa404f8079dcd1cb234eb9d4600",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2324-IMPORTAR-CFX-020.txt",
+  "createdAt": "2026-07-30T22:26:46.650Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
