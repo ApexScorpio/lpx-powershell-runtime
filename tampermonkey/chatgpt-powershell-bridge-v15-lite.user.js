@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.30.15.3.15
+// @version      2026.07.30.15.3.16
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.3.15';
+    const VERSION = '15.3.16';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -2099,6 +2099,264 @@
         }
 
         return invokeReactAttachmentClick(control) || attempted;
+    }
+
+
+    function findExactSandboxAttachmentControl(
+        assistant,
+        fileName
+    ) {
+        const wanted =
+            String(fileName || '')
+                .trim()
+                .toLowerCase();
+
+        const turn =
+            turnContainer(assistant);
+
+        if (
+            !wanted ||
+            !(turn instanceof Element)
+        ) {
+            return null;
+        }
+
+        const sandboxAnchors = [
+            ...turn.querySelectorAll(
+                'a[href^="sandbox:"]'
+            )
+        ];
+
+        for (
+            const anchor of
+            sandboxAnchors
+        ) {
+            const label = [
+                anchor.textContent || '',
+                anchor.getAttribute(
+                    'aria-label'
+                ) || '',
+                anchor.getAttribute(
+                    'title'
+                ) || '',
+                anchor.getAttribute(
+                    'download'
+                ) || '',
+                anchor.getAttribute(
+                    'href'
+                ) || ''
+            ]
+                .join(' ')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toLowerCase();
+
+            if (
+                label.includes(wanted)
+            ) {
+                return anchor;
+            }
+        }
+
+        const labelled = [
+            ...turn.querySelectorAll(
+                '[aria-label], [title]'
+            )
+        ].find(node => {
+            const label = [
+                node.getAttribute(
+                    'aria-label'
+                ) || '',
+                node.getAttribute(
+                    'title'
+                ) || '',
+                node.textContent || ''
+            ]
+                .join(' ')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toLowerCase();
+
+            return label.includes(
+                wanted
+            );
+        });
+
+        if (labelled) {
+            const anchor =
+                labelled.closest(
+                    'a[href^="sandbox:"]'
+                ) ||
+                labelled.querySelector(
+                    'a[href^="sandbox:"]'
+                );
+
+            if (anchor) {
+                return anchor;
+            }
+        }
+
+        return null;
+    }
+
+    async function queueExactSandboxFileJob(
+        assistant,
+        manifest,
+        fileName,
+        jobId,
+        protocol
+    ) {
+        const control =
+            findExactSandboxAttachmentControl(
+                assistant,
+                fileName
+            );
+
+        if (!control) {
+            throw new Error(
+                'A mensagem exata não contém um link sandbox acionável para ' +
+                fileName +
+                '.'
+            );
+        }
+
+        const href =
+            String(
+                control.getAttribute(
+                    'href'
+                ) || ''
+            ).trim();
+
+        if (
+            !/^sandbox:\/mnt\/data\//i
+                .test(href)
+        ) {
+            throw new Error(
+                'O link encontrado não corresponde ao anexo sandbox exato.'
+            );
+        }
+
+        setStatus(
+            'Watcher preparado. A acionar uma única vez o link sandbox exato de ' +
+            fileName +
+            '…'
+        );
+
+        const startedAt =
+            Date.now();
+
+        const requestPromise =
+            request({
+                method: 'POST',
+                url:
+                    BRIDGE_URL +
+                    '/run-file',
+                headers:
+                    authHeaders(),
+                data:
+                    JSON.stringify({
+                        file:
+                            fileName,
+                        downloadStartedAt:
+                            startedAt - 3000,
+                        sourceProtocol:
+                            protocol,
+                        jobId,
+                        commandKey:
+                            jobId,
+                        signature:
+                            jobId,
+                        purpose:
+                            String(
+                                manifest.purpose ||
+                                ''
+                            ),
+                        clientId:
+                            TAB_ID,
+                        tabId:
+                            TAB_ID,
+                        conversationId:
+                            conversationId(),
+                        clientVersion:
+                            VERSION
+                    }),
+                timeout:
+                    125000
+            });
+
+        await wait(200);
+
+        let fired =
+            false;
+
+        try {
+            fired =
+                invokeReactAttachmentClick(
+                    control
+                );
+        } catch {
+            fired =
+                false;
+        }
+
+        if (!fired) {
+            try {
+                HTMLElement.prototype
+                    .click
+                    .call(control);
+
+                fired = true;
+            } catch {
+                fired =
+                    false;
+            }
+        }
+
+        if (!fired) {
+            throw new Error(
+                'Não foi possível acionar o link sandbox exato.'
+            );
+        }
+
+        setStatus(
+            'Link sandbox exato acionado uma vez. A aguardar o ficheiro local…'
+        );
+
+        const response =
+            await requestPromise;
+
+        const data =
+            parseJson(response);
+
+        if (
+            ![200, 202].includes(
+                Number(response.status)
+            ) ||
+            !data.jobId
+        ) {
+            throw new Error(
+                data.error ||
+                (
+                    'A bridge rejeitou o ficheiro descarregado: HTTP ' +
+                    response.status +
+                    '.'
+                )
+            );
+        }
+
+        activeJobId =
+            String(data.jobId);
+
+        activeManifest =
+            manifest;
+
+        setStatus(
+            'Job ' +
+            activeJobId +
+            ' em execução a partir do anexo sandbox exato.'
+        );
+
+        await monitorActiveJob();
     }
 
     async function queueDownloadedFileJob(
@@ -4169,14 +4427,15 @@
             }
         }
 
-        await lpxSendExactApiDiagnostic(
-            fileName,
-            jobId,
-            messageId,
-            exactNode,
-            extraction,
-            statuses
-        );
+        lastAttachmentDiagnostic = [
+            'exactMessageApi=no-file-reference',
+            'messageId=' +
+                messageId,
+            'candidates=' +
+                extraction.candidates.length,
+            'statuses=' +
+                statuses.slice(0, 20).join(',')
+        ].join(';');
 
         return '';
     }
@@ -4589,76 +4848,18 @@
                 }
 
                 if (!command) {
-                    releaseClaim(jobId);
-                    return;
-                }
-
-                setStatus(
-                    'A consultar a API autenticada da conversa para localizar ' +
-                    fileName +
-                    '…'
-                );
-
-                try {
-                    command =
-                        await resolveAttachmentFromConversationApi(
-                            fileName,
-                            jobId,
-                            fileId
+                    if (fileId) {
+                        throw new Error(
+                            'O fileId explícito não devolveu um ficheiro PowerShell válido. Diagnóstico: ' +
+                            (
+                                lastAttachmentDiagnostic ||
+                                'indisponível'
+                            ) +
+                            '.'
                         );
-                } catch (error) {
-                    lastAttachmentDiagnostic =
-                        'conversationResolver=error:' +
-                        String(
-                            error &&
-                            error.message ||
-                            error
-                        );
-
-                    command = '';
-                }
-
-                if (!command) {
-                    const anchor =
-                        findAttachmentLink(
-                            assistant,
-                            fileName
-                        );
-
-                    if (anchor) {
-                        try {
-                            setStatus(
-                                'A tentar o URL encontrado no cartão do anexo…'
-                            );
-
-                            command =
-                                await downloadAttachment(
-                                    anchor
-                                );
-                        } catch {
-                            command = '';
-                        }
                     }
-                }
 
-                if (!command && fileId) {
-                    throw new Error(
-                        'O fileId explícito não devolveu um ficheiro PowerShell válido. Diagnóstico: ' +
-                        (
-                            lastAttachmentDiagnostic ||
-                            'indisponível'
-                        ) +
-                        '.'
-                    );
-                }
-
-                if (!command) {
-                    setStatus(
-                        'A resolução direta não encontrou o conteúdo. ' +
-                        'A acionar apenas o cartão exato do anexo…'
-                    );
-
-                    await queueDownloadedFileJob(
+                    await queueExactSandboxFileJob(
                         assistant,
                         manifest,
                         fileName,
@@ -4668,6 +4869,7 @@
 
                     return;
                 }
+
             }
             else if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
                 setStatus('A descarregar o ficheiro ' + (fileName || fileUrl) + '…');
