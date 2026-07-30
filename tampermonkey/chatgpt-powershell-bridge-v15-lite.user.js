@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.29.15.3.14
+// @version      2026.07.30.15.3.15
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.3.14';
+    const VERSION = '15.3.15';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -3543,6 +3543,644 @@
         await sendMessage(message);
     }
 
+
+    function lpxAssistantMessageId(
+        assistant
+    ) {
+        const turn =
+            turnContainer(assistant);
+
+        if (!(turn instanceof Element)) {
+            return '';
+        }
+
+        return String(
+            turn.getAttribute(
+                'data-message-id'
+            ) || ''
+        ).trim();
+    }
+
+    function lpxCollectRelevantApiFields(
+        root,
+        fileName,
+        jobId
+    ) {
+        const findings = [];
+        const seen = new WeakSet();
+        let visited = 0;
+
+        const wantedFile =
+            String(fileName || '')
+                .toLowerCase();
+
+        const wantedJob =
+            String(jobId || '')
+                .toLowerCase();
+
+        function walk(
+            value,
+            path,
+            depth
+        ) {
+            if (
+                depth > 16 ||
+                visited > 50000 ||
+                findings.length >= 500
+            ) {
+                return;
+            }
+
+            if (
+                typeof value ===
+                'string'
+            ) {
+                const lower =
+                    value.toLowerCase();
+
+                const relevantPath =
+                    /asset|pointer|file|attachment|download|url|href|reference|metadata|content|part|message/i
+                        .test(path);
+
+                const relevantValue =
+                    (
+                        wantedFile &&
+                        lower.includes(
+                            wantedFile
+                        )
+                    ) ||
+                    (
+                        wantedJob &&
+                        lower.includes(
+                            wantedJob
+                        )
+                    ) ||
+                    /file-service:\/\/|file[_-][A-Za-z0-9_-]{8,}|\/backend-api\/files\/|oaiusercontent\.com|sandbox:\/mnt\/data\//i
+                        .test(value);
+
+                if (
+                    relevantPath ||
+                    relevantValue
+                ) {
+                    findings.push({
+                        path:
+                            lpxDiagnosticClean(
+                                path,
+                                320
+                            ),
+                        value:
+                            lpxDiagnosticClean(
+                                value,
+                                900
+                            )
+                    });
+                }
+
+                return;
+            }
+
+            if (
+                value === null ||
+                value === undefined ||
+                (
+                    typeof value !==
+                    'object' &&
+                    typeof value !==
+                    'function'
+                )
+            ) {
+                return;
+            }
+
+            if (seen.has(value)) {
+                return;
+            }
+
+            seen.add(value);
+            visited++;
+
+            let entries = [];
+
+            try {
+                entries =
+                    Object.entries(value);
+            } catch {
+                return;
+            }
+
+            entries.sort(
+                ([left], [right]) => {
+                    const important =
+                        /asset|pointer|file|attachment|download|url|href|reference|metadata|content|part|message/i;
+
+                    return (
+                        Number(
+                            important.test(right)
+                        ) -
+                        Number(
+                            important.test(left)
+                        )
+                    );
+                }
+            );
+
+            for (
+                const [key, child] of
+                entries
+            ) {
+                walk(
+                    child,
+                    path
+                        ? path + '.' + key
+                        : key,
+                    depth + 1
+                );
+            }
+        }
+
+        walk(
+            root,
+            'exactMessageNode',
+            0
+        );
+
+        return {
+            visited,
+            findings
+        };
+    }
+
+    async function lpxSendExactApiDiagnostic(
+        fileName,
+        jobId,
+        messageId,
+        exactNode,
+        extraction,
+        statuses
+    ) {
+        const sentKey =
+            'lpxPsb15:exactApiDiagnostic:' +
+            simpleHash(jobId);
+
+        if (GM_getValue(sentKey, false)) {
+            return;
+        }
+
+        GM_setValue(sentKey, true);
+
+        const relevant =
+            lpxCollectRelevantApiFields(
+                exactNode,
+                fileName,
+                jobId
+            );
+
+        const report = {
+            protocol:
+                'PSBRIDGE_EXACT_MESSAGE_API_DIAGNOSTIC_V1',
+            jobId,
+            fileName,
+            bridgeVersion:
+                VERSION,
+            messageId,
+            exactNodeFound:
+                Boolean(exactNode),
+            nodeKeys:
+                exactNode &&
+                typeof exactNode ===
+                    'object'
+                    ? Object.keys(
+                        exactNode
+                    ).slice(0, 100)
+                    : [],
+            messageKeys:
+                exactNode &&
+                exactNode.message &&
+                typeof exactNode.message ===
+                    'object'
+                    ? Object.keys(
+                        exactNode.message
+                    ).slice(0, 100)
+                    : [],
+            candidateCount:
+                extraction &&
+                extraction.candidates
+                    ? extraction.candidates.length
+                    : 0,
+            candidates:
+                extraction &&
+                extraction.candidates
+                    ? extraction.candidates
+                        .slice(0, 40)
+                        .map(item => ({
+                            url:
+                                lpxDiagnosticClean(
+                                    item.url,
+                                    600
+                                ),
+                            source:
+                                lpxDiagnosticClean(
+                                    item.source,
+                                    320
+                                ),
+                            score:
+                                item.score
+                        }))
+                    : [],
+            statuses:
+                Array.isArray(statuses)
+                    ? statuses.slice(0, 60)
+                    : [],
+            relevantFields:
+                relevant.findings,
+            visitedApiValues:
+                relevant.visited,
+            capturedAt:
+                new Date().toISOString()
+        };
+
+        const message = [
+            'PSBRIDGE_EXACT_MESSAGE_API_DIAGNOSTIC_V1',
+            'job: ' + jobId,
+            'file: ' + fileName,
+            'data:',
+            JSON.stringify(
+                report,
+                null,
+                2
+            ),
+            'instruction: usa exclusivamente estes dados da mensagem exata. Não voltes a clicar no cartão nem a procurar anexos noutras mensagens.'
+        ].join('\n');
+
+        setStatus(
+            'A mensagem exata não expôs um ficheiro utilizável. A enviar o diagnóstico preciso da API…'
+        );
+
+        await sendMessage(message);
+    }
+
+    async function lpxResolveExactMessageAttachment(
+        assistant,
+        fileName,
+        jobId,
+        suppliedFileId
+    ) {
+        if (suppliedFileId) {
+            return await resolveExplicitFileId(
+                suppliedFileId,
+                fileName,
+                jobId
+            );
+        }
+
+        const messageId =
+            lpxAssistantMessageId(
+                assistant
+            );
+
+        if (!messageId) {
+            throw new Error(
+                'A mensagem do manifesto não tem data-message-id.'
+            );
+        }
+
+        const conversationUuid =
+            rawConversationUuid();
+
+        if (!conversationUuid) {
+            throw new Error(
+                'Não foi possível obter o UUID da conversa.'
+            );
+        }
+
+        setStatus(
+            'A consultar apenas a mensagem ' +
+            messageId +
+            ' na API autenticada…'
+        );
+
+        const response =
+            await chatgptApiFetch(
+                '/backend-api/conversation/' +
+                encodeURIComponent(
+                    conversationUuid
+                ),
+                {
+                    method: 'GET',
+                    headers: {
+                        Accept:
+                            'application/json'
+                    }
+                }
+            );
+
+        if (
+            !response ||
+            !response.ok
+        ) {
+            throw new Error(
+                'A API da conversa devolveu HTTP ' +
+                Number(
+                    response &&
+                    response.status ||
+                    0
+                ) +
+                '.'
+            );
+        }
+
+        const conversation =
+            await response.json();
+
+        const mapping =
+            conversation &&
+            conversation.mapping &&
+            typeof conversation.mapping ===
+                'object'
+                ? conversation.mapping
+                : {};
+
+        let exactNode =
+            mapping[messageId] ||
+            null;
+
+        if (!exactNode) {
+            exactNode =
+                Object.values(mapping)
+                    .find(
+                        node =>
+                            String(
+                                node &&
+                                node.message &&
+                                node.message.id ||
+                                ''
+                            ) ===
+                            messageId
+                    ) ||
+                null;
+        }
+
+        if (!exactNode) {
+            await lpxSendExactApiDiagnostic(
+                fileName,
+                jobId,
+                messageId,
+                null,
+                null,
+                [
+                    'exact-message-node-missing'
+                ]
+            );
+
+            return '';
+        }
+
+        const exactRoot = {
+            mapping: {
+                [messageId]:
+                    exactNode
+            }
+        };
+
+        const extraction =
+            collectConversationFileCandidates(
+                exactRoot,
+                fileName,
+                jobId,
+                ''
+            );
+
+        const queue =
+            extraction.candidates
+                .slice(0, 40);
+
+        const attempted =
+            new Set();
+
+        const statuses = [];
+
+        for (
+            let index = 0;
+            index < queue.length &&
+            index < 40;
+            index++
+        ) {
+            const candidate =
+                queue[index];
+
+            if (
+                !candidate ||
+                !candidate.url ||
+                attempted.has(
+                    candidate.url
+                )
+            ) {
+                continue;
+            }
+
+            attempted.add(
+                candidate.url
+            );
+
+            setStatus(
+                'A testar referência ' +
+                (index + 1) +
+                '/' +
+                queue.length +
+                ' encontrada exclusivamente na mensagem exata…'
+            );
+
+            let candidateResponse =
+                null;
+
+            try {
+                candidateResponse =
+                    await chatgptApiFetch(
+                        candidate.url,
+                        {
+                            method:
+                                'GET',
+                            redirect:
+                                'follow'
+                        }
+                    );
+            } catch (error) {
+                statuses.push(
+                    'fetch-error:' +
+                    lpxDiagnosticClean(
+                        error &&
+                        error.message ||
+                        error,
+                        240
+                    )
+                );
+            }
+
+            if (
+                candidateResponse &&
+                candidateResponse.ok
+            ) {
+                const contentType =
+                    String(
+                        candidateResponse
+                            .headers
+                            .get(
+                                'content-type'
+                            ) || ''
+                    ).toLowerCase();
+
+                if (
+                    contentType.includes(
+                        'application/json'
+                    )
+                ) {
+                    try {
+                        const metadata =
+                            await candidateResponse
+                                .json();
+
+                        const nested =
+                            collectConversationFileCandidates(
+                                metadata,
+                                fileName,
+                                jobId,
+                                ''
+                            ).candidates;
+
+                        for (
+                            const item of
+                            nested
+                        ) {
+                            if (
+                                item &&
+                                item.url &&
+                                !attempted.has(
+                                    item.url
+                                ) &&
+                                !queue.some(
+                                    queued =>
+                                        queued.url ===
+                                        item.url
+                                )
+                            ) {
+                                queue.push(item);
+                            }
+                        }
+
+                        statuses.push(
+                            String(
+                                candidateResponse
+                                    .status
+                            ) +
+                            'j'
+                        );
+                    } catch {
+                        statuses.push(
+                            String(
+                                candidateResponse
+                                    .status
+                            ) +
+                            '-json-error'
+                        );
+                    }
+                } else {
+                    const body =
+                        await candidateResponse
+                            .text();
+
+                    if (
+                        usablePowerShellPayload(
+                            body,
+                            contentType
+                        )
+                    ) {
+                        lastAttachmentDiagnostic = [
+                            'exactMessageApi=ok',
+                            'messageId=' +
+                                messageId,
+                            'selected=' +
+                                (index + 1),
+                            'HTTP=' +
+                                candidateResponse
+                                    .status
+                        ].join(';');
+
+                        return body;
+                    }
+
+                    statuses.push(
+                        String(
+                            candidateResponse
+                                .status
+                        ) +
+                        '-rejected-' +
+                        attachmentPayloadRejection(
+                            body,
+                            contentType
+                        )
+                    );
+                }
+            } else {
+                statuses.push(
+                    'HTTP=' +
+                    Number(
+                        candidateResponse &&
+                        candidateResponse.status ||
+                        0
+                    )
+                );
+            }
+
+            const gmResult =
+                await gmDownloadText(
+                    candidate.url
+                );
+
+            if (
+                gmResult.ok &&
+                usablePowerShellPayload(
+                    gmResult.text,
+                    ''
+                )
+            ) {
+                lastAttachmentDiagnostic = [
+                    'exactMessageApi=ok',
+                    'messageId=' +
+                        messageId,
+                    'transport=GM',
+                    'HTTP=' +
+                        gmResult.status
+                ].join(';');
+
+                return gmResult.text;
+            }
+
+            if (gmResult.ok) {
+                statuses.push(
+                    String(
+                        gmResult.status
+                    ) +
+                    '-gm-rejected-' +
+                    attachmentPayloadRejection(
+                        gmResult.text,
+                        ''
+                    )
+                );
+            }
+        }
+
+        await lpxSendExactApiDiagnostic(
+            fileName,
+            jobId,
+            messageId,
+            exactNode,
+            extraction,
+            statuses
+        );
+
+        return '';
+    }
+
     async function resolveAttachmentFromConversationApi(
         fileName,
         jobId,
@@ -3927,17 +4565,33 @@
                 !fileUrl
             ) {
                 setStatus(
-                    'Modo diagnóstico: a capturar o cartão real sem tentar descarregar…'
+                    'A resolver o anexo exclusivamente pela mensagem exata da API…'
                 );
 
-                await lpxSendAttachmentReality(
-                    assistant,
-                    fileName,
-                    jobId
-                );
+                try {
+                    command =
+                        await lpxResolveExactMessageAttachment(
+                            assistant,
+                            fileName,
+                            jobId,
+                            fileId
+                        );
+                } catch (error) {
+                    lastAttachmentDiagnostic =
+                        'exactMessageResolver=error:' +
+                        String(
+                            error &&
+                            error.message ||
+                            error
+                        );
 
-                releaseClaim(jobId);
-                return;
+                    command = '';
+                }
+
+                if (!command) {
+                    releaseClaim(jobId);
+                    return;
+                }
 
                 setStatus(
                     'A consultar a API autenticada da conversa para localizar ' +
