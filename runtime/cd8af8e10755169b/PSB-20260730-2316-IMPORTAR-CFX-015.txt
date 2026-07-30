@@ -1,0 +1,25 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR OS 24 MACROS CFX — VALIDAÇÃO REGEX CORRIGIDA
+================================================================================================================
+Este job corrige a validação da raiz XML, testa um original e só depois importa os 24 CFX.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+Teste ImportXml seguro: HIGH 1 White — reimportação do XML original...
+O Titan ainda rejeitou o backup XML validado: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500} | HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500}
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785449518018-5e94da6eb2520a3a.ps1:576 char:5
++     throw "O Titan ainda rejeitou o backup XML validado: $($probeResu ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (O Titan ainda r...","status":500}:String) [], RuntimeException
+    + FullyQualifiedErrorId : O Titan ainda rejeitou o backup XML validado: HTTP 500: {"type":"https://api.avolites.co    m","title":"Error: Error executing an Action Script","status":500} | HTTP 500: {"type":"https://api.avolites.com",    "title":"Error: Error executing an Action Script","status":500}
+ 
