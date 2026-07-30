@@ -1,0 +1,47 @@
+
+======================================================================
+ AVOLITES TITAN 19.2 — ATIVAR E TESTAR WEB API
+======================================================================
+Este diagnóstico não altera o show nem os macros.
+A API oficial usa a porta TCP 4430. A porta 4431 também é verificada como alternativa da interface principal.
+Administrador: False
+Computador: LEGIONLPX
+Utilizador: Lopes
+
+======================================================================
+ 1/6 — PROCESSOS AVOLITES/TITAN
+======================================================================
+
+Process           PID Version Path                                                           
+-------           --- ------- ----                                                           
+Titan           22440                                                                        
+TitanSimulator  24732                                                                        
+TitanSwitchTray 23556 1.0.0.0 C:\Program Files (x86)\Avolites\TitanSwitch\TitanSwitchTray.exe
+
+
+
+
+======================================================================
+ 2/6 — TESTE DIRETO DA API
+======================================================================
+
+BaseUri                     VersionOK Version ShowOK Show                    Error                                                   
+-------                     --------- ------- ------ ----                    -----                                                   
+http://127.0.0.1:4430/titan     False           True "Tiago F Sardinha 2026" The operation has timed out.                            
+http://localhost:4430/titan      True "19.2"    True "Tiago F Sardinha 2026"                                                         
+http://127.0.0.1:4431/titan     False          False                         Não é possível estabelecer ligação com o servidor remoto
+
+
+
+
+======================================================================
+ 3/6 — API JÁ ESTÁ A FUNCIONAR
+======================================================================
+OK: http://localhost:4430/titan
+Titan: "19.2"
+Show: "Tiago F Sardinha 2026"
+Sem privilégios de administrador: não foi possível criar regras de firewall.
+Isto não impede o acesso local por 127.0.0.1; só pode afetar acesso por outro dispositivo.
+
+RESULTADO FINAL: SUCESSO — A API do Titan está operacional.
+URL base recomendada: http://localhost:4430/titan
