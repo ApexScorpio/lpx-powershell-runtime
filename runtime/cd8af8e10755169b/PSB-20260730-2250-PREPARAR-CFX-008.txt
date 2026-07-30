@@ -1,0 +1,36 @@
+============================================================================================================
+ AVOLITES TITAN 19.2 — PREPARAR CORREÇÃO SEGURA DOS 24 MACROS CFX
+============================================================================================================
+Este job NÃO executa macros, NÃO grava paletas e NÃO importa alterações no show aberto.
+Cria backups e ficheiros XML corrigidos, prontos para validação/importação posterior.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:  ALL Rig (UN 20000)
+Palette 901:       High
+Palette 902:       Low
+Macros CFX:        24
+
+Cannot convert value "﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:49:12. -->
+  <macro id="UserMacro.HIGH1White">
+    <name>HIGH 1 White</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 1")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>" to type "System.Xml.XmlDocument". Error: "O nó especificado não pode ser inserido como o elemento subordinado válido deste nó, uma vez que o nó especificado é do tipo incorreto."
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448151112-28323461a0404db7.ps1:241 char:5
++     [xml]$document = $originalXml
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvalidCastToXmlDocument
+ 
