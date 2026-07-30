@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2212-CAUSA-CFX-006",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Confirmar por que os macros CFX mudam as luzes sem atualizar corretamente as paletas High e Low",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-30T21:12:47.243Z",
+  "endedAt": "2026-07-30T21:12:51.953Z",
+  "elapsedMs": 4710,
+  "outputLength": 7897,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "c7da1b6ee4228fc644304098fb1aa1ca22dbc49b2ce9b1d6c22d4600b098ad79",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2212-CAUSA-CFX-006.txt",
+  "createdAt": "2026-07-30T21:12:51.954Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
