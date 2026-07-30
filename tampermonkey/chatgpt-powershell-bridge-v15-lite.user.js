@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.30.15.3.17
+// @version      2026.07.30.15.4.0
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.3.17';
+    const VERSION = '15.4.0';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -1839,104 +1839,291 @@
     }
 
     function findAttachmentControls(assistant, fileName) {
-        const wanted = String(fileName || '')
-            .trim()
-            .toLowerCase();
-
+        const wanted = String(fileName || '').trim().toLowerCase();
         const turn = turnContainer(assistant);
+        const found = [];
+        const seenControls = new Set();
 
-        if (
-            !wanted ||
-            !(turn instanceof Element)
-        ) {
+        if (!wanted || !(turn instanceof Element)) {
             return [];
         }
 
-        const selector = [
-            'a[href]',
-            'button',
-            '[role="button"]',
-            '[tabindex]',
-            '[data-testid*="download"]',
-            '[data-testid*="attachment"]',
-            '[data-testid*="file"]'
-        ].join(', ');
+        function labelOf(node) {
+            if (!(node instanceof Element)) {
+                return '';
+            }
 
-        const found = [];
-        const seen = new Set();
+            return [
+                node.textContent || '',
+                node.getAttribute('aria-label') || '',
+                node.getAttribute('title') || '',
+                node.getAttribute('download') || '',
+                node.getAttribute('href') || '',
+                node.getAttribute('data-testid') || '',
+                node.getAttribute('data-file-id') || '',
+                node.getAttribute('data-id') || ''
+            ].join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
+        }
 
-        function add(node, priority = 0) {
-            if (
-                !(node instanceof HTMLElement) ||
-                seen.has(node) ||
-                !turn.contains(node) ||
-                node.closest('pre, code')
-            ) {
+        function interactive(node) {
+            if (!(node instanceof Element)) {
+                return null;
+            }
+
+            let current = node;
+
+            for (let depth = 0; current && depth < 10; depth++, current = current.parentElement) {
+                if (!turn.contains(current)) {
+                    break;
+                }
+
+                if (current.matches('a, button, [role="button"], [role="link"], [tabindex], [data-testid*="download"], [data-testid*="attachment"], [data-testid*="file"]')) {
+                    return current;
+                }
+            }
+
+            return node instanceof HTMLElement ? node : null;
+        }
+
+        function add(node, source, score = 0) {
+            const control = interactive(node);
+
+            if (!(control instanceof HTMLElement) || seenControls.has(control) || !turn.contains(control) || control.closest('pre, code')) {
                 return;
             }
 
-            const label =
-                attachmentControlLabel(node);
+            const label = labelOf(control);
+            let total = Number(score || 0);
+
+            if (label.includes(wanted)) {
+                total += 4000;
+            }
+
+            if (control.matches('a[href]')) {
+                total += 900;
+            }
+
+            if (control.matches('button, [role="button"], [role="link"]')) {
+                total += 700;
+            }
+
+            if (/download|descarregar|transferir|attachment|anexo|file|ficheiro/.test(label)) {
+                total += 500;
+            }
+
+            seenControls.add(control);
+            found.push({ node: control, source, score: total, label: label.slice(0, 500) });
+        }
+
+        function nearbyStateNodes(fiber) {
+            const nodes = [];
+            const seen = new Set();
+
+            function push(value) {
+                if (!(value instanceof HTMLElement) || !turn.contains(value) || seen.has(value)) {
+                    return;
+                }
+
+                seen.add(value);
+                nodes.push(value);
+            }
+
+            function inspect(start) {
+                let current = start;
+
+                for (let depth = 0; current && depth < 12; depth++, current = current.return) {
+                    push(current.stateNode);
+                    push(current.child && current.child.stateNode);
+                    push(current.sibling && current.sibling.stateNode);
+                    push(current.alternate && current.alternate.stateNode);
+                }
+            }
+
+            inspect(fiber);
+            inspect(fiber && fiber.alternate);
+
+            return nodes;
+        }
+
+        const all = [turn, ...turn.querySelectorAll('*')].slice(0, 1800);
+
+        for (const node of all) {
+            const label = labelOf(node);
 
             if (!label.includes(wanted)) {
+                continue;
+            }
+
+            add(node, 'dom-exact', 7000);
+
+            for (const child of node.querySelectorAll('a, button, [role="button"], [role="link"], [tabindex]')) {
+                add(child, 'dom-descendant', 6200);
+            }
+
+            let sibling = node.previousElementSibling;
+
+            for (let index = 0; sibling && index < 3; index++, sibling = sibling.previousElementSibling) {
+                add(sibling, 'dom-previous-sibling', 3500);
+            }
+
+            sibling = node.nextElementSibling;
+
+            for (let index = 0; sibling && index < 3; index++, sibling = sibling.nextElementSibling) {
+                add(sibling, 'dom-next-sibling', 3500);
+            }
+        }
+
+        const seenObjects = new WeakSet();
+        let visited = 0;
+
+        function walk(value, ownerNode, path, depth, activeFiber) {
+            if (depth > 20 || visited > 70000) {
                 return;
             }
 
-            seen.add(node);
+            if (typeof value === 'string') {
+                let decoded = value.toLowerCase();
 
-            const href = String(
-                node.getAttribute('href') || ''
-            ).trim();
+                try {
+                    decoded = decodeURIComponent(value).toLowerCase();
+                } catch {
+                    // Keep original.
+                }
 
-            let score = priority + 500;
+                if (decoded.includes(wanted) || (/sandbox:\/mnt\/data\//i.test(value) && decoded.includes(wanted))) {
+                    for (const node of nearbyStateNodes(activeFiber)) {
+                        add(node, 'react-string:' + path, 8000);
+                    }
 
-            if (/^sandbox:/i.test(href)) {
-                score += 2000;
+                    add(ownerNode, 'react-owner:' + path, 6500);
+                }
+
+                return;
             }
 
-            if (node.matches('a[href]')) {
-                score += 900;
+            if (!value || (typeof value !== 'object' && typeof value !== 'function')) {
+                return;
             }
 
-            if (
-                node.matches(
-                    'button, [role="button"]'
-                )
-            ) {
-                score += 500;
+            try {
+                if (seenObjects.has(value)) {
+                    return;
+                }
+
+                seenObjects.add(value);
+            } catch {
+                return;
             }
 
-            if (node.hasAttribute('download')) {
-                score += 700;
+            visited++;
+
+            const looksLikeFiber =
+                Object.prototype.hasOwnProperty.call(value, 'pendingProps') ||
+                Object.prototype.hasOwnProperty.call(value, 'memoizedProps') ||
+                Object.prototype.hasOwnProperty.call(value, 'stateNode');
+
+            const fiber = looksLikeFiber ? value : activeFiber;
+            const stateNode = value.stateNode instanceof HTMLElement ? value.stateNode : ownerNode;
+
+            for (const propsName of ['pendingProps', 'memoizedProps', 'props']) {
+                const props = value[propsName];
+
+                if (!props || typeof props !== 'object') {
+                    continue;
+                }
+
+                const propsValues = [
+                    props.href,
+                    props.url,
+                    props.downloadUrl,
+                    props.download_url,
+                    props.fileId,
+                    props.file_id,
+                    props.asset_pointer,
+                    props.assetPointer,
+                    typeof props.children === 'string' ? props.children : ''
+                ];
+
+                const relevant = propsValues.some(item => {
+                    if (!item) {
+                        return false;
+                    }
+
+                    let candidate = String(item).toLowerCase();
+
+                    try {
+                        candidate = decodeURIComponent(String(item)).toLowerCase();
+                    } catch {
+                        // Keep original.
+                    }
+
+                    return candidate.includes(wanted);
+                });
+
+                if (relevant) {
+                    for (const node of nearbyStateNodes(fiber)) {
+                        add(node, 'react-props:' + path + '.' + propsName, 9000);
+                    }
+
+                    add(stateNode, 'react-state:' + path + '.' + propsName, 8500);
+                }
+
+                if (typeof props.onClick === 'function') {
+                    const stateLabel = labelOf(stateNode);
+                    const childText = typeof props.children === 'string' ? props.children.toLowerCase() : '';
+
+                    if (stateLabel.includes(wanted) || childText.includes(wanted)) {
+                        add(stateNode, 'react-onclick:' + path + '.' + propsName, 9500);
+                    }
+                }
             }
 
-            if (
-                /download|descarregar|transferir|attachment|anexo|file|ficheiro/
-                    .test(label)
-            ) {
-                score += 250;
+            let entries = [];
+
+            try {
+                entries = Object.entries(value);
+            } catch {
+                return;
             }
 
-            found.push({
-                node,
-                score
+            entries.sort(([left], [right]) => {
+                const important = /pendingProps|memoizedProps|props|href|url|file|asset|pointer|download|stateNode|child|return|alternate|sibling/i;
+                return Number(important.test(right)) - Number(important.test(left));
             });
+
+            for (const [key, child] of entries.slice(0, 220)) {
+                walk(child, stateNode, path + '.' + key, depth + 1, fiber);
+            }
         }
 
-        for (
-            const control of
-            turn.querySelectorAll(selector)
-        ) {
-            add(control, 200);
+        for (let index = 0; index < all.length; index++) {
+            const node = all[index];
+            let keys = [];
+
+            try {
+                keys = Object.keys(node);
+            } catch {
+                keys = [];
+            }
+
+            for (const key of keys) {
+                if (!key.startsWith('__reactFiber$') && !key.startsWith('__reactProps$') && !key.startsWith('__reactContainer$')) {
+                    continue;
+                }
+
+                walk(node[key], node, 'node[' + index + '].' + key, 0, null);
+            }
         }
 
-        return found
-            .sort(
-                (left, right) =>
-                    right.score - left.score
-            )
-            .map(entry => entry.node)
-            .slice(0, 6);
+        found.sort((left, right) => right.score - left.score);
+
+        lastAttachmentDiagnostic = [
+            'unifiedControls=' + found.length,
+            'reactVisited=' + visited,
+            'top=' + found.slice(0, 6).map(item => item.source + ':' + item.score).join('|')
+        ].join(';');
+
+        return found.slice(0, 12).map(item => item.node);
     }
 
     function invokeReactAttachmentClick(control) {
@@ -2702,6 +2889,298 @@
         await monitorActiveJob();
     }
 
+
+    async function lpxUnifiedPageWorldClick(assistant, fileName) {
+        const turn = turnContainer(assistant);
+        const messageId = turn && turn.getAttribute('data-message-id');
+
+        if (!messageId) {
+            return {
+                ok: false,
+                error: 'message-id-missing'
+            };
+        }
+
+        const marker = 'data-lpx-unified-' + simpleHash(messageId + fileName + String(Date.now()) + String(Math.random()));
+        const script = document.createElement('script');
+        const payload = {
+            messageId,
+            fileName,
+            marker
+        };
+
+        script.textContent = '(' + function pageWorldClick(input) {
+            const root = document.querySelector('[data-message-id="' + CSS.escape(input.messageId) + '"]');
+            const report = {
+                ok: Boolean(root),
+                exactNodes: 0,
+                reactObjects: 0,
+                clickAttempts: 0,
+                clickSuccesses: 0,
+                errors: []
+            };
+            const wanted = String(input.fileName || '').toLowerCase();
+
+            function labelOf(node) {
+                if (!(node instanceof Element)) {
+                    return '';
+                }
+
+                return [
+                    node.textContent || '',
+                    node.getAttribute('aria-label') || '',
+                    node.getAttribute('title') || '',
+                    node.getAttribute('download') || '',
+                    node.getAttribute('href') || ''
+                ].join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
+            }
+
+            function strongClick(node) {
+                if (!(node instanceof HTMLElement)) {
+                    return;
+                }
+
+                report.clickAttempts++;
+                let clicked = false;
+                let current = node;
+
+                for (let depth = 0; current && depth < 10; depth++, current = current.parentElement) {
+                    for (const key of Object.keys(current)) {
+                        if (!key.startsWith('__reactProps$')) {
+                            continue;
+                        }
+
+                        const props = current[key];
+
+                        if (!props || typeof props.onClick !== 'function') {
+                            continue;
+                        }
+
+                        try {
+                            props.onClick({
+                                type: 'click',
+                                target: current,
+                                currentTarget: current,
+                                nativeEvent: new MouseEvent('click', {
+                                    bubbles: true,
+                                    cancelable: true,
+                                    composed: true,
+                                    view: window
+                                }),
+                                button: 0,
+                                buttons: 0,
+                                detail: 1,
+                                preventDefault() {},
+                                stopPropagation() {},
+                                persist() {}
+                            });
+
+                            clicked = true;
+                        } catch (error) {
+                            report.errors.push(String(error && error.message || error).slice(0, 300));
+                        }
+                    }
+
+                    if (current.matches('a, button, [role="button"], [role="link"], [tabindex]')) {
+                        try {
+                            current.click();
+                            clicked = true;
+                        } catch (error) {
+                            report.errors.push(String(error && error.message || error).slice(0, 300));
+                        }
+                    }
+                }
+
+                if (clicked) {
+                    report.clickSuccesses++;
+                }
+            }
+
+            if (root) {
+                const nodes = [root, ...root.querySelectorAll('*')].slice(0, 1800);
+
+                for (const node of nodes) {
+                    if (wanted && labelOf(node).includes(wanted)) {
+                        report.exactNodes++;
+                        strongClick(node);
+                    }
+                }
+
+                const seen = new WeakSet();
+                let visited = 0;
+
+                function nearby(fiber) {
+                    const nodes = [];
+                    const unique = new Set();
+
+                    function add(value) {
+                        if (!(value instanceof HTMLElement) || !root.contains(value) || unique.has(value)) {
+                            return;
+                        }
+
+                        unique.add(value);
+                        nodes.push(value);
+                    }
+
+                    let current = fiber;
+
+                    for (let depth = 0; current && depth < 12; depth++, current = current.return) {
+                        add(current.stateNode);
+                        add(current.child && current.child.stateNode);
+                        add(current.sibling && current.sibling.stateNode);
+                        add(current.alternate && current.alternate.stateNode);
+                    }
+
+                    return nodes;
+                }
+
+                function walk(value, owner, depth, activeFiber) {
+                    if (depth > 20 || visited > 70000) {
+                        return;
+                    }
+
+                    if (typeof value === 'string') {
+                        let decoded = value.toLowerCase();
+
+                        try {
+                            decoded = decodeURIComponent(value).toLowerCase();
+                        } catch {
+                            // Keep original.
+                        }
+
+                        if (wanted && decoded.includes(wanted)) {
+                            for (const node of nearby(activeFiber)) {
+                                strongClick(node);
+                            }
+
+                            strongClick(owner);
+                        }
+
+                        return;
+                    }
+
+                    if (!value || (typeof value !== 'object' && typeof value !== 'function')) {
+                        return;
+                    }
+
+                    try {
+                        if (seen.has(value)) {
+                            return;
+                        }
+
+                        seen.add(value);
+                    } catch {
+                        return;
+                    }
+
+                    visited++;
+                    report.reactObjects++;
+
+                    const looksLikeFiber =
+                        Object.prototype.hasOwnProperty.call(value, 'pendingProps') ||
+                        Object.prototype.hasOwnProperty.call(value, 'memoizedProps') ||
+                        Object.prototype.hasOwnProperty.call(value, 'stateNode');
+
+                    const fiber = looksLikeFiber ? value : activeFiber;
+                    const stateNode = value.stateNode instanceof HTMLElement ? value.stateNode : owner;
+
+                    for (const propsName of ['pendingProps', 'memoizedProps', 'props']) {
+                        const props = value[propsName];
+
+                        if (!props || typeof props !== 'object') {
+                            continue;
+                        }
+
+                        const values = [
+                            props.href,
+                            props.url,
+                            props.downloadUrl,
+                            props.fileId,
+                            props.file_id,
+                            props.asset_pointer,
+                            typeof props.children === 'string' ? props.children : ''
+                        ];
+
+                        const relevant = values.some(item => {
+                            if (!item) {
+                                return false;
+                            }
+
+                            let candidate = String(item).toLowerCase();
+
+                            try {
+                                candidate = decodeURIComponent(String(item)).toLowerCase();
+                            } catch {
+                                // Keep original.
+                            }
+
+                            return wanted && candidate.includes(wanted);
+                        });
+
+                        if (relevant) {
+                            for (const node of nearby(fiber)) {
+                                strongClick(node);
+                            }
+
+                            strongClick(stateNode);
+                        }
+                    }
+
+                    let entries = [];
+
+                    try {
+                        entries = Object.entries(value);
+                    } catch {
+                        return;
+                    }
+
+                    entries.sort(([left], [right]) => {
+                        const important = /pendingProps|memoizedProps|props|href|url|file|asset|pointer|download|stateNode|child|return|alternate|sibling/i;
+                        return Number(important.test(right)) - Number(important.test(left));
+                    });
+
+                    for (const [, child] of entries.slice(0, 220)) {
+                        walk(child, stateNode, depth + 1, fiber);
+                    }
+                }
+
+                for (const node of nodes) {
+                    for (const key of Object.keys(node)) {
+                        if (key.startsWith('__reactFiber$') || key.startsWith('__reactProps$') || key.startsWith('__reactContainer$')) {
+                            walk(node[key], node, 0, null);
+                        }
+                    }
+                }
+            }
+
+            document.documentElement.setAttribute(input.marker, encodeURIComponent(JSON.stringify(report)));
+        } + ')(' + JSON.stringify(payload) + ');';
+
+        (document.head || document.documentElement).appendChild(script);
+        script.remove();
+
+        await wait(180);
+
+        const encoded = document.documentElement.getAttribute(marker);
+        document.documentElement.removeAttribute(marker);
+
+        if (!encoded) {
+            return {
+                ok: false,
+                error: 'page-world-no-result'
+            };
+        }
+
+        try {
+            return JSON.parse(decodeURIComponent(encoded));
+        } catch (error) {
+            return {
+                ok: false,
+                error: 'page-world-invalid-result:' + String(error && error.message || error)
+            };
+        }
+    }
+
     async function queueDownloadedFileJob(
         assistant,
         manifest,
@@ -2792,16 +3271,45 @@
 
         if (!requestFinished) {
             setStatus(
-                'Foram acionados ' +
-                attempts +
-                ' elementos. A aguardar que o Chrome termine o download…'
+                'Os controlos do DOM/React não concluíram o download. A repetir no contexto real da página…'
+            );
+
+            const pageWorld = await lpxUnifiedPageWorldClick(
+                assistant,
+                fileName
+            );
+
+            lastAttachmentDiagnostic = [
+                lastAttachmentDiagnostic,
+                'pageWorld=' + JSON.stringify(pageWorld)
+            ].filter(Boolean).join(';');
+
+            for (let waitIndex = 0; waitIndex < 30 && !requestFinished; waitIndex++) {
+                await wait(200);
+            }
+        }
+
+        if (!requestFinished) {
+            setStatus(
+                'Todas as estratégias exatas foram acionadas. A aguardar o watcher local…'
             );
         }
 
         await requestPromise;
 
         if (requestError) {
-            throw requestError;
+            throw new Error(
+                String(
+                    requestError &&
+                    requestError.message ||
+                    requestError
+                ) +
+                '. Diagnóstico consolidado: ' +
+                (
+                    lastAttachmentDiagnostic ||
+                    'indisponível'
+                )
+            );
         }
 
         const response = requestResult;
@@ -5202,7 +5710,7 @@
                         );
                     }
 
-                    await queueExactSandboxFileJob(
+                    await queueDownloadedFileJob(
                         assistant,
                         manifest,
                         fileName,
