@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2154-INVENTARIO-CFX-002",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Inventariar e analisar os macros CFX do show aberto no Avolites Titan 19.2",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-30T20:52:05.968Z",
+  "endedAt": "2026-07-30T20:52:07.242Z",
+  "elapsedMs": 1274,
+  "outputLength": 4922,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "b6e93c8b58d2a08494ba14b1ee39f1e937f6fcc4f165982d0667d3cb4d8f01c7",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2154-INVENTARIO-CFX-002.txt",
+  "createdAt": "2026-07-30T20:52:07.243Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

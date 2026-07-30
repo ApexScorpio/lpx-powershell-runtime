@@ -1,0 +1,89 @@
+
+========================================================================================
+ AVOLITES TITAN 19.2 — INVENTÁRIO REAL DOS MACROS CFX
+========================================================================================
+Este job é exclusivamente de leitura. Não executa, altera, importa nem apaga macros.
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+========================================================================================
+ 1/4 — LEITURA CORRIGIDA DOS HANDLES DO SHOW
+========================================================================================
+Handles programados encontrados: 1389
+Handles de macro encontrados:     59
+Handles candidatos ao conjunto CFX: 24
+
+Legend       Group   PageAPI PageUI IndexAPI Position TitanId UserNo Type       
+------       -----   ------- ------ -------- -------- ------- ------ ----       
+HIGH 1 White Colours       9     10       45       46   74216        macroHandle
+HIGH 10 Mag  Colours       9     10       46       47   74217        macroHandle
+HIGH 11 Purp Colours       9     10       47       48   74218        macroHandle
+HIGH 19 Blk  Colours       9     10       48       49   74219        macroHandle
+HIGH 2 Red   Colours       9     10       49       50   74220        macroHandle
+HIGH 3 Orng  Colours       9     10       50       51   74221        macroHandle
+HIGH 4 Yell  Colours       9     10       51       52   74222        macroHandle
+HIGH 5 Grn   Colours       9     10       52       53   74223        macroHandle
+HIGH 6 Lime  Colours       9     10       53       54   74224        macroHandle
+HIGH 7 Cyan  Colours       9     10       54       55   74225        macroHandle
+HIGH 8 LBlue Colours       9     10       55       56   74226        macroHandle
+HIGH 9 Blue  Colours       9     10       56       57   74227        macroHandle
+LOW 1 White  Colours       9     10       60       61   74204        macroHandle
+LOW 10 Mag   Colours       9     10       61       62   74205        macroHandle
+LOW 11 Purp  Colours       9     10       62       63   74206        macroHandle
+LOW 19 Blk   Colours       9     10       63       64   74207        macroHandle
+LOW 2 Red    Colours       9     10       64       65   74208        macroHandle
+LOW 3 Orng   Colours       9     10       65       66   74209        macroHandle
+LOW 4 Yell   Colours       9     10       66       67   74210        macroHandle
+LOW 5 Grn    Colours       9     10       67       68   74211        macroHandle
+LOW 6 Lime   Colours       9     10       68       69   74212        macroHandle
+LOW 7 Cyan   Colours       9     10       69       70   74213        macroHandle
+LOW 8 LBlue  Colours       9     10       70       71   74214        macroHandle
+LOW 9 Blue   Colours       9     10       71       72   74215        macroHandle
+
+
+
+
+========================================================================================
+ 2/4 — TESTE DIRETO DOS 24 IDENTIFICADORES CFX
+========================================================================================
+NÃO ENCONTRADO  CFX.High.White
+NÃO ENCONTRADO  CFX.High.Red
+NÃO ENCONTRADO  CFX.High.Orange
+NÃO ENCONTRADO  CFX.High.Yellow
+NÃO ENCONTRADO  CFX.High.Lime
+NÃO ENCONTRADO  CFX.High.Green
+NÃO ENCONTRADO  CFX.High.Cyan
+NÃO ENCONTRADO  CFX.High.LtBlue
+NÃO ENCONTRADO  CFX.High.Blue
+NÃO ENCONTRADO  CFX.High.Magenta
+NÃO ENCONTRADO  CFX.High.Purple
+NÃO ENCONTRADO  CFX.High.Black
+NÃO ENCONTRADO  CFX.Low.White
+NÃO ENCONTRADO  CFX.Low.Red
+NÃO ENCONTRADO  CFX.Low.Orange
+NÃO ENCONTRADO  CFX.Low.Yellow
+NÃO ENCONTRADO  CFX.Low.Lime
+NÃO ENCONTRADO  CFX.Low.Green
+NÃO ENCONTRADO  CFX.Low.Cyan
+NÃO ENCONTRADO  CFX.Low.LtBlue
+NÃO ENCONTRADO  CFX.Low.Blue
+NÃO ENCONTRADO  CFX.Low.Magenta
+NÃO ENCONTRADO  CFX.Low.Purple
+NÃO ENCONTRADO  CFX.Low.Black
+
+========================================================================================
+ 3/4 — CONTEÚDO DOS MACROS CFX ENCONTRADOS
+========================================================================================
+A Web API não devolveu XML para nenhum dos 24 identificadores CFX conhecidos.
+
+========================================================================================
+ 4/4 — RESUMO FINAL
+========================================================================================
+Macros CFX esperados:   24
+Macros CFX encontrados: 0
+Macros CFX em falta:    24
+Handles CFX no layout:  24
+Em falta: CFX.High.White, CFX.High.Red, CFX.High.Orange, CFX.High.Yellow, CFX.High.Lime, CFX.High.Green, CFX.High.Cyan, CFX.High.LtBlue, CFX.High.Blue, CFX.High.Magenta, CFX.High.Purple, CFX.High.Black, CFX.Low.White, CFX.Low.Red, CFX.Low.Orange, CFX.Low.Yellow, CFX.Low.Lime, CFX.Low.Green, CFX.Low.Cyan, CFX.Low.LtBlue, CFX.Low.Blue, CFX.Low.Magenta, CFX.Low.Purple, CFX.Low.Black
+
+Inventário concluído sem alterar o show.
