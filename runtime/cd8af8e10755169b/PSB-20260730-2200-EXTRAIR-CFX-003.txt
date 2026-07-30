@@ -1,0 +1,478 @@
+
+================================================================================================
+ AVOLITES TITAN 19.2 — EXTRAÇÃO DOS 24 MACROS CFX A PARTIR DO SHOW
+================================================================================================
+Este job não executa macros e não altera programação, handles, paletes ou grupos.
+Apenas seleciona internamente cada macro pelo User Number, lê o respetivo ID e exporta uma cópia XML.
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+================================================================================================
+ 1/4 — MAPA ESPERADO DOS CFX NO SHOW
+================================================================================================
+
+UserNo Legend      
+------ ------      
+     8 HIGH 1 White
+     9 HIGH 10 Mag 
+    10 HIGH 11 Purp
+    11 HIGH 19 Blk 
+    12 HIGH 2 Red  
+    13 HIGH 3 Orng 
+    14 HIGH 4 Yell 
+    15 HIGH 5 Grn  
+    16 HIGH 6 Lime 
+    17 HIGH 7 Cyan 
+    18 HIGH 8 LBlue
+    31 HIGH 9 Blue 
+    19 LOW 1 White 
+    20 LOW 10 Mag  
+    21 LOW 11 Purp 
+    22 LOW 19 Blk  
+    23 LOW 2 Red   
+    24 LOW 3 Orng  
+    25 LOW 4 Yell  
+    26 LOW 5 Grn   
+    27 LOW 6 Lime  
+    28 LOW 7 Cyan  
+    29 LOW 8 LBlue 
+    30 LOW 9 Blue  
+
+
+
+
+================================================================================================
+ 2/4 — RESOLUÇÃO DO MACRO ID E EXPORTAÇÃO XML
+================================================================================================
+Pasta de recuperação: %USERPROFILE%\Documents\Titan\Macros\Recovered_CFX_20260730-215623
+OK     UN 8   HIGH 1 White — ID UserMacro.HIGH1White — 6 passos
+OK     UN 9   HIGH 10 Mag — ID UserMacro.HIGH10Mag — 6 passos
+OK     UN 10  HIGH 11 Purp — ID UserMacro.HIGH11Purp — 6 passos
+OK     UN 11  HIGH 19 Blk — ID UserMacro.HIGH19Blk — 6 passos
+OK     UN 12  HIGH 2 Red — ID UserMacro.HIGH2Red — 6 passos
+OK     UN 13  HIGH 3 Orng — ID UserMacro.HIGH3Orng — 6 passos
+OK     UN 14  HIGH 4 Yell — ID UserMacro.HIGH4Yell — 6 passos
+OK     UN 15  HIGH 5 Grn — ID UserMacro.HIGH5Grn — 6 passos
+OK     UN 16  HIGH 6 Lime — ID UserMacro.HIGH6Lime — 6 passos
+OK     UN 17  HIGH 7 Cyan — ID UserMacro.HIGH7Cyan — 6 passos
+OK     UN 18  HIGH 8 LBlue — ID UserMacro.HIGH8LBlue — 6 passos
+OK     UN 31  HIGH 9 Blue — ID UserMacro.HIGH9Blue — 6 passos
+OK     UN 19  LOW 1 White — ID UserMacro.LOW1White — 6 passos
+OK     UN 20  LOW 10 Mag — ID UserMacro.LOW10Mag — 6 passos
+OK     UN 21  LOW 11 Purp — ID UserMacro.LOW11Purp — 6 passos
+OK     UN 22  LOW 19 Blk — ID UserMacro.LOW19Blk — 6 passos
+OK     UN 23  LOW 2 Red — ID UserMacro.LOW2Red — 6 passos
+OK     UN 24  LOW 3 Orng — ID UserMacro.LOW3Orng — 6 passos
+OK     UN 25  LOW 4 Yell — ID UserMacro.LOW4Yell — 6 passos
+OK     UN 26  LOW 5 Grn — ID UserMacro.LOW5Grn — 6 passos
+OK     UN 27  LOW 6 Lime — ID UserMacro.LOW6Lime — 6 passos
+OK     UN 28  LOW 7 Cyan — ID UserMacro.LOW7Cyan — 6 passos
+OK     UN 29  LOW 8 LBlue — ID UserMacro.LOW8LBlue — 6 passos
+OK     UN 30  LOW 9 Blue — ID UserMacro.LOW9Blue — 6 passos
+
+================================================================================================
+ 3/4 — CONTEÚDO ENCONTRADO NOS MACROS CFX
+================================================================================================
+
+UserNumber ExpectedLegend MacroId              Name Steps Groups Palettes
+---------- -------------- -------              ---- ----- ------ --------
+         8 HIGH 1 White   UserMacro.HIGH1White          6                
+         9 HIGH 10 Mag    UserMacro.HIGH10Mag           6                
+        10 HIGH 11 Purp   UserMacro.HIGH11Purp          6                
+        11 HIGH 19 Blk    UserMacro.HIGH19Blk           6                
+        12 HIGH 2 Red     UserMacro.HIGH2Red            6                
+        13 HIGH 3 Orng    UserMacro.HIGH3Orng           6                
+        14 HIGH 4 Yell    UserMacro.HIGH4Yell           6                
+        15 HIGH 5 Grn     UserMacro.HIGH5Grn            6                
+        16 HIGH 6 Lime    UserMacro.HIGH6Lime           6                
+        17 HIGH 7 Cyan    UserMacro.HIGH7Cyan           6                
+        18 HIGH 8 LBlue   UserMacro.HIGH8LBlue          6                
+        31 HIGH 9 Blue    UserMacro.HIGH9Blue           6                
+        19 LOW 1 White    UserMacro.LOW1White           6                
+        20 LOW 10 Mag     UserMacro.LOW10Mag            6                
+        21 LOW 11 Purp    UserMacro.LOW11Purp           6                
+        22 LOW 19 Blk     UserMacro.LOW19Blk            6                
+        23 LOW 2 Red      UserMacro.LOW2Red             6                
+        24 LOW 3 Orng     UserMacro.LOW3Orng            6                
+        25 LOW 4 Yell     UserMacro.LOW4Yell            6                
+        26 LOW 5 Grn      UserMacro.LOW5Grn             6                
+        27 LOW 6 Lime     UserMacro.LOW6Lime            6                
+        28 LOW 7 Cyan     UserMacro.LOW7Cyan            6                
+        29 LOW 8 LBlue    UserMacro.LOW8LBlue           6                
+        30 LOW 9 Blue     UserMacro.LOW9Blue            6                
+
+
+
+------------------------------------------------------------------------------------------------
+UN 8 | HIGH 1 White
+MacroId: UserMacro.HIGH1White
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 1")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 9 | HIGH 10 Mag
+MacroId: UserMacro.HIGH10Mag
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 10")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 10 | HIGH 11 Purp
+MacroId: UserMacro.HIGH11Purp
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 11")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 11 | HIGH 19 Blk
+MacroId: UserMacro.HIGH19Blk
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 19")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 12 | HIGH 2 Red
+MacroId: UserMacro.HIGH2Red
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 2")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 13 | HIGH 3 Orng
+MacroId: UserMacro.HIGH3Orng
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 3")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 14 | HIGH 4 Yell
+MacroId: UserMacro.HIGH4Yell
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 4")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 15 | HIGH 5 Grn
+MacroId: UserMacro.HIGH5Grn
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 5")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 16 | HIGH 6 Lime
+MacroId: UserMacro.HIGH6Lime
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 6")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 17 | HIGH 7 Cyan
+MacroId: UserMacro.HIGH7Cyan
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 7")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 18 | HIGH 8 LBlue
+MacroId: UserMacro.HIGH8LBlue
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 8")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 31 | HIGH 9 Blue
+MacroId: UserMacro.HIGH9Blue
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 9")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 19 | LOW 1 White
+MacroId: UserMacro.LOW1White
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 1")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 20 | LOW 10 Mag
+MacroId: UserMacro.LOW10Mag
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 10")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 21 | LOW 11 Purp
+MacroId: UserMacro.LOW11Purp
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 11")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 22 | LOW 19 Blk
+MacroId: UserMacro.LOW19Blk
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 19")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 23 | LOW 2 Red
+MacroId: UserMacro.LOW2Red
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 2")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 24 | LOW 3 Orng
+MacroId: UserMacro.LOW3Orng
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 3")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 25 | LOW 4 Yell
+MacroId: UserMacro.LOW4Yell
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 4")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 26 | LOW 5 Grn
+MacroId: UserMacro.LOW5Grn
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 5")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 27 | LOW 6 Lime
+MacroId: UserMacro.LOW6Lime
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 6")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 28 | LOW 7 Cyan
+MacroId: UserMacro.LOW7Cyan
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 7")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 29 | LOW 8 LBlue
+MacroId: UserMacro.LOW8LBlue
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 8")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+------------------------------------------------------------------------------------------------
+UN 30 | LOW 9 Blue
+MacroId: UserMacro.LOW9Blue
+XML id:  
+Nome:    
+Grupos chamados: (nenhum detetado)
+Paletes referidas: (nenhuma detetada)
+Funções: ActionScript.Command, Programmer.Editor.ClearAll
+Passos:
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 9")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+
+================================================================================================
+ 4/4 — RESUMO FINAL
+================================================================================================
+Macros CFX esperados:   24
+Macros CFX recuperados: 24
+Macros CFX com falha:   0
+Pasta criada:           %USERPROFILE%\Documents\Titan\Macros\Recovered_CFX_20260730-215623
+Grupos usados no conjunto:   
+Paletes usadas no conjunto:  
+
+Extração concluída. O show não foi alterado.
