@@ -1,0 +1,25 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR OS 24 MACROS CFX COM STRING LITERAL CORRETA
+================================================================================================================
+Este job corrige a codificação do parâmetro ImportXml, testa-a com um XML original e só depois importa os 24 CFX.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+Teste ImportXml seguro: HIGH 1 White — reimportação do XML original...
+O Titan ainda rejeitou o XML como String literal: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500} | HTTP 500: {"type":"https://api.avolites.com","title":"Error: Compliation of action script failed:\nUserMacros.ImportXml(\"<?xml version)\nErrors:\n21: Unexpected token '' found. Expected CLOSEBRACKET\n21: Unexpected token '' found. Expected EOF","status":500}
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448831895-84e01374862d0770.ps1:463 char:5
++     throw "O Titan ainda rejeitou o XML como String literal: $($probe ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (O Titan ainda r...","status":500}:String) [], RuntimeException
+    + FullyQualifiedErrorId : O Titan ainda rejeitou o XML como String literal: HTTP 500: {"type":"https://api.avolite    s.com","title":"Error: Error executing an Action Script","status":500} | HTTP 500: {"type":"https://api.avolites.c    om","title":"Error: Compliation of action script failed:\nUserMacros.ImportXml(\"<?xml version)\nErrors:\n21: Unex    pected token '' found. Expected CLOSEBRACKET\n21: Unexpected token '' found. Expected EOF","status":500}
+ 
