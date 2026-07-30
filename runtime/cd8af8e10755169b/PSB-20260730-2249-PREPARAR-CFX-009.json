@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2249-PREPARAR-CFX-009",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Criar backups e preparar os 24 macros CFX corrigidos sem alterar o show aberto",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-30T21:50:48.033Z",
+  "endedAt": "2026-07-30T21:50:51.589Z",
+  "elapsedMs": 3556,
+  "outputLength": 3070,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "82f1938a2963e2d5437caf3fc2bec03a4593baebcf38db52005e4243f828f4d5",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2249-PREPARAR-CFX-009.txt",
+  "createdAt": "2026-07-30T21:50:51.589Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

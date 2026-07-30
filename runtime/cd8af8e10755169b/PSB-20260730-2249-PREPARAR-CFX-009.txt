@@ -1,0 +1,53 @@
+============================================================================================================
+ AVOLITES TITAN 19.2 — PREPARAR CORREÇÃO SEGURA DOS 24 MACROS CFX
+============================================================================================================
+Este job NÃO executa macros, NÃO grava paletas e NÃO importa alterações no show aberto.
+Cria backups e ficheiros XML corrigidos, prontos para validação/importação posterior.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:  ALL Rig (UN 20000)
+Palette 901:       High
+Palette 902:       Low
+Macros CFX:        24
+
+OK  1/24 | HIGH 1 White     | Group 20000 | Palette 1 -> 901
+OK  2/24 | HIGH 10 Mag      | Group 20000 | Palette 10 -> 901
+OK  3/24 | HIGH 11 Purp     | Group 20000 | Palette 11 -> 901
+OK  4/24 | HIGH 19 Blk      | Group 20000 | Palette 19 -> 901
+OK  5/24 | HIGH 2 Red       | Group 20000 | Palette 2 -> 901
+OK  6/24 | HIGH 3 Orng      | Group 20000 | Palette 3 -> 901
+OK  7/24 | HIGH 4 Yell      | Group 20000 | Palette 4 -> 901
+OK  8/24 | HIGH 5 Grn       | Group 20000 | Palette 5 -> 901
+OK  9/24 | HIGH 6 Lime      | Group 20000 | Palette 6 -> 901
+OK 10/24 | HIGH 7 Cyan      | Group 20000 | Palette 7 -> 901
+OK 11/24 | HIGH 8 LBlue     | Group 20000 | Palette 8 -> 901
+OK 12/24 | HIGH 9 Blue      | Group 20000 | Palette 9 -> 901
+OK 13/24 | LOW 1 White      | Group 20000 | Palette 1 -> 902
+OK 14/24 | LOW 10 Mag       | Group 20000 | Palette 10 -> 902
+OK 15/24 | LOW 11 Purp      | Group 20000 | Palette 11 -> 902
+OK 16/24 | LOW 19 Blk       | Group 20000 | Palette 19 -> 902
+OK 17/24 | LOW 2 Red        | Group 20000 | Palette 2 -> 902
+OK 18/24 | LOW 3 Orng       | Group 20000 | Palette 3 -> 902
+OK 19/24 | LOW 4 Yell       | Group 20000 | Palette 4 -> 902
+OK 20/24 | LOW 5 Grn        | Group 20000 | Palette 5 -> 902
+OK 21/24 | LOW 6 Lime       | Group 20000 | Palette 6 -> 902
+OK 22/24 | LOW 7 Cyan       | Group 20000 | Palette 7 -> 902
+OK 23/24 | LOW 8 LBlue      | Group 20000 | Palette 8 -> 902
+OK 24/24 | LOW 9 Blue       | Group 20000 | Palette 9 -> 902
+
+============================================================================================================
+ PREPARAÇÃO CONCLUÍDA — SHOW NÃO ALTERADO
+============================================================================================================
+Macros preparados:      24/24
+HIGH -> Palette 901:     12
+LOW  -> Palette 902:     12
+Grupo explícito:         20000
+Backup dos originais:    %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048\01_Backup_Originais
+XML individuais:         %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048\02_XML_Corrigidos
+Biblioteca combinada:    %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048\02_XML_Corrigidos\CFX_24_CORRIGIDOS.xml
+Relatório:                %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048\RELATORIO_CFX.txt
+
+Nenhum macro foi importado ou executado neste job.
