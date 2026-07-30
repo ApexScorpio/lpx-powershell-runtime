@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2322-IMPORTAR-CFX-018",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Importar e validar os 24 macros CFX através do binder legado de parâmetros String",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-30T22:19:34.962Z",
+  "endedAt": "2026-07-30T22:19:39.182Z",
+  "elapsedMs": 4220,
+  "outputLength": 1486,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fb44f35f09f88096326557f6028e4177919031d615c96936e66666447729f110",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2322-IMPORTAR-CFX-018.txt",
+  "createdAt": "2026-07-30T22:19:39.183Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
