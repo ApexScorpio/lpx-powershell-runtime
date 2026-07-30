@@ -1,0 +1,25 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR OS 24 MACROS CFX COM XML SERIALIZADO CORRETAMENTE
+================================================================================================================
+Este job corrige a serialização XML com aspas simples, testa um original e só depois importa os 24 CFX.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+Teste ImportXml seguro: HIGH 1 White — reimportação do XML original...
+A serialização XML segura perdeu a raiz avolites.macros ou o macro.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785449421322-2d9aa544529cf40c.ps1:243 char:9
++         throw 'A serialização XML segura perdeu a raiz avolites.macro ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (A serialização ...ros ou o macro.:String) [], RuntimeException
+    + FullyQualifiedErrorId : A serialização XML segura perdeu a raiz avolites.macros ou o macro.
+ 
