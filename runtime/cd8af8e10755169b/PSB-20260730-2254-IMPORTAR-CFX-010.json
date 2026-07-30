@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2254-IMPORTAR-CFX-010",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Importar e validar os 24 macros CFX corrigidos com backup e rollback automático",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-30T21:55:22.770Z",
+  "endedAt": "2026-07-30T21:55:26.863Z",
+  "elapsedMs": 4093,
+  "outputLength": 3338,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "4099792d1d8ea618f4f4ebf21d4e36325996f372d625a8b049ebc2bd96dc26e6",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2254-IMPORTAR-CFX-010.txt",
+  "createdAt": "2026-07-30T21:55:26.864Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

@@ -1,0 +1,27 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR E VALIDAR OS 24 MACROS CFX CORRIGIDOS
+================================================================================================================
+Este job altera apenas as definições dos 24 macros CFX. Não executa macros e não grava paletas.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+
+FALHA DURANTE A IMPORTAÇÃO: ImportXml falhou em 'HIGH 1 White': HTTP 500: O servidor remoto devolveu um erro: (500) Erro interno de servidor. {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500} | HTTP 500: O servidor remoto devolveu um erro: (500) Erro interno de servidor. {"type":"https://api.avolites.com","title":"Error: Compliation of action script failed:\nUserMacros.ImportXml(<?xml version)\nErrors:\n21: Unexpected token '' found. Expected CLOSEBRACKET\n22: Unexpected token '' found.\n22: Unexpected token '' found. Expected EOF","status":500}
+A repor automaticamente os macros já importados...
+ImportXml falhou em 'HIGH 1 White': HTTP 500: O servidor remoto devolveu um erro: (500) Erro interno de servidor. {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500} | HTTP 500: O servidor remoto devolveu um erro: (500) Erro interno de servidor. {"type":"https://api.avolites.com","title":"Error: Compliation of action script failed:\nUserMacros.ImportXml(<?xml version)\nErrors:\n21: Unexpected token '' found. Expected CLOSEBRACKET\n22: Unexpected token '' found.\n22: Unexpected token '' found. Expected EOF","status":500} | Rollback concluído sem falhas. Backups: %USERPROFILE%\Documents\Titan\Macros\CFX_Importacao_20260730-225523\01_Backup_Imediato
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448522759-b45820d228d43923.ps1:475 char:5
++     throw "$failure | Rollback concluído sem falhas. Backups: $immedi ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (ImportXml falho...Backup_Imediato:String) [], RuntimeException
+    + FullyQualifiedErrorId : ImportXml falhou em 'HIGH 1 White': HTTP 500: O servidor remoto devolveu um erro: (500)     Erro interno de servidor. {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","st    atus":500} | HTTP 500: O servidor remoto devolveu um erro: (500) Erro interno de servidor. {"type":"https://api.av    olites.com","title":"Error: Compliation of action script failed:\nUserMacros.ImportXml(<?xml version)\nErrors:\n21    : Unexpected token '' found. Expected CLOSEBRACKET\n22: Unexpected token '' found.\n22: Unexpected token '' found.     Expected EOF","status":500} | Rollback concluído sem falhas. Backups: %USERPROFILE%\Documents\Titan\Macros\CFX_I    mportacao_20260730-225523\01_Backup_Imediato
+ 
