@@ -1,0 +1,25 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR OS 24 MACROS CFX — BINDER STRING LEGADO CORRIGIDO
+================================================================================================================
+Este job corrige a validação da raiz XML e usa o endpoint legado com o parâmetro tipado string; testa um original e só depois importa os 24 CFX.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+Teste ImportXml pelo binder legado string corrigido: HIGH 1 White — reimportação do XML original...
+O binder legado string corrigido rejeitou o backup XML validado: HTTP 500: {"type":"https://api.avolites.com","title":"Error: Error executing an Action Script","status":500}
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785450119727-921e3bcf3f69a56d.ps1:599 char:5
++     throw "O binder legado string corrigido rejeitou o backup XML val ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (O binder legado...","status":500}:String) [], RuntimeException
+    + FullyQualifiedErrorId : O binder legado string corrigido rejeitou o backup XML validado: HTTP 500: {"type":"http    s://api.avolites.com","title":"Error: Error executing an Action Script","status":500}
+ 
