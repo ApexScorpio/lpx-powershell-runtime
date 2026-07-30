@@ -1,0 +1,54 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:105
++ ... -Document $document -Command ("ActionScript.Command(\"Include Palette ...
++                                                           ~~~~~~~
+Unexpected token 'Include' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:105
++ ... epNode -Document $document -Command ("ActionScript.Command(\"Include  ...
++                                                                  ~
+Missing closing ')' in expression.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:148
++ ... t.Command(\"Include Palette {0}\")" -f $sourcePalette) -Pause '0.12') ...
++                                                            ~~~~~~
+Unexpected token '-Pause' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:154
++ ... t.Command(\"Include Palette {0}\")" -f $sourcePalette) -Pause '0.12') ...
++                                                                  ~
+Missing ')' in method call.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:155
++ ... .Command(\"Include Palette {0}\")" -f $sourcePalette) -Pause '0.12'))
++                                                                  ~~~~~~
+Unexpected token ''0.12'' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:220 char:38
++ foreach ($macroHandle in $cfxMacros) {
++                                      ~
+Missing closing '}' in statement block or type definition.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:161
++ ... .Command(\"Include Palette {0}\")" -f $sourcePalette) -Pause '0.12'))
++                                                                        ~
+Unexpected token ')' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:271 char:162
++ ... .Command(\"Include Palette {0}\")" -f $sourcePalette) -Pause '0.12'))
++                                                                         ~
+Unexpected token ')' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:272 char:105
++ ...  -Document $document -Command ("ActionScript.Command(\"Record Palette ...
++                                                            ~~~~~~
+Unexpected token 'Record' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785448089369-4d10ad6582202900.ps1:272 char:105
++ ... epNode -Document $document -Command ("ActionScript.Command(\"Record P ...
++                                                                  ~
+Missing closing ')' in expression.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
