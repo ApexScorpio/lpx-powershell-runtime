@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2243-DIAGNOSTICO-CFX-006",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Concluir o diagnóstico dos macros CFX e das paletas High e Low",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-30T21:44:26.394Z",
+  "endedAt": "2026-07-30T21:44:32.881Z",
+  "elapsedMs": 6487,
+  "outputLength": 53052,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9d07ac7ec0707e343c6113c30c0b651b76741815fb37f596fc7bdeb25dd2d599",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2243-DIAGNOSTICO-CFX-006.txt",
+  "createdAt": "2026-07-30T21:44:32.882Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

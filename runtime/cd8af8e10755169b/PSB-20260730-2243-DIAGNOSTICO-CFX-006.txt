@@ -1,0 +1,832 @@
+
+============================================================================================================
+ AVOLITES TITAN 19.2 — CONCLUSÃO DO DIAGNÓSTICO DOS MACROS CFX E PALETAS HIGH/LOW
+============================================================================================================
+Job de leitura: não executa macros, não grava paletas e não altera o show.
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+============================================================================================================
+ 1/5 — HANDLES REAIS DOS MACROS CFX E DETEÇÃO DE DUPLICADOS
+============================================================================================================
+Handles totais:      1389
+Handles CFX HIGH/LOW: 24
+
+Legend       UserNo TitanId Window  PageAPI IndexAPI Active
+------       ------ ------- ------  ------- -------- ------
+HIGH 1 White      8   74216 Colours       9       45  False
+HIGH 10 Mag       9   74217 Colours       9       46  False
+HIGH 11 Purp     10   74218 Colours       9       47  False
+HIGH 19 Blk      11   74219 Colours       9       48  False
+HIGH 2 Red       12   74220 Colours       9       49  False
+HIGH 3 Orng      13   74221 Colours       9       50  False
+HIGH 4 Yell      14   74222 Colours       9       51  False
+HIGH 5 Grn       15   74223 Colours       9       52  False
+HIGH 6 Lime      16   74224 Colours       9       53  False
+HIGH 7 Cyan      17   74225 Colours       9       54  False
+HIGH 8 LBlue     18   74226 Colours       9       55  False
+HIGH 9 Blue      31   74227 Colours       9       56  False
+LOW 1 White      19   74204 Colours       9       60  False
+LOW 10 Mag       20   74205 Colours       9       61  False
+LOW 11 Purp      21   74206 Colours       9       62  False
+LOW 19 Blk       22   74207 Colours       9       63  False
+LOW 2 Red        23   74208 Colours       9       64  False
+LOW 3 Orng       24   74209 Colours       9       65  False
+LOW 4 Yell       25   74210 Colours       9       66  False
+LOW 5 Grn        26   74211 Colours       9       67  False
+LOW 6 Lime       27   74212 Colours       9       68  False
+LOW 7 Cyan       28   74213 Colours       9       69  False
+LOW 8 LBlue      29   74214 Colours       9       70  False
+LOW 9 Blue       30   74215 Colours       9       71  False
+
+
+
+Não foram encontrados User Numbers duplicados entre os handles CFX visíveis.
+HANDLE | HIGH 1 White | UN=8 | TitanId=74216 | Colours/P9/I45
+  Properties: (nenhuma)
+  Raw: {"userNumber":"8","legend":"HIGH 1 White","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74216,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":45},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 10 Mag | UN=9 | TitanId=74217 | Colours/P9/I46
+  Properties: (nenhuma)
+  Raw: {"userNumber":"9","legend":"HIGH 10 Mag","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74217,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":46},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 11 Purp | UN=10 | TitanId=74218 | Colours/P9/I47
+  Properties: (nenhuma)
+  Raw: {"userNumber":"10","legend":"HIGH 11 Purp","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74218,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":47},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 19 Blk | UN=11 | TitanId=74219 | Colours/P9/I48
+  Properties: (nenhuma)
+  Raw: {"userNumber":"11","legend":"HIGH 19 Blk","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74219,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":48},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 2 Red | UN=12 | TitanId=74220 | Colours/P9/I49
+  Properties: (nenhuma)
+  Raw: {"userNumber":"12","legend":"HIGH 2 Red","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74220,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":49},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 3 Orng | UN=13 | TitanId=74221 | Colours/P9/I50
+  Properties: (nenhuma)
+  Raw: {"userNumber":"13","legend":"HIGH 3 Orng","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74221,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":50},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 4 Yell | UN=14 | TitanId=74222 | Colours/P9/I51
+  Properties: (nenhuma)
+  Raw: {"userNumber":"14","legend":"HIGH 4 Yell","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74222,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":51},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 5 Grn | UN=15 | TitanId=74223 | Colours/P9/I52
+  Properties: (nenhuma)
+  Raw: {"userNumber":"15","legend":"HIGH 5 Grn","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74223,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":52},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 6 Lime | UN=16 | TitanId=74224 | Colours/P9/I53
+  Properties: (nenhuma)
+  Raw: {"userNumber":"16","legend":"HIGH 6 Lime","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74224,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":53},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 7 Cyan | UN=17 | TitanId=74225 | Colours/P9/I54
+  Properties: (nenhuma)
+  Raw: {"userNumber":"17","legend":"HIGH 7 Cyan","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74225,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":54},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 8 LBlue | UN=18 | TitanId=74226 | Colours/P9/I55
+  Properties: (nenhuma)
+  Raw: {"userNumber":"18","legend":"HIGH 8 LBlue","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74226,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":55},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | HIGH 9 Blue | UN=31 | TitanId=74227 | Colours/P9/I56
+  Properties: (nenhuma)
+  Raw: {"userNumber":"31","legend":"HIGH 9 Blue","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74227,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":56},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 1 White | UN=19 | TitanId=74204 | Colours/P9/I60
+  Properties: (nenhuma)
+  Raw: {"userNumber":"19","legend":"LOW 1 White","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74204,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":60},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 10 Mag | UN=20 | TitanId=74205 | Colours/P9/I61
+  Properties: (nenhuma)
+  Raw: {"userNumber":"20","legend":"LOW 10 Mag","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74205,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":61},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 11 Purp | UN=21 | TitanId=74206 | Colours/P9/I62
+  Properties: (nenhuma)
+  Raw: {"userNumber":"21","legend":"LOW 11 Purp","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74206,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":62},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 19 Blk | UN=22 | TitanId=74207 | Colours/P9/I63
+  Properties: (nenhuma)
+  Raw: {"userNumber":"22","legend":"LOW 19 Blk","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74207,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":63},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 2 Red | UN=23 | TitanId=74208 | Colours/P9/I64
+  Properties: (nenhuma)
+  Raw: {"userNumber":"23","legend":"LOW 2 Red","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74208,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":64},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 3 Orng | UN=24 | TitanId=74209 | Colours/P9/I65
+  Properties: (nenhuma)
+  Raw: {"userNumber":"24","legend":"LOW 3 Orng","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74209,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":65},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 4 Yell | UN=25 | TitanId=74210 | Colours/P9/I66
+  Properties: (nenhuma)
+  Raw: {"userNumber":"25","legend":"LOW 4 Yell","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74210,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":66},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 5 Grn | UN=26 | TitanId=74211 | Colours/P9/I67
+  Properties: (nenhuma)
+  Raw: {"userNumber":"26","legend":"LOW 5 Grn","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74211,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":67},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 6 Lime | UN=27 | TitanId=74212 | Colours/P9/I68
+  Properties: (nenhuma)
+  Raw: {"userNumber":"27","legend":"LOW 6 Lime","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74212,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":68},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 7 Cyan | UN=28 | TitanId=74213 | Colours/P9/I69
+  Properties: (nenhuma)
+  Raw: {"userNumber":"28","legend":"LOW 7 Cyan","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74213,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":69},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 8 LBlue | UN=29 | TitanId=74214 | Colours/P9/I70
+  Properties: (nenhuma)
+  Raw: {"userNumber":"29","legend":"LOW 8 LBlue","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74214,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":70},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+HANDLE | LOW 9 Blue | UN=30 | TitanId=74215 | Colours/P9/I71
+  Properties: (nenhuma)
+  Raw: {"userNumber":"30","legend":"LOW 9 Blue","notes":"","icon":null,"halo":null,"active":false,"information":null,"selected":false,"Links":[],"titanId":74215,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":9,"index":71},"type":"macroHandle","dimensions":{"Width":1,"Height":1}}
+
+============================================================================================================
+ 2/5 — PALETAS DE ORIGEM 1–19 E PALETAS DE DESTINO 901/902
+============================================================================================================
+
+Legend UserNo TitanId Window  PageAPI IndexAPI Active
+------ ------ ------- ------  ------- -------- ------
+Open        1    2902 Colours       0        0  False
+Red         2    2905 Colours       0        1  False
+            3    2908 Colours       0        2  False
+Yellow      4    2911 Colours       0        3  False
+            5    2914 Colours       0        4  False
+Green       6    2917 Colours       0        5  False
+            7    2923 Colours       0        6  False
+            8    2926 Colours       0        7  False
+            9    2929 Colours       0        8  False
+           10    2935 Colours       0        9  False
+           11    2944 Colours       0       10  False
+           19   74019 Colours       0       11  False
+High      901   87078 Colours       0       13  False
+Low       902   87080 Colours       0       14  False
+
+
+
+PALETA | Legend='Open' | UN=1 | TitanId=2902 | Colours/P0/I0
+  Properties: (nenhuma)
+  Raw: {"userNumber":"1","legend":"Open","notes":"","icon":"http://localhost:4430/titan/graphic/2904","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2902,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":0},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='Red' | UN=2 | TitanId=2905 | Colours/P0/I1
+  Properties: (nenhuma)
+  Raw: {"userNumber":"2","legend":"Red","notes":"","icon":"http://localhost:4430/titan/graphic/2907","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2905,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":1},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=3 | TitanId=2908 | Colours/P0/I2
+  Properties: (nenhuma)
+  Raw: {"userNumber":"3","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24030","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2908,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":2},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='Yellow' | UN=4 | TitanId=2911 | Colours/P0/I3
+  Properties: (nenhuma)
+  Raw: {"userNumber":"4","legend":"Yellow","notes":"","icon":"http://localhost:4430/titan/graphic/2913","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2911,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":3},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=5 | TitanId=2914 | Colours/P0/I4
+  Properties: (nenhuma)
+  Raw: {"userNumber":"5","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24031","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2914,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":4},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='Green' | UN=6 | TitanId=2917 | Colours/P0/I5
+  Properties: (nenhuma)
+  Raw: {"userNumber":"6","legend":"Green","notes":"","icon":"http://localhost:4430/titan/graphic/2919","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2917,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":5},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=7 | TitanId=2923 | Colours/P0/I6
+  Properties: (nenhuma)
+  Raw: {"userNumber":"7","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24032","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2923,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":6},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=8 | TitanId=2926 | Colours/P0/I7
+  Properties: (nenhuma)
+  Raw: {"userNumber":"8","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24033","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2926,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":7},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=9 | TitanId=2929 | Colours/P0/I8
+  Properties: (nenhuma)
+  Raw: {"userNumber":"9","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24034","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2929,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":8},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=10 | TitanId=2935 | Colours/P0/I9
+  Properties: (nenhuma)
+  Raw: {"userNumber":"10","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24035","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2935,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":9},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=11 | TitanId=2944 | Colours/P0/I10
+  Properties: (nenhuma)
+  Raw: {"userNumber":"11","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/24036","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":2944,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":10},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='' | UN=19 | TitanId=74019 | Colours/P0/I11
+  Properties: (nenhuma)
+  Raw: {"userNumber":"19","legend":"","notes":"","icon":"http://localhost:4430/titan/graphic/74029","halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":74019,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":11},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='High' | UN=901 | TitanId=87078 | Colours/P0/I13
+  Properties: (nenhuma)
+  Raw: {"userNumber":"901","legend":"High","notes":"","icon":null,"halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":87078,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":13},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+PALETA | Legend='Low' | UN=902 | TitanId=87080 | Colours/P0/I14
+  Properties: (nenhuma)
+  Raw: {"userNumber":"902","legend":"Low","notes":"","icon":null,"halo":"#FFFFFFFF","active":false,"information":null,"selected":false,"Links":[],"titanId":87080,"properties":{"lockState":"Unlocked"},"handleLocation":{"group":"Colours","page":0,"index":14},"type":"paletteHandle","dimensions":{"Width":1,"Height":1}}
+Paletas reais com User Number 901: 1
+Paletas reais com User Number 902: 1
+
+============================================================================================================
+ 3/5 — PROPRIEDADES DE RECORD, BLIND E SELEÇÃO DISPONÍVEIS NA API
+============================================================================================================
+OK   Palette/RecordPaletteReferences = true
+OK   Palette/RecordMode = 3
+N/A  Palette/StoreMode
+OK   Palette/CurrentPaletteHandle = 
+N/A  Palettes/CurrentPaletteHandle
+OK   Programmer/BlindActive = false
+N/A  Programmer/Blind
+N/A  Programmer/Editor/BlindActive
+N/A  Programmer/Editor/Selection/SelectedFixtures
+N/A  Programmer/Editor/Fixtures/SelectedFixtures
+N/A  Programmer/Editor/Fixtures/SelectedHandles
+N/A  Programmer/Editor/Selection/SelectedHandles
+N/A  Programmer/Editor/Fixtures/Selection
+N/A  Programmer/Editor/Selection
+Propriedades legíveis: 4 de 14
+
+============================================================================================================
+ 4/5 — XML EXATO E CLASSIFICAÇÃO DOS MACROS CFX
+============================================================================================================
+------------------------------------------------------------------------------------------------------------
+HIGH 1 White | UN=8 | TitanId=74216 | MacroId=UserMacro.HIGH1White
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 1")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=1; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:29. -->
+  <macro id="UserMacro.HIGH1White">
+    <name>HIGH 1 White</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 1")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 10 Mag | UN=9 | TitanId=74217 | MacroId=UserMacro.HIGH10Mag
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 10")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=10; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH10Mag">
+    <name>HIGH 10 Mag</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 10")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 11 Purp | UN=10 | TitanId=74218 | MacroId=UserMacro.HIGH11Purp
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 11")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=11; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH11Purp">
+    <name>HIGH 11 Purp</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 11")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 19 Blk | UN=11 | TitanId=74219 | MacroId=UserMacro.HIGH19Blk
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 19")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=19; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH19Blk">
+    <name>HIGH 19 Blk</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 19")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 2 Red | UN=12 | TitanId=74220 | MacroId=UserMacro.HIGH2Red
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 2")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=2; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH2Red">
+    <name>HIGH 2 Red</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 2")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 3 Orng | UN=13 | TitanId=74221 | MacroId=UserMacro.HIGH3Orng
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 3")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=3; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH3Orng">
+    <name>HIGH 3 Orng</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 3")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 4 Yell | UN=14 | TitanId=74222 | MacroId=UserMacro.HIGH4Yell
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 4")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=4; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH4Yell">
+    <name>HIGH 4 Yell</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 4")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 5 Grn | UN=15 | TitanId=74223 | MacroId=UserMacro.HIGH5Grn
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 5")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=5; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH5Grn">
+    <name>HIGH 5 Grn</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 5")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 6 Lime | UN=16 | TitanId=74224 | MacroId=UserMacro.HIGH6Lime
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 6")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=6; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:30. -->
+  <macro id="UserMacro.HIGH6Lime">
+    <name>HIGH 6 Lime</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 6")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 7 Cyan | UN=17 | TitanId=74225 | MacroId=UserMacro.HIGH7Cyan
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 7")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=7; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.HIGH7Cyan">
+    <name>HIGH 7 Cyan</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 7")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 8 LBlue | UN=18 | TitanId=74226 | MacroId=UserMacro.HIGH8LBlue
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 8")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=8; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.HIGH8LBlue">
+    <name>HIGH 8 LBlue</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 8")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+HIGH 9 Blue | UN=31 | TitanId=74227 | MacroId=UserMacro.HIGH9Blue
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 9")
+  4. ActionScript.Command("Record Palette 902 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=9; Record Palette=902; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.HIGH9Blue">
+    <name>HIGH 9 Blue</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 9")</step>
+      <step pause="0">ActionScript.Command("Record Palette 902 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 1 White | UN=19 | TitanId=74204 | MacroId=UserMacro.LOW1White
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 1")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=1; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.LOW1White">
+    <name>LOW 1 White</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 1")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 10 Mag | UN=20 | TitanId=74205 | MacroId=UserMacro.LOW10Mag
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 10")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=10; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.LOW10Mag">
+    <name>LOW 10 Mag</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 10")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 11 Purp | UN=21 | TitanId=74206 | MacroId=UserMacro.LOW11Purp
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 11")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=11; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.LOW11Purp">
+    <name>LOW 11 Purp</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 11")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 19 Blk | UN=22 | TitanId=74207 | MacroId=UserMacro.LOW19Blk
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 19")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=19; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.LOW19Blk">
+    <name>LOW 19 Blk</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 19")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 2 Red | UN=23 | TitanId=74208 | MacroId=UserMacro.LOW2Red
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 2")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=2; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.LOW2Red">
+    <name>LOW 2 Red</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 2")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 3 Orng | UN=24 | TitanId=74209 | MacroId=UserMacro.LOW3Orng
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 3")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=3; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:31. -->
+  <macro id="UserMacro.LOW3Orng">
+    <name>LOW 3 Orng</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 3")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 4 Yell | UN=25 | TitanId=74210 | MacroId=UserMacro.LOW4Yell
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 4")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=4; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:32. -->
+  <macro id="UserMacro.LOW4Yell">
+    <name>LOW 4 Yell</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 4")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 5 Grn | UN=26 | TitanId=74211 | MacroId=UserMacro.LOW5Grn
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 5")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=5; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:32. -->
+  <macro id="UserMacro.LOW5Grn">
+    <name>LOW 5 Grn</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 5")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 6 Lime | UN=27 | TitanId=74212 | MacroId=UserMacro.LOW6Lime
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 6")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=6; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:32. -->
+  <macro id="UserMacro.LOW6Lime">
+    <name>LOW 6 Lime</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 6")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 7 Cyan | UN=28 | TitanId=74213 | MacroId=UserMacro.LOW7Cyan
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 7")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=7; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:32. -->
+  <macro id="UserMacro.LOW7Cyan">
+    <name>LOW 7 Cyan</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 7")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 8 LBlue | UN=29 | TitanId=74214 | MacroId=UserMacro.LOW8LBlue
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 8")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=8; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:32. -->
+  <macro id="UserMacro.LOW8LBlue">
+    <name>LOW 8 LBlue</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 8")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+------------------------------------------------------------------------------------------------------------
+LOW 9 Blue | UN=30 | TitanId=74215 | MacroId=UserMacro.LOW9Blue
+  1. ActionScript.Command("Blind On")
+  2. Programmer.Editor.ClearAll()
+  3. ActionScript.Command("Include Palette 9")
+  4. ActionScript.Command("Record Palette 901 Merge")
+  5. Programmer.Editor.ClearAll()
+  6. ActionScript.Command("Blind Off")
+  Classificação: Include Palette=9; Record Palette=901; grupos=nenhum; Clear antes do Include=True; 10000=False; 20000=False
+  XML completo:
+﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 30/07/2026 22:44:32. -->
+  <macro id="UserMacro.LOW9Blue">
+    <name>LOW 9 Blue</name>
+    <sequence>
+      <step pause="0">ActionScript.Command("Blind On")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Include Palette 9")</step>
+      <step pause="0">ActionScript.Command("Record Palette 901 Merge")</step>
+      <step pause="0">Programmer.Editor.ClearAll()</step>
+      <step pause="0">ActionScript.Command("Blind Off")</step>
+    </sequence>
+  </macro>
+</avolites.macros>
+
+============================================================================================================
+ 5/5 — CONCLUSÃO TÉCNICA BASEADA NO CONTEÚDO REAL
+============================================================================================================
+Macros analisados:                         24
+Com ClearAll antes de Include Palette:     24
+Com Include Palette:                       24
+Com qualquer seleção/chamada de grupo:     0
+Com referência ao grupo 10000:             0
+Com referência ao grupo 20000:             0
+Que tentam gravar/merge na paleta 901:     12
+Que tentam gravar/merge na paleta 902:     12
+
+DIAGNÓSTICO PRINCIPAL:
+Todos os macros fazem ClearAll antes do Include Palette e nenhum volta a selecionar um grupo.
+Logo, a mudança visível de todas as luzes não pode vir de uma seleção explícita do grupo 20000 no macro.
+Ela é provocada pelo próprio comando Include Palette, que inclui no programmer os fixtures/valores guardados na paleta de origem.
+O grupo 20000 não está a ser usado.
+
+Os comandos Record Palette 901/902 Merge existem no XML, mas a observação de que High/Low não mudam indica que o Record não está a receber os valores esperados ou está a executar antes de o Include terminar.
+A causa provável passa a ser a sequência baseada em ActionScript.Command: Include e Record são comandos de linha de comandos encadeados sem seleção explícita e sem espera/confirmacão entre operações.
+A correção segura será recriar os XML com: Blind On; ClearAll; selecionar Group 20000; aplicar/incluir a paleta de cor; gravar Merge na paleta High/Low correta; ClearAll; Blind Off.
+
+Diagnóstico concluído sem executar macros nem modificar o show.
