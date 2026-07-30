@@ -1,0 +1,7 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785444191089-9078e6aa81a162a5.ps1:137 char:65
++ ...    Write-Host "Não foi possível configurar a regra TCP $port: $($_.Ex ...
++                                                            ~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+ 

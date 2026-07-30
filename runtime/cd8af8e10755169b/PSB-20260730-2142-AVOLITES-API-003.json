@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260730-2142-AVOLITES-API-003",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Ativar, testar e diagnosticar a Web API local do Avolites Titan 19.2",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-30T20:43:11.106Z",
+  "endedAt": "2026-07-30T20:43:11.528Z",
+  "elapsedMs": 422,
+  "outputLength": 527,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "425ce5db1f56674829e56670ef8c7c060f90dbaffd8a1d9638cb0334af2515d6",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260730-2142-AVOLITES-API-003.txt",
+  "createdAt": "2026-07-30T20:43:11.534Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
