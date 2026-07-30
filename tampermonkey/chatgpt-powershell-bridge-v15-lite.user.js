@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.30.15.3.16
+// @version      2026.07.30.15.3.17
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.3.16';
+    const VERSION = '15.3.17';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -2121,28 +2121,57 @@
             return null;
         }
 
-        const sandboxAnchors = [
-            ...turn.querySelectorAll(
-                'a[href^="sandbox:"]'
-            )
-        ];
+        const candidates = [];
+        const candidateKeys =
+            new Set();
 
-        for (
-            const anchor of
-            sandboxAnchors
-        ) {
-            const label = [
-                anchor.textContent || '',
-                anchor.getAttribute(
+        function normalizedHref(value) {
+            const href =
+                String(value || '')
+                    .trim()
+                    .replace(/\\u0026/gi, '&')
+                    .replace(/\\\//g, '/');
+
+            if (
+                !/^sandbox:\/mnt\/data\//i
+                    .test(href)
+            ) {
+                return '';
+            }
+
+            let decoded = href;
+
+            try {
+                decoded =
+                    decodeURIComponent(href);
+            } catch {
+                // Usa o valor original.
+            }
+
+            return decoded
+                .toLowerCase()
+                .includes(wanted)
+                ? href
+                : '';
+        }
+
+        function labelOf(node) {
+            if (!(node instanceof Element)) {
+                return '';
+            }
+
+            return [
+                node.textContent || '',
+                node.getAttribute(
                     'aria-label'
                 ) || '',
-                anchor.getAttribute(
+                node.getAttribute(
                     'title'
                 ) || '',
-                anchor.getAttribute(
+                node.getAttribute(
                     'download'
                 ) || '',
-                anchor.getAttribute(
+                node.getAttribute(
                     'href'
                 ) || ''
             ]
@@ -2150,53 +2179,317 @@
                 .replace(/\s+/g, ' ')
                 .trim()
                 .toLowerCase();
+        }
+
+        function add(
+            control,
+            href,
+            source,
+            score = 0
+        ) {
+            const cleanHref =
+                normalizedHref(href);
+
+            if (!cleanHref) {
+                return;
+            }
+
+            let usableControl =
+                control instanceof HTMLElement
+                    ? control
+                    : null;
 
             if (
-                label.includes(wanted)
+                usableControl &&
+                !turn.contains(usableControl)
             ) {
-                return anchor;
+                usableControl = null;
             }
-        }
 
-        const labelled = [
-            ...turn.querySelectorAll(
-                '[aria-label], [title]'
-            )
-        ].find(node => {
-            const label = [
-                node.getAttribute(
-                    'aria-label'
-                ) || '',
-                node.getAttribute(
-                    'title'
-                ) || '',
-                node.textContent || ''
-            ]
-                .join(' ')
-                .replace(/\s+/g, ' ')
-                .trim()
-                .toLowerCase();
+            if (!usableControl) {
+                return;
+            }
 
-            return label.includes(
-                wanted
-            );
-        });
-
-        if (labelled) {
-            const anchor =
-                labelled.closest(
-                    'a[href^="sandbox:"]'
-                ) ||
-                labelled.querySelector(
-                    'a[href^="sandbox:"]'
+            const key =
+                cleanHref +
+                '|' +
+                source +
+                '|' +
+                String(
+                    usableControl.tagName ||
+                    ''
                 );
 
-            if (anchor) {
-                return anchor;
+            if (candidateKeys.has(key)) {
+                return;
+            }
+
+            candidateKeys.add(key);
+
+            let total =
+                Number(score || 0);
+
+            if (
+                usableControl.matches(
+                    'a, button, [role="button"], [role="link"]'
+                )
+            ) {
+                total += 800;
+            }
+
+            if (
+                usableControl.matches('a')
+            ) {
+                total += 600;
+            }
+
+            if (
+                labelOf(usableControl)
+                    .includes(wanted)
+            ) {
+                total += 1000;
+            }
+
+            candidates.push({
+                control:
+                    usableControl,
+                href:
+                    cleanHref,
+                source,
+                score:
+                    total
+            });
+        }
+
+        for (
+            const anchor of
+            turn.querySelectorAll(
+                'a[href]'
+            )
+        ) {
+            add(
+                anchor,
+                anchor.getAttribute(
+                    'href'
+                ) || '',
+                'dom-anchor',
+                3000
+            );
+        }
+
+        const nodes = [
+            turn,
+            ...turn.querySelectorAll('*')
+        ];
+
+        let visitedObjects = 0;
+        const globallySeen =
+            new WeakSet();
+
+        function walkReact(
+            value,
+            ownerNode,
+            path,
+            depth
+        ) {
+            if (
+                depth > 16 ||
+                visitedObjects > 30000
+            ) {
+                return;
+            }
+
+            if (
+                !value ||
+                (
+                    typeof value !==
+                    'object' &&
+                    typeof value !==
+                    'function'
+                )
+            ) {
+                return;
+            }
+
+            try {
+                if (globallySeen.has(value)) {
+                    return;
+                }
+
+                globallySeen.add(value);
+            } catch {
+                return;
+            }
+
+            visitedObjects++;
+
+            const stateNode =
+                value.stateNode instanceof
+                    HTMLElement
+                    ? value.stateNode
+                    : ownerNode;
+
+            for (
+                const propsName of
+                [
+                    'pendingProps',
+                    'memoizedProps',
+                    'props'
+                ]
+            ) {
+                const props =
+                    value[propsName];
+
+                if (
+                    props &&
+                    typeof props ===
+                        'object'
+                ) {
+                    add(
+                        stateNode,
+                        props.href,
+                        path +
+                        '.' +
+                        propsName +
+                        '.href',
+                        5000
+                    );
+
+                    add(
+                        stateNode,
+                        props.downloadUrl,
+                        path +
+                        '.' +
+                        propsName +
+                        '.downloadUrl',
+                        4500
+                    );
+
+                    add(
+                        stateNode,
+                        props.url,
+                        path +
+                        '.' +
+                        propsName +
+                        '.url',
+                        4000
+                    );
+                }
+            }
+
+            let entries = [];
+
+            try {
+                entries =
+                    Object.entries(value);
+            } catch {
+                return;
+            }
+
+            entries.sort(
+                ([left], [right]) => {
+                    const important =
+                        /pendingProps|memoizedProps|props|href|url|stateNode|child|return|alternate/i;
+
+                    return (
+                        Number(
+                            important.test(right)
+                        ) -
+                        Number(
+                            important.test(left)
+                        )
+                    );
+                }
+            );
+
+            for (
+                const [key, child] of
+                entries.slice(0, 160)
+            ) {
+                if (
+                    typeof child ===
+                        'string' &&
+                    /href|url|download|attachment|file/i
+                        .test(key)
+                ) {
+                    add(
+                        stateNode,
+                        child,
+                        path + '.' + key,
+                        3500
+                    );
+                }
+
+                walkReact(
+                    child,
+                    stateNode,
+                    path + '.' + key,
+                    depth + 1
+                );
             }
         }
 
-        return null;
+        for (
+            let index = 0;
+            index < nodes.length;
+            index++
+        ) {
+            const node =
+                nodes[index];
+
+            if (!(node instanceof Element)) {
+                continue;
+            }
+
+            let keys = [];
+
+            try {
+                keys =
+                    Object.keys(node);
+            } catch {
+                keys = [];
+            }
+
+            for (const key of keys) {
+                if (
+                    !key.startsWith(
+                        '__reactFiber$'
+                    ) &&
+                    !key.startsWith(
+                        '__reactProps$'
+                    ) &&
+                    !key.startsWith(
+                        '__reactContainer$'
+                    )
+                ) {
+                    continue;
+                }
+
+                try {
+                    walkReact(
+                        node[key],
+                        node,
+                        'node[' +
+                            index +
+                            '].' +
+                            key,
+                        0
+                    );
+                } catch {
+                    // Continua.
+                }
+            }
+        }
+
+        candidates.sort(
+            (left, right) =>
+                right.score -
+                left.score
+        );
+
+        return candidates.length
+            ? candidates[0]
+            : null;
     }
 
     async function queueExactSandboxFileJob(
@@ -2206,25 +2499,30 @@
         jobId,
         protocol
     ) {
-        const control =
+        const resolved =
             findExactSandboxAttachmentControl(
                 assistant,
                 fileName
             );
 
-        if (!control) {
+        if (
+            !resolved ||
+            !(resolved.control instanceof HTMLElement) ||
+            !resolved.href
+        ) {
             throw new Error(
-                'A mensagem exata não contém um link sandbox acionável para ' +
+                'O React Fiber da mensagem exata não expôs um controlo utilizável para ' +
                 fileName +
                 '.'
             );
         }
 
+        const control =
+            resolved.control;
+
         const href =
             String(
-                control.getAttribute(
-                    'href'
-                ) || ''
+                resolved.href || ''
             ).trim();
 
         if (
@@ -2299,11 +2597,56 @@
                 false;
         }
 
-        if (!fired) {
+        if (
+            !fired &&
+            control.matches('a')
+        ) {
             try {
+                if (
+                    !control.getAttribute(
+                        'href'
+                    )
+                ) {
+                    control.setAttribute(
+                        'href',
+                        href
+                    );
+                }
+
                 HTMLElement.prototype
                     .click
                     .call(control);
+
+                fired = true;
+            } catch {
+                fired =
+                    false;
+            }
+        }
+
+        if (!fired) {
+            try {
+                control.dispatchEvent(
+                    new MouseEvent(
+                        'click',
+                        {
+                            bubbles:
+                                true,
+                            cancelable:
+                                true,
+                            composed:
+                                true,
+                            view:
+                                window,
+                            button:
+                                0,
+                            buttons:
+                                0,
+                            detail:
+                                1
+                        }
+                    )
+                );
 
                 fired = true;
             } catch {
