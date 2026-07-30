@@ -1,0 +1,60 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — IMPORTAR OS 24 MACROS CFX — CAMINHO/JSON E DIAGNÓSTICO LOCAL
+================================================================================================================
+Este job testa ImportXml por caminho de ficheiro e por String JSON; só importa os 24 CFX depois de um XML original ser aceite.
+É criado um backup imediato; se houver falha, os macros já importados são repostos automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901 confirmada: High
+Palette 902 confirmada: Low
+Preparação usada:       %USERPROFILE%\Documents\Titan\Macros\CFX_Preparacao_20260730-225048
+
+Backup imediato e validação pré-importação concluídos: 24/24.
+
+Teste ImportXml por caminho/JSON: HIGH 1 White — reimportação do XML original...
+Teste de transporte: OK. O macro original foi aceite e manteve a identidade.
+Estratégia funcional: POST_TYPED_JSON_OBJECT_FULL
+
+OK  1/24 | HIGH 1 White     | Group 20000 | Palette 1 -> 901
+OK  2/24 | HIGH 10 Mag      | Group 20000 | Palette 10 -> 901
+OK  3/24 | HIGH 11 Purp     | Group 20000 | Palette 11 -> 901
+OK  4/24 | HIGH 19 Blk      | Group 20000 | Palette 19 -> 901
+OK  5/24 | HIGH 2 Red       | Group 20000 | Palette 2 -> 901
+OK  6/24 | HIGH 3 Orng      | Group 20000 | Palette 3 -> 901
+OK  7/24 | HIGH 4 Yell      | Group 20000 | Palette 4 -> 901
+OK  8/24 | HIGH 5 Grn       | Group 20000 | Palette 5 -> 901
+OK  9/24 | HIGH 6 Lime      | Group 20000 | Palette 6 -> 901
+OK 10/24 | HIGH 7 Cyan      | Group 20000 | Palette 7 -> 901
+OK 11/24 | HIGH 8 LBlue     | Group 20000 | Palette 8 -> 901
+OK 12/24 | HIGH 9 Blue      | Group 20000 | Palette 9 -> 901
+OK 13/24 | LOW 1 White      | Group 20000 | Palette 1 -> 902
+OK 14/24 | LOW 10 Mag       | Group 20000 | Palette 10 -> 902
+OK 15/24 | LOW 11 Purp      | Group 20000 | Palette 11 -> 902
+OK 16/24 | LOW 19 Blk       | Group 20000 | Palette 19 -> 902
+OK 17/24 | LOW 2 Red        | Group 20000 | Palette 2 -> 902
+OK 18/24 | LOW 3 Orng       | Group 20000 | Palette 3 -> 902
+OK 19/24 | LOW 4 Yell       | Group 20000 | Palette 4 -> 902
+OK 20/24 | LOW 5 Grn        | Group 20000 | Palette 5 -> 902
+OK 21/24 | LOW 6 Lime       | Group 20000 | Palette 6 -> 902
+OK 22/24 | LOW 7 Cyan       | Group 20000 | Palette 7 -> 902
+OK 23/24 | LOW 8 LBlue      | Group 20000 | Palette 8 -> 902
+OK 24/24 | LOW 9 Blue       | Group 20000 | Palette 9 -> 902
+
+================================================================================================================
+ IMPORTAÇÃO E VALIDAÇÃO CONCLUÍDAS
+================================================================================================================
+Macros importados:       24/24
+Macros CFX no show:       24
+Grupo explícito:          20000
+HIGH -> Palette 901:      12
+LOW  -> Palette 902:      12
+Backup imediato:          %USERPROFILE%\Documents\Titan\Macros\CFX_Importacao_20260730-233112\01_Backup_Imediato
+XML finais importados:    %USERPROFILE%\Documents\Titan\Macros\CFX_Importacao_20260730-233112\02_XML_Final_Importado
+Relatório:                 %USERPROFILE%\Documents\Titan\Macros\CFX_Importacao_20260730-233112\RELATORIO_IMPORTACAO_CFX.txt
+
+Nenhum macro foi executado e nenhuma paleta foi alterada por este job.
+Depois de testar um macro HIGH e um LOW no Titan, guarda o show.
