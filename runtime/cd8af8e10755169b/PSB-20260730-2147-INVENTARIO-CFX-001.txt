@@ -1,0 +1,28 @@
+
+==============================================================================
+ AVOLITES TITAN 19.2 — INVENTÁRIO DOS MACROS CFX
+==============================================================================
+Este job apenas lê a Web API. Não executa, altera, importa nem apaga macros.
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+==============================================================================
+ 1/4 — LEITURA DE TODOS OS HANDLES
+==============================================================================
+Handles programados encontrados: 1
+Handles de macro encontrados: 1
+Macros com referência CFX:     0
+
+==============================================================================
+ 2/4 — LISTA DOS MACROS CFX
+==============================================================================
+Não foi encontrado nenhum macro com CFX no nome, grupo, tipo ou propriedades.
+Abaixo fica uma amostra de todos os handles de macro para confirmar a nomenclatura:
+ForEach-Object : Cannot convert the "System.Object[]" value of type "System.Object[]" to type "System.Int32".
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785444556880-8ed0acb5d241cc59.ps1:240 char:115
++ ... on.page}}, @{Expression={$_.handleLocation.index}} | ForEach-Object {
++                                                          ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [ForEach-Object], RuntimeException
+    + FullyQualifiedErrorId : ConvertToFinalInvalidCastException,Microsoft.PowerShell.Commands.ForEachObjectCommand
+ 
