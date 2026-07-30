@@ -1,0 +1,224 @@
+
+====================================================================================================
+ AVOLITES TITAN 19.2 — VALIDAÇÃO DAS PALETES 901/902 E DO GRUPO 20000 NOS MACROS CFX
+====================================================================================================
+Job exclusivamente de leitura: não executa macros, não grava paletes e não altera o show.
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+====================================================================================================
+ 1/4 — INVENTÁRIO DOS HANDLES COM USER NUMBER 901 E 902
+====================================================================================================
+Handles totais: 1389
+
+Legend  Type          UserNo TitanId Window  PageAPI IndexAPI
+------  ----          ------ ------- ------  ------- --------
+Front A groupHandle      901    4511 Groups        0       55
+High    paletteHandle    901   87078 Colours       0       13
+Front B groupHandle      902    4512 Groups        0       56
+Low     paletteHandle    902   87080 Colours       0       14
+
+
+
+User Number 901: 2 handle(s) exato(s)
+  - Legend='Front A' | Type='groupHandle' | TitanId=4511 | Groups/P0/I55
+  - Legend='High' | Type='paletteHandle' | TitanId=87078 | Colours/P0/I13
+User Number 902: 2 handle(s) exato(s)
+  - Legend='Front B' | Type='groupHandle' | TitanId=4512 | Groups/P0/I56
+  - Legend='Low' | Type='paletteHandle' | TitanId=87080 | Colours/P0/I14
+
+====================================================================================================
+ 2/4 — EXISTÊNCIA DO GRUPO COM USER NUMBER 20000
+====================================================================================================
+
+Legend  Type        UserNo TitanId Window PageAPI IndexAPI
+------  ----        ------ ------- ------ ------- --------
+ALL Rig groupHandle  20000    4465 Groups       0        8
+
+
+
+  - Legend='ALL Rig' | UserNo=20000 | TitanId=4465 | Groups/P0/I8
+
+====================================================================================================
+ 3/4 — PROCURA COMPLETA DE 20000 NO XML DOS 24 MACROS CFX
+====================================================================================================
+UN 8  HIGH 1 White   | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 1")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 9  HIGH 10 Mag    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 10")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 10 HIGH 11 Purp   | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 11")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 11 HIGH 19 Blk    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 19")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 12 HIGH 2 Red     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 2")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 13 HIGH 3 Orng    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 3")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 14 HIGH 4 Yell    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 4")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 15 HIGH 5 Grn     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 5")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 16 HIGH 6 Lime    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 6")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 17 HIGH 7 Cyan    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 7")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 18 HIGH 8 LBlue   | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 8")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 31 HIGH 9 Blue    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 9")
+    ActionScript.Command("Record Palette 902 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 19 LOW 1 White    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 1")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 20 LOW 10 Mag     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 10")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 21 LOW 11 Purp    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 11")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 22 LOW 19 Blk     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 19")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 23 LOW 2 Red      | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 2")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 24 LOW 3 Orng     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 3")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 25 LOW 4 Yell     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 4")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 26 LOW 5 Grn      | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 5")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 27 LOW 6 Lime     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 6")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 28 LOW 7 Cyan     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 7")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 29 LOW 8 LBlue    | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 8")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+UN 30 LOW 9 Blue     | passos=6 | grupo(s)=(nenhum) | contém 20000=False
+    ActionScript.Command("Blind On")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Include Palette 9")
+    ActionScript.Command("Record Palette 901 Merge")
+    Programmer.Editor.ClearAll()
+    ActionScript.Command("Blind Off")
+
+====================================================================================================
+ 4/4 — CONCLUSÃO OBJETIVA
+====================================================================================================
+Paletes com User Number 901 encontradas: 2
+Paletes com User Number 902 encontradas: 2
+Handles de grupo 20000 encontrados:      1
+Macros CFX que contêm o número 20000:    0 de 24
+Macros CFX com qualquer chamada a grupo: 0 de 24
+Falhas na leitura dos macros:            0
+Validação terminada sem executar nem alterar qualquer macro, palete ou grupo.
