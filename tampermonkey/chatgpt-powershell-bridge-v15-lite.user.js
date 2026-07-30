@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.30.15.4.0
+// @version      2026.07.30.15.5.0
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.4.0';
+    const VERSION = '15.5.0';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -42,6 +42,7 @@
     const PROMPT_SENT_PREFIX = 'lpxPsb15:protocolPrompt:';
     const PANEL_GEOMETRY_KEY = 'lpxPsb15:panelGeometry';
     const PANEL_COLLAPSED_KEY = 'lpxPsb15:panelCollapsed';
+    const FILEID_HANDSHAKE_PREFIX = 'lpxPsb15:fileIdHandshake:';
     const CLAIM_TTL_MS = 2 * 60 * 1000;
     const POLL_MS = 750;
     const SETTLE_MS = 900;
@@ -332,6 +333,8 @@
             '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
             '2A. Inclui fileId apenas quando a plataforma fornecer explicitamente o identificador do anexo desta mensagem; nunca o inventes nem reutilizes.',
+            '2B. Quando receberes PSBRIDGE_FILEID_HANDSHAKE_V1, responde apenas com o mesmo manifesto e o mesmo link, acrescentando o fileId exato do anexo anterior fornecido pela plataforma.',
+            '2C. Num handshake mantém exatamente jobId, file e purpose; não cries nem anexes outro ficheiro.',
             '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
             '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
             '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
@@ -5636,6 +5639,235 @@
         return new TextDecoder('utf-8').decode(bytes);
     }
 
+
+    function lpxFileIdHandshakeKey(
+        jobId
+    ) {
+        return (
+            FILEID_HANDSHAKE_PREFIX +
+            simpleHash(
+                conversationId() +
+                ':' +
+                String(jobId || '')
+            )
+        );
+    }
+
+    function lpxFileIdHandshakeState(
+        jobId
+    ) {
+        const value =
+            GM_getValue(
+                lpxFileIdHandshakeKey(
+                    jobId
+                ),
+                null
+            );
+
+        return (
+            value &&
+            typeof value === 'object'
+        )
+            ? value
+            : null;
+    }
+
+    function lpxClearFileIdHandshake(
+        jobId
+    ) {
+        GM_deleteValue(
+            lpxFileIdHandshakeKey(
+                jobId
+            )
+        );
+    }
+
+    function lpxValidateFileIdHandshake(
+        manifest
+    ) {
+        const jobId =
+            String(
+                manifest.jobId || ''
+            ).trim();
+
+        const state =
+            lpxFileIdHandshakeState(
+                jobId
+            );
+
+        if (!state) {
+            return;
+        }
+
+        const fileName =
+            String(
+                manifest.file || ''
+            ).trim();
+
+        const purpose =
+            String(
+                manifest.purpose || ''
+            ).trim();
+
+        if (
+            state.fileName &&
+            state.fileName !== fileName
+        ) {
+            throw new Error(
+                'O manifesto com fileId não mantém o mesmo nome de ficheiro do handshake.'
+            );
+        }
+
+        if (
+            state.purpose &&
+            purpose &&
+            state.purpose !== purpose
+        ) {
+            throw new Error(
+                'O manifesto com fileId não mantém o mesmo propósito do handshake.'
+            );
+        }
+    }
+
+    async function lpxRequestFileIdHandshake(
+        assistant,
+        manifest
+    ) {
+        const jobId =
+            String(
+                manifest.jobId || ''
+            ).trim();
+
+        const fileName =
+            String(
+                manifest.file || ''
+            ).trim();
+
+        const purpose =
+            String(
+                manifest.purpose || ''
+            ).trim();
+
+        const sourceMessageId =
+            lpxAssistantMessageId(
+                assistant
+            );
+
+        const key =
+            lpxFileIdHandshakeKey(
+                jobId
+            );
+
+        const previous =
+            lpxFileIdHandshakeState(
+                jobId
+            ) || {};
+
+        const previousAttempts =
+            Number(
+                previous.attempts || 0
+            );
+
+        if (
+            previous.sourceMessageId &&
+            previous.sourceMessageId ===
+                sourceMessageId
+        ) {
+            setStatus(
+                'Handshake do fileId já enviado para este anexo. A aguardar a resposta automática do ChatGPT…'
+            );
+
+            return false;
+        }
+
+        if (previousAttempts >= 2) {
+            throw new Error(
+                'O ChatGPT respondeu duas vezes sem devolver o fileId explícito do anexo.'
+            );
+        }
+
+        const attempt =
+            previousAttempts + 1;
+
+        const sandboxLink =
+            'sandbox:/mnt/data/' +
+            fileName;
+
+        const state = {
+            jobId,
+            fileName,
+            purpose,
+            sandboxLink,
+            sourceMessageId,
+            attempts:
+                attempt,
+            sentAt:
+                Date.now(),
+            conversation:
+                conversationId()
+        };
+
+        GM_setValue(
+            key,
+            state
+        );
+
+        const instruction =
+            attempt === 1
+                ? [
+                    'A resposta anterior anexou este ficheiro e a plataforma disponibilizou agora no contexto interno o fileId exato desse anexo.',
+                    'Responde apenas com o mesmo manifesto JSON PSB_JOB_FILE_V1.',
+                    'Mantém exatamente jobId, file e purpose.',
+                    'Acrescenta o fileId exato fornecido pela plataforma para o anexo da resposta anterior.',
+                    'Depois do manifesto, inclui apenas o mesmo link sandbox indicado abaixo.',
+                    'Não cries nem anexes outro ficheiro.',
+                    'Não cries outro jobId.',
+                    'Não inventes nem reutilizes um fileId de outro anexo.',
+                    'Não escrevas explicações.'
+                ].join(' ')
+                : [
+                    'A resposta anterior ainda não incluiu o fileId.',
+                    'Usa obrigatoriamente o identificador exato do anexo anterior que a plataforma expôs no contexto interno.',
+                    'Responde apenas com o mesmo manifesto PSB_JOB_FILE_V1 contendo fileId e o mesmo link sandbox.',
+                    'Não cries um novo ficheiro ou job.'
+                ].join(' ');
+
+        const message = [
+            'PSBRIDGE_FILEID_HANDSHAKE_V1',
+            'attempt: ' +
+                attempt +
+                '/2',
+            'job: ' +
+                jobId,
+            'file: ' +
+                fileName,
+            'purpose: ' +
+                purpose,
+            'sourceAssistantMessageId: ' +
+                sourceMessageId,
+            'sandboxLink: ' +
+                sandboxLink,
+            'instruction: ' +
+                instruction
+        ].join('\n');
+
+        setStatus(
+            'Anexo publicado. A pedir automaticamente ao ChatGPT o fileId real · tentativa ' +
+            attempt +
+            '/2…'
+        );
+
+        await sendMessage(
+            message
+        );
+
+        setStatus(
+            'Pedido automático de fileId enviado. Não é necessária qualquer intervenção.'
+        );
+
+        return true;
+    }
+
     async function processJobManifest(assistant, manifest, forced) {
         const protocol = String(manifest.protocol || '').trim();
         const jobId = String(manifest.jobId || '').trim();
@@ -5674,54 +5906,50 @@
                 protocol === 'PSB_JOB_FILE_V1' &&
                 !fileUrl
             ) {
-                setStatus(
-                    'A resolver o anexo exclusivamente pela mensagem exata da API…'
-                );
+                if (!fileId) {
+                    releaseClaim(
+                        jobId
+                    );
 
-                try {
-                    command =
-                        await lpxResolveExactMessageAttachment(
-                            assistant,
-                            fileName,
-                            jobId,
-                            fileId
-                        );
-                } catch (error) {
-                    lastAttachmentDiagnostic =
-                        'exactMessageResolver=error:' +
-                        String(
-                            error &&
-                            error.message ||
-                            error
-                        );
-
-                    command = '';
-                }
-
-                if (!command) {
-                    if (fileId) {
-                        throw new Error(
-                            'O fileId explícito não devolveu um ficheiro PowerShell válido. Diagnóstico: ' +
-                            (
-                                lastAttachmentDiagnostic ||
-                                'indisponível'
-                            ) +
-                            '.'
-                        );
-                    }
-
-                    await queueDownloadedFileJob(
+                    await lpxRequestFileIdHandshake(
                         assistant,
-                        manifest,
-                        fileName,
-                        jobId,
-                        protocol
+                        manifest
                     );
 
                     return;
                 }
 
+                lpxValidateFileIdHandshake(
+                    manifest
+                );
+
+                setStatus(
+                    'fileId real recebido. A descarregar exclusivamente o anexo associado a este manifesto…'
+                );
+
+                command =
+                    await resolveExplicitFileId(
+                        fileId,
+                        fileName,
+                        jobId
+                    );
+
+                if (!command) {
+                    throw new Error(
+                        'O fileId explícito não devolveu um ficheiro PowerShell válido. Diagnóstico: ' +
+                        (
+                            lastAttachmentDiagnostic ||
+                            'indisponível'
+                        ) +
+                        '.'
+                    );
+                }
+
+                lpxClearFileIdHandshake(
+                    jobId
+                );
             }
+
             else if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
                 setStatus('A descarregar o ficheiro ' + (fileName || fileUrl) + '…');
                 command = await downloadAttachment({ href: fileUrl });
