@@ -1,0 +1,99 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — DIAGNÓSTICO DOS BOTÕES CFX VISÍVEIS (POWERHELL 5.1 COMPATÍVEL)
+================================================================================================================
+Leitura apenas: não executa macros, não importa XML e não altera o show.
+API:   http://localhost:4430/titan
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+================================================================================================================
+ 1/4 — BOTÕES CFX NA PÁGINA VISÍVEL COLOURS / API PAGE 9
+================================================================================================================
+Botões CFX encontrados em Colours/API page 9: 24
+  HIGH 1 White     | TitanId 74216    | UN 8     | Location Colours,9,45
+  HIGH 10 Mag      | TitanId 74217    | UN 9     | Location Colours,9,46
+  HIGH 11 Purp     | TitanId 74218    | UN 10    | Location Colours,9,47
+  HIGH 19 Blk      | TitanId 74219    | UN 11    | Location Colours,9,48
+  HIGH 2 Red       | TitanId 74220    | UN 12    | Location Colours,9,49
+  HIGH 3 Orng      | TitanId 74221    | UN 13    | Location Colours,9,50
+  HIGH 4 Yell      | TitanId 74222    | UN 14    | Location Colours,9,51
+  HIGH 5 Grn       | TitanId 74223    | UN 15    | Location Colours,9,52
+  HIGH 6 Lime      | TitanId 74224    | UN 16    | Location Colours,9,53
+  HIGH 7 Cyan      | TitanId 74225    | UN 17    | Location Colours,9,54
+  HIGH 8 LBlue     | TitanId 74226    | UN 18    | Location Colours,9,55
+  HIGH 9 Blue      | TitanId 74227    | UN 31    | Location Colours,9,56
+  LOW 1 White      | TitanId 74204    | UN 19    | Location Colours,9,60
+  LOW 10 Mag       | TitanId 74205    | UN 20    | Location Colours,9,61
+  LOW 11 Purp      | TitanId 74206    | UN 21    | Location Colours,9,62
+  LOW 19 Blk       | TitanId 74207    | UN 22    | Location Colours,9,63
+  LOW 2 Red        | TitanId 74208    | UN 23    | Location Colours,9,64
+  LOW 3 Orng       | TitanId 74209    | UN 24    | Location Colours,9,65
+  LOW 4 Yell       | TitanId 74210    | UN 25    | Location Colours,9,66
+  LOW 5 Grn        | TitanId 74211    | UN 26    | Location Colours,9,67
+  LOW 6 Lime       | TitanId 74212    | UN 27    | Location Colours,9,68
+  LOW 7 Cyan       | TitanId 74213    | UN 28    | Location Colours,9,69
+  LOW 8 LBlue      | TitanId 74214    | UN 29    | Location Colours,9,70
+  LOW 9 Blue       | TitanId 74215    | UN 30    | Location Colours,9,71
+================================================================================================================
+ 2/4 — DUPLICADOS EM TODOS OS HANDLES DO SHOW
+================================================================================================================
+Handles CFX no show inteiro: 24
+Não existem legendas CFX duplicadas em handles diferentes.
+TitanIds CFX com várias atribuições/posições: 0
+================================================================================================================
+ 3/4 — XML ATUAL DOS 24 MACROS REGISTADOS NO MOTOR TITAN
+================================================================================================================
+OK    | UN 8   | HIGH 1 White     | Hash A5489D92300F9AA0 | G20000=True | Target 901=False
+OK    | UN 9   | HIGH 10 Mag      | Hash 4876CEA12DAB9571 | G20000=True | Target 901=False
+OK    | UN 10  | HIGH 11 Purp     | Hash E63BAE6B623C825D | G20000=True | Target 901=False
+OK    | UN 11  | HIGH 19 Blk      | Hash FD4BEDDF53A08E14 | G20000=True | Target 901=False
+OK    | UN 12  | HIGH 2 Red       | Hash 2EBC63BF38E94C74 | G20000=True | Target 901=False
+OK    | UN 13  | HIGH 3 Orng      | Hash BDA0AC19339D355E | G20000=True | Target 901=False
+OK    | UN 14  | HIGH 4 Yell      | Hash E9D0719B4F5033A8 | G20000=True | Target 901=False
+OK    | UN 15  | HIGH 5 Grn       | Hash ED06E13FD0F878C5 | G20000=True | Target 901=False
+OK    | UN 16  | HIGH 6 Lime      | Hash 77CFF7683098E9B4 | G20000=True | Target 901=False
+OK    | UN 17  | HIGH 7 Cyan      | Hash 99B32C24B3DC70CC | G20000=True | Target 901=False
+OK    | UN 18  | HIGH 8 LBlue     | Hash 45568333939A5002 | G20000=True | Target 901=False
+OK    | UN 31  | HIGH 9 Blue      | Hash F8E5BFF607CB3E48 | G20000=True | Target 901=False
+OK    | UN 19  | LOW 1 White      | Hash D9FA83B522458DDC | G20000=True | Target 902=False
+OK    | UN 20  | LOW 10 Mag       | Hash FC07061BCB689382 | G20000=True | Target 902=False
+OK    | UN 21  | LOW 11 Purp      | Hash E1764E0B2619BBB1 | G20000=True | Target 902=False
+OK    | UN 22  | LOW 19 Blk       | Hash 95632EE6C9B31301 | G20000=True | Target 902=False
+OK    | UN 23  | LOW 2 Red        | Hash FD8439C0F0336CAB | G20000=True | Target 902=False
+OK    | UN 24  | LOW 3 Orng       | Hash 72E1A27CE677B47B | G20000=True | Target 902=False
+OK    | UN 25  | LOW 4 Yell       | Hash 9D4E9F4F098BBA50 | G20000=True | Target 902=False
+OK    | UN 26  | LOW 5 Grn        | Hash 43E298EF9F667C1C | G20000=True | Target 902=False
+OK    | UN 27  | LOW 6 Lime       | Hash 18FD94B0230D271D | G20000=True | Target 902=False
+OK    | UN 28  | LOW 7 Cyan       | Hash 1B2EC88253017D38 | G20000=True | Target 902=False
+OK    | UN 29  | LOW 8 LBlue      | Hash D86E9DF47DC64944 | G20000=True | Target 902=False
+OK    | UN 30  | LOW 9 Blue       | Hash A664E0BAFF883103 | G20000=True | Target 902=False
+================================================================================================================
+ 4/4 — RESOLUÇÃO POR USER NUMBER E CONCLUSÃO
+================================================================================================================
+UN 8   | esperado UserMacro.HIGH1White      | resolvido UserMacro.HIGH1White      | Match=True
+UN 9   | esperado UserMacro.HIGH10Mag       | resolvido UserMacro.HIGH10Mag       | Match=True
+UN 10  | esperado UserMacro.HIGH11Purp      | resolvido UserMacro.HIGH11Purp      | Match=True
+UN 11  | esperado UserMacro.HIGH19Blk       | resolvido UserMacro.HIGH19Blk       | Match=True
+UN 12  | esperado UserMacro.HIGH2Red        | resolvido UserMacro.HIGH2Red        | Match=True
+UN 13  | esperado UserMacro.HIGH3Orng       | resolvido UserMacro.HIGH3Orng       | Match=True
+UN 14  | esperado UserMacro.HIGH4Yell       | resolvido UserMacro.HIGH4Yell       | Match=True
+UN 15  | esperado UserMacro.HIGH5Grn        | resolvido UserMacro.HIGH5Grn        | Match=True
+UN 16  | esperado UserMacro.HIGH6Lime       | resolvido UserMacro.HIGH6Lime       | Match=True
+UN 17  | esperado UserMacro.HIGH7Cyan       | resolvido UserMacro.HIGH7Cyan       | Match=True
+UN 18  | esperado UserMacro.HIGH8LBlue      | resolvido UserMacro.HIGH8LBlue      | Match=True
+UN 31  | esperado UserMacro.HIGH9Blue       | resolvido UserMacro.HIGH9Blue       | Match=True
+UN 19  | esperado UserMacro.LOW1White       | resolvido UserMacro.LOW1White       | Match=True
+UN 20  | esperado UserMacro.LOW10Mag        | resolvido UserMacro.LOW10Mag        | Match=True
+UN 21  | esperado UserMacro.LOW11Purp       | resolvido UserMacro.LOW11Purp       | Match=True
+UN 22  | esperado UserMacro.LOW19Blk        | resolvido UserMacro.LOW19Blk        | Match=True
+UN 23  | esperado UserMacro.LOW2Red         | resolvido UserMacro.LOW2Red         | Match=True
+UN 24  | esperado UserMacro.LOW3Orng        | resolvido UserMacro.LOW3Orng        | Match=True
+UN 25  | esperado UserMacro.LOW4Yell        | resolvido UserMacro.LOW4Yell        | Match=True
+UN 26  | esperado UserMacro.LOW5Grn         | resolvido UserMacro.LOW5Grn         | Match=True
+UN 27  | esperado UserMacro.LOW6Lime        | resolvido UserMacro.LOW6Lime        | Match=True
+UN 28  | esperado UserMacro.LOW7Cyan        | resolvido UserMacro.LOW7Cyan        | Match=True
+UN 29  | esperado UserMacro.LOW8LBlue       | resolvido UserMacro.LOW8LBlue       | Match=True
+UN 30  | esperado UserMacro.LOW9Blue        | resolvido UserMacro.LOW9Blue        | Match=True
+
+RESUMO: Botões visíveis=24/24 | Handles CFX totais=24 | Legendas duplicadas=0 | XML corrigidos=0/24 | Ausentes na página=0 | Mismatches UN->ID=0
+CONCLUSÃO TÉCNICA: foram encontradas diferenças de identidade/duplicação; usar os dados acima no próximo passo para corrigir os assignments.
+Diagnóstico concluído sem executar macros nem alterar o show.
