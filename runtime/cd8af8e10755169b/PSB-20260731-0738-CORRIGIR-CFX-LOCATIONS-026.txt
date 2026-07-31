@@ -1,0 +1,69 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — CORREÇÃO CFX POR LOCALIZAÇÕES REAIS
+================================================================================================================
+Substitui a referência por User Number pelas localizações reais das paletas na janela Colours.
+Usa o padrão oficial ApplyPalette + CurrentPaletteHandle + MergeCurrentPalette e executa testes HIGH/LOW.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Paletas resolvidas por localização real:
+  UN   1 | Open             | TitanId 2902   | Location=Colours,1,1
+  UN   2 | Red              | TitanId 2905   | Location=Colours,1,2
+  UN   3 |                  | TitanId 2908   | Location=Colours,1,3
+  UN   4 | Yellow           | TitanId 2911   | Location=Colours,1,4
+  UN   5 |                  | TitanId 2914   | Location=Colours,1,5
+  UN   6 | Green            | TitanId 2917   | Location=Colours,1,6
+  UN   7 |                  | TitanId 2923   | Location=Colours,1,7
+  UN   8 |                  | TitanId 2926   | Location=Colours,1,8
+  UN   9 |                  | TitanId 2929   | Location=Colours,1,9
+  UN  10 |                  | TitanId 2935   | Location=Colours,1,10
+  UN  11 |                  | TitanId 2944   | Location=Colours,1,11
+  UN  19 |                  | TitanId 74019  | Location=Colours,1,12
+  UN 901 | High             | TitanId 87078  | Location=Colours,1,14
+  UN 902 | Low              | TitanId 87080  | Location=Colours,1,15
+
+Grupo 20000/ALL Rig encontrado nos handles: 1
+  - ALL Rig | UN 20000 | TitanId 4465 | Groups/page 0/index 8
+
+Backup e preparação: 24/24.
+
+OK  1/24 | HIGH 1 White     | Location=Colours,1,1 -> Location=Colours,1,14
+OK  2/24 | HIGH 10 Mag      | Location=Colours,1,10 -> Location=Colours,1,14
+OK  3/24 | HIGH 11 Purp     | Location=Colours,1,11 -> Location=Colours,1,14
+OK  4/24 | HIGH 19 Blk      | Location=Colours,1,12 -> Location=Colours,1,14
+OK  5/24 | HIGH 2 Red       | Location=Colours,1,2 -> Location=Colours,1,14
+OK  6/24 | HIGH 3 Orng      | Location=Colours,1,3 -> Location=Colours,1,14
+OK  7/24 | HIGH 4 Yell      | Location=Colours,1,4 -> Location=Colours,1,14
+OK  8/24 | HIGH 5 Grn       | Location=Colours,1,5 -> Location=Colours,1,14
+OK  9/24 | HIGH 6 Lime      | Location=Colours,1,6 -> Location=Colours,1,14
+OK 10/24 | HIGH 7 Cyan      | Location=Colours,1,7 -> Location=Colours,1,14
+OK 11/24 | HIGH 8 LBlue     | Location=Colours,1,8 -> Location=Colours,1,14
+OK 12/24 | HIGH 9 Blue      | Location=Colours,1,9 -> Location=Colours,1,14
+OK 13/24 | LOW 1 White      | Location=Colours,1,1 -> Location=Colours,1,15
+OK 14/24 | LOW 10 Mag       | Location=Colours,1,10 -> Location=Colours,1,15
+OK 15/24 | LOW 11 Purp      | Location=Colours,1,11 -> Location=Colours,1,15
+OK 16/24 | LOW 19 Blk       | Location=Colours,1,12 -> Location=Colours,1,15
+OK 17/24 | LOW 2 Red        | Location=Colours,1,2 -> Location=Colours,1,15
+OK 18/24 | LOW 3 Orng       | Location=Colours,1,3 -> Location=Colours,1,15
+OK 19/24 | LOW 4 Yell       | Location=Colours,1,4 -> Location=Colours,1,15
+OK 20/24 | LOW 5 Grn        | Location=Colours,1,5 -> Location=Colours,1,15
+OK 21/24 | LOW 6 Lime       | Location=Colours,1,6 -> Location=Colours,1,15
+OK 22/24 | LOW 7 Cyan       | Location=Colours,1,7 -> Location=Colours,1,15
+OK 23/24 | LOW 8 LBlue      | Location=Colours,1,8 -> Location=Colours,1,15
+OK 24/24 | LOW 9 Blue       | Location=Colours,1,9 -> Location=Colours,1,15
+
+A executar testes reais: HIGH 2 Red e LOW 9 Blue...
+CurrentPaletteHandle após HIGH 2 Red: 
+CurrentPaletteHandle após LOW 9 Blue: 
+================================================================================================================
+ CORREÇÃO CONCLUÍDA
+================================================================================================================
+Macros importados e reexportados: 24/24
+HIGH 2 Red foi executado usando a localização real da paleta 901 High.
+LOW 9 Blue foi executado usando a localização real da paleta 902 Low.
+Backup:     %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Locations_20260731-074225\01_Backup_XML_Live
+XML finais: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Locations_20260731-074225\02_XML_Corrigidos
+Verificação:%USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Locations_20260731-074225\03_XML_Reexportados
+Relatório:  %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Locations_20260731-074225\RELATORIO_CFX.txt

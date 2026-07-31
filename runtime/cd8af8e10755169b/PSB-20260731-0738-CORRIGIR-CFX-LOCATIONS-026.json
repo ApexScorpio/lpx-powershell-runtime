@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0738-CORRIGIR-CFX-LOCATIONS-026",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Corrigir os 24 macros CFX usando as localizações reais das paletas High e Low",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-31T06:42:23.273Z",
+  "endedAt": "2026-07-31T06:42:43.416Z",
+  "elapsedMs": 20143,
+  "outputLength": 4589,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "52034783131e840a6b22dc0cfacbcec2cc7b146030c2888a76ada9e923f57d14",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0738-CORRIGIR-CFX-LOCATIONS-026.txt",
+  "createdAt": "2026-07-31T06:42:43.417Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
