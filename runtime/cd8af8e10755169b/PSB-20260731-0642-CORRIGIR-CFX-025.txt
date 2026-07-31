@@ -1,0 +1,51 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — CORREÇÃO DEFINITIVA DOS MACROS CFX
+================================================================================================================
+Substitui os comandos gravados Include/Record por funções próprias do motor de paletas do Titan.
+Cria backup dos 24 XML live, importa os macros corrigidos, reexporta-os e executa um teste HIGH e LOW.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Grupo 20000/ALL Rig encontrado nos handles: 1
+  - ALL Rig | UN 20000 | TitanId 4465 | Groups/page 0/index 8
+
+Backup e preparação: 24/24.
+
+OK  1/24 | HIGH 1 White     | Palette 1 -> 901
+OK  2/24 | HIGH 10 Mag      | Palette 10 -> 901
+OK  3/24 | HIGH 11 Purp     | Palette 11 -> 901
+OK  4/24 | HIGH 19 Blk      | Palette 19 -> 901
+OK  5/24 | HIGH 2 Red       | Palette 2 -> 901
+OK  6/24 | HIGH 3 Orng      | Palette 3 -> 901
+OK  7/24 | HIGH 4 Yell      | Palette 4 -> 901
+OK  8/24 | HIGH 5 Grn       | Palette 5 -> 901
+OK  9/24 | HIGH 6 Lime      | Palette 6 -> 901
+OK 10/24 | HIGH 7 Cyan      | Palette 7 -> 901
+OK 11/24 | HIGH 8 LBlue     | Palette 8 -> 901
+OK 12/24 | HIGH 9 Blue      | Palette 9 -> 901
+OK 13/24 | LOW 1 White      | Palette 1 -> 902
+OK 14/24 | LOW 10 Mag       | Palette 10 -> 902
+OK 15/24 | LOW 11 Purp      | Palette 11 -> 902
+OK 16/24 | LOW 19 Blk       | Palette 19 -> 902
+OK 17/24 | LOW 2 Red        | Palette 2 -> 902
+OK 18/24 | LOW 3 Orng       | Palette 3 -> 902
+OK 19/24 | LOW 4 Yell       | Palette 4 -> 902
+OK 20/24 | LOW 5 Grn        | Palette 5 -> 902
+OK 21/24 | LOW 6 Lime       | Palette 6 -> 902
+OK 22/24 | LOW 7 Cyan       | Palette 7 -> 902
+OK 23/24 | LOW 8 LBlue      | Palette 8 -> 902
+OK 24/24 | LOW 9 Blue       | Palette 9 -> 902
+
+A executar testes reais: HIGH 2 Red e LOW 9 Blue...
+================================================================================================================
+ CORREÇÃO CONCLUÍDA
+================================================================================================================
+Macros importados e reexportados: 24/24
+HIGH 2 Red foi executado sobre a Palette 901 High.
+LOW 9 Blue foi executado sobre a Palette 902 Low.
+Backup:     %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live
+XML finais: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos
+Verificação:%USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados
+Relatório:  %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\RELATORIO_CFX.txt
