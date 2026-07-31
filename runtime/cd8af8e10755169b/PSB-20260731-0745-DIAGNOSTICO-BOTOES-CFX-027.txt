@@ -1,0 +1,54 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:76
++ ...  ("API OK: {0} | Titan={1} | Show={2}" -f $base, (($v.Text ?? '').Tri ...
++                                                                ~~
+Unexpected token '??' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:75
++ ... ine ("API OK: {0} | Titan={1} | Show={2}" -f $base, (($v.Text ?? ''). ...
++                                                                  ~
+Missing closing ')' in expression.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:118 char:26
++     if ($v.Ok -or $s.Ok) {
++                          ~
+Missing closing '}' in statement block or type definition.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:115 char:27
++ foreach ($base in $bases) {
++                           ~
+Missing closing '}' in statement block or type definition.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:81
++ ... PI OK: {0} | Titan={1} | Show={2}" -f $base, (($v.Text ?? '').Trim('" ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:92
++ ... | Titan={1} | Show={2}" -f $base, (($v.Text ?? '').Trim('"')), (($s.T ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:105
++ ... Show={2}" -f $base, (($v.Text ?? '').Trim('"')), (($s.Text ?? '').Tri ...
++                                                                ~~
+Unexpected token '??' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:104
++ ...  | Show={2}" -f $base, (($v.Text ?? '').Trim('"')), (($s.Text ?? ''). ...
++                                                                  ~
+Missing closing ')' in expression.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:110
++ ... ={2}" -f $base, (($v.Text ?? '').Trim('"')), (($s.Text ?? '').Trim('" ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785480433531-1b5d2ca49c2828ae.ps1:120 char:121
++ ... " -f $base, (($v.Text ?? '').Trim('"')), (($s.Text ?? '').Trim('"')))
++                                                                        ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
