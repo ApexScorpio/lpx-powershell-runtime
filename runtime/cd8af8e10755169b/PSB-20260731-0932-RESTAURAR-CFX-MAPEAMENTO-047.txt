@@ -1,0 +1,74 @@
+====================================================================================================================
+ AVOLITES TITAN 19.2 — RESTAURAR OS 24 MACROS CFX POR MAPEAMENTO EXPLÍCITO
+====================================================================================================================
+Preserva cada MacroId live e substitui apenas a respetiva sequência pela sequência funcional do ficheiro-fonte.
+Não depende dos nomes devolvidos por /handles.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+PREPARADO | UN  8 | HIGH 1 White     | UserMacro.HIGH1White
+PREPARADO | UN  9 | HIGH 10 Mag      | UserMacro.HIGH10Mag
+PREPARADO | UN 10 | HIGH 11 Purp     | UserMacro.HIGH11Purp
+PREPARADO | UN 11 | HIGH 19 Blk      | UserMacro.HIGH19Blk
+PREPARADO | UN 12 | HIGH 2 Red       | UserMacro.HIGH2Red
+PREPARADO | UN 13 | HIGH 3 Orng      | UserMacro.HIGH3Orng
+PREPARADO | UN 14 | HIGH 4 Yell      | UserMacro.HIGH4Yell
+PREPARADO | UN 15 | HIGH 5 Grn       | UserMacro.HIGH5Grn
+PREPARADO | UN 16 | HIGH 6 Lime      | UserMacro.HIGH6Lime
+PREPARADO | UN 17 | HIGH 7 Cyan      | UserMacro.HIGH7Cyan
+PREPARADO | UN 18 | HIGH 8 LBlue     | UserMacro.HIGH8LBlue
+PREPARADO | UN 19 | LOW 1 White      | UserMacro.LOW1White
+PREPARADO | UN 20 | LOW 10 Mag       | UserMacro.LOW10Mag
+PREPARADO | UN 21 | LOW 11 Purp      | UserMacro.LOW11Purp
+PREPARADO | UN 22 | LOW 19 Blk       | UserMacro.LOW19Blk
+PREPARADO | UN 23 | LOW 2 Red        | UserMacro.LOW2Red
+PREPARADO | UN 24 | LOW 3 Orng       | UserMacro.LOW3Orng
+PREPARADO | UN 25 | LOW 4 Yell       | UserMacro.LOW4Yell
+PREPARADO | UN 26 | LOW 5 Grn        | UserMacro.LOW5Grn
+PREPARADO | UN 27 | LOW 6 Lime       | UserMacro.LOW6Lime
+PREPARADO | UN 28 | LOW 7 Cyan       | UserMacro.LOW7Cyan
+PREPARADO | UN 29 | LOW 8 LBlue      | UserMacro.LOW8LBlue
+PREPARADO | UN 30 | LOW 9 Blue       | UserMacro.LOW9Blue
+PREPARADO | UN 31 | HIGH 9 Blue      | UserMacro.HIGH9Blue
+
+Backup e preparação concluídos: 24/24.
+IMPORTADO E VALIDADO  1/24 | HIGH 1 White
+IMPORTADO E VALIDADO  2/24 | HIGH 10 Mag
+IMPORTADO E VALIDADO  3/24 | HIGH 11 Purp
+IMPORTADO E VALIDADO  4/24 | HIGH 19 Blk
+IMPORTADO E VALIDADO  5/24 | HIGH 2 Red
+IMPORTADO E VALIDADO  6/24 | HIGH 3 Orng
+IMPORTADO E VALIDADO  7/24 | HIGH 4 Yell
+IMPORTADO E VALIDADO  8/24 | HIGH 5 Grn
+IMPORTADO E VALIDADO  9/24 | HIGH 6 Lime
+IMPORTADO E VALIDADO 10/24 | HIGH 7 Cyan
+IMPORTADO E VALIDADO 11/24 | HIGH 8 LBlue
+IMPORTADO E VALIDADO 12/24 | LOW 1 White
+IMPORTADO E VALIDADO 13/24 | LOW 10 Mag
+IMPORTADO E VALIDADO 14/24 | LOW 11 Purp
+IMPORTADO E VALIDADO 15/24 | LOW 19 Blk
+IMPORTADO E VALIDADO 16/24 | LOW 2 Red
+IMPORTADO E VALIDADO 17/24 | LOW 3 Orng
+IMPORTADO E VALIDADO 18/24 | LOW 4 Yell
+IMPORTADO E VALIDADO 19/24 | LOW 5 Grn
+IMPORTADO E VALIDADO 20/24 | LOW 6 Lime
+IMPORTADO E VALIDADO 21/24 | LOW 7 Cyan
+IMPORTADO E VALIDADO 22/24 | LOW 8 LBlue
+IMPORTADO E VALIDADO 23/24 | LOW 9 Blue
+IMPORTADO E VALIDADO 24/24 | HIGH 9 Blue
+
+====================================================================================================================
+ SUCESSO ESTRUTURAL: 24/24 MACROS LIVE RESTAURADOS E REEXPORTADOS
+====================================================================================================================
+Cada macro preservou o respetivo MacroId live.
+Cada sequência coincide com o ficheiro LPX - CFX Picker.xml.
+HIGH usa Group 20000 + MergeCurrentPalette para a paleta 901.
+LOW usa Group 20000 + MergeCurrentPalette para a paleta 902.
+
+TESTE FUNCIONAL NA INTERFACE DO TITAN:
+1. Carrega em HIGH 2 Red; depois carrega na paleta High. Tem de aplicar vermelho.
+2. Carrega em LOW 9 Blue; depois carrega na paleta Low. Tem de aplicar azul.
+Backup: %USERPROFILE%\Documents\Titan\Macros\CFX_RESTAURAR_POR_MAPEAMENTO_20260731-093114\01_BACKUP_LIVE
+XML importados: %USERPROFILE%\Documents\Titan\Macros\CFX_RESTAURAR_POR_MAPEAMENTO_20260731-093114\02_XML_A_IMPORTAR
+Reexportados: %USERPROFILE%\Documents\Titan\Macros\CFX_RESTAURAR_POR_MAPEAMENTO_20260731-093114\03_REEXPORTADO
