@@ -1,0 +1,12 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785486272983-4778da9ece6389b7.ps1:322 char:26
++             $errors.Add("$legend: ID live inesperado '$($live.Id)'")
++                          ~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785486272983-4778da9ece6389b7.ps1:326 char:26
++             $errors.Add("$legend: sequência reexportada não coincide  ...
++                          ~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+ 
