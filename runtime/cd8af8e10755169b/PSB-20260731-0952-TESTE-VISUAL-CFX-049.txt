@@ -1,0 +1,23 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — TESTE VISUAL AUTOMÁTICO DAS PALETAS HIGH E LOW
+================================================================================================================
+O job executa os macros pela Web API, tira screenshots e testa as paletas pela própria Web API.
+O show não é guardado automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Macro HIGH 2 Red: titanId=74220, userNumber=12
+Macro LOW 9 Blue: titanId=74215, userNumber=30
+Palette Red 2:     titanId=2905
+Palette Blue 9:    titanId=2929
+Palette High 901:  titanId=87078
+Palette Low 902:   titanId=87080
+
+Compare-Images : The property 'Bytes' cannot be found on this object. Verify that the property exists.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785487934411-8324533e82365b1f.ps1:417 char:14
++ $highToRed = Compare-Images -A $highAppliedVis -B $highMacroVis
++              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Compare-Images], PropertyNotFoundException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict,Compare-Images
+ 
