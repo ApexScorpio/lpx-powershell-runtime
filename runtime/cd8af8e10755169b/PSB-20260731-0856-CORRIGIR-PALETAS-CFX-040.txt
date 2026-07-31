@@ -1,0 +1,14 @@
+================================================================================================
+ AVOLITES TITAN 19.2 — CORREÇÃO FUNCIONAL DOS MACROS CFX HIGH / LOW
+================================================================================================
+Critério: o macro tem de atualizar a própria paleta High (901) ou Low (902).
+A correção usa o identificador portátil paletteHandleUN, não a posição da paleta no ecrã.
+
+Titan detetado: 19.2
+Macro inesperado no ficheiro-fonte: 'CFX Hi: WHITE'. Nada foi importado.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785484701939-9b84f7b156f9e6e0.ps1:87 char:9
++         throw "Macro inesperado no ficheiro-fonte: '$name'. Nada foi  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Macro inesperad... foi importado.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Macro inesperado no ficheiro-fonte: 'CFX Hi: WHITE'. Nada foi importado.
+ 

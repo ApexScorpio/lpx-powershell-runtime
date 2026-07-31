@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0856-CORRIGIR-PALETAS-CFX-040",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Corrigir os 24 macros CFX para atualizarem realmente as paletas High e Low no Titan",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-31T07:58:21.949Z",
+  "endedAt": "2026-07-31T07:58:22.728Z",
+  "elapsedMs": 779,
+  "outputLength": 1011,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "66b640d2d7ee07ba12417c50722dd5916c68e1d1b4b9626454268702c342c3c0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0856-CORRIGIR-PALETAS-CFX-040.txt",
+  "createdAt": "2026-07-31T07:58:22.729Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
