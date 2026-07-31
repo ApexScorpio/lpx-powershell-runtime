@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0921-REPOR-CFX-10000-20000-044",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Repor os 24 macros CFX da fonte original, alterando apenas o grupo 10000 para 20000",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-31T08:20:38.109Z",
+  "endedAt": "2026-07-31T08:20:42.231Z",
+  "elapsedMs": 4122,
+  "outputLength": 3087,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fedf2855bd71e11700ed4d2663804c5436a7c911067a568c3aad85bd7b792cfa",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0921-REPOR-CFX-10000-20000-044.txt",
+  "createdAt": "2026-07-31T08:20:42.231Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

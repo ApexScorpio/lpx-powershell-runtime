@@ -1,0 +1,23 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — REPOR OS 24 MACROS CFX E ALTERAR APENAS GROUP 10000 PARA 20000
+================================================================================================================
+Este job não reconstrói a lógica dos macros.
+Usa o ficheiro-fonte LPX - CFX Picker.xml e altera exclusivamente Group.RecallGroupNumeric(10000) para (20000).
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Fonte: %USERPROFILE%\Documents\Titan\Macros\LPX - CFX Picker.xml
+Macros encontrados na fonte: 24
+Referências Group 10000:    0
+Referências Group 20000:    24
+Grupo 20000: ALL Rig
+Paleta 901:   High
+Paleta 902:   Low
+Os IDs da fonte não correspondem aos 24 macros live. Fonte: CFX.High.Black, CFX.High.Blue, CFX.High.Cyan, CFX.High.Green, CFX.High.Lime, CFX.High.LtBlue, CFX.High.Magenta, CFX.High.Orange, CFX.High.Purple, CFX.High.Red, CFX.High.White, CFX.High.Yellow, CFX.Low.Black, CFX.Low.Blue, CFX.Low.Cyan, CFX.Low.Green, CFX.Low.Lime, CFX.Low.LtBlue, CFX.Low.Magenta, CFX.Low.Orange, CFX.Low.Purple, CFX.Low.Red, CFX.Low.White, CFX.Low.Yellow | Live: UserMacro.HIGH10Mag, UserMacro.HIGH11Purp, UserMacro.HIGH19Blk, UserMacro.HIGH1White, UserMacro.HIGH2Red, UserMacro.HIGH3Orng, UserMacro.HIGH4Yell, UserMacro.HIGH5Grn, UserMacro.HIGH6Lime, UserMacro.HIGH7Cyan, UserMacro.HIGH8LBlue, UserMacro.HIGH9Blue, UserMacro.LOW10Mag, UserMacro.LOW11Purp, UserMacro.LOW19Blk, UserMacro.LOW1White, UserMacro.LOW2Red, UserMacro.LOW3Orng, UserMacro.LOW4Yell, UserMacro.LOW5Grn, UserMacro.LOW6Lime, UserMacro.LOW7Cyan, UserMacro.LOW8LBlue, UserMacro.LOW9Blue
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785486038098-f02c76ab20ee7878.ps1:372 char:5
++     throw "Os IDs da fonte não correspondem aos 24 macros live. Fonte ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Os IDs da fonte...rMacro.LOW9Blue:String) [], RuntimeException
+    + FullyQualifiedErrorId : Os IDs da fonte não correspondem aos 24 macros live. Fonte: CFX.High.Black, CFX.High.Blu    e, CFX.High.Cyan, CFX.High.Green, CFX.High.Lime, CFX.High.LtBlue, CFX.High.Magenta, CFX.High.Orange, CFX.High.Purp    le, CFX.High.Red, CFX.High.White, CFX.High.Yellow, CFX.Low.Black, CFX.Low.Blue, CFX.Low.Cyan, CFX.Low.Green, CFX.L    ow.Lime, CFX.Low.LtBlue, CFX.Low.Magenta, CFX.Low.Orange, CFX.Low.Purple, CFX.Low.Red, CFX.Low.White, CFX.Low.Yell    ow | Live: UserMacro.HIGH10Mag, UserMacro.HIGH11Purp, UserMacro.HIGH19Blk, UserMacro.HIGH1White, UserMacro.HIGH2Re    d, UserMacro.HIGH3Orng, UserMacro.HIGH4Yell, UserMacro.HIGH5Grn, UserMacro.HIGH6Lime, UserMacro.HIGH7Cyan, UserMac    ro.HIGH8LBlue, UserMacro.HIGH9Blue, UserMacro.LOW10Mag, UserMacro.LOW11Purp, UserMacro.LOW19Blk, UserMacro.LOW1Whi    te, UserMacro.LOW2Red, UserMacro.LOW3Orng, UserMacro.LOW4Yell, UserMacro.LOW5Grn, UserMacro.LOW6Lime, UserMacro.LO    W7Cyan, UserMacro.LOW8LBlue, UserMacro.LOW9Blue
+ 
