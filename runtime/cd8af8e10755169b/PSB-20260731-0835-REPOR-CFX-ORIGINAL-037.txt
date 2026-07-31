@@ -1,0 +1,20 @@
+======================================================================================================================
+ AVOLITES TITAN 19.2 — REPOR A LÓGICA ORIGINAL DOS 24 MACROS CFX (PARSER ROBUSTO)
+======================================================================================================================
+Este job usa o ficheiro local LPX - CFX Picker.xml como fonte de verdade.
+Ignora entradas XML vazias e só altera Group.RecallGroupNumeric(10000) para (20000).
+Mantém Palette.MergeCurrentPalette() e todos os restantes passos originais.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Nós <macro> encontrados: 24
+Entradas vazias/auxiliares ignoradas: 0
+Macros CFX válidos: 0
+Foram encontrados 0 macros CFX válidos; eram esperados exatamente 24. Nada foi importado.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785483388241-666472c0722298c0.ps1:115 char:5
++     throw "Foram encontrados $($valid.Count) macros CFX válidos; eram ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Foram encontrad... foi importado.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Foram encontrados 0 macros CFX válidos; eram esperados exatamente 24. Nada foi importado    .
+ 
