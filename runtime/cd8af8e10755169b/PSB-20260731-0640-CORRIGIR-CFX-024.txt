@@ -1,0 +1,7 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785476465427-62b52ade2ff3239f.ps1:317 char:75
++ ... uccess) { throw "Falhou a execução do macro TitanId $TitanId: $($resu ...
++                                                         ~~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+ 
