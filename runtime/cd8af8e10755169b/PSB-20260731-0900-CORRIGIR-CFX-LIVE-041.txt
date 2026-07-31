@@ -1,0 +1,12 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485090334-a7b5291d8954f1bd.ps1:192 char:33
++ ...    "Palette.ApplyPalette(\"paletteHandleUN=$SourcePalette\", false)",
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'paletteHandleUN=$SourcePalette\", false)"' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485090334-a7b5291d8954f1bd.ps1:192 char:74
++ ...    "Palette.ApplyPalette(\"paletteHandleUN=$SourcePalette\", false)",
++                                                                         ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 

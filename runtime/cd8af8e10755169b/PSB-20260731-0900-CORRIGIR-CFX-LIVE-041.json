@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0900-CORRIGIR-CFX-LIVE-041",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Corrigir e validar os 24 macros CFX live para atualizarem realmente as paletas High e Low",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-31T08:04:50.344Z",
+  "endedAt": "2026-07-31T08:04:50.719Z",
+  "elapsedMs": 375,
+  "outputLength": 775,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "1de835cf8d92bcd109ee9e79bca46dd90351a335e63897bb025bfaa21707db6a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0900-CORRIGIR-CFX-LIVE-041.txt",
+  "createdAt": "2026-07-31T08:04:50.720Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
