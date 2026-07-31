@@ -1,0 +1,17 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — DIAGNÓSTICO DO RUNTIME DOS MACROS CFX
+================================================================================================================
+Este job confirma o XML realmente ativo, verifica duplicados e compara a execução do macro com a mesma sequência direta.
+O teste usa HIGH 2 Red e pode deixar a paleta 901 High em vermelho, que é o resultado pretendido desse macro.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Esperava um grupo 20000 e encontrei 0.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785476190982-5e6307600cf53b0b.ps1:292 char:32
++ ... nt -ne 1) { throw "Esperava um grupo 20000 e encontrei $($group20000. ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Esperava um grupo 20000 e encontrei 0.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Esperava um grupo 20000 e encontrei 0.
+ 
