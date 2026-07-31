@@ -1,0 +1,89 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — DIAGNÓSTICO DO MOTOR DE GRAVAÇÃO DAS PALETAS CFX
+================================================================================================================
+Leitura apenas: não executa macros, não grava paletas, não importa XML e não altera o show.
+API:   http://localhost:4430/titan
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+================================================================================================================
+ 1/5 — HANDLES REAIS ENVOLVIDOS E CONFLITOS DE USER NUMBER
+================================================================================================================
+User Number 2: 0 handle(s)
+User Number 901: 0 handle(s)
+User Number 902: 0 handle(s)
+User Number 20000: 0 handle(s)
+================================================================================================================
+ 2/5 — XML LIVE EXATO DOS DOIS MACROS DE TESTE
+================================================================================================================
+MACRO: HIGH 2 Red
+  XML inválido: Cannot convert value "﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 07:56:46. -->
+  <macro id="UserMacro.HIGH2Red">
+    <name>HIGH 2 Red</name>
+    <sequence>
+      <step pause="0.12">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step>
+      <step pause="0.12">Programmer.SetBlindMode(false, 0)</step>
+      <step pause="0.1">Attribute.Mask.IncludeAll("Palette")</step>
+      <step pause="0.15">Programmer.Editor.Clear(Attribute.Mask.Clear.Value, Programmer.Editor.Fixtures.Clear.Presets, false, Expert.ClearMenu.FadeTime)</step>
+      <step pause="0.2">Group.RecallGroupNumeric(20000)</step>
+      <step pause="0.25">Palette.ApplyPalette("Location=Colours,1,2", false)</step>
+      <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,1,14")</step>
+      <step pause="0.35">Palette.MergeCurrentPalette()</step>
+      <step pause="0.2">Programmer.Editor.Clear(Attribute.Mask.Clear.Value, Programmer.Editor.Fixtures.Clear.Presets, false, Expert.ClearMenu.FadeTime)</step>
+      <step pause="0.12">ActionScript.SetProperty.Boolean("Programmer.BlindActive", false)</step>
+      <step pause="0.12">Programmer.SetBlindMode(false, 0)</step>
+    </sequence>
+  </macro>
+</avolites.macros>" to type "System.Xml.XmlDocument". Error: "O nó especificado não pode ser inserido como o elemento subordinado válido deste nó, uma vez que o nó especificado é do tipo incorreto."
+MACRO: LOW 9 Blue
+  XML inválido: Cannot convert value "﻿<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+  <!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 07:56:46. -->
+  <macro id="UserMacro.LOW9Blue">
+    <name>LOW 9 Blue</name>
+    <sequence>
+      <step pause="0.12">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step>
+      <step pause="0.12">Programmer.SetBlindMode(false, 0)</step>
+      <step pause="0.1">Attribute.Mask.IncludeAll("Palette")</step>
+      <step pause="0.15">Programmer.Editor.Clear(Attribute.Mask.Clear.Value, Programmer.Editor.Fixtures.Clear.Presets, false, Expert.ClearMenu.FadeTime)</step>
+      <step pause="0.2">Group.RecallGroupNumeric(20000)</step>
+      <step pause="0.25">Palette.ApplyPalette("Location=Colours,1,9", false)</step>
+      <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,1,15")</step>
+      <step pause="0.35">Palette.MergeCurrentPalette()</step>
+      <step pause="0.2">Programmer.Editor.Clear(Attribute.Mask.Clear.Value, Programmer.Editor.Fixtures.Clear.Presets, false, Expert.ClearMenu.FadeTime)</step>
+      <step pause="0.12">ActionScript.SetProperty.Boolean("Programmer.BlindActive", false)</step>
+      <step pause="0.12">Programmer.SetBlindMode(false, 0)</step>
+    </sequence>
+  </macro>
+</avolites.macros>" to type "System.Xml.XmlDocument". Error: "O nó especificado não pode ser inserido como o elemento subordinado válido deste nó, uma vez que o nó especificado é do tipo incorreto."
+================================================================================================================
+ 3/5 — PROPRIEDADES DO MOTOR DE PALETAS ANTES DE QUALQUER EXECUÇÃO
+================================================================================================================
+OK   Palette/CurrentPaletteHandle             = null
+OK   Palette/CurrentPaletteDescription        = 
+OK   Palette/RecordMode                       = 3
+OK   Palette/RecordPaletteReferences          = true
+OK   Palette/StorePaletteMode                 = 2
+OK   Palette/MinimumPaletteMode               = 4
+OK   Programmer/BlindActive                   = false
+================================================================================================================
+ 4/5 — EXEMPLOS LOCAIS OFICIAIS/INSTALADOS COM FUNÇÕES DE RECORD E MERGE
+================================================================================================================
+Root: C:\Program Files\Avolites
+Root: C:\Program Files (x86)\Avolites
+Root: C:\ProgramData\Avolites
+Root: %USERPROFILE%\AppData\Roaming\Avolites
+Root: %USERPROFILE%\Documents\Titan
+A pesquisar: C:\Program Files\Avolites
+A pesquisar: C:\Program Files (x86)\Avolites
+A pesquisar: C:\ProgramData\Avolites
+A pesquisar: %USERPROFILE%\AppData\Roaming\Avolites
+A pesquisar: %USERPROFILE%\Documents\Titan
+Os tipos de argumentos não correspondem
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785481005742-20c43645e19887b1.ps1:137 char:62
++ ...            if ($matches.Count -ge $MaxMatches) { return @($matches) }
++                                                             ~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 
