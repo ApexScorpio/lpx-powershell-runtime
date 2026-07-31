@@ -1,0 +1,54 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — AUDITORIA SOMENTE-LEITURA DO ESTADO REAL DOS MACROS CFX
+================================================================================================================
+Este job NAO importa XML, NAO executa macros, NAO grava paletas e NAO altera o show.
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Handles CFX encontrados: 24
+================================================================================================================
+ RESULTADO LIVE
+================================================================================================================
+    8 | HIGH 1 White     | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+    9 | HIGH 10 Mag      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   10 | HIGH 11 Purp     | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   11 | HIGH 19 Blk      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   12 | HIGH 2 Red       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   13 | HIGH 3 Orng      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   14 | HIGH 4 Yell      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   15 | HIGH 5 Grn       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   16 | HIGH 6 Lime      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   17 | HIGH 7 Cyan      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   18 | HIGH 8 LBlue     | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   19 | LOW 1 White      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   20 | LOW 10 Mag       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   21 | LOW 11 Purp      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   22 | LOW 19 Blk       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   23 | LOW 2 Red        | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   24 | LOW 3 Orng       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   25 | LOW 4 Yell       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   26 | LOW 5 Grn        | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   27 | LOW 6 Lime       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   28 | LOW 7 Cyan       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   29 | LOW 8 LBlue      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   30 | LOW 9 Blue       | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+   31 | HIGH 9 Blue      | OK                 | steps=201 | G10000=False G20000=False EXP=True MERGE=False REPLACE=True APPLY=True
+
+Exportados live:                    24/24
+Com Group 10000:                    0
+Com Group 20000:                    0
+Com seleção explícita de fixtures: 24
+Com MergeCurrentPalette:            0
+Com StoreCurrentPaletteReplace:     24
+Com ApplyPalette:                    24
+
+Ficheiro-fonte local: %USERPROFILE%\Documents\Titan\Macros\LPX - CFX Picker.xml
+Fonte existe:                       SIM
+Fonte — ocorrências Group 10000:   0
+Fonte — ocorrências Group 20000:   24
+Fonte — MergeCurrentPalette:       24
+Fonte — StoreCurrentPaletteReplace:0
+
+Pasta da auditoria: %USERPROFILE%\Documents\Titan\Macros\CFX_Auditoria_SomenteLeitura_20260731-084735
+Conclusão automática limitada: este relatório prova apenas o conteúdo LIVE atualmente exportável; não assume que o show foi guardado em disco.
