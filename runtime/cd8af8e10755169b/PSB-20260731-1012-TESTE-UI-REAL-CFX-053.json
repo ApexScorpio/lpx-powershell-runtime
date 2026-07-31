@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-1012-TESTE-UI-REAL-CFX-053",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Repetir o teste físico dos macros e paletas CFX com cliques absolutos robustos e screenshots",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-31T09:11:19.160Z",
+  "endedAt": "2026-07-31T09:11:39.876Z",
+  "elapsedMs": 20716,
+  "outputLength": 2267,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f3b448b59e411ce48063225d3f754319445c2479d298203b814a920baf566b3f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-1012-TESTE-UI-REAL-CFX-053.txt",
+  "createdAt": "2026-07-31T09:11:39.876Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
