@@ -1,0 +1,16 @@
+==============================================================================================================
+ AVOLITES TITAN 19.2 — RESTAURAR A LÓGICA ORIGINAL DOS 24 MACROS CFX
+==============================================================================================================
+Preserva os IDs, nomes, User Numbers e handles live.
+Substitui apenas a sequência de cada macro live pela sequência correspondente do ficheiro-fonte.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Handle live não identificado de forma única: 'HIGH 1 White'.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785486376802-55bab90aceb961a6.ps1:254 char:30
++ ... ount-ne 1){ throw "Handle live não identificado de forma única: '$leg ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Handle live não...'HIGH 1 White'.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Handle live não identificado de forma única: 'HIGH 1 White'.
+ 
