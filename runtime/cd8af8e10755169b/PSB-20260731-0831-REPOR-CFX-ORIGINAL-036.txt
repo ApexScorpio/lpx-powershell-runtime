@@ -1,0 +1,28 @@
+====================================================================================================================
+ AVOLITES TITAN 19.2 — REPOR A LÓGICA ORIGINAL DOS 24 MACROS CFX
+====================================================================================================================
+Este job usa o ficheiro local LPX - CFX Picker.xml como fonte de verdade e ignora os nomes internos antigos.
+Só altera Group 10000 para Group 20000 e mantém Palette.MergeCurrentPalette(), tal como no macro original.
+É criado backup integral dos 24 macros atuais e existe rollback automático em caso de falha.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+
+Ficheiro fonte confirmado: 24 macros.
+Os nomes internos do ficheiro original serão ignorados; a correspondência será feita pelo par Palette fonte -> Palette destino.
+Grupo confirmado:       ALL Rig (UN 20000)
+Palette 901:             High
+Palette 902:             Low
+Ficheiro fonte:          %USERPROFILE%\Documents\Titan\Macros\LPX - CFX Picker.xml
+Pasta de trabalho:       %USERPROFILE%\Documents\Titan\Macros\CFX_Reposicao_Original_20260731-083258
+
+Backup XML live e índice por Palette concluídos: 24/24.
+
+Foi encontrado um macro sem nome ou sem sequência no ficheiro fonte.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785483178043-67b7f321f0415572.ps1:802 char:9
++         throw 'Foi encontrado um macro sem nome ou sem sequência no f ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Foi encontrado ...ficheiro fonte.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Foi encontrado um macro sem nome ou sem sequência no ficheiro fonte.
+ 
