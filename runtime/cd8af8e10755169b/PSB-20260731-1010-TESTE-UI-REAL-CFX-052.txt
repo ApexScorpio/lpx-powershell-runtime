@@ -1,0 +1,17 @@
+====================================================================================================================
+ AVOLITES TITAN 19.2 — TESTE FUNCIONAL COM CLIQUES FÍSICOS NA INTERFACE
+====================================================================================================================
+Sequência testada: HIGH 9 Blue -> LOW 2 Red -> High 901 -> Low 902.
+Os cliques usam coordenadas da página visível fornecida pelo utilizador.
+O show não é guardado automaticamente.
+
+Janela: Tiago F Sardinha 2026 - Avolites Titan Go (LEGIONLPX)
+PID:    24732
+CLIQUE | HIGH 9 Blue | X=349 Y=345
+Falhou SetCursorPos em LOW 2 Red (140,407).
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785488940620-0271927dcf8869c7.ps1:62 char:9
++         throw "Falhou SetCursorPos em $Description ($X,$Y)."
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falhou SetCurso... Red (140,407).:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falhou SetCursorPos em LOW 2 Red (140,407).
+ 
