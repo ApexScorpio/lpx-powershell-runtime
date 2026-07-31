@@ -1,0 +1,15 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — INSTALAÇÃO E VALIDAÇÃO DOS MACROS CFX A PARTIR DO FICHEIRO-FONTE
+================================================================================================================
+Este job não inventa novas sequências: usa exatamente os 24 macros do ficheiro LPX - CFX Picker.xml.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+Fonte: %USERPROFILE%\Documents\Titan\Macros\LPX - CFX Picker.xml
+A fonte não contém exatamente 24 macros CFX HIGH/LOW. Encontrados: 0.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485471864-896e596ce05f7864.ps1:243 char:28
++ ... ount-ne 24){throw "A fonte não contém exatamente 24 macros CFX HIGH/L ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (A fonte não con...Encontrados: 0.:String) [], RuntimeException
+    + FullyQualifiedErrorId : A fonte não contém exatamente 24 macros CFX HIGH/LOW. Encontrados: 0.
+ 
