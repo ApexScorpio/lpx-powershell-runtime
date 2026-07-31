@@ -1,0 +1,743 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — DIAGNÓSTICO ROBUSTO DA GRAVAÇÃO DAS PALETAS CFX
+================================================================================================================
+Leitura apenas: não executa macros, não grava paletas, não importa XML e não altera o show.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Logs analisados desde: 2026-07-31 02:23:30
+
+================================================================================================================
+ 1/5 — XML LIVE DOS DOIS MACROS DE TESTE
+================================================================================================================
+HIGH 2 Red: não foi possível exportar.
+
+LOW 9 Blue: não foi possível exportar.
+
+================================================================================================================
+ 2/5 — ESTADO ATUAL DO MOTOR DE PALETAS
+================================================================================================================
+OK   Palette/CurrentPaletteHandle               = null
+OK   Palette/CurrentPaletteDescription          = ""
+OK   Palette/RecordMode                         = 3
+OK   Palette/RecordPaletteReferences            = true
+OK   Palette/StorePaletteMode                   = 2
+OK   Palette/MinimumPaletteMode                 = 4
+N/A  Palette/RecordMask
+N/A  Palette/StorePaletteMask
+N/A  Palette/AttributeMask
+N/A  Palette/RecordAttributeMask
+N/A  Attribute/Mask/Palette
+N/A  Attribute/Mask/Current
+N/A  Attribute/Mask/Record
+OK   Programmer/BlindActive                     = false
+
+================================================================================================================
+ 3/5 — LOGS RECENTES RELACIONADOS COM EXECUÇÃO, PALETAS E ERROS
+================================================================================================================
+Ficheiros recentes analisáveis: 224
+Ocorrências relevantes: 220
+
+FICHEIRO: C:\ProgramData\Avolites\WebAPI\rolledexceptionlog.log | modificado 2026-07-31 08:19:04
+  L1 [ERROR]: <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent"><System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system"><EventID>0</EventID><Type>3</Type><SubType Name="Error">0</SubType><Level>2</Level><TimeCreated SystemTime="2026-07-31T05:42:23.1512987Z" /><Source Name="General" /><Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" /><Execution ProcessName="WebAPIService…
+  L1 [Exception]: <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent"><System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system"><EventID>0</EventID><Type>3</Type><SubType Name="Error">0</SubType><Level>2</Level><TimeCreated SystemTime="2026-07-31T05:42:23.1512987Z" /><Source Name="General" /><Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" /><Execution ProcessName="WebAPIService…
+  L1 [failed]: <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent"><System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system"><EventID>0</EventID><Type>3</Type><SubType Name="Error">0</SubType><Level>2</Level><TimeCreated SystemTime="2026-07-31T05:42:23.1512987Z" /><Source Name="General" /><Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" /><Execution ProcessName="WebAPIService…
+  L2 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L2 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L2 [failed]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L3 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L3 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L3 [failed]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L4 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L4 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L4 [failed]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L5 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L5 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L5 [failed]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L6 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L6 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L6 [failed]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L7 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L7 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L8 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L8 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L16 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>System.Private.CoreLib</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Void ThrowTargetParameterCountException()</Value></KeyValuePair_2><KeyValuePair_2><Key>softwareVersion</Key><Value>1…
+  L16 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>System.Private.CoreLib</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Void ThrowTargetParameterCountException()</Value></KeyValuePair_2><KeyValuePair_2><Key>softwareVersion</Key><Value>1…
+  L17 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L17 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>Avolites.WebAPI</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Boolean TryParseUrlToWebAction(System.Uri, System.IO.Stream, Avolites.WebAPI.Preprocessor.IWebAPIAction ByRef)</Value></Key…
+  L25 [ERROR]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>System.Private.CoreLib</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Void ThrowTargetParameterCountException()</Value></KeyValuePair_2><KeyValuePair_2><Key>softwareVersion</Key><Value>1…
+  L25 [Exception]: at Avolites.WebAPI.WebAPIRestServiceBase`2.PostScript(THttpContext context, String scriptPath, Stream content, WebLinkHelper webLinkHelper)</Value></KeyValuePair_2><KeyValuePair_2><Key>exceptionSource</Key><Value>System.Private.CoreLib</Value></KeyValuePair_2><KeyValuePair_2><Key>targetSite</Key><Value>Void ThrowTargetParameterCountException()</Value></KeyValuePair_2><KeyValuePair_2><Key>softwareVersion</Key><Value>1…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00012_HIGH_2_Red.xml | modificado 2026-07-31 06:42:06
+  L4 [UserMacro.HIGH2Red]: <macro id="UserMacro.HIGH2Red">
+  L5 [HIGH 2 Red]: <name>HIGH 2 Red</name>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00030_LOW_9_Blue.xml | modificado 2026-07-31 06:42:09
+  L4 [UserMacro.LOW9Blue]: <macro id="UserMacro.LOW9Blue">
+  L5 [LOW 9 Blue]: <name>LOW 9 Blue</name>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00008_HIGH_1_White.xml | modificado 2026-07-31 06:42:05
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00009_HIGH_10_Mag.xml | modificado 2026-07-31 06:42:05
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00010_HIGH_11_Purp.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00011_HIGH_19_Blk.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00012_HIGH_2_Red.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [HIGH 2 Red]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [UserMacro.HIGH2Red]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00013_HIGH_3_Orng.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00014_HIGH_4_Yell.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00015_HIGH_5_Grn.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00016_HIGH_6_Lime.xml | modificado 2026-07-31 06:42:06
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00017_HIGH_7_Cyan.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00018_HIGH_8_LBlue.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00019_LOW_1_White.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00020_LOW_10_Mag.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00021_LOW_11_Purp.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00022_LOW_19_Blk.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00023_LOW_2_Red.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW2Red"><name>LOW 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW2Red"><name>LOW 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW2Red"><name>LOW 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW2Red"><name>LOW 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00024_LOW_3_Orng.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW3Orng"><name>LOW 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW3Orng"><name>LOW 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW3Orng"><name>LOW 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW3Orng"><name>LOW 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00025_LOW_4_Yell.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW4Yell"><name>LOW 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW4Yell"><name>LOW 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW4Yell"><name>LOW 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW4Yell"><name>LOW 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00026_LOW_5_Grn.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW5Grn"><name>LOW 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW5Grn"><name>LOW 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW5Grn"><name>LOW 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW5Grn"><name>LOW 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00027_LOW_6_Lime.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW6Lime"><name>LOW 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW6Lime"><name>LOW 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW6Lime"><name>LOW 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW6Lime"><name>LOW 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00028_LOW_7_Cyan.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW7Cyan"><name>LOW 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW7Cyan"><name>LOW 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW7Cyan"><name>LOW 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW7Cyan"><name>LOW 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00029_LOW_8_LBlue.xml | modificado 2026-07-31 06:42:08
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW8LBlue"><name>LOW 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW8LBlue"><name>LOW 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW8LBlue"><name>LOW 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW8LBlue"><name>LOW 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00030_LOW_9_Blue.xml | modificado 2026-07-31 06:42:09
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:09. --><macro id="UserMacro.LOW9Blue"><name>LOW 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:09. --><macro id="UserMacro.LOW9Blue"><name>LOW 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [LOW 9 Blue]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:09. --><macro id="UserMacro.LOW9Blue"><name>LOW 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:09. --><macro id="UserMacro.LOW9Blue"><name>LOW 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:09. --><macro id="UserMacro.LOW9Blue"><name>LOW 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+  L1 [UserMacro.LOW9Blue]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:09. --><macro id="UserMacro.LOW9Blue"><name>LOW 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mas…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00031_HIGH_9_Blue.xml | modificado 2026-07-31 06:42:07
+  L1 [ApplyPalette]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH9Blue"><name>HIGH 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH9Blue"><name>HIGH 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StoreCurrentPaletteReplace]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH9Blue"><name>HIGH 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+  L1 [StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH9Blue"><name>HIGH 9 Blue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.M…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00008_HIGH_1_White.xml | modificado 2026-07-31 06:42:09
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=1", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00009_HIGH_10_Mag.xml | modificado 2026-07-31 06:42:09
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=10", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00010_HIGH_11_Purp.xml | modificado 2026-07-31 06:42:10
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=11", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00011_HIGH_19_Blk.xml | modificado 2026-07-31 06:42:10
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=19", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00012_HIGH_2_Red.xml | modificado 2026-07-31 06:42:11
+  L4 [UserMacro.HIGH2Red]: <macro id="UserMacro.HIGH2Red">
+  L5 [HIGH 2 Red]: <name>HIGH 2 Red</name>
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=2", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00013_HIGH_3_Orng.xml | modificado 2026-07-31 06:42:11
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=3", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00014_HIGH_4_Yell.xml | modificado 2026-07-31 06:42:11
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=4", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00015_HIGH_5_Grn.xml | modificado 2026-07-31 06:42:12
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=5", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00016_HIGH_6_Lime.xml | modificado 2026-07-31 06:42:12
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=6", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00017_HIGH_7_Cyan.xml | modificado 2026-07-31 06:42:13
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=7", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00018_HIGH_8_LBlue.xml | modificado 2026-07-31 06:42:13
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=8", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00019_LOW_1_White.xml | modificado 2026-07-31 06:42:14
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=1", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00020_LOW_10_Mag.xml | modificado 2026-07-31 06:42:14
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=10", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00021_LOW_11_Purp.xml | modificado 2026-07-31 06:42:15
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=11", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00022_LOW_19_Blk.xml | modificado 2026-07-31 06:42:15
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=19", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00023_LOW_2_Red.xml | modificado 2026-07-31 06:42:15
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=2", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00024_LOW_3_Orng.xml | modificado 2026-07-31 06:42:16
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=3", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00025_LOW_4_Yell.xml | modificado 2026-07-31 06:42:16
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=4", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00026_LOW_5_Grn.xml | modificado 2026-07-31 06:42:17
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=5", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00027_LOW_6_Lime.xml | modificado 2026-07-31 06:42:17
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=6", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00028_LOW_7_Cyan.xml | modificado 2026-07-31 06:42:17
+  L12 [ApplyPalette]: <step pause="0.12">Palette.ApplyPalette("paletteHandleUN=7", false)</step>
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L14 [StorePaletteMode]: <step pause="0.05">ActionScript.SetProperty.Enum("Palette.StorePaletteMode", "Shared")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\03_XML_Reexportados\00029_LOW_8_LBlue.xml | modificado 2026-07-31 06:42:18
+  L13 [CurrentPaletteHandle]: <step pause="0.08">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L15 [StoreCurrentPaletteReplace]: <step pause="0.2">Palette.StoreCurrentPaletteReplace()</step>
+
+================================================================================================================
+ 4/5 — EXEMPLOS LOCAIS OFICIAIS/INSTALADOS DAS FUNÇÕES DE PALETAS
+================================================================================================================
+A pesquisar exemplos em: C:\Program Files\Avolites
+A pesquisar exemplos em: C:\Program Files (x86)\Avolites
+A pesquisar exemplos em: C:\ProgramData\Avolites
+A pesquisar exemplos em: %USERPROFILE%\AppData\Roaming\Avolites
+A pesquisar exemplos em: %USERPROFILE%\Documents\Titan\Macros
+Ocorrências encontradas: 240
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00008_HIGH_1_White.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00009_HIGH_10_Mag.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00010_HIGH_11_Purp.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00011_HIGH_19_Blk.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00012_HIGH_2_Red.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00013_HIGH_3_Orng.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00014_HIGH_4_Yell.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00015_HIGH_5_Grn.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00016_HIGH_6_Lime.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00017_HIGH_7_Cyan.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00018_HIGH_8_LBlue.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00019_LOW_1_White.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00020_LOW_10_Mag.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00021_LOW_11_Purp.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00022_LOW_19_Blk.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00023_LOW_2_Red.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00024_LOW_3_Orng.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00025_LOW_4_Yell.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00026_LOW_5_Grn.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00027_LOW_6_Lime.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00028_LOW_7_Cyan.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00029_LOW_8_LBlue.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00030_LOW_9_Blue.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 902 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\01_Backup_XML_Live\00031_HIGH_9_Blue.xml
+  L11 [Record Palette]: <step pause="0.35">ActionScript.Command("Record Palette 901 Merge")</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00008_HIGH_1_White.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH1White"><name>HIGH 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00009_HIGH_10_Mag.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:05. --><macro id="UserMacro.HIGH10Mag"><name>HIGH 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00010_HIGH_11_Purp.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH11Purp"><name>HIGH 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00011_HIGH_19_Blk.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH19Blk"><name>HIGH 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00012_HIGH_2_Red.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH2Red"><name>HIGH 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00013_HIGH_3_Orng.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH3Orng"><name>HIGH 3 Orng</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00014_HIGH_4_Yell.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH4Yell"><name>HIGH 4 Yell</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00015_HIGH_5_Grn.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH5Grn"><name>HIGH 5 Grn</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00016_HIGH_6_Lime.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:06. --><macro id="UserMacro.HIGH6Lime"><name>HIGH 6 Lime</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00017_HIGH_7_Cyan.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH7Cyan"><name>HIGH 7 Cyan</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00018_HIGH_8_LBlue.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.HIGH8LBlue"><name>HIGH 8 LBlue</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00019_LOW_1_White.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW1White"><name>LOW 1 White</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00020_LOW_10_Mag.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW10Mag"><name>LOW 10 Mag</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00021_LOW_11_Purp.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW11Purp"><name>LOW 11 Purp</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fa…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00022_LOW_19_Blk.xml
+  L1 [Attribute.Mask.IncludeAll("Palette")]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.ApplyPalette(]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.CurrentPaletteHandle]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+  L1 [Palette.StorePaletteMode]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:07. --><macro id="UserMacro.LOW19Blk"><name>LOW 19 Blk</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(fals…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\02_XML_Corrigidos\00023_LOW_2_Red.xml
+  L1 [Palette.StoreCurrentPaletteReplace()]: <?xml version="1.0" encoding="utf-8"?><avolites.macros><!-- Automatically exported from Tiago F Sardinha 2026 - Titan Mobile 19.2.104.5 (LEGIONLPX) on 31/07/2026 06:42:08. --><macro id="UserMacro.LOW2Red"><name>LOW 2 Red</name><sequence><step pause="0.05">ActionScript.SetProperty.Boolean("Programmer.BlindActive", true)</step><step pause="0.05">Programmer.SetBlindMode(false, 0)</step><step pause="0.05">Attribute.Mask.IncludeAll("Palette")</step><step pause="0.08">Programmer.Editor.ClearAll(false,…
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\CFX_Correcao_Definitiva_20260731-064205\RELATORIO_CFX.txt
+  L7 [Palette.CurrentPaletteHandle]: Método de gravação: Palette.CurrentPaletteHandle + Palette.StoreCurrentPaletteReplace
+  L8 [Attribute.Mask.IncludeAll("Palette")]: Record mask: Attribute.Mask.IncludeAll("Palette")
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChanger 1.xml
+  L10 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,2,1", false)</step>
+  L11 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,3
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 1.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,1", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 10.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,10", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 11.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,11", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 12.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,12", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 13.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,13", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 14.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,14.", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 15.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,15.", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 16.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,16", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 17.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,17", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 18.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,18", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 19.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,19", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 2.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,2", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 3.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,3", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 4.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,4", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 5.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,5", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 6.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,6", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 7.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,7", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 8.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,8", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger 9.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,9", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\ColorChaseChanger_v2.xml
+  L11 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,16", false)</step>
+  L12 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,1")</step>
+  L13 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+  L17 [Palette.ApplyPalette(]: <step pause="0.01">Palette.ApplyPalette("Location=Colours,1,17", false)</step>
+  L18 [Palette.CurrentPaletteHandle]: <step pause="0.01">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"Location=Colours,2,2")</step>
+  L19 [Palette.StoreCurrentPaletteReplace()]: <step pause="0.01">Palette.StoreCurrentPaletteReplace()</step>
+
+FICHEIRO: %USERPROFILE%\Documents\Titan\Macros\LPX - CFX Picker.xml
+  L7 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=1", false)</step>
+  L8 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L9 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L20 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=2", false)</step>
+  L21 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L22 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L33 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=3", false)</step>
+  L34 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L35 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L46 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=4", false)</step>
+  L47 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L48 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L59 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=5", false)</step>
+  L60 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L61 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L72 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=6", false)</step>
+  L73 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L74 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L85 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=7", false)</step>
+  L86 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L87 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L98 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=8", false)</step>
+  L99 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L100 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L111 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=9", false)</step>
+  L112 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L113 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L124 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=10", false)</step>
+  L125 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L126 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L137 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=11", false)</step>
+  L138 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L139 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L150 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=19", false)</step>
+  L151 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=901")</step>
+  L152 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L163 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=1", false)</step>
+  L164 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L165 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L176 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=2", false)</step>
+  L177 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L178 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L189 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=3", false)</step>
+  L190 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L191 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L202 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=4", false)</step>
+  L203 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L204 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L215 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=5", false)</step>
+  L216 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L217 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L228 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=6", false)</step>
+  L229 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L230 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L241 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=7", false)</step>
+  L242 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L243 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L254 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=8", false)</step>
+  L255 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L256 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L267 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=9", false)</step>
+  L268 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L269 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L280 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=10", false)</step>
+  L281 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L282 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L293 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=11", false)</step>
+  L294 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L295 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+  L306 [Palette.ApplyPalette(]: <step pause="0.2">Palette.ApplyPalette("paletteHandleUN=19", false)</step>
+  L307 [Palette.CurrentPaletteHandle]: <step pause="0.2">ActionScript.SetProperty("Palette.CurrentPaletteHandle", handle:"paletteHandleUN=902")</step>
+  L308 [Palette.MergeCurrentPalette()]: <step pause="0.2">Palette.MergeCurrentPalette()</step>
+
+================================================================================================================
+ 5/5 — CONCLUSÃO AUTOMÁTICA
+================================================================================================================
+Erros explícitos encontrados nos logs: 28
+Exemplos locais de gravação/merge encontrados: 62
+Diagnóstico: existem erros explícitos associados ao motor ou à execução. As linhas acima identificam o passo a corrigir.
+
+Nenhuma alteração foi efetuada no show.

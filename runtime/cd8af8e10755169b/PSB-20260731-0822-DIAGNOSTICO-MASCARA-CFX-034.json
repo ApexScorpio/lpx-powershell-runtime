@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0822-DIAGNOSTICO-MASCARA-CFX-034",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Concluir o diagnóstico da gravação das paletas High e Low sem alterar o show",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-31T07:23:29.798Z",
+  "endedAt": "2026-07-31T07:23:41.756Z",
+  "elapsedMs": 11958,
+  "outputLength": 146274,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "ce2f3623584462ae406eca311b3f552fe18838303b9f781cb57747dc96e4e030",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0822-DIAGNOSTICO-MASCARA-CFX-034.txt",
+  "createdAt": "2026-07-31T07:23:41.758Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
