@@ -1,0 +1,37 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — TESTE VISUAL AUTOMÁTICO DAS PALETAS HIGH E LOW
+================================================================================================================
+O job executa os macros pela Web API, tira screenshots e testa as paletas pela própria Web API.
+O show não é guardado automaticamente.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Macro HIGH 2 Red: titanId=74220, userNumber=12
+Macro LOW 9 Blue: titanId=74215, userNumber=30
+Palette Red 2:     titanId=2905
+Palette Blue 9:    titanId=2929
+Palette High 901:  titanId=87078
+Palette Low 902:   titanId=87080
+
+
+================================================================================================================
+ RESULTADOS VISUAIS
+================================================================================================================
+HIGH | após 901 vs vermelho do macro: MAD=0; alterados=0%
+HIGH | após 901 vs azul intermédio:    MAD=0; alterados=0%
+HIGH | balanço final: R=131,76 G=137,12 B=130,89; vermelho=39,6%; azul=40,1%
+HIGH | alteração visual do botão 901: MAD=0; alterados=0%
+HIGH | FUNCIONAL: False
+
+LOW  | após 902 vs azul do macro:      MAD=0; alterados=0%
+LOW  | após 902 vs vermelho intermédio:MAD=0; alterados=0%
+LOW  | balanço final: R=131,76 G=137,12 B=130,89; vermelho=39,6%; azul=40,1%
+LOW  | alteração visual do botão 902: MAD=0; alterados=0%
+LOW  | FUNCIONAL: False
+
+Screenshots: %USERPROFILE%\Documents\Titan\Macros\CFX_TESTE_VISUAL_FINAL_20260731-095426
+Contact sheet: %USERPROFILE%\Documents\Titan\Macros\CFX_TESTE_VISUAL_FINAL_20260731-095426\CONTACT_SHEET.png
+Relatório: %USERPROFILE%\Documents\Titan\Macros\CFX_TESTE_VISUAL_FINAL_20260731-095426\RELATORIO.txt
+
+CONCLUSÃO: HIGH E LOW NÃO ESTÃO A ATUALIZAR/REAPLICAR AS CORES.

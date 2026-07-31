@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0955-TESTE-VISUAL-CFX-050",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Executar os macros CFX pela API, tirar screenshots e avaliar visualmente as paletas High e Low",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-07-31T08:54:25.700Z",
+  "endedAt": "2026-07-31T08:54:41.488Z",
+  "elapsedMs": 15788,
+  "outputLength": 1939,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f955b79c6153ff57c3336686448254e30c160c04cb7991b22a9aaa514e43cce2",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0955-TESTE-VISUAL-CFX-050.txt",
+  "createdAt": "2026-07-31T08:54:41.488Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
