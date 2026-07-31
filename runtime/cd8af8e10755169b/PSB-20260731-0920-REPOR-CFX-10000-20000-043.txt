@@ -1,0 +1,42 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:390 char:28
++             $failures.Add("$id: não foi possível reexportar")
++                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:397 char:28
++             $failures.Add("$id: XML reexportado sem macro")
++                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:405 char:28
++             $failures.Add("$id: a sequência live não coincide exatame ...
++                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:408 char:28
++             $failures.Add("$id: ainda contém Group 10000")
++                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:411 char:28
++             $failures.Add("$id: não contém Group 20000")
++                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:435 char:44
++                     $rollbackFailures.Add("$id: não reexportado")
++                                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:441 char:44
++                     $rollbackFailures.Add("$id: XML sem macro")
++                                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785485923831-45b6ea584e68384d.ps1:446 char:44
++                     $rollbackFailures.Add("$id: sequência não restaur ...
++                                            ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+ 
