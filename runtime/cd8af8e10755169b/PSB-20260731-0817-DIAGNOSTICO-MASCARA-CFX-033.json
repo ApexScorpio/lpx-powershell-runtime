@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260731-0817-DIAGNOSTICO-MASCARA-CFX-033",
+  "conversationKey": "cd8af8e10755169b",
+  "purpose": "Concluir o diagnóstico da máscara e da falha real dos macros CFX",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-07-31T07:19:04.370Z",
+  "endedAt": "2026-07-31T07:19:05.467Z",
+  "elapsedMs": 1097,
+  "outputLength": 2230,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "60a6bac1a732fcd838b74c2b881e0a7ee1d1ed9e7b40d32eb9487ad102a1221a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/cd8af8e10755169b/PSB-20260731-0817-DIAGNOSTICO-MASCARA-CFX-033.txt",
+  "createdAt": "2026-07-31T07:19:05.467Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

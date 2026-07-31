@@ -1,0 +1,39 @@
+================================================================================================================
+ AVOLITES TITAN 19.2 — DIAGNÓSTICO FINAL DA MÁSCARA E DA FALHA REAL DOS MACROS CFX
+================================================================================================================
+Leitura apenas: não executa macros, não grava paletas, não importa XML e não altera o show.
+
+Titan: 19.2
+Show:  Tiago F Sardinha 2026
+API:   http://localhost:4430/titan
+Janela temporal dos logs: 2026-07-31 05:19:04 até 2026-07-31 08:19:04
+
+================================================================================================================
+ 1/4 — PROPRIEDADES DO MOTOR DE PALETAS E MÁSCARAS
+================================================================================================================
+OK   Palette/CurrentPaletteHandle               = null
+OK   Palette/CurrentPaletteDescription          = ""
+OK   Palette/RecordMode                         = 3
+OK   Palette/RecordPaletteReferences            = true
+OK   Palette/StorePaletteMode                   = 2
+OK   Palette/MinimumPaletteMode                 = 4
+N/A  Palette/RecordMask
+N/A  Palette/StorePaletteMask
+N/A  Palette/AttributeMask
+N/A  Palette/RecordAttributeMask
+N/A  Attribute/Mask/Palette
+N/A  Attribute/Mask/Current
+N/A  Attribute/Mask/Record
+OK   Programmer/BlindActive                     = false
+
+================================================================================================================
+ 2/4 — LOGS RECENTES DO TITAN RELACIONADOS COM OS TESTES CFX
+================================================================================================================
+Ficheiros recentes analisáveis: 222
+Search-Files : Os tipos de argumentos não correspondem
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1785482344359-5437702c241af2f7.ps1:206 char:12
++ $logHits = Search-Files -Files $recentFiles -Patterns $logPatterns -M ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [Search-Files], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Search-Files
+ 
