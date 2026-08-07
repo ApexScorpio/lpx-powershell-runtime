@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260802-1627-FIX-PROTOCOL-PROMPT-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Corrigir protocolPromptText e garantir deteção de manifestos no turno completo do assistente.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-07T10:27:26.916Z",
+  "endedAt": "2026-08-07T10:27:27.270Z",
+  "elapsedMs": 354,
+  "outputLength": 385,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "c0334e4d3a861fcee181f81f76cd34e6a1cae090e86756e5731d014e4840c20f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260802-1627-FIX-PROTOCOL-PROMPT-001.txt",
+  "createdAt": "2026-08-07T10:27:27.274Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

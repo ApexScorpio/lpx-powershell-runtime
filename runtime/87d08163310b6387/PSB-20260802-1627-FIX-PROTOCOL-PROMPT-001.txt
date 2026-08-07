@@ -1,0 +1,7 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786098446901-0d7bc9fcebef16fd.ps1:158 char:53
++     return @($ranked | Sort-Object Score -Descending, Path)
++                                                     ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : MissingArgument
+ 
