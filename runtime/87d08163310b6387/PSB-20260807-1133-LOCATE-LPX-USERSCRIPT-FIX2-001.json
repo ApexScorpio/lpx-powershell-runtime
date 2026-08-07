@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260807-1133-LOCATE-LPX-USERSCRIPT-FIX2-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Corrigir o diagnóstico anterior e localizar a cópia real do userscript LPX e o armazenamento do Tampermonkey.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-07T10:33:33.162Z",
+  "endedAt": "2026-08-07T10:34:02.573Z",
+  "elapsedMs": 29411,
+  "outputLength": 1576,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "0862e7430fcf7134db0176e25d9f9a96a1bf5364c6c353b4856a832c33516dee",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260807-1133-LOCATE-LPX-USERSCRIPT-FIX2-001.txt",
+  "createdAt": "2026-08-07T10:34:02.574Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

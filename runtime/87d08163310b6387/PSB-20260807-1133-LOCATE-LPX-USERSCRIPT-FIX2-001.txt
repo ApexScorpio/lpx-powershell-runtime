@@ -1,0 +1,27 @@
+{
+    "protocol":  "PSBRIDGE_DIAGNOSTIC_RESULT_V1",
+    "jobId":  "PSB-20260807-1133-LOCATE-LPX-USERSCRIPT-FIX2-001",
+    "status":  "SUCCEEDED",
+    "timestamp":  "2026-08-07T11:34:02.5060508+01:00",
+    "diagnosis":  "Foi encontrada pelo menos uma cópia textual editável ou provável do userscript.",
+    "tampermonkeyStorageLocations":  [
+                                         {
+                                             "browserRoot":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data",
+                                             "profile":  "Default",
+                                             "extensionId":  "dhdgffkkebhmkfjojejmpbldmpobfkfo",
+                                             "storageType":  "Local Extension Settings",
+                                             "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Local Extension Settings\\dhdgffkkebhmkfjojejmpbldmpobfkfo"
+                                         }
+                                     ],
+    "textCandidates":  [
+                           {
+                               "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\dhdgffkkebhmkfjojejmpbldmpobfkfo\\5.5.0_0\\background.js",
+                               "score":  40,
+                               "size":  614197,
+                               "kind":  "text-file"
+                           }
+                       ],
+    "tampermonkeyStorageMarkerHits":  [
+
+                                      ]
+}
