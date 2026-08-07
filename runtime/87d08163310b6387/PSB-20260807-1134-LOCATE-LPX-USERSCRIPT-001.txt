@@ -1,0 +1,8 @@
+{
+    "protocol":  "PSBRIDGE_DIAGNOSTIC_RESULT_V1",
+    "jobId":  "PSB-20260807-1134-LOCATE-LPX-USERSCRIPT-001",
+    "status":  "FAILED",
+    "timestamp":  "2026-08-07T11:32:33.1195784+01:00",
+    "error":  "Os tipos de argumentos não correspondem",
+    "stack":  "at \u003cScriptBlock\u003e, C:\\Users\\lopes\\AppData\\Local\\Temp\\powershell-bridge-command-1786098672093-9e7bff654c767ddf.ps1: line 176\r\nat \u003cScriptBlock\u003e, C:\\Users\\lopes\\.gemini\\antigravity-ide\\tools\\chatgpt-powershell-bridge\\bridge-runner.ps1: line 31"
+}
