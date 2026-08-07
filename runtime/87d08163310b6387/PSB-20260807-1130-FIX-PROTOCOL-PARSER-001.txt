@@ -1,0 +1,14 @@
+{
+    "protocol":  "PSBRIDGE_PATCH_RESULT_V1",
+    "jobId":  "PSB-20260807-1130-FIX-PROTOCOL-PARSER-001",
+    "status":  "FAILED",
+    "timestamp":  "2026-08-07T11:30:10.4628423+01:00",
+    "error":  "Não foi encontrado o ficheiro-fonte da LPX PowerShell Bridge.",
+    "searchedRoots":  [
+                          "C:\\Users\\lopes\\Documents",
+                          "C:\\Users\\lopes\\Desktop",
+                          "C:\\Users\\lopes\\Downloads",
+                          "C:\\Users\\lopes\\OneDrive\\Documents",
+                          "C:\\Users\\lopes\\.gemini\\antigravity-ide\\scratch"
+                      ]
+}

@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260807-1130-FIX-PROTOCOL-PARSER-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Corrigir o erro de parser PowerShell e aplicar a correção do protocolPromptText e detector do último turno.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-07T10:29:56.666Z",
+  "endedAt": "2026-08-07T10:30:10.570Z",
+  "elapsedMs": 13904,
+  "outputLength": 645,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "2dab39fa33ab9c83c58b3b8fcb837b795dbdbe95ac356657e7a04265b50929d7",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260807-1130-FIX-PROTOCOL-PARSER-001.txt",
+  "createdAt": "2026-08-07T10:30:10.570Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
