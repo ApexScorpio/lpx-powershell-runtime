@@ -1,0 +1,27 @@
+{
+    "protocol":  "LPX_PSB_HOTFIX_INSTALL_RESULT_V1",
+    "jobId":  "PSB-20260807-1457-INSTALL-DOM-HOTFIX-001",
+    "status":  "SUCCEEDED",
+    "userScript":  "C:\\Users\\lopes\\Downloads\\LPX-PowerShell-Bridge-DOM-Hotfix-v15.5.1.user.js",
+    "canonicalPrompt":  "C:\\Users\\lopes\\Downloads\\LPX-PowerShell-Bridge-Prompt-v15.5.1.txt",
+    "installerOpened":  true,
+    "syntaxCheck":  {
+                        "available":  true,
+                        "passed":  true,
+                        "output":  ""
+                    },
+    "changes":  [
+                    "Percorre todos os PRE/CODE do último turno do assistente.",
+                    "Ignora PRE vazios e aceita blocos que começam por JSON antes de {.",
+                    "Extrai JSON balanceado e valida o protocolo.",
+                    "Rejeita placeholders como AAAAMMDD, HHMM, DESCRICAO, ... e nome-unico-do-comando.ps1.",
+                    "Cria um PRE limpo no assistant node para o detector legado.",
+                    "Atualiza o manifesto antes de Executar último e Mostrar PowerShell.",
+                    "Adiciona botão Copiar protocolo corrigido.",
+                    "O protocolo inicial não inclui fileId.",
+                    "fileId aparece apenas no exemplo separado de PSBRIDGE_FILEID_HANDSHAKE_V1."
+                ],
+    "nextAction":  "No separador do Tampermonkey que abriu, clicar Instalar e depois recarregar todas as abas do ChatGPT.",
+    "showPowerShell":  "Este hotfix corrige a deteção usada antes do botão Mostrar PowerShell. Se o botão continuar sem abrir a consola, o endpoint local do botão terá de ser corrigido separadamente.",
+    "timestamp":  "2026-08-07T15:01:01.4811854+01:00"
+}
