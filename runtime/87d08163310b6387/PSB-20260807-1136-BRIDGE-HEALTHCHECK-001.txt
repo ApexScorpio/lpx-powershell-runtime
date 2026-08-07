@@ -1,0 +1,10 @@
+{
+    "protocol":  "LPX_BRIDGE_HEALTHCHECK_V1",
+    "status":  "SUCCEEDED",
+    "bridgeExecution":  "OK",
+    "message":  "LPX PowerShell Bridge executou o ficheiro PS1 corretamente.",
+    "computer":  "LEGIONLPX",
+    "user":  "Lopes",
+    "powershellVersion":  "5.1.22621.6133",
+    "timestamp":  "2026-08-07T11:34:49.3222692+01:00"
+}

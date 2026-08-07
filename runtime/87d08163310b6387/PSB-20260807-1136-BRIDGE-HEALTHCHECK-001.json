@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260807-1136-BRIDGE-HEALTHCHECK-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Confirmar que a LPX PowerShell Bridge consegue detetar, descarregar e executar um job PowerShell simples.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-07T10:34:49.078Z",
+  "endedAt": "2026-08-07T10:34:49.384Z",
+  "elapsedMs": 306,
+  "outputLength": 347,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "68af5cb7405aefc4ffeecc75efa246bca1aabaee8a56710faccb5ecd071f52e1",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260807-1136-BRIDGE-HEALTHCHECK-001.txt",
+  "createdAt": "2026-08-07T10:34:49.384Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
