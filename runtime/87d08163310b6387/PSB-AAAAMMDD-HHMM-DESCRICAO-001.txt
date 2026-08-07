@@ -1,0 +1,12 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786099806944-e7ffd1803d6c4205.ps1:1 char:10
++ {"status":"error","error_code":"file_not_found","error_type":"GetDown ...
++          ~~~~~~~~
+Unexpected token ':"error"' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786099806944-e7ffd1803d6c4205.ps1:1 char:18
++ {"status":"error","error_code":"file_not_found","error_type":"GetDown ...
++                  ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
