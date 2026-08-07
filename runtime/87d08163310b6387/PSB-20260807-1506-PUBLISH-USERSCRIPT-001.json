@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260807-1506-PUBLISH-USERSCRIPT-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Publicar o userscript num URL HTTPS .user.js que abra diretamente a página Instalar/Atualizar do Tampermonkey.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-07T16:51:42.171Z",
+  "endedAt": "2026-08-07T16:51:44.154Z",
+  "elapsedMs": 1983,
+  "outputLength": 842,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "71288ae33a6b960a5344f472bed5a7a573d3352d75bc8882c02940ab4e59ac9d",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260807-1506-PUBLISH-USERSCRIPT-001.txt",
+  "createdAt": "2026-08-07T16:51:44.155Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
