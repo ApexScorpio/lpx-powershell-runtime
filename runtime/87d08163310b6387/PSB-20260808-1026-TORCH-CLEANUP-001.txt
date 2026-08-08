@@ -1,0 +1,34 @@
+{
+    "protocol":  "LPX_TORCH_CPU_SAFE_CLEANUP_V1",
+    "jobId":  "PSB-20260808-1026-TORCH-CLEANUP-001",
+    "status":  "SUCCEEDED",
+    "candidatesFound":  2,
+    "candidates":  [
+                       {
+                           "path":  "C:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll",
+                           "bytes":  262656512,
+                           "size":  "250,49 MB",
+                           "lastWrite":  "2025-11-23 23:29:43",
+                           "venvRoot":  null,
+                           "torchVersion":  "2.9.1",
+                           "looksLikePythonTorch":  true
+                       },
+                       {
+                           "path":  "C:\\Users\\lopes\\Desktop\\LPX Crypo Bot\\.venv\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll",
+                           "bytes":  262656512,
+                           "size":  "250,49 MB",
+                           "lastWrite":  "2025-12-02 11:30:57",
+                           "venvRoot":  "C:\\Users\\lopes\\Desktop\\LPX Crypo Bot\\.venv",
+                           "torchVersion":  "2.9.1",
+                           "looksLikePythonTorch":  true
+                       }
+                   ],
+    "action":  "NO_DELETE",
+    "deleted":  false,
+    "freedBytes":  0,
+    "freedSize":  "0 B",
+    "recoveryManifest":  null,
+    "rebuildScript":  null,
+    "reason":  "More than one torch_cpu.dll was found, so none was deleted automatically to avoid touching an unrelated application.",
+    "cryptoSafety":  "No wallet, seed phrase, private key, keystore, config, database, trading history, or other crypto file was deleted or modified."
+}

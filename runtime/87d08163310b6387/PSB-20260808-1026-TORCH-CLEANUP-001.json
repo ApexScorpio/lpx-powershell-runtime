@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1026-TORCH-CLEANUP-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Localizar o torch_cpu.dll do bot de crypto, guardar informação suficiente para o reconstruir e apagá-lo apenas se a recuperação ficar garantida.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T09:35:11.775Z",
+  "endedAt": "2026-08-08T09:35:34.008Z",
+  "elapsedMs": 22233,
+  "outputLength": 1744,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "8adf2d6dc47d2aed0b818906ac62b8ee416772ea475adcfc301138bbd08d942a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1026-TORCH-CLEANUP-001.txt",
+  "createdAt": "2026-08-08T09:35:34.008Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
