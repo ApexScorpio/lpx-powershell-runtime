@@ -1,0 +1,7 @@
+Os tipos de argumentos não correspondem
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786193743373-001e11aefd2fe589.ps1:514 char:24
++     foreach ($entry in @($repoScriptSources[$key])) {
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 

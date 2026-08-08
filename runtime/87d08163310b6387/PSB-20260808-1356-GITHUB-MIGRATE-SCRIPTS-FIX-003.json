@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1356-GITHUB-MIGRATE-SCRIPTS-FIX-003",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Repetir a migração dos scripts do utilizador para repositórios GitHub separados, corrigindo a incompatibilidade com Windows PowerShell que fez o job anterior falhar antes de qualquer eliminação.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T12:55:43.392Z",
+  "endedAt": "2026-08-08T13:01:46.492Z",
+  "elapsedMs": 363100,
+  "outputLength": 397,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "9c4b02fd005bd7c540b134a884850b7d3345f0bf0ccc25ec2d31ff33572f2241",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1356-GITHUB-MIGRATE-SCRIPTS-FIX-003.txt",
+  "createdAt": "2026-08-08T13:01:46.493Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
