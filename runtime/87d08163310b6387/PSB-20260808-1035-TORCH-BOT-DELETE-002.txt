@@ -1,0 +1,14 @@
+{
+    "protocol":  "LPX_TORCH_BOT_DELETE_V1",
+    "jobId":  "PSB-20260808-1035-TORCH-BOT-DELETE-002",
+    "status":  "SUCCEEDED",
+    "deleted":  "C:\\Users\\lopes\\Desktop\\LPX Crypo Bot\\.venv\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll",
+    "freedBytes":  262656512,
+    "freedSize":  "250,49 MB",
+    "torchVersion":  "2.9.1",
+    "recoveryManifest":  "C:\\Users\\lopes\\Documents\\LPX-Recovery\\LPX-Crypto-Bot-torch-recovery-20260808-103639.json",
+    "pipFreeze":  "C:\\Users\\lopes\\Documents\\LPX-Recovery\\LPX-Crypto-Bot-pip-freeze-20260808-103639.txt",
+    "rebuildScript":  "C:\\Users\\lopes\\Documents\\LPX-Recovery\\LPX-Crypto-Bot-rebuild-torch-20260808-103639.ps1",
+    "globalTorchUntouched":  true,
+    "cryptoSafety":  "No wallet, seed phrase, private key, keystore, config, database, trading history, bot source code, or unrelated crypto file was deleted or modified."
+}
