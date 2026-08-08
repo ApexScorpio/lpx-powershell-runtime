@@ -1,0 +1,92 @@
+{
+    "protocol":  "LPX_DELETE_APPROVED_UPDATER_CACHES_V1",
+    "jobId":  "PSB-20260808-1149-DELETE-UPDATER-CACHES-001",
+    "status":  "SUCCEEDED",
+    "freeBefore":  "46,06 GB",
+    "freeAfter":  "47,78 GB",
+    "actualFreed":  "1,72 GB",
+    "actualFreedBytes":  1845215232,
+    "items":  [
+                  {
+                      "name":  "avodocs-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\avodocs-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  432880912,
+                      "sizeBefore":  "412,83 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "go-build cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\go-build",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  419067422,
+                      "sizeBefore":  "399,65 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "slobs-client-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\slobs-client-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  247528384,
+                      "sizeBefore":  "236,06 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "streamingassistant-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\streamingassistant-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  226021824,
+                      "sizeBefore":  "215,55 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "antigravity-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\antigravity-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  214124081,
+                      "sizeBefore":  "204,20 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "icat-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\icat-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  114170216,
+                      "sizeBefore":  "108,88 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "plexamp-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\plexamp-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  80659840,
+                      "sizeBefore":  "76,92 MB",
+                      "error":  null
+                  },
+                  {
+                      "name":  "unmineable-miner-mfi-updater",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\unmineable-miner-mfi-updater",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  111205648,
+                      "sizeBefore":  "106,05 MB",
+                      "error":  null
+                  }
+              ],
+    "deliberatelyNotTouched":  [
+                                   "Recycle Bin",
+                                   "All remaining GX0 files",
+                                   "Protected videos",
+                                   "Avolites Titan files and shows",
+                                   "Mining folders other than the explicitly approved unMineable updater cache",
+                                   "Wallets, seed phrases, private keys, keystores, configs, databases and trading history",
+                                   "Installed applications themselves"
+                               ]
+}
