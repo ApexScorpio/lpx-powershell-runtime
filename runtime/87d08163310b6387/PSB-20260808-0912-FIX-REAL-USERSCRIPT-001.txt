@@ -1,0 +1,8 @@
+{
+    "protocol":  "LPX_REAL_USERSCRIPT_FIX_RESULT_V1",
+    "jobId":  "PSB-20260808-0912-FIX-REAL-USERSCRIPT-001",
+    "status":  "FAILED",
+    "timestamp":  "2026-08-08T09:16:16.0057388+01:00",
+    "error":  "warning: in the working copy of \u0027tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js\u0027, LF will be replaced by CRLF the next time Git touches it",
+    "stack":  "at \u003cScriptBlock\u003e, C:\\Users\\lopes\\AppData\\Local\\Temp\\powershell-bridge-command-1786176973096-04592f96000ceee8.ps1: line 401\r\nat \u003cScriptBlock\u003e, C:\\Users\\lopes\\.gemini\\antigravity-ide\\tools\\chatgpt-powershell-bridge\\bridge-runner.ps1: line 31"
+}
