@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1628-DOWNLOADS-POSTFAIL-CLEAN-015",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Confirmar o estado após a falha anterior, concluir a limpeza autorizada de Downloads e apagar o grande backup GTApt apenas se não contiver assets únicos.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T15:22:46.963Z",
+  "endedAt": "2026-08-08T15:23:56.974Z",
+  "elapsedMs": 70011,
+  "outputLength": 2855,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "55c4929cd5f8761a9114c261516c4771a43213b731f0889f756e223604aea593",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1628-DOWNLOADS-POSTFAIL-CLEAN-015.txt",
+  "createdAt": "2026-08-08T15:23:56.975Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

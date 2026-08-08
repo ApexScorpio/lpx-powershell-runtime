@@ -1,0 +1,49 @@
+{
+    "protocol":  "LPX_DOWNLOADS_POSTFAIL_VERIFY_CLEAN_V1",
+    "jobId":  "PSB-20260808-1628-DOWNLOADS-POSTFAIL-CLEAN-015",
+    "status":  "SUCCEEDED",
+    "cleanup":  {
+                    "deletedCount":  0,
+                    "deletedBytes":  0,
+                    "deletedSize":  "0 B",
+                    "deleted":  [
+
+                                ],
+                    "failedDeleteCount":  0,
+                    "failedDeletes":  [
+
+                                      ]
+                },
+    "gtaptBackup":  {
+                        "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143",
+                        "existedBefore":  true,
+                        "sizeBefore":  "4,70 GB",
+                        "githubVerified":  true,
+                        "githubInfo":  "{\"defaultBranchRef\":{\"name\":\"main\"},\"nameWithOwner\":\"ApexScorpio/gtapt\",\"pushedAt\":\"2026-08-08T14:39:48Z\",\"url\":\"https://github.com/ApexScorpio/gtapt\"}",
+                        "liveRoots":  [
+                                          "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode",
+                                          "C:\\Users\\lopes\\Documents\\GTA Stuff",
+                                          "C:\\Users\\lopes\\Desktop\\GTA Ui"
+                                      ],
+                        "liveFilesIndexed":  71835,
+                        "filesScanned":  78055,
+                        "scriptsCoveredByEarlierMigration":  95,
+                        "junkFilesIgnored":  7214,
+                        "installersIgnored":  4,
+                        "matchedPotentiallyValuableAssets":  70738,
+                        "uniquePotentiallyValuableCount":  1,
+                        "uniquePotentiallyValuableSample":  [
+                                                                {
+                                                                    "relative":  "data\\historico\\indice.json",
+                                                                    "bytes":  182,
+                                                                    "size":  "182 B",
+                                                                    "extension":  ".json"
+                                                                }
+                                                            ],
+                        "safeToDelete":  false,
+                        "stillExists":  true,
+                        "zipStillExists":  false,
+                        "decision":  "KEPT_UNIQUE_ASSETS_FOUND"
+                    },
+    "safety":  "O backup grande só é apagado quando o repositório GTApt é confirmado e não é encontrado nenhum asset não-script potencialmente valioso sem correspondência por nome e tamanho nos projetos GTA atuais."
+}
