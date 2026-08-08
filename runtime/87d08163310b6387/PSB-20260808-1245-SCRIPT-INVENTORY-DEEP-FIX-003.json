@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1245-SCRIPT-INVENTORY-DEEP-FIX-003",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Repetir a análise profunda e só de leitura dos scripts, corrigindo a incompatibilidade de PowerShell que fez o scan anterior falhar e agrupando os ficheiros por projeto.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T11:39:22.808Z",
+  "endedAt": "2026-08-08T11:49:17.767Z",
+  "elapsedMs": 594959,
+  "outputLength": 2000000,
+  "bridgeOutputTruncated": true,
+  "publicOutputTruncated": true,
+  "commandHash": "b3a1acb8eae0c581ae6e234c0955a17f151aec66de1aa10d291e05d66aa57d31",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1245-SCRIPT-INVENTORY-DEEP-FIX-003.txt",
+  "createdAt": "2026-08-08T11:49:17.780Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
