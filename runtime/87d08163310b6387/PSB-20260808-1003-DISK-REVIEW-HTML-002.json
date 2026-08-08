@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1003-DISK-REVIEW-HTML-002",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Criar e abrir uma página HTML local segura com os ficheiros grandes e links para abrir cada pasta ou ficheiro, sem apagar nada.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T09:02:32.764Z",
+  "endedAt": "2026-08-08T09:02:58.759Z",
+  "elapsedMs": 25995,
+  "outputLength": 414,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "25ae330ece67a344d9f6223ffc0e390705a9708dbb468bd7c697a076bf1bcb53",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1003-DISK-REVIEW-HTML-002.txt",
+  "createdAt": "2026-08-08T09:02:58.760Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

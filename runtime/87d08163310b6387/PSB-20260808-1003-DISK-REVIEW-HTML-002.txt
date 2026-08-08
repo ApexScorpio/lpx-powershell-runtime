@@ -1,0 +1,10 @@
+{
+    "protocol":  "LPX_DISK_REVIEW_HTML_V2",
+    "jobId":  "PSB-20260808-1003-DISK-REVIEW-HTML-002",
+    "status":  "SUCCEEDED",
+    "html":  "C:\\Users\\lopes\\Downloads\\LPX-Disk-Review.html",
+    "filesListed":  26,
+    "representedSize":  "76,78 GB",
+    "opened":  true,
+    "safety":  "No files or folders were deleted, moved, renamed, compressed, or modified except creating this HTML report."
+}
