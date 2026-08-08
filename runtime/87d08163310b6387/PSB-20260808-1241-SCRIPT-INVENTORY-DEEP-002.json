@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1241-SCRIPT-INVENTORY-DEEP-002",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Fazer uma segunda análise mais profunda e só de leitura aos scripts e ficheiros de código do utilizador, agrupando-os por projeto e procurando também referências LPX/Bridge/userscripts.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T11:36:34.924Z",
+  "endedAt": "2026-08-08T11:36:35.760Z",
+  "elapsedMs": 836,
+  "outputLength": 540,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fd7432f9fbf700929bf3e14a2430393c45d6cf400e7b61c9737d70d9055e748a",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1241-SCRIPT-INVENTORY-DEEP-002.txt",
+  "createdAt": "2026-08-08T11:36:35.761Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

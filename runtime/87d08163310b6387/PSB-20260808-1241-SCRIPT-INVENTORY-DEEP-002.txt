@@ -1,0 +1,7 @@
+Split-Path : Parameter set cannot be resolved using the specified named parameters.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786188994903-7cedc043629a1265.ps1:42 char:35
++ ... -Item -LiteralPath (Split-Path -LiteralPath $FilePath -Parent) -Force ...
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Split-Path], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.SplitPathCommand
+ 
