@@ -1,0 +1,500 @@
+{
+    "protocol":  "LPX_GITHUB_SCRIPT_MIGRATION_V1",
+    "jobId":  "PSB-20260808-1431-GITHUB-MIGRATION-FINALIZE-007",
+    "status":  "PARTIAL",
+    "auditSource":  "C:\\Users\\lopes\\Documents\\LPX-Script-Audit\\script-audit-20260808-134424.json",
+    "cvpFirebaseStatus":  {
+                              "projectRoot":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias",
+                              "exists":  true,
+                              "firebaseJson":  true,
+                              "firebaserc":  true,
+                              "firebaseCliFound":  false,
+                              "firebaseProjectId":  "lpx--gerador-de-formularios",
+                              "publicHtmlExists":  true,
+                              "criticalFiles":  [
+                                                    {
+                                                        "relative":  "firebase-config.js",
+                                                        "exists":  true,
+                                                        "bytes":  1481,
+                                                        "sha256":  "80A45B262BE6EAD022351CBB106FD3D011CBDEE90B4DD7B117AA587F348DD2E3"
+                                                    },
+                                                    {
+                                                        "relative":  "public_html\\firebase-config.js",
+                                                        "exists":  true,
+                                                        "bytes":  1481,
+                                                        "sha256":  "80A45B262BE6EAD022351CBB106FD3D011CBDEE90B4DD7B117AA587F348DD2E3"
+                                                    },
+                                                    {
+                                                        "relative":  "inventario.js",
+                                                        "exists":  true,
+                                                        "bytes":  140845,
+                                                        "sha256":  "DACCEAEE5BA1E6FA9BD6885B750939D1DB8BA087A2B791CDABD141F6666B0D33"
+                                                    },
+                                                    {
+                                                        "relative":  "public_html\\inventario.js",
+                                                        "exists":  true,
+                                                        "bytes":  140845,
+                                                        "sha256":  "DACCEAEE5BA1E6FA9BD6885B750939D1DB8BA087A2B791CDABD141F6666B0D33"
+                                                    },
+                                                    {
+                                                        "relative":  "editor.js",
+                                                        "exists":  true,
+                                                        "bytes":  117759,
+                                                        "sha256":  "3B9E2C05B5E90563622F5F9D98CEA36932026D0543676B9144F3A4A8666DFC2B"
+                                                    },
+                                                    {
+                                                        "relative":  "public_html\\editor.js",
+                                                        "exists":  true,
+                                                        "bytes":  117759,
+                                                        "sha256":  "3B9E2C05B5E90563622F5F9D98CEA36932026D0543676B9144F3A4A8666DFC2B"
+                                                    }
+                                                ],
+                              "localDuplicationCheck":  [
+                                                            {
+                                                                "fileA":  "inventario.js",
+                                                                "fileB":  "public_html\\inventario.js",
+                                                                "identical":  true
+                                                            },
+                                                            {
+                                                                "fileA":  "editor.js",
+                                                                "fileB":  "public_html\\editor.js",
+                                                                "identical":  true
+                                                            },
+                                                            {
+                                                                "fileA":  "firebase-config.js",
+                                                                "fileB":  "public_html\\firebase-config.js",
+                                                                "identical":  true
+                                                            }
+                                                        ],
+                              "remoteChecks":  [
+                                                   {
+                                                       "url":  "https://lpx--gerador-de-formularios.web.app",
+                                                       "ok":  true,
+                                                       "statusCode":  200,
+                                                       "contentLength":  12145
+                                                   },
+                                                   {
+                                                       "url":  "https://lpx--gerador-de-formularios.firebaseapp.com",
+                                                       "ok":  true,
+                                                       "statusCode":  200,
+                                                       "contentLength":  12145
+                                                   }
+                                               ],
+                              "verdict":  "ONLINE_AND_LOCALLY_COMPLETE",
+                              "reason":  "Critical local Firebase files were found and at least one discovered Firebase Hosting URL responded successfully. This confirms the app is online, but does not prove every workflow/feature is 100% bug-free."
+                          },
+    "repositories":  [
+                         {
+                             "key":  "cvp-vistorias",
+                             "repository":  "ApexScorpio/cvp-vistorias",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-cvp-vistorias\u0027..."
+                         },
+                         {
+                             "key":  "cvp-car-management",
+                             "repository":  "ApexScorpio/cvp-car-management",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-cvp-car-management\u0027..."
+                         },
+                         {
+                             "key":  "gtapt",
+                             "repository":  "ApexScorpio/gtapt",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-gtapt\u0027..."
+                         },
+                         {
+                             "key":  "lpx-crypto-bot",
+                             "repository":  "ApexScorpio/lpx-crypto-bot",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-lpx-crypto-bot\u0027..."
+                         },
+                         {
+                             "key":  "stream-tools",
+                             "repository":  "ApexScorpio/apexscorpio-stream-tools",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-stream-tools\u0027..."
+                         },
+                         {
+                             "key":  "google-forms-automation",
+                             "repository":  "ApexScorpio/google-forms-automation",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-google-forms-automation\u0027..."
+                         },
+                         {
+                             "key":  "misc-user-scripts",
+                             "repository":  "ApexScorpio/misc-user-scripts",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Cloning into \u0027C:\\Users\\lopes\\Documents\\LPX-GitHub-Migration-20260808-142637\\repo-misc-user-scripts\u0027..."
+                         }
+                     ],
+    "verifiedRepositoryCount":  0,
+    "blockedSensitiveCount":  0,
+    "blockedSensitiveFiles":  [
+
+                              ],
+    "deletedLocalScriptCount":  0,
+    "deletedLocalScriptBytes":  0,
+    "deletedLocalScriptSize":  "0 B",
+    "retainedLocalScriptCount":  435,
+    "retainedLocalScripts":  [
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\capture_bug.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\capture_bug2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_block_picker.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_block_picker2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_block_picker3.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_deploy.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_inventario.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_inventario2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_pill_picker.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_spectrum.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\clean_spectrum2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\color-picker.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\compare_picker.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\create_repo.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\diag_sticky.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\editor.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\editor_backup.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\extract.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\extractor.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\extractor_search.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\extract_and_replace.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\extract_palette.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\extract_palettes.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fetch_logs.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fetch_schema.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\final_replace.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_all.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_ids.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_inv.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_pills.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_pills2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_pill_palette.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_spectrum.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_title.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\find_title_palette.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\firebase-config.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_all_root.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_editor_final.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_grid.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_inv_pal.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_lingering.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_lingering_editor.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_opts.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_palettes.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_palettes_regex.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_picker.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_picker_globally.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_picker_public.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_picker_v2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_public_final.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\fix_ui.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\gen_opts.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\global-theme.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\inject.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\inventario.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\inventario_backup.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\line_replace.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\line_replace2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\log_server.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\make_importer.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\mapper.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\mapper2.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\old_editor.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\old_editor_utf8.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\old_inventario.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot3.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot4.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot_solid.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot_solid2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\one_shot_solid3.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\perfect_fix.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\perfect_fix_js.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\perfect_fix_js2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\picker_code.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\pixelpoint_snake_bot.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\pixelpoint_snake_ml_bot.js",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\read_inv.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias\\replace_html.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/cvp-vistorias"
+                                 }
+                             ],
+    "avolitesCleanup":  [
+
+                        ],
+    "safety":  [
+                   "Only audited user-authored script files were eligible for local deletion.",
+                   "Third-party/runtime scripts were not touched.",
+                   "Potential credentials, private keys, wallet material and sensitive files were not uploaded or deleted.",
+                   "Local functional scripts were deleted only after the matching GitHub repository push was verified.",
+                   "Non-script project assets were not deleted from the PC.",
+                   "Temporary GitHub staging clones were removed from the PC after the migration."
+               ]
+}

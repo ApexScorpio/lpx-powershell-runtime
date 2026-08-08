@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1431-GITHUB-MIGRATION-FINALIZE-007",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Finalizar a organização e migração dos scripts próprios do utilizador para repositórios GitHub por projeto, verificar cada upload e só depois apagar as cópias locais e o lixo autorizado.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T13:26:36.839Z",
+  "endedAt": "2026-08-08T13:32:23.674Z",
+  "elapsedMs": 346835,
+  "outputLength": 35034,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "85e33db71c1e99fcd9ead284acb86d0a5a619b3beae9ea8f2979bf5c23404114",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1431-GITHUB-MIGRATION-FINALIZE-007.txt",
+  "createdAt": "2026-08-08T13:32:23.675Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
