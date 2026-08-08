@@ -1,0 +1,636 @@
+{
+    "protocol":  "LPX_USER_SCRIPT_AUDIT_V1",
+    "jobId":  "PSB-20260808-1344-SCRIPT-AUDIT-ORGANIZE-001",
+    "mode":  "AUDIT_PLUS_EXPLICIT_AVOLITES_DELETE",
+    "elapsedSeconds":  13.1,
+    "avolitesDeleted":  [
+
+                        ],
+    "firebaseCVP":  {
+                        "projectRoot":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias",
+                        "exists":  true,
+                        "firebaseJson":  true,
+                        "firebaserc":  true,
+                        "firebaseCliFound":  false,
+                        "firebaseProjectId":  "lpx--gerador-de-formularios",
+                        "publicHtmlExists":  true,
+                        "criticalFiles":  [
+                                              {
+                                                  "relative":  "firebase-config.js",
+                                                  "exists":  true,
+                                                  "bytes":  1481,
+                                                  "sha256":  "80A45B262BE6EAD022351CBB106FD3D011CBDEE90B4DD7B117AA587F348DD2E3"
+                                              },
+                                              {
+                                                  "relative":  "public_html\\firebase-config.js",
+                                                  "exists":  true,
+                                                  "bytes":  1481,
+                                                  "sha256":  "80A45B262BE6EAD022351CBB106FD3D011CBDEE90B4DD7B117AA587F348DD2E3"
+                                              },
+                                              {
+                                                  "relative":  "inventario.js",
+                                                  "exists":  true,
+                                                  "bytes":  140845,
+                                                  "sha256":  "DACCEAEE5BA1E6FA9BD6885B750939D1DB8BA087A2B791CDABD141F6666B0D33"
+                                              },
+                                              {
+                                                  "relative":  "public_html\\inventario.js",
+                                                  "exists":  true,
+                                                  "bytes":  140845,
+                                                  "sha256":  "DACCEAEE5BA1E6FA9BD6885B750939D1DB8BA087A2B791CDABD141F6666B0D33"
+                                              },
+                                              {
+                                                  "relative":  "editor.js",
+                                                  "exists":  true,
+                                                  "bytes":  117759,
+                                                  "sha256":  "3B9E2C05B5E90563622F5F9D98CEA36932026D0543676B9144F3A4A8666DFC2B"
+                                              },
+                                              {
+                                                  "relative":  "public_html\\editor.js",
+                                                  "exists":  true,
+                                                  "bytes":  117759,
+                                                  "sha256":  "3B9E2C05B5E90563622F5F9D98CEA36932026D0543676B9144F3A4A8666DFC2B"
+                                              }
+                                          ],
+                        "localDuplicationCheck":  [
+                                                      {
+                                                          "fileA":  "inventario.js",
+                                                          "fileB":  "public_html\\inventario.js",
+                                                          "identical":  true
+                                                      },
+                                                      {
+                                                          "fileA":  "editor.js",
+                                                          "fileB":  "public_html\\editor.js",
+                                                          "identical":  true
+                                                      },
+                                                      {
+                                                          "fileA":  "firebase-config.js",
+                                                          "fileB":  "public_html\\firebase-config.js",
+                                                          "identical":  true
+                                                      }
+                                                  ],
+                        "remoteChecks":  [
+                                             {
+                                                 "url":  "https://lpx--gerador-de-formularios.web.app",
+                                                 "ok":  true,
+                                                 "statusCode":  200,
+                                                 "contentLength":  12145
+                                             },
+                                             {
+                                                 "url":  "https://lpx--gerador-de-formularios.firebaseapp.com",
+                                                 "ok":  true,
+                                                 "statusCode":  200,
+                                                 "contentLength":  12145
+                                             }
+                                         ],
+                        "verdict":  "ONLINE_AND_LOCALLY_COMPLETE",
+                        "reason":  "Critical local Firebase files were found and at least one discovered Firebase Hosting URL responded successfully. This confirms the app is online, but does not prove every workflow/feature is 100% bug-free."
+                    },
+    "projectSummary":  [
+                           {
+                               "name":  "CVP Vistorias",
+                               "family":  "CVP",
+                               "root":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias",
+                               "scriptCount":  474,
+                               "totalSize":  "1,73 MB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "ARCHIVE_BACKUP",
+                                                           "count":  5
+                                                       },
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  364
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  105
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "CVP Vistorias Recovered",
+                               "family":  "CVP",
+                               "root":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias_Recovered",
+                               "scriptCount":  15,
+                               "totalSize":  "312,29 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  6
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  9
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "CVP Documents",
+                               "family":  "CVP",
+                               "root":  "C:\\Users\\lopes\\Documents\\CVP",
+                               "scriptCount":  9,
+                               "totalSize":  "79,91 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  1
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  8
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "Car Management",
+                               "family":  "CVP",
+                               "root":  "C:\\Users\\lopes\\Documents\\Scipts\\Car Manegment",
+                               "scriptCount":  21,
+                               "totalSize":  "1,01 MB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  4
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  17
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "GTApt Gerador BBCode",
+                               "family":  "GTApt",
+                               "root":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode",
+                               "scriptCount":  90,
+                               "totalSize":  "1,70 MB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "ARCHIVE_BACKUP",
+                                                           "count":  13
+                                                       },
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  12
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  65
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "GTA Stuff",
+                               "family":  "GTApt",
+                               "root":  "C:\\Users\\lopes\\Documents\\GTA Stuff",
+                               "scriptCount":  44,
+                               "totalSize":  "570,92 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  44
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "GTA UI",
+                               "family":  "GTApt",
+                               "root":  "C:\\Users\\lopes\\Desktop\\GTA Ui",
+                               "scriptCount":  9,
+                               "totalSize":  "24,84 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  1
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  8
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "LPX Crypto Bot",
+                               "family":  "LPX Crypto",
+                               "root":  "C:\\Users\\lopes\\Desktop\\LPX Crypo Bot",
+                               "scriptCount":  164,
+                               "totalSize":  "838,55 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "ARCHIVE_BACKUP",
+                                                           "count":  6
+                                                       },
+                                                       {
+                                                           "classification":  "DEV_AUXILIARY",
+                                                           "count":  29
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  129
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "Stream Stuff",
+                               "family":  "Streaming",
+                               "root":  "C:\\Users\\lopes\\Documents\\Stream Stuff",
+                               "scriptCount":  1,
+                               "totalSize":  "5,64 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  1
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "Python Apps Google Forms",
+                               "family":  "Automation",
+                               "root":  "C:\\Users\\lopes\\Documents\\pytonapps",
+                               "scriptCount":  11,
+                               "totalSize":  "38,25 KB",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "ENVIRONMENT_HELPER",
+                                                           "count":  3
+                                                       },
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  8
+                                                       }
+                                                   ]
+                           },
+                           {
+                               "name":  "LPX Recovery",
+                               "family":  "LPX Recovery",
+                               "root":  "C:\\Users\\lopes\\Documents\\LPX-Recovery",
+                               "scriptCount":  1,
+                               "totalSize":  "492 B",
+                               "classifications":  [
+                                                       {
+                                                           "classification":  "FUNCTIONAL_CORE",
+                                                           "count":  1
+                                                       }
+                                                   ]
+                           }
+                       ],
+    "looseUserScripts":  [
+                             {
+                                 "name":  "2GTApt.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\2GTApt.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "GTApt",
+                                 "extension":  ".py",
+                                 "bytes":  236027,
+                                 "size":  "230,50 KB",
+                                 "lastWrite":  "2026-03-13 16:36:13",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "Abrir_Drive_Z.bat",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\Abrir_Drive_Z.bat",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".bat",
+                                 "bytes":  965,
+                                 "size":  "965 B",
+                                 "lastWrite":  "2026-04-01 16:08:50",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "Base de dados.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\Base de dados.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  51230,
+                                 "size":  "50,03 KB",
+                                 "lastWrite":  "2025-02-17 15:18:59",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "check_checklist.mjs",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\check_checklist.mjs",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".mjs",
+                                 "bytes":  1779,
+                                 "size":  "1,74 KB",
+                                 "lastWrite":  "2026-06-06 19:30:15",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "GTABackup.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\GTABackup.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "GTApt",
+                                 "extension":  ".py",
+                                 "bytes":  271,
+                                 "size":  "271 B",
+                                 "lastWrite":  "2024-02-26 14:25:03",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "GTApt.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\GTApt.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "GTApt",
+                                 "extension":  ".py",
+                                 "bytes":  327562,
+                                 "size":  "319,88 KB",
+                                 "lastWrite":  "2026-03-13 16:37:47",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "GTApt_parte2.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\GTApt_parte2.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "GTApt",
+                                 "extension":  ".py",
+                                 "bytes":  1916,
+                                 "size":  "1,87 KB",
+                                 "lastWrite":  "2025-02-17 11:33:25",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "GTApt_parte3.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\GTApt_parte3.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "GTApt",
+                                 "extension":  ".py",
+                                 "bytes":  87905,
+                                 "size":  "85,84 KB",
+                                 "lastWrite":  "2025-02-16 21:20:44",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "GTA_STEAM.bat",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\GTA_STEAM.bat",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "GTApt",
+                                 "extension":  ".bat",
+                                 "bytes":  463,
+                                 "size":  "463 B",
+                                 "lastWrite":  "2026-03-22 14:02:42",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "import tkinter as tk.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\import tkinter as tk.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  274963,
+                                 "size":  "268,52 KB",
+                                 "lastWrite":  "2025-02-16 21:50:39",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "scrape.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\scrape.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1569,
+                                 "size":  "1,53 KB",
+                                 "lastWrite":  "2026-03-17 11:54:57",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "tempCodeRunnerFile.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\tempCodeRunnerFile.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  54,
+                                 "size":  "54 B",
+                                 "lastWrite":  "2025-05-18 10:48:44",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_click.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_click.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  705,
+                                 "size":  "705 B",
+                                 "lastWrite":  "2026-06-06 10:19:56",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_click2.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_click2.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  964,
+                                 "size":  "964 B",
+                                 "lastWrite":  "2026-06-06 10:23:57",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_final.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_final.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1086,
+                                 "size":  "1,06 KB",
+                                 "lastWrite":  "2026-06-06 10:29:10",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_final2.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_final2.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  671,
+                                 "size":  "671 B",
+                                 "lastWrite":  "2026-06-06 10:45:04",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_inventario.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_inventario.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  549,
+                                 "size":  "549 B",
+                                 "lastWrite":  "2026-06-06 10:24:43",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_inventario2.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_inventario2.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  566,
+                                 "size":  "566 B",
+                                 "lastWrite":  "2026-06-06 10:25:26",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_puppeteer.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_puppeteer.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1205,
+                                 "size":  "1,18 KB",
+                                 "lastWrite":  "2026-06-06 09:49:48",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_puppeteer2.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_puppeteer2.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1002,
+                                 "size":  "1 002 B",
+                                 "lastWrite":  "2026-06-06 09:51:48",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_puppeteer3.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_puppeteer3.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1045,
+                                 "size":  "1,02 KB",
+                                 "lastWrite":  "2026-06-06 09:54:08",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_puppeteer4.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_puppeteer4.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1119,
+                                 "size":  "1,09 KB",
+                                 "lastWrite":  "2026-06-06 09:55:58",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "test_puppeteer5.js",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\test_puppeteer5.js",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".js",
+                                 "bytes":  1351,
+                                 "size":  "1,32 KB",
+                                 "lastWrite":  "2026-06-06 10:13:31",
+                                 "classification":  "DEV_AUXILIARY"
+                             },
+                             {
+                                 "name":  "upload.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\upload.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  3213,
+                                 "size":  "3,14 KB",
+                                 "lastWrite":  "2026-03-17 11:55:35",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "upload_final.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\upload_final.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  4067,
+                                 "size":  "3,97 KB",
+                                 "lastWrite":  "2026-03-17 16:38:17",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "upload_fix.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\upload_fix.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  899,
+                                 "size":  "899 B",
+                                 "lastWrite":  "2026-03-17 16:39:27",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "upload_missing.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\upload_missing.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  882,
+                                 "size":  "882 B",
+                                 "lastWrite":  "2026-03-17 14:13:02",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "upload_missing2.py",
+                                 "path":  "C:\\Users\\lopes\\Desktop\\upload_missing2.py",
+                                 "root":  "C:\\Users\\lopes\\Desktop",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  691,
+                                 "size":  "691 B",
+                                 "lastWrite":  "2026-03-17 14:20:41",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "2GTApt.py",
+                                 "path":  "C:\\Users\\lopes\\2GTApt.py",
+                                 "root":  "C:\\Users\\lopes",
+                                 "family":  "GTApt",
+                                 "extension":  ".py",
+                                 "bytes":  135298,
+                                 "size":  "132,13 KB",
+                                 "lastWrite":  "2026-03-13 16:31:08",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "auto_reload.py",
+                                 "path":  "C:\\Users\\lopes\\auto_reload.py",
+                                 "root":  "C:\\Users\\lopes",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  1302,
+                                 "size":  "1,27 KB",
+                                 "lastWrite":  "2025-02-16 20:39:50",
+                                 "classification":  "FUNCTIONAL_CORE"
+                             },
+                             {
+                                 "name":  "tempCodeRunnerFile.py",
+                                 "path":  "C:\\Users\\lopes\\tempCodeRunnerFile.py",
+                                 "root":  "C:\\Users\\lopes",
+                                 "family":  "Unsorted user script",
+                                 "extension":  ".py",
+                                 "bytes":  10,
+                                 "size":  "10 B",
+                                 "lastWrite":  "2025-02-09 16:38:21",
+                                 "classification":  "DEV_AUXILIARY"
+                             }
+                         ],
+    "junkCandidateCount":  431,
+    "junkCandidateBytes":  481715,
+    "junkCandidateSize":  "470,42 KB",
+    "auditFile":  "C:\\Users\\lopes\\Documents\\LPX-Script-Audit\\script-audit-20260808-134424.json",
+    "nextStep":  "Upload FUNCTIONAL_CORE and selected project assets to separate GitHub repositories, verify commits, then delete local user-script copies and confirmed junk. No non-Avolites project files were deleted in this audit.",
+    "excludedFromUserCode":  [
+                                 "node_modules and package dependencies",
+                                 "Python virtual environments/site-packages",
+                                 "mining software scripts",
+                                 "YimMenu/third-party GTA mods",
+                                 "Rockstar Games internal scripts",
+                                 "midi-fader-master third-party source",
+                                 "Adobe installer scripts",
+                                 "IDE/extension/runtime source trees"
+                             ]
+}
