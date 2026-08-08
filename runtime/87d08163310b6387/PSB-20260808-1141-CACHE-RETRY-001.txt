@@ -1,0 +1,80 @@
+{
+    "protocol":  "LPX_APPROVED_CACHE_RETRY_V1",
+    "jobId":  "PSB-20260808-1141-CACHE-RETRY-001",
+    "status":  "SUCCEEDED",
+    "strategy":  "Delete only currently-unlocked files from the remaining already-approved cache/temp locations. Do not terminate processes or touch unrelated data.",
+    "freeBeforeBytes":  52520779776,
+    "freeBefore":  "48,91 GB",
+    "freeAfterBytes":  53944365056,
+    "freeAfter":  "50,24 GB",
+    "actualFreedBytes":  1423585280,
+    "actualFreed":  "1,33 GB",
+    "targetReached":  true,
+    "items":  [
+                  {
+                      "name":  "NVIDIA DXCache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache",
+                      "beforeBytes":  938668032,
+                      "before":  "895,18 MB",
+                      "deletedBytes":  938598400,
+                      "deleted":  "895,12 MB",
+                      "lockedBytes":  69632,
+                      "locked":  "68,00 KB",
+                      "deletedFiles":  205,
+                      "lockedFiles":  2,
+                      "remainingBytes":  69632,
+                      "remaining":  "68,00 KB"
+                  },
+                  {
+                      "name":  "User TEMP",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                      "beforeBytes":  480777903,
+                      "before":  "458,51 MB",
+                      "deletedBytes":  468057509,
+                      "deleted":  "446,37 MB",
+                      "lockedBytes":  12720394,
+                      "locked":  "12,13 MB",
+                      "deletedFiles":  6896,
+                      "lockedFiles":  32,
+                      "remainingBytes":  12720394,
+                      "remaining":  "12,13 MB"
+                  },
+                  {
+                      "name":  "Chrome Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+                      "beforeBytes":  861392,
+                      "before":  "841,20 KB",
+                      "deletedBytes":  764240,
+                      "deleted":  "746,33 KB",
+                      "lockedBytes":  97152,
+                      "locked":  "94,88 KB",
+                      "deletedFiles":  1,
+                      "lockedFiles":  1,
+                      "remainingBytes":  97152,
+                      "remaining":  "94,88 KB"
+                  },
+                  {
+                      "name":  "Edge Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+                      "beforeBytes":  24,
+                      "before":  "24 B",
+                      "deletedBytes":  20,
+                      "deleted":  "20 B",
+                      "lockedBytes":  4,
+                      "locked":  "4 B",
+                      "deletedFiles":  1,
+                      "lockedFiles":  1,
+                      "remainingBytes":  4,
+                      "remaining":  "4 B"
+                  }
+              ],
+    "deliberatelyNotTouched":  [
+                                   "No processes were terminated",
+                                   "Recycle Bin",
+                                   "All remaining GX0 files",
+                                   "Protected videos",
+                                   "Titan files and shows",
+                                   "Crypto/mining folders, wallets, keys, configs and databases",
+                                   "Any cache file still locked by a running process"
+                               ]
+}
