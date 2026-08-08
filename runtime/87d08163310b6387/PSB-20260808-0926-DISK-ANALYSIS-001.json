@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-0926-DISK-ANALYSIS-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Analisar completamente o disco em modo só de leitura e identificar o que pode libertar pelo menos 50 GB sem apagar nada.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T08:26:47.422Z",
+  "endedAt": "2026-08-08T08:46:47.633Z",
+  "elapsedMs": 1200211,
+  "outputLength": 37,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "0f4df30c22c6d48943c0faaed5385f660aeb086b38cbc7a74f58fd16bb69af26",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-0926-DISK-ANALYSIS-001.txt",
+  "createdAt": "2026-08-08T08:46:47.634Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
