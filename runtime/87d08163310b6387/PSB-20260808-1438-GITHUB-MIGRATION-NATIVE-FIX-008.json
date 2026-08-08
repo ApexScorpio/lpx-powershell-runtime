@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1438-GITHUB-MIGRATION-NATIVE-FIX-008",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Finalizar a migração dos scripts próprios do utilizador corrigindo a execução dos comandos Git nativos, verificar cada repositório e só depois apagar as cópias locais e o lixo autorizado.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T13:35:44.062Z",
+  "endedAt": "2026-08-08T13:48:47.538Z",
+  "elapsedMs": 783476,
+  "outputLength": 37314,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "37dc05dacf70efe08b4c659798c6660f7243f06c5a0ec37b8831fa8d51323741",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1438-GITHUB-MIGRATION-NATIVE-FIX-008.txt",
+  "createdAt": "2026-08-08T13:48:47.540Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

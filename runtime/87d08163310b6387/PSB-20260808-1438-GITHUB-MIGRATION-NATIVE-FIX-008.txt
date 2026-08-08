@@ -1,0 +1,500 @@
+{
+    "protocol":  "LPX_GITHUB_SCRIPT_MIGRATION_V1",
+    "jobId":  "PSB-20260808-1438-GITHUB-MIGRATION-NATIVE-FIX-008",
+    "status":  "PARTIAL",
+    "auditSource":  "C:\\Users\\lopes\\Documents\\LPX-Script-Audit\\script-audit-20260808-134424.json",
+    "cvpFirebaseStatus":  {
+                              "projectRoot":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias",
+                              "exists":  true,
+                              "firebaseJson":  true,
+                              "firebaserc":  true,
+                              "firebaseCliFound":  false,
+                              "firebaseProjectId":  "lpx--gerador-de-formularios",
+                              "publicHtmlExists":  true,
+                              "criticalFiles":  [
+                                                    {
+                                                        "relative":  "firebase-config.js",
+                                                        "exists":  true,
+                                                        "bytes":  1481,
+                                                        "sha256":  "80A45B262BE6EAD022351CBB106FD3D011CBDEE90B4DD7B117AA587F348DD2E3"
+                                                    },
+                                                    {
+                                                        "relative":  "public_html\\firebase-config.js",
+                                                        "exists":  true,
+                                                        "bytes":  1481,
+                                                        "sha256":  "80A45B262BE6EAD022351CBB106FD3D011CBDEE90B4DD7B117AA587F348DD2E3"
+                                                    },
+                                                    {
+                                                        "relative":  "inventario.js",
+                                                        "exists":  true,
+                                                        "bytes":  140845,
+                                                        "sha256":  "DACCEAEE5BA1E6FA9BD6885B750939D1DB8BA087A2B791CDABD141F6666B0D33"
+                                                    },
+                                                    {
+                                                        "relative":  "public_html\\inventario.js",
+                                                        "exists":  true,
+                                                        "bytes":  140845,
+                                                        "sha256":  "DACCEAEE5BA1E6FA9BD6885B750939D1DB8BA087A2B791CDABD141F6666B0D33"
+                                                    },
+                                                    {
+                                                        "relative":  "editor.js",
+                                                        "exists":  true,
+                                                        "bytes":  117759,
+                                                        "sha256":  "3B9E2C05B5E90563622F5F9D98CEA36932026D0543676B9144F3A4A8666DFC2B"
+                                                    },
+                                                    {
+                                                        "relative":  "public_html\\editor.js",
+                                                        "exists":  true,
+                                                        "bytes":  117759,
+                                                        "sha256":  "3B9E2C05B5E90563622F5F9D98CEA36932026D0543676B9144F3A4A8666DFC2B"
+                                                    }
+                                                ],
+                              "localDuplicationCheck":  [
+                                                            {
+                                                                "fileA":  "inventario.js",
+                                                                "fileB":  "public_html\\inventario.js",
+                                                                "identical":  true
+                                                            },
+                                                            {
+                                                                "fileA":  "editor.js",
+                                                                "fileB":  "public_html\\editor.js",
+                                                                "identical":  true
+                                                            },
+                                                            {
+                                                                "fileA":  "firebase-config.js",
+                                                                "fileB":  "public_html\\firebase-config.js",
+                                                                "identical":  true
+                                                            }
+                                                        ],
+                              "remoteChecks":  [
+                                                   {
+                                                       "url":  "https://lpx--gerador-de-formularios.web.app",
+                                                       "ok":  true,
+                                                       "statusCode":  200,
+                                                       "contentLength":  12145
+                                                   },
+                                                   {
+                                                       "url":  "https://lpx--gerador-de-formularios.firebaseapp.com",
+                                                       "ok":  true,
+                                                       "statusCode":  200,
+                                                       "contentLength":  12145
+                                                   }
+                                               ],
+                              "verdict":  "ONLINE_AND_LOCALLY_COMPLETE",
+                              "reason":  "Critical local Firebase files were found and at least one discovered Firebase Hosting URL responded successfully. This confirms the app is online, but does not prove every workflow/feature is 100% bug-free."
+                          },
+    "repositories":  [
+                         {
+                             "key":  "cvp-vistorias",
+                             "repository":  "ApexScorpio/cvp-vistorias",
+                             "createStatus":  "EXISTING",
+                             "verified":  true,
+                             "branch":  "main",
+                             "commit":  "abd157aabeaaf21d7b316169ae4dfa3ad1e631e8",
+                             "remoteCommit":  "abd157aabeaaf21d7b316169ae4dfa3ad1e631e8",
+                             "error":  null
+                         },
+                         {
+                             "key":  "cvp-car-management",
+                             "repository":  "ApexScorpio/cvp-car-management",
+                             "createStatus":  "EXISTING",
+                             "verified":  true,
+                             "branch":  "main",
+                             "commit":  "355113bba8df8675ccb6080b09c671ec4743dbf4",
+                             "remoteCommit":  "355113bba8df8675ccb6080b09c671ec4743dbf4",
+                             "error":  null
+                         },
+                         {
+                             "key":  "gtapt",
+                             "repository":  "ApexScorpio/gtapt",
+                             "createStatus":  "EXISTING",
+                             "verified":  false,
+                             "branch":  null,
+                             "commit":  null,
+                             "remoteCommit":  null,
+                             "error":  "Command failed: git add -A\nSTDOUT:\n\nSTDERR:\nwarning: in the working copy of \u0027.gitignore\u0027, LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of \u0027README.md\u0027, LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of \u0027gta-stuff/.stfolder/syncthing-folder-47eed9.txt\u0027, LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of \u0027gta-stuff/G Cache/2oky29W1avxSTfIniOqlzgA6AHJ.svg\u0027, LF will be replaced by CRLF the next time Git touches it\nerror: open(\"gta-stuff/G Cache/DALLÂ·E 2024-11-16 00.21.42 - A dynamic scene of a GTA-style character racing in a Baja truck on a tropical track, featuring dense palm trees, vibrant vegetation, and a backdrop of.webp\"): Filename too long\nerror: unable to index file \u0027gta-stuff/G Cache/DALLÂ·E 2024-11-16 00.21.42 - A dynamic scene of a GTA-style character racing in a Baja truck on a tropical track, featuring dense palm trees, vibrant vegetation, and a backdrop of.webp\u0027\nfatal: adding files failed\n"
+                         },
+                         {
+                             "key":  "lpx-crypto-bot",
+                             "repository":  "ApexScorpio/lpx-crypto-bot",
+                             "createStatus":  "EXISTING",
+                             "verified":  true,
+                             "branch":  "main",
+                             "commit":  "5a9245e4fbcdea72b411e78dea2a1cf2acec83fa",
+                             "remoteCommit":  "5a9245e4fbcdea72b411e78dea2a1cf2acec83fa",
+                             "error":  null
+                         },
+                         {
+                             "key":  "stream-tools",
+                             "repository":  "ApexScorpio/apexscorpio-stream-tools",
+                             "createStatus":  "EXISTING",
+                             "verified":  true,
+                             "branch":  "master",
+                             "commit":  "0b5c04d39d43ba310a52f18dd83f966d57a0f51b",
+                             "remoteCommit":  "0b5c04d39d43ba310a52f18dd83f966d57a0f51b",
+                             "error":  null
+                         },
+                         {
+                             "key":  "google-forms-automation",
+                             "repository":  "ApexScorpio/google-forms-automation",
+                             "createStatus":  "EXISTING",
+                             "verified":  true,
+                             "branch":  "main",
+                             "commit":  "2ff5859c2e9a78d712a2ec4e5699a98650638bad",
+                             "remoteCommit":  "2ff5859c2e9a78d712a2ec4e5699a98650638bad",
+                             "error":  null
+                         },
+                         {
+                             "key":  "misc-user-scripts",
+                             "repository":  "ApexScorpio/misc-user-scripts",
+                             "createStatus":  "EXISTING",
+                             "verified":  true,
+                             "branch":  "main",
+                             "commit":  "54096c2fde7bba908f9c4216f174b31f3cbfb386",
+                             "remoteCommit":  "54096c2fde7bba908f9c4216f174b31f3cbfb386",
+                             "error":  null
+                         }
+                     ],
+    "verifiedRepositoryCount":  6,
+    "blockedSensitiveCount":  0,
+    "blockedSensitiveFiles":  [
+
+                              ],
+    "deletedLocalScriptCount":  721,
+    "deletedLocalScriptBytes":  4182992,
+    "deletedLocalScriptSize":  "3,99 MB",
+    "retainedLocalScriptCount":  145,
+    "retainedLocalScripts":  [
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\2Ui_gta_original.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\config.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\formulario_premium.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\formulario_premium_v3_completo.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\GTApt evento semanaç.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\GTApt evento semanaç_BACKUP.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\image_extractor.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\image_preview_tooltip.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\legacy_dump.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\main_v3_complete.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\populate_db.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\reproduce_issue.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\sidebar_imagens.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\undetected_image_extractor.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\__init__.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\autosave.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\backup_automation.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\base_dados_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\bbcode_corridas.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\bbcode_missoes.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\bbcode_parser.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\browser_preview.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\crash_handler.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\export_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\export_manager.sync-conflict-20251229-233935-XPHW7GN.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\export_manager_NEW.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\export_manager_OLD_BACKUP.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\historico_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\image_extractor.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\logger.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\populate_from_newswire.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\preferencias_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\search_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\selenium_image_extractor.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\spell_checker.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\ui_helpers.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\undetected_image_extractor.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\url_validator.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\validation.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\utils\\__init__.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\base_dados.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\bbcode_logic_additional.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\bbcode_logic_complete.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\filtro_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_completo.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_evento.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_evento_BACKUP.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_missoes.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_original.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_premium.backup.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_premium.backup2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_premium.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_premium_BACKUP2.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_premium_TEMP.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_simples.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\formulario_wrapper.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\historico_ui.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\image_preview_tooltip.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\janela_base_dados.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\janela_filtros.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\janela_principal.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\preview_bbcode.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\sidebar.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\sidebar_dual.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\sidebar_imagens.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\theme_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\theme_manager_dual.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\theme_manager_premium.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\gui\\__init__.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\core\\backup_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\core\\categoria_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\core\\preferencias.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\core\\__init__.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\backup_v3_bbcode_restore\\export_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\backup_v3_bbcode_restore\\formulario_premium.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\backup_bbcode_fix_20251230_204936\\export_manager.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\backup_bbcode_fix_20251230_204936\\export_manager_OLD_BACKUP.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\Scipts\\GTApt Gerador BBcode\\backup_bbcode_fix_20251230_204936\\formulario_premium.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\GTA Stuff\\2Ui_gta.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\Documents\\GTA Stuff\\main.py",
+                                     "reason":  "Repository backup not verified: ApexScorpio/gtapt"
+                                 }
+                             ],
+    "avolitesCleanup":  [
+
+                        ],
+    "safety":  [
+                   "Only audited user-authored script files were eligible for local deletion.",
+                   "Third-party/runtime scripts were not touched.",
+                   "Potential credentials, private keys, wallet material and sensitive files were not uploaded or deleted.",
+                   "Local functional scripts were deleted only after the matching GitHub repository push was verified.",
+                   "Non-script project assets were not deleted from the PC.",
+                   "Temporary GitHub staging clones were removed from the PC after the migration."
+               ]
+}
