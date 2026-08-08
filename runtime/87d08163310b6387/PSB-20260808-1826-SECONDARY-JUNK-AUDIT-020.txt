@@ -1,0 +1,1090 @@
+{
+    "protocol":  "LPX_SECONDARY_JUNK_AUDIT_V1",
+    "jobId":  "PSB-20260808-1826-SECONDARY-JUNK-AUDIT-020",
+    "status":  "SUCCEEDED",
+    "mode":  "READ_ONLY",
+    "cacheLikeDirectories":  [
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\OneDrive\\logs",
+                                     "name":  "logs",
+                                     "files":  5219,
+                                     "bytes":  377615010,
+                                     "size":  "360,12 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\MultiViewer\\Cache",
+                                     "name":  "Cache",
+                                     "files":  411,
+                                     "bytes":  339615209,
+                                     "size":  "323,88 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\plugin_config\\obs-browser\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  1636,
+                                     "bytes":  302660299,
+                                     "size":  "288,64 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Steam\\htmlcache\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  1477,
+                                     "bytes":  259324260,
+                                     "size":  "247,31 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  225,
+                                     "bytes":  221201539,
+                                     "size":  "210,95 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  341,
+                                     "bytes":  216253502,
+                                     "size":  "206,24 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Olk\\EBWebView\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  1266,
+                                     "bytes":  212898041,
+                                     "size":  "203,04 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Steam\\htmlcache\\Default\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  2659,
+                                     "bytes":  210371979,
+                                     "size":  "200,63 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                                     "name":  "Temp",
+                                     "files":  1458,
+                                     "bytes":  208564189,
+                                     "size":  "198,90 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\plugin_config\\obs-browser\\Cache",
+                                     "name":  "Cache",
+                                     "files":  184,
+                                     "bytes":  147569270,
+                                     "size":  "140,73 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\Crashpad",
+                                     "name":  "Crashpad",
+                                     "files":  6,
+                                     "bytes":  104617568,
+                                     "size":  "99,77 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Crashpad",
+                                     "name":  "Crashpad",
+                                     "files":  5,
+                                     "bytes":  104094026,
+                                     "size":  "99,27 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\EpicGamesLauncher\\Saved\\webcache_4430\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  80,
+                                     "bytes":  94577627,
+                                     "size":  "90,20 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato\\StreamDeck\\Plugins\\com.elgato.streamlabs-desktop.sdPlugin\\logs",
+                                     "name":  "logs",
+                                     "files":  10,
+                                     "bytes":  86359460,
+                                     "size":  "82,36 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\BonChat\\cache",
+                                     "name":  "cache",
+                                     "files":  7,
+                                     "bytes":  77562533,
+                                     "size":  "73,97 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\EpicGamesLauncher\\Saved\\webcache_4430\\Cache",
+                                     "name":  "Cache",
+                                     "files":  161,
+                                     "bytes":  54325654,
+                                     "size":  "51,81 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\WebCache",
+                                     "name":  "WebCache",
+                                     "files":  10,
+                                     "bytes":  52453376,
+                                     "size":  "50,02 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\Cache",
+                                     "name":  "Cache",
+                                     "files":  20,
+                                     "bytes":  44606467,
+                                     "size":  "42,54 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity IDE\\Cache",
+                                     "name":  "Cache",
+                                     "files":  16,
+                                     "bytes":  43375236,
+                                     "size":  "41,37 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA Corporation\\NVIDIA App\\CefCache\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  59,
+                                     "bytes":  31229968,
+                                     "size":  "29,78 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\Lite\\User Data\\Crashpad",
+                                     "name":  "Crashpad",
+                                     "files":  24,
+                                     "bytes":  27419140,
+                                     "size":  "26,15 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Elgato\\Stream Deck\\cache",
+                                     "name":  "cache",
+                                     "files":  167,
+                                     "bytes":  24493163,
+                                     "size":  "23,36 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\26a9ccf5-10a8-4bb6-9ee4-6a927a0d76f4\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  135,
+                                     "bytes":  24113472,
+                                     "size":  "23,00 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\40fc6176-91d1-4167-934c-231c1c39d77a\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  69,
+                                     "bytes":  23753515,
+                                     "size":  "22,65 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA Corporation\\NVIDIA App\\CefCache\\Cache",
+                                     "name":  "Cache",
+                                     "files":  66,
+                                     "bytes":  23366573,
+                                     "size":  "22,28 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Smart Code ltd\\Stremio\\cache",
+                                     "name":  "cache",
+                                     "files":  199,
+                                     "bytes":  20355531,
+                                     "size":  "19,41 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  77,
+                                     "bytes":  19697418,
+                                     "size":  "18,78 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\ollama app.exe\\EBWebView\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  58,
+                                     "bytes":  18669038,
+                                     "size":  "17,80 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\logs",
+                                     "name":  "logs",
+                                     "files":  16,
+                                     "bytes":  18429128,
+                                     "size":  "17,58 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\G HUB\\Cache",
+                                     "name":  "Cache",
+                                     "files":  24,
+                                     "bytes":  17487861,
+                                     "size":  "16,68 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites Manual\\Cache",
+                                     "name":  "Cache",
+                                     "files":  41,
+                                     "bytes":  16016779,
+                                     "size":  "15,27 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Olk\\logs",
+                                     "name":  "logs",
+                                     "files":  18,
+                                     "bytes":  14405779,
+                                     "size":  "13,74 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\logs",
+                                     "name":  "logs",
+                                     "files":  163,
+                                     "bytes":  14368954,
+                                     "size":  "13,70 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites Manual\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  178,
+                                     "bytes":  13382667,
+                                     "size":  "12,76 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\26a9ccf5-10a8-4bb6-9ee4-6a927a0d76f4\\Cache",
+                                     "name":  "Cache",
+                                     "files":  71,
+                                     "bytes":  12644107,
+                                     "size":  "12,06 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\40fc6176-91d1-4167-934c-231c1c39d77a\\Cache",
+                                     "name":  "Cache",
+                                     "files":  33,
+                                     "bytes":  11142674,
+                                     "size":  "10,63 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Plexamp\\Plexamp\\Cache",
+                                     "name":  "Cache",
+                                     "files":  1571,
+                                     "bytes":  9780629,
+                                     "size":  "9,33 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Plexamp\\Plexamp\\Logs",
+                                     "name":  "Logs",
+                                     "files":  5,
+                                     "bytes":  9530344,
+                                     "size":  "9,09 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Power Automate Desktop\\Cache",
+                                     "name":  "Cache",
+                                     "files":  63,
+                                     "bytes":  8107951,
+                                     "size":  "7,73 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\PICO Connect\\logs",
+                                     "name":  "logs",
+                                     "files":  13,
+                                     "bytes":  7950031,
+                                     "size":  "7,58 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\OneDrive\\EBWebView\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  15,
+                                     "bytes":  7321047,
+                                     "size":  "6,98 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Stand\\Bin\\Temp",
+                                     "name":  "Temp",
+                                     "files":  1,
+                                     "bytes":  7035904,
+                                     "size":  "6,71 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\platformapp-93125d1c33-ucf3aydfolv88xvqw8vpdkew-false\\Cache",
+                                     "name":  "Cache",
+                                     "files":  8,
+                                     "bytes":  6681397,
+                                     "size":  "6,37 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato\\StreamDeck\\logs",
+                                     "name":  "logs",
+                                     "files":  68,
+                                     "bytes":  6281005,
+                                     "size":  "5,99 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Plexamp\\Cache",
+                                     "name":  "Cache",
+                                     "files":  5,
+                                     "bytes":  6099312,
+                                     "size":  "5,82 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\unmineable-miner-mfi\\Cache",
+                                     "name":  "Cache",
+                                     "files":  5,
+                                     "bytes":  6099312,
+                                     "size":  "5,82 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA Corporation\\NVIDIA Overlay\\CefCache\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  5,
+                                     "bytes":  6099312,
+                                     "size":  "5,82 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  108,
+                                     "bytes":  5946224,
+                                     "size":  "5,67 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\G HUB\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Cache",
+                                     "name":  "Cache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome for Testing\\User Data\\Default\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\OneDrive\\EBWebView\\Default\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Plexamp\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity IDE\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\plugin_config\\obs-browser\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Elgato\\StreamDeck\\com.elgato.volume-controller\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\40fc6176-91d1-4167-934c-231c1c39d77a\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\icat\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Partitions\\26a9ccf5-10a8-4bb6-9ee4-6a927a0d76f4\\GPUCache",
+                                     "name":  "GPUCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\Lite\\User Data\\ShaderCache",
+                                     "name":  "ShaderCache",
+                                     "files":  5,
+                                     "bytes":  5837168,
+                                     "size":  "5,57 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\node-obs\\logs",
+                                     "name":  "logs",
+                                     "files":  4,
+                                     "bytes":  5636460,
+                                     "size":  "5,38 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\PICO Connect\\Cache",
+                                     "name":  "Cache",
+                                     "files":  9,
+                                     "bytes":  5511206,
+                                     "size":  "5,26 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome for Testing\\User Data\\Default\\Cache",
+                                     "name":  "Cache",
+                                     "files":  8,
+                                     "bytes":  5190033,
+                                     "size":  "4,95 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Olk\\EBWebView\\Default\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  667,
+                                     "bytes":  4866916,
+                                     "size":  "4,64 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA Corporation\\NVIDIA Overlay\\CefCache\\Cache",
+                                     "name":  "Cache",
+                                     "files":  6,
+                                     "bytes":  4822864,
+                                     "size":  "4,60 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\fontconfig\\cache",
+                                     "name":  "cache",
+                                     "files":  6,
+                                     "bytes":  4528052,
+                                     "size":  "4,32 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Epic Games\\Epic Online Services\\MainService\\Logs",
+                                     "name":  "Logs",
+                                     "files":  18,
+                                     "bytes":  4454852,
+                                     "size":  "4,25 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Elgato\\StreamDeck\\cache",
+                                     "name":  "cache",
+                                     "files":  25,
+                                     "bytes":  4097840,
+                                     "size":  "3,91 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\AC\\NVIDIA\\DXCache",
+                                     "name":  "DXCache",
+                                     "files":  46,
+                                     "bytes":  4040704,
+                                     "size":  "3,85 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Packages\\microsoft.windowscommunicationsapps_8wekyb3d8bbwe\\AC\\NVIDIA\\DXCache",
+                                     "name":  "DXCache",
+                                     "files":  17,
+                                     "bytes":  3494912,
+                                     "size":  "3,33 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Crashpad",
+                                     "name":  "Crashpad",
+                                     "files":  4,
+                                     "bytes":  3422172,
+                                     "size":  "3,26 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\G HUB\\Code Cache",
+                                     "name":  "Code Cache",
+                                     "files":  22,
+                                     "bytes":  3230797,
+                                     "size":  "3,08 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\GoPro\\GoPro Webcam\\Logs",
+                                     "name":  "Logs",
+                                     "files":  23,
+                                     "bytes":  3229521,
+                                     "size":  "3,08 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity IDE\\logs",
+                                     "name":  "logs",
+                                     "files":  84,
+                                     "bytes":  2975180,
+                                     "size":  "2,84 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\EpicGamesLauncher\\Saved\\Logs",
+                                     "name":  "Logs",
+                                     "files":  12,
+                                     "bytes":  2821958,
+                                     "size":  "2,69 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\pip\\cache",
+                                     "name":  "cache",
+                                     "files":  57,
+                                     "bytes":  2657881,
+                                     "size":  "2,53 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\Packages\\Microsoft.Windows.Photos_8wekyb3d8bbwe\\AC\\NVIDIA\\DXCache",
+                                     "name":  "DXCache",
+                                     "files":  23,
+                                     "bytes":  2570240,
+                                     "size":  "2,45 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 },
+                                 {
+                                     "path":  "C:\\Users\\lopes\\AppData\\Local\\AMD\\DxCache",
+                                     "name":  "DxCache",
+                                     "files":  38,
+                                     "bytes":  2555904,
+                                     "size":  "2,44 MB",
+                                     "truncated":  false,
+                                     "recommendation":  "REVIEW_CACHE_LIKE"
+                                 }
+                             ],
+    "knownApplicationCaches":  [
+                                   {
+                                       "label":  "Windows INetCache",
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\INetCache",
+                                       "files":  40,
+                                       "bytes":  23800769,
+                                       "size":  "22,70 MB",
+                                       "truncated":  false,
+                                       "recommendation":  "REVIEW_APP_CACHE"
+                                   },
+                                   {
+                                       "label":  "Windows Spotlight Assets",
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\LocalState\\Assets",
+                                       "files":  12,
+                                       "bytes":  20080434,
+                                       "size":  "19,15 MB",
+                                       "truncated":  false,
+                                       "recommendation":  "REVIEW_APP_CACHE"
+                                   },
+                                   {
+                                       "label":  "Discord Roaming GPU Cache",
+                                       "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\GPUCache",
+                                       "files":  5,
+                                       "bytes":  1642864,
+                                       "size":  "1,57 MB",
+                                       "truncated":  false,
+                                       "recommendation":  "REVIEW_APP_CACHE"
+                                   }
+                               ],
+    "largeLogsAndDumps":  [
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--05-36-37.log",
+                                  "bytes":  104859399,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 17:36",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--03-02-01.log",
+                                  "bytes":  104858733,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 15:02",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-05--04-03-29.log",
+                                  "bytes":  104858680,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-05 16:03",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--11-10-12.log",
+                                  "bytes":  104858676,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 11:10",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-05--05-20-45.log",
+                                  "bytes":  104858642,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-05 17:20",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--12-27-29.log",
+                                  "bytes":  104858596,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 12:27",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--01-44-45.log",
+                                  "bytes":  104858594,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 13:44",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--04-19-17.log",
+                                  "bytes":  104858581,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 16:19",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--09-28-25.log",
+                                  "bytes":  104858553,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 21:28",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--08-11-09.log",
+                                  "bytes":  104858547,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 20:11",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--06-53-54.log",
+                                  "bytes":  104858533,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-06 18:53",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-05--02-46-12.log",
+                                  "bytes":  104857923,
+                                  "size":  "100,00 MB",
+                                  "modified":  "2026-01-05 14:46",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-08--06-27-42.log",
+                                  "bytes":  100665611,
+                                  "size":  "96,00 MB",
+                                  "modified":  "2026-01-06 22:42",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2025-07-13--12-40-24.log",
+                                  "bytes":  85444174,
+                                  "size":  "81,49 MB",
+                                  "modified":  "2025-07-12 22:58",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2026-07-31--12-00-34.log",
+                                  "bytes":  54791295,
+                                  "size":  "52,25 MB",
+                                  "modified":  "2026-07-30 23:58",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2024-01-19--12-00-02.log",
+                                  "bytes":  52340481,
+                                  "size":  "49,92 MB",
+                                  "modified":  "2024-01-18 23:59",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2023-08-10--12-00-00.log",
+                                  "bytes":  52329288,
+                                  "size":  "49,91 MB",
+                                  "modified":  "2023-08-09 23:59",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2023-08-11--02-54-45.log",
+                                  "bytes":  50482800,
+                                  "size":  "48,14 MB",
+                                  "modified":  "2023-08-10 23:54",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2026-01-06--09-52-56.log",
+                                  "bytes":  35362658,
+                                  "size":  "33,72 MB",
+                                  "modified":  "2026-01-05 17:46",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Crashpad\\reports\\625a9f1e-550b-4eae-8d2e-5ccca3baadad.dmp",
+                                  "bytes":  34735776,
+                                  "size":  "33,13 MB",
+                                  "modified":  "2026-07-19 17:35",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Crashpad\\reports\\088827ca-4b4a-4b2e-b6ed-0071e5086726.dmp",
+                                  "bytes":  34718784,
+                                  "size":  "33,11 MB",
+                                  "modified":  "2026-07-30 09:52",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client\\Crashpad\\reports\\1eac49dd-0d28-426a-81ca-c86d5d7cff57.dmp",
+                                  "bytes":  34639008,
+                                  "size":  "33,03 MB",
+                                  "modified":  "2026-07-22 17:17",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\Crashpad\\reports\\b10f173e-7b42-4db2-aff0-f293b56415af.dmp",
+                                  "bytes":  34346752,
+                                  "size":  "32,76 MB",
+                                  "modified":  "2026-05-24 12:38",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\Crashpad\\reports\\59295af7-8867-4d46-992b-4f716dd3b1c8.dmp",
+                                  "bytes":  34285040,
+                                  "size":  "32,70 MB",
+                                  "modified":  "2026-07-05 21:35",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity\\Crashpad\\reports\\faa21049-c1f9-4488-ab7a-39d2bbd24420.dmp",
+                                  "bytes":  34279136,
+                                  "size":  "32,69 MB",
+                                  "modified":  "2026-06-27 11:53",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2025-08-31--12-02-16.log",
+                                  "bytes":  29321340,
+                                  "size":  "27,96 MB",
+                                  "modified":  "2025-08-30 23:21",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Local Extension Settings\\efaidnbmnnnibpcajpcglclefindmkaj\\lost\\000717.log",
+                                  "bytes":  24726730,
+                                  "size":  "23,58 MB",
+                                  "modified":  "2025-08-03 00:19",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato\\StreamDeck\\Plugins\\com.elgato.streamlabs-desktop.sdPlugin\\logs\\com.elgato.streamlabs-desktop.8.log",
+                                  "bytes":  23751936,
+                                  "size":  "22,65 MB",
+                                  "modified":  "2026-08-02 12:27",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato\\StreamDeck\\Plugins\\com.elgato.streamlabs-desktop.sdPlugin\\logs\\com.elgato.streamlabs-desktop.9.log",
+                                  "bytes":  22654052,
+                                  "size":  "21,60 MB",
+                                  "modified":  "2026-07-30 09:52",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2025-09-01--12-11-12.log",
+                                  "bytes":  21066045,
+                                  "size":  "20,09 MB",
+                                  "modified":  "2025-08-31 23:41",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Local Extension Settings\\efaidnbmnnnibpcajpcglclefindmkaj\\lost\\000922.log",
+                                  "bytes":  20303649,
+                                  "size":  "19,36 MB",
+                                  "modified":  "2026-02-23 16:06",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Local Extension Settings\\nkbihfbeogaeaoehlefnkodbefgpgknn\\lost\\020358.log",
+                                  "bytes":  17405286,
+                                  "size":  "16,60 MB",
+                                  "modified":  "2025-02-05 11:16",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Local Extension Settings\\nkbihfbeogaeaoehlefnkodbefgpgknn\\lost\\582405.log",
+                                  "bytes":  17301511,
+                                  "size":  "16,50 MB",
+                                  "modified":  "2025-06-30 19:28",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2024-01-18--12-00-00.log",
+                                  "bytes":  16773343,
+                                  "size":  "16,00 MB",
+                                  "modified":  "2024-01-17 23:59",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\BonChat\\DebugLogs\\log_1.0.135__en_u930033700771_2026_8_4_22_15.txt",
+                                  "bytes":  16201645,
+                                  "size":  "15,45 MB",
+                                  "modified":  "2026-08-04 22:30",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2023-08-09--12-00-04.log",
+                                  "bytes":  14835576,
+                                  "size":  "14,15 MB",
+                                  "modified":  "2023-08-08 23:59",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato\\StreamDeck\\Plugins\\com.elgato.streamlabs-desktop.sdPlugin\\logs\\com.elgato.streamlabs-desktop.0.log",
+                                  "bytes":  14703312,
+                                  "size":  "14,02 MB",
+                                  "modified":  "2026-08-08 18:28",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2023-09-03--12-00-08.log",
+                                  "bytes":  14218423,
+                                  "size":  "13,56 MB",
+                                  "modified":  "2023-09-02 23:59",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA Corporation\\NVIDIA Overlay\\debug.log",
+                                  "bytes":  14083761,
+                                  "size":  "13,43 MB",
+                                  "modified":  "2026-08-08 11:24",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\rolledexceptionlog.2024-03-06--05-08-30.log",
+                                  "bytes":  14073897,
+                                  "size":  "13,42 MB",
+                                  "modified":  "2024-02-23 14:34",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\YimMenu\\backup\\10-25-2023-09-20-21_cout.log",
+                                  "bytes":  13700174,
+                                  "size":  "13,07 MB",
+                                  "modified":  "2023-10-25 09:20",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato\\StreamDeck\\Plugins\\com.elgato.streamlabs-desktop.sdPlugin\\logs\\com.elgato.streamlabs-desktop.4.log",
+                                  "bytes":  12130560,
+                                  "size":  "11,57 MB",
+                                  "modified":  "2026-08-04 10:41",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan Simulator\\rolledexceptionlog.2025-12-24--09-11-34.log",
+                                  "bytes":  12088933,
+                                  "size":  "11,53 MB",
+                                  "modified":  "2025-12-23 13:23",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\logs\\renderer_js.old.log",
+                                  "bytes":  10485945,
+                                  "size":  "10,00 MB",
+                                  "modified":  "2025-12-19 01:51",
+                                  "recommendation":  "REVIEW_LARGE_LOG_OR_DUMP"
+                              }
+                          ],
+    "windowsUpgradeLeftovers":  [
+                                    {
+                                        "path":  "C:\\$Windows.~BT",
+                                        "files":  6,
+                                        "bytes":  6641,
+                                        "size":  "6,49 KB",
+                                        "truncated":  false,
+                                        "recommendation":  "USE_WINDOWS_STORAGE_CLEANUP_ONLY"
+                                    },
+                                    {
+                                        "path":  "C:\\$Windows.~WS",
+                                        "files":  7,
+                                        "bytes":  425210,
+                                        "size":  "415,24 KB",
+                                        "truncated":  false,
+                                        "recommendation":  "USE_WINDOWS_STORAGE_CLEANUP_ONLY"
+                                    }
+                                ],
+    "exclusions":  [
+                       "C:\\Users\\lopes\\Downloads",
+                       "C:\\Users\\lopes\\.gemini"
+                   ],
+    "safety":  "Read-only audit. Downloads and .gemini/Antigravity were explicitly excluded. No files were modified or deleted."
+}
