@@ -1,0 +1,44 @@
+{
+    "protocol":  "LPX_REAL_USERSCRIPT_FIX_RESULT_V1",
+    "jobId":  "PSB-20260808-0920-FIX-REAL-USERSCRIPT-004",
+    "status":  "SUCCEEDED",
+    "timestamp":  "2026-08-08T09:21:00.4160644+01:00",
+    "publishedNewCommit":  true,
+    "version":  "15.5.1",
+    "branch":  "main",
+    "localCopy":  "C:\\Users\\lopes\\Downloads\\chatgpt-powershell-bridge-v15-lite.user.js",
+    "repository":  "ApexScorpio/lpx-powershell-runtime",
+    "urlTests":  {
+                     "rawGithubusercontent":  {
+                                                  "ok":  true,
+                                                  "status":  200,
+                                                  "bytes":  185793
+                                              },
+                     "githubRaw":  {
+                                       "ok":  true,
+                                       "status":  200,
+                                       "bytes":  185793
+                                   }
+                 },
+    "fixes":  [
+                  "Corrigido protocolPromptText: bloco json obrigatório e sem fileId inicial.",
+                  "Corrigido manifestsIn para procurar no turno completo e em PRE/CODE/cm-content/blocos modernos.",
+                  "Adicionado parser de JSON balanceado para aceitar PRE que começa por JSON antes de {.",
+                  "Adicionada rejeição de placeholders AAAAMMDD, HHMM, DESCRICAO e nome-unico-do-comando.ps1.",
+                  "Executar último passa a usar sempre a resposta mais recente do assistente quando é acionado manualmente.",
+                  "Mantida compatibilidade PSB_JOB_V2, PSB_JOB_V3 e PSB_LEARN_V1."
+              ],
+    "githubRawUrl":  "https://github.com/ApexScorpio/lpx-powershell-runtime/raw/refs/heads/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js",
+    "afterSha256":  "6C837E0505D41F680430E3DD56FA410D1433868F5857C93336FE096E2453A083",
+    "nextAction":  "Atualizar o userscript no Tampermonkey e recarregar todas as abas do ChatGPT; depois testar Executar último.",
+    "beforeSha256":  "CC576E8636E3FA323F54CECACBE2C9C0AD25A84ECA3EED8CFEDF12000B02F46D",
+    "path":  "tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js",
+    "syntaxCheck":  {
+                        "available":  true,
+                        "passed":  true,
+                        "output":  ""
+                    },
+    "commit":  "6190ed9d32c8627cf1933dc65e618cf8ec3201bf",
+    "displayUrl":  "https://github.com/ApexScorpio/lpx-powershell-runtime/blob/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js",
+    "rawUrl":  "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js"
+}
