@@ -1,0 +1,30 @@
+{
+    "protocol":  "LPX_GTAPT_POSTFAIL_AUDIT_V1",
+    "jobId":  "PSB-20260808-1543-GTAPT-POSTFAIL-AUDIT-011",
+    "mode":  "READ_ONLY",
+    "auditSource":  "C:\\Users\\lopes\\Documents\\LPX-Script-Audit\\script-audit-20260808-134424.json",
+    "gtaptRepoInfo":  "{\"defaultBranchRef\":{\"name\":\"main\"},\"isPrivate\":false,\"nameWithOwner\":\"ApexScorpio/gtapt\",\"pushedAt\":\"2026-08-08T14:39:48Z\",\"url\":\"https://github.com/ApexScorpio/gtapt\"}",
+    "gtaptRemoteMain":  "08e02e5860909adf1f95065f6cb52a048e6d1bc3\trefs/heads/main",
+    "recentCommits":  "08e02e5860909adf1f95065f6cb52a048e6d1bc3 Archive remaining GTApt user scripts\n1bc0fd2d63ba297de3b6c6aaeb54448c590717cb Archive remaining GTApt user scripts\n05be1a18c66ca360c2b64a3ad8560d72dec8dc8c Archive remaining GTApt user scripts\n52f2b157ee5009bb81f1f30055512a881d11be65 Archive remaining GTApt user scripts\n08e02e5860909adf1f95065f6cb52a048e6d1bc3 Update gtapt\n1bc0fd2d63ba297de3b6c6aaeb54448c590717cb Update gtapt\n05be1a18c66ca360c2b64a3ad8560d72dec8dc8c Update gtapt\n52f2b157ee5009bb81f1f30055512a881d11be65 Update gtapt\n08e02e5860909adf1f95065f6cb52a048e6d1bc3 Update gtapt\n1bc0fd2d63ba297de3b6c6aaeb54448c590717cb Update gtapt\n05be1a18c66ca360c2b64a3ad8560d72dec8dc8c Update gtapt\n52f2b157ee5009bb81f1f30055512a881d11be65 Update gtapt\n08e02e5860909adf1f95065f6cb52a048e6d1bc3 Create gtapt\n1bc0fd2d63ba297de3b6c6aaeb54448c590717cb Create gtapt\n05be1a18c66ca360c2b64a3ad8560d72dec8dc8c Create gtapt\n52f2b157ee5009bb81f1f30055512a881d11be65 Create gtapt",
+    "remainingFunctionalCount":  0,
+    "remainingFunctional":  [
+
+                            ],
+    "remainingArchiveCount":  0,
+    "remainingArchive":  [
+
+                         ],
+    "remainingJunkCount":  0,
+    "remainingJunk":  [
+
+                      ],
+    "remainingLooseGtaCount":  0,
+    "remainingLooseGta":  [
+
+                          ],
+    "titanPythonCount":  0,
+    "titanPython":  [
+
+                    ],
+    "safety":  "Read-only audit: no project file was modified or deleted."
+}

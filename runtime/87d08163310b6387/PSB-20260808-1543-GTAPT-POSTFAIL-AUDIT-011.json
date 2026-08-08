@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1543-GTAPT-POSTFAIL-AUDIT-011",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Verificar em modo só de leitura o estado real do GTApt e do script Avolites após a falha final, sem alterar nem apagar qualquer ficheiro.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T14:41:08.771Z",
+  "endedAt": "2026-08-08T14:41:13.910Z",
+  "elapsedMs": 5139,
+  "outputLength": 2080,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "dd9fec987ddf20d0fe8f0aa05b25374e35139369dd0e905a169564a855fe40a8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1543-GTAPT-POSTFAIL-AUDIT-011.txt",
+  "createdAt": "2026-08-08T14:41:13.911Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
