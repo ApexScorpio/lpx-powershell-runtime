@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1818-SAFE-PC-CLEANUP-019",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Limpar apenas temporários, caches reconstruíveis, thumbnails e Reciclagem, deixando Downloads e .gemini/Antigravity completamente de fora.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T17:19:58.369Z",
+  "endedAt": "2026-08-08T17:20:36.182Z",
+  "elapsedMs": 37813,
+  "outputLength": 63781,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "5994a423b0078a457be7513e8ee43aa0c7102ea86d58ab0158b698f002a9367e",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1818-SAFE-PC-CLEANUP-019.txt",
+  "createdAt": "2026-08-08T17:20:36.187Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

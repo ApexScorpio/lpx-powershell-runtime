@@ -1,0 +1,1108 @@
+{
+    "protocol":  "LPX_SAFE_PC_CLEANUP_V1",
+    "jobId":  "PSB-20260808-1818-SAFE-PC-CLEANUP-019",
+    "status":  "SUCCEEDED",
+    "deletedBytes":  3185171044,
+    "deletedSize":  "2,97 GB",
+    "deletedItemCount":  76,
+    "deleted":  [
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646",
+                        "bytes":  2662225547,
+                        "size":  "2,48 GB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Code Cache\\wasm",
+                        "bytes":  188420908,
+                        "size":  "179,69 MB"
+                    },
+                    {
+                        "category":  "RECYCLE_BIN",
+                        "path":  "C:\\$Recycle.Bin",
+                        "bytes":  136659543,
+                        "size":  "130,33 MB"
+                    },
+                    {
+                        "category":  "NPM_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache\\_cacache",
+                        "bytes":  50006519,
+                        "size":  "47,69 MB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache\\js",
+                        "bytes":  45808074,
+                        "size":  "43,69 MB"
+                    },
+                    {
+                        "category":  "NPM_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache\\_npx",
+                        "bytes":  31030822,
+                        "size":  "29,59 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_1280.db",
+                        "bytes":  10485760,
+                        "size":  "10,00 MB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-xu9GB9",
+                        "bytes":  8654448,
+                        "size":  "8,25 MB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-at2shJ",
+                        "bytes":  8643186,
+                        "size":  "8,24 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_256.db",
+                        "bytes":  7340032,
+                        "size":  "7,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_96.db",
+                        "bytes":  5242880,
+                        "size":  "5,00 MB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache\\wasm",
+                        "bytes":  4642042,
+                        "size":  "4,43 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_768.db",
+                        "bytes":  4194304,
+                        "size":  "4,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_256.db",
+                        "bytes":  4194304,
+                        "size":  "4,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_48.db",
+                        "bytes":  4194304,
+                        "size":  "4,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_32.db",
+                        "bytes":  3145728,
+                        "size":  "3,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_16.db",
+                        "bytes":  2097152,
+                        "size":  "2,00 MB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\node-compile-cache",
+                        "bytes":  1475028,
+                        "size":  "1,41 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_16.db",
+                        "bytes":  1048576,
+                        "size":  "1,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_1920.db",
+                        "bytes":  1048576,
+                        "size":  "1,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_48.db",
+                        "bytes":  1048576,
+                        "size":  "1,00 MB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_32.db",
+                        "bytes":  1048576,
+                        "size":  "1,00 MB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\unleash-repo-schema-v1-codeium-language-server.json",
+                        "bytes":  463641,
+                        "size":  "452,77 KB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\\data_1",
+                        "bytes":  270336,
+                        "size":  "264,00 KB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\\index",
+                        "bytes":  262512,
+                        "size":  "256,36 KB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_idx.db",
+                        "bytes":  232848,
+                        "size":  "227,39 KB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Code Cache\\js",
+                        "bytes":  194603,
+                        "size":  "190,04 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache\\24377efd167fb755",
+                        "bytes":  133224,
+                        "size":  "130,10 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache\\658c06e3d342bb4e",
+                        "bytes":  133192,
+                        "size":  "130,07 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache\\ed51df4cd49c50d0",
+                        "bytes":  133160,
+                        "size":  "130,04 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache\\cb00da9ba77862e",
+                        "bytes":  132116,
+                        "size":  "129,02 KB"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_idx.db",
+                        "bytes":  116496,
+                        "size":  "113,77 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\wct6B2D.tmp",
+                        "bytes":  105077,
+                        "size":  "102,61 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\wct9A89.tmp",
+                        "bytes":  105077,
+                        "size":  "102,61 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache\\fc52a9d964ef8c69.nvph",
+                        "bytes":  65536,
+                        "size":  "64,00 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache\\fc52a9d9ff175166.nvph",
+                        "bytes":  65536,
+                        "size":  "64,00 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPX-GitHub-Clone-Diag-20260808-142236",
+                        "bytes":  52936,
+                        "size":  "51,70 KB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\\data_0",
+                        "bytes":  8192,
+                        "size":  "8,00 KB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\\data_2",
+                        "bytes":  8192,
+                        "size":  "8,00 KB"
+                    },
+                    {
+                        "category":  "BROWSER_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\\data_3",
+                        "bytes":  8192,
+                        "size":  "8,00 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\powershell-bridge-command-1786209598347-f5d15792cf7ce2bd.ps1",
+                        "bytes":  7540,
+                        "size":  "7,36 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\StructuredQuery.log",
+                        "bytes":  4685,
+                        "size":  "4,58 KB"
+                    },
+                    {
+                        "category":  "NPM_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache\\_logs",
+                        "bytes":  4588,
+                        "size":  "4,48 KB"
+                    },
+                    {
+                        "category":  "GPU_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache\\fc52a9d95c6dc3fe.nvph",
+                        "bytes":  4096,
+                        "size":  "4,00 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\AdobeARM.log",
+                        "bytes":  1825,
+                        "size":  "1,78 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\SmartScreen",
+                        "bytes":  1450,
+                        "size":  "1,42 KB"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\NotifyIconGeneratedAumid_16118198393864022613.png",
+                        "bytes":  364,
+                        "size":  "364 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\gen_py",
+                        "bytes":  186,
+                        "size":  "186 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\cv_debug.log",
+                        "bytes":  122,
+                        "size":  "122 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\.ses",
+                        "bytes":  53,
+                        "size":  "53 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_wide_alternate.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_wide.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_2560.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_wide.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_1280.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_custom_stream.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_wide_alternate.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_sr.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_sr.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_1920.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\thumbcache_exif.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_2560.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_custom_stream.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_exif.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_768.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "THUMBNAIL_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_96.db",
+                        "bytes":  24,
+                        "size":  "24 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\antigravity-stable-user-x64",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\playwright-artifacts-HfTYWR",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\playwright-artifacts-P5tDFu",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXNativeExec",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\MessagingAddin",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\playwright-artifacts-tIEXJQ",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\Shotcut.JuxWIZ",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "NPM_CACHE",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache\\_update-notifier-last-checked",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\scoped_dir18940_629317024",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    },
+                    {
+                        "category":  "USER_TEMP",
+                        "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\Shotcut.EqjFGe",
+                        "bytes":  0,
+                        "size":  "0 B"
+                    }
+                ],
+    "failedCount":  150,
+    "failed":  [
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\0cxfo1yy",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\0cxfo1yy\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\0gbfkz12",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\0gbfkz12\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\13b27da4-d57e-444b-b8d5-927bb1b41ae5",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\1lll0kll",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\1lll0kll\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2dtca35r",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2dtca35r\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2gkgo0b5",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2gkgo0b5\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\3j1sjtaz",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\3j1sjtaz\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\4nu0d0zm",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\4nu0d0zm\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\5mp5eydc",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\5mp5eydc\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\5vw2kzxb",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\5vw2kzxb\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\a0meitf4",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\a0meitf4\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\atfg2bi4",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\atfg2bi4\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ayntbxvg",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ayntbxvg\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\bni2fgay",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\bni2fgay\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\bz4qpdmr",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\bz4qpdmr\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\cn1u0zdx",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\cn1u0zdx\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\cscl0tww",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\cscl0tww\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\cv3xeive",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\cv3xeive\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\dt3jmvqd",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\dt3jmvqd\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\elkf2pd1",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\elkf2pd1\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ellfhs5m",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ellfhs5m\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\eqooa2nh",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\eqooa2nh\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\f3351429-1c18-4441-b694-c3174b5a6f47",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\fi2k1sqq",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\fi2k1sqq\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\gdxjrqbh",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\gdxjrqbh\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-029d-b73f-f937-1fd9",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-02cb-58ff-c945-43ae",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-0c4f-4b98-a566-8868",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-19eb-6abf-1113-f564",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-20e2-a42a-34f4-7cd8",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-3c49-02eb-f2e6-87ac",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-3f05-db4a-b7a8-7157",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-40c5-3382-f650-79c8",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-52d6-e52c-415b-b12b",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-5b14-51c6-070d-6287",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-7aea-5e0e-aeda-4674-8c2e",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghub-uma10gec.i33",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ghvj5jbt",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ghvj5jbt\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\hqxlpvjn",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\hqxlpvjn\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\hsperfdata_lopes",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\huqujtt0",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\huqujtt0\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\im1nuivr",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\im1nuivr\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\iqviny05",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\iqviny05\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\irufossh",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\irufossh\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\is-9IGID.tmp",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\is-BEYP22V4U7-uninstall.tmp",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\is-FF9OR.tmp",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\is-OE7J2.tmp",
+                       "error":  "Acesso negado ao caminho."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\izzqgm1f",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\izzqgm1f\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\j30lpccx",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\j30lpccx\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\jdhckm1h",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\jdhckm1h\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\jnxcispf",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\jnxcispf\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\kcd4lm24",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\kcd4lm24\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\kgjvrqoz",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\kgjvrqoz\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\lbvv1cwh",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\lbvv1cwh\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\lvf0wqdz",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\lvf0wqdz\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\msdtadmin",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\msdtadmin\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\mwdintqk",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\mwdintqk\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\mz0ocemq",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\mz0ocemq\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\n21zangh",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\n21zangh\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\nesipz0e",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\nesipz0e\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\npfiffra",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\npfiffra\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\nr3i03uv",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\nr3i03uv\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ocmskhnc",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ocmskhnc\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ol2rsaw4",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ol2rsaw4\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ozm4nfek",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ozm4nfek\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\ps1xkgqm",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\ps1xkgqm\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\pzdmadnb",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\pzdmadnb\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\qmmxlww2",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\qmmxlww2\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\qo4e43lu",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\qo4e43lu\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\qymfcu1f",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\qymfcu1f\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\roon04xx",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\roon04xx\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\s04qughd",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\s04qughd\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\s0pkiln2",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\s0pkiln2\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\s1eyjysu",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\s1eyjysu\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\Sentry_StreamDeck",
+                       "error":  "O processo não pode aceder ao ficheiro \u00279afcff1a-0b86-4b6c-2473-b87ccc80f0a3.run.lock\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\sh3sxq5f",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\sh3sxq5f\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\shoyqxlo",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\shoyqxlo\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\t34dz5ho",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\t34dz5ho\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\tgyibc1i",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\tgyibc1i\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\tjeed54w",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\tjeed54w\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\tmpq9uqax_i",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027journal.baj\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\u3j0ugq1",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\u3j0ugq1\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\uzwfl5pn",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\uzwfl5pn\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\vbysod4r",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\vbysod4r\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\vwcumx0s",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\vwcumx0s\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\WinSAT",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\WinSAT\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\xntlmsba",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\xntlmsba\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\xyb3xejw",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\xyb3xejw\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\zdvun13n",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\zdvun13n\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\zgbzi1rj",
+                       "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\zgbzi1rj\u0027."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\002f9664-c8fa-4e58-9cc9-098bfd45136c.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\002f9664-c8fa-4e58-9cc9-098bfd45136c.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\036aea4a-09d4-4f95-9631-c82942b46db0.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\036aea4a-09d4-4f95-9631-c82942b46db0.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\05d061a0-828e-4538-b323-67c686fe0a9b.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\05d061a0-828e-4538-b323-67c686fe0a9b.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\077025c7-fede-4d5e-a693-2e49a054f872.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\077025c7-fede-4d5e-a693-2e49a054f872.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\0f7e0d4b-1cb4-4019-a915-f14734fe6c32.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\0f7e0d4b-1cb4-4019-a915-f14734fe6c32.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\1114df2f-99fb-4a3f-b8f3-e7cdee5b57e1.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\1114df2f-99fb-4a3f-b8f3-e7cdee5b57e1.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\16d8b473-6624-4e61-bbab-57d3d7944131.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\16d8b473-6624-4e61-bbab-57d3d7944131.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\1dc10da0-1168-4991-8963-fd2ac92e1c52.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\1dc10da0-1168-4991-8963-fd2ac92e1c52.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\210209c8-ec55-4f1d-97cf-ecf14c891240.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\210209c8-ec55-4f1d-97cf-ecf14c891240.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2ad3f429-0cbc-4b11-b341-3f6f4721d38f.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2ad3f429-0cbc-4b11-b341-3f6f4721d38f.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.0.cs",
+                       "error":  "Cannot find path \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.0.cs\u0027 because it does not exist."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.cmdline",
+                       "error":  "Cannot find path \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.cmdline\u0027 because it does not exist."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.dll",
+                       "error":  "Cannot find path \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.dll\u0027 because it does not exist."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.err",
+                       "error":  "Cannot find path \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.err\u0027 because it does not exist."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.out",
+                       "error":  "Cannot find path \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.out\u0027 because it does not exist."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.tmp",
+                       "error":  "Cannot find path \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\2x0soewh.tmp\u0027 because it does not exist."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\3354adf6-9abd-43ec-9bcc-72e77a3c1aaa.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\3354adf6-9abd-43ec-9bcc-72e77a3c1aaa.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\470b5d95-b1e6-4059-bc24-1a6b75721647.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\470b5d95-b1e6-4059-bc24-1a6b75721647.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\49e93905-9e2b-4c2c-8bf8-cdfa115058b3.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\49e93905-9e2b-4c2c-8bf8-cdfa115058b3.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\4d6a446e-87ed-4589-a576-da0330f83413.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\4d6a446e-87ed-4589-a576-da0330f83413.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\4e9058eb-f39c-4967-86ff-b409c0613b4f.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\4e9058eb-f39c-4967-86ff-b409c0613b4f.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\568faf0a-5291-43b6-b4a5-2d9ae08a73ba.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\568faf0a-5291-43b6-b4a5-2d9ae08a73ba.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\59014efc-d732-4a05-b697-23e9e3639bb8.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\59014efc-d732-4a05-b697-23e9e3639bb8.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\59753bb7-af10-4c53-9b90-1dffa14c2109.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\59753bb7-af10-4c53-9b90-1dffa14c2109.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\5c3a71bd-52be-42f9-b4a3-cab8c3e57628.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\5c3a71bd-52be-42f9-b4a3-cab8c3e57628.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\6ce9b935-6eb4-4a13-9698-bb1caed1fddc.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\6ce9b935-6eb4-4a13-9698-bb1caed1fddc.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\7c095c51-1eb5-4db2-8927-713395590bca.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\7c095c51-1eb5-4db2-8927-713395590bca.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\8499b362-51ea-4c62-add7-a1e150b93922.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\8499b362-51ea-4c62-add7-a1e150b93922.tmp\u0027 porque está a ser utilizado por outro processo."
+                   },
+                   {
+                       "category":  "USER_TEMP",
+                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\88ad58b7-12c0-472e-9953-6c2a994024cd.tmp",
+                       "error":  "O processo não pode aceder ao ficheiro \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\88ad58b7-12c0-472e-9953-6c2a994024cd.tmp\u0027 porque está a ser utilizado por outro processo."
+                   }
+               ],
+    "remainingInTargetedCaches":  [
+                                      {
+                                          "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                                          "bytes":  210027167,
+                                          "size":  "200,30 MB"
+                                      },
+                                      {
+                                          "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+                                          "bytes":  1141628,
+                                          "size":  "1,09 MB"
+                                      },
+                                      {
+                                          "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache",
+                                          "bytes":  69632,
+                                          "size":  "68,00 KB"
+                                      },
+                                      {
+                                          "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+                                          "bytes":  4,
+                                          "size":  "4 B"
+                                      }
+                                  ],
+    "protected":  {
+                      "downloadsPath":  "C:\\Users\\lopes\\Downloads",
+                      "downloadsStillExists":  true,
+                      "geminiPath":  "C:\\Users\\lopes\\.gemini",
+                      "geminiStillExists":  true,
+                      "protectedSkipCount":  0,
+                      "protectedSkipped":  [
+
+                                           ]
+                  },
+    "safety":  [
+                   "Downloads was not targeted.",
+                   ".gemini / Antigravity was not targeted.",
+                   "Browser profile data, passwords, cookies, bookmarks, history and extensions were not targeted.",
+                   "Only temporary data, browser caches, npm cache, rebuildable GPU/shader caches, Windows thumbnail/icon caches and the C: Recycle Bin were targeted.",
+                   "Locked or in-use files are left in place and reported rather than forced."
+               ]
+}
