@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-0947-DISK-ANALYSIS-FAST-002",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Repetir a análise do disco em modo só de leitura com método mais rápido e limitado por área para identificar pelo menos 50 GB libertáveis.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T08:50:04.246Z",
+  "endedAt": "2026-08-08T08:52:11.595Z",
+  "elapsedMs": 127349,
+  "outputLength": 68574,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "cbbe85f8a09c0c92baee53e6b8a1720046a8afa45fe1068e2fba41be013e85d7",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-0947-DISK-ANALYSIS-FAST-002.txt",
+  "createdAt": "2026-08-08T08:52:11.597Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
