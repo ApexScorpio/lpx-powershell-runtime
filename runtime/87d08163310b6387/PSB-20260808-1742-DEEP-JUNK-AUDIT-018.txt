@@ -1,0 +1,456 @@
+{
+    "protocol":  "LPX_DEEP_JUNK_AUDIT_V1",
+    "jobId":  "PSB-20260808-1742-DEEP-JUNK-AUDIT-018",
+    "status":  "SUCCEEDED",
+    "mode":  "READ_ONLY",
+    "gemini":  {
+                   "path":  "C:\\Users\\lopes\\.gemini",
+                   "topItems":  [
+                                    {
+                                        "name":  "antigravity-ide",
+                                        "path":  "C:\\Users\\lopes\\.gemini\\antigravity-ide",
+                                        "files":  71924,
+                                        "bytes":  22789363514,
+                                        "size":  "21,22 GB",
+                                        "truncated":  false,
+                                        "likelyCache":  false
+                                    },
+                                    {
+                                        "name":  "antigravity",
+                                        "path":  "C:\\Users\\lopes\\.gemini\\antigravity",
+                                        "files":  46301,
+                                        "bytes":  5670252310,
+                                        "size":  "5,28 GB",
+                                        "truncated":  false,
+                                        "likelyCache":  false
+                                    },
+                                    {
+                                        "name":  "antigravity-browser-profile",
+                                        "path":  "C:\\Users\\lopes\\.gemini\\antigravity-browser-profile",
+                                        "files":  6109,
+                                        "bytes":  5144330719,
+                                        "size":  "4,79 GB",
+                                        "truncated":  false,
+                                        "likelyCache":  false
+                                    },
+                                    {
+                                        "name":  "config",
+                                        "path":  "C:\\Users\\lopes\\.gemini\\config",
+                                        "files":  261,
+                                        "bytes":  3402854,
+                                        "size":  "3,25 MB",
+                                        "truncated":  false,
+                                        "likelyCache":  false
+                                    },
+                                    {
+                                        "name":  "antigravity-backup",
+                                        "path":  "C:\\Users\\lopes\\.gemini\\antigravity-backup",
+                                        "files":  23,
+                                        "bytes":  12048,
+                                        "size":  "11,77 KB",
+                                        "truncated":  false,
+                                        "likelyCache":  false
+                                    },
+                                    {
+                                        "name":  "GEMINI.md",
+                                        "path":  "C:\\Users\\lopes\\.gemini\\GEMINI.md",
+                                        "files":  1,
+                                        "bytes":  0,
+                                        "size":  "0 B",
+                                        "truncated":  false,
+                                        "likelyCache":  false
+                                    }
+                                ]
+               },
+    "tempOlderThan7Days":  {
+                               "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                               "count":  68969,
+                               "bytes":  2662225547,
+                               "size":  "2,48 GB",
+                               "largestSample":  [
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\200 aboboras.png",
+                                                         "bytes":  2899167,
+                                                         "size":  "2,76 MB",
+                                                         "ageDays":  325,
+                                                         "modified":  "2025-09-16 20:55"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\cayoperico surv 20wav.jpg",
+                                                         "bytes":  2233433,
+                                                         "size":  "2,13 MB",
+                                                         "ageDays":  303,
+                                                         "modified":  "2025-10-08 21:29"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\cayoperico surv 10wav.jpg",
+                                                         "bytes":  2011173,
+                                                         "size":  "1,92 MB",
+                                                         "ageDays":  303,
+                                                         "modified":  "2025-10-08 20:54"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Starting Soon.png",
+                                                         "bytes":  818064,
+                                                         "size":  "798,89 KB",
+                                                         "ageDays":  2331,
+                                                         "modified":  "2020-03-20 19:32"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\goodguymodder.png",
+                                                         "bytes":  665319,
+                                                         "size":  "649,73 KB",
+                                                         "ageDays":  2751,
+                                                         "modified":  "2019-01-26 10:27"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\57ae93462971760386cadfe7195efef6.jpg",
+                                                         "bytes":  609721,
+                                                         "size":  "595,43 KB",
+                                                         "ageDays":  3217,
+                                                         "modified":  "2017-10-16 19:16"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\200 aboboras.jpg",
+                                                         "bytes":  565045,
+                                                         "size":  "551,80 KB",
+                                                         "ageDays":  325,
+                                                         "modified":  "2025-09-16 20:56"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\crew.png",
+                                                         "bytes":  492557,
+                                                         "size":  "481,01 KB",
+                                                         "ageDays":  2416,
+                                                         "modified":  "2019-12-27 17:14"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\starter-combo.png",
+                                                         "bytes":  389932,
+                                                         "size":  "380,79 KB",
+                                                         "ageDays":  2269,
+                                                         "modified":  "2020-05-22 13:53"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Technical-Difficulties-Please-Stand-By.jpg",
+                                                         "bytes":  389174,
+                                                         "size":  "380,05 KB",
+                                                         "ageDays":  2850,
+                                                         "modified":  "2018-10-19 13:04"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\bg.jpg",
+                                                         "bytes":  351021,
+                                                         "size":  "342,79 KB",
+                                                         "ageDays":  233,
+                                                         "modified":  "2025-12-18 15:20"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\2Ui_gta.py",
+                                                         "bytes":  324949,
+                                                         "size":  "317,33 KB",
+                                                         "ageDays":  306,
+                                                         "modified":  "2025-10-06 10:50"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gtaweb_source.html",
+                                                         "bytes":  148899,
+                                                         "size":  "145,41 KB",
+                                                         "ageDays":  230,
+                                                         "modified":  "2025-12-21 00:31"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\dmde-4-2-0-814-win64-gui\\template.txt",
+                                                         "bytes":  108930,
+                                                         "size":  "106,38 KB",
+                                                         "ageDays":  576,
+                                                         "modified":  "2025-01-09 15:57"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\image-Photoroom.png",
+                                                         "bytes":  105105,
+                                                         "size":  "102,64 KB",
+                                                         "ageDays":  580,
+                                                         "modified":  "2025-01-05 16:20"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\contact-missions -05-10-2025 - EN.html",
+                                                         "bytes":  80518,
+                                                         "size":  "78,63 KB",
+                                                         "ageDays":  306,
+                                                         "modified":  "2025-10-05 19:42"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Discord Banner.png",
+                                                         "bytes":  72538,
+                                                         "size":  "70,84 KB",
+                                                         "ageDays":  2217,
+                                                         "modified":  "2020-07-13 09:36"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Facebook Banners.png",
+                                                         "bytes":  70738,
+                                                         "size":  "69,08 KB",
+                                                         "ageDays":  2483,
+                                                         "modified":  "2019-10-21 15:38"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Banners youtube.png",
+                                                         "bytes":  69569,
+                                                         "size":  "67,94 KB",
+                                                         "ageDays":  2217,
+                                                         "modified":  "2020-07-13 09:38"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTA Online  - Stream files\\youtube Banners.png",
+                                                         "bytes":  69199,
+                                                         "size":  "67,58 KB",
+                                                         "ageDays":  2483,
+                                                         "modified":  "2019-10-21 15:55"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\mixer  Banners.png",
+                                                         "bytes":  67232,
+                                                         "size":  "65,66 KB",
+                                                         "ageDays":  2483,
+                                                         "modified":  "2019-10-21 16:09"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\q7yotur_390x400_1x-0.jpg",
+                                                         "bytes":  58456,
+                                                         "size":  "57,09 KB",
+                                                         "ageDays":  2269,
+                                                         "modified":  "2020-05-22 13:48"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTA Online  - Stream files\\twitch Banners.png",
+                                                         "bytes":  57638,
+                                                         "size":  "56,29 KB",
+                                                         "ageDays":  2483,
+                                                         "modified":  "2019-10-21 16:03"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\missoes-de-contato -05-10-2025 - PT.html",
+                                                         "bytes":  50120,
+                                                         "size":  "48,95 KB",
+                                                         "ageDays":  306,
+                                                         "modified":  "2025-10-05 19:42"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\index-leaflet.backup.html",
+                                                         "bytes":  48316,
+                                                         "size":  "47,18 KB",
+                                                         "ageDays":  230,
+                                                         "modified":  "2025-12-21 11:56"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\index-gmaps.html",
+                                                         "bytes":  39965,
+                                                         "size":  "39,03 KB",
+                                                         "ageDays":  232,
+                                                         "modified":  "2025-12-19 15:56"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\518oFeBYbRL.png",
+                                                         "bytes":  38914,
+                                                         "size":  "38,00 KB",
+                                                         "ageDays":  2325,
+                                                         "modified":  "2020-03-26 18:49"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\index-leaflet.html",
+                                                         "bytes":  38616,
+                                                         "size":  "37,71 KB",
+                                                         "ageDays":  229,
+                                                         "modified":  "2025-12-22 01:22"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTA Online Macros.txt",
+                                                         "bytes":  33048,
+                                                         "size":  "32,27 KB",
+                                                         "ageDays":  1623,
+                                                         "modified":  "2022-02-26 19:38"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTA Stuff\\GTA Online Macros.txt",
+                                                         "bytes":  32227,
+                                                         "size":  "31,47 KB",
+                                                         "ageDays":  1624,
+                                                         "modified":  "2022-02-25 18:19"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTA Online  - Stream files\\transferir.png",
+                                                         "bytes":  29172,
+                                                         "size":  "28,49 KB",
+                                                         "ageDays":  2416,
+                                                         "modified":  "2019-12-26 22:25"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\app.js",
+                                                         "bytes":  25567,
+                                                         "size":  "24,97 KB",
+                                                         "ageDays":  137,
+                                                         "modified":  "2026-03-24 12:15"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gtaweb_data_real.json",
+                                                         "bytes":  25400,
+                                                         "size":  "24,80 KB",
+                                                         "ageDays":  230,
+                                                         "modified":  "2025-12-21 11:53"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\transferir.png",
+                                                         "bytes":  25011,
+                                                         "size":  "24,42 KB",
+                                                         "ageDays":  2269,
+                                                         "modified":  "2020-05-22 15:51"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\1_1_1.jpg",
+                                                         "bytes":  23949,
+                                                         "size":  "23,39 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:05"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\index-leaflet-old.html",
+                                                         "bytes":  22390,
+                                                         "size":  "21,87 KB",
+                                                         "ageDays":  232,
+                                                         "modified":  "2025-12-19 17:22"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\205.png",
+                                                         "bytes":  21389,
+                                                         "size":  "20,89 KB",
+                                                         "ageDays":  2383,
+                                                         "modified":  "2020-01-28 17:46"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gtav_markers_data.js",
+                                                         "bytes":  21161,
+                                                         "size":  "20,67 KB",
+                                                         "ageDays":  230,
+                                                         "modified":  "2025-12-21 00:41"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Apexscorpiologo.png",
+                                                         "bytes":  20908,
+                                                         "size":  "20,42 KB",
+                                                         "ageDays":  2508,
+                                                         "modified":  "2019-09-26 15:22"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\icon_preview_gallery.html",
+                                                         "bytes":  19998,
+                                                         "size":  "19,53 KB",
+                                                         "ageDays":  229,
+                                                         "modified":  "2025-12-22 01:23"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\2_0_2.jpg",
+                                                         "bytes":  19937,
+                                                         "size":  "19,47 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:04"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\subsciveAPbanner.png",
+                                                         "bytes":  19647,
+                                                         "size":  "19,19 KB",
+                                                         "ageDays":  2508,
+                                                         "modified":  "2019-09-26 15:47"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\1_0_1.jpg",
+                                                         "bytes":  19061,
+                                                         "size":  "18,61 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:05"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\0_0_0.jpg",
+                                                         "bytes":  18869,
+                                                         "size":  "18,43 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:05"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\1_0_0.jpg",
+                                                         "bytes":  17951,
+                                                         "size":  "17,53 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:05"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\1_1_0.jpg",
+                                                         "bytes":  17671,
+                                                         "size":  "17,26 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:05"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\gta icon.png",
+                                                         "bytes":  15576,
+                                                         "size":  "15,21 KB",
+                                                         "ageDays":  2219,
+                                                         "modified":  "2020-07-10 18:38"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\dmde-4-2-0-814-win64-gui\\dmde.ini",
+                                                         "bytes":  15006,
+                                                         "size":  "14,65 KB",
+                                                         "ageDays":  576,
+                                                         "modified":  "2025-01-09 15:58"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\GTApt Interactive Map\\gta-tiles\\Atlas\\2_0_1.jpg",
+                                                         "bytes":  13727,
+                                                         "size":  "13,41 KB",
+                                                         "ageDays":  4390,
+                                                         "modified":  "2014-08-01 17:04"
+                                                     },
+                                                     {
+                                                         "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp\\LPXGTAPT-20260808-145646\\prepared\\gta-stuff\\Regras_de_extrao_de_nomes_e_imagens.py",
+                                                         "bytes":  13673,
+                                                         "size":  "13,35 KB",
+                                                         "ageDays":  307,
+                                                         "modified":  "2025-10-05 10:26"
+                                                     }
+                                                 ]
+                           },
+    "knownCleanupLocations":  [
+                                  {
+                                      "path":  "C:\\Windows\\SoftwareDistribution\\Download",
+                                      "category":  "WINDOWS_UPDATE_DOWNLOAD_CACHE",
+                                      "recommendation":  "SAFE_VIA_WINDOWS_CLEANUP",
+                                      "files":  3,
+                                      "bytes":  1756448,
+                                      "size":  "1,68 MB",
+                                      "truncated":  false
+                                  },
+                                  {
+                                      "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache",
+                                      "category":  "SHADER_CACHE",
+                                      "recommendation":  "SAFE_REBUILDABLE",
+                                      "files":  24,
+                                      "bytes":  532704,
+                                      "size":  "520,22 KB",
+                                      "truncated":  false
+                                  },
+                                  {
+                                      "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache",
+                                      "category":  "NVIDIA_CACHE",
+                                      "recommendation":  "SAFE_REBUILDABLE",
+                                      "files":  5,
+                                      "bytes":  204800,
+                                      "size":  "200,00 KB",
+                                      "truncated":  false
+                                  }
+                              ],
+    "crashDumpLocations":  [
+
+                           ],
+    "safety":  "Read-only. No files were changed or deleted."
+}

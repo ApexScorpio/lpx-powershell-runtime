@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1742-DEEP-JUNK-AUDIT-018",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Aprofundar a análise de lixo no PC, sobretudo a pasta .gemini de grande dimensão, temporários antigos, caches do Windows e crash dumps, sem apagar nada.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T16:36:57.021Z",
+  "endedAt": "2026-08-08T16:37:10.681Z",
+  "elapsedMs": 13660,
+  "outputLength": 36990,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "377a93f7ab695a7d1da9eb486945bd34fe0e38ce5febf7a7b67e6cc96a016669",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1742-DEEP-JUNK-AUDIT-018.txt",
+  "createdAt": "2026-08-08T16:37:10.682Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
