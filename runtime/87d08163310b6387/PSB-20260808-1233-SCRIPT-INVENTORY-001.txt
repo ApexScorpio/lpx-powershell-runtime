@@ -1,0 +1,172 @@
+{
+    "protocol":  "LPX_SCRIPT_INVENTORY_V1",
+    "jobId":  "PSB-20260808-1233-SCRIPT-INVENTORY-001",
+    "mode":  "READ_ONLY",
+    "safety":  "Nothing was deleted, moved, renamed, edited, executed, installed, or modified.",
+    "elapsedSeconds":  52.1,
+    "scanRoots":  [
+                      "C:\\Users\\lopes\\Desktop",
+                      "C:\\Users\\lopes\\Documents",
+                      "C:\\Users\\lopes\\Downloads",
+                      "C:\\Users\\lopes\\OneDrive",
+                      "C:\\Users\\lopes\\.android",
+                      "C:\\Users\\lopes\\.antigravity",
+                      "C:\\Users\\lopes\\.antigravity-ide",
+                      "C:\\Users\\lopes\\.codeium",
+                      "C:\\Users\\lopes\\.config",
+                      "C:\\Users\\lopes\\.dbus-keyrings",
+                      "C:\\Users\\lopes\\.designer",
+                      "C:\\Users\\lopes\\.gemini",
+                      "C:\\Users\\lopes\\.idlerc",
+                      "C:\\Users\\lopes\\.ipython",
+                      "C:\\Users\\lopes\\.matplotlib",
+                      "C:\\Users\\lopes\\.ms-ad",
+                      "C:\\Users\\lopes\\.ollama",
+                      "C:\\Users\\lopes\\.redhat",
+                      "C:\\Users\\lopes\\.streamlit",
+                      "C:\\Users\\lopes\\.vscode",
+                      "C:\\Users\\lopes\\.wdm",
+                      "C:\\Users\\lopes\\122",
+                      "C:\\Users\\lopes\\ansel",
+                      "C:\\Users\\lopes\\Apple",
+                      "C:\\Users\\lopes\\Application Data",
+                      "C:\\Users\\lopes\\Cookies",
+                      "C:\\Users\\lopes\\Definições Locais",
+                      "C:\\Users\\lopes\\go",
+                      "C:\\Users\\lopes\\IntelGraphicsProfiles",
+                      "C:\\Users\\lopes\\Menu Iniciar",
+                      "C:\\Users\\lopes\\Modelos",
+                      "C:\\Users\\lopes\\NetHood",
+                      "C:\\Users\\lopes\\Os Meus Documentos",
+                      "C:\\Users\\lopes\\PrintHood",
+                      "C:\\Users\\lopes\\Recent",
+                      "C:\\Users\\lopes\\SendTo",
+                      "C:\\Users\\lopes\\Stable Diffusion"
+                  ],
+    "scriptExtensions":  [
+                             ".ps1",
+                             ".psm1",
+                             ".psd1",
+                             ".py",
+                             ".pyw",
+                             ".js",
+                             ".mjs",
+                             ".cjs",
+                             ".jsx",
+                             ".ts",
+                             ".tsx",
+                             ".bat",
+                             ".cmd",
+                             ".sh",
+                             ".bash",
+                             ".zsh",
+                             ".vbs",
+                             ".wsf",
+                             ".ahk",
+                             ".lua",
+                             ".rb",
+                             ".pl",
+                             ".php",
+                             ".go",
+                             ".rs"
+                         ],
+    "excludedDependencyDirectories":  [
+                                          "node_modules",
+                                          ".git",
+                                          ".venv",
+                                          "venv",
+                                          "env",
+                                          "__pycache__",
+                                          "site-packages",
+                                          "dist",
+                                          "build",
+                                          "target",
+                                          ".next",
+                                          ".cache",
+                                          ".tox",
+                                          ".pytest_cache",
+                                          ".mypy_cache",
+                                          ".ruff_cache",
+                                          "packages",
+                                          "vendor"
+                                      ],
+    "totalOwnOrProjectScripts":  3,
+    "projectCount":  1,
+    "languageSummary":  [
+                            {
+                                "extension":  ".py",
+                                "count":  3,
+                                "totalBytes":  136610,
+                                "totalSize":  "133,41 KB"
+                            }
+                        ],
+    "categorySummary":  [
+                            {
+                                "category":  "Loose script",
+                                "count":  3
+                            }
+                        ],
+    "projects":  [
+                     {
+                         "project":  "Loose scripts - User profile root",
+                         "root":  "C:\\Users\\lopes",
+                         "scriptCount":  3,
+                         "totalBytes":  136610,
+                         "totalSize":  "133,41 KB",
+                         "extensions":  [
+                                            {
+                                                "extension":  ".py",
+                                                "count":  3
+                                            }
+                                        ],
+                         "categories":  [
+                                            {
+                                                "category":  "Loose script",
+                                                "count":  3
+                                            }
+                                        ],
+                         "scripts":  [
+                                         {
+                                             "name":  "2GTApt.py",
+                                             "path":  "C:\\Users\\lopes\\2GTApt.py",
+                                             "extension":  ".py",
+                                             "bytes":  135298,
+                                             "size":  "132,13 KB",
+                                             "lastWrite":  "2026-03-13 16:31:08",
+                                             "project":  "Loose scripts - User profile root",
+                                             "projectRoot":  "C:\\Users\\lopes",
+                                             "category":  "Loose script",
+                                             "preview":  "import tkinter as tk | from tkinter import ttk | from tkinter import messagebox | from PIL import Image, ImageTk | import requests | from io import BytesIO | import traceback | import re"
+                                         },
+                                         {
+                                             "name":  "auto_reload.py",
+                                             "path":  "C:\\Users\\lopes\\auto_reload.py",
+                                             "extension":  ".py",
+                                             "bytes":  1302,
+                                             "size":  "1,27 KB",
+                                             "lastWrite":  "2025-02-16 20:39:50",
+                                             "project":  "Loose scripts - User profile root",
+                                             "projectRoot":  "C:\\Users\\lopes",
+                                             "category":  "Loose script",
+                                             "preview":  "import os | import sys | import time | from watchdog.observers import Observer | from watchdog.events import FileSystemEventHandler | import subprocess | class ReloadHandler(FileSystemEventHandler): | def __init__(self, script):"
+                                         },
+                                         {
+                                             "name":  "tempCodeRunnerFile.py",
+                                             "path":  "C:\\Users\\lopes\\tempCodeRunnerFile.py",
+                                             "extension":  ".py",
+                                             "bytes":  10,
+                                             "size":  "10 B",
+                                             "lastWrite":  "2025-02-09 16:38:21",
+                                             "project":  "Loose scripts - User profile root",
+                                             "projectRoot":  "C:\\Users\\lopes",
+                                             "category":  "Loose script",
+                                             "preview":  "Nome do Ve"
+                                         }
+                                     ]
+                     }
+                 ],
+    "dependencyScriptExamples":  [
+
+                                 ],
+    "note":  "Dependency/vendor folders such as node_modules, .venv, site-packages, .git, build and dist were excluded from the main inventory so the result focuses on scripts/projects that appear to belong to the user. AppData and media folders were also excluded from the main scan."
+}

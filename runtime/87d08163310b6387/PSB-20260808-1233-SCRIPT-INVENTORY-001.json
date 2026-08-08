@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1233-SCRIPT-INVENTORY-001",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Inventariar em modo só de leitura os scripts existentes no perfil do utilizador, identificar os respetivos projetos e agrupar os ficheiros por projeto sem alterar nada.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T11:34:00.875Z",
+  "endedAt": "2026-08-08T11:34:53.706Z",
+  "elapsedMs": 52831,
+  "outputLength": 9384,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "1a6ece4ef96685f909a7d1fb570bed866117d5b33aa9c1cfa3071035da9b7373",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1233-SCRIPT-INVENTORY-001.txt",
+  "createdAt": "2026-08-08T11:34:53.707Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
