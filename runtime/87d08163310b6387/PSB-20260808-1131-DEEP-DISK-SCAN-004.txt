@@ -1,0 +1,2268 @@
+{
+    "protocol":  "LPX_DEEP_DISK_SCAN_V3",
+    "jobId":  "PSB-20260808-1131-DEEP-DISK-SCAN-004",
+    "mode":  "READ_ONLY",
+    "safety":  "Nothing was deleted, moved, renamed, compressed, uninstalled, disabled, or modified.",
+    "startedAt":  "2026-08-08T11:29:42.0677314+01:00",
+    "elapsedSeconds":  93.3,
+    "drive":  {
+                  "totalBytes":  511162970112,
+                  "total":  "476,06 GB",
+                  "freeBytes":  30938279936,
+                  "free":  "28,81 GB",
+                  "usedBytes":  480224690176,
+                  "used":  "447,24 GB"
+              },
+    "appDataLocalTop":  [
+                            {
+                                "name":  "Programs",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Programs",
+                                "bytes":  5233610977,
+                                "size":  "4,87 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-06-02 12:05:02"
+                            },
+                            {
+                                "name":  "Google",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Google",
+                                "bytes":  4292778988,
+                                "size":  "4,00 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-09-14 11:22:20"
+                            },
+                            {
+                                "name":  "Microsoft",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft",
+                                "bytes":  3396738424,
+                                "size":  "3,16 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-07-14 11:00:06"
+                            },
+                            {
+                                "name":  "Packages",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Packages",
+                                "bytes":  3187674048,
+                                "size":  "2,97 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-07-19 17:40:57"
+                            },
+                            {
+                                "name":  "CrashDumps",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\CrashDumps",
+                                "bytes":  2010461792,
+                                "size":  "1,87 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-07-30 20:02:54"
+                            },
+                            {
+                                "name":  "NVIDIA",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA",
+                                "bytes":  1480847954,
+                                "size":  "1,38 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-08-02 16:30:04"
+                            },
+                            {
+                                "name":  "ms-playwright",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\ms-playwright",
+                                "bytes":  1258817968,
+                                "size":  "1,17 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-03-17 11:54:53"
+                            },
+                            {
+                                "name":  "BraveSoftware",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\BraveSoftware",
+                                "bytes":  1250897278,
+                                "size":  "1,16 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-04-15 09:43:37"
+                            },
+                            {
+                                "name":  "npm-cache",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache",
+                                "bytes":  1083071061,
+                                "size":  "1,01 GB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-03-03 14:35:28"
+                            },
+                            {
+                                "name":  "TeamViewer",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\TeamViewer",
+                                "bytes":  985088260,
+                                "size":  "939,45 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-12-20 12:40:07"
+                            },
+                            {
+                                "name":  "Epic Games",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Epic Games",
+                                "bytes":  773798350,
+                                "size":  "737,95 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-06-03 20:07:20"
+                            },
+                            {
+                                "name":  "multiviewer",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\multiviewer",
+                                "bytes":  599947916,
+                                "size":  "572,15 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-06-28 14:29:13"
+                            },
+                            {
+                                "name":  "Steam",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Steam",
+                                "bytes":  599617497,
+                                "size":  "571,84 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-06-27 18:38:49"
+                            },
+                            {
+                                "name":  "Discord",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Discord",
+                                "bytes":  560731440,
+                                "size":  "534,76 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-07-30 20:07:00"
+                            },
+                            {
+                                "name":  "Temp",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                                "bytes":  480802089,
+                                "size":  "458,53 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-08-08 11:29:41"
+                            },
+                            {
+                                "name":  "avodocs-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\avodocs-updater",
+                                "bytes":  432880912,
+                                "size":  "412,83 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-06-05 19:40:58"
+                            },
+                            {
+                                "name":  "go-build",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\go-build",
+                                "bytes":  419067422,
+                                "size":  "399,65 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-11-30 15:05:27"
+                            },
+                            {
+                                "name":  "NVIDIA Corporation",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA Corporation",
+                                "bytes":  380770531,
+                                "size":  "363,13 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-08-02 14:15:09"
+                            },
+                            {
+                                "name":  "slobs-client-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\slobs-client-updater",
+                                "bytes":  247528384,
+                                "size":  "236,06 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-06-12 10:37:20"
+                            },
+                            {
+                                "name":  "streamingassistant-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\streamingassistant-updater",
+                                "bytes":  226021824,
+                                "size":  "215,55 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-11-25 10:43:33"
+                            },
+                            {
+                                "name":  "EpicGamesLauncher",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\EpicGamesLauncher",
+                                "bytes":  217031410,
+                                "size":  "206,98 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-06-03 21:54:32"
+                            },
+                            {
+                                "name":  "antigravity-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\antigravity-updater",
+                                "bytes":  214124081,
+                                "size":  "204,20 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-05-24 15:05:37"
+                            },
+                            {
+                                "name":  "ms-playwright-go",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\ms-playwright-go",
+                                "bytes":  195346997,
+                                "size":  "186,30 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-04-24 11:21:25"
+                            },
+                            {
+                                "name":  "Lenovo",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Lenovo",
+                                "bytes":  145824129,
+                                "size":  "139,07 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-12-23 17:08:06"
+                            },
+                            {
+                                "name":  "icat-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\icat-updater",
+                                "bytes":  114170216,
+                                "size":  "108,88 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-03-14 16:00:51"
+                            },
+                            {
+                                "name":  "unmineable-miner-mfi-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\unmineable-miner-mfi-updater",
+                                "bytes":  111205648,
+                                "size":  "106,05 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-06-05 19:24:44"
+                            },
+                            {
+                                "name":  "plexamp-updater",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\plexamp-updater",
+                                "bytes":  80659840,
+                                "size":  "76,92 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-06-02 12:05:06"
+                            },
+                            {
+                                "name":  "Smart Code ltd",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Smart Code ltd",
+                                "bytes":  63869076,
+                                "size":  "60,91 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-06-13 10:57:00"
+                            },
+                            {
+                                "name":  "Elgato",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Elgato",
+                                "bytes":  48084788,
+                                "size":  "45,86 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-05-17 14:37:14"
+                            },
+                            {
+                                "name":  "pip",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\pip",
+                                "bytes":  45608563,
+                                "size":  "43,50 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-01-26 14:43:17"
+                            },
+                            {
+                                "name":  "ConnectedDevicesPlatform",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\ConnectedDevicesPlatform",
+                                "bytes":  40194522,
+                                "size":  "38,33 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-12-11 19:13:18"
+                            },
+                            {
+                                "name":  "Syncthing",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Syncthing",
+                                "bytes":  39259726,
+                                "size":  "37,44 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-12-29 23:39:35"
+                            },
+                            {
+                                "name":  "Comms",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Comms",
+                                "bytes":  36072069,
+                                "size":  "34,40 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-07-10 15:30:13"
+                            },
+                            {
+                                "name":  "Package Cache",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Package Cache",
+                                "bytes":  29047320,
+                                "size":  "27,70 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-12-16 15:20:52"
+                            },
+                            {
+                                "name":  "Jedi",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Jedi",
+                                "bytes":  28370573,
+                                "size":  "27,06 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-01-14 12:30:27"
+                            },
+                            {
+                                "name":  "CEF",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\CEF",
+                                "bytes":  21635662,
+                                "size":  "20,63 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-06-05 19:23:22"
+                            },
+                            {
+                                "name":  "BattlEye",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\BattlEye",
+                                "bytes":  20352741,
+                                "size":  "19,41 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-06-05 13:32:49"
+                            },
+                            {
+                                "name":  "Plexamp",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Plexamp",
+                                "bytes":  19459258,
+                                "size":  "18,56 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-06-02 12:05:10"
+                            },
+                            {
+                                "name":  "Proton",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Proton",
+                                "bytes":  18886094,
+                                "size":  "18,01 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2025-06-05 17:20:33"
+                            },
+                            {
+                                "name":  "PdfGear",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\PdfGear",
+                                "bytes":  16495019,
+                                "size":  "15,73 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-09-25 15:54:56"
+                            },
+                            {
+                                "name":  "drmingw",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\drmingw",
+                                "bytes":  12152832,
+                                "size":  "11,59 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2024-01-13 13:01:50"
+                            },
+                            {
+                                "name":  "Publishers",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Publishers",
+                                "bytes":  11018523,
+                                "size":  "10,51 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-05-31 15:47:56"
+                            },
+                            {
+                                "name":  "LGHUB",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\LGHUB",
+                                "bytes":  8745488,
+                                "size":  "8,34 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-04-15 22:44:50"
+                            },
+                            {
+                                "name":  "Intel",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Intel",
+                                "bytes":  6182485,
+                                "size":  "5,90 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2026-06-05 20:05:14"
+                            },
+                            {
+                                "name":  "Adobe",
+                                "path":  "C:\\Users\\lopes\\AppData\\Local\\Adobe",
+                                "bytes":  5178637,
+                                "size":  "4,94 MB",
+                                "timedOut":  false,
+                                "lastWrite":  "2023-12-03 23:00:37"
+                            }
+                        ],
+    "appDataRoamingTop":  [
+                              {
+                                  "name":  "streamlabs-avatar",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar",
+                                  "bytes":  10893403838,
+                                  "size":  "10,15 GB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-10-22 21:31:45"
+                              },
+                              {
+                                  "name":  "Avolites",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites",
+                                  "bytes":  4977871144,
+                                  "size":  "4,64 GB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-12-08 11:09:06"
+                              },
+                              {
+                                  "name":  "stremio",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\stremio",
+                                  "bytes":  4689696143,
+                                  "size":  "4,37 GB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-06-13 10:57:06"
+                              },
+                              {
+                                  "name":  "BonChat",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\BonChat",
+                                  "bytes":  1933574739,
+                                  "size":  "1,80 GB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-02 11:37:32"
+                              },
+                              {
+                                  "name":  "NVIDIA",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\NVIDIA",
+                                  "bytes":  1074281680,
+                                  "size":  "1,00 GB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-06-06 18:47:42"
+                              },
+                              {
+                                  "name":  "Elgato",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Elgato",
+                                  "bytes":  951748125,
+                                  "size":  "907,66 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-06-08 18:20:10"
+                              },
+                              {
+                                  "name":  "slobs-client",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\slobs-client",
+                                  "bytes":  888049574,
+                                  "size":  "846,91 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-30 20:26:44"
+                              },
+                              {
+                                  "name":  "MultiViewer",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\MultiViewer",
+                                  "bytes":  393374544,
+                                  "size":  "375,15 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-03 17:20:07"
+                              },
+                              {
+                                  "name":  "discord",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord",
+                                  "bytes":  365221609,
+                                  "size":  "348,30 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-30 20:26:46"
+                              },
+                              {
+                                  "name":  "Antigravity",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity",
+                                  "bytes":  329489119,
+                                  "size":  "314,23 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-11 07:14:10"
+                              },
+                              {
+                                  "name":  "streamlabs-vision",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-vision",
+                                  "bytes":  313944297,
+                                  "size":  "299,40 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-14 09:51:02"
+                              },
+                              {
+                                  "name":  "streamlabs-highlighter",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-highlighter",
+                                  "bytes":  293758205,
+                                  "size":  "280,15 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-10-22 21:02:20"
+                              },
+                              {
+                                  "name":  "Microsoft",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Microsoft",
+                                  "bytes":  175425605,
+                                  "size":  "167,30 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-06-18 09:00:15"
+                              },
+                              {
+                                  "name":  "FSL",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\FSL",
+                                  "bytes":  170391669,
+                                  "size":  "162,50 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-01-18 22:01:21"
+                              },
+                              {
+                                  "name":  "Antigravity IDE",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Antigravity IDE",
+                                  "bytes":  115469456,
+                                  "size":  "110,12 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-19 18:56:03"
+                              },
+                              {
+                                  "name":  "ollama app.exe",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\ollama app.exe",
+                                  "bytes":  85533321,
+                                  "size":  "81,57 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-12-04 20:29:29"
+                              },
+                              {
+                                  "name":  "Python",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Python",
+                                  "bytes":  82759589,
+                                  "size":  "78,93 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-02-09 10:03:48"
+                              },
+                              {
+                                  "name":  "YimMenu",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\YimMenu",
+                                  "bytes":  31118996,
+                                  "size":  "29,68 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-11-08 14:45:10"
+                              },
+                              {
+                                  "name":  "utorrent",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\utorrent",
+                                  "bytes":  30700034,
+                                  "size":  "29,28 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-10-04 09:20:39"
+                              },
+                              {
+                                  "name":  "Control_Ow",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Control_Ow",
+                                  "bytes":  30123967,
+                                  "size":  "28,73 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-11-05 11:09:35"
+                              },
+                              {
+                                  "name":  "Avolites Manual",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites Manual",
+                                  "bytes":  29997879,
+                                  "size":  "28,61 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-25 12:50:37"
+                              },
+                              {
+                                  "name":  "G HUB",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\G HUB",
+                                  "bytes":  29535920,
+                                  "size":  "28,17 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-04-16 14:37:07"
+                              },
+                              {
+                                  "name":  "undetected_chromedriver",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\undetected_chromedriver",
+                                  "bytes":  17465344,
+                                  "size":  "16,66 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-12-28 14:02:10"
+                              },
+                              {
+                                  "name":  "PICO Connect",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\PICO Connect",
+                                  "bytes":  16659787,
+                                  "size":  "15,89 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-08-05 19:57:36"
+                              },
+                              {
+                                  "name":  "Stand",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Stand",
+                                  "bytes":  16544523,
+                                  "size":  "15,78 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-10-25 13:43:07"
+                              },
+                              {
+                                  "name":  "LetsView",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\LetsView",
+                                  "bytes":  15169756,
+                                  "size":  "14,47 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2024-02-22 12:15:34"
+                              },
+                              {
+                                  "name":  "Plexamp",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Plexamp",
+                                  "bytes":  12713511,
+                                  "size":  "12,12 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-06-28 09:01:30"
+                              },
+                              {
+                                  "name":  "AMD",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\AMD",
+                                  "bytes":  10991616,
+                                  "size":  "10,48 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-07-10 10:04:04"
+                              },
+                              {
+                                  "name":  "nvidia-broadcast",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\nvidia-broadcast",
+                                  "bytes":  8985111,
+                                  "size":  "8,57 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-22 12:25:41"
+                              },
+                              {
+                                  "name":  "BigBaseV2",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\BigBaseV2",
+                                  "bytes":  8730334,
+                                  "size":  "8,33 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-06-28 10:48:41"
+                              },
+                              {
+                                  "name":  "unmineable-miner-mfi",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\unmineable-miner-mfi",
+                                  "bytes":  7119765,
+                                  "size":  "6,79 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2024-03-07 19:09:37"
+                              },
+                              {
+                                  "name":  "icat",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\icat",
+                                  "bytes":  6433774,
+                                  "size":  "6,14 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2024-04-05 10:03:04"
+                              },
+                              {
+                                  "name":  "IObit",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\IObit",
+                                  "bytes":  6162772,
+                                  "size":  "5,88 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-05-28 10:31:14"
+                              },
+                              {
+                                  "name":  "Adobe",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Adobe",
+                                  "bytes":  3677937,
+                                  "size":  "3,51 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2024-01-13 17:25:23"
+                              },
+                              {
+                                  "name":  "GoPro",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\GoPro",
+                                  "bytes":  3232236,
+                                  "size":  "3,08 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-07-14 11:00:15"
+                              },
+                              {
+                                  "name":  "simple-recovery",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\simple-recovery",
+                                  "bytes":  1406750,
+                                  "size":  "1,34 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-10-24 21:55:19"
+                              },
+                              {
+                                  "name":  "Notepad++",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Notepad++",
+                                  "bytes":  1196696,
+                                  "size":  "1,14 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-12-26 12:18:03"
+                              },
+                              {
+                                  "name":  "CyberLink",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\CyberLink",
+                                  "bytes":  1142129,
+                                  "size":  "1,09 MB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-12-02 17:43:11"
+                              },
+                              {
+                                  "name":  "LGHUB_BKP",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\LGHUB_BKP",
+                                  "bytes":  739952,
+                                  "size":  "722,61 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-04-06 15:42:35"
+                              },
+                              {
+                                  "name":  "GIMP",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\GIMP",
+                                  "bytes":  472254,
+                                  "size":  "461,19 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-09-04 12:33:47"
+                              },
+                              {
+                                  "name":  "AnyDesk",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\AnyDesk",
+                                  "bytes":  386623,
+                                  "size":  "377,56 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2026-01-08 18:27:50"
+                              },
+                              {
+                                  "name":  "YimMenuV2",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\YimMenuV2",
+                                  "bytes":  373937,
+                                  "size":  "365,17 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2025-07-23 11:32:08"
+                              },
+                              {
+                                  "name":  "Apple Computer",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Apple Computer",
+                                  "bytes":  130455,
+                                  "size":  "127,40 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2024-02-22 11:42:59"
+                              },
+                              {
+                                  "name":  "Valve Corporation",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Valve Corporation",
+                                  "bytes":  120889,
+                                  "size":  "118,06 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2024-03-06 21:42:31"
+                              },
+                              {
+                                  "name":  "Tenorshare",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Tenorshare",
+                                  "bytes":  105106,
+                                  "size":  "102,64 KB",
+                                  "timedOut":  false,
+                                  "lastWrite":  "2023-10-31 21:47:31"
+                              }
+                          ],
+    "documentsTop":  [
+                         {
+                             "name":  "Titan",
+                             "path":  "C:\\Users\\lopes\\Documents\\Titan",
+                             "bytes":  15109748331,
+                             "size":  "14,07 GB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-12-24 09:08:57"
+                         },
+                         {
+                             "name":  "GTA Stuff",
+                             "path":  "C:\\Users\\lopes\\Documents\\GTA Stuff",
+                             "bytes":  5280856180,
+                             "size":  "4,92 GB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-05-18 10:12:55"
+                         },
+                         {
+                             "name":  "Rockstar Games",
+                             "path":  "C:\\Users\\lopes\\Documents\\Rockstar Games",
+                             "bytes":  2887502790,
+                             "size":  "2,69 GB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-05-24 23:21:28"
+                         },
+                         {
+                             "name":  "OneDrive MACP",
+                             "path":  "C:\\Users\\lopes\\Documents\\OneDrive MACP",
+                             "bytes":  1479147116,
+                             "size":  "1,38 GB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-05-09 19:10:16"
+                         },
+                         {
+                             "name":  "Scipts",
+                             "path":  "C:\\Users\\lopes\\Documents\\Scipts",
+                             "bytes":  741553339,
+                             "size":  "707,20 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-02-07 09:14:04"
+                         },
+                         {
+                             "name":  "Formações",
+                             "path":  "C:\\Users\\lopes\\Documents\\Formações",
+                             "bytes":  519385929,
+                             "size":  "495,33 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-07-16 21:10:14"
+                         },
+                         {
+                             "name":  "CVP",
+                             "path":  "C:\\Users\\lopes\\Documents\\CVP",
+                             "bytes":  315973740,
+                             "size":  "301,34 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-05-07 09:35:17"
+                         },
+                         {
+                             "name":  "Visual Productions",
+                             "path":  "C:\\Users\\lopes\\Documents\\Visual Productions",
+                             "bytes":  189929965,
+                             "size":  "181,13 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-02-22 18:45:52"
+                         },
+                         {
+                             "name":  "Stream Stuff",
+                             "path":  "C:\\Users\\lopes\\Documents\\Stream Stuff",
+                             "bytes":  134873493,
+                             "size":  "128,63 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-10-14 03:03:44"
+                         },
+                         {
+                             "name":  "Rockstar Games_old",
+                             "path":  "C:\\Users\\lopes\\Documents\\Rockstar Games_old",
+                             "bytes":  108209411,
+                             "size":  "103,20 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-06-03 20:06:38"
+                         },
+                         {
+                             "name":  "pytonapps",
+                             "path":  "C:\\Users\\lopes\\Documents\\pytonapps",
+                             "bytes":  80907556,
+                             "size":  "77,16 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2024-02-03 21:56:25"
+                         },
+                         {
+                             "name":  "Avolites",
+                             "path":  "C:\\Users\\lopes\\Documents\\Avolites",
+                             "bytes":  58142253,
+                             "size":  "55,45 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-07-25 12:03:28"
+                         },
+                         {
+                             "name":  "Elation",
+                             "path":  "C:\\Users\\lopes\\Documents\\Elation",
+                             "bytes":  43332827,
+                             "size":  "41,33 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-12-28 20:15:50"
+                         },
+                         {
+                             "name":  "midi-fader-master",
+                             "path":  "C:\\Users\\lopes\\Documents\\midi-fader-master",
+                             "bytes":  36800270,
+                             "size":  "35,10 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 21:54:47"
+                         },
+                         {
+                             "name":  "Apex",
+                             "path":  "C:\\Users\\lopes\\Documents\\Apex",
+                             "bytes":  31741523,
+                             "size":  "30,27 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-07-02 09:11:31"
+                         },
+                         {
+                             "name":  "WYSIWYG Files",
+                             "path":  "C:\\Users\\lopes\\Documents\\WYSIWYG Files",
+                             "bytes":  29886097,
+                             "size":  "28,50 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2024-02-11 14:54:55"
+                         },
+                         {
+                             "name":  "Programaçao de Luzes (Outros Softwares)",
+                             "path":  "C:\\Users\\lopes\\Documents\\Programaçao de Luzes (Outros Softwares)",
+                             "bytes":  22038048,
+                             "size":  "21,02 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-12-02 22:49:36"
+                         },
+                         {
+                             "name":  "VirtualDJ",
+                             "path":  "C:\\Users\\lopes\\Documents\\VirtualDJ",
+                             "bytes":  17321067,
+                             "size":  "16,52 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-12-02 22:47:29"
+                         },
+                         {
+                             "name":  "Documentos Credito",
+                             "path":  "C:\\Users\\lopes\\Documents\\Documentos Credito",
+                             "bytes":  12213006,
+                             "size":  "11,65 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-06-10 09:34:22"
+                         },
+                         {
+                             "name":  "Downloaded Installations",
+                             "path":  "C:\\Users\\lopes\\Documents\\Downloaded Installations",
+                             "bytes":  8723456,
+                             "size":  "8,32 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2024-01-07 17:59:30"
+                         },
+                         {
+                             "name":  "skywalker saga",
+                             "path":  "C:\\Users\\lopes\\Documents\\skywalker saga",
+                             "bytes":  5191220,
+                             "size":  "4,95 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 21:55:01"
+                         },
+                         {
+                             "name":  "GTApt Gestor BBcode",
+                             "path":  "C:\\Users\\lopes\\Documents\\GTApt Gestor BBcode",
+                             "bytes":  2046368,
+                             "size":  "1,95 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-03-13 19:39:16"
+                         },
+                         {
+                             "name":  "Certificados",
+                             "path":  "C:\\Users\\lopes\\Documents\\Certificados",
+                             "bytes":  1883843,
+                             "size":  "1,80 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2024-03-19 19:11:39"
+                         },
+                         {
+                             "name":  "Midi SPlit",
+                             "path":  "C:\\Users\\lopes\\Documents\\Midi SPlit",
+                             "bytes":  1500982,
+                             "size":  "1,43 MB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-06-05 20:42:26"
+                         },
+                         {
+                             "name":  "Gravações de Som",
+                             "path":  "C:\\Users\\lopes\\Documents\\Gravações de Som",
+                             "bytes":  333368,
+                             "size":  "325,55 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 21:54:26"
+                         },
+                         {
+                             "name":  "As Minhas Formas",
+                             "path":  "C:\\Users\\lopes\\Documents\\As Minhas Formas",
+                             "bytes":  30154,
+                             "size":  "29,45 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2024-04-15 15:09:57"
+                         },
+                         {
+                             "name":  "My Games",
+                             "path":  "C:\\Users\\lopes\\Documents\\My Games",
+                             "bytes":  20028,
+                             "size":  "19,56 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2025-04-06 11:07:15"
+                         },
+                         {
+                             "name":  "Blocos de Notas do OneNote",
+                             "path":  "C:\\Users\\lopes\\Documents\\Blocos de Notas do OneNote",
+                             "bytes":  11352,
+                             "size":  "11,09 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-12-02 21:51:03"
+                         },
+                         {
+                             "name":  "LPX-Recovery",
+                             "path":  "C:\\Users\\lopes\\Documents\\LPX-Recovery",
+                             "bytes":  3806,
+                             "size":  "3,72 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2026-08-08 10:36:40"
+                         },
+                         {
+                             "name":  "Trevliga Spel",
+                             "path":  "C:\\Users\\lopes\\Documents\\Trevliga Spel",
+                             "bytes":  2053,
+                             "size":  "2,00 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-12-02 22:10:02"
+                         },
+                         {
+                             "name":  "Documentos PDF",
+                             "path":  "C:\\Users\\lopes\\Documents\\Documentos PDF",
+                             "bytes":  2026,
+                             "size":  "1,98 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 21:54:26"
+                         },
+                         {
+                             "name":  "As Minhas Imagens",
+                             "path":  "C:\\Users\\lopes\\Documents\\As Minhas Imagens",
+                             "bytes":  2026,
+                             "size":  "1,98 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 19:11:47"
+                         },
+                         {
+                             "name":  "A Minha Música",
+                             "path":  "C:\\Users\\lopes\\Documents\\A Minha Música",
+                             "bytes":  2026,
+                             "size":  "1,98 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 19:11:47"
+                         },
+                         {
+                             "name":  "Os Meus Vídeos",
+                             "path":  "C:\\Users\\lopes\\Documents\\Os Meus Vídeos",
+                             "bytes":  2026,
+                             "size":  "1,98 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-06-05 19:11:47"
+                         },
+                         {
+                             "name":  "Modelos Personalizados do Office",
+                             "path":  "C:\\Users\\lopes\\Documents\\Modelos Personalizados do Office",
+                             "bytes":  2026,
+                             "size":  "1,98 KB",
+                             "timedOut":  false,
+                             "lastWrite":  "2023-12-13 20:47:27"
+                         }
+                     ],
+    "desktopTop":  [
+                       {
+                           "name":  "mining",
+                           "path":  "C:\\Users\\lopes\\Desktop\\mining",
+                           "bytes":  5289218378,
+                           "size":  "4,93 GB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-12-23 16:57:16"
+                       },
+                       {
+                           "name":  "KINGSTON",
+                           "path":  "C:\\Users\\lopes\\Desktop\\KINGSTON",
+                           "bytes":  1386193172,
+                           "size":  "1,29 GB",
+                           "timedOut":  false,
+                           "lastWrite":  "2024-05-16 12:02:47"
+                       },
+                       {
+                           "name":  "LPX Crypo Bot",
+                           "path":  "C:\\Users\\lopes\\Desktop\\LPX Crypo Bot",
+                           "bytes":  978124435,
+                           "size":  "932,81 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-12-12 11:52:58"
+                       },
+                       {
+                           "name":  "CVP_Vistorias",
+                           "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias",
+                           "bytes":  354104759,
+                           "size":  "337,70 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2026-07-12 22:21:37"
+                       },
+                       {
+                           "name":  "YimMenu",
+                           "path":  "C:\\Users\\lopes\\Desktop\\YimMenu",
+                           "bytes":  317383706,
+                           "size":  "302,68 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2026-05-27 00:12:00"
+                       },
+                       {
+                           "name":  "GTA1-MAX",
+                           "path":  "C:\\Users\\lopes\\Desktop\\GTA1-MAX",
+                           "bytes":  313824650,
+                           "size":  "299,29 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2023-12-02 22:48:19"
+                       },
+                       {
+                           "name":  "node_modules",
+                           "path":  "C:\\Users\\lopes\\Desktop\\node_modules",
+                           "bytes":  176491339,
+                           "size":  "168,32 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2026-06-06 09:48:47"
+                       },
+                       {
+                           "name":  "Software",
+                           "path":  "C:\\Users\\lopes\\Desktop\\Software",
+                           "bytes":  138052207,
+                           "size":  "131,66 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-12-23 16:57:16"
+                       },
+                       {
+                           "name":  "Source Slideshow Halloween",
+                           "path":  "C:\\Users\\lopes\\Desktop\\Source Slideshow Halloween",
+                           "bytes":  133967178,
+                           "size":  "127,76 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-10-14 03:03:18"
+                       },
+                       {
+                           "name":  "Backups",
+                           "path":  "C:\\Users\\lopes\\Desktop\\Backups",
+                           "bytes":  61781222,
+                           "size":  "58,92 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2026-06-06 19:27:51"
+                       },
+                       {
+                           "name":  "z370",
+                           "path":  "C:\\Users\\lopes\\Desktop\\z370",
+                           "bytes":  42946002,
+                           "size":  "40,96 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-12-23 16:57:16"
+                       },
+                       {
+                           "name":  "GTA Ui",
+                           "path":  "C:\\Users\\lopes\\Desktop\\GTA Ui",
+                           "bytes":  31890251,
+                           "size":  "30,41 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2026-01-30 12:09:04"
+                       },
+                       {
+                           "name":  "Aliexpress",
+                           "path":  "C:\\Users\\lopes\\Desktop\\Aliexpress",
+                           "bytes":  6540972,
+                           "size":  "6,24 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2024-06-28 15:27:55"
+                       },
+                       {
+                           "name":  "GTA Imagens",
+                           "path":  "C:\\Users\\lopes\\Desktop\\GTA Imagens",
+                           "bytes":  3273518,
+                           "size":  "3,12 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-12-24 13:52:44"
+                       },
+                       {
+                           "name":  "Fotos",
+                           "path":  "C:\\Users\\lopes\\Desktop\\Fotos",
+                           "bytes":  2066248,
+                           "size":  "1,97 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2023-12-02 22:50:14"
+                       },
+                       {
+                           "name":  "CVP_Vistorias_Recovered",
+                           "path":  "C:\\Users\\lopes\\Desktop\\CVP_Vistorias_Recovered",
+                           "bytes":  1326054,
+                           "size":  "1,26 MB",
+                           "timedOut":  false,
+                           "lastWrite":  "2026-06-07 19:14:38"
+                       },
+                       {
+                           "name":  "LPX Software",
+                           "path":  "C:\\Users\\lopes\\Desktop\\LPX Software",
+                           "bytes":  6994,
+                           "size":  "6,83 KB",
+                           "timedOut":  false,
+                           "lastWrite":  "2025-12-08 16:14:48"
+                       }
+                   ],
+    "largeFiles":  {
+                       "appData":  [
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\stremio\\stremio-server\\stremio-cache\\a10f48907c3ec250c53befd3dd436e4e04eeb1f0\\0",
+                                           "bytes":  4689676472,
+                                           "size":  "4,37 GB",
+                                           "extension":  "",
+                                           "lastWrite":  "2026-07-02 10:23:37"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Content\\Paks\\StreamlabsAIAvatar-Windows.ucas",
+                                           "bytes":  3788680496,
+                                           "size":  "3,53 GB",
+                                           "extension":  ".ucas",
+                                           "lastWrite":  "2025-10-22 21:21:27"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Plugins\\NV_ACE_Reference\\ThirdParty\\Nvigi\\Models\\nvaim.plugin.gpt.ggml\\{8E31808B-C182-4016-9ED8-64804FF5B40D}\\nemotron-4-minitron-1-4b-instruct-dpo2_q4_0.gguf",
+                                           "bytes":  2567624064,
+                                           "size":  "2,39 GB",
+                                           "extension":  ".gguf",
+                                           "lastWrite":  "2025-10-22 21:31:13"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Local\\CrashDumps\\Titan.exe.34444.dmp",
+                                           "bytes":  1715227312,
+                                           "size":  "1,60 GB",
+                                           "extension":  ".dmp",
+                                           "lastWrite":  "2026-07-30 20:03:10"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Plugins\\NvAudio2FaceJames\\ThirdParty\\Nvigi\\Models\\nvaim.plugin.a2e.trt\\{E5E4043F-5BC9-4175-B510-A563A5BFB035}\\a2e_network.trt",
+                                           "bytes":  1284446484,
+                                           "size":  "1,20 GB",
+                                           "extension":  ".trt",
+                                           "lastWrite":  "2025-10-22 21:23:32"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Plugins\\NV_ACE_Reference\\ThirdParty\\Nvigi\\Binaries\\Win64\\cublasLt64_12.dll",
+                                           "bytes":  473551360,
+                                           "size":  "451,61 MB",
+                                           "extension":  ".dll",
+                                           "lastWrite":  "2025-10-22 21:26:35"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Local\\avodocs-updater\\installer.exe",
+                                           "bytes":  432880912,
+                                           "size":  "412,83 MB",
+                                           "extension":  ".exe",
+                                           "lastWrite":  "2026-06-18 13:57:42"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Plugins\\NV_ACE_Reference\\ThirdParty\\Nvigi\\Binaries\\Win64\\nvinfer_10.dll",
+                                           "bytes":  431875072,
+                                           "size":  "411,87 MB",
+                                           "extension":  ".dll",
+                                           "lastWrite":  "2025-10-22 21:27:30"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Binaries\\Win64\\StreamlabsAIAvatar.pdb",
+                                           "bytes":  408064000,
+                                           "size":  "389,16 MB",
+                                           "extension":  ".pdb",
+                                           "lastWrite":  "2025-10-22 21:16:11"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Plugins\\NvAudio2FaceJames\\ThirdParty\\Nvigi\\Models\\nvaim.plugin.a2f.trt\\{7F8DCBB0-3CD4-402C-AC9E-D4954B21C270}\\data\\network.trt",
+                                           "bytes":  401830164,
+                                           "size":  "383,22 MB",
+                                           "extension":  ".trt",
+                                           "lastWrite":  "2025-10-22 21:25:45"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\19.2.104.5\\ThumbnailLibrary.xml",
+                                           "bytes":  398277518,
+                                           "size":  "379,83 MB",
+                                           "extension":  ".xml",
+                                           "lastWrite":  "2026-07-25 21:49:06"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Local\\Packages\\microsoft.windowscommunicationsapps_8wekyb3d8bbwe\\LocalState\\HxStore.hxd",
+                                           "bytes":  377487360,
+                                           "size":  "360,00 MB",
+                                           "extension":  ".hxd",
+                                           "lastWrite":  "2024-08-25 11:50:34"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\19.0.337.5\\ThumbnailLibrary.xml",
+                                           "bytes":  357984488,
+                                           "size":  "341,40 MB",
+                                           "extension":  ".xml",
+                                           "lastWrite":  "2026-06-18 12:10:34"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar\\StreamlabsAIAvatar\\Binaries\\Win64\\StreamlabsAIAvatar.exe",
+                                           "bytes":  341938176,
+                                           "size":  "326,10 MB",
+                                           "extension":  ".exe",
+                                           "lastWrite":  "2025-10-22 21:15:32"
+                                       },
+                                       {
+                                           "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Avolites\\Titan\\18.0.313.5\\ThumbnailLibrary.xml",
+                                           "bytes":  336841730,
+                                           "size":  "321,24 MB",
+                                           "extension":  ".xml",
+                                           "lastWrite":  "2025-10-03 19:29:23"
+                                       }
+                                   ],
+                       "documents":  {
+
+                                     },
+                       "desktop":  {
+                                       "path":  "C:\\Users\\lopes\\Desktop\\mining\\Bin\\Common\\verthash.dat",
+                                       "bytes":  1283457024,
+                                       "size":  "1,20 GB",
+                                       "extension":  ".dat",
+                                       "lastWrite":  "2023-06-14 17:53:56"
+                                   },
+                       "downloads":  {
+                                         "path":  "C:\\Users\\lopes\\Downloads\\Arquivos do Sistema do Usurio lopes.csv",
+                                         "bytes":  448909912,
+                                         "size":  "428,11 MB",
+                                         "extension":  ".csv",
+                                         "lastWrite":  "2025-12-23 13:36:52"
+                                     }
+                   },
+    "cleanupCandidates":  [
+                              {
+                                  "name":  "Python 3.12 user installation",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python312",
+                                  "risk":  "high",
+                                  "reason":  "Do not delete files manually; uninstall only if confirmed unused.",
+                                  "bytes":  2037856699,
+                                  "size":  "1,90 GB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "CrashDumps",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\CrashDumps",
+                                  "risk":  "low",
+                                  "reason":  "Crash diagnostics only.",
+                                  "bytes":  2010461792,
+                                  "size":  "1,87 GB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "NVIDIA DXCache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache",
+                                  "risk":  "low",
+                                  "reason":  "Shader cache; regenerates.",
+                                  "bytes":  1478651904,
+                                  "size":  "1,38 GB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "npm cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache",
+                                  "risk":  "low",
+                                  "reason":  "Package cache; re-downloadable.",
+                                  "bytes":  1083071061,
+                                  "size":  "1,01 GB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "LPX Crypto Bot virtual environment",
+                                  "path":  "C:\\Users\\lopes\\Desktop\\LPX Crypo Bot\\.venv",
+                                  "risk":  "medium",
+                                  "reason":  "Python virtual environment can usually be rebuilt from requirements/pip-freeze, but bot source/config/wallet data must remain untouched.",
+                                  "bytes":  876636413,
+                                  "size":  "836,03 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Package Cache",
+                                  "path":  "C:\\ProgramData\\Package Cache",
+                                  "risk":  "high",
+                                  "reason":  "Do not delete manually; installers may depend on it.",
+                                  "bytes":  821753747,
+                                  "size":  "783,69 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "User TEMP",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                                  "risk":  "low",
+                                  "reason":  "Temporary files; close applications first.",
+                                  "bytes":  480802089,
+                                  "size":  "458,53 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Chrome Code Cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache",
+                                  "risk":  "low",
+                                  "reason":  "Browser cache; regenerates.",
+                                  "bytes":  375481270,
+                                  "size":  "358,09 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "HuggingFace cache",
+                                  "path":  "C:\\Users\\lopes\\.cache\\huggingface",
+                                  "risk":  "medium",
+                                  "reason":  "Downloaded AI models/datasets; re-downloadable if still online.",
+                                  "bytes":  269556399,
+                                  "size":  "257,07 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Chrome Cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+                                  "risk":  "low",
+                                  "reason":  "Browser cache; regenerates.",
+                                  "bytes":  267353283,
+                                  "size":  "254,97 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Discord Cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\Cache",
+                                  "risk":  "low",
+                                  "reason":  "App cache; regenerates.",
+                                  "bytes":  241503045,
+                                  "size":  "230,32 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Recycle Bin",
+                                  "path":  "C:\\$Recycle.Bin",
+                                  "risk":  "low",
+                                  "reason":  "Review contents, then empty if no longer needed.",
+                                  "bytes":  136659672,
+                                  "size":  "130,33 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "pip cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\pip\\Cache",
+                                  "risk":  "low",
+                                  "reason":  "Python package cache; re-downloadable.",
+                                  "bytes":  45608563,
+                                  "size":  "43,50 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Edge Cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+                                  "risk":  "low",
+                                  "reason":  "Browser cache; regenerates.",
+                                  "bytes":  7527977,
+                                  "size":  "7,18 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Chrome GPUCache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\GPUCache",
+                                  "risk":  "low",
+                                  "reason":  "Browser GPU cache; regenerates.",
+                                  "bytes":  5921724,
+                                  "size":  "5,65 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "DirectX D3DSCache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache",
+                                  "risk":  "low",
+                                  "reason":  "Shader cache; regenerates.",
+                                  "bytes":  3129676,
+                                  "size":  "2,98 MB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "Discord Code Cache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\Code Cache",
+                                  "risk":  "low",
+                                  "reason":  "App cache; regenerates.",
+                                  "bytes":  726854,
+                                  "size":  "709,82 KB",
+                                  "timedOut":  false
+                              },
+                              {
+                                  "name":  "NVIDIA GLCache",
+                                  "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\GLCache",
+                                  "risk":  "low",
+                                  "reason":  "Shader cache; regenerates.",
+                                  "bytes":  479315,
+                                  "size":  "468,08 KB",
+                                  "timedOut":  false
+                              }
+                          ],
+    "estimatedLowRiskBytes":  6137378225,
+    "estimatedLowRiskSize":  "5,72 GB",
+    "estimatedMediumRiskBytes":  1146192812,
+    "estimatedMediumRiskSize":  "1,07 GB",
+    "installedApps":  [
+                          {
+                              "name":  "Microsoft Edge WebView2 Runtime",
+                              "version":  "151.0.4129.59",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  2154421248,
+                              "size":  "2,01 GB",
+                              "installLocation":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application"
+                          },
+                          {
+                              "name":  "Microsoft Edge",
+                              "version":  "151.0.4129.59",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  2148144128,
+                              "size":  "2,00 GB",
+                              "installLocation":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application"
+                          },
+                          {
+                              "name":  "Adobe Acrobat (64-bit)",
+                              "version":  "23.006.20380",
+                              "publisher":  "Adobe",
+                              "bytes":  1298771968,
+                              "size":  "1,21 GB",
+                              "installLocation":  "C:\\Program Files\\Adobe\\Acrobat DC\\"
+                          },
+                          {
+                              "name":  "GIMP 2.10.34-2",
+                              "version":  "2.10.34",
+                              "publisher":  "The GIMP Team",
+                              "bytes":  1241632768,
+                              "size":  "1,16 GB",
+                              "installLocation":  "C:\\Program Files\\GIMP 2\\"
+                          },
+                          {
+                              "name":  "Antigravity IDE (User)",
+                              "version":  "2.1.1",
+                              "publisher":  "Google",
+                              "bytes":  1068017664,
+                              "size":  "1 018,54 MB",
+                              "installLocation":  "C:\\Users\\lopes\\AppData\\Local\\Programs\\Antigravity IDE\\"
+                          },
+                          {
+                              "name":  "PICO Connect",
+                              "version":  "10.6.6",
+                              "publisher":  "PICO",
+                              "bytes":  979709952,
+                              "size":  "934,32 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Streamlabs Desktop 1.16.7",
+                              "version":  "1.16.7",
+                              "publisher":  "General Workings, Inc.",
+                              "bytes":  867010560,
+                              "size":  "826,85 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites Manual 1.2.23",
+                              "version":  "1.2.23",
+                              "publisher":  "Avolites Ltd.",
+                              "bytes":  835184640,
+                              "size":  "796,49 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Epic Online Services",
+                              "version":  "4.3.1",
+                              "publisher":  "Epic Games, Inc.",
+                              "bytes":  768385024,
+                              "size":  "732,79 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft OneDrive",
+                              "version":  "26.129.0706.0004",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  588544000,
+                              "size":  "561,28 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Inkscape",
+                              "version":  "1.3.0",
+                              "publisher":  "Inkscape",
+                              "bytes":  586570752,
+                              "size":  "559,40 MB",
+                              "installLocation":  "C:\\Program Files\\Inkscape\\"
+                          },
+                          {
+                              "name":  "Shotcut",
+                              "version":  "26.8.1",
+                              "publisher":  "Meltytech",
+                              "bytes":  580890624,
+                              "size":  "553,98 MB",
+                              "installLocation":  "C:\\Program Files\\Shotcut\\"
+                          },
+                          {
+                              "name":  "Brave",
+                              "version":  "151.1.93.134",
+                              "publisher":  "Os Autores do Brave",
+                              "bytes":  547402752,
+                              "size":  "522,04 MB",
+                              "installLocation":  "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application"
+                          },
+                          {
+                              "name":  "GOG GALAXY",
+                              "version":  "2.0.74.352",
+                              "publisher":  "GOG.com",
+                              "bytes":  541430784,
+                              "size":  "516,35 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\GOG Galaxy\\"
+                          },
+                          {
+                              "name":  "Elgato Stream Deck",
+                              "version":  "7.0.3.22071",
+                              "publisher":  "Corsair Memory, Inc.",
+                              "bytes":  540618752,
+                              "size":  "515,57 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Antigravity 2.0.6",
+                              "version":  "2.0.6",
+                              "publisher":  "Google",
+                              "bytes":  536174592,
+                              "size":  "511,34 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Google Chrome",
+                              "version":  "151.0.7922.108",
+                              "publisher":  "Google LLC",
+                              "bytes":  520175616,
+                              "size":  "496,08 MB",
+                              "installLocation":  "C:\\Program Files\\Google\\Chrome\\Application"
+                          },
+                          {
+                              "name":  "iTunes",
+                              "version":  "12.13.7.1",
+                              "publisher":  "Apple Inc.",
+                              "bytes":  440471552,
+                              "size":  "420,07 MB",
+                              "installLocation":  "C:\\Program Files\\iTunes\\"
+                          },
+                          {
+                              "name":  "Avolites Titan Simulator",
+                              "version":  "19.2.104.5",
+                              "publisher":  "Avolites",
+                              "bytes":  414579712,
+                              "size":  "395,37 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "PDFgear 2.1.14",
+                              "version":  "2.1.14",
+                              "publisher":  "PDFgear",
+                              "bytes":  410796032,
+                              "size":  "391,77 MB",
+                              "installLocation":  "C:\\Program Files\\PDFgear\\"
+                          },
+                          {
+                              "name":  "BonChat",
+                              "version":  "1.0.135.1",
+                              "publisher":  "Hong Kong CipherChat Tech Company",
+                              "bytes":  407041024,
+                              "size":  "388,18 MB",
+                              "installLocation":  "C:\\Users\\lopes\\AppData\\Roaming\\BonChat\\"
+                          },
+                          {
+                              "name":  "Avolites Titan Go",
+                              "version":  "19.2.104.5",
+                              "publisher":  "Avolites",
+                              "bytes":  403852288,
+                              "size":  "385,14 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Stremio",
+                              "version":  "4.4.174",
+                              "publisher":  "Smart Code Ltd",
+                              "bytes":  400263168,
+                              "size":  "381,72 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "PowerShell 7.4.18.0-x64",
+                              "version":  "7.4.18.0",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  392223744,
+                              "size":  "374,05 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Proton VPN",
+                              "version":  "4.3.13",
+                              "publisher":  "Proton AG",
+                              "bytes":  386591744,
+                              "size":  "368,68 MB",
+                              "installLocation":  "C:\\Program Files\\Proton\\VPN\\"
+                          },
+                          {
+                              "name":  "Git",
+                              "version":  "2.47.1",
+                              "publisher":  "The Git Development Community",
+                              "bytes":  360643584,
+                              "size":  "343,94 MB",
+                              "installLocation":  "C:\\Program Files\\Git\\"
+                          },
+                          {
+                              "name":  "AMD Settings",
+                              "version":  "2023.0626.1405.1980",
+                              "publisher":  "Advanced Micro Devices, Inc.",
+                              "bytes":  356032512,
+                              "size":  "339,54 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "AMD Software",
+                              "version":  "23.7.1",
+                              "publisher":  "Advanced Micro Devices, Inc.",
+                              "bytes":  343040000,
+                              "size":  "327,15 MB",
+                              "installLocation":  "C:\\Program Files\\AMD\\CIM\\BIN64"
+                          },
+                          {
+                              "name":  "Microsoft Windows Desktop Runtime 10.0.10 (x64)",
+                              "version":  "10.0.10.50000",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  301370368,
+                              "size":  "287,41 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Plexamp 4.12.3",
+                              "version":  "4.12.3",
+                              "publisher":  "Plex, Inc.",
+                              "bytes":  285505536,
+                              "size":  "272,28 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "PowerShell 7-x64",
+                              "version":  "7.4.18.0",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  283529216,
+                              "size":  "270,39 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Intel® Graphics Software",
+                              "version":  "26.4.2155.3",
+                              "publisher":  "Intel Corporation",
+                              "bytes":  282619904,
+                              "size":  "269,53 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Prometheus",
+                              "version":  "1.0.19",
+                              "publisher":  "Avolites",
+                              "bytes":  258550784,
+                              "size":  "246,57 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "unMineable Miner (MFI) 1.7.2-beta",
+                              "version":  "1.7.2-beta",
+                              "publisher":  "support@unmineable.com",
+                              "bytes":  256826368,
+                              "size":  "244,93 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Rockstar Games Launcher",
+                              "version":  "1.0.108.2970",
+                              "publisher":  "Rockstar Games",
+                              "bytes":  250979328,
+                              "size":  "239,35 MB",
+                              "installLocation":  "C:\\Program Files\\Rockstar Games\\Launcher"
+                          },
+                          {
+                              "name":  "Epic Games Launcher",
+                              "version":  "1.3.82.0",
+                              "publisher":  "Epic Games, Inc.",
+                              "bytes":  248868864,
+                              "size":  "237,34 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Epic Games\\"
+                          },
+                          {
+                              "name":  "Microsoft Windows Desktop Runtime - 8.0.29 (x64)",
+                              "version":  "8.0.29.36225",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  227423232,
+                              "size":  "216,89 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft Windows Desktop Runtime - 8.0.29 (x86)",
+                              "version":  "8.0.29.36225",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  211382272,
+                              "size":  "201,59 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Advanced SystemCare",
+                              "version":  "19.4.0",
+                              "publisher":  "IObit",
+                              "bytes":  208993280,
+                              "size":  "199,31 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\IObit\\Advanced SystemCare\\"
+                          },
+                          {
+                              "name":  "MultiViewer",
+                              "version":  "2.7.3",
+                              "publisher":  "MultiViewer",
+                              "bytes":  193425408,
+                              "size":  "184,46 MB",
+                              "installLocation":  "C:\\Users\\lopes\\AppData\\Local\\multiviewer"
+                          },
+                          {
+                              "name":  "CodeMeter Runtime Kit v8.20a",
+                              "version":  "8.20.6558.501",
+                              "publisher":  "WIBU-SYSTEMS AG",
+                              "bytes":  159675392,
+                              "size":  "152,28 MB",
+                              "installLocation":  "C:\\Program Files\\CodeMeter\\"
+                          },
+                          {
+                              "name":  "Apple Mobile Device Support",
+                              "version":  "18.5.0.13",
+                              "publisher":  "Apple Inc.",
+                              "bytes":  114223104,
+                              "size":  "108,93 MB",
+                              "installLocation":  "C:\\Program Files\\Common Files\\Apple\\Mobile Device Support\\"
+                          },
+                          {
+                              "name":  "NDI 5 Runtime",
+                              "version":  "5.6.0.0",
+                              "publisher":  "NDI",
+                              "bytes":  112528384,
+                              "size":  "107,32 MB",
+                              "installLocation":  "C:\\Program Files\\NDI\\NDI 5 Runtime\\v5\\"
+                          },
+                          {
+                              "name":  "Java 8 Update 471",
+                              "version":  "8.0.4710.9",
+                              "publisher":  "Oracle Corporation",
+                              "bytes":  110042112,
+                              "size":  "104,94 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Java\\jre1.8.0_471\\"
+                          },
+                          {
+                              "name":  "Node.js",
+                              "version":  "24.13.0",
+                              "publisher":  "Node.js Foundation",
+                              "bytes":  107734016,
+                              "size":  "102,74 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Python 3.10.6 (64-bit)",
+                              "version":  "3.10.6150.0",
+                              "publisher":  "Python Software Foundation",
+                              "bytes":  106186752,
+                              "size":  "101,27 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft Windows Desktop Runtime - 10.0.10 (x64)",
+                              "version":  "80.40.55332",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  99323904,
+                              "size":  "94,72 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "AMD DVR64",
+                              "version":  "1.0.2",
+                              "publisher":  "Advanced Micro Devices, Inc.",
+                              "bytes":  99278848,
+                              "size":  "94,68 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Discord",
+                              "version":  "1.0.9243",
+                              "publisher":  "Discord Inc.",
+                              "bytes":  94555136,
+                              "size":  "90,17 MB",
+                              "installLocation":  "C:\\Users\\lopes\\AppData\\Local\\Discord"
+                          },
+                          {
+                              "name":  "Microsoft Windows Desktop Runtime - 8.0.17 (x64)",
+                              "version":  "64.68.34385",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  94310400,
+                              "size":  "89,94 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft Windows Desktop Runtime - 6.0.36 (x64)",
+                              "version":  "48.144.23186",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  90951680,
+                              "size":  "86,74 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites Titan 19.2",
+                              "version":  "19.2.104.5",
+                              "publisher":  "Avolites",
+                              "bytes":  89040896,
+                              "size":  "84,92 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Streaming Service version 2.2.4.4",
+                              "version":  "2.2.4.4",
+                              "publisher":  "PICO",
+                              "bytes":  84659200,
+                              "size":  "80,74 MB",
+                              "installLocation":  "C:\\Program Files\\Streaming Service\\"
+                          },
+                          {
+                              "name":  "IObit Uninstaller 13",
+                              "version":  "13.0.0.11",
+                              "publisher":  "IObit",
+                              "bytes":  83235840,
+                              "size":  "79,38 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\IObit\\IObit Uninstaller\\"
+                          },
+                          {
+                              "name":  "Microsoft .NET Runtime - 10.0.10 (x64)",
+                              "version":  "80.40.55332",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  80056320,
+                              "size":  "76,35 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Qt Designer",
+                              "version":  "",
+                              "publisher":  "Michael Herrmann",
+                              "bytes":  79417344,
+                              "size":  "75,74 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Audacity 3.3.3",
+                              "version":  "3.3.3",
+                              "publisher":  "Audacity Team",
+                              "bytes":  76553216,
+                              "size":  "73,01 MB",
+                              "installLocation":  "C:\\Program Files\\Audacity\\"
+                          },
+                          {
+                              "name":  "PRO DJ LINK Bridge",
+                              "version":  "1.1.8",
+                              "publisher":  "AlphaTheta Corporation",
+                              "bytes":  75592704,
+                              "size":  "72,09 MB",
+                              "installLocation":  "C:\\Program Files\\Pioneer\\PRO DJ LINK Bridge\\"
+                          },
+                          {
+                              "name":  "Microsoft .NET Runtime - 8.0.17 (x64)",
+                              "version":  "64.68.34370",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  73666560,
+                              "size":  "70,25 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft .NET Runtime - 8.0.29 (x64)",
+                              "version":  "64.116.55299",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  73625600,
+                              "size":  "70,21 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites Titan 17.1",
+                              "version":  "17.1.4.5",
+                              "publisher":  "Avolites",
+                              "bytes":  72714240,
+                              "size":  "69,35 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft .NET Runtime - 6.0.36 (x64)",
+                              "version":  "48.144.23141",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  71860224,
+                              "size":  "68,53 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft .NET Runtime - 8.0.29 (x86)",
+                              "version":  "64.116.55299",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  67784704,
+                              "size":  "64,64 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Intel(R) Wireless Bluetooth(R)",
+                              "version":  "24.40.0.3",
+                              "publisher":  "Intel Corporation",
+                              "bytes":  64684032,
+                              "size":  "61,69 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Intel\\"
+                          },
+                          {
+                              "name":  "Intel® Software Installer",
+                              "version":  "24.40.0.4",
+                              "publisher":  "Intel Corporation",
+                              "bytes":  63970304,
+                              "size":  "61,01 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Intel(R) Computing Improvement Program",
+                              "version":  "2.4.11225",
+                              "publisher":  "Intel Corporation",
+                              "bytes":  60644352,
+                              "size":  "57,83 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Geeks3D FurMark 2.10.2 x64",
+                              "version":  "2.10.2",
+                              "publisher":  "Geeks3D",
+                              "bytes":  55322624,
+                              "size":  "52,76 MB",
+                              "installLocation":  "C:\\Program Files\\Geeks3D\\FurMark2_x64\\"
+                          },
+                          {
+                              "name":  "Avolites CITP 19.2",
+                              "version":  "19.2.104.5",
+                              "publisher":  "Avolites",
+                              "bytes":  55063552,
+                              "size":  "52,51 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites WebAPI 19.2",
+                              "version":  "19.2.104.5",
+                              "publisher":  "Avolites",
+                              "bytes":  54789120,
+                              "size":  "52,25 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites WebAPI 17.1",
+                              "version":  "17.1.4.5",
+                              "publisher":  "Avolites",
+                              "bytes":  51110912,
+                              "size":  "48,74 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Chrome Remote Desktop Host",
+                              "version":  "152.0.7977.9",
+                              "publisher":  "Google LLC",
+                              "bytes":  50555904,
+                              "size":  "48,21 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Splashtop Personal",
+                              "version":  "3.5.801.0",
+                              "publisher":  "Nome de sua empresa:",
+                              "bytes":  45006848,
+                              "size":  "42,92 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Splashtop\\Splashtop Remote\\"
+                          },
+                          {
+                              "name":  "Kinect for Windows Speech Recognition Language Pack (en-CA)",
+                              "version":  "11.0.7400.336",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  43687936,
+                              "size":  "41,66 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Kinect for Windows Speech Recognition Language Pack (en-US)",
+                              "version":  "11.0.7400.336",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  43687936,
+                              "size":  "41,66 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "AMD WVR64",
+                              "version":  "1.0.2",
+                              "publisher":  "Advanced Micro Devices, Inc.",
+                              "bytes":  43384832,
+                              "size":  "41,38 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "GitHub CLI",
+                              "version":  "2.96.0",
+                              "publisher":  "GitHub, Inc.",
+                              "bytes":  41489408,
+                              "size":  "39,57 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Legion Arena",
+                              "version":  "1.8.1.11",
+                              "publisher":  "Lenovo Group Ltd.",
+                              "bytes":  40807424,
+                              "size":  "38,92 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Lenovo\\Legion Arena\\"
+                          },
+                          {
+                              "name":  "Lenovo Vantage Service",
+                              "version":  "5.1.2607.5",
+                              "publisher":  "Lenovo Group Ltd.",
+                              "bytes":  40398848,
+                              "size":  "38,53 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Lenovo\\VantageService\\\\5.1.2607.5"
+                          },
+                          {
+                              "name":  "Microsoft ASP.NET Core 8.0.17 - Shared Framework (x64)",
+                              "version":  "8.0.17.25266",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  38858752,
+                              "size":  "37,06 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft ASP.NET Core 8.0.29 - Shared Framework (x64)",
+                              "version":  "8.0.29.26325",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  38807552,
+                              "size":  "37,01 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Intel® Driver \u0026 Support Assistant",
+                              "version":  "26.2.0.7",
+                              "publisher":  "Intel",
+                              "bytes":  36738048,
+                              "size":  "35,04 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft ASP.NET Core 8.0.29 - Shared Framework (x86)",
+                              "version":  "8.0.29.26325",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  35634176,
+                              "size":  "33,98 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Office 16 Click-to-Run Extensibility Component",
+                              "version":  "16.0.14334.20806",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  33337344,
+                              "size":  "31,79 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft ASP.NET Core 8.0.29 Shared Framework (x64)",
+                              "version":  "8.0.29.26325",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  28753920,
+                              "size":  "27,42 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft ASP.NET Core 8.0.17 Shared Framework (x64)",
+                              "version":  "8.0.17.25266",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  28708864,
+                              "size":  "27,38 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft Server Speech Recognition Language - TELE (ru-RU)",
+                              "version":  "11.0.7400.335",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  27384832,
+                              "size":  "26,12 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Kinect for Windows Speech Recognition Language Pack (es-ES)",
+                              "version":  "11.0.7400.336",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  26705920,
+                              "size":  "25,47 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "GoPro Webcam",
+                              "version":  "1.2.2.867",
+                              "publisher":  "GoPro, Inc.",
+                              "bytes":  26664960,
+                              "size":  "25,43 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Python 3.10.6 Standard Library (64-bit)",
+                              "version":  "3.10.6150.0",
+                              "publisher":  "Python Software Foundation",
+                              "bytes":  26656768,
+                              "size":  "25,42 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft ASP.NET Core 8.0.29 Shared Framework (x86)",
+                              "version":  "8.0.29.26325",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  26484736,
+                              "size":  "25,26 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Python 3.10.6 Test Suite (64-bit)",
+                              "version":  "3.10.6150.0",
+                              "publisher":  "Python Software Foundation",
+                              "bytes":  24645632,
+                              "size":  "23,50 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Kinect for Windows Speech Recognition Language Pack (it-IT)",
+                              "version":  "11.0.7400.336",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  24272896,
+                              "size":  "23,15 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites Usb Expert",
+                              "version":  "8.6.12.5",
+                              "publisher":  "Avolites",
+                              "bytes":  22846464,
+                              "size":  "21,79 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites Personality Builder",
+                              "version":  "3.4.1.5",
+                              "publisher":  "Avolites",
+                              "bytes":  22576128,
+                              "size":  "21,53 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Intel Driver \u0026\u0026 Support Assistant",
+                              "version":  "26.2.0.7",
+                              "publisher":  "Intel",
+                              "bytes":  21975040,
+                              "size":  "20,96 MB",
+                              "installLocation":  "C:\\Program Files (x86)\\Intel\\Driver and Support Assistant\\"
+                          },
+                          {
+                              "name":  "Kinect for Windows Speech Recognition Language Pack (en-IE)",
+                              "version":  "11.0.7400.336",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  21880832,
+                              "size":  "20,87 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Kinect for Windows Speech Recognition Language Pack (en-GB)",
+                              "version":  "11.0.7400.336",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  21880832,
+                              "size":  "20,87 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Avolites CITP 17.1",
+                              "version":  "17.1.4.5",
+                              "publisher":  "Avolites",
+                              "bytes":  21767168,
+                              "size":  "20,76 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft Server Speech Recognition Language - TELE (pl-PL)",
+                              "version":  "11.0.7400.335",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  21748736,
+                              "size":  "20,74 MB",
+                              "installLocation":  ""
+                          },
+                          {
+                              "name":  "Microsoft Visual C++ v14 Redistributable (x64) - 14.50.35719",
+                              "version":  "14.50.35719.0",
+                              "publisher":  "Microsoft Corporation",
+                              "bytes":  21701632,
+                              "size":  "20,70 MB",
+                              "installLocation":  ""
+                          }
+                      ],
+    "windowsManagedStorage":  {
+                                  "componentStoreAnalysis":  "Error: 740\r\n\r\nElevated permissions are required to run DISM. \r\nUse an elevated command prompt to complete these tasks.",
+                                  "shadowStorage":  "vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool\r\n(C) Copyright 2001-2013 Microsoft Corp.\r\n\r\nError: You don\u0027t have the correct permissions to run this command.  Please run this utility from a command\r\nwindow that has elevated administrator privileges.",
+                                  "compactOS":  "The system is not in the Compact state because Windows has determined that, it\r\nis not beneficial for this system.",
+                                  "sleepStates":  "The following sleep states are available on this system:\r\n    Standby (S3)\r\n    Hibernate\r\n\r\nThe following sleep states are not available on this system:\r\n    Standby (S1)\r\n\tThe system firmware does not support this standby state.\r\n\r\n    Standby (S2)\r\n\tThe system firmware does not support this standby state.\r\n\r\n    Standby (S0 Low Power Idle)\r\n\tThe system firmware does not support this standby state.\r\n\r\n    Hybrid Sleep\r\n\tThe hypervisor does not support this standby state.\r\n\r\n    Fast Startup\r\n\tThis action is disabled in the current system policy."
+                              },
+    "goal":  {
+                 "targetFreeSpace":  "50 GB",
+                 "currentFreeSpace":  "28,81 GB",
+                 "additionalNeededApprox":  "21,19 GB"
+             },
+    "instruction":  "Identify the safest specific combination of cleanup candidates and reconstructable data to reach at least 50 GB free. Protect all GX0 files except already deleted GX013158, protected GTA/Desktop videos, and all crypto wallet/seed/key/config/database/trading-history data. Do not delete anything without explicit approval."
+}
