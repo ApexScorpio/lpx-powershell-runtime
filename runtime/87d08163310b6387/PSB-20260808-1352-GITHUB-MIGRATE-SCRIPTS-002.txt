@@ -1,0 +1,7 @@
+You cannot call a method on a null-valued expression.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786193665074-932ef381b7a1013c.ps1:33 char:36
++ ...    foreach ($arg in $Arguments) { [void]$psi.ArgumentList.Add($arg) }
++                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+ 
