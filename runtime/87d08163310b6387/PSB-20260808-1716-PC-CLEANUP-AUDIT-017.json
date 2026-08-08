@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1716-PC-CLEANUP-AUDIT-017",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Analisar em modo só de leitura o PC à procura de caches, temporários, crash dumps, restos de Downloads e outras áreas que possam libertar espaço com segurança.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T16:34:30.505Z",
+  "endedAt": "2026-08-08T16:35:10.566Z",
+  "elapsedMs": 40061,
+  "outputLength": 27121,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "ee4346ba9d7c29309e9e6a64c35a3d83a979d92d6ffe820c0a177ca32802cd7f",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1716-PC-CLEANUP-AUDIT-017.txt",
+  "createdAt": "2026-08-08T16:35:10.568Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

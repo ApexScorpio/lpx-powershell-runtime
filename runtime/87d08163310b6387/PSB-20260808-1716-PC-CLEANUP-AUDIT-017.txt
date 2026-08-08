@@ -1,0 +1,399 @@
+{
+    "protocol":  "LPX_PC_CLEANUP_AUDIT_V1",
+    "jobId":  "PSB-20260808-1716-PC-CLEANUP-AUDIT-017",
+    "status":  "SUCCEEDED",
+    "mode":  "READ_ONLY",
+    "candidateCacheAndTempBytes":  3059340328,
+    "candidateCacheAndTempSize":  "2,85 GB",
+    "cacheAndTempCandidates":  [
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                                       "category":  "TEMP",
+                                       "recommendation":  "SAFE_WITH_APP_CLOSED",
+                                       "files":  69977,
+                                       "bytes":  2691820408,
+                                       "size":  "2,51 GB",
+                                       "truncated":  false,
+                                       "reason":  "Temporary files for the current user. Usually safe to clean after closing applications; locked files should be skipped."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Code Cache",
+                                       "category":  "BROWSER_CACHE",
+                                       "recommendation":  "SAFE_WITH_BROWSER_CLOSED",
+                                       "files":  158,
+                                       "bytes":  188615511,
+                                       "size":  "179,88 MB",
+                                       "truncated":  false,
+                                       "reason":  "Browser cache only; profile, bookmarks and saved passwords are not targeted."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache",
+                                       "category":  "DEV_CACHE",
+                                       "recommendation":  "REBUILDABLE",
+                                       "files":  582,
+                                       "bytes":  81041929,
+                                       "size":  "77,29 MB",
+                                       "truncated":  false,
+                                       "reason":  "Development/package cache. Safe to rebuild, though future installs/builds may take longer."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache",
+                                       "category":  "BROWSER_CACHE",
+                                       "recommendation":  "SAFE_WITH_BROWSER_CLOSED",
+                                       "files":  2171,
+                                       "bytes":  50346504,
+                                       "size":  "48,01 MB",
+                                       "truncated":  false,
+                                       "reason":  "Browser cache only; profile, bookmarks and saved passwords are not targeted."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Windows\\Explorer",
+                                       "category":  "THUMBNAIL_CACHE",
+                                       "recommendation":  "SAFE_REBUILDABLE",
+                                       "files":  30,
+                                       "bytes":  45438496,
+                                       "size":  "43,33 MB",
+                                       "truncated":  false,
+                                       "reason":  "Windows thumbnail/icon cache databases only; Explorer rebuilds them."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+                                       "category":  "BROWSER_CACHE",
+                                       "recommendation":  "SAFE_WITH_BROWSER_CLOSED",
+                                       "files":  2,
+                                       "bytes":  782548,
+                                       "size":  "764,21 KB",
+                                       "truncated":  false,
+                                       "reason":  "Browser cache only; profile, bookmarks and saved passwords are not targeted."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache",
+                                       "category":  "BROWSER_CACHE",
+                                       "recommendation":  "SAFE_WITH_BROWSER_CLOSED",
+                                       "files":  5,
+                                       "bytes":  557424,
+                                       "size":  "544,36 KB",
+                                       "truncated":  false,
+                                       "reason":  "Browser cache only; profile, bookmarks and saved passwords are not targeted."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache",
+                                       "category":  "GPU_CACHE",
+                                       "recommendation":  "SAFE_REBUILDABLE",
+                                       "files":  24,
+                                       "bytes":  532704,
+                                       "size":  "520,22 KB",
+                                       "truncated":  false,
+                                       "reason":  "Direct3D shader cache; rebuilt automatically."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache",
+                                       "category":  "GPU_CACHE",
+                                       "recommendation":  "SAFE_REBUILDABLE",
+                                       "files":  5,
+                                       "bytes":  204800,
+                                       "size":  "200,00 KB",
+                                       "truncated":  false,
+                                       "reason":  "NVIDIA shader cache; rebuilt automatically."
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+                                       "category":  "BROWSER_CACHE",
+                                       "recommendation":  "SAFE_WITH_BROWSER_CLOSED",
+                                       "files":  1,
+                                       "bytes":  4,
+                                       "size":  "4 B",
+                                       "truncated":  false,
+                                       "reason":  "Browser cache only; profile, bookmarks and saved passwords are not targeted."
+                                   }
+                               ],
+    "recycleBin":  [
+                       {
+                           "drive":  "C",
+                           "path":  "C:\\$Recycle.Bin",
+                           "files":  142,
+                           "bytes":  136659672,
+                           "size":  "130,33 MB",
+                           "truncated":  false
+                       }
+                   ],
+    "downloadsTopLevelCandidates":  [
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\GTA V Saves Backup.rar",
+                                            "name":  "GTA V Saves Backup.rar",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  65965549,
+                                            "size":  "62,91 MB",
+                                            "modified":  "2024-01-06 01:46",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\base.rar",
+                                            "name":  "base.rar",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  20028252,
+                                            "size":  "19,10 MB",
+                                            "modified":  "2025-11-22 11:48",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\Furo A22.rar",
+                                            "name":  "Furo A22.rar",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  8363213,
+                                            "size":  "7,98 MB",
+                                            "modified":  "2026-03-01 22:08",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\Documentos-Credito.rar",
+                                            "name":  "Documentos-Credito.rar",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  8183784,
+                                            "size":  "7,80 MB",
+                                            "modified":  "2024-04-05 14:25",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\Base Dupe.rar",
+                                            "name":  "Base Dupe.rar",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  6520440,
+                                            "size":  "6,22 MB",
+                                            "modified":  "2025-11-23 09:20",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\OMeuCarro-20260207-090650.dat.zip",
+                                            "name":  "OMeuCarro-20260207-090650.dat.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  4667220,
+                                            "size":  "4,45 MB",
+                                            "modified":  "2026-02-07 09:09",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\TL-WR841N(EU)_V14_260303.zip",
+                                            "name":  "TL-WR841N(EU)_V14_260303.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  4487423,
+                                            "size":  "4,28 MB",
+                                            "modified":  "2026-05-19 11:15",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\Ripple Wallet Software.zip",
+                                            "name":  "Ripple Wallet Software.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  2538580,
+                                            "size":  "2,42 MB",
+                                            "modified":  "2024-08-28 16:07",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\Furo A22.zip",
+                                            "name":  "Furo A22.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  1812233,
+                                            "size":  "1,73 MB",
+                                            "modified":  "2026-03-01 22:07",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\gothic_editorial_animated_v2_kit.zip",
+                                            "name":  "gothic_editorial_animated_v2_kit.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  1765403,
+                                            "size":  "1,68 MB",
+                                            "modified":  "2026-07-14 11:57",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\GTA V Saves Backup [No Pics].rar",
+                                            "name":  "GTA V Saves Backup [No Pics].rar",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  1672537,
+                                            "size":  "1,60 MB",
+                                            "modified":  "2024-01-06 02:40",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\381044.zip",
+                                            "name":  "381044.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  1320670,
+                                            "size":  "1,26 MB",
+                                            "modified":  "2024-01-07 15:01",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\ZipArchive.xmr_llcoins_net-master.zip",
+                                            "name":  "ZipArchive.xmr_llcoins_net-master.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  1073541,
+                                            "size":  "1,02 MB",
+                                            "modified":  "2024-08-28 15:08",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\Outros_7z Games.7z",
+                                            "name":  "Outros_7z Games.7z",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  719448,
+                                            "size":  "702,59 KB",
+                                            "modified":  "2025-10-16 17:26",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\ETX70_GoPro13_CAD_parametrico.zip",
+                                            "name":  "ETX70_GoPro13_CAD_parametrico.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  531588,
+                                            "size":  "519,13 KB",
+                                            "modified":  "2026-07-30 10:41",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\WebUI.zip",
+                                            "name":  "WebUI.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  24214,
+                                            "size":  "23,65 KB",
+                                            "modified":  "2024-12-15 16:46",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        },
+                                        {
+                                            "path":  "C:\\Users\\lopes\\Downloads\\gta Online Stats for Everything_[unknowncheats.me]_.zip",
+                                            "name":  "gta Online Stats for Everything_[unknowncheats.me]_.zip",
+                                            "category":  "ARCHIVE",
+                                            "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                            "bytes":  902,
+                                            "size":  "902 B",
+                                            "modified":  "2025-09-15 22:21",
+                                            "reason":  "Archive in Downloads; removable if already extracted or no longer needed."
+                                        }
+                                    ],
+    "largeUserFolders":  [
+                             {
+                                 "path":  "C:\\Users\\lopes\\Videos",
+                                 "name":  "Videos",
+                                 "files":  133,
+                                 "bytes":  96460041848,
+                                 "size":  "89,84 GB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.gemini",
+                                 "name":  ".gemini",
+                                 "files":  120000,
+                                 "bytes":  32530912555,
+                                 "size":  "30,30 GB",
+                                 "truncated":  true,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Documents",
+                                 "name":  "Documents",
+                                 "files":  98908,
+                                 "bytes":  27355195013,
+                                 "size":  "25,48 GB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Desktop",
+                                 "name":  "Desktop",
+                                 "files":  55945,
+                                 "bytes":  9726290392,
+                                 "size":  "9,06 GB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.vscode",
+                                 "name":  ".vscode",
+                                 "files":  30918,
+                                 "bytes":  1808946285,
+                                 "size":  "1,68 GB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.cache",
+                                 "name":  ".cache",
+                                 "files":  1217,
+                                 "bytes":  1693672279,
+                                 "size":  "1,58 GB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads",
+                                 "name":  "Downloads",
+                                 "files":  268,
+                                 "bytes":  1031483742,
+                                 "size":  "983,70 MB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.antigravity-ide",
+                                 "name":  ".antigravity-ide",
+                                 "files":  6449,
+                                 "bytes":  941768432,
+                                 "size":  "898,14 MB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.codeium",
+                                 "name":  ".codeium",
+                                 "files":  180,
+                                 "bytes":  850965335,
+                                 "size":  "811,54 MB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.antigravity",
+                                 "name":  ".antigravity",
+                                 "files":  6315,
+                                 "bytes":  839148139,
+                                 "size":  "800,27 MB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\.wdm",
+                                 "name":  ".wdm",
+                                 "files":  86,
+                                 "bytes":  619288622,
+                                 "size":  "590,60 MB",
+                                 "truncated":  false,
+                                 "recommendation":  "REVIEW_LARGE_USER_FOLDER"
+                             }
+                         ],
+    "safety":  [
+                   "Read-only audit: no file or folder was deleted or modified.",
+                   "The audit targets caches, temporary files, crash dumps, browser cache, package caches and obvious Downloads leftovers.",
+                   "It does not target saved passwords, browser profiles, documents, photos, project assets, application data, Windows system files or third-party program folders for deletion.",
+                   "Large user folders are reported for review only and are not considered safe-to-delete automatically."
+               ]
+}
