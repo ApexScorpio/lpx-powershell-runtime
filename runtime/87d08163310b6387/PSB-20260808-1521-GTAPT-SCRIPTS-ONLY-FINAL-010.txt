@@ -1,0 +1,7 @@
+Os tipos de argumentos não correspondem
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786199972047-f52b8d3a292347c9.ps1:323 char:28
++     status=if ($verified) {'SUCCEEDED'} else {'PARTIAL'}
++                            ~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 

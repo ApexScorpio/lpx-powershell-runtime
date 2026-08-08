@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1521-GTAPT-SCRIPTS-ONLY-FINAL-010",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Finalizar apenas os scripts GTApt restantes sem voltar a percorrer caches, verificar o upload, apagar o lixo autorizado e remover o script Avolites identificado.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T14:39:32.070Z",
+  "endedAt": "2026-08-08T14:39:53.683Z",
+  "elapsedMs": 21613,
+  "outputLength": 388,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "c7a98074fe8a0ef1488efbfd3ff125de962bd7682f847184895778bbd12faa8e",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1521-GTAPT-SCRIPTS-ONLY-FINAL-010.txt",
+  "createdAt": "2026-08-08T14:39:53.684Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
