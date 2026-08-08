@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1552-DOWNLOADS-CLEANUP-AUDIT-012",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Analisar em modo só de leitura a pasta Downloads, identificar ficheiros e pastas que provavelmente podem ser apagados e calcular quanto espaço ocupam.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T14:50:58.220Z",
+  "endedAt": "2026-08-08T14:51:28.169Z",
+  "elapsedMs": 29949,
+  "outputLength": 90866,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "34513f8436cf4e374955026f494bc828f57995fd6d135f30d48215b756141320",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1552-DOWNLOADS-CLEANUP-AUDIT-012.txt",
+  "createdAt": "2026-08-08T14:51:28.171Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

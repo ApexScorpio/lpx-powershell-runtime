@@ -1,0 +1,1466 @@
+{
+    "protocol":  "LPX_DOWNLOADS_CLEANUP_AUDIT_V1",
+    "jobId":  "PSB-20260808-1552-DOWNLOADS-CLEANUP-AUDIT-012",
+    "status":  "SUCCEEDED",
+    "downloadsPath":  "C:\\Users\\lopes\\Downloads",
+    "totalFileCount":  78335,
+    "totalTopLevelFileCount":  196,
+    "totalTopLevelFolderCount":  15,
+    "totalBytes":  9608029520,
+    "totalSize":  "8,95 GB",
+    "categorySummary":  [
+                            {
+                                "category":  "ARCHIVE",
+                                "count":  30,
+                                "bytes":  3290877793,
+                                "size":  "3,06 GB"
+                            },
+                            {
+                                "category":  "INSTALLER",
+                                "count":  13,
+                                "bytes":  353870256,
+                                "size":  "337,48 MB"
+                            },
+                            {
+                                "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                "count":  26,
+                                "bytes":  13973536,
+                                "size":  "13,33 MB"
+                            },
+                            {
+                                "category":  "PARTIAL_OR_TEMP",
+                                "count":  2,
+                                "bytes":  11709282,
+                                "size":  "11,17 MB"
+                            }
+                        ],
+    "obviousCandidates":  [
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\shotcut-win64-26.8.1.exe",
+                                  "name":  "shotcut-win64-26.8.1.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  162666120,
+                                  "size":  "155,13 MB",
+                                  "modified":  "2026-08-07 09:20",
+                                  "ageDays":  1,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\drw19.2.5.0_ad_google_trial.exe",
+                                  "name":  "drw19.2.5.0_ad_google_trial.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  91366680,
+                                  "size":  "87,13 MB",
+                                  "modified":  "2025-01-09 15:01",
+                                  "ageDays":  576,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\mediamtx_v1.19.2_windows_amd64\\mediamtx.exe",
+                                  "name":  "mediamtx.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  54909952,
+                                  "size":  "52,37 MB",
+                                  "modified":  "2026-06-28 11:51",
+                                  "ageDays":  41,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\b0032c8b-8bf6-49ca-b06e-5569c762ad2f.tmp",
+                                  "name":  "b0032c8b-8bf6-49ca-b06e-5569c762ad2f.tmp",
+                                  "category":  "PARTIAL_OR_TEMP",
+                                  "bytes":  11665408,
+                                  "size":  "11,13 MB",
+                                  "modified":  "2024-06-04 16:35",
+                                  "ageDays":  794,
+                                  "recommendation":  "SAFE_CANDIDATE",
+                                  "reason":  "Incomplete or temporary download; normally safe to remove if no download is currently active."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\los-santos-map\\node_modules\\@esbuild\\win32-x64\\esbuild.exe",
+                                  "name":  "esbuild.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  9913856,
+                                  "size":  "9,45 MB",
+                                  "modified":  "2025-12-18 12:47",
+                                  "ageDays":  233,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\GoProWebcam-1.2.2.867-RELEASE - a9g3b000000fzEOAAY.msi",
+                                  "name":  "GoProWebcam-1.2.2.867-RELEASE - a9g3b000000fzEOAAY.msi",
+                                  "category":  "INSTALLER",
+                                  "bytes":  9224192,
+                                  "size":  "8,80 MB",
+                                  "modified":  "2026-07-14 10:59",
+                                  "ageDays":  25,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\dmde-4-2-0-814-win64-gui\\dmde.exe",
+                                  "name":  "dmde.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  5277104,
+                                  "size":  "5,03 MB",
+                                  "modified":  "2025-01-09 15:57",
+                                  "ageDays":  575,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\spacedesk_driver_Win_11_64_v2224.msi",
+                                  "name":  "spacedesk_driver_Win_11_64_v2224.msi",
+                                  "category":  "INSTALLER",
+                                  "bytes":  5160960,
+                                  "size":  "4,92 MB",
+                                  "modified":  "2026-06-23 14:12",
+                                  "ageDays":  46,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\spacedesk_driver_Win_11_64_v2225.msi",
+                                  "name":  "spacedesk_driver_Win_11_64_v2225.msi",
+                                  "category":  "INSTALLER",
+                                  "bytes":  5160960,
+                                  "size":  "4,92 MB",
+                                  "modified":  "2026-07-03 13:59",
+                                  "ageDays":  36,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\spacedesk_driver_Win_11_64_v2225 (1).msi",
+                                  "name":  "spacedesk_driver_Win_11_64_v2225 (1).msi",
+                                  "category":  "INSTALLER",
+                                  "bytes":  5160960,
+                                  "size":  "4,92 MB",
+                                  "modified":  "2026-07-10 09:11",
+                                  "ageDays":  29,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\drw_google_trial_installer.17364348488958b719163a14995695.exe",
+                                  "name":  "drw_google_trial_installer.17364348488958b719163a14995695.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  2814160,
+                                  "size":  "2,68 MB",
+                                  "modified":  "2025-01-09 15:00",
+                                  "ageDays":  576,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\recoverit_setup_full4214.exe",
+                                  "name":  "recoverit_setup_full4214.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  2059768,
+                                  "size":  "1,96 MB",
+                                  "modified":  "2025-01-09 15:05",
+                                  "ageDays":  576,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\Dependencies\\devcon.exe",
+                                  "name":  "devcon.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  120360,
+                                  "size":  "117,54 KB",
+                                  "modified":  "2026-06-25 10:36",
+                                  "ageDays":  44,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\114fcbe6-9140-4c6f-9a2d-546aad313fb4.tmp",
+                                  "name":  "114fcbe6-9140-4c6f-9a2d-546aad313fb4.tmp",
+                                  "category":  "PARTIAL_OR_TEMP",
+                                  "bytes":  43874,
+                                  "size":  "42,85 KB",
+                                  "modified":  "2024-10-02 11:42",
+                                  "ageDays":  675,
+                                  "recommendation":  "SAFE_CANDIDATE",
+                                  "reason":  "Incomplete or temporary download; normally safe to remove if no download is currently active."
+                              },
+                              {
+                                  "path":  "C:\\Users\\lopes\\Downloads\\Adobe Acrobat Pro 2023.006.20380 (2023) PC {progbay}\\AdobeAcrobatPro.exe",
+                                  "name":  "AdobeAcrobatPro.exe",
+                                  "category":  "INSTALLER",
+                                  "bytes":  35184,
+                                  "size":  "34,36 KB",
+                                  "modified":  "2023-12-02 22:21",
+                                  "ageDays":  979,
+                                  "recommendation":  "USUALLY_SAFE_AFTER_INSTALL",
+                                  "reason":  "Installer package; normally removable once the application is installed and you do not need the installer."
+                              }
+                          ],
+    "reviewCandidates":  [
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\wetransfer_bastidores-tiag0-festival-sardinha-26_2026-08-08_1156.zip",
+                                 "name":  "wetransfer_bastidores-tiag0-festival-sardinha-26_2026-08-08_1156.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  2544576360,
+                                 "size":  "2,37 GB",
+                                 "modified":  "2026-08-08 14:12",
+                                 "ageDays":  0,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143.zip",
+                                 "name":  "GTApt_V3_BACKUP_20251227_114143.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  235924787,
+                                 "size":  "225,00 MB",
+                                 "modified":  "2025-12-27 11:46",
+                                 "ageDays":  224,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\mapStyles.rar",
+                                 "name":  "mapStyles.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  184625286,
+                                 "size":  "176,07 MB",
+                                 "modified":  "2024-10-30 06:34",
+                                 "ageDays":  647,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\VDD.Control.25.7.23.zip",
+                                 "name":  "VDD.Control.25.7.23.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  71225903,
+                                 "size":  "67,93 MB",
+                                 "modified":  "2026-06-25 10:36",
+                                 "ageDays":  44,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTA V Saves Backup.rar",
+                                 "name":  "GTA V Saves Backup.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  65965549,
+                                 "size":  "62,91 MB",
+                                 "modified":  "2024-01-06 01:46",
+                                 "ageDays":  945,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\Satellite\\Satellite.7z",
+                                 "name":  "Satellite.7z",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  57383431,
+                                 "size":  "54,73 MB",
+                                 "modified":  "2025-12-18 15:20",
+                                 "ageDays":  233,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\mediamtx_v1.19.2_windows_amd64.zip",
+                                 "name":  "mediamtx_v1.19.2_windows_amd64.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  26972178,
+                                 "size":  "25,72 MB",
+                                 "modified":  "2026-07-19 17:47",
+                                 "ageDays":  19,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\base.rar",
+                                 "name":  "base.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  20028252,
+                                 "size":  "19,10 MB",
+                                 "modified":  "2025-11-22 11:48",
+                                 "ageDays":  259,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\Roadmap\\Roadmap.7z",
+                                 "name":  "Roadmap.7z",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  16361881,
+                                 "size":  "15,60 MB",
+                                 "modified":  "2025-12-18 15:20",
+                                 "ageDays":  233,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\Atlas\\Atlas.7z",
+                                 "name":  "Atlas.7z",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  15259381,
+                                 "size":  "14,55 MB",
+                                 "modified":  "2025-12-18 15:20",
+                                 "ageDays":  233,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Furo A22.rar",
+                                 "name":  "Furo A22.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  8363213,
+                                 "size":  "7,98 MB",
+                                 "modified":  "2026-03-01 22:08",
+                                 "ageDays":  159,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Documentos-Credito.rar",
+                                 "name":  "Documentos-Credito.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  8183784,
+                                 "size":  "7,80 MB",
+                                 "modified":  "2024-04-05 14:25",
+                                 "ageDays":  855,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Base Dupe.rar",
+                                 "name":  "Base Dupe.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  6520440,
+                                 "size":  "6,22 MB",
+                                 "modified":  "2025-11-23 09:20",
+                                 "ageDays":  258,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\modest_menu-v0.8.8_[unknowncheats.me]_.zip",
+                                 "name":  "modest_menu-v0.8.8_[unknowncheats.me]_.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  6152304,
+                                 "size":  "5,87 MB",
+                                 "modified":  "2020-09-06 03:35",
+                                 "ageDays":  2162,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\OMeuCarro-20260207-090650.dat.zip",
+                                 "name":  "OMeuCarro-20260207-090650.dat.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  4667220,
+                                 "size":  "4,45 MB",
+                                 "modified":  "2026-02-07 09:09",
+                                 "ageDays":  182,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Guia de Pagamento IUC (1).pdf",
+                                 "name":  "Guia de Pagamento IUC (1).pdf",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  4664685,
+                                 "size":  "4,45 MB",
+                                 "modified":  "2025-02-22 11:13",
+                                 "ageDays":  532,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\TL-WR841N(EU)_V14_260303.zip",
+                                 "name":  "TL-WR841N(EU)_V14_260303.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  4487423,
+                                 "size":  "4,28 MB",
+                                 "modified":  "2026-05-19 11:15",
+                                 "ageDays":  81,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Ripple Wallet Software.zip",
+                                 "name":  "Ripple Wallet Software.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  2538580,
+                                 "size":  "2,42 MB",
+                                 "modified":  "2024-08-28 16:07",
+                                 "ageDays":  709,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\dmde-4-2-0-814-win64-gui.zip",
+                                 "name":  "dmde-4-2-0-814-win64-gui.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  2416942,
+                                 "size":  "2,30 MB",
+                                 "modified":  "2025-01-09 15:57",
+                                 "ageDays":  575,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\index (1).html",
+                                 "name":  "index (1).html",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  1870995,
+                                 "size":  "1,78 MB",
+                                 "modified":  "2026-06-27 18:38",
+                                 "ageDays":  41,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\index (4).html",
+                                 "name":  "index (4).html",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  1845629,
+                                 "size":  "1,76 MB",
+                                 "modified":  "2026-06-27 22:22",
+                                 "ageDays":  41,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Furo A22.zip",
+                                 "name":  "Furo A22.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  1812233,
+                                 "size":  "1,73 MB",
+                                 "modified":  "2026-03-01 22:07",
+                                 "ageDays":  159,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\gothic_editorial_animated_v2_kit.zip",
+                                 "name":  "gothic_editorial_animated_v2_kit.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  1765403,
+                                 "size":  "1,68 MB",
+                                 "modified":  "2026-07-14 11:57",
+                                 "ageDays":  25,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTA V Saves Backup [No Pics].rar",
+                                 "name":  "GTA V Saves Backup [No Pics].rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  1672537,
+                                 "size":  "1,60 MB",
+                                 "modified":  "2024-01-06 02:40",
+                                 "ageDays":  945,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\381044.zip",
+                                 "name":  "381044.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  1320670,
+                                 "size":  "1,26 MB",
+                                 "modified":  "2024-01-07 15:01",
+                                 "ageDays":  944,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\ZipArchive.xmr_llcoins_net-master.zip",
+                                 "name":  "ZipArchive.xmr_llcoins_net-master.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  1073541,
+                                 "size":  "1,02 MB",
+                                 "modified":  "2024-08-28 15:08",
+                                 "ageDays":  710,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\index (3).html",
+                                 "name":  "index (3).html",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  1005765,
+                                 "size":  "982,19 KB",
+                                 "modified":  "2026-06-27 22:05",
+                                 "ageDays":  41,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\index (2).html",
+                                 "name":  "index (2).html",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  1004506,
+                                 "size":  "980,96 KB",
+                                 "modified":  "2026-06-27 21:24",
+                                 "ageDays":  41,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Outros_7z Games.7z",
+                                 "name":  "Outros_7z Games.7z",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  719448,
+                                 "size":  "702,59 KB",
+                                 "modified":  "2025-10-16 17:26",
+                                 "ageDays":  295,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\ETX70_GoPro13_CAD_parametrico.zip",
+                                 "name":  "ETX70_GoPro13_CAD_parametrico.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  531588,
+                                 "size":  "519,13 KB",
+                                 "modified":  "2026-07-30 10:41",
+                                 "ageDays":  9,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Grand-Theft-Auto-Online-Stats-Rockstar-Games (5).png",
+                                 "name":  "Grand-Theft-Auto-Online-Stats-Rockstar-Games (5).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  493902,
+                                 "size":  "482,33 KB",
+                                 "modified":  "2024-02-14 16:14",
+                                 "ageDays":  905,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Grand-Theft-Auto-Online-Stats-Rockstar-Games (2).png",
+                                 "name":  "Grand-Theft-Auto-Online-Stats-Rockstar-Games (2).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  461516,
+                                 "size":  "450,70 KB",
+                                 "modified":  "2024-02-14 16:14",
+                                 "ageDays":  905,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Grand-Theft-Auto-Online-Stats-Rockstar-Games (4).png",
+                                 "name":  "Grand-Theft-Auto-Online-Stats-Rockstar-Games (4).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  397831,
+                                 "size":  "388,51 KB",
+                                 "modified":  "2024-02-14 16:14",
+                                 "ageDays":  905,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Grand-Theft-Auto-Online-Stats-Rockstar-Games (1).png",
+                                 "name":  "Grand-Theft-Auto-Online-Stats-Rockstar-Games (1).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  390769,
+                                 "size":  "381,61 KB",
+                                 "modified":  "2024-02-14 16:14",
+                                 "ageDays":  905,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Grand-Theft-Auto-Online-Stats-Rockstar-Games (3).png",
+                                 "name":  "Grand-Theft-Auto-Online-Stats-Rockstar-Games (3).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  357386,
+                                 "size":  "349,01 KB",
+                                 "modified":  "2024-02-14 16:14",
+                                 "ageDays":  905,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\6-WhatsApp-06-24-2026_07_27_PM (1).png",
+                                 "name":  "6-WhatsApp-06-24-2026_07_27_PM (1).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  346902,
+                                 "size":  "338,77 KB",
+                                 "modified":  "2026-06-24 19:28",
+                                 "ageDays":  44,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\0025bb-MadTherseusIconsV2.rar",
+                                 "name":  "0025bb-MadTherseusIconsV2.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  304034,
+                                 "size":  "296,91 KB",
+                                 "modified":  "2024-10-25 17:52",
+                                 "ageDays":  651,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\p (1).jpg",
+                                 "name":  "p (1).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  294679,
+                                 "size":  "287,77 KB",
+                                 "modified":  "2024-11-16 09:25",
+                                 "ageDays":  630,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\Peca do jogo (1).png",
+                                 "name":  "Peca do jogo (1).png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  178635,
+                                 "size":  "174,45 KB",
+                                 "modified":  "2024-07-09 21:30",
+                                 "ageDays":  759,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\17b0e5e4-0632-4abb-91eb-706d4a1fc902 (2).jpg",
+                                 "name":  "17b0e5e4-0632-4abb-91eb-706d4a1fc902 (2).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  100798,
+                                 "size":  "98,44 KB",
+                                 "modified":  "2026-08-04 17:24",
+                                 "ageDays":  3,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\17b0e5e4-0632-4abb-91eb-706d4a1fc902 (1).jpg",
+                                 "name":  "17b0e5e4-0632-4abb-91eb-706d4a1fc902 (1).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  100798,
+                                 "size":  "98,44 KB",
+                                 "modified":  "2026-08-04 17:23",
+                                 "ageDays":  3,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\Halloween2022Week3-GTAOe-CerberusRandomEvent (1).jpg",
+                                 "name":  "Halloween2022Week3-GTAOe-CerberusRandomEvent (1).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  96754,
+                                 "size":  "94,49 KB",
+                                 "modified":  "2024-11-09 09:26",
+                                 "ageDays":  637,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\hq720 (2).jpg",
+                                 "name":  "hq720 (2).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  82544,
+                                 "size":  "80,61 KB",
+                                 "modified":  "2024-11-09 09:46",
+                                 "ageDays":  637,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\FT_FIZ2026_8 (1).pdf",
+                                 "name":  "FT_FIZ2026_8 (1).pdf",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  73017,
+                                 "size":  "71,31 KB",
+                                 "modified":  "2026-07-27 20:03",
+                                 "ageDays":  11,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\hq720 (1).jpg",
+                                 "name":  "hq720 (1).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  60807,
+                                 "size":  "59,38 KB",
+                                 "modified":  "2024-11-09 09:31",
+                                 "ageDays":  637,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\index-leaflet.backup.html",
+                                 "name":  "index-leaflet.backup.html",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  48316,
+                                 "size":  "47,18 KB",
+                                 "modified":  "2025-12-21 11:56",
+                                 "ageDays":  230,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\ApocalypseCerberus-GTAOe-CerberusSurpriseVer-Front (1).jpg",
+                                 "name":  "ApocalypseCerberus-GTAOe-CerberusSurpriseVer-Front (1).jpg",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  30498,
+                                 "size":  "29,78 KB",
+                                 "modified":  "2024-11-09 09:02",
+                                 "ageDays":  637,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\WebUI.zip",
+                                 "name":  "WebUI.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  24214,
+                                 "size":  "23,65 KB",
+                                 "modified":  "2024-12-15 16:46",
+                                 "ageDays":  600,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\index-leaflet-old.html",
+                                 "name":  "index-leaflet-old.html",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  22390,
+                                 "size":  "21,87 KB",
+                                 "modified":  "2025-12-19 17:22",
+                                 "ageDays":  231,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\GTApt Crew - Cópia.png",
+                                 "name":  "GTApt Crew - Cópia.png",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  21877,
+                                 "size":  "21,36 KB",
+                                 "modified":  "2024-11-12 11:34",
+                                 "ageDays":  634,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\gui\\formulario_premium.backup.py",
+                                 "name":  "formulario_premium.backup.py",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  14813,
+                                 "size":  "14,47 KB",
+                                 "modified":  "2025-12-24 19:53",
+                                 "ageDays":  226,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\descarga (1).pdf",
+                                 "name":  "descarga (1).pdf",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  4662,
+                                 "size":  "4,55 KB",
+                                 "modified":  "2024-12-26 23:49",
+                                 "ageDays":  589,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\los-santos-map\\node_modules\\leaflet\\src\\map\\handler\\Map.TapHold.js",
+                                 "name":  "Map.TapHold.js",
+                                 "category":  "LIKELY_DUPLICATE_OR_BACKUP",
+                                 "bytes":  3062,
+                                 "size":  "2,99 KB",
+                                 "modified":  "2025-12-18 12:47",
+                                 "ageDays":  233,
+                                 "recommendation":  "REVIEW",
+                                 "reason":  "Filename suggests a duplicate, copy, backup or old version."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\gta Online Stats for Everything_[unknowncheats.me]_.zip",
+                                 "name":  "gta Online Stats for Everything_[unknowncheats.me]_.zip",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  902,
+                                 "size":  "902 B",
+                                 "modified":  "2025-09-15 22:21",
+                                 "ageDays":  326,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTA San Andreas User Files.rar",
+                                 "name":  "GTA San Andreas User Files.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  223,
+                                 "size":  "223 B",
+                                 "modified":  "2018-09-11 15:42",
+                                 "ageDays":  2888,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             },
+                             {
+                                 "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTA Vice City User Files.rar",
+                                 "name":  "GTA Vice City User Files.rar",
+                                 "category":  "ARCHIVE",
+                                 "bytes":  86,
+                                 "size":  "86 B",
+                                 "modified":  "2018-09-11 15:42",
+                                 "ageDays":  2888,
+                                 "recommendation":  "REVIEW_AFTER_EXTRACTION",
+                                 "reason":  "Archive; removable if its contents were already extracted or are no longer needed."
+                             }
+                         ],
+    "oldLargeFiles":  [
+                          {
+                              "path":  "C:\\Users\\lopes\\Downloads\\Arquivos do Sistema do Usurio lopes.csv",
+                              "bytes":  448909912,
+                              "size":  "428,11 MB",
+                              "modified":  "2025-12-23 13:36",
+                              "ageDays":  228,
+                              "recommendation":  "REVIEW_OLD_LARGE_FILE"
+                          },
+                          {
+                              "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143.zip",
+                              "bytes":  235924787,
+                              "size":  "225,00 MB",
+                              "modified":  "2025-12-27 11:46",
+                              "ageDays":  224,
+                              "recommendation":  "REVIEW_OLD_LARGE_FILE"
+                          },
+                          {
+                              "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\.git\\objects\\pack\\pack-65dd74d90316a524f589c043fd7a0ee28cc0c539.pack",
+                              "bytes":  208886039,
+                              "size":  "199,21 MB",
+                              "modified":  "2025-12-18 15:20",
+                              "ageDays":  233,
+                              "recommendation":  "REVIEW_OLD_LARGE_FILE"
+                          },
+                          {
+                              "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\mapStyles.rar",
+                              "bytes":  184625286,
+                              "size":  "176,07 MB",
+                              "modified":  "2024-10-30 06:34",
+                              "ageDays":  647,
+                              "recommendation":  "REVIEW_OLD_LARGE_FILE"
+                          },
+                          {
+                              "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTA Online  - Stream files\\Top 10 NCS - Rock \u0026 Metal Guitar Mix (No Copyright Songs).mp3",
+                              "bytes":  105554684,
+                              "size":  "100,66 MB",
+                              "modified":  "2020-03-29 18:33",
+                              "ageDays":  2322,
+                              "recommendation":  "REVIEW_OLD_LARGE_FILE"
+                          }
+                      ],
+    "largestFiles":  [
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\wetransfer_bastidores-tiag0-festival-sardinha-26_2026-08-08_1156.zip",
+                             "bytes":  2544576360,
+                             "size":  "2,37 GB",
+                             "modified":  "2026-08-08 14:12",
+                             "ageDays":  0
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\Arquivos do Sistema do Usurio lopes.csv",
+                             "bytes":  448909912,
+                             "size":  "428,11 MB",
+                             "modified":  "2025-12-23 13:36",
+                             "ageDays":  228
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GOPR0405.MP4",
+                             "bytes":  442544258,
+                             "size":  "422,04 MB",
+                             "modified":  "2026-08-08 14:07",
+                             "ageDays":  0
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143.zip",
+                             "bytes":  235924787,
+                             "size":  "225,00 MB",
+                             "modified":  "2025-12-27 11:46",
+                             "ageDays":  224
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\.git\\objects\\pack\\pack-65dd74d90316a524f589c043fd7a0ee28cc0c539.pack",
+                             "bytes":  208886039,
+                             "size":  "199,21 MB",
+                             "modified":  "2025-12-18 15:20",
+                             "ageDays":  233
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\mapStyles.rar",
+                             "bytes":  184625286,
+                             "size":  "176,07 MB",
+                             "modified":  "2024-10-30 06:34",
+                             "ageDays":  647
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\shotcut-win64-26.8.1.exe",
+                             "bytes":  162666120,
+                             "size":  "155,13 MB",
+                             "modified":  "2026-08-07 09:20",
+                             "ageDays":  1
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTA Online  - Stream files\\Top 10 NCS - Rock \u0026 Metal Guitar Mix (No Copyright Songs).mp3",
+                             "bytes":  105554684,
+                             "size":  "100,66 MB",
+                             "modified":  "2020-03-29 18:33",
+                             "ageDays":  2322
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\drw19.2.5.0_ad_google_trial.exe",
+                             "bytes":  91366680,
+                             "size":  "87,13 MB",
+                             "modified":  "2025-01-09 15:01",
+                             "ageDays":  576
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\1 Hour of Funny Music.mp3",
+                             "bytes":  87230932,
+                             "size":  "83,19 MB",
+                             "modified":  "2020-03-20 19:42",
+                             "ageDays":  2331
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\mapStyles\\styleSatelite\\satellite.png",
+                             "bytes":  71343890,
+                             "size":  "68,04 MB",
+                             "modified":  "2021-08-16 21:52",
+                             "ageDays":  1817
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\VDD.Control.25.7.23.zip",
+                             "bytes":  71225903,
+                             "size":  "67,93 MB",
+                             "modified":  "2026-06-25 10:36",
+                             "ageDays":  44
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTA V Saves Backup.rar",
+                             "bytes":  65965549,
+                             "size":  "62,91 MB",
+                             "modified":  "2024-01-06 01:46",
+                             "ageDays":  945
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\Satellite\\Satellite.7z",
+                             "bytes":  57383431,
+                             "size":  "54,73 MB",
+                             "modified":  "2025-12-18 15:20",
+                             "ageDays":  233
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\DOC-20251124-WA0022. OCR.pdf",
+                             "bytes":  55630624,
+                             "size":  "53,05 MB",
+                             "modified":  "2025-12-23 18:21",
+                             "ageDays":  227
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\mediamtx_v1.19.2_windows_amd64\\mediamtx.exe",
+                             "bytes":  54909952,
+                             "size":  "52,37 MB",
+                             "modified":  "2026-06-28 11:51",
+                             "ageDays":  41
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTA Online  - Stream files\\y2mate.com - Non Copyrighted Background Music _ No Copyright Best Instrumental Meditation Music_0NCJGoxnatA.mp3",
+                             "bytes":  41384085,
+                             "size":  "39,47 MB",
+                             "modified":  "2020-04-25 16:16",
+                             "ageDays":  2295
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_REVOLUT_USDC_corrigido_FINAL.pdf",
+                             "bytes":  36244899,
+                             "size":  "34,57 MB",
+                             "modified":  "2026-07-09 13:41",
+                             "ageDays":  30
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\v5.1_21Jul24_GTA_Online_Completionist_and_Chronological_Guide.pdf",
+                             "bytes":  34933379,
+                             "size":  "33,32 MB",
+                             "modified":  "2024-07-25 22:38",
+                             "ageDays":  743
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\mediamtx_v1.19.2_windows_amd64.zip",
+                             "bytes":  26972178,
+                             "size":  "25,72 MB",
+                             "modified":  "2026-07-19 17:47",
+                             "ageDays":  19
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\Family Guy Star Wars - Elevator Music 10 HOURS.mp3",
+                             "bytes":  23157375,
+                             "size":  "22,08 MB",
+                             "modified":  "2018-10-19 13:00",
+                             "ageDays":  2850
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\mapStyles\\styleAtlas\\map.png",
+                             "bytes":  22484566,
+                             "size":  "21,44 MB",
+                             "modified":  "2021-08-16 21:52",
+                             "ageDays":  1817
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\Arms Trafficking.pdf",
+                             "bytes":  21886024,
+                             "size":  "20,87 MB",
+                             "modified":  "2025-03-26 19:10",
+                             "ageDays":  499
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\adolfo mp3.mp3",
+                             "bytes":  21115454,
+                             "size":  "20,14 MB",
+                             "modified":  "2018-10-19 14:34",
+                             "ageDays":  2850
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\Portal-de-Formulários-06-06-2026_02_23_PM.png",
+                             "bytes":  20301933,
+                             "size":  "19,36 MB",
+                             "modified":  "2026-06-06 14:23",
+                             "ageDays":  63
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\base.rar",
+                             "bytes":  20028252,
+                             "size":  "19,10 MB",
+                             "modified":  "2025-11-22 11:48",
+                             "ageDays":  259
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\G Cache\\mapStyles\\styleGrid\\map.png",
+                             "bytes":  19453807,
+                             "size":  "18,55 MB",
+                             "modified":  "2021-08-16 21:52",
+                             "ageDays":  1817
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\version_[unknowncheats.me]_.dll",
+                             "bytes":  17077248,
+                             "size":  "16,29 MB",
+                             "modified":  "2025-01-01 18:02",
+                             "ageDays":  583
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\version.dll",
+                             "bytes":  17077248,
+                             "size":  "16,29 MB",
+                             "modified":  "2025-01-01 18:02",
+                             "ageDays":  583
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\Roadmap\\Roadmap.7z",
+                             "bytes":  16361881,
+                             "size":  "15,60 MB",
+                             "modified":  "2025-12-18 15:20",
+                             "ageDays":  233
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\WINMM.dll",
+                             "bytes":  15389696,
+                             "size":  "14,68 MB",
+                             "modified":  "2026-05-24 13:02",
+                             "ageDays":  76
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_REVOLUT_USDC_corrigido.pdf",
+                             "bytes":  15327958,
+                             "size":  "14,62 MB",
+                             "modified":  "2026-07-09 13:18",
+                             "ageDays":  30
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143\\GTApt Interactive Map\\gta-tiles\\Atlas\\Atlas.7z",
+                             "bytes":  15259381,
+                             "size":  "14,55 MB",
+                             "modified":  "2025-12-18 15:20",
+                             "ageDays":  233
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_REVOLUT_USDC_corrigido_LIMPO_links_corrigidos.pdf",
+                             "bytes":  14345629,
+                             "size":  "13,68 MB",
+                             "modified":  "2026-07-09 14:22",
+                             "ageDays":  30
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_REVOLUT_USDC_corrigido_LIMPO.pdf",
+                             "bytes":  14345309,
+                             "size":  "13,68 MB",
+                             "modified":  "2026-07-09 14:10",
+                             "ageDays":  30
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_REVOLUT_USDC_corrigido_core_v2.pdf",
+                             "bytes":  14341996,
+                             "size":  "13,68 MB",
+                             "modified":  "2026-07-09 13:49",
+                             "ageDays":  30
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_REVISTO_E_UNIFORMIZADO.pdf",
+                             "bytes":  14171088,
+                             "size":  "13,51 MB",
+                             "modified":  "2026-06-27 10:14",
+                             "ageDays":  42
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\Guia Levantamento TIMI.pdf",
+                             "bytes":  14171088,
+                             "size":  "13,51 MB",
+                             "modified":  "2026-06-27 12:36",
+                             "ageDays":  42
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_registo_levantamentos_v6_final.pdf",
+                             "bytes":  13707892,
+                             "size":  "13,07 MB",
+                             "modified":  "2026-06-26 16:51",
+                             "ageDays":  42
+                         },
+                         {
+                             "path":  "C:\\Users\\lopes\\Downloads\\guia_completo_registo_levantamentos_v4_uniformizado.pdf",
+                             "bytes":  12507322,
+                             "size":  "11,93 MB",
+                             "modified":  "2026-06-09 16:21",
+                             "ageDays":  59
+                         }
+                     ],
+    "largestTopLevelFolders":  [
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143",
+                                       "name":  "GTApt_V3_BACKUP_20251227_114143",
+                                       "bytes":  5049854164,
+                                       "size":  "4,70 GB",
+                                       "modified":  "2025-12-27 11:43",
+                                       "ageDays":  224,
+                                       "likelyCleanupCandidate":  true
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\mediamtx_v1.19.2_windows_amd64",
+                                       "name":  "mediamtx_v1.19.2_windows_amd64",
+                                       "bytes":  54947177,
+                                       "size":  "52,40 MB",
+                                       "modified":  "2026-07-19 18:36",
+                                       "ageDays":  19,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Furo A22",
+                                       "name":  "Furo A22",
+                                       "bytes":  1810437,
+                                       "size":  "1,73 MB",
+                                       "modified":  "2026-03-01 22:08",
+                                       "ageDays":  159,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Nova pasta",
+                                       "name":  "Nova pasta",
+                                       "bytes":  1810437,
+                                       "size":  "1,73 MB",
+                                       "modified":  "2026-03-01 22:07",
+                                       "ageDays":  159,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\gothic_editorial_animated_v2_kit",
+                                       "name":  "gothic_editorial_animated_v2_kit",
+                                       "bytes":  1793257,
+                                       "size":  "1,71 MB",
+                                       "modified":  "2026-07-14 11:59",
+                                       "ageDays":  25,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Attach_ROR00000000044793866",
+                                       "name":  "Attach_ROR00000000044793866",
+                                       "bytes":  1071843,
+                                       "size":  "1,02 MB",
+                                       "modified":  "2024-07-09 21:37",
+                                       "ageDays":  759,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Personalidades Revisionadas",
+                                       "name":  "Personalidades Revisionadas",
+                                       "bytes":  821357,
+                                       "size":  "802,11 KB",
+                                       "modified":  "2026-05-25 17:49",
+                                       "ageDays":  74,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Documentos Casa",
+                                       "name":  "Documentos Casa",
+                                       "bytes":  757275,
+                                       "size":  "739,53 KB",
+                                       "modified":  "2025-02-07 09:00",
+                                       "ageDays":  547,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\SignedDrivers",
+                                       "name":  "SignedDrivers",
+                                       "bytes":  682769,
+                                       "size":  "666,77 KB",
+                                       "modified":  "2026-06-25 10:36",
+                                       "ageDays":  44,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\RGB",
+                                       "name":  "RGB",
+                                       "bytes":  186981,
+                                       "size":  "182,60 KB",
+                                       "modified":  "2026-03-03 13:55",
+                                       "ageDays":  158,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Dependencies",
+                                       "name":  "Dependencies",
+                                       "bytes":  123139,
+                                       "size":  "120,25 KB",
+                                       "modified":  "2026-06-25 10:36",
+                                       "ageDays":  44,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\Adobe Acrobat Pro 2023.006.20380 (2023) PC {progbay}",
+                                       "name":  "Adobe Acrobat Pro 2023.006.20380 (2023) PC {progbay}",
+                                       "bytes":  105023,
+                                       "size":  "102,56 KB",
+                                       "modified":  "2023-12-02 22:19",
+                                       "ageDays":  979,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\__pycache__",
+                                       "name":  "__pycache__",
+                                       "bytes":  7787,
+                                       "size":  "7,60 KB",
+                                       "modified":  "2025-12-27 11:13",
+                                       "ageDays":  224,
+                                       "likelyCleanupCandidate":  true
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\MEmu Download",
+                                       "name":  "MEmu Download",
+                                       "bytes":  0,
+                                       "size":  "0 B",
+                                       "modified":  "2026-05-08 16:09",
+                                       "ageDays":  91,
+                                       "likelyCleanupCandidate":  false
+                                   },
+                                   {
+                                       "path":  "C:\\Users\\lopes\\Downloads\\syncthing_temp",
+                                       "name":  "syncthing_temp",
+                                       "bytes":  0,
+                                       "size":  "0 B",
+                                       "modified":  "2025-12-26 22:42",
+                                       "ageDays":  224,
+                                       "likelyCleanupCandidate":  true
+                                   }
+                               ],
+    "extensionSummary":  [
+                             {
+                                 "extension":  ".zip",
+                                 "count":  16,
+                                 "bytes":  2905490248,
+                                 "size":  "2,71 GB"
+                             },
+                             {
+                                 "extension":  ".png",
+                                 "count":  6005,
+                                 "bytes":  2791700503,
+                                 "size":  "2,60 GB"
+                             },
+                             {
+                                 "extension":  ".jpg",
+                                 "count":  68356,
+                                 "bytes":  1123616073,
+                                 "size":  "1,05 GB"
+                             },
+                             {
+                                 "extension":  ".mp4",
+                                 "count":  5,
+                                 "bytes":  465144429,
+                                 "size":  "443,60 MB"
+                             },
+                             {
+                                 "extension":  ".csv",
+                                 "count":  1,
+                                 "bytes":  448909912,
+                                 "size":  "428,11 MB"
+                             },
+                             {
+                                 "extension":  ".pdf",
+                                 "count":  85,
+                                 "bytes":  349938672,
+                                 "size":  "333,73 MB"
+                             },
+                             {
+                                 "extension":  ".exe",
+                                 "count":  9,
+                                 "bytes":  329163184,
+                                 "size":  "313,91 MB"
+                             },
+                             {
+                                 "extension":  ".rar",
+                                 "count":  10,
+                                 "bytes":  295663404,
+                                 "size":  "281,97 MB"
+                             },
+                             {
+                                 "extension":  ".mp3",
+                                 "count":  6,
+                                 "bytes":  281528459,
+                                 "size":  "268,49 MB"
+                             },
+                             {
+                                 "extension":  ".pack",
+                                 "count":  1,
+                                 "bytes":  208886039,
+                                 "size":  "199,21 MB"
+                             },
+                             {
+                                 "extension":  "[no extension]",
+                                 "count":  505,
+                                 "bytes":  123229902,
+                                 "size":  "117,52 MB"
+                             },
+                             {
+                                 "extension":  ".7z",
+                                 "count":  4,
+                                 "bytes":  89724141,
+                                 "size":  "85,57 MB"
+                             },
+                             {
+                                 "extension":  ".dll",
+                                 "count":  7,
+                                 "bytes":  61376050,
+                                 "size":  "58,53 MB"
+                             },
+                             {
+                                 "extension":  ".msi",
+                                 "count":  4,
+                                 "bytes":  24707072,
+                                 "size":  "23,56 MB"
+                             },
+                             {
+                                 "extension":  ".js",
+                                 "count":  1814,
+                                 "bytes":  19231773,
+                                 "size":  "18,34 MB"
+                             },
+                             {
+                                 "extension":  ".svg",
+                                 "count":  7,
+                                 "bytes":  11847759,
+                                 "size":  "11,30 MB"
+                             },
+                             {
+                                 "extension":  ".tmp",
+                                 "count":  2,
+                                 "bytes":  11709282,
+                                 "size":  "11,17 MB"
+                             },
+                             {
+                                 "extension":  ".bak",
+                                 "count":  19,
+                                 "bytes":  9893917,
+                                 "size":  "9,44 MB"
+                             },
+                             {
+                                 "extension":  ".map",
+                                 "count":  426,
+                                 "bytes":  9767078,
+                                 "size":  "9,31 MB"
+                             },
+                             {
+                                 "extension":  ".jpeg",
+                                 "count":  25,
+                                 "bytes":  9282031,
+                                 "size":  "8,85 MB"
+                             },
+                             {
+                                 "extension":  ".html",
+                                 "count":  29,
+                                 "bytes":  6113024,
+                                 "size":  "5,83 MB"
+                             },
+                             {
+                                 "extension":  ".node",
+                                 "count":  2,
+                                 "bytes":  4601344,
+                                 "size":  "4,39 MB"
+                             },
+                             {
+                                 "extension":  ".bin",
+                                 "count":  14,
+                                 "bytes":  4078096,
+                                 "size":  "3,89 MB"
+                             },
+                             {
+                                 "extension":  ".ts",
+                                 "count":  171,
+                                 "bytes":  2817851,
+                                 "size":  "2,69 MB"
+                             },
+                             {
+                                 "extension":  ".webp",
+                                 "count":  6,
+                                 "bytes":  2592414,
+                                 "size":  "2,47 MB"
+                             },
+                             {
+                                 "extension":  ".dat",
+                                 "count":  188,
+                                 "bytes":  2367052,
+                                 "size":  "2,26 MB"
+                             },
+                             {
+                                 "extension":  ".dds",
+                                 "count":  2,
+                                 "bytes":  2097408,
+                                 "size":  "2,00 MB"
+                             },
+                             {
+                                 "extension":  ".idx",
+                                 "count":  1,
+                                 "bytes":  1837592,
+                                 "size":  "1,75 MB"
+                             },
+                             {
+                                 "extension":  ".webm",
+                                 "count":  6,
+                                 "bytes":  1784673,
+                                 "size":  "1,70 MB"
+                             },
+                             {
+                                 "extension":  ".lng",
+                                 "count":  12,
+                                 "bytes":  971436,
+                                 "size":  "948,67 KB"
+                             }
+                         ],
+    "safety":  "Read-only audit. No file or folder was modified or deleted."
+}
