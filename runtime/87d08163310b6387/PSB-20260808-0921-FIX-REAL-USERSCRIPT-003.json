@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-0921-FIX-REAL-USERSCRIPT-003",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Normalizar LF apenas no userscript alvo e publicar corretamente a v15.5.1 no GitHub.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T08:19:43.354Z",
+  "endedAt": "2026-08-08T08:19:44.057Z",
+  "elapsedMs": 703,
+  "outputLength": 845,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "53471545a97d69f6f60fe68328e9119e2ce1531597edc57eb4870d78646e56b8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-0921-FIX-REAL-USERSCRIPT-003.txt",
+  "createdAt": "2026-08-08T08:19:44.058Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

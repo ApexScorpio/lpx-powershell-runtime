@@ -1,0 +1,12 @@
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786177183294-69dfa78a2cd04741.ps1:319 char:51
++     $text = [System.IO.File]::ReadAllText($target)`n    $text = $text ...
++                                                   ~~
+Unexpected token '`n' in expression or statement.
+
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786177183294-69dfa78a2cd04741.ps1:406 char:68
++ ...  & $git config core.autocrlf false 2>&1 | Out-Null`n        & $git co ...
++                                                                 ~
+The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quotation marks ("&") to pass it as part of a string.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
