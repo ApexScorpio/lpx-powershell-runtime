@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1418-GITHUB-CLONE-DIAG-005",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Diagnosticar em modo só de leitura por que motivo os clones GitHub falharam, sem alterar nem apagar qualquer ficheiro dos projetos.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T13:22:35.999Z",
+  "endedAt": "2026-08-08T13:22:42.900Z",
+  "elapsedMs": 6901,
+  "outputLength": 450,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "fa862507777b89f74b75f2c66e937b9086e25c0c8f4c5758a9f9d5dcb373ddd8",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1418-GITHUB-CLONE-DIAG-005.txt",
+  "createdAt": "2026-08-08T13:22:42.901Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

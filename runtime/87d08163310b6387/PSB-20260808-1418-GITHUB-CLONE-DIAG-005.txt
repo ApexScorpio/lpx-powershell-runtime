@@ -1,0 +1,7 @@
+You cannot call a method on a null-valued expression.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786195355974-60d5e05180744ba6.ps1:45 char:20
++ ... hSummary=(@($auth.output -split "`r?`n" | Where-Object { $_ -match 'L ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+ 
