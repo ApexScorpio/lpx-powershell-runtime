@@ -1,0 +1,231 @@
+{
+    "protocol":  "LPX_APPROVED_DISK_CLEANUP_V1",
+    "jobId":  "PSB-20260808-1137-DISK-CLEANUP-APPROVED-001",
+    "status":  "PARTIAL",
+    "approvalScope":  [
+                          "Streamlabs AI Avatar data",
+                          "Stremio cache only",
+                          "Playwright and Playwright Go runtime downloads",
+                          "Previously reviewed low-risk caches and temporary files"
+                      ],
+    "freeBeforeBytes":  30952312832,
+    "freeBefore":  "28,83 GB",
+    "freeAfterBytes":  52521889792,
+    "freeAfter":  "48,91 GB",
+    "actualFreedBytes":  21569576960,
+    "actualFreed":  "20,09 GB",
+    "targetReached":  false,
+    "deletedCount":  13,
+    "failedCount":  4,
+    "items":  [
+                  {
+                      "group":  "Streamlabs AI Avatar",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\streamlabs-avatar",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  10893403838,
+                      "sizeBefore":  "10,15 GB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Stremio cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\stremio\\stremio-server\\stremio-cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  4689689731,
+                      "sizeBefore":  "4,37 GB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Playwright",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\ms-playwright",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  1258817968,
+                      "sizeBefore":  "1,17 GB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Playwright Go",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\ms-playwright-go",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  195346997,
+                      "sizeBefore":  "186,30 MB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: User TEMP",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Temp",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  false,
+                      "bytesBefore":  480793017,
+                      "sizeBefore":  "458,52 MB",
+                      "error":  "Acesso negado ao caminho \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\0cxfo1yy\u0027."
+                  },
+                  {
+                      "group":  "Low-risk cache: CrashDumps",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\CrashDumps",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  2010461792,
+                      "sizeBefore":  "1,87 GB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: NVIDIA DXCache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\DXCache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  false,
+                      "bytesBefore":  1478651904,
+                      "sizeBefore":  "1,38 GB",
+                      "error":  "O processo não pode aceder ao ficheiro \u002770cea9d976f8a20e.nvph\u0027 porque está a ser utilizado por outro processo."
+                  },
+                  {
+                      "group":  "Low-risk cache: NVIDIA GLCache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\NVIDIA\\GLCache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  479315,
+                      "sizeBefore":  "468,08 KB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: DirectX D3DSCache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\D3DSCache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  3129676,
+                      "sizeBefore":  "2,98 MB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: npm cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\npm-cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  1083071061,
+                      "sizeBefore":  "1,01 GB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: pip cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\pip\\Cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  45608563,
+                      "sizeBefore":  "43,50 MB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: Chrome Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  false,
+                      "bytesBefore":  265342819,
+                      "sizeBefore":  "253,05 MB",
+                      "error":  "O processo não pode aceder ao ficheiro \u0027journal.baj\u0027 porque está a ser utilizado por outro processo."
+                  },
+                  {
+                      "group":  "Low-risk cache: Chrome Code Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Code Cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  375481270,
+                      "sizeBefore":  "358,09 MB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: Chrome GPUCache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\GPUCache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  5921724,
+                      "sizeBefore":  "5,65 MB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: Edge Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  false,
+                      "bytesBefore":  7527977,
+                      "sizeBefore":  "7,18 MB",
+                      "error":  "O processo não pode aceder ao ficheiro \u0027journal.baj\u0027 porque está a ser utilizado por outro processo."
+                  },
+                  {
+                      "group":  "Low-risk cache: Discord Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\Cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  241503045,
+                      "sizeBefore":  "230,32 MB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: Discord Code Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\discord\\Code Cache",
+                      "type":  "folder",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytesBefore":  726854,
+                      "sizeBefore":  "709,82 KB",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: VS Code Cache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Code\\Cache",
+                      "type":  "folder",
+                      "existed":  false,
+                      "deleted":  false,
+                      "bytesBefore":  0,
+                      "sizeBefore":  "0 B",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: VS Code CachedData",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Code\\CachedData",
+                      "type":  "folder",
+                      "existed":  false,
+                      "deleted":  false,
+                      "bytesBefore":  0,
+                      "sizeBefore":  "0 B",
+                      "error":  null
+                  },
+                  {
+                      "group":  "Low-risk cache: VS Code GPUCache",
+                      "path":  "C:\\Users\\lopes\\AppData\\Roaming\\Code\\GPUCache",
+                      "type":  "folder",
+                      "existed":  false,
+                      "deleted":  false,
+                      "bytesBefore":  0,
+                      "sizeBefore":  "0 B",
+                      "error":  null
+                  }
+              ],
+    "deliberatelyNotTouched":  [
+                                   "Recycle Bin",
+                                   "All remaining GX0 files",
+                                   "Protected GTA/Desktop videos",
+                                   "Avolites Titan files and shows",
+                                   "Mining/crypto folders",
+                                   "Wallets, seed phrases, private keys, keystores, configs, databases and trading history",
+                                   "Programs not explicitly approved"
+                               ]
+}
