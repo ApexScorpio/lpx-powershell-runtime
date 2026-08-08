@@ -1,0 +1,7 @@
+Cannot convert argument "val2", with value: "22752690176", for "Max" to type "System.Int32": "Cannot convert value "22752690176" to type "System.Int32". Error: "Valor demasiado grande ou demasiado pequeno para Int32.""
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786184800500-c2c5fdba42e6c754.ps1:329 char:34
++ ...    additionalNeededApprox = Fmt ([math]::Max(0, (50GB - $afterFree)))
++                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodException
+    + FullyQualifiedErrorId : MethodArgumentConversionInvalidCastArgument
+ 

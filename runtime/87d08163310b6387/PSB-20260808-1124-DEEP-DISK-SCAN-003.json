@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1124-DEEP-DISK-SCAN-003",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Analisar em detalhe AppData, Documents, Desktop, caches, aplicações e ficheiros grandes para encontrar mais espaço libertável até atingir pelo menos 50 GB, sem apagar nada.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T10:26:40.513Z",
+  "endedAt": "2026-08-08T10:28:39.196Z",
+  "elapsedMs": 118683,
+  "outputLength": 632,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "c418a534052f545fa3019d1817037de467a1c003f5ab4bd98dc3ce12f89ee406",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1124-DEEP-DISK-SCAN-003.txt",
+  "createdAt": "2026-08-08T10:28:39.196Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
