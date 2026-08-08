@@ -1,0 +1,31 @@
+{
+    "protocol":  "LPX_GTAPT_BACKUP_FINAL_CLEAN_V1",
+    "jobId":  "PSB-20260808-1632-GTAPT-BACKUP-FINAL-CLEAN-016",
+    "status":  "SUCCEEDED",
+    "githubVerified":  true,
+    "githubInfo":  "{\"defaultBranchRef\":{\"name\":\"main\"},\"nameWithOwner\":\"ApexScorpio/gtapt\",\"pushedAt\":\"2026-08-08T14:39:48Z\",\"url\":\"https://github.com/ApexScorpio/gtapt\"}",
+    "backupPath":  "C:\\Users\\lopes\\Downloads\\GTApt_V3_BACKUP_20251227_114143",
+    "backupSizeBefore":  "4,70 GB",
+    "filesScanned":  78055,
+    "valuableFilesHashChecked":  70739,
+    "exactHashMatchesInLiveProjects":  70738,
+    "preservedUniqueOrChangedCount":  1,
+    "preservedUniqueOrChangedBytes":  182,
+    "preservedUniqueOrChangedSize":  "182 B",
+    "preservedUniqueOrChanged":  [
+                                     {
+                                         "relative":  "data\\historico\\indice.json",
+                                         "destination":  "C:\\Users\\lopes\\Documents\\GTA Stuff\\_recovered_from_old_backup_20251227\\data\\historico\\indice.json",
+                                         "bytes":  182,
+                                         "size":  "182 B",
+                                         "sha256":  "ADA0087898295838B07F503778A194829664AF12E18417F6A7EDC375C9F064B3"
+                                     }
+                                 ],
+    "recoveryPath":  "C:\\Users\\lopes\\Documents\\GTA Stuff\\_recovered_from_old_backup_20251227",
+    "backupDeleted":  true,
+    "backupStillExists":  false,
+    "grossDeletedSize":  "4,70 GB",
+    "netSpaceFreed":  "4,70 GB",
+    "hashFailureCount":  0,
+    "safety":  "Every potentially valuable non-script asset was either hash-matched to a live GTA project or copied and SHA-256 verified into the recovery folder before the old Downloads backup was deleted. Scripts were already covered by the earlier verified GitHub migration."
+}

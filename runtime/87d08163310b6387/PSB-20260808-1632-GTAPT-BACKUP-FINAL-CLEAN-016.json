@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1632-GTAPT-BACKUP-FINAL-CLEAN-016",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Verificar por hash os assets relevantes do grande backup GTApt, preservar qualquer ficheiro único e apagar o backup antigo de Downloads em segurança.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T15:26:12.176Z",
+  "endedAt": "2026-08-08T15:35:57.413Z",
+  "elapsedMs": 585237,
+  "outputLength": 1935,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "632f0725b29d0176fb4d457c4a09764338072ec325d738512c3186077e672e05",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1632-GTAPT-BACKUP-FINAL-CLEAN-016.txt",
+  "createdAt": "2026-08-08T15:35:57.417Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
