@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1452-GTAPT-FINALIZE-AVOLITES-009",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Finalizar o upload do GTApt excluindo caches e ficheiros demasiado longos, verificar o repositório, apagar apenas os scripts locais já salvaguardados e remover o script Avolites autorizado.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T13:56:46.336Z",
+  "endedAt": "2026-08-08T14:16:46.630Z",
+  "elapsedMs": 1200294,
+  "outputLength": 37,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "3162e9e6e21fcb9f332cc6ee196f09e761ff1174263c11303c9a06abc0336f5c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1452-GTAPT-FINALIZE-AVOLITES-009.txt",
+  "createdAt": "2026-08-08T14:16:46.632Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
