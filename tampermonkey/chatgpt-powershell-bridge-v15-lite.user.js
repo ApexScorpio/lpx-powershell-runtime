@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.07.30.15.5.0
+// @version      2026.08.08.15.5.1
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.0';
+    const VERSION = '15.5.1';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -316,38 +316,55 @@
 
     function protocolPromptText() {
         return [
-            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_3',
+            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_5_1',
             '',
             `Esta conversa está ligada à LPX PowerShell Bridge v${VERSION}.`,
             '',
-            'Sempre que for necessário executar PowerShell, cria o comando num ficheiro .ps1 anexado e responde apenas com um manifesto JSON pequeno:',
+            'Sempre que for necessário executar PowerShell, tens de criar o comando completo num ficheiro .ps1 anexado à resposta.',
+            '',
+            'Não escrevas texto antes do bloco JSON.',
+            '',
+            'A resposta inicial de cada novo job deve começar exatamente com um bloco de código json neste formato:',
+            '',
+            '```json',
             '{',
             '  "protocol": "PSB_JOB_FILE_V1",',
             '  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",',
             '  "file": "nome-unico-do-comando.ps1",',
-            '  "fileId": "file_00000000000000000000000000000000",',
             '  "purpose": "objetivo claro e curto"',
             '}',
+            '```',
+            '',
+            'Depois de fechar o bloco JSON, inclui apenas o link normal para descarregar o ficheiro .ps1.',
             '',
             'REGRAS OBRIGATÓRIAS:',
             '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
             '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
-            '2A. Inclui fileId apenas quando a plataforma fornecer explicitamente o identificador do anexo desta mensagem; nunca o inventes nem reutilizes.',
-            '2B. Quando receberes PSBRIDGE_FILEID_HANDSHAKE_V1, responde apenas com o mesmo manifesto e o mesmo link, acrescentando o fileId exato do anexo anterior fornecido pela plataforma.',
-            '2C. Num handshake mantém exatamente jobId, file e purpose; não cries nem anexes outro ficheiro.',
-            '3. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para o job.',
-            '4. Usa um nome de ficheiro e um jobId únicos em cada execução.',
-            '5. O userscript aciona o download do anexo e a bridge local encontra, valida, normaliza e executa o ficheiro.',
-            '6. PSB_JOB_V2 e PSB_JOB_V3 continuam aceites apenas para compatibilidade e recuperação.',
-            '7. Depois de receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
-            '8. Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
-            '9. Mantém os comandos temporários; guarda apenas decisões, causas e soluções técnicas consolidadas.',
+            '3. No manifesto inicial nunca incluas fileId.',
+            '4. Usa sempre um jobId real e único no formato PSB-AAAAMMDD-HHMM-DESCRICAO-001, substituindo AAAAMMDD, HHMM e DESCRICAO por valores reais.',
+            '5. O campo file tem de corresponder exatamente ao nome do anexo .ps1.',
+            '6. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para transportar o job.',
+            '7. PSB_JOB_V2 e PSB_JOB_V3 continuam aceites apenas para compatibilidade e recuperação.',
+            '8. PSB_LEARN_V1 continua aceite para guardar conhecimento consolidado.',
             '',
-            'Confirma estas regras silenciosamente e aplica-as em todas as próximas execuções PowerShell desta conversa.'
+            'HANDSHAKE fileId:',
+            'Quando receberes PSBRIDGE_FILEID_HANDSHAKE_V1, responde apenas com o MESMO manifesto anterior, mantendo exatamente jobId, file e purpose, acrescentando somente o fileId exato fornecido pela plataforma.',
+            'Não cries outro ficheiro. Não cries outro jobId. Não inventes nem reutilizes fileId.',
+            'Depois do manifesto, inclui apenas o MESMO link sandbox anterior.',
+            '',
+            'RESULTADOS:',
+            'Quando receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
+            'Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
+            '',
+            'Sempre que criares um job PowerShell, a resposta visível contém apenas:',
+            '1. o bloco ```json com o manifesto;',
+            '2. o link normal para o .ps1.',
+            '',
+            'Nada antes. Nada depois.',
+            '',
+            'Confirma estas regras silenciosamente e aplica-as automaticamente.'
         ].join('\n');
-    }
-
-    function composerText() {
+    }    function composerText() {
         const editor = composer();
 
         if (!editor) {
@@ -1001,44 +1018,199 @@
         };
     }
 
-    function manifestsIn(assistant) {
-        const manifests = [];
+    function manifestLooksLikePlaceholder(manifest) {
+        if (!manifest || typeof manifest !== 'object') {
+            return true;
+        }
 
-        for (const pre of assistant.querySelectorAll('pre')) {
-            const text = String(pre.innerText || pre.textContent || '').trim();
+        const protocol = String(manifest.protocol || '').trim();
+        const jobId = String(manifest.jobId || '').trim();
+        const fileName = String(manifest.file || '').trim();
 
-            if (!text) {
+        if (
+            /AAAAMMDD|HHMM|DESCRICAO|\.\.\./i.test(jobId) ||
+            /nome-unico-do-comando|\.\.\./i.test(fileName)
+        ) {
+            return true;
+        }
+
+        if (protocol === 'PSB_JOB_FILE_V1') {
+            if (!/^PSB-\d{8}-\d{4}-[A-Z0-9][A-Z0-9-]*-\d{3}$/i.test(jobId)) {
+                return true;
+            }
+
+            if (!/\.ps1$/i.test(fileName)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function parseBalancedJsonManifests(text) {
+        const source = String(text || '');
+        const supported = new Set([
+            'PSB_JOB_FILE_V1',
+            'PSB_JOB_V2',
+            'PSB_JOB_V3',
+            'PSB_LEARN_V1'
+        ]);
+        const found = [];
+
+        for (let start = 0; start < source.length; start++) {
+            if (source[start] !== '{') {
                 continue;
             }
+
+            let depth = 0;
+            let inString = false;
+            let escaped = false;
+
+            for (let index = start; index < source.length; index++) {
+                const char = source[index];
+
+                if (inString) {
+                    if (escaped) {
+                        escaped = false;
+                    } else if (char === '\\') {
+                        escaped = true;
+                    } else if (char === '"') {
+                        inString = false;
+                    }
+
+                    continue;
+                }
+
+                if (char === '"') {
+                    inString = true;
+                    continue;
+                }
+
+                if (char === '{') {
+                    depth++;
+                    continue;
+                }
+
+                if (char === '}') {
+                    depth--;
+
+                    if (depth !== 0) {
+                        continue;
+                    }
+
+                    try {
+                        const value = JSON.parse(
+                            source.slice(start, index + 1)
+                        );
+
+                        if (
+                            value &&
+                            typeof value === 'object' &&
+                            supported.has(String(value.protocol || '')) &&
+                            !manifestLooksLikePlaceholder(value)
+                        ) {
+                            found.push(value);
+                        }
+                    } catch {
+                        // Continua a procurar o próximo objeto JSON balanceado.
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        return found;
+    }
+
+    function manifestsIn(assistant) {
+        const manifests = [];
+        const seenManifestKeys = new Set();
+        const seenTexts = new Set();
+        const root = turnContainer(assistant);
+
+        function addManifest(value) {
+            if (!value || typeof value !== 'object' || !value.protocol) {
+                return;
+            }
+
+            if (manifestLooksLikePlaceholder(value)) {
+                return;
+            }
+
+            const key = [
+                String(value.protocol || ''),
+                String(value.jobId || value.id || ''),
+                String(value.fileId || ''),
+                String(value.file || '')
+            ].join('|');
+
+            if (seenManifestKeys.has(key)) {
+                return;
+            }
+
+            seenManifestKeys.add(key);
+            manifests.push(value);
+        }
+
+        function inspectText(rawText) {
+            const text = String(rawText || '').trim();
+
+            if (!text || seenTexts.has(text)) {
+                return;
+            }
+
+            seenTexts.add(text);
 
             if (text.includes('PSB_JOB_V3')) {
                 const value = parseV3PowerShellBlock(text);
 
-                if (value) {
-                    manifests.push(value);
-                    continue;
+                if (value && !manifestLooksLikePlaceholder(value)) {
+                    addManifest(value);
                 }
             }
 
-            if (!text.includes('PSB_JOB_FILE_V1') && !text.includes('PSB_JOB_V2') && !text.includes('PSB_LEARN_V1')) {
-                continue;
+            if (
+                !text.includes('PSB_JOB_FILE_V1') &&
+                !text.includes('PSB_JOB_V2') &&
+                !text.includes('PSB_JOB_V3') &&
+                !text.includes('PSB_LEARN_V1')
+            ) {
+                return;
             }
 
-            try {
-                const value = JSON.parse(text);
-
-                if (value && typeof value === 'object' && value.protocol) {
-                    manifests.push(value);
-                }
-            } catch {
-                // Apenas JSON válido é aceite no protocolo antigo.
+            for (const value of parseBalancedJsonManifests(text)) {
+                addManifest(value);
             }
         }
 
-        return manifests;
-    }
+        const selector = [
+            'pre',
+            'code',
+            '.cm-content',
+            '[data-testid*="code"]',
+            '[data-testid*="Code"]',
+            '[class*="code-block"]',
+            '[class*="codeBlock"]',
+            '[class*="CodeBlock"]'
+        ].join(', ');
 
-    async function inspectCandidate(forced) {
+        for (const node of root.querySelectorAll(selector)) {
+            inspectText(
+                node.innerText ||
+                node.textContent ||
+                ''
+            );
+        }
+
+        inspectText(
+            root.innerText ||
+            root.textContent ||
+            ''
+        );
+
+        return manifests;
+    }    async function inspectCandidate(forced) {
         if (!enabled() && !forced) {
             return;
         }
@@ -1052,7 +1224,9 @@
             return;
         }
 
-        const assistant = candidateAssistant || latestAssistantFallback();
+        const assistant = forced
+            ? latestAssistantFallback()
+            : (candidateAssistant || latestAssistantFallback());
 
         if (!assistant) {
             setStatus('Não foi encontrada uma resposta do assistente.');
