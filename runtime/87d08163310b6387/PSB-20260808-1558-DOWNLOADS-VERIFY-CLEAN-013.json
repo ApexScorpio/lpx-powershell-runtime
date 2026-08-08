@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1558-DOWNLOADS-VERIFY-CLEAN-013",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Verificar se o grande backup GTApt é realmente redundante antes de o apagar e eliminar também os restantes candidatos de limpeza já autorizados na pasta Downloads.",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-08T14:57:24.157Z",
+  "endedAt": "2026-08-08T15:17:24.459Z",
+  "elapsedMs": 1200302,
+  "outputLength": 37,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f03a73867d49c71c9ca026d5a83d234f9214a911f115696044da23c12510916b",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1558-DOWNLOADS-VERIFY-CLEAN-013.txt",
+  "createdAt": "2026-08-08T15:17:24.460Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
