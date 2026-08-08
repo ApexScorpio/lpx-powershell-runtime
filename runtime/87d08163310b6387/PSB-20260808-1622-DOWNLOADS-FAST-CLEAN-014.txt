@@ -1,0 +1,7 @@
+Os tipos de argumentos não correspondem
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786202371485-81ff91ee7b582dc3.ps1:228 char:21
++         deletedSize=Format-Bytes $totalDeletedBytes
++                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 
