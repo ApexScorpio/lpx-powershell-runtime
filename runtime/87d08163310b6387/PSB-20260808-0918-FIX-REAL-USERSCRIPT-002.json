@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-0918-FIX-REAL-USERSCRIPT-002",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Corrigir o erro CRLF do Git e publicar a v15.5.1 real da LPX PowerShell Bridge.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T08:17:46.569Z",
+  "endedAt": "2026-08-08T08:17:49.999Z",
+  "elapsedMs": 3430,
+  "outputLength": 757311,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": true,
+  "commandHash": "e33bd2c3e73df3a10bc7f7000cf4b64f8f811b2973dff782a6114c093e49bf86",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-0918-FIX-REAL-USERSCRIPT-002.txt",
+  "createdAt": "2026-08-08T08:17:50.010Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
