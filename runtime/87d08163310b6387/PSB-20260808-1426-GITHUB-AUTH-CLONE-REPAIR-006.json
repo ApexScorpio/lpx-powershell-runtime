@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1426-GITHUB-AUTH-CLONE-REPAIR-006",
+  "conversationKey": "87d08163310b6387",
+  "purpose": "Reparar a autenticação Git através do GitHub CLI e testar um clone real sem tocar nem apagar ficheiros dos projetos.",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T13:24:27.907Z",
+  "endedAt": "2026-08-08T13:24:39.192Z",
+  "elapsedMs": 11285,
+  "outputLength": 1974,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "8e6f83399d53c2f5d4ae67b323eccad6bdaaf0e40040d5aaba0637955677ca47",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/87d08163310b6387/PSB-20260808-1426-GITHUB-AUTH-CLONE-REPAIR-006.txt",
+  "createdAt": "2026-08-08T13:24:39.194Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

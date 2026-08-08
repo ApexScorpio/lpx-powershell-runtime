@@ -1,0 +1,28 @@
+{
+    "protocol":  "LPX_GITHUB_AUTH_CLONE_REPAIR_V1",
+    "jobId":  "PSB-20260808-1426-GITHUB-AUTH-CLONE-REPAIR-006",
+    "status":  "REPAIRED_AND_CLONE_OK",
+    "ghPath":  "C:\\Program Files\\GitHub CLI\\gh.exe",
+    "gitPath":  "C:\\Program Files\\Git\\cmd\\git.exe",
+    "authBeforeExit":  0,
+    "authBefore":  "github.com\n  âœ“ Logged in to github.com account ApexScorpio (keyring)\n  - Active account: true\n  - Git operations protocol: https\n  - Token: gho_************************************\n  - Token scopes: \u0027gist\u0027, \u0027read:org\u0027, \u0027repo\u0027, \u0027workflow\u0027",
+    "tokenAvailable":  true,
+    "setupGitExit":  0,
+    "setupGitOutput":  "",
+    "authAfterExit":  0,
+    "authAfter":  "github.com\n  âœ“ Logged in to github.com account ApexScorpio (keyring)\n  - Active account: true\n  - Git operations protocol: https\n  - Token: gho_************************************\n  - Token scopes: \u0027gist\u0027, \u0027read:org\u0027, \u0027repo\u0027, \u0027workflow\u0027",
+    "repoViewExit":  0,
+    "repoView":  "{\"defaultBranchRef\":{\"name\":\"\"},\"isPrivate\":true,\"nameWithOwner\":\"ApexScorpio/cvp-vistorias\",\"url\":\"https://github.com/ApexScorpio/cvp-vistorias\"}",
+    "lsRemoteExit":  0,
+    "lsRemote":  "",
+    "cloneExit":  0,
+    "cloneOutput":  "Cloning into \u0027C:\\Users\\lopes\\AppData\\Local\\Temp\\LPX-GitHub-Repair-20260808-142428\\clone-test\u0027...\nwarning: You appear to have cloned an empty repository.",
+    "cloneGitDirectoryExists":  true,
+    "cloneHead":  null,
+    "nextStep":  "Re-run the GitHub migration job; Git authentication/clone is now working.",
+    "safety":  [
+                   "No user project file was modified or deleted.",
+                   "Only GitHub/Git authentication configuration may have been updated by gh auth setup-git.",
+                   "The clone test used only a temporary folder which is removed at the end."
+               ]
+}
