@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260808-1812-BONCHAT-TIMI68-001",
+  "conversationKey": "312053886cb8cbe9",
+  "purpose": "automatizar envio diário aleatório no grupo Timi 68 do BonChat",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-08T17:17:40.649Z",
+  "endedAt": "2026-08-08T17:17:42.697Z",
+  "elapsedMs": 2048,
+  "outputLength": 0,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "1f1eab0179847e40c1b7b875bf795633518b453d2935f5ec94ed24944f7de7e0",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/312053886cb8cbe9/PSB-20260808-1812-BONCHAT-TIMI68-001.txt",
+  "createdAt": "2026-08-08T17:17:42.699Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
