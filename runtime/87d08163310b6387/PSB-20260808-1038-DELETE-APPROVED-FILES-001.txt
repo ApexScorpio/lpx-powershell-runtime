@@ -1,0 +1,45 @@
+{
+    "protocol":  "LPX_DELETE_APPROVED_FILES_V1",
+    "jobId":  "PSB-20260808-1038-DELETE-APPROVED-FILES-001",
+    "status":  "SUCCEEDED",
+    "deletedOnlyExplicitlyApprovedFiles":  true,
+    "files":  [
+                  {
+                      "path":  "C:\\Users\\lopes\\Desktop\\2022_0101_011941_015F.MP4",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytes":  1540307011,
+                      "size":  "1,43 GB"
+                  },
+                  {
+                      "path":  "C:\\Users\\lopes\\Videos\\NVIDIA\\Desktop\\Desktop 2024.12.29 - 14.19.02.02.mp4",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytes":  434443694,
+                      "size":  "414,32 MB"
+                  },
+                  {
+                      "path":  "C:\\Users\\lopes\\Videos\\GX013158.MP4",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytes":  341507298,
+                      "size":  "325,69 MB"
+                  },
+                  {
+                      "path":  "C:\\Users\\lopes\\Videos\\NVIDIA\\Desktop\\Desktop 2024.12.29 - 14.13.42.01.mp4",
+                      "existed":  true,
+                      "deleted":  true,
+                      "bytes":  332354877,
+                      "size":  "316,96 MB"
+                  }
+              ],
+    "totalFreedBytes":  2648612880,
+    "totalFreedSize":  "2,47 GB",
+    "currentFreeBytes":  20786323456,
+    "currentFreeSize":  "19,36 GB",
+    "protected":  [
+                      "All GX0 files remain protected except GX013158.MP4, which was explicitly approved for deletion.",
+                      "The GTA V recordings marked as keep/only-if-necessary were not touched.",
+                      "No wallet, seed phrase, private key, keystore, crypto configuration, database, trading history, or unrelated crypto file was touched."
+                  ]
+}
