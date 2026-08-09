@@ -7,7 +7,7 @@
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version 2
 
-$BaseDir = Join-Path $env:LOCALAPPDATA 'LPX\Timi Auto Reuniao'
+$BaseDir = 'S:\Users\lopes\AppData\Local\LPX\Timi Auto Reuniao'
 $ConfigPath = Join-Path $BaseDir 'config.json'
 $LogDir = Join-Path $BaseDir 'logs'
 $LogPath = Join-Path $LogDir ('Timi-Auto-Reuniao-' + (Get-Date -Format 'yyyy-MM-dd') + '.log')
@@ -25,6 +25,52 @@ if (-not (Test-Path -LiteralPath $ConfigPath)) {
 }
 
 $config = Get-Content -LiteralPath $ConfigPath -Raw -Encoding UTF8 | ConvertFrom-Json
+# LPX DAILY STATE V1
+$StatePath = Join-Path $BaseDir 'state.json'
+
+function Get-DailyState {
+    $today = (Get-Date).ToString('yyyy-MM-dd')
+    if (Test-Path -LiteralPath $StatePath) {
+        try {
+            $saved = Get-Content -LiteralPath $StatePath -Raw -Encoding UTF8 | ConvertFrom-Json
+            if ([string]$saved.Date -eq $today) {
+                return [pscustomobject]@{
+                    Date = $today
+                    Account1Sent = [bool]$saved.Account1Sent
+                    Account2Sent = [bool]$saved.Account2Sent
+                }
+            }
+        }
+        catch {
+            Write-Log "Estado diário inválido; será recriado: $($_.Exception.Message)"
+        }
+    }
+
+    return [pscustomobject]@{
+        Date = $today
+        Account1Sent = $false
+        Account2Sent = $false
+    }
+}
+
+function Save-DailyState {
+    param($State)
+    $tmp = $StatePath + '.tmp'
+    $State | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath $tmp -Encoding UTF8
+    Move-Item -LiteralPath $tmp -Destination $StatePath -Force
+}
+
+function Set-AccountSentToday {
+    param([int]$Index, $State)
+    if ($Index -eq 0) {
+        $State.Account1Sent = $true
+    }
+    elseif ($Index -eq 1) {
+        $State.Account2Sent = $true
+    }
+    Save-DailyState -State $State
+}
+# LPX DAILY STATE V1 END
 
 Add-Type -AssemblyName System.Windows.Forms
 
@@ -95,7 +141,7 @@ public static class LPXWin32 {
         return found;
     }
 }
-'`@
+'@
 }
 
 function Get-PlainPassword {
@@ -221,7 +267,7 @@ function Stop-BonChatProcess {
         Start-Sleep -Milliseconds 350
     }
     catch {
-        Write-Log "Não foi possível fechar PID $ProcessId: $($_.Exception.Message)"
+        Write-Log "Não foi possível fechar PID ${ProcessId}: $($_.Exception.Message)"
     }
 }
 
@@ -634,6 +680,18 @@ try {
     } while ($openDiff -lt 10 -or $sendDiff -lt 10)
 
     $states = @($state1, $state2)
+    # Restaurar o estado persistente do dia atual para impedir envios duplicados.
+    $dailyState = Get-DailyState
+    $states[0].Sent = [bool]$dailyState.Account1Sent
+    $states[1].Sent = [bool]$dailyState.Account2Sent
+    if ($states[0].Sent) {
+        $states[0].Opened = $true
+        Write-Log 'Conta 1 já enviou hoje; envio ignorado.'
+    }
+    if ($states[1].Sent) {
+        $states[1].Opened = $true
+        Write-Log 'Conta 2 já enviou hoje; envio ignorado.'
+    }
 
     Write-Log ("Conta 1: abrir {0}, enviar {1}" -f $state1.OpenAt.ToString('HH:mm:ss'), $state1.SendAt.ToString('HH:mm:ss'))
     Write-Log ("Conta 2: abrir {0}, enviar {1}" -f $state2.OpenAt.ToString('HH:mm:ss'), $state2.SendAt.ToString('HH:mm:ss'))
@@ -662,6 +720,9 @@ try {
                 $ok = Test-MessageInputAndSend -Account $account -Message ([string]$state.Message) -NoSend:$DryRun
                 if ($ok) {
                     $state.Sent = $true
+                    if (-not $DryRun) {
+                        Set-AccountSentToday -Index $i -State $dailyState
+                    }
                 }
                 else {
                     $state.NextCheckAt = (Get-Date).AddMinutes(1)
