@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2122-COMPARAR-CONCERTO-TIAGO-GX0-V2-001",
+  "conversationKey": "6eb5db800ee1e6e1",
+  "purpose": "Repetir a comparação objetiva de TiaGo e GX0 corrigindo a captura do FFmpeg",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T20:24:23.881Z",
+  "endedAt": "2026-08-10T20:25:16.929Z",
+  "elapsedMs": 53048,
+  "outputLength": 3466,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "42bf6e747ddb5d803397b9687ecf959506df99267025f8917d0ec87e7ee337aa",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/6eb5db800ee1e6e1/PSB-20260810-2122-COMPARAR-CONCERTO-TIAGO-GX0-V2-001.txt",
+  "createdAt": "2026-08-10T20:25:16.929Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
