@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2109-MEDIR-TIAGO-GX0-001",
+  "conversationKey": "6eb5db800ee1e6e1",
+  "purpose": "Medir duração, resolução e bitrate de TiaGo e GX0 pelo Windows",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T20:13:58.923Z",
+  "endedAt": "2026-08-10T20:14:00.531Z",
+  "elapsedMs": 1608,
+  "outputLength": 15995,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "23e58b0b17b760287b774bb54e17d5816caca96245ef60d793ca72af3b6b1673",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/6eb5db800ee1e6e1/PSB-20260810-2109-MEDIR-TIAGO-GX0-001.txt",
+  "createdAt": "2026-08-10T20:14:00.532Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

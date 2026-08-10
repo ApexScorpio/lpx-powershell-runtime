@@ -1,0 +1,230 @@
+{
+    "protocol":  "PSBRIDGE_RESULT_HINT_V1",
+    "task":  "Medir pelo Windows a duração, resolução e bitrate aproximado do TiaGo.mp4 e dos GX0.",
+    "final":  {
+                  "name":  "TiaGo.mp4",
+                  "path":  "C:\\Users\\lopes\\Videos\\TiaGo.mp4",
+                  "sizeBytes":  28986907412,
+                  "sizeGiB":  26.996,
+                  "durationSec":  4230.934,
+                  "durationText":  "01:10:30.9340000",
+                  "width":  3840,
+                  "height":  2160,
+                  "fps":  29.97,
+                  "compression":  "{34363248-0000-0010-8000-00AA00389B71}",
+                  "explorerVideoBitrateMbps":  54.458,
+                  "estimatedTotalBitrateMbps":  54.809,
+                  "canonicalProperties":  {
+                                              "System.Media.Duration":  42309340000,
+                                              "System.Video.FrameWidth":  3840,
+                                              "System.Video.FrameHeight":  2160,
+                                              "System.Video.FrameRate":  29970,
+                                              "System.Video.Compression":  "{34363248-0000-0010-8000-00AA00389B71}",
+                                              "System.Video.EncodingBitrate":  54457808,
+                                              "System.Audio.EncodingBitrate":  340688,
+                                              "System.FileExtension":  ".mp4",
+                                              "System.Size":  28986907412
+                                          },
+                  "localizedExplorerProperties":  {
+                                                      "Compressão de vídeo":  "{34363248-0000-0010-8000-00AA00389B71}",
+                                                      "Taxa de transmissão de dados":  "‎54457kbps",
+                                                      "Altura da janela":  "2160",
+                                                      "Largura do aro":  "3840",
+                                                      "Orientação de vídeo":  "0",
+                                                      "Velocidade de transmissão total (em bits)":  "‎54798kbps"
+                                                  }
+              },
+    "sources":  [
+                    {
+                        "name":  "GX013157.MP4",
+                        "path":  "C:\\Users\\lopes\\Videos\\GX013157.MP4",
+                        "sizeBytes":  11539563746,
+                        "sizeGiB":  10.747,
+                        "durationSec":  1025.024,
+                        "durationText":  "00:17:05.0240000",
+                        "width":  3840,
+                        "height":  2160,
+                        "fps":  29.97,
+                        "compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                        "explorerVideoBitrateMbps":  89.791,
+                        "estimatedTotalBitrateMbps":  90.063,
+                        "canonicalProperties":  {
+                                                    "System.Media.Duration":  10250239999,
+                                                    "System.Video.FrameWidth":  3840,
+                                                    "System.Video.FrameHeight":  2160,
+                                                    "System.Video.FrameRate":  29970,
+                                                    "System.Video.Compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                    "System.Video.EncodingBitrate":  89790880,
+                                                    "System.Audio.EncodingBitrate":  189352,
+                                                    "System.FileExtension":  ".MP4",
+                                                    "System.Size":  11539563746
+                                                },
+                        "localizedExplorerProperties":  {
+                                                            "Compressão de vídeo":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                            "Taxa de transmissão de dados":  "‎89790kbps",
+                                                            "Altura da janela":  "2160",
+                                                            "Largura do aro":  "3840",
+                                                            "Orientação de vídeo":  "0",
+                                                            "Velocidade de transmissão total (em bits)":  "‎89980kbps"
+                                                        }
+                    },
+                    {
+                        "name":  "GX023157.MP4",
+                        "path":  "C:\\Users\\lopes\\Videos\\GX023157.MP4",
+                        "sizeBytes":  11534315404,
+                        "sizeGiB":  10.742,
+                        "durationSec":  1025.024,
+                        "durationText":  "00:17:05.0240000",
+                        "width":  3840,
+                        "height":  2160,
+                        "fps":  29.97,
+                        "compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                        "explorerVideoBitrateMbps":  89.75,
+                        "estimatedTotalBitrateMbps":  90.022,
+                        "canonicalProperties":  {
+                                                    "System.Media.Duration":  10250239999,
+                                                    "System.Video.FrameWidth":  3840,
+                                                    "System.Video.FrameHeight":  2160,
+                                                    "System.Video.FrameRate":  29970,
+                                                    "System.Video.Compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                    "System.Video.EncodingBitrate":  89750256,
+                                                    "System.Audio.EncodingBitrate":  189368,
+                                                    "System.FileExtension":  ".MP4",
+                                                    "System.Size":  11534315404
+                                                },
+                        "localizedExplorerProperties":  {
+                                                            "Compressão de vídeo":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                            "Taxa de transmissão de dados":  "‎89750kbps",
+                                                            "Altura da janela":  "2160",
+                                                            "Largura do aro":  "3840",
+                                                            "Orientação de vídeo":  "0",
+                                                            "Velocidade de transmissão total (em bits)":  "‎89939kbps"
+                                                        }
+                    },
+                    {
+                        "name":  "GX033157.MP4",
+                        "path":  "C:\\Users\\lopes\\Videos\\GX033157.MP4",
+                        "sizeBytes":  11509813338,
+                        "sizeGiB":  10.719,
+                        "durationSec":  1025.024,
+                        "durationText":  "00:17:05.0240000",
+                        "width":  3840,
+                        "height":  2160,
+                        "fps":  29.97,
+                        "compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                        "explorerVideoBitrateMbps":  89.559,
+                        "estimatedTotalBitrateMbps":  89.831,
+                        "canonicalProperties":  {
+                                                    "System.Media.Duration":  10250239999,
+                                                    "System.Video.FrameWidth":  3840,
+                                                    "System.Video.FrameHeight":  2160,
+                                                    "System.Video.FrameRate":  29970,
+                                                    "System.Video.Compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                    "System.Video.EncodingBitrate":  89559040,
+                                                    "System.Audio.EncodingBitrate":  189352,
+                                                    "System.FileExtension":  ".MP4",
+                                                    "System.Size":  11509813338
+                                                },
+                        "localizedExplorerProperties":  {
+                                                            "Compressão de vídeo":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                            "Taxa de transmissão de dados":  "‎89559kbps",
+                                                            "Altura da janela":  "2160",
+                                                            "Largura do aro":  "3840",
+                                                            "Orientação de vídeo":  "0",
+                                                            "Velocidade de transmissão total (em bits)":  "‎89748kbps"
+                                                        }
+                    },
+                    {
+                        "name":  "GX043157.MP4",
+                        "path":  "C:\\Users\\lopes\\Videos\\GX043157.MP4",
+                        "sizeBytes":  11535600628,
+                        "sizeGiB":  10.743,
+                        "durationSec":  1025.024,
+                        "durationText":  "00:17:05.0240000",
+                        "width":  3840,
+                        "height":  2160,
+                        "fps":  29.97,
+                        "compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                        "explorerVideoBitrateMbps":  89.76,
+                        "estimatedTotalBitrateMbps":  90.032,
+                        "canonicalProperties":  {
+                                                    "System.Media.Duration":  10250239999,
+                                                    "System.Video.FrameWidth":  3840,
+                                                    "System.Video.FrameHeight":  2160,
+                                                    "System.Video.FrameRate":  29970,
+                                                    "System.Video.Compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                    "System.Video.EncodingBitrate":  89760320,
+                                                    "System.Audio.EncodingBitrate":  189344,
+                                                    "System.FileExtension":  ".MP4",
+                                                    "System.Size":  11535600628
+                                                },
+                        "localizedExplorerProperties":  {
+                                                            "Compressão de vídeo":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                            "Taxa de transmissão de dados":  "‎89760kbps",
+                                                            "Altura da janela":  "2160",
+                                                            "Largura do aro":  "3840",
+                                                            "Orientação de vídeo":  "0",
+                                                            "Velocidade de transmissão total (em bits)":  "‎89949kbps"
+                                                        }
+                    },
+                    {
+                        "name":  "GX053157.MP4",
+                        "path":  "C:\\Users\\lopes\\Videos\\GX053157.MP4",
+                        "sizeBytes":  1472624532,
+                        "sizeGiB":  1.371,
+                        "durationSec":  130.831,
+                        "durationText":  "00:02:10.8310000",
+                        "width":  3840,
+                        "height":  2160,
+                        "fps":  29.97,
+                        "compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                        "explorerVideoBitrateMbps":  89.659,
+                        "estimatedTotalBitrateMbps":  90.048,
+                        "canonicalProperties":  {
+                                                    "System.Media.Duration":  1308307000,
+                                                    "System.Video.FrameWidth":  3840,
+                                                    "System.Video.FrameHeight":  2160,
+                                                    "System.Video.FrameRate":  29970,
+                                                    "System.Video.Compression":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                    "System.Video.EncodingBitrate":  89658776,
+                                                    "System.Audio.EncodingBitrate":  189080,
+                                                    "System.FileExtension":  ".MP4",
+                                                    "System.Size":  1472624532
+                                                },
+                        "localizedExplorerProperties":  {
+                                                            "Compressão de vídeo":  "{43564548-0000-0010-8000-00AA00389B71}",
+                                                            "Taxa de transmissão de dados":  "‎89658kbps",
+                                                            "Altura da janela":  "2160",
+                                                            "Largura do aro":  "3840",
+                                                            "Orientação de vídeo":  "0",
+                                                            "Velocidade de transmissão total (em bits)":  "‎89847kbps"
+                                                        }
+                    }
+                ],
+    "comparison":  {
+                       "sourceCount":  5,
+                       "sourceTotalSizeGiB":  44.323,
+                       "finalSizeGiB":  26.996,
+                       "sizeRatioFinalToSources":  0.6091,
+                       "sourceTotalDurationSec":  4230.927,
+                       "finalDurationSec":  4230.934,
+                       "durationRatioFinalToSources":  1,
+                       "sourceAggregateBitrateMbps":  89.989,
+                       "finalEstimatedTotalBitrateMbps":  54.809,
+                       "bitrateRatioFinalToSources":  0.6091,
+                       "sameResolutionAll":  true,
+                       "knownSourceResolutionCount":  5
+                   },
+    "assessment":  {
+                       "conclusion":  "perda possível, sobretudo em movimento e detalhe fino",
+                       "notableQualityLossLikely":  null,
+                       "confidence":  "média",
+                       "reasons":  [
+                                       "O vídeo final tem 100,0% da duração total dos clips originais.",
+                                       "O vídeo final tem 60,9% do tamanho total dos 5 clips.",
+                                       "Bitrate total estimado: final 54,8 Mbps vs originais 90,0 Mbps (60,9%).",
+                                       "A resolução é igual nos 5 clips e no final: 3840x2160."
+                                   ],
+                       "caveat":  "Esta é uma avaliação por metadados/bitrate. Uma medição objetiva VMAF/SSIM exige descodificação e alinhamento dos frames originais com o vídeo editado."
+                   }
+}
