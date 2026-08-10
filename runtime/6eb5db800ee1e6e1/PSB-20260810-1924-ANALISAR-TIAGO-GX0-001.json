@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-1924-ANALISAR-TIAGO-GX0-001",
+  "conversationKey": "6eb5db800ee1e6e1",
+  "purpose": "Localizar o vídeo Tiago e os clips GX0 e avaliar a perda de qualidade",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T19:49:30.073Z",
+  "endedAt": "2026-08-10T19:50:43.762Z",
+  "elapsedMs": 73689,
+  "outputLength": 1660,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "2dd0ebb4ed2be10f0d7c98171da540ad24c2bfd4bac2c4868078772133e70385",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/6eb5db800ee1e6e1/PSB-20260810-1924-ANALISAR-TIAGO-GX0-001.txt",
+  "createdAt": "2026-08-10T19:50:43.768Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

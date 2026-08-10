@@ -1,0 +1,43 @@
+{
+    "protocol":  "PSBRIDGE_RESULT_HINT_V1",
+    "task":  "Localizar Tiago e clips GX0 e avaliar se a redução de tamanho sugere perda de qualidade notória.",
+    "tools":  {
+                  "ffprobe":  null,
+                  "ffmpeg":  null
+              },
+    "searchRoots":  [
+                        "C:\\Users\\lopes\\Videos",
+                        "C:\\Users\\lopes\\Desktop",
+                        "C:\\Users\\lopes\\Documents",
+                        "C:\\Users\\lopes\\Downloads",
+                        "C:\\Users\\lopes\\OneDrive",
+                        "C:\\"
+                    ],
+    "found":  {
+                  "tiagoCount":  0,
+                  "gx0Count":  0,
+                  "primaryTiago":  {
+
+                                   },
+                  "relatedGX0":  [
+
+                                 ],
+                  "allTiago":  [
+
+                               ]
+              },
+    "assessment":  {
+                       "level":  "indeterminado",
+                       "notableLossLikely":  null,
+                       "reasons":  [
+                                       "Não foi encontrado nenhum ficheiro de vídeo com \"Tiago\" no nome."
+                                   ],
+                       "metrics":  {
+
+                                   }
+                   },
+    "decodeChecks":  [
+
+                     ],
+    "note":  "A conclusão é técnica/heurística. Uma comparação visual pixel-a-pixel (VMAF/SSIM) exige alinhar exatamente os trechos do vídeo final com os clips de origem, o que uma montagem editada normalmente não permite automaticamente."
+}
