@@ -1,0 +1,7 @@
+Os tipos de argumentos não correspondem
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786392182077-40e088dd4bb2fd3d.ps1:487 char:1
++ $result = [ordered]@{
++ ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException
+ 

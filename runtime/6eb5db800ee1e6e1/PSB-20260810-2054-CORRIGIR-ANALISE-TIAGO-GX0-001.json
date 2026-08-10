@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2054-CORRIGIR-ANALISE-TIAGO-GX0-001",
+  "conversationKey": "6eb5db800ee1e6e1",
+  "purpose": "Corrigir a pesquisa de Tiago e GX0 e avaliar a perda de qualidade",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-10T20:03:02.090Z",
+  "endedAt": "2026-08-10T20:03:48.593Z",
+  "elapsedMs": 46503,
+  "outputLength": 335,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "f1c5fa72b774072d8865789f8af0a5e6697cc213e915707a5e2123ad0968caeb",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/6eb5db800ee1e6e1/PSB-20260810-2054-CORRIGIR-ANALISE-TIAGO-GX0-001.txt",
+  "createdAt": "2026-08-10T20:03:48.594Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
