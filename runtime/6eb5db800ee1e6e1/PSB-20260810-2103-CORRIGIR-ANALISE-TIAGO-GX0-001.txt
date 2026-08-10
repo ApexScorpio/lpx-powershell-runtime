@@ -1,0 +1,128 @@
+{
+    "protocol":  "PSBRIDGE_RESULT_HINT_V1",
+    "task":  "Localizar Tiago e GX0 e avaliar se a perda de qualidade do vídeo final é notória.",
+    "previousFailureDiagnosed":  "Os jobs anteriores falharam por incompatibilidade de tipos ao converter List[T] com @(...). Esta versão usa ToArray() explicitamente para as listas genéricas antes de construir o resultado JSON.",
+    "searchRoots":  "C:\\",
+    "tools":  {
+                  "ffprobe":  null
+              },
+    "found":  {
+                  "tiagoCount":  1,
+                  "gx0Count":  5,
+                  "neighborVideoCount":  0,
+                  "primaryTiago":  {
+                                       "name":  "TiaGo.mp4",
+                                       "path":  "C:\\Users\\lopes\\Videos\\TiaGo.mp4",
+                                       "directory":  "C:\\Users\\lopes\\Videos",
+                                       "extension":  ".mp4",
+                                       "sizeBytes":  28986907412,
+                                       "sizeMiB":  27644.1,
+                                       "sizeGiB":  26.996,
+                                       "created":  "2026-08-08T11:55:56.6828606+01:00",
+                                       "modified":  "2026-08-08T16:39:02.8413589+01:00"
+                                   },
+                  "relatedGX0":  [
+                                     {
+                                         "name":  "GX013157.MP4",
+                                         "path":  "C:\\Users\\lopes\\Videos\\GX013157.MP4",
+                                         "directory":  "C:\\Users\\lopes\\Videos",
+                                         "extension":  ".MP4",
+                                         "sizeBytes":  11539563746,
+                                         "sizeMiB":  11005,
+                                         "sizeGiB":  10.747,
+                                         "created":  "2026-08-06T15:14:46.2370296+01:00",
+                                         "modified":  "2026-08-05T20:57:32.0000000+01:00"
+                                     },
+                                     {
+                                         "name":  "GX023157.MP4",
+                                         "path":  "C:\\Users\\lopes\\Videos\\GX023157.MP4",
+                                         "directory":  "C:\\Users\\lopes\\Videos",
+                                         "extension":  ".MP4",
+                                         "sizeBytes":  11534315404,
+                                         "sizeMiB":  11000,
+                                         "sizeGiB":  10.742,
+                                         "created":  "2026-08-06T15:24:12.5312460+01:00",
+                                         "modified":  "2026-08-05T21:14:37.0000000+01:00"
+                                     },
+                                     {
+                                         "name":  "GX033157.MP4",
+                                         "path":  "C:\\Users\\lopes\\Videos\\GX033157.MP4",
+                                         "directory":  "C:\\Users\\lopes\\Videos",
+                                         "extension":  ".MP4",
+                                         "sizeBytes":  11509813338,
+                                         "sizeMiB":  10976.6,
+                                         "sizeGiB":  10.719,
+                                         "created":  "2026-08-06T15:33:32.1349661+01:00",
+                                         "modified":  "2026-08-05T21:31:42.0000000+01:00"
+                                     },
+                                     {
+                                         "name":  "GX043157.MP4",
+                                         "path":  "C:\\Users\\lopes\\Videos\\GX043157.MP4",
+                                         "directory":  "C:\\Users\\lopes\\Videos",
+                                         "extension":  ".MP4",
+                                         "sizeBytes":  11535600628,
+                                         "sizeMiB":  11001.2,
+                                         "sizeGiB":  10.743,
+                                         "created":  "2026-08-06T15:42:46.9654467+01:00",
+                                         "modified":  "2026-08-05T21:48:47.0000000+01:00"
+                                     },
+                                     {
+                                         "name":  "GX053157.MP4",
+                                         "path":  "C:\\Users\\lopes\\Videos\\GX053157.MP4",
+                                         "directory":  "C:\\Users\\lopes\\Videos",
+                                         "extension":  ".MP4",
+                                         "sizeBytes":  1472624532,
+                                         "sizeMiB":  1404.4,
+                                         "sizeGiB":  1.371,
+                                         "created":  "2026-08-06T15:13:35.5363368+01:00",
+                                         "modified":  "2026-08-05T21:50:58.0000000+01:00"
+                                     }
+                                 ],
+                  "allTiago":  [
+                                   {
+                                       "name":  "TiaGo.mp4",
+                                       "path":  "C:\\Users\\lopes\\Videos\\TiaGo.mp4",
+                                       "directory":  "C:\\Users\\lopes\\Videos",
+                                       "extension":  ".mp4",
+                                       "sizeBytes":  28986907412,
+                                       "sizeMiB":  27644.1,
+                                       "sizeGiB":  26.996,
+                                       "created":  "2026-08-08T11:55:56.6828606+01:00",
+                                       "modified":  "2026-08-08T16:39:02.8413589+01:00"
+                                   }
+                               ],
+                  "neighborCandidates":  [
+
+                                         ]
+              },
+    "assessment":  {
+                       "conclusion":  "indeterminado",
+                       "notableQualityLossLikely":  null,
+                       "confidence":  "baixa",
+                       "reasons":  [
+                                       "Não foi possível obter bitrate/fps suficientes para estimar a perda com confiança. O tamanho absoluto dos ficheiros não é uma métrica de qualidade fiável."
+                                   ],
+                       "metrics":  {
+                                       "finalName":  "TiaGo.mp4",
+                                       "finalPath":  "C:\\Users\\lopes\\Videos\\TiaGo.mp4",
+                                       "finalSizeMiB":  27644.1,
+                                       "finalDurationSec":  null,
+                                       "finalResolution":  null,
+                                       "finalFrameRate":  null,
+                                       "finalCodec":  null,
+                                       "finalBitrateMbps":  null,
+                                       "finalBitsPerPixelFrame":  null,
+                                       "sourceClipCount":  5,
+                                       "sourceTotalSizeMiB":  45387.2,
+                                       "sourceTotalDurationSec":  0,
+                                       "sourceWeightedBitrateMbps":  null,
+                                       "sourceWeightedBitsPerPixelFrame":  null,
+                                       "sourceCodecs":  [
+
+                                                        ],
+                                       "sameResolutionClipCount":  0,
+                                       "knownResolutionClipCount":  0
+                                   }
+                   },
+    "interpretation":  "Para comparar qualidade, bitrate por segundo e bits por pixel por frame são mais úteis do que o tamanho bruto. Um ficheiro final menor pode ser perfeitamente normal se for mais curto ou usar codec mais eficiente. Uma medição de referência como VMAF/SSIM só seria rigorosa com alinhamento exato entre cada trecho editado e os frames correspondentes dos GX0."
+}
