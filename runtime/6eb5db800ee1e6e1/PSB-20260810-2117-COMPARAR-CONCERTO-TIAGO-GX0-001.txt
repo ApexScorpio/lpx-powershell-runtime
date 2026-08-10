@@ -1,0 +1,1 @@
+{"status":"ERROR","message":"Input #0, mov,mp4,m4a,3gp,3g2,mj2, from \u0027C:\\Users\\lopes\\Videos\\GX013157.MP4\u0027:","type":"System.Management.Automation.RemoteException"}

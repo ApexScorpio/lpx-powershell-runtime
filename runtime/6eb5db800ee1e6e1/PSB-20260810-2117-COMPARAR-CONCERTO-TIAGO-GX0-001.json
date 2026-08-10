@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2117-COMPARAR-CONCERTO-TIAGO-GX0-001",
+  "conversationKey": "6eb5db800ee1e6e1",
+  "purpose": "Comparar objetivamente TiaGo com os GX0 em cenas exigentes do concerto",
+  "status": "succeeded",
+  "exitCode": 0,
+  "startedAt": "2026-08-10T20:22:12.318Z",
+  "endedAt": "2026-08-10T20:22:22.144Z",
+  "elapsedMs": 9826,
+  "outputLength": 178,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "b8184c4292370502eb556e1eb733d249108658da1119ebf8f3ea592c995a0b07",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/6eb5db800ee1e6e1/PSB-20260810-2117-COMPARAR-CONCERTO-TIAGO-GX0-001.txt",
+  "createdAt": "2026-08-10T20:22:22.145Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}
