@@ -1,0 +1,18 @@
+{
+  "protocol": "PSBRIDGE_RESULT_V2",
+  "jobId": "PSB-20260810-2050-BUSCA-PROFUNDA-TIAGO-GX0-001",
+  "conversationKey": "6eb5db800ee1e6e1",
+  "purpose": "Pesquisar profundamente Tiago e GX0 e comparar qualidade por duração, bitrate, resolução e codec",
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-08-10T19:53:36.956Z",
+  "endedAt": "2026-08-10T19:54:35.730Z",
+  "elapsedMs": 58774,
+  "outputLength": 557,
+  "bridgeOutputTruncated": false,
+  "publicOutputTruncated": false,
+  "commandHash": "a6cd59f24d79b079a4922e537697c40dfd273ef1ef41e05a6f642368a6e99b7c",
+  "textUrl": "https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/runtime-laptop/runtime/6eb5db800ee1e6e1/PSB-20260810-2050-BUSCA-PROFUNDA-TIAGO-GX0-001.txt",
+  "createdAt": "2026-08-10T19:54:35.731Z",
+  "machineBuild": "15.5.0-laptop-bootstrap-1"
+}

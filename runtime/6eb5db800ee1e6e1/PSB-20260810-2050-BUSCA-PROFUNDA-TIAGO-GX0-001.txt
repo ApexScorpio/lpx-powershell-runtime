@@ -1,0 +1,7 @@
+ForEach-Object : Parameter set cannot be resolved using the specified named parameters.
+At %USERPROFILE%\AppData\Local\Temp\powershell-bridge-command-1786391616946-dcdb4b08120d54ae.ps1:193 char:25
++ ... $gx0Paths | ForEach-Object { Split-Path -LiteralPath $_ -Parent } | S ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [ForEach-Object], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.ForEachObjectCommand
+ 
