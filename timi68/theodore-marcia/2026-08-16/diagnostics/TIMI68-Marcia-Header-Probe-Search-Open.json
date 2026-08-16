@@ -1,0 +1,115 @@
+{
+    "protocol":  "TIMI68_MARCIA_HEADER_PROBE_SEARCH_OPEN_V1",
+    "generatedAt":  "2026-08-17T00:41:13.4750363+01:00",
+    "jobId":  "PSB-20260817-0040-TIMI68-MARCIA-HEADER-PROBE-SEARCH-OPEN-001",
+    "safeguards":  {
+                       "timiBicycleScriptWrites":  0,
+                       "bonChatContentWrites":  0,
+                       "bonChatMessagesSent":  0,
+                       "persistentLocalWrites":  0
+                   },
+    "target":  {
+                   "hwnd":  731844708,
+                   "processId":  53528,
+                   "title":  "BonChat (99+)",
+                   "className":  "Qt5QWindowIcon",
+                   "width":  1000,
+                   "height":  620
+               },
+    "baseline":  {
+                     "ocrText":  "O Bonchat Mensagens versão 10.135 Não lido 153 2S_6k 408 Meus Favoritos Você enviou uma imagem. Operador do Servidor:timi001 Você: mkkkk @ TIMI-68 Theodore: As bicicletas partilhadas... TIMI PORTUGAL DREAM TEAM... marinho: boa noite O TIMI-N0.08 TIMI—NO.08: As principais diferenç... @ TIMI-NeWs TIM]: LIN WEIGLIANG Nome: TIMI... Theodore A tua ideia é muito boa, mas acho... 05.08 08.16 08.16 08.16 08.16 08.16 Grupo de Recompensas por Objetivos . Theodore: Recentemente, muitas Aviso Amigos, Notificação: Theodore Co... 08.12 01.21",
+                     "messagesScreen":  true,
+                     "theodoreVisible":  true
+                 },
+    "probePoints":  [
+                        {
+                            "name":  "header-right-1",
+                            "x":  365,
+                            "y":  60
+                        },
+                        {
+                            "name":  "header-right-2",
+                            "x":  340,
+                            "y":  60
+                        },
+                        {
+                            "name":  "header-right-3",
+                            "x":  315,
+                            "y":  60
+                        },
+                        {
+                            "name":  "header-right-4",
+                            "x":  385,
+                            "y":  60
+                        },
+                        {
+                            "name":  "header-mid-1",
+                            "x":  365,
+                            "y":  92
+                        },
+                        {
+                            "name":  "header-mid-2",
+                            "x":  340,
+                            "y":  92
+                        }
+                    ],
+    "probeAudits":  [
+                        {
+                            "name":  "header-right-1",
+                            "x":  365,
+                            "y":  60,
+                            "clickOk":  true,
+                            "ocrText":  "O Bonchat Mensagens p Pesquisar Contatos/Grupos @ Versão 1.D.135 Não lido 153 2S_6k 408 Meus Favoritos Você enviou uma imagem. Operador do Servidor:timi001 Você: mkkkk @ TIMI-68 Theodore: As bicicletas partilhadas... TIMI PORTUGAL DREAM TEAM... marinho: boa noite O TIMI-N0.08 TIMI—NO.08: As principais diferenç... @ TIMI-NeWs TIM]: LIN WEIGLIANG Nome: TIMI... Theodore A tua ideia é muito boa, mas acho... 05.08 08.16 08.16 08.16 08.16 08.16 Grupo de Recompensas por Objetivos . Theodore: Recentemente, muitas Aviso Amigos, Notificação: Theodore Co... 08.12 01.21",
+                            "typedMarciaVisible":  false,
+                            "pesquisarVisible":  true,
+                            "exactCandidateCount":  0,
+                            "exactCandidates":  [
+
+                                                ]
+                        },
+                        {
+                            "name":  "header-right-2",
+                            "x":  340,
+                            "y":  60,
+                            "clickOk":  true,
+                            "ocrText":  "O Bonchat @ Versão 1.D.135 o Não lido Mensagens Marcia Adicionar novos amigos Busca\u0027 marcia Buscando-o",
+                            "typedMarciaVisible":  true,
+                            "pesquisarVisible":  false,
+                            "exactCandidateCount":  2,
+                            "exactCandidates":  [
+                                                    {
+                                                        "lineText":  "Marcia",
+                                                        "normalizedLine":  "marcia",
+                                                        "score":  100,
+                                                        "x":  120,
+                                                        "y":  95
+                                                    },
+                                                    {
+                                                        "lineText":  "Busca\u0027 marcia",
+                                                        "normalizedLine":  "busca marcia",
+                                                        "score":  30,
+                                                        "x":  170,
+                                                        "y":  172
+                                                    }
+                                                ]
+                        }
+                    ],
+    "exactMarciaFound":  true,
+    "chosenProbe":  {
+                        "name":  "header-right-2",
+                        "x":  340,
+                        "y":  60
+                    },
+    "chosenCandidate":  {
+                            "lineText":  "Marcia",
+                            "normalizedLine":  "marcia",
+                            "score":  100,
+                            "x":  120,
+                            "y":  95
+                        },
+    "clickedResult":  true,
+    "rightHeaderText":  "@ Versão 1.D.135",
+    "rightHeaderNormalized":  "versao 1 d 135",
+    "exactMarciaInRightHeader":  false,
+    "rejectedSubstring":  "marciais"
+}
