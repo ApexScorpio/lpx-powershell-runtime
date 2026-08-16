@@ -1,0 +1,42 @@
+{
+    "protocol":  "TIMI68_THEODORE_HISTORY_SEGMENT_02_SUMMARY_V1",
+    "generatedAt":  "2026-08-17T00:04:36.9421320+01:00",
+    "jobId":  "PSB-20260817-0003-TIMI68-THEODORE-HISTORY-CONTINUE-TO-TOP-SEG2-001",
+    "subject":  "Theodore",
+    "source":  "BonChat live Conta-1",
+    "segment":  2,
+    "continuationFrom":  "current live Theodore position after segment 1",
+    "safeguards":  {
+                       "timiBicycleScriptWrites":  0,
+                       "bonChatContentWrites":  0,
+                       "persistentLocalWrites":  0
+                   },
+    "frameCount":  121,
+    "completedScrolls":  120,
+    "maxScrolls":  120,
+    "uniqueImageCount":  121,
+    "uniqueOcrLineCount":  1157,
+    "stoppedByRepeatedImage":  false,
+    "tailRepeatedFrameCount":  1,
+    "topReachedEvidence":  false,
+    "firstFrame":  {
+                       "imageHash":  "eccfc8f1ec9c69409d1b0735ca6565a23b66363e38b6f24bc443fc44045156c2",
+                       "textLength":  529,
+                       "dateLikeLines":  [
+                                             "3:59",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:47",
+                                             "13:47"
+                                         ]
+                   },
+    "lastFrame":  {
+                      "imageHash":  "4a892dbbfe576516389a7f2167978747b355885746a3d80281715346cc733d77",
+                      "textLength":  213,
+                      "dateLikeLines":  [
+                                            "17:25",
+                                            "17:45"
+                                        ]
+                  }
+}
