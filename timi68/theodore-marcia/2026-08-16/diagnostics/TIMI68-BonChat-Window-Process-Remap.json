@@ -1,0 +1,59 @@
+{
+    "protocol":  "TIMI68_BONCHAT_WINDOW_PROCESS_REMAP_V1",
+    "generatedAt":  "2026-08-17T00:27:21.7046066+01:00",
+    "jobId":  "PSB-20260817-0029-TIMI68-BONCHAT-WINDOW-PROCESS-REMAP-001",
+    "safeguards":  {
+                       "timiBicycleScriptWrites":  0,
+                       "bonChatContentWrites":  0,
+                       "bonChatWindowActions":  0,
+                       "persistentLocalWrites":  0
+                   },
+    "counts":  {
+                   "bonChatProcesses":  0,
+                   "candidateWindows":  0,
+                   "conta1PathMatches":  0,
+                   "conta2PathMatches":  0,
+                   "title99Windows":  0
+               },
+    "processes":  [
+
+                  ],
+    "candidateWindows":  [
+
+                         ],
+    "conta1PathMatches":  [
+
+                          ],
+    "conta2PathMatches":  [
+
+                          ],
+    "title99Windows":  [
+
+                       ],
+    "legacyHandleInspection":  [
+                                   {
+                                       "hwnd":  259723462,
+                                       "isWindow":  false,
+                                       "processId":  0,
+                                       "title":  "",
+                                       "className":  "",
+                                       "isVisible":  false,
+                                       "left":  0,
+                                       "top":  0,
+                                       "width":  0,
+                                       "height":  0
+                                   },
+                                   {
+                                       "hwnd":  502532340,
+                                       "isWindow":  false,
+                                       "processId":  0,
+                                       "title":  "",
+                                       "className":  "",
+                                       "isVisible":  false,
+                                       "left":  0,
+                                       "top":  0,
+                                       "width":  0,
+                                       "height":  0
+                                   }
+                               ]
+}
