@@ -1,0 +1,461 @@
+{
+    "protocol":  "TIMI68_BONCHAT_PROCESS_WINDOW_STATE_PID_FIX_V1",
+    "generatedAt":  "2026-08-16T23:51:36.5972909+01:00",
+    "jobId":  "PSB-20260816-2351-TIMI68-BONCHAT-PROCESS-WINDOW-STATE-PID-FIX-001",
+    "timiBicycleScriptWrites":  0,
+    "bonChatContentWrites":  0,
+    "bonChatWindowActions":  0,
+    "persistentLocalWrites":  0,
+    "summary":  {
+                    "processCount":  3,
+                    "account1ProcessCount":  1,
+                    "account2ProcessCount":  1,
+                    "topLevelWindowCount":  23,
+                    "visibleWindowCount":  10,
+                    "visibleQtMainWindowCount":  2,
+                    "invisibleQtMainWindowCount":  0,
+                    "telegramShadowWindowCount":  8
+                },
+    "processes":  [
+                      {
+                          "Account":  "Other",
+                          "ProcessId":  58928,
+                          "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Roaming\\BonChat\\BonChat.exe",
+                          "CommandLine":  "S:\\Users\\lopes\\AppData\\Roaming\\BonChat\\BonChat.exe ",
+                          "MainWindowHandle":  0,
+                          "MainWindowTitle":  ""
+                      },
+                      {
+                          "Account":  "Conta-1",
+                          "ProcessId":  6400,
+                          "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe",
+                          "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe\" -noupdate",
+                          "MainWindowHandle":  259723462,
+                          "MainWindowTitle":  "BonChat (99+)"
+                      },
+                      {
+                          "Account":  "Conta-2",
+                          "ProcessId":  58980,
+                          "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                          "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe\" -noupdate",
+                          "MainWindowHandle":  502532340,
+                          "MainWindowTitle":  "BonChat"
+                      }
+                  ],
+    "windows":  [
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  23857942,
+                        "ProcessId":  58980,
+                        "Title":  "GDI+ Window (BonChat.exe)",
+                        "ClassName":  "GDI+ Hook Window Class",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  1,
+                                     "Bottom":  1,
+                                     "Width":  1,
+                                     "Height":  1
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  278529588,
+                        "ProcessId":  58980,
+                        "Title":  "QTrayIconMessageWindow",
+                        "ClassName":  "QTrayIconMessageWindowClass",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  52,
+                                     "Top":  52,
+                                     "Right":  1492,
+                                     "Bottom":  805,
+                                     "Width":  1440,
+                                     "Height":  753
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  502532340,
+                        "ProcessId":  58980,
+                        "Title":  "BonChat",
+                        "ClassName":  "Qt5QWindowIcon",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  2880,
+                                     "Top":  -881,
+                                     "Right":  3820,
+                                     "Bottom":  -261,
+                                     "Width":  940,
+                                     "Height":  620
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  293343818,
+                        "ProcessId":  58980,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow3",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  2870,
+                                     "Top":  -891,
+                                     "Right":  2880,
+                                     "Bottom":  -251,
+                                     "Width":  10,
+                                     "Height":  640
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  43714256,
+                        "ProcessId":  58980,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow2",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  2880,
+                                     "Top":  -261,
+                                     "Right":  3820,
+                                     "Bottom":  -251,
+                                     "Width":  940,
+                                     "Height":  10
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  525734052,
+                        "ProcessId":  58980,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow1",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  3820,
+                                     "Top":  -891,
+                                     "Right":  3830,
+                                     "Bottom":  -251,
+                                     "Width":  10,
+                                     "Height":  640
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  400295560,
+                        "ProcessId":  58980,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow0",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  2880,
+                                     "Top":  -891,
+                                     "Right":  3820,
+                                     "Bottom":  -881,
+                                     "Width":  940,
+                                     "Height":  10
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  417337610,
+                        "ProcessId":  58980,
+                        "Title":  "",
+                        "ClassName":  "BonChatTaskbarHider",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  103879348,
+                        "ProcessId":  6400,
+                        "Title":  "GDI+ Window (BonChat.exe)",
+                        "ClassName":  "GDI+ Hook Window Class",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  1,
+                                     "Bottom":  1,
+                                     "Width":  1,
+                                     "Height":  1
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  259786728,
+                        "ProcessId":  6400,
+                        "Title":  "QTrayIconMessageWindow",
+                        "ClassName":  "QTrayIconMessageWindowClass",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  26,
+                                     "Top":  26,
+                                     "Right":  1466,
+                                     "Bottom":  779,
+                                     "Width":  1440,
+                                     "Height":  753
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  88609050,
+                        "ProcessId":  6400,
+                        "Title":  "",
+                        "ClassName":  "NvBroadcastVirtualCamera",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  136,
+                                     "Bottom":  39,
+                                     "Width":  136,
+                                     "Height":  39
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  259723462,
+                        "ProcessId":  6400,
+                        "Title":  "BonChat (99+)",
+                        "ClassName":  "Qt5QWindowIcon",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  1920,
+                                     "Top":  -881,
+                                     "Right":  2860,
+                                     "Bottom":  -261,
+                                     "Width":  940,
+                                     "Height":  620
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  461640334,
+                        "ProcessId":  6400,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow3",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  1910,
+                                     "Top":  -891,
+                                     "Right":  1920,
+                                     "Bottom":  -251,
+                                     "Width":  10,
+                                     "Height":  640
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  135267364,
+                        "ProcessId":  6400,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow2",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  1920,
+                                     "Top":  -261,
+                                     "Right":  2860,
+                                     "Bottom":  -251,
+                                     "Width":  940,
+                                     "Height":  10
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  291901870,
+                        "ProcessId":  6400,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow1",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  2860,
+                                     "Top":  -891,
+                                     "Right":  2870,
+                                     "Bottom":  -251,
+                                     "Width":  10,
+                                     "Height":  640
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  150081930,
+                        "ProcessId":  6400,
+                        "Title":  "",
+                        "ClassName":  "TelegramShadow0",
+                        "IsVisible":  true,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  1920,
+                                     "Top":  -891,
+                                     "Right":  2860,
+                                     "Bottom":  -881,
+                                     "Width":  940,
+                                     "Height":  10
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  677840126,
+                        "ProcessId":  6400,
+                        "Title":  "",
+                        "ClassName":  "BonChatTaskbarHider",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  128321186,
+                        "ProcessId":  58980,
+                        "Title":  "Default IME",
+                        "ClassName":  "IME",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  169216944,
+                        "ProcessId":  58980,
+                        "Title":  "MSCTFIME UI",
+                        "ClassName":  "MSCTFIME UI",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-2",
+                        "Hwnd":  725750016,
+                        "ProcessId":  58980,
+                        "Title":  "Default IME",
+                        "ClassName":  "IME",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  516034526,
+                        "ProcessId":  6400,
+                        "Title":  "Default IME",
+                        "ClassName":  "IME",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  745671656,
+                        "ProcessId":  6400,
+                        "Title":  "MSCTFIME UI",
+                        "ClassName":  "MSCTFIME UI",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    },
+                    {
+                        "Account":  "Conta-1",
+                        "Hwnd":  118032850,
+                        "ProcessId":  6400,
+                        "Title":  "Default IME",
+                        "ClassName":  "IME",
+                        "IsVisible":  false,
+                        "IsIconic":  false,
+                        "IsZoomed":  false,
+                        "Rect":  {
+                                     "Left":  0,
+                                     "Top":  0,
+                                     "Right":  0,
+                                     "Bottom":  0,
+                                     "Width":  0,
+                                     "Height":  0
+                                 }
+                    }
+                ]
+}
