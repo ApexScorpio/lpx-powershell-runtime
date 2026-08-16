@@ -1,0 +1,102 @@
+THEODORE - BONCHAT LIVE - SPATIAL MESSAGE CANDIDATES V2
+Timestamp clusters: left mean X=75,3; right mean X=490,5; threshold=282,9
+Theodore candidates: 98; user candidates: 373
+
+[8.16] [11:44] M-00042: Sim, irmão.
+[8.16] [18:05] M-00049: Está tudo bem.
+[8.16] [18:25] M-00055: Para expandir a sua rede mais facilmente e ganhar força no mercado O que mais?"
+[18:25] M-00056: O que mais?e
+[16:31] M-00078: Boa tarde, irmão.
+[5.08] [16:31] M-00079: Tem uma fatura?
+[8.16] [14:13] M-00088: Sim, está tudo bem.
+[8.16] [22:13] M-00098: Bom dia. Mais uma hora e devo ir dormir
+[8.16] [22:14] M-00099: Já é noite, irmão.
+[8.16] [10:43] M-00111: Bom dia, mano.
+[8.16] [19:47] M-00137: interessante
+[10:25] M-00149: Bom dia, Fábio
+[8.16] [16:17] M-00150: Sim, está tudo bem.
+[22:28] M-00156: deixe-me ver
+[5.08] [22:38] M-00158: certamente
+[23:15] M-00162: Deixe comigo.
+[17:19] M-00167: Já é noite, irmão.
+[8.16] [18:32] M-00170: Estou aqui
+[8.16] [19:23] M-00176: Pode usar revolução?
+[8.13] [10:28] M-00187: Bom dia, mano.
+[22:35] M-00202: certamente
+[8.16] [18:42] M-00269: no Assim que recrutar um novo sucesso. a comissao seta na sua conta IIHI como recorn*asa. certo. Eu tenho a tabela mas estava a tentar dizer de cabeça
+[21:06] M-00279: Uma última questão.
+[5/29] [10:33] M-00294: Bom dia.Fabio
+[5/29] [2:16] M-00295: esta rudo bem
+[5/29] [10:34] M-00296: Sim, está tudo bem.
+[5.08] [3:59] M-00302: Já que viste as minhas mensagens, responde-me só para dizer que estás aqui Sou o Theodore, sou eu pessoalmente a dar esta formação, não é um robô a enviar mensagens em massa. Mesmo que respondas apenas com "recebido", já me faz saber que estás presente, senão começo a achar que estou a dar aulas ao ar vazio Inta Desculpa. Vi quando acordei entretanto tenho estado a tratar de
+[5.08] [3:22] M-00303: coisas
+[5.08] [3:22] M-00304: estás aqui Sou o Theodore, sou eu pessoalmente a dar esta formação, não é um robô a enviar mensagens em massa. Mesmo que respondas apenas com "recebido", já me faz saber que estás presente, senão começo a achar que estou a dar aulas ao ar vazio Inta Desculpa. Vi quando acordei entretanto tenho estado a tratar de coisas
+[5.08] [3:22] M-00307: Meu amigo, precisas de me informar do jantar com antecedência e preparar alguns materiais da empresa. Caso contrário, não terei como ajudar-te a pedir o reembolso, porque não vou saber qual é
+[5.08] [2:16] M-00308: Não estava só a mandar as fotos por mandar
+[5.08] [0:26] M-00309: Como tinhas perguntado quais eram os planos, estava só a mostrar
+[5.08] [3:22] M-00311: Inta Com quem é que fizeste o jantar? Com o meu pai, o meu irmão e o meu filho
+[5.08] [3:22] M-00315: 180€ é um investimento muito grande. Não tenho assim tantas Inta pessoas também para convidar. Mas muitas pessoas não tem 180€ disponível para investirem numa coisa que por muito que mostre que funciona, não sabem se vai funcionar com eles
+[5.08] [2:16] M-00316: Irmão, eu compreendo as tuas preocupações, mas muitas oportunidades não começam quando estamos cem por cento certos. Se formos esperar por ter a certeza total antes de agir, as oportunidades acabarão por ser aproveitadas por outros. Quanto a teres muitas pessoas para convidar ou não, isso não é o mais importante. O desenvolvimento de uma equipa constrói-se
+[5.08] [0:26] M-00317: gradualmente, de poucos para muitos. O que temos de fazer agora não é decidir por outros se eles vão ou não participar, mas
+[5.08] [3:22] M-00320: Inta A empresa oferece um período de garantia de sete dias; caso o cliente não fique satisfeito durante este período, poderá resgatar
+[5.08] [3:22] M-00322: Inta
+[6/1] [3:22] M-00324: Inta Assim que digo que tem de entrar com 180€, elas dizem logo que
+[6/1] [2:16] M-00325: Iopes Sim, mas o medo deles não são os 7 dias O nosso mecanismo de garantia não é apenas para 7 dias. Precisas de ler com atenção. O nosso mecanismo de garantia é válido para sempre. Sempre que quiseres sair, a empresa devolve-
+[6/1] [0:26] M-00326: te a diferença do teu investimento, sem qualquer prejuízo para ti.
+[5.08] [3:22] M-00329: Theodore Muito bem, parabéns! O nosso treinamento foi concluído com...
+[5.08] [11:02] M-00334: Bom dia.
+[5.08] [11:14] M-00339: Fabio Bom dia.
+[5.08] [2:16] M-00342: tenho um almoço falado para a proxima semana
+[5.08] [3:22] M-00346: sim tudo bem... assim que souber, eu envio
+[6/6] [2:16] M-00347: OK, sem problema. 1554 Boa tarde. Recentemente, tenho visto muitos parceiros a interessarem-se ativamente pelos equipamentos e a planear com
+[6/6] [0:26] M-00348: cuidado o seu próprio desenvolvimento. Para ajudar todos a começarem com mais facilidade, este fim de semana vou oferecer
+[5.08] [0:26] M-00351: Boa tarde. Participaste na reunião do Jonathan ontem à noite?
+[6/10] [3:22] M-00355: Inta OK, há alguma coisa que não tenhas compreendido?
+[6/10] [11:06] M-00357: Bom dia, meu amigo!
+[6/10] [0:26] M-00358: Sabias que a empresa lançou uma atividade especial de sorteio de abertura para celebrar a inauguração da loja de experiências TIMI 4S em Portimão?
+[5.08] [3:22] M-00363: 28 port Portugal Theodore Inta Tem confiança de levar para casa um destes prémios? heheh vamos ver! tentativas estao a ser feitas Excelente! No dia da grande inauguração, poderá trazer os seus amigos e familiares para participarem na cerimónia de abertura.
+[5.08] [2:16] M-00365: Também podes publicar isto no teu status do WhatsApp e nas
+[5.08] [0:26] M-00366: tuas contas de redes sociais, para que mais amigos possam conhecer o desenvolvimento da TIMI e esta atividade. Depois de publicares, envia-me um print e dou-te 2 dólares de recompensa.
+[6/12] [10:25] M-00370: Bom dia, como estás?
+[6/14] [17:51] M-00371: Boa tarde.
+[6/15] [2:16] M-00375: AVISO SOBRE AS ATIVIDADES DA EQUIPA PARA ESTA SEMANA
+[6/15] [0:26] M-00376: REUNIÃO OFICIAL DA EQLAPA / QUARTA '
+[5.08] [3:22] M-00377: QUINTA/ DE BALANÇO • SORTEIO DE Inta AVISO ESPECIAL:
+[5.08] [2:16] M-00378: Já percebeste que agora temos fixado que todas as noites às 191-130 haverá reunião e interação no grupo, e também serão
+[6/17] [3:22] M-00381: Inta
+[6/17] [2:16] M-00382: mas aqueles codigos desaparecem em menos de nada Haha, sim. Precisamos de estar preparados. Na sexta-feira, vou
+[5.08] [3:22] M-00391: Inta TIMI
+[6/22] [3:22] M-00395: Esta noite, depois de terminar a reunião do grupo, enviarei um bónus de sorte de 1000 dólares. Sabes como participar?
+[6/22] [0:26] M-00397: Participa pontualmente na reunião do grupo 68 às 191-130. Depois
+[5.08] [3:22] M-00399: Inta -2
+[5.08] [2:16] M-00400: Registro de resgate
+[15.36] [0:26] M-00401: Valor resgatado
+[6/28] [2:16] M-00409: Se os amigos que convidou, por pressão financeira ou por ainda
+[6/28] [0:26] M-00410: estarem a ponderar, ainda não decidiram aderir, estou disposto a oferecer, a titulo pessoal, uma parte do financiamento sob a forma de empréstimo para os ajudar a reduzir a barreira de entrada e a
+[5.08] [3:22] M-00413: O mais importante é que eles não sintam qualquer pressão para
+[6/29] [0:26] M-00415: essa questao do reembolso é interessante
+[5.08] [0:26] M-00420: Olha tive uma ideia que gostaria de saber que me permites t V
+[5.08] [3:22] M-00424: Bom dia.Fabio 1254
+[5.08] [0:26] M-00426: Pois percebo. Era uma surpresa que lhe queria fazer. Pensei qu-
+[5.08] [2:16] M-00430: Sim, é para pagar as despesas de manutenção da bicicleta Eu percebo. A minha dúvida é que uma vez que usar o saldo disponível na app para melhorar a bicicleta não paga a taxa dc
+[5.08] [0:26] M-00431: 25%, como este valor seria usado para fazer a melhoria de u bicicleta, estava com esperança que pudesse dar para fazer isc
+[5.08] [3:22] M-00433: Inta Eu percebo. A minha dúvida é que uma vez que usar o saldo . Isto é simples, porque só há comissão quando faz um levantamento.
+[5.08] [2:16] M-00434: Sim mas uma vez que vou ter de levantar o meu valor para poder enviar para a conta dele, vou ter de pagar os 25%
+[5.08] [2:16] M-00438: Bom dia. Já viste a última promoção da loja de experiência?
+[5.08] [0:26] M-00439: LOJA DE EXPERIÊNCIA TIMI - PORTIMhO
+[2:16] M-00440: 00 0 0
+[5.08] [3:22] M-00444: Quando estou em Portimão, estou a cerca de 5km
+[5.08] [13:49] M-00445: Bom dia Fabio
+[5.08] [2:16] M-00447: Foi mencionado um plano de apoio ao cidadão durante a reunião. Já viu?
+[5.08] [3:22] M-00450: O plano de apoio ao cidadão não cobra quaisquer taxas adicionais, podendo ser liquidado diretamente com os
+[5.08] [0:26] M-00453: Basicamente era o que já tinhas feito durante o mundial
+[5.08] [3:22] M-00454: 21 O Mundial foi um subsídio pessoal do gestor; este já é um subsídio da empresa. Inta Boa tarde. O fim de semana está a chegar e sugiro que organize um encontro presencial com os membros da equipa neste fim de semana. O desenvolvimento da equipa não se faz apenas com
+[5.08] [2:16] M-00456: Não é preciso. Eu sei como é o processo. Vou ver o que consigo fazer. Obrigado
+[5.08] [0:26] M-00457: O nosso plano de empréstimo termina no dia 14. Temos de o aproveitar bem, ajudando os amigos que queiram ganhar
+[5.08] [3:22] M-00459: Programa de Apoio ao Cidadão Inta
+[5.08] [2:16] M-00460: 8 14
+[5.08] [14:05] M-00462: Está bem, patrão
+[5.08] [3:22] M-00464: Inta
+[7/15] [0:26] M-00465: tenho um levantamento pendente desde dia 10.. está tudo ok?
+[10-07-2026] [10:40] M-00467: Inta Bom dia. Fabio
+[10-07-2026] [2:16] M-00470: Boa tarde. Esta noite haverá uma reunião importante. Por favor, avisa os teus amigos e membros da equipa para garantirem a sua participação atempada. Nesta reunião, preparei 3000 euros em prémios de sorte, que serão distribuídos em duas rondas durante
