@@ -1,0 +1,23 @@
+{
+    "protocol":  "TIMI68_CONTA1_WINDOW_SCREENSHOT_PUBLISH_V1",
+    "generatedAt":  "2026-08-17T00:37:57.5705415+01:00",
+    "jobId":  "PSB-20260817-0038-TIMI68-CONTA1-WINDOW-SCREENSHOT-PUBLISH-001",
+    "safeguards":  {
+                       "timiBicycleScriptWrites":  0,
+                       "bonChatContentWrites":  0,
+                       "bonChatWindowActions":  0,
+                       "persistentLocalWrites":  0
+                   },
+    "target":  {
+                   "hwnd":  731844708,
+                   "processId":  53528,
+                   "title":  "BonChat (99+)",
+                   "className":  "Qt5QWindowIcon",
+                   "width":  1000,
+                   "height":  620
+               },
+    "screenshot":  {
+                       "path":  "timi68/theodore-marcia/2026-08-16/diagnostics/TIMI68-Conta1-Current-Window.png",
+                       "byteLength":  66037
+                   }
+}
