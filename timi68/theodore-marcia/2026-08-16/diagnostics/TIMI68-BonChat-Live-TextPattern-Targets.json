@@ -1,0 +1,104 @@
+{
+    "protocol":  "TIMI68_BONCHAT_TEXTPATTERN_SCROLL_TARGETS_V1",
+    "generatedAt":  "2026-08-16T23:39:00.0355642+01:00",
+    "jobId":  "PSB-20260816-2340-TIMI68-BONCHAT-TEXTPATTERN-SCROLL-TARGETS-001",
+    "timiBicycleScriptWrites":  0,
+    "bonChatContentWrites":  0,
+    "targetWindows":  [
+                          {
+                              "Hwnd":  420155198,
+                              "ProcessId":  48608,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe\" -noupdate",
+                              "Title":  "BonChat",
+                              "ClassName":  "Qt5QWindowIcon",
+                              "Score":  106
+                          },
+                          {
+                              "Hwnd":  556667018,
+                              "ProcessId":  54124,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe\" -noupdate",
+                              "Title":  "BonChat (99+)",
+                              "ClassName":  "Qt5QWindowIcon",
+                              "Score":  106
+                          },
+                          {
+                              "Hwnd":  220860206,
+                              "ProcessId":  48608,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe\" -noupdate",
+                              "Title":  "",
+                              "ClassName":  "TelegramShadow3",
+                              "Score":  100
+                          },
+                          {
+                              "Hwnd":  73863932,
+                              "ProcessId":  48608,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe\" -noupdate",
+                              "Title":  "",
+                              "ClassName":  "TelegramShadow1",
+                              "Score":  100
+                          },
+                          {
+                              "Hwnd":  106761232,
+                              "ProcessId":  48608,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe\" -noupdate",
+                              "Title":  "",
+                              "ClassName":  "TelegramShadow2",
+                              "Score":  100
+                          },
+                          {
+                              "Hwnd":  40505722,
+                              "ProcessId":  48608,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-2\\BonChat.exe\" -noupdate",
+                              "Title":  "",
+                              "ClassName":  "TelegramShadow0",
+                              "Score":  100
+                          },
+                          {
+                              "Hwnd":  310972384,
+                              "ProcessId":  54124,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe\" -noupdate",
+                              "Title":  "",
+                              "ClassName":  "TelegramShadow3",
+                              "Score":  100
+                          },
+                          {
+                              "Hwnd":  89524602,
+                              "ProcessId":  54124,
+                              "ProcessName":  "BonChat.exe",
+                              "ExecutablePath":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe",
+                              "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\BonChat-Conta-1\\BonChat.exe\" -noupdate",
+                              "Title":  "",
+                              "ClassName":  "TelegramShadow0",
+                              "Score":  100
+                          }
+                      ],
+    "summary":  {
+                    "targetWindowCount":  8,
+                    "textProviderSummaryCount":  0,
+                    "scrollProviderCount":  0,
+                    "scrollAttempts":  0,
+                    "targetExcerptCount":  0,
+                    "theodoreExcerptCount":  0,
+                    "marciaExcerptCount":  0
+                },
+    "targetExcerpts":  [
+
+                       ],
+    "providerSummaries":  [
+
+                          ]
+}
