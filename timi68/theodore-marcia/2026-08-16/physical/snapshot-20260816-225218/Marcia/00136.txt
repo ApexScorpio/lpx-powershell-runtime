@@ -1,0 +1,1 @@
+\/deals\/([-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz]{3,100})

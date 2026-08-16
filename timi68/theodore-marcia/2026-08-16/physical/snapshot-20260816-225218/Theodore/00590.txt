@@ -1,0 +1,1 @@
+Pra o bot mandar uma entrada boa e confiável, selecione para bot se basear nos últimos 100 ou 200.

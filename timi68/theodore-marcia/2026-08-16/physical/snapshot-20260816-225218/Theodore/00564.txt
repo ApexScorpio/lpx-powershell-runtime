@@ -1,0 +1,1 @@
+Bicicleta já estava em execução (não iniciada pelo script)

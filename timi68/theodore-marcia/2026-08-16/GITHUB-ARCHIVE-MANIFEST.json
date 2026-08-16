@@ -1,0 +1,25 @@
+{
+    "protocol":  "TIMI68_GITHUB_ARCHIVE_V3",
+    "generatedAt":  "2026-08-16T23:02:32.6706181+01:00",
+    "repository":  "ApexScorpio/lpx-powershell-runtime",
+    "branch":  "runtime",
+    "remoteBase":  "timi68/theodore-marcia/2026-08-16",
+    "sourceFileCount":  1817,
+    "sections":  [
+                     {
+                         "name":  "final",
+                         "fileCount":  7
+                     },
+                     {
+                         "name":  "physical",
+                         "fileCount":  1808
+                     },
+                     {
+                         "name":  "diagnostics",
+                         "fileCount":  2
+                     }
+                 ],
+    "persistentDestination":  "GitHub",
+    "localCleanupPolicy":  "Delete assistant-created persistent folders only after remote commit and remote tree verification.",
+    "timiBicycleScriptWrites":  0
+}

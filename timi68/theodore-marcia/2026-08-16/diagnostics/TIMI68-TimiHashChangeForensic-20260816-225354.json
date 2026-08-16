@@ -1,0 +1,78 @@
+{
+    "protocol":  "TIMI68_TIMI_HASH_CHANGE_FORENSIC_READONLY_V1",
+    "jobId":  "PSB-20260816-2254-TIMI68-TIMI-HASH-CHANGE-FORENSIC-READONLY-PS51-001",
+    "phase2252WindowUtc":  {
+                               "Start":  "2026-08-16T22:52:16.0230000+01:00",
+                               "End":  "2026-08-16T22:52:43.7150000+01:00"
+                           },
+    "timiWriteOperations":  0,
+    "scripts":  [
+                    {
+                        "Path":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\Codigo TIMI - BonChat.py",
+                        "Exists":  true,
+                        "Length":  49514,
+                        "LastWriteTimeUtc":  "2026-08-12T10:52:38.8194043Z",
+                        "CreationTimeUtc":  "2026-08-11T19:28:39.5391881Z",
+                        "HashSample1":  "6384EC1E10115A343554B2295C75C9C6B4666C1476EEC9315EF409B92AE5090C",
+                        "HashSample2":  "6384EC1E10115A343554B2295C75C9C6B4666C1476EEC9315EF409B92AE5090C",
+                        "HashSample3":  "6384EC1E10115A343554B2295C75C9C6B4666C1476EEC9315EF409B92AE5090C",
+                        "StableNow":  true,
+                        "LastWriteFallsInsidePhase2252":  false
+                    },
+                    {
+                        "Path":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py",
+                        "Exists":  true,
+                        "Length":  67182,
+                        "LastWriteTimeUtc":  "2026-08-16T21:52:37.4994979Z",
+                        "CreationTimeUtc":  "2026-08-15T23:37:15.7603536Z",
+                        "HashSample1":  "68F2DB4D785F28651722E00DF19A4B9568F1410335AB50690653FE565DFF9369",
+                        "HashSample2":  "68F2DB4D785F28651722E00DF19A4B9568F1410335AB50690653FE565DFF9369",
+                        "HashSample3":  "68F2DB4D785F28651722E00DF19A4B9568F1410335AB50690653FE565DFF9369",
+                        "StableNow":  true,
+                        "LastWriteFallsInsidePhase2252":  false
+                    }
+                ],
+    "processesReferencingScripts":  [
+                                        {
+                                            "ProcessId":  25744,
+                                            "Name":  "powershell.exe",
+                                            "CommandLine":  "powershell -Command \"\u0026 \\\"S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\\\" \\\"S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py\\\"\"",
+                                            "MatchedScript":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\Codigo TIMI - BonChat.py"
+                                        },
+                                        {
+                                            "ProcessId":  25744,
+                                            "Name":  "powershell.exe",
+                                            "CommandLine":  "powershell -Command \"\u0026 \\\"S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\\\" \\\"S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py\\\"\"",
+                                            "MatchedScript":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py"
+                                        },
+                                        {
+                                            "ProcessId":  54972,
+                                            "Name":  "python.exe",
+                                            "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\" \"S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py\"",
+                                            "MatchedScript":  "S:\\Users\\lopes\\Documents\\Scrips\\01_TIMI_SISTEMA_ATIVO\\Codigo TIMI - BonChat.py"
+                                        },
+                                        {
+                                            "ProcessId":  54972,
+                                            "Name":  "python.exe",
+                                            "CommandLine":  "\"S:\\Users\\lopes\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\" \"S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py\"",
+                                            "MatchedScript":  "S:\\Users\\lopes\\Documents\\Scrips\\TIMI-ativador\\Codigo TIMI - BonChat.py"
+                                        }
+                                    ],
+    "suspectModifiedInsidePhase2252":  [
+
+                                       ],
+    "unstableNow":  [
+
+                    ],
+    "physicalSnapshots":  [
+                              {
+                                  "Path":  "C:\\Users\\Public\\Documents\\TIMI68-THEODORE-MARCIA-PHYSICAL\\snapshot-20260816-225218",
+                                  "LastWriteTimeUtc":  "2026-08-16T21:52:43.6239444Z",
+                                  "TheodoreTxtCount":  615,
+                                  "MarciaTxtCount":  286,
+                                  "HasTheodoreCombined":  true,
+                                  "HasMarciaCombined":  true,
+                                  "HasManifest":  false
+                              }
+                          ]
+}

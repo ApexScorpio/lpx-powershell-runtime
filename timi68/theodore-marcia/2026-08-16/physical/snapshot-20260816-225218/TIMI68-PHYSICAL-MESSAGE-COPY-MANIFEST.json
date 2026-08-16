@@ -1,0 +1,40 @@
+{
+    "protocol":  "TIMI68_PHYSICAL_MESSAGE_COPY_SEALED_V1",
+    "jobId":  "PSB-20260816-2256-TIMI68-PHYSICAL-COPY-VALIDATE-AND-SEAL-PS51-001",
+    "sealedAt":  "2026-08-16T22:55:19.2359110+01:00",
+    "snapshot":  "C:\\Users\\Public\\Documents\\TIMI68-THEODORE-MARCIA-PHYSICAL\\snapshot-20260816-225218",
+    "validation":  {
+                       "TheodoreExpected":  615,
+                       "TheodorePhysical":  615,
+                       "TheodoreMatch":  true,
+                       "MarciaExpected":  286,
+                       "MarciaPhysical":  286,
+                       "MarciaMatch":  true,
+                       "CombinedFilesPresent":  true,
+                       "ParsedCopiedExportCount":  3
+                   },
+    "copiedExportHashes":  [
+                               {
+                                   "File":  "001-TIMI68-Marcia-All-Messages-20260816-220911.json",
+                                   "Sha256":  "4FC0B93E08616B04CD42E59813446A09CDF31B7921CF8CFF09A32A3337AD018C"
+                               },
+                               {
+                                   "File":  "002-TIMI68-Theodore-All-Messages-20260816-220911.json",
+                                   "Sha256":  "73527335AAEDBB8FA7AA703F076860236D3F3CF50F5E3AC5D3E94141538E025D"
+                               },
+                               {
+                                   "File":  "003-TIMI68-All-Messages-Theodore-Marcia-20260816-220911.json",
+                                   "Sha256":  "046F8860EB84442AEB4B63242315CD0D7CC15C7CDEDFE810E893AB8FDB6D40D7"
+                               }
+                           ],
+    "TheodoreCombinedSha256":  "C01B2A342B0AB101EAB164EB15EDFE41DBF5DFB77DA33166DFC1935E397D0E13",
+    "MarciaCombinedSha256":  "32365B060BDE27D1B7D394B3DA97C2D41D21671D9E8D9D5B5878CFB82586A8E8",
+    "forensic":  {
+                     "Present":  true,
+                     "TimiWriteOperations":  0,
+                     "UnstableNowCount":  0,
+                     "SuspectModifiedInsidePhase2252Count":  0
+                 },
+    "timiWriteOperations":  0,
+    "note":  "All seal writes are inside the separate Theodore/Marcia physical snapshot. No TIMI script is modified."
+}

@@ -1,0 +1,10 @@
+{
+    "Actor":  "Marcia",
+    "Index":  136,
+    "Text":  "\\/deals\\/([-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz]{3,100})",
+    "Score":  5,
+    "Source":  "quoted-neighbor",
+    "Store":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\EntityExtraction\\EntityExtractionAssetStore.db",
+    "File":  "000017.ldb",
+    "ApproxOffset":  164706
+}

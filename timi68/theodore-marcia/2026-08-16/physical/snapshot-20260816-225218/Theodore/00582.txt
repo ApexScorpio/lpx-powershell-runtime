@@ -1,0 +1,1 @@
+Essas estratégias roads, ela analisa aqueles gráficos que fica abaixo do principal.

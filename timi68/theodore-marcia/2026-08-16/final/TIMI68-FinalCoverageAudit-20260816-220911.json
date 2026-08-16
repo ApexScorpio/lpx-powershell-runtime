@@ -1,0 +1,23 @@
+{
+    "Protocol":  "TIMI68_FINAL_COVERAGE_AUDIT_V1",
+    "JobId":  "PSB-20260816-2209-TIMI68-FINAL-MESSAGE-MERGE-AND-AUDIT-PHASE40-PS51-001",
+    "SourcePhase30":  "TIMI68-Phase30-TargetStoreContextExtraction-20260816-214933.json",
+    "SourcePhase33":  "TIMI68-Phase33-ProvisionalMessages-20260816-215325.json",
+    "SourcePhase35":  "TIMI68-Phase35-GapStoreDeepMining-20260816-215727.json",
+    "SourcePhase36":  "TIMI68-Phase36-FullContextDeepMining-20260816-220212.json",
+    "SourcePhase38":  "TIMI68-Phase38-GapMaterialityParseSafe-20260816-220605.json",
+    "SourcePhase39":  "TIMI68-Phase39-UnresolvedGapTargetedResolution-20260816-220741.json",
+    "ContextCount":  187,
+    "Phase38MetadataOnly":  0,
+    "Phase38DuplicateOrReference":  0,
+    "Phase38UnresolvedMessageBearing":  4,
+    "Phase39ResolvedPairs":  4,
+    "RemainingMaterialGaps":  0,
+    "TotalMessages":  901,
+    "TheodoreCount":  615,
+    "MarciaCount":  286,
+    "CombinedJson":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Exports\\Final\\TIMI68-All-Messages-Theodore-Marcia-20260816-220911.json",
+    "CombinedCsv":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Exports\\Final\\TIMI68-All-Messages-Theodore-Marcia-20260816-220911.csv",
+    "TheodoreJson":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Exports\\Final\\TIMI68-Theodore-All-Messages-20260816-220911.json",
+    "MarciaJson":  "S:\\Users\\lopes\\AppData\\Local\\LPX\\Timi Auto Reuniao\\Exports\\Final\\TIMI68-Marcia-All-Messages-20260816-220911.json"
+}

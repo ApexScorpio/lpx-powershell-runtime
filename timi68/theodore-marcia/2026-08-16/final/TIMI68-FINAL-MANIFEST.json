@@ -1,0 +1,16 @@
+{
+    "Protocol":  "TIMI68_FINAL_PACKAGE_V1",
+    "JobId":  "PSB-20260816-2211-TIMI68-FINAL-EXPORT-PACKAGE-PHASE41-PS51-001",
+    "GeneratedAt":  "2026-08-16T22:10:26.9123005+01:00",
+    "RemainingMaterialGaps":  0,
+    "TotalMessages":  901,
+    "TheodoreCount":  615,
+    "MarciaCount":  286,
+    "Files":  [
+                  "C:\\Users\\Public\\Documents\\TIMI68-FINAL\\TIMI68-All-Messages-Theodore-Marcia-20260816-220911.json",
+                  "C:\\Users\\Public\\Documents\\TIMI68-FINAL\\TIMI68-All-Messages-Theodore-Marcia-20260816-220911.csv",
+                  "C:\\Users\\Public\\Documents\\TIMI68-FINAL\\TIMI68-Theodore-All-Messages-20260816-220911.json",
+                  "C:\\Users\\Public\\Documents\\TIMI68-FINAL\\TIMI68-Marcia-All-Messages-20260816-220911.json",
+                  "C:\\Users\\Public\\Documents\\TIMI68-FINAL\\TIMI68-FinalCoverageAudit-20260816-220911.json"
+              ]
+}

@@ -1,0 +1,10 @@
+{
+    "Actor":  "Marcia",
+    "Index":  41,
+    "Text":  "Software de processamento de texto %\b�#\u0012 \u0015Vestuário e Calçado\u0012\u0007Calças 1\b�(\u0012, Cozinha \u0026 Utilidades Domésticas\u0012\bTesouras /\b�2\u0012* \u0011Câmaras \u0026 Ótica\u0012\u0015Acessórios de Filtro )\b�#\u0012$ Informática\u0012\u0014Ferramentas e Testes 5\b�*\u00120 \u0019Produtos para Escritório\u0012\u0013Capas do relatório 4\b�5\u0012/ Informática\u0012\u001fPeças do scanner \u0026 Acessórios \u001b\b�%\u0012\u0016 Mobiliário\u0012\u0007Animais \u003e\b�-\u00129 \u0013Desporto e Ar Livre\u0012",
+    "Score":  8,
+    "Source":  "quoted-neighbor",
+    "Store":  "C:\\Users\\lopes\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\PriceComparison\\PriceComparisonAssetStore.db",
+    "File":  "000003.log",
+    "ApproxOffset":  35419
+}
