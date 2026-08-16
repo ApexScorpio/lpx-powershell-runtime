@@ -1,0 +1,643 @@
+{
+    "protocol":  "TIMI68_THEODORE_RECLASSIFY_MERGE_SUMMARY_V4",
+    "generatedAt":  "2026-08-17T00:15:03.0376280+01:00",
+    "jobId":  "PSB-20260817-0015-TIMI68-THEODORE-RECLASSIFY-MERGE-V4-001",
+    "sourceCandidates":  399,
+    "conservativeFragmentMerges":  39,
+    "finalMessages":  360,
+    "theodoreMessages":  229,
+    "userMessages":  129,
+    "ambiguousMessages":  2,
+    "calibration":  {
+                        "introTheodoreCorrect":  true,
+                        "withdrawalUserCorrect":  true,
+                        "meetingTheodoreCorrect":  true,
+                        "pass":  true
+                    },
+    "introMatches":  [
+                         {
+                             "id":  "M-00001",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "12:27",
+                             "body":  "Olá, eu sou o Theodore, o gerente. É um prazer conhecê-lo(a) aqui",
+                             "bodyMedianXMinRatio":  0.11129296235679216,
+                             "firstCaptureOrdinal":  180,
+                             "lastCaptureOrdinal":  184,
+                             "sourceFrames":  [
+                                                  "S3-F10",
+                                                  "S3-F11",
+                                                  "S3-F12",
+                                                  "S3-F13",
+                                                  "S3-F14"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00001"
+                                                    ]
+                         }
+                     ],
+    "withdrawalMatches":  [
+                              {
+                                  "id":  "M-00357",
+                                  "sender":  "Conta-1 user",
+                                  "dateContext":  null,
+                                  "timestamp":  "10:37",
+                                  "body":  "tenho um levantamento pendente desde dia 10.. está tudo ok?",
+                                  "bodyMedianXMinRatio":  0.29623567921440264,
+                                  "firstCaptureOrdinal":  0,
+                                  "lastCaptureOrdinal":  0,
+                                  "sourceFrames":  [
+                                                       "S1-F0"
+                                                   ],
+                                  "sourceCandidateIds":  [
+                                                             "M-00395"
+                                                         ]
+                              }
+                          ],
+    "meetingMatches":  [
+                           {
+                               "id":  "M-00345",
+                               "sender":  "Theodore",
+                               "dateContext":  null,
+                               "timestamp":  "13:49",
+                               "body":  "Bom dia Fabio Hoje, às 20hOO, o Gerente Geral Jonathan vai realizar uma reunião importante no grupo 08. Já tens conhecimento desta informação?",
+                               "bodyMedianXMinRatio":  0.11292962356792144,
+                               "firstCaptureOrdinal":  6,
+                               "lastCaptureOrdinal":  6,
+                               "sourceFrames":  [
+                                                    "S1-F6"
+                                                ],
+                               "sourceCandidateIds":  [
+                                                          "M-00380",
+                                                          "M-00381"
+                                                      ]
+                           }
+                       ],
+    "firstTheodore":  [
+                          {
+                              "id":  "M-00001",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "12:27",
+                              "body":  "Olá, eu sou o Theodore, o gerente. É um prazer conhecê-lo(a) aqui",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  180,
+                              "lastCaptureOrdinal":  184,
+                              "sourceFrames":  [
+                                                   "S3-F10",
+                                                   "S3-F11",
+                                                   "S3-F12",
+                                                   "S3-F13",
+                                                   "S3-F14"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00001"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00004",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "12:33",
+                              "body":  "Agora, ligue o seu dispositivo TIMI. Vou ensinar-te a ligar a tua bicicleta e começar a ganhar dinheiro",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  178,
+                              "lastCaptureOrdinal":  178,
+                              "sourceFrames":  [
+                                                   "S3-F8"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00004"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00005",
+                              "sender":  "Theodore",
+                              "dateContext":  "7.6",
+                              "timestamp":  "14:28",
+                              "body":  "recompensa",
+                              "bodyMedianXMinRatio":  0.11292962356792144,
+                              "firstCaptureOrdinal":  178,
+                              "lastCaptureOrdinal":  178,
+                              "sourceFrames":  [
+                                                   "S3-F8"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00005"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00007",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "15:08",
+                              "body":  "ajudá-lo-ei a respondê-las.",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  177,
+                              "lastCaptureOrdinal":  177,
+                              "sourceFrames":  [
+                                                   "S3-F7"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00007"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00008",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "15:48",
+                              "body":  "Certo, adicionei-o ao grupo da empresa onde poderá obter mais informações.",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  177,
+                              "lastCaptureOrdinal":  177,
+                              "sourceFrames":  [
+                                                   "S3-F7"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00008"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00009",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "15:58",
+                              "body":  "Encontra-se atualmente no período de teste. Lembre-se de que pode ligar o dispositivo uma vez por dia para ganhar dinheiro. Pode ganhar 20 LISDT em três dias.",
+                              "bodyMedianXMinRatio":  0.11292962356792144,
+                              "firstCaptureOrdinal":  177,
+                              "lastCaptureOrdinal":  177,
+                              "sourceFrames":  [
+                                                   "S3-F7"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00009"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00012",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "14:43",
+                              "body":  "Iopes Se eu comprar agora uma bicicleta, posso ainda ganhar o dia Sim, sem problema.",
+                              "bodyMedianXMinRatio":  0.1260229132569558,
+                              "firstCaptureOrdinal":  175,
+                              "lastCaptureOrdinal":  175,
+                              "sourceFrames":  [
+                                                   "S3-F5"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00013"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00013",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "14:43",
+                              "body":  "teste e tornar-se um parceiro efetivo diretamente, também terá de depositar apenas 60 dólares; o restante valor ser-lhe-á enviado.",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  175,
+                              "lastCaptureOrdinal":  175,
+                              "sourceFrames":  [
+                                                   "S3-F5"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00014"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00014",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "15:56",
+                              "body":  "sócio formal da empresa, ensinar-lhe-ei como operá-la.",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  175,
+                              "lastCaptureOrdinal":  175,
+                              "sourceFrames":  [
+                                                   "S3-F5"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00015"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00015",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "16:27",
+                              "body":  "Precisa da minha ajuda para concluir a recarga?",
+                              "bodyMedianXMinRatio":  0.11292962356792144,
+                              "firstCaptureOrdinal":  174,
+                              "lastCaptureOrdinal":  174,
+                              "sourceFrames":  [
+                                                   "S3-F4"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00016"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00017",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "21:18",
+                              "body":  "demorará um pouco mais a chegar.",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  173,
+                              "lastCaptureOrdinal":  173,
+                              "sourceFrames":  [
+                                                   "S3-F3"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00018"
+                                                     ]
+                          },
+                          {
+                              "id":  "M-00018",
+                              "sender":  "Theodore",
+                              "dateContext":  null,
+                              "timestamp":  "21:18",
+                              "body":  "Porque o seu canal de carregamento e o endereço da carteira que obteve não correspondem.",
+                              "bodyMedianXMinRatio":  0.11129296235679216,
+                              "firstCaptureOrdinal":  173,
+                              "lastCaptureOrdinal":  173,
+                              "sourceFrames":  [
+                                                   "S3-F3"
+                                               ],
+                              "sourceCandidateIds":  [
+                                                         "M-00019"
+                                                     ]
+                          }
+                      ],
+    "lastTheodore":  [
+                         {
+                             "id":  "M-00344",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "16:45",
+                             "body":  "OK, percebi. Já foste à loja de experiência?",
+                             "bodyMedianXMinRatio":  0.11129296235679216,
+                             "firstCaptureOrdinal":  7,
+                             "lastCaptureOrdinal":  7,
+                             "sourceFrames":  [
+                                                  "S1-F7"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00379"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00345",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "13:49",
+                             "body":  "Bom dia Fabio Hoje, às 20hOO, o Gerente Geral Jonathan vai realizar uma reunião importante no grupo 08. Já tens conhecimento desta informação?",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  6,
+                             "lastCaptureOrdinal":  6,
+                             "sourceFrames":  [
+                                                  "S1-F6"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00380",
+                                                        "M-00381"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00346",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "20:07",
+                             "body":  "Fizeste um ótimo trabalho.",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  6,
+                             "lastCaptureOrdinal":  7,
+                             "sourceFrames":  [
+                                                  "S1-F6",
+                                                  "S1-F7"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00382"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00347",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "21:24",
+                             "body":  "Esta atividade termina oficialmente a 14 de julho. Aproveite-a bem.",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  5,
+                             "lastCaptureOrdinal":  5,
+                             "sourceFrames":  [
+                                                  "S1-F5"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00383"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00349",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "21:24",
+                             "body":  "rendimentos da TIM]. Ative primeiro o equipamento, ganhe dinheiro primeiro e, depois, conclua a liquidação de forma simples.",
+                             "bodyMedianXMinRatio":  0.11129296235679216,
+                             "firstCaptureOrdinal":  5,
+                             "lastCaptureOrdinal":  5,
+                             "sourceFrames":  [
+                                                  "S1-F5"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00386"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00350",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "13:40",
+                             "body":  "mensagens online; a comunicação face a face traz melhores",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  4,
+                             "lastCaptureOrdinal":  4,
+                             "sourceFrames":  [
+                                                  "S1-F4"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00387"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00351",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "13:49",
+                             "body":  "aproveitar bem, ajudando os amigos que queiram ganhar dinheiro a juntarem-se à empresa e, ao mesmo tempo, usando esta oportunidade para nos promovermos a agentes de nVel superior.",
+                             "bodyMedianXMinRatio":  0.11129296235679216,
+                             "firstCaptureOrdinal":  3,
+                             "lastCaptureOrdinal":  3,
+                             "sourceFrames":  [
+                                                  "S1-F3"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00388"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00353",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "14:05",
+                             "body":  "Está bem, patrão",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  2,
+                             "lastCaptureOrdinal":  2,
+                             "sourceFrames":  [
+                                                  "S1-F2"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00390"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00354",
+                             "sender":  "Theodore",
+                             "dateContext":  "7/11",
+                             "timestamp":  "17:53",
+                             "body":  "Bom fim de semana. Como está?",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  2,
+                             "lastCaptureOrdinal":  2,
+                             "sourceFrames":  [
+                                                  "S1-F2"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00391"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00356",
+                             "sender":  "Theodore",
+                             "dateContext":  null,
+                             "timestamp":  "19:31",
+                             "body":  "Já não é cedo, meu amigo.",
+                             "bodyMedianXMinRatio":  0.10965630114566284,
+                             "firstCaptureOrdinal":  1,
+                             "lastCaptureOrdinal":  1,
+                             "sourceFrames":  [
+                                                  "S1-F1"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00394"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00358",
+                             "sender":  "Theodore",
+                             "dateContext":  "10-07-2026",
+                             "timestamp":  "10:40",
+                             "body":  "Bom dia. Fabio O teu levantamento chega hoje à tua conta.",
+                             "bodyMedianXMinRatio":  0.11292962356792144,
+                             "firstCaptureOrdinal":  0,
+                             "lastCaptureOrdinal":  0,
+                             "sourceFrames":  [
+                                                  "S1-F0"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00396",
+                                                        "M-00397"
+                                                    ]
+                         },
+                         {
+                             "id":  "M-00360",
+                             "sender":  "Theodore",
+                             "dateContext":  "10-07-2026",
+                             "timestamp":  "16:18",
+                             "body":  "o evento. Organizem os vossos horários com antecedência e não percam esta oportunidade!",
+                             "bodyMedianXMinRatio":  0.11129296235679216,
+                             "firstCaptureOrdinal":  0,
+                             "lastCaptureOrdinal":  0,
+                             "sourceFrames":  [
+                                                  "S1-F0"
+                                              ],
+                             "sourceCandidateIds":  [
+                                                        "M-00399"
+                                                    ]
+                         }
+                     ],
+    "firstUser":  [
+                      {
+                          "id":  "M-00002",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  null,
+                          "timestamp":  "12:28",
+                          "body":  "Bom dia",
+                          "bodyMedianXMinRatio":  0.779050736497545,
+                          "firstCaptureOrdinal":  180,
+                          "lastCaptureOrdinal":  184,
+                          "sourceFrames":  [
+                                               "S3-F10",
+                                               "S3-F11",
+                                               "S3-F12",
+                                               "S3-F13",
+                                               "S3-F14"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00002"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00003",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  null,
+                          "timestamp":  "12:29",
+                          "body":  "916621451",
+                          "bodyMedianXMinRatio":  0.67430441898527,
+                          "firstCaptureOrdinal":  178,
+                          "lastCaptureOrdinal":  178,
+                          "sourceFrames":  [
+                                               "S3-F8"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00003"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00006",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  null,
+                          "timestamp":  "15:00",
+                          "body":  "Já dei uma vista de olhos",
+                          "bodyMedianXMinRatio":  0.60883797054009825,
+                          "firstCaptureOrdinal":  177,
+                          "lastCaptureOrdinal":  177,
+                          "sourceFrames":  [
+                                               "S3-F7"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00006"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00010",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  "1/23",
+                          "timestamp":  "14:05",
+                          "body":  "Hoje foi o meu último dia de teste Se eu comprar agora uma bicicleta, posso ainda ganhar o dia com ela?",
+                          "bodyMedianXMinRatio":  0.52045826513911619,
+                          "firstCaptureOrdinal":  176,
+                          "lastCaptureOrdinal":  176,
+                          "sourceFrames":  [
+                                               "S3-F6"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00010",
+                                                     "M-00011"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00011",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  null,
+                          "timestamp":  "16:02",
+                          "body":  "Sim hoje já meti e amanhã vou meter novamente",
+                          "bodyMedianXMinRatio":  0.29623567921440264,
+                          "firstCaptureOrdinal":  176,
+                          "lastCaptureOrdinal":  176,
+                          "sourceFrames":  [
+                                               "S3-F6"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00012"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00016",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  null,
+                          "timestamp":  "21:08",
+                          "body":  "Obrigado mas ainda tenho o meu problema dos fundos por resolver",
+                          "bodyMedianXMinRatio":  0.29623567921440264,
+                          "firstCaptureOrdinal":  173,
+                          "lastCaptureOrdinal":  173,
+                          "sourceFrames":  [
+                                               "S3-F3"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00017"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00021",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  "1/24",
+                          "timestamp":  "17:20",
+                          "body":  "muito obrigado",
+                          "bodyMedianXMinRatio":  0.70540098199672663,
+                          "firstCaptureOrdinal":  172,
+                          "lastCaptureOrdinal":  172,
+                          "sourceFrames":  [
+                                               "S3-F2"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00022"
+                                                 ]
+                      },
+                      {
+                          "id":  "M-00026",
+                          "sender":  "Conta-1 user",
+                          "dateContext":  null,
+                          "timestamp":  "17:45",
+                          "body":  "Obrigado!!",
+                          "bodyMedianXMinRatio":  0.75613747954173482,
+                          "firstCaptureOrdinal":  169,
+                          "lastCaptureOrdinal":  170,
+                          "sourceFrames":  [
+                                               "S2-F120",
+                                               "S3-F0"
+                                           ],
+                          "sourceCandidateIds":  [
+                                                     "M-00027"
+                                                 ]
+                      }
+                  ],
+    "ambiguousSample":  [
+                            {
+                                "id":  "M-00200",
+                                "sender":  "ambiguous",
+                                "dateContext":  "7.6",
+                                "timestamp":  "14:54",
+                                "body":  "2.pdf 3.pdf",
+                                "bodyMedianXMinRatio":  0.20130932896890344,
+                                "firstCaptureOrdinal":  72,
+                                "lastCaptureOrdinal":  71,
+                                "sourceFrames":  [
+                                                     "S2-F22",
+                                                     "S2-F23"
+                                                 ],
+                                "sourceCandidateIds":  [
+                                                           "M-00218",
+                                                           "M-00219"
+                                                       ]
+                            },
+                            {
+                                "id":  "M-00279",
+                                "sender":  "ambiguous",
+                                "dateContext":  "6/4",
+                                "timestamp":  "11:14",
+                                "body":  "Fabio",
+                                "bodyMedianXMinRatio":  0.21276595744680851,
+                                "firstCaptureOrdinal":  35,
+                                "lastCaptureOrdinal":  35,
+                                "sourceFrames":  [
+                                                     "S1-F35"
+                                                 ],
+                                "sourceCandidateIds":  [
+                                                           "M-00310"
+                                                       ]
+                            }
+                        ]
+}
