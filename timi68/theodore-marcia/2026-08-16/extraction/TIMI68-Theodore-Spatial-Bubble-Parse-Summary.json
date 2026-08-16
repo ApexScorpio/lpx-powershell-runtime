@@ -1,0 +1,397 @@
+{
+    "protocol":  "TIMI68_THEODORE_SPATIAL_BUBBLE_PARSE_SUMMARY_V2",
+    "generatedAt":  "2026-08-17T00:11:06.0558772+01:00",
+    "jobId":  "PSB-20260817-0010-TIMI68-THEODORE-SPATIAL-BUBBLE-PARSE-001",
+    "sourceFrameCount":  185,
+    "topReachedEvidence":  true,
+    "timestampAnchorCount":  628,
+    "leftAnchorCount":  186,
+    "rightAnchorCount":  442,
+    "leftClusterMeanX":  75.285353535353536,
+    "rightClusterMeanX":  490.54418604651164,
+    "sideThresholdX":  282.91476979093261,
+    "rawSpatialCandidates":  486,
+    "deduplicatedMessages":  471,
+    "theodoreMessages":  98,
+    "userMessages":  373,
+    "firstTheodore":  [
+                          {
+                              "id":  "M-00042",
+                              "sender":  "Theodore",
+                              "timestamp":  "11:44",
+                              "dateContext":  "8.16",
+                              "body":  "Sim, irmão.",
+                              "firstCaptureOrdinal":  159,
+                              "lastCaptureOrdinal":  159,
+                              "timestampAnchorX":  212,
+                              "timestampAnchorY":  277,
+                              "sourceFrames":  [
+                                                   "S2-F110"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00049",
+                              "sender":  "Theodore",
+                              "timestamp":  "18:05",
+                              "dateContext":  "8.16",
+                              "body":  "Está tudo bem.",
+                              "firstCaptureOrdinal":  156,
+                              "lastCaptureOrdinal":  156,
+                              "timestampAnchorX":  237,
+                              "timestampAnchorY":  355,
+                              "sourceFrames":  [
+                                                   "S2-F107"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00055",
+                              "sender":  "Theodore",
+                              "timestamp":  "18:25",
+                              "dateContext":  "8.16",
+                              "body":  "Para expandir a sua rede mais facilmente e ganhar força no mercado O que mais?\"",
+                              "firstCaptureOrdinal":  154,
+                              "lastCaptureOrdinal":  154,
+                              "timestampAnchorX":  238,
+                              "timestampAnchorY":  395,
+                              "sourceFrames":  [
+                                                   "S2-F105"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00056",
+                              "sender":  "Theodore",
+                              "timestamp":  "18:25",
+                              "dateContext":  null,
+                              "body":  "O que mais?e",
+                              "firstCaptureOrdinal":  153,
+                              "lastCaptureOrdinal":  153,
+                              "timestampAnchorX":  238,
+                              "timestampAnchorY":  35,
+                              "sourceFrames":  [
+                                                   "S2-F104"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00078",
+                              "sender":  "Theodore",
+                              "timestamp":  "16:31",
+                              "dateContext":  null,
+                              "body":  "Boa tarde, irmão.",
+                              "firstCaptureOrdinal":  145,
+                              "lastCaptureOrdinal":  145,
+                              "timestampAnchorX":  248,
+                              "timestampAnchorY":  91,
+                              "sourceFrames":  [
+                                                   "S2-F96"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00079",
+                              "sender":  "Theodore",
+                              "timestamp":  "16:31",
+                              "dateContext":  "5.08",
+                              "body":  "Tem uma fatura?",
+                              "firstCaptureOrdinal":  145,
+                              "lastCaptureOrdinal":  145,
+                              "timestampAnchorX":  246,
+                              "timestampAnchorY":  132,
+                              "sourceFrames":  [
+                                                   "S2-F96"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00088",
+                              "sender":  "Theodore",
+                              "timestamp":  "14:13",
+                              "dateContext":  "8.16",
+                              "body":  "Sim, está tudo bem.",
+                              "firstCaptureOrdinal":  140,
+                              "lastCaptureOrdinal":  140,
+                              "timestampAnchorX":  266,
+                              "timestampAnchorY":  218,
+                              "sourceFrames":  [
+                                                   "S2-F91"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00098",
+                              "sender":  "Theodore",
+                              "timestamp":  "22:13",
+                              "dateContext":  "8.16",
+                              "body":  "Bom dia. Mais uma hora e devo ir dormir",
+                              "firstCaptureOrdinal":  137,
+                              "lastCaptureOrdinal":  137,
+                              "timestampAnchorX":  181,
+                              "timestampAnchorY":  325,
+                              "sourceFrames":  [
+                                                   "S2-F88"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00099",
+                              "sender":  "Theodore",
+                              "timestamp":  "22:14",
+                              "dateContext":  "8.16",
+                              "body":  "Já é noite, irmão.",
+                              "firstCaptureOrdinal":  137,
+                              "lastCaptureOrdinal":  137,
+                              "timestampAnchorX":  246.5,
+                              "timestampAnchorY":  366,
+                              "sourceFrames":  [
+                                                   "S2-F88"
+                                               ]
+                          },
+                          {
+                              "id":  "M-00111",
+                              "sender":  "Theodore",
+                              "timestamp":  "10:43",
+                              "dateContext":  "8.16",
+                              "body":  "Bom dia, mano.",
+                              "firstCaptureOrdinal":  131,
+                              "lastCaptureOrdinal":  131,
+                              "timestampAnchorX":  240,
+                              "timestampAnchorY":  303,
+                              "sourceFrames":  [
+                                                   "S2-F82"
+                                               ]
+                          }
+                      ],
+    "lastTheodore":  [
+                         {
+                             "id":  "M-00454",
+                             "sender":  "Theodore",
+                             "timestamp":  "3:22",
+                             "dateContext":  "5.08",
+                             "body":  "21 O Mundial foi um subsídio pessoal do gestor; este já é um subsídio da empresa. Inta Boa tarde. O fim de semana está a chegar e sugiro que organize um encontro presencial com os membros da equipa neste fim de semana. O desenvolvimento da equipa não se faz apenas com",
+                             "firstCaptureOrdinal":  4,
+                             "lastCaptureOrdinal":  4,
+                             "timestampAnchorX":  12,
+                             "timestampAnchorY":  260,
+                             "sourceFrames":  [
+                                                  "S1-F4"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00456",
+                             "sender":  "Theodore",
+                             "timestamp":  "2:16",
+                             "dateContext":  "5.08",
+                             "body":  "Não é preciso. Eu sei como é o processo. Vou ver o que consigo fazer. Obrigado",
+                             "firstCaptureOrdinal":  4,
+                             "lastCaptureOrdinal":  4,
+                             "timestampAnchorX":  12.5,
+                             "timestampAnchorY":  364,
+                             "sourceFrames":  [
+                                                  "S1-F4"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00457",
+                             "sender":  "Theodore",
+                             "timestamp":  "0:26",
+                             "dateContext":  "5.08",
+                             "body":  "O nosso plano de empréstimo termina no dia 14. Temos de o aproveitar bem, ajudando os amigos que queiram ganhar",
+                             "firstCaptureOrdinal":  4,
+                             "lastCaptureOrdinal":  4,
+                             "timestampAnchorX":  12.5,
+                             "timestampAnchorY":  416,
+                             "sourceFrames":  [
+                                                  "S1-F4"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00459",
+                             "sender":  "Theodore",
+                             "timestamp":  "3:22",
+                             "dateContext":  "5.08",
+                             "body":  "Programa de Apoio ao Cidadão Inta",
+                             "firstCaptureOrdinal":  3,
+                             "lastCaptureOrdinal":  3,
+                             "timestampAnchorX":  12,
+                             "timestampAnchorY":  260,
+                             "sourceFrames":  [
+                                                  "S1-F3"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00460",
+                             "sender":  "Theodore",
+                             "timestamp":  "2:16",
+                             "dateContext":  "5.08",
+                             "body":  "8 14",
+                             "firstCaptureOrdinal":  3,
+                             "lastCaptureOrdinal":  3,
+                             "timestampAnchorX":  12.5,
+                             "timestampAnchorY":  364,
+                             "sourceFrames":  [
+                                                  "S1-F3"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00462",
+                             "sender":  "Theodore",
+                             "timestamp":  "14:05",
+                             "dateContext":  "5.08",
+                             "body":  "Está bem, patrão",
+                             "firstCaptureOrdinal":  2,
+                             "lastCaptureOrdinal":  2,
+                             "timestampAnchorX":  248,
+                             "timestampAnchorY":  247,
+                             "sourceFrames":  [
+                                                  "S1-F2"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00464",
+                             "sender":  "Theodore",
+                             "timestamp":  "3:22",
+                             "dateContext":  "5.08",
+                             "body":  "Inta",
+                             "firstCaptureOrdinal":  1,
+                             "lastCaptureOrdinal":  8,
+                             "timestampAnchorX":  12,
+                             "timestampAnchorY":  260,
+                             "sourceFrames":  [
+                                                  "S1-F1",
+                                                  "S1-F8"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00465",
+                             "sender":  "Theodore",
+                             "timestamp":  "0:26",
+                             "dateContext":  "7/15",
+                             "body":  "tenho um levantamento pendente desde dia 10.. está tudo ok?",
+                             "firstCaptureOrdinal":  1,
+                             "lastCaptureOrdinal":  1,
+                             "timestampAnchorX":  12.5,
+                             "timestampAnchorY":  416,
+                             "sourceFrames":  [
+                                                  "S1-F1"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00467",
+                             "sender":  "Theodore",
+                             "timestamp":  "10:40",
+                             "dateContext":  "10-07-2026",
+                             "body":  "Inta Bom dia. Fabio",
+                             "firstCaptureOrdinal":  0,
+                             "lastCaptureOrdinal":  0,
+                             "timestampAnchorX":  239,
+                             "timestampAnchorY":  185,
+                             "sourceFrames":  [
+                                                  "S1-F0"
+                                              ]
+                         },
+                         {
+                             "id":  "M-00470",
+                             "sender":  "Theodore",
+                             "timestamp":  "2:16",
+                             "dateContext":  "10-07-2026",
+                             "body":  "Boa tarde. Esta noite haverá uma reunião importante. Por favor, avisa os teus amigos e membros da equipa para garantirem a sua participação atempada. Nesta reunião, preparei 3000 euros em prémios de sorte, que serão distribuídos em duas rondas durante",
+                             "firstCaptureOrdinal":  0,
+                             "lastCaptureOrdinal":  0,
+                             "timestampAnchorX":  12.5,
+                             "timestampAnchorY":  364,
+                             "sourceFrames":  [
+                                                  "S1-F0"
+                                              ]
+                         }
+                     ],
+    "firstUser":  [
+                      {
+                          "id":  "M-00001",
+                          "sender":  "Conta-1 user",
+                          "timestamp":  "12:27",
+                          "dateContext":  null,
+                          "body":  "Olá, eu sou o Theodore, o gerente. É um prazer conhecê-lo(a) aqui",
+                          "firstCaptureOrdinal":  180,
+                          "lastCaptureOrdinal":  184,
+                          "timestampAnchorX":  463,
+                          "timestampAnchorY":  100.5,
+                          "sourceFrames":  [
+                                               "S3-F10",
+                                               "S3-F11",
+                                               "S3-F12",
+                                               "S3-F13",
+                                               "S3-F14"
+                                           ]
+                      },
+                      {
+                          "id":  "M-00002",
+                          "sender":  "Conta-1 user",
+                          "timestamp":  "12:28",
+                          "dateContext":  "5.08",
+                          "body":  "Bom dia",
+                          "firstCaptureOrdinal":  180,
+                          "lastCaptureOrdinal":  184,
+                          "timestampAnchorX":  552,
+                          "timestampAnchorY":  141,
+                          "sourceFrames":  [
+                                               "S3-F10",
+                                               "S3-F11",
+                                               "S3-F12",
+                                               "S3-F13",
+                                               "S3-F14"
+                                           ]
+                      },
+                      {
+                          "id":  "M-00003",
+                          "sender":  "Conta-1 user",
+                          "timestamp":  "12:29",
+                          "dateContext":  null,
+                          "body":  "916621451",
+                          "firstCaptureOrdinal":  178,
+                          "lastCaptureOrdinal":  178,
+                          "timestampAnchorX":  552,
+                          "timestampAnchorY":  39,
+                          "sourceFrames":  [
+                                               "S3-F8"
+                                           ]
+                      },
+                      {
+                          "id":  "M-00004",
+                          "sender":  "Conta-1 user",
+                          "timestamp":  "12:33",
+                          "dateContext":  null,
+                          "body":  "Agora, ligue o seu dispositivo TIMI. Vou ensinar-te a ligar a tua",
+                          "firstCaptureOrdinal":  178,
+                          "lastCaptureOrdinal":  178,
+                          "timestampAnchorX":  463,
+                          "timestampAnchorY":  98,
+                          "sourceFrames":  [
+                                               "S3-F8"
+                                           ]
+                      },
+                      {
+                          "id":  "M-00005",
+                          "sender":  "Conta-1 user",
+                          "timestamp":  "14:28",
+                          "dateContext":  "8.16",
+                          "body":  "Já meti a bicicleta a andar 1428 (Z) Salvar como... Estas são informações da empresa; pode dar uma vista de olhos quando tiver tempo. Depois de as analisar, dar-lhe-ei uma",
+                          "firstCaptureOrdinal":  178,
+                          "lastCaptureOrdinal":  178,
+                          "timestampAnchorX":  463,
+                          "timestampAnchorY":  376,
+                          "sourceFrames":  [
+                                               "S3-F8"
+                                           ]
+                      },
+                      {
+                          "id":  "M-00006",
+                          "sender":  "Conta-1 user",
+                          "timestamp":  "15:00",
+                          "dateContext":  null,
+                          "body":  "Já dei uma vista de olhos",
+                          "firstCaptureOrdinal":  177,
+                          "lastCaptureOrdinal":  177,
+                          "timestampAnchorX":  552,
+                          "timestampAnchorY":  57,
+                          "sourceFrames":  [
+                                               "S3-F7"
+                                           ]
+                      }
+                  ],
+    "calibrationStatus":  "well-separated"
+}
