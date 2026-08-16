@@ -1,0 +1,433 @@
+THEODORE - BONCHAT LIVE - MESSAGE CANDIDATES
+Status: candidatos OCR; lado/remetente ainda requer calibracao.
+Coverage: 3 segmentos; topo comprovado; ordem oldest -> newest.
+
+[12:27] T-00001 left-likely-theodore: Olá, eu sou o Theodore, o gerente. É um prazer conhecê-lo(a) aqui
+[12:28] T-00002 left-likely-theodore: Bom dia Antes de começarmos oficialmente, preencha algumas informações básicas. Ajudar-me-á a planear melhor o seu trabalho e a fornecer orientações mais eficazes no futuro. Nome: Sexo: Idade: Profissão atual: Conta TIMI:
+[12:29] T-00003 left-likely-theodore: Antes de começarmos oficialmente, preencha algumas informações básicas. Ajudar-me-á a planear melhor o seu trabalho e a fornecer orientações mais eficazes no futuro. Nome: Sexo: Idade: Profissão atual: Conta TIMI: Fabio 39 Instalador 916621451 Agora, ligue o seu dispositivo TIMI. Vou ensinar-te a ligar a tua
+[12:33] T-00004 left-likely-theodore: bicicleta e começar a ganhar dinheiro
+T-00005 left-likely-theodore: Eu já estou mais ou menos a par de como funciona TIMI-2.pdf
+[7.6] [14:28] T-00006 left-likely-theodore: Baixar Já meti a bicicleta a andar 1428 (Z) Salvar como... Estas são informações da empresa; pode dar uma vista de olhos quando tiver tempo. Depois de as analisar, dar-lhe-ei uma recompensa
+[7.6] [15:00] T-00007 left-likely-theodore: Já dei uma vista de olhos Certo, sinta-se à vontade para me fazer qualquer pergunta, e eu
+[7.6] [15:08] T-00008 left-likely-theodore: ajudá-lo-ei a respondê-las.
+[7.6] [15:48] T-00009 left-likely-theodore: A partida estou a perceber. Se tiver alguma pergunta depois pergunto Certo, adicionei-o ao grupo da empresa onde poderá obter mais informações.
+[7.6] [15:58] T-00010 left-likely-theodore: Obrigado Encontra-se atualmente no período de teste. Lembre-se de que pode ligar o dispositivo uma vez por dia para ganhar dinheiro. Pode ganhar 20 LISDT em três dias.
+[7.6] [16:02] T-00011 center-ambiguous: Sim hoje já meti e amanhã vou meter novamente 16m v' Sim hoje já meti e amanhã vou meter novamente
+[7.6] [16:26] T-00012 left-likely-theodore: Sim, o dispositivo só precisa de ser ativado uma vez por dia para funcionar corretamente.
+[1/23] [14:05] T-00013 right-likely-user: 14:C4 v' Hoje foi o meu último dia de teste
+[1/23] [14:05] T-00014 left-likely-theodore: Se eu comprar agora uma bicicleta, posso ainda ganhar o dia com ela? Para se juntar à empresa, é necessário um depósito inicial de 80 dólares. No entanto, ganhará 20 dólares durante o período de teste, pelo que só terá de depositar 60 dólares para se tornar um parceiro efetivo. Em alternativa, se preferir saltar o período de teste e tornar-se um parceiro efetivo diretamente, também terá
+[1/23] [14:43] T-00015 left-likely-theodore: teste e tornar-se um parceiro efetivo diretamente, também terá de depositar apenas 60 dólares; o restante valor ser-lhe-á enviado.
+[1/23] [14:43] T-00016 left-likely-theodore: Iopes Se eu comprar agora uma bicicleta, posso ainda ganhar o dia Sim, sem problema. Claro, sem problema.
+[1/23] [15:53] T-00017 right-likely-user: Mas se quiser saltar logo para tl 3 posso? Em vez de comprar a de tll comprar logo a tl 3 1554
+[1/23] [15:56] T-00018 left-likely-theodore: O seu pessoal é apenas uma fonte de rendimento fixo nos estágios iniciais. O que tem de fazer é construir uma equipa e alavancar o seu poder para gerar lucro. Assim que se tornar um sócio formal da empresa, ensinar-lhe-ei como operá-la.
+[1/23] [15:56] T-00019 left-likely-theodore: Precisa da minha ajuda para concluir a recarga? Para os membros do Grupo 68:
+[1/23] [21:08] T-00020 left-likely-theodore: Reunião online todas as noites às 19h30 (Por favor, compareçam a horas) Recompensas de Aprendizagem Participe na reunião e envie um resumo para receber uma recompensa de 2 a 5 LISDT! Comece a agir já amanhã! A empresa irá apoiar o seu crescimento! Aprendizagem Resultados, vamos avançar juntos! 21 Obrigado mas ainda tenho o meu problema dos fundos por resolver
+[1/23] [21:09] T-00021 center-ambiguous: Por favor não me digam que perdi os fundos
+[1/23] [21:18] T-00022 left-likely-theodore: A tua carteira está com um problema, pá. Vou ajudar-te a resolver. Não se preocupe, o seu dinheiro não será perdido, apenas demorará um pouco mais a chegar.
+[1/23] [21:18] T-00023 left-likely-theodore: Porque o seu canal de carregamento e o endereço da carteira que obteve não correspondem.
+[1/23] [21:19] T-00024 center-ambiguous: Ok, mas eu fiz o scan ao código quando escolhi fazer o depósito Não se preocupe, estou a ajudá-lo a resolver isso. Ok vou esperar
+[1/23] T-00025 left-likely-theodore: Ok obrioado. Há aloum temoo orevisto oara ter isto resolvido? Ou Ok obrigado. Há algum tempo previsto para ter isto resolvido? Ou não é possVel saber? Não posso dizer com certeza quando, mas não perderá o seu dinheiro. Isso eu garanto. O dinheiro chegará hoje, no máximo. Bom dia, mano. O seu dinheiro chegou.
+[1/24] [10:01] T-00026 right-likely-user: Ok obrigado
+[1/24] [17:20] T-00027 right-likely-user: muito obrigado ja comprei!
+[1/24] [17:24] T-00028 left-likely-theodore: Boas, pá, parabéns por teres entrado na empresa e te teres tornado sócio oficial.
+[1/24] T-00029 left-likely-theodore: Tabela de lucrós nos parceiros"da TECHNOLOGYCO Ml P w era* : Não se esqueça de visitar o grupo 08 em todos os dias úteis. Obtenha o seu código para ativar o seu dispositivo.
+[1/26] [17:45] T-00030 right-likely-user: Obrigado!!
+[1/26] [10:11] T-00031 left-likely-theodore: Uma nova semana começa, destinada a ser extraordinária. Estás pronto(a) para a enfrentar com uma nova atitude?
+[1/28] [15:50] T-00032 left-likely-theodore: Diante da tempestade, não podemos controlar a natureza, mas podemos escolher como enfrentá-la. Amigos de Portugal, a tempestade vai passar e o sol certamente brilhará novamente. Independentemente das mudanças no ambiente, estou com vocês. Que vocês encontrem paz e coragem, e tudo ficará bem.
+[2/1] [21:34] T-00033 center-ambiguous: Vou focar o meu plano de desafio no recrutamento de 3 novas pessoas para o grupo ainda esta semana. O plano é simples: expandir a nossa rede sem complicar o trabalho de quem já cá Eu trato das abordagens e de explicar o negócio aos candidi Só vou precisar que dois colegas me deem uma mãozinha rá, a tirar dúvidas se for preciso, para ser tudo o mais direto possVel. vou precisar que cols colegas me ceem uma maozlnna rapioa a tirar dúvidas se for preciso, para ser tudo o mais direto possVel. A ideia é usar os primeiros dias da semana para as reuniões, deixar as adesões fechadas até sexta e aproveitar o fim de semana para meter os novos perfis a bombar. Assim, na segunda- feira já temos a equipa reforçada e a faturar mais.
+[2/1] [21:46] T-00034 left-likely-theodore: Sem problemas. Missão cumprida. Recompensa extra: 20 dólares.
+[2/1] [19:03] T-00035 left-likely-theodore: Ótima notícia! O seu presente de Natal foi cuidadosamente embalado e está prestes a ser entregue! Para garantir que chega em segurança e sem problemas, pedimos que verifique se o seu endereço de entrega está completamente correto: Caso seja necessário efetuar alguma alteração, por favor contacte- nos imediatamente e atualizaremos o endereço o mais ranidampntp nnssívpl' Anrarlpcpmns a Glia naciência p annin p nos imediatamente e atualizaremos o endereço o mais rapidamente possível! Agradecemos a sua paciência e apoio e estamos ansiosos por receber esta surpresa em breve!
+[2/1] [19:04] T-00036 right-likely-user: Onde é que posso ver se está atualizado?
+[2/1] T-00037 left-likely-theodore: Quem o convidou enviará um presente..
+[2/6] [18:23] T-00038 left-likely-theodore: O meu contacto 964491937 vai fazer a transferência para a t101 Está tudo ok? you•re unsure, don't send to them, as we be able to help you get your crypto back. Reinember, fratXst•rs can impersonate OtherS, "and never ask you to transfer crypto gets Fees Estimated total Remaining limit • Oxag24„.Ofdef 55.8382S1 USDT 4.20 USDT 60.039737 USDT O €1,150 Confirm transfer OK, clique em enviar e depois envie-me uma captura de ecrã. -60.039 USDT Certo, aguarde um momento. Já está
+[2/6] [18:48] T-00039 left-likely-theodore: Os fundos chegaram. Agora já podemos comprar o equipamento,
+[2/6] [18:56] T-00040 left-likely-theodore: Ele já comprou a t101 Boas, pá, parabéns por adicionares mais uma pessoa à tua equipa!
+[2/6] [19:00] T-00041 left-likely-theodore: Vou enviar-te um bónus.'
+[2/6] T-00042 left-likely-theodore: Tenha um ótimo sábado. Sinta-se à vontade para entrar em contacto comigo caso tenha alguma dúvida ou sugestão.
+[2/13] [11:58] T-00043 left-likely-theodore: Bom dia! Um lindo dia começa. Como está?
+[2/13] [11:44] T-00044 left-likely-theodore: Boas. Tudo a ir e ai? Sim, irmão.
+[2/13] [11:44] T-00045 left-likely-theodore: Pode escolher uma fotografia que goste para usar como foto de perfil; assim, será mais fácil para mim reconhecê-lo(a).
+[2/13] [12:56] T-00046 right-likely-user: Ok tudo bem 12. cuco oem
+[2/13] T-00047 left-likely-theodore: Irmão, já está na empresa há algum tempo. Tem alguma informação da empresa, tarefa ou bónus que ainda não compreende?
+[2/14] T-00048 left-likely-theodore: Feliz Dia dos Namorados! Hoje é um dia repleto de amor. Seja com a família, amigos ou aquela pessoa especial, vale a pena aproveitar. Vamos partilhar amor e carinho com pequenos gestos. Desejo-lhe um dia transbordante de felicidade e amor!
+[2/16] [17:48] T-00049 left-likely-theodore: Como você acabou de entrar na empresa, provavelmente não Boa tarde. Como acabou de entrar na empresa, talvez não a conheça muito bem. Assim, vou fazer-lhe três perguntas para o ajudar a compreender melhor a empresa. Se responder corretamente, enviar-lhe-ei uma recompensa no valor de 10 dólares. Como tens passado, mano?
+[2/16] [18:04] T-00050 right-likely-user: Bom dia Tudo bem
+[2/16] [18:04] T-00051 right-likely-user: Está tudo bem. Estou bem, e por a?
+[2/16] [18:05] T-00052 left-likely-theodore: Está tudo bem.
+[2/16] [18:05] T-00053 left-likely-theodore: Pode escolher uma fotografia que goste para usar como foto de perfil; assim, será mais fácil para mim reconhecê-lo(a).
+[2/16] [18:06] T-00054 right-likely-user: Ok vou já mudar
+[2/16] [18:05] T-00055 left-likely-theodore: Já mudei Muito bem, fez um ótimo trabalho. Vamos começar. Primeira pergunta: Em que setor a TIMI atua e como ela obtém lucro? Funciona no sector da sustentabilidade usando bicicletas Ganha o rendimento com o aluguer das mesmas
+[2/16] [18:23] T-00056 left-likely-theodore: 18:z. A TIMI é uma empresa focada no compartilhamento inteligente de bicicletas, comprometida em promwer a mobilidade sustentável e ecologicamente correta, ao mesmo tempo em que melhora o transporte urbano. Ao fornecer serviços convenientes de compartilhamento de bicicletas, a TIMI oferece aos usuários uma opção de viagem mais inteligente e ecológica. O modelo de lucro da empresa baseia-se principalmente nas taxas de aluguel e uso de bicicletas, ao mesmo tempo em que se expande continuamente para novas fontes de receita por meio de inovação tecnológica e parcerias.
+[2/16] [18:24] T-00057 left-likely-theodore: A segunda pergunta: Por que a TIMI precisa recrutar parceiros?
+[2/16] [18:25] T-00058 center-ambiguous: Para expandir a sua rede mais facilmente e ganhar força no mercado O que mais?"
+[2/16] [18:25] T-00059 left-likely-theodore: O que mais?e
+[2/16] [18:26] T-00060 left-likely-theodore: O valor que iria pagar na publicidade paga, usa-o para pagar aos parceiros, que fazem publicidade boca a boca A TIMI está recrutando parceiros para expandir rapidamente seu alcance de mercado e fortalecer a influência de sua marca. Ao fazer parceria com empresas e indivíduos locais, a TIMI pode estender seus serviços a mais áreas e aumentar os pontos de contato com os usuários. Os parceiros não apenas impulsionarão o envolvimento dos usuários no programa de bicicletas compartilhadas da TIM], mas também criarão oportunidades adicionais de receita, expandirão o mercado e atrairão novos clientes. Este modelo colaborativo permite que a TIMI cresça
+[2/16] [18:27] T-00061 left-likely-theodore: rapidamente e alcance benefícios mútuos.
+[2/16] [18:27] T-00062 left-likely-theodore: A terceira questão: O que devem os membros da TIMI fazer para receber os benefícios?
+[2/16] [18:28] T-00063 left-likely-theodore: Devem meter a bicicleta a andar, construir a sua equipa, e participar em actividades Está certo? Como parceiro principal da TIMI, receberá um rendimento estável e terá a oportunidade de aumentar ainda mais os seus rendimentos operando equipamentos, realizando estudos de mercado, recrutando novos membros, organizando eventos e participando em desafios mensais. Simultaneamente, ao melhorar as suas competências pessoais, construir uma equipa de alto desempenho e apresentar mais bicicletas à empresa, irá impulsionar diretamente o crescimento do negócio e colher
+[2/16] [19:23] T-00064 left-likely-theodore: recompensas ainda maiores. Certo. Fez um ótimo trabalho. Vou dar-te um vale-café de 10 dólares. Podes pedir um café e tirar-me uma fotografia, e eu reembolso-te na tua conta TIMI.
+[2/16] [19:29] T-00065 right-likely-user: Hmm ok
+[2/16] [19:29] T-00066 left-likely-theodore: reembolso-te na tua conta TIMI. Já sabe muito sobre a empresa, mas conhece o seu
+[2/16] [19:30] T-00067 right-likely-user: Obrigado!
+[2/16] [19:33] T-00068 left-likely-theodore: desenvolvimento futuro e o que precisamos de fazer para alcançar a riqueza desejada?
+[2/16] [19:36] T-00069 left-likely-theodore: É necessário desenvolver competências, formar equipas e subir na carreira de agente e gestor O objectivo da empresa é levar as bicicletas TIMI a todos os cantos de Portugal, tornando-se numa marca de bicicletas partilhadas omnipresente em todas as ruas. Para alcançar este objectivo ambicioso, construiremos uma equipa forte e eficiente, onde cada membro trabalhará em conjunto para gerar receitas e
+[2/16] [19:41] T-00070 left-likely-theodore: valor contínuos.
+[2/16] [19:42] T-00071 left-likely-theodore: A empresa fornecerá um apoio financeiro completo para o ajudar a lançar o seu negócio de forma tranquila e a iniciar a sua jornada empreendedora com facilidade. Após a formação da sua equipa, a empresa irá também ajudá-lo na abertura de uma loja física e apoiar a sua promoção gradual a gestor regional, responsável pela gestão de todo o sistema de bicicletas partilhadas da cidade. Com base neste plano bem definido, poderá atingir os seus objetivos financeiros em poucos anos e entrar numa trajetória de crescimento estável.
+[2/16] [19:42] T-00072 left-likely-theodore: Imagine-se como um empreendedor com um potencial ilimitado. A TIMI fornecerá um apoio financeiro abrangente e recursos abundantes, permitindo-lhe concentrar-se na formação da sua equipa e na expansão de mercado. Com o apoio e a assistência contínuos da empresa, obterá retornos mais elevados e desfrutará de oportunidades de desenvolvimento mais amplas. Através de um esforço persistente e sabedoria, poderá criar o seu próprio negócio e alcançar a liberdade financeira a longo prazo.
+[2/16] [19:48] T-00073 left-likely-theodore: Correcto Poderá gerir a empresa com confiança, participar integralmente nas suas atividades e montar a sua equipa livremente. Eu irei auxiliá-lo com o financiamento. Além disso, poderá convidar todos para um jantar de apresentação da empresa, incluindo as despesas de viagem de curta duração. Reembolsarei todas as suas
+[2/16] [20:32] T-00074 right-likely-user: despesas. obrigado! ja serviu de sobremesa
+[2/16] [20:33] T-00075 left-likely-theodore: Pá, se me tivesses pedido os 10 dólares diretamente, eu dava-to. Mas enviar-me uma foto da internet não é muito apropriado.
+[2/16] [21:14] T-00076 center-ambiguous: ya foi mal. Por acaso nao é da internet, mas tem algum temb dsc
+[2/16] [21:15] T-00077 left-likely-theodore: Envie-me uma foto amanhã depois de terminar de beber, e eu reembolso-lhe o valor.
+[2/17] [21:08] T-00078 right-likely-user: Bom dia! tudo bem?
+[2/17] [16:31] T-00079 left-likely-theodore: Boa tarde, irmão. Tem uma fatura?
+[2/17] [16:34] T-00080 left-likely-theodore: Nao pedi, pensei que fosse so para enviar a foto. Mas posso pedir na proxima vez que for Já sabe muito sobre a empresa, mas conhece o seu desenvolvimento futuro e o que precisamos de fazer para alcançar a riqueza desejada?
+[2/17] [16:37] T-00081 left-likely-theodore: esta esta a apostar no desenvolvimento das equipas e conseguir parcerias com lojas, para fortalecer a posiçao no mercado nacional O objectivo da empresa é levar as bicicletas TIMI a todos os cantos de Portugal, tornando-se numa marca de partilha de bicicletas omnipresente em todas as ruas. Para alcançar este objectivo ambicioso, precisamos de construir uma equipa forte e eficiente, onde o esforço colectivo de cada membro crie um fluxo contínuo de receitas e valor.
+[2/17] [16:37] T-00082 left-likely-theodore: Além disso, a empresa fornecerá um apoio financeiro completo para o ajudar a lançar o seu negócio sem problemas e a iniciar a sua jornada empreendedora com facilidade. Assim que a sua equipa estiver formada, a empresa irá também ajudá-lo na abertura de uma loja física e apoiar a sua promoção gradual a Gestor Regional, responsável pela gestão de todo o sistema de bicicletas partilhadas da cidade. Com base neste plano claro, poderá atingir os seus objetivos financeiros em poucos anos e entrar numa trajetória de crescimento estável.
+[2/17] T-00083 left-likely-theodore: Poderá gerir a empresa com confiança, participar integralmente nas suas atividades e montar a sua equipa livremente. Eu irei auxiliá-lo com o financiamento. Além disso, poderá convidar todos para um jantar de apresentação da empresa, incluindo as desoesas de viaaem de curta durado. Reembolsarei todas as suas para um Jantar ce apresentaçao ca empresa, IncluinCo as despesas de viagem de curta duração. Reembolsarei todas as suas despesas.
+[2/18] [14:05] T-00084 right-likely-user: exacto obrigado Bom Dia 14:C4 v' Bom dia, mano. hoje ja pedi fatura :p 14:Cu3 14:C4 v' Boas, mano, já solicitei um bónus de 10 dólares para ti.
+[2/18] [14:07] T-00085 left-likely-theodore: obrigado :) Como está a correr o seu dia? Sem muito trabalho?
+[2/18] [14:13] T-00086 right-likely-user: esta tranquilo passa-se bem Sim, está tudo bem. Já recebeu os seus fundos? e por ai? como esta o trabalho?
+[2/18] [14:48] T-00087 right-likely-user: optimo
+[2/18] [14:07] T-00088 right-likely-user: sim sim. obrigado
+[2/18] [10:58] T-00089 left-likely-theodore: Bom dia! Um lindo dia começa. Como está? E aí, mano? Há tempo que não nos falamos. Sim, começou a trabalhar hoje?
+[2/18] [14:18] T-00090 right-likely-user: esta tudo bem e por ai? sim e verdade esta tudo bem? hoje estou de folga
+[2/18] [15:40] T-00091 right-likely-user: 110Je estou oe hoje é para resolver situaçoes pessoais Posso ajudar-te em alguma coisa?
+[2/18] [13:23] T-00092 left-likely-theodore: Tenha um ótimo fim de semana! Como está?
+[2/18] T-00093 left-likely-theodore: Hoje é um dia especial Pode convidar familiares e amigos para se reunirem e celebrarem este momento maravilhoso. A TIMI preparou uma rosa de oferta para cada convidado; posso ajudá-lo a solicitá-la.
+[3/13] T-00094 left-likely-theodore: Bom dia! Feliz sexta-feira! O fim de semana está quase aí, que bom! Tem algum plano especial? nem por isso. eu trabalho ao fim de semana Trabalhaste duro, irmão. Ainda não dormirá?
+[3/15] [22:14] T-00095 left-likely-theodore: Já é noite, irmão. Bom dia. Mais uma hora e devo ir dormir
+[3/15] [22:37] T-00096 right-likely-user: sim, sao 22:30
+[3/15] [22:38] T-00097 left-likely-theodore: amanha entro mais tarde, posso ir dormir um pouco mais tarde Ok, durma bem. Até amanhã.
+[3/17] [10:34] T-00098 left-likely-theodore: Bom dia! Espero que todos tenham tido um excelente fim de semana. Os veículos elétricos da empresa chegarão em breve ao seu país, o que é uma grande oportunidade para nós. Quais são os seus pensamentos ou opiniões sobre o mesmo?
+[3/17] T-00099 left-likely-theodore: Ern (irina
+[3/19] [11:33] T-00100 left-likely-theodore: Bom dia, Feliz Dia do Pai! Quer seja pai, filho, filha, esposa ou marido, desejo-lhe umas férias felizes e um dia relaxante. A empresa também preparou alguns benefícios especiais para os dias de hoje. Gostaria de dar uma vista de olhos? ENCONTRO ESPECIAL DODIA DO PAI Cm a D" Pai. a cada fam"a. comersem
+[3/19] T-00101 center-ambiguous: az Tia dopai a Odos! esta oportunid" e mas l.mge!
+[3/21] [20:33] T-00102 left-likely-theodore: Bom dia, tenha um excelente fim de semana! Gostaria que desse uma vista de olhos a este vídeo e visse se há algum detalhe que possa ser ajustado. Bom dia
+[3/21] [20:33] T-00103 center-ambiguous: esta muito bom. Assim de repente acho que esta no ponto
+[3/21] [20:34] T-00104 center-ambiguous: talvez um plano com uma bicicleta a andar desobstuida enquanto ao lado ha uma fila de carros parada, desse um bom impacto
+[3/21] [20:53] T-00105 left-likely-theodore: talvez um plano com uma bicicleta a andar desobstuida enqu... I talvez um plano com uma bicicleta a andar desobstuida enqu... Irmão, deste-me uma grande inspiração. Como foi o teu dia, mano?
+[3/21] [22:22] T-00106 right-likely-user: ainda bem que pude ajudar
+[3/22] [00:03] T-00107 right-likely-user: correu tudo bem! um dia normal
+[3/22] [00:03] T-00108 right-likely-user: e o teu?
+[3/22] [10:43] T-00109 left-likely-theodore: Bom dia, mano.
+[3/22] [10:44] T-00110 left-likely-theodore: Eu já estava a dormir quando respondeu à minha mensagem.@
+[3/22] [22:30] T-00111 left-likely-theodore: Boa noite! O grande fim de semana terminou Recentemente, a empresa tem aumentado continuamente o apoio a atividades offline para parceiros, com resultados globais significativos. Muitos parceiros não só receberam boas recompensas em dinheiro, como também tiveram a oportunidade de ganhar brindes de alta qualidade, como telemóveis 'ã Agora é o momento perfeito para acelerar o progresso e devemos aproveitar a oportunidade. Se fosse organizar um evento destes, está confiante de que conseguiria realizá-lo com sucesso?
+[3/24] [23:08] T-00112 left-likely-theodore: Boa noite e bons sonhos. O diretor geral, Jonathan, realizará uma reunião amanhã; lembre- se de comparecer a horas.
+[3/24] T-00113 left-likely-theodore: Além disso, a empresa fará ajustes significativos na receita em breve; fique atento.
+[3/29] [23:23] T-00114 left-likely-theodore: Inventário Supremo Condição: 1200 Grandes superficies 4S %ntos de troca 1200 TROCAR Audi Pontos de troca TROCAR BMW pontos de troca 1200 TROCAR Pontos de troca 1200 pontos de TROCAR Tesla pontos de Boa noite! Desejamos-lhe um ótimo fim de semana! Recentemente realizámos vários sorteios presenciais e atualizámos o sistema de pontos, com o objetivo de lhe proporcionar uma experiência ainda melhor. Gostaríamos também de ouvir a sua opinião: acha que o novo sistema de pontos é mais prático ou mais divertido?
+[3/30] [12:14] T-00115 left-likely-theodore: é bom! vou chegar ate ao tesla :P Haha, sim, meu amigo, já passou muito tempo! Como está?
+[3/30] [12:20] T-00116 left-likely-theodore: Vamos trabalhar juntos!
+[3/30] [13:16] T-00117 right-likely-user: esta tudo bem e por ai?
+[3/30] [13:17] T-00118 left-likely-theodore: Já trabalha na empresa há algum tempo. Ainda tem alguma dúvida sobre informações da empresa?
+[3/30] [16:08] T-00119 center-ambiguous: nem por isso. Tenho assistido as reunioes e tenho aprendido Sabe como aproveitar os benefícios oferecidos pela empresa para construir a sua própria equipa? 1 5:51 Sim, recebo um bonus relativo á inscriçao e compra da bicicleta deles, posso fazer um jantar com um reembolso das despesas Deposit Choose coin to deposit O usoT usar Boas! Nadez Choose a Chain Confirm deposit details usar 082a 02d8e0b5967779as 36tcgaca2d 489670931858 estou a tentar configurar o levantamento para a Bybit estas opçoes estao correctas? existe alguma opçao que va pagar menos taxas de transacçá rede? existe alguma opçao que va pagar menos taxas ce transacçao ce rede? Ethereum ERC20 Tron (TRC20) Mantle Network (LISDTO) BSC (BEP20) APTOS TON Plasma (LISDTO) SOL Polygon (POS) Arbitrum One (LISDTO) AVPXC CELO Op Mainnet BERA (USDTO) HyperVM (LISDTO) KavaVM MONAD (LISDTO) CORN (USDTO) via Node. Pa tenho todas estas opçoes de rede na bybit Sim, recebo um bonus relativo á inscriçao e compra da biciclet... Sim, a empresa reembolsará todas as suas despesas durante o processo de promoção.
+[3/30] [16:09] T-00120 left-likely-theodore: Iopes existe alguma opçao que va pagar menos taxas de transacçã... Selecione o polígono LISDT Deposit Choose com to
+[3/30] [16:56] T-00121 right-likely-user: assim?
+[3/30] T-00122 center-ambiguous: Choose a Chain pos Confirm deposit details Choose coin to deposit O usDT USO Choose a Chain Q' Polygon POS Confirm deposit details usor Deposit Via Nade* O b2dBeOb5967779a536fc9aca2d Sim, por favor envie-me este endereço de carteira.
+[4/4] [16:21] T-00123 left-likely-theodore: obrigado Boa tarde, meu amigo. Conseguiu vincular o endereço da sua carteira?
+[4/4] [08:46] T-00124 right-likely-user: bom dia! sim ja la esta segunda feira faço um levantamento segunda feira faço um levantame...
+[4/4] [17:19] T-00125 left-likely-theodore: segunda feira faço um levantame... sem problemas
+[4/4] [17:19] T-00126 left-likely-theodore: Ainda está trabalhando hoje?
+[4/6] [13:34] T-00127 left-likely-theodore: Boa tarde, Fábio. Já vinculou o endereço da sua carteira?
+[07-04-2026] T-00128 left-likely-theodore: sob re.'isâo fiz o levantamento hoje Os levantamentos levarão 72 horas a serem creditados na sua conta e será deduzida uma taxa de processamento de 25% para cobrir os custos de manutenção e conservação do seu equipamento de ciclismo durante o fim de semana.
+[4/10] [13:40] T-00129 center-ambiguous: Bom dia.
+[4/10] [12:07] T-00130 right-likely-user: Certo
+[4/10] [19:45] T-00131 center-ambiguous: O meu pedido de levantamento tem mais de 72 horas. Está tudo
+[4/10] [19:45] T-00132 left-likely-theodore: Pá, a tua foto de perfil parece-se muito com o Trump.
+[4/10] [19:47] T-00133 left-likely-theodore: Sim, o valor será creditado na sua conta hoje. interessante
+[4/10] [19:46] T-00134 right-likely-user: 1 '9:43 Obrigado :)
+[4/10] [19:46] T-00135 right-likely-user: T heodore Pá, a tua foto de perfil parece-se muito com o Tru... É um bife xD
+[4/17] T-00136 left-likely-theodore: Estimados Parceiros, Para os ajudar a compreender melhor as tendências atuais do mercado, o planeamento da equipa e as estratégias de ação subsequentes, realizaremos uma importante reunião online esta noite, às 191-130, no Grupo 68. Não percam! Bónus Surpresa: Vamos sortear uma máquina de café para um participante sortudo! Lembrete: Preparem-se com antecedência e compareçam na reunião a horas para não perderem informações e oportunidades importantes! Aguardamos a vossa participação! Até lá!
+[4/22] [16:48] T-00137 left-likely-theodore: havia um treino para fazer, nao era? Estamos a realizar o treino em turmas. Os membros que ainda não foram convidados devem aguardar pacientemente e não se preocupar. Ildo cevei" dyudruar pdl_lellcelnellte e Ildo se preocupar.
+[4/22] T-00138 center-ambiguous: sim, mas nao havia uma de ha coisa de um mes, que era para ser feita em 3 dias? Sim, como tem passado ultimamente? Está tudo bem? sim, sempre a trabalhar esta tudo bem! e por ai? Sim, está tudo bem. E você?
+[4/26] [16:54] T-00139 left-likely-theodore: Tenha um excelente fim de semana, Fábio! Como está?
+[4/26] [13:58] T-00140 left-likely-theodore: Tenha um excelente fim de semana, Fábio! Como está?
+[4/26] T-00141 left-likely-theodore: Boa noite! Por favor, participe pontualmente da reunião do grupo 68 amanhã às 19.30! Ao participar, você ganhará pontos de recompensa e terá a chance de ganhar bônus interativos de 10-30 LISDT! Esperamos sua participação ativa!
+[4/27] [21:26] T-00142 right-likely-user: boa noite. So cheguei agora a casa
+[4/27] [21:26] T-00143 right-likely-user: mas estive a ler as mensagens
+[4/27] [21:27] T-00144 left-likely-theodore: Fez um ótimo trabalho. Houve algo que não compreendeu sobre esta reunião?
+[4/30] [00:23] T-00145 left-likely-theodore: Bom dia, Fábio Sim, está tudo bem. acho que fiquei bem esclarecido
+[4/30] [16:17] T-00146 right-likely-user: bom dua tudo bem?
+[4/30] [11:45] T-00147 left-likely-theodore: Feliz Dia da Mãe! A empresa preparou um presente especial para cada mãe: um pacote gratuito para uma reunião familiar e um cravo. Traga a sua família e desfrutem de um jantar maravilhoso juntos! Gostaria que lhe fizesse uma reserva?
+[5/6] [19:38] T-00148 right-likely-user: Bom dia
+[5/6] [19:39] T-00149 left-likely-theodore: Peço desculpa. Pensava que tinha respondido, mas a mensagem não foi enviada OK, quanto tempo! Como está? Sim, participou na reunião desta noite?
+[5/6] [20:53] T-00150 right-likely-user: esta tudo bem.
+[5/6] [20:53] T-00151 right-likely-user: na mesma luta do custume
+[5/6] [22:28] T-00152 right-likely-user: e consigo? como esta tudo? 21:06 v' 21 sim, fiz um resumo deixe-me ver certamente
+[5/6] [22:38] T-00153 right-likely-user: Posso mandar print screen se for necessário
+[5/6] [22:39] T-00154 left-likely-theodore: Certo, deixe-me dar uma boa vista de olhos.
+[5/6] [23:03] T-00155 left-likely-theodore: tudo ok? Sim, gostei do seu resumo. Vou dar-te uma recompensa.
+[5/6] [10:40] T-00156 right-likely-user: obrigado :) ja agora qual é a recompensa? XD Recebeu uma recompensa de 2 pontos ontem à noite.
+[5/6] [23:15] T-00157 center-ambiguous: agradeço pela intençao, contudo nao cheguei a receber apenas os de hoje 22 Deixe comigo.
+[5/10] [16:40] T-00158 center-ambiguous: bom dia. Eu tenho um levantamento pendente, mas a bybit obrigou-me a passar para a Bybit ELI, e vou ter de mudar o endereço de deposito. Ha possibilidade de cancelar o levantamento, e mudar o endereço do deposito para poder levantar para a minha conta da bybit eu? Por favor, aguarde. ja vi que foi cancelada. Obrigado
+[5/10] [16:40] T-00159 left-likely-theodore: agora vou precisar de apagar o endereço de la, para poder mudar Sim, agora pode ligar o endereço da sua carteira.
+[5/10] T-00160 left-likely-theodore: Sim, agora pode ligar o endereço da sua carteira.
+[5/11] [17:07] T-00161 right-likely-user: obrigado Bom dia
+[5/11] [17:19] T-00162 left-likely-theodore: tenho o novo endereço para levantar os meus fundos, mas so tenho estas 3 opçoes Já é noite, irmão. Estou aqui Iopes
+[5/11] [17:20] T-00163 right-likely-user: polygon ja nao esta disponivel Theodore Já é noite, irmão. aqui o sol ainda brilha XO
+[5/11] [17:40] T-00164 center-ambiguous: consegues ajudar-me entao com a chain para selecionar?
+[5/11] [18:32] T-00165 left-likely-theodore: Enviou uma imagem Que carteira de criptomoedas é esta?
+[5/11] [18:32] T-00166 left-likely-theodore: Que carteira de criptomoedas e esta?
+[5/11] [18:52] T-00167 left-likely-theodore: é a bybit Envie-me uma captura de ecrã da página inicial e eu ensinar-lhe-ei.
+[5/11] [19:08] T-00168 left-likely-theodore: Poderia enviar-me uma captura de ecrã da página inicial? Eu mostro-te como. Página inicial da Binance
+[5/11] [19:09] T-00169 right-likely-user: da pagina inicial da timi ou da bybit?
+[5/11] [19:16] T-00170 center-ambiguous: Your crypto journey, simplified. Iopes eu nao trabalho com a binance apenas com a bybit eu nao trabalho com a binance Precisa de baixar o Binance. peço desculpa, mas nao posso usar a conta da binance so mesmo com a bybit peço desculpa, mas nao posso usar a conta da bina... Por que
+[5/11] [19:23] T-00171 center-ambiguous: porque eu tenho um processo com a binance, onde eles roubaram-me 3000€ em ETH de ha uns anos Pode usar revolução? abri um processo criminal contra eles
+[5/11] [19:29] T-00172 right-likely-user: a revolut nao permite o deposito de usdt para contas recente mas ha problema em usar a bybit? eu sei mexer na bybit
+[5/11] [20:22] T-00173 left-likely-theodore: so preciso de saber qual é a chain alternativa a polygon que posso usar Pode descarregar o OKX, porque também não uso essas carteiras de criptomoedas.
+[5/11] [20:24] T-00174 center-ambiguous: nao pode mesmo ser a bybit? Eu ja tenho conta aqui e o meu portfolio esta aqui. Eu sei mexer na bybit sem problemas... so precisava mesmo de saber qual era a chain que devia usar. Na OKX tambem iria ter de escolher uma Chain, por isso, para escolher la, preferia escolher aqui na bybit e continuar a usar uma conta que ja tenho
+[5/11] [20:34] T-00175 center-ambiguous: ok ja me estive a informar. Posso usar a chain Etherium ERCz
+[5/11] [20:34] T-00176 center-ambiguous: podia-te apenas que apagasses o endereço que tenho na plantaforma da timi, para eu poder adicionar o novo endereço Sem problema, aguarde um momento.
+[5/11] [22:05] T-00177 center-ambiguous: a OKX tambem nao permite o deposito de LISDT em portugal! nao ha mais nenhuma plantaforma sem ser a Binance que permita? Conhece outras carteiras de criptomoedas?
+[5/11] [22:48] T-00178 right-likely-user: talvez va fazer pela Kraken
+[5/11] [23:04] T-00179 left-likely-theodore: Não há problema, desde que consigamos obter o polígono LISDT.
+[5/11] T-00180 left-likely-theodore: Bom dia, mano. consigo para usdc Sim, pode ser utilizado? Hue U
+[5/12] [23:04] T-00181 left-likely-theodore: Você viu a tarefa desafiadora do grupo de hoje?
+[5/12] [00:19] T-00182 right-likely-user: consigo para usdc
+[5/12] [21:06] T-00183 right-likely-user: bom dia. nao vi. desculpa. Sai de casa as g da manha e so consegui chegar agora vou ler agora 21 vou ler agora
+[5/12] [21:06] T-00184 right-likely-user: ainda posso fazer, ou ja é tarde?
+[5/12] T-00185 left-likely-theodore: Theodore Você viu a tarefa desafiadora do grupo de hoje? Desafio de hoje: Convide três membros a registarem-se e a experimentarem os produtos da empresa para ganharem uma recompensa extra de 10 dólares, totalizando 16 dólares (incluindo o bónus de inscrição). Convide cinco membros a registarem-se e a experimentarem os produtos da empresa para ganhar uma recompensa extra de 20 dólares, totalizando 30 dólares (incluindo o bónus de registo). 21 og Claro que ainda vamos a tempo. Pode começar a agir quando quiser. 21 og Boa! vou ver o que consigo fazer
+[5/16] [13:08] T-00186 left-likely-theodore: Ótima notícia! Devido ao encerramento do dispositivo T 1, muitas pessoas estão a sentir dificuldades financeiras para adquirir o dispositivo T2. Para ajudar todos, decidi subsidiar pessoalmente 20 dólares, mais um bónus de 20 dólares para o período de teste, totalizando um desconto de 40 dólares na compra de qualquer dispositivo. Nota: esta oferta é válida apenas por uma semana, por isso não perca!
+[5/21] [11:44] T-00187 center-ambiguous: Bom dia! Porque que eu tenho menos 10 pontos e a bicicleta bloqueada? Bom dia, meu amigo. Não demore muito a responder às mensagens, meu amigo, senão perderá pontos. O quanto sabe sobre o sistema de pontos da sua empresa? Eu geralmente respondo sempre. Só não disse nada nesta última, porque isto foi o que o Miguel partilhou no grupo Esta é a sua primeira vez. Vou ajudá-lo(a) a ativar o dispositivo e enviar-lhe 10 pontos. Quanto sabe sobre as informações básicas da empresa? Não achei que fosse uma mensagem realmente para mim. Interpretei como uma mensagem que tenha sido enviada para todas as pessoas, e como já a tinha visto, não respondi. Desculpa T heodore Quanto sabe sobre as informações básicas da empresa? Acho que estou bem inteirado de como funciona a Certo, não se preocupe, já resolvi esse problema para si. Obrigado https•]/timiexhibit.com Este é o site oficial da empresa. Pode aceder-lhe usando o Google Chrome.
+[5/21] [11:44] T-00188 left-likely-theodore: Estas são as ideias e opiniões dos membros da empresa. Pode dar uma olhada; acredito que lhe serão de grande ajuda. https•]/timiuss.com
+[5/21] [11:44] T-00189 left-likely-theodore: Estas são as lojas parceiras da empresa; pode dar uma vista de olhos. https•]/timiexhibit.com/#/news/newss
+[5/21] [11:46] T-00190 center-ambiguous: Tenho assistido as reuniões e até feito resumos Muitas vezes acabo por fazer tarde que é quando consigo ter tempo para escrever. E sei que não recebo pontos por isso, mas não há problema. Mas tenho lido as reuniões com regularidade Obrigado pelos links Já conhecia alguns. Vou dar uma vista de olhos Certo, sem problema. Avise-me quando terminar de ler.
+[5/22] [16:20] T-00191 left-likely-theodore: Boa tarde, meu amigo. O fim de semana está chegando. Tem algum plano?
+[5/22] [21:49] T-00192 left-likely-theodore: Boa tarde Tenho. Trabalhar xD Que tal aproveitar este fim de semana, convidar sua família ou amigos e ir a um restaurante que você goste? Assim, podemos desfrutar da comida enquanto compartilhamos experiências recentes de trabalho e do TIMI.
+[5/22] [21:49] T-00193 left-likely-theodore: Ao mesmo tempo, permita que eles sintam pessoalmente a atmosfera da equipe, conheçam o processo de operação do TIMI e vejam os ganhos reais. Isso não só ajuda você a expandir sua equipe, como também permite acumular experiência ao cnmnartilhar p amnliar psnarn rlp rrpsrimpntn. equipe, como também permite acumular experiência ao compartilhar e ampliar seu espaço de crescimento.
+[5/22] [22:14] T-00194 center-ambiguous: Posso tentar, mas estou a trabalhar. Mas vou tentar. No entanto a minha familia ja ca esta toda Não se preocupe, avise-me depois de confirmar o número de
+[5/22] [22:22] T-00195 right-likely-user: Ok tudo bem
+[5/22] [22:23] T-00196 left-likely-theodore: Talvez faça um almoço no domingo 22:22 v' Certo, assim que confirmar o número de pessoas, diga-me e eu mostro-lhe como. certamente
+[5/22] [22:35] T-00197 right-likely-user: Pode ser um almoço em casa? 22..2.,1 u'
+[5/22] [22:35] T-00198 left-likely-theodore: certamente
+[5/22] [22:35] T-00199 left-likely-theodore: Avise-me depois de ter confirmado o número de pessoas.
+[5/23] T-00200 center-ambiguous: Bom dia. Vou fazer com 4 pessoas, mas vou usar coisas que já tenho um Não vou ter facturas para mostrar
+[5/24] [23:48] T-00201 left-likely-theodore: Tenha um excelente fim de semana, meu amigo. Bom dia....
+[5/24] [10:38] T-00202 left-likely-theodore: Formulário de Reembolso de Despesas com Refeições de Grupo Nome do Requerente: Conta da Empresa do Requerente: Local: NO de Participantes: Valor Estimado:
+[5/24] [10:38] T-00203 right-likely-user: Obrigado
+[5/24] [10:40] T-00204 center-ambiguous: Formulário de Reembolso de Despesas com Refeições de Grupo Nome do Requerente: Fabio Conta da Empresa do Requerente: 916621451 Data: 24/05/2026 Local: Portimão NO de Participantes: 4 Valor Estimado: 60€(?) Tal como disse, estou a fazer um almoço hoje com coisas que já tinha em casa. É um bocado difícil fazer uma estimativa, mas deve estar a volta de 60€
+[5/24] [10:41] T-00205 left-likely-theodore: Mas lá está. Não tenho facturas, porque não fui fazer compras. Como posso fazer? Iopes Formulário de Reembolso de Despesas com Refeições de Gru...
+[5/24] [10:50] T-00206 left-likely-theodore: Formulário de Reembolso de Despesas com Refeições de Gru... Não há problema, meu amigo.
+[5/24] [11:03] T-00207 left-likely-theodore: Sabe qual é o processo para obter o reembolso de refeições em eventos da empresa? Fazer um vídeo e 3 fotos, certo? 1. Imprima materiais promocionais da empresa e diagramas básicos de seguros; reembolsarei os custos de impressão. 2.0 Durante o jantar, apresente a oportunidade de negócio da TIMI aos seus amigos e convide-os a registarem-se e a experimentá-la. 3.0 Tire três fotografias de grupo com os membros da TIMI e grave um vídeo, anexando documentos comprovativos claros. Estas fotos e vídeos servirão como prwa do nosso crescimento conjunto e serão também utilizados para pedidos de reembolso. Vamos construir juntos as bases para o futuro através de encontros inspiradores e ações concretas. 1054 Certo No atual contexto económico, o rendimento extra significa maior segurança. Terá de fornecer uma introdução detalhada sobre a história e os produtos da TIM]. Todos podem inscrever-se no local e experimentar gratuitamente. Após o período de teste, se todos considerarem o produto bom e o modelo viável, podemos discutir mais aprofundadamente como obter lucro em conjunto; se acharem que não é adequado, também está tudo bem, considerem este encontro como uma oportunidade para aprenderem sobre uma nova tendência. A participação é totalmente voluntária; todos podem experimentar facilmente e depois decidir se querem participar.
+[5/24] [14:23] T-00208 left-likely-theodore: Este jantar parece ótimo. Poderia tentar convidar pessoas para se inscreverem nos produtos da empresa; pode ganhar $20 grátis em três dias.
+[5/24] [14:24 v'] T-00209 right-likely-user: Eles já cá estão todos
+[5/24] [14:27] T-00210 left-likely-theodore: E a minha mãe, o meu irmão e a minha mãe Este jantar parece Sabe como obter o seu
+[5/24] [14:26] T-00211 center-ambiguous: link de convite? Está bastante bom
+[5/24] [14:27] T-00212 center-ambiguous: Sim, basta ir onde diz partilhar e copiar de lá
+[5/24] [14:28] T-00213 left-likely-theodore: Certo, sem problema. Se conseguir convidar três membros para se registarem e experimentarem os produtos da empresa, dou-lhe mais 10 dólares.
+[5/24] [14:32] T-00214 left-likely-theodore: Falei hoje com uma pessoa que vai ver se quer entrar Certo, sem problema. Sinta-se à vontade para entrar em contacto comigo se precisar de ajuda.
+[5/24] [14:37] T-00215 center-ambiguous: maior parte das coisas em casa. Cirn Obrigado. Deste almoço não tenho facturas porque já tinha a
+[5/24] [14:37] T-00216 center-ambiguous: Mas tinhas dito que já havia problema certo?
+[5/24] [14:38] T-00217 left-likely-theodore: Iopes Obrigado. Deste almoço não tenho facturas porque já tinha a Diga-me quanto custa e eu reembolsá-lo-ei.
+[5/24] [14:38] T-00218 right-likely-user: Foram a volta de 60€
+[5/24] [14:41] T-00219 left-likely-theodore: 69 euros equivalem aproximadamente a 70 dólares americanos. Precisa de levantar o dinheiro? Eu reembolsarei as taxas de transação.
+[5/24] [14:42] T-00220 left-likely-theodore: Sim vou precisar de levantar Certo, sem problema. O reembolso de 70 dólares, incluindo as taxas, dá aproximadamente 93 dólares, certo? Certo, vou enviar-lhe 95 dólares. Avise-me quando receber.
+[5/24] [14:45] T-00221 right-likely-user: Correcto
+[5/24] [14:51] T-00222 right-likely-user: Obrigado. Assim que receber aviso
+[5/24] T-00223 right-likely-user: Já recebi! Obrigado! 14:52 v'
+[5/25] [14:27] T-00224 left-likely-theodore: Olá, você já está na empresa há algum tempo. Agora quero entender algumas perguntas básicas sobre você, e depois de concluir, eu lhe darei algumas recompensas.
+[5/25] [14:27] T-00225 right-likely-user: Sim tudo bem
+[5/25] [14:49] T-00226 left-likely-theodore: Os levantamentos serão creditados na sua conta após 72 horas, período durante o qual o processamento e a análise terão lugar. Note que uma taxa de transação de 25% será deduzida de todos os levantamentos; esta taxa cobre principalmente os custos de manutenção e conservação dos equipamentos de ciclismo durante os fins de semana. Você sabe dessas informações?
+[5/25] [14:50] T-00227 right-likely-user: Sim sabia
+[5/25] [14:51] T-00228 left-likely-theodore: Por favor, consulte primeiro este manual de parcerias.
+[5/25] [14:52 v'] T-00229 left-likely-theodore: Diga-me depois que terminar de assistir. OBRIGAÇÕES DOS PARCEIROS do —do da do e
+[5/25] [14:53] T-00230 left-likely-theodore: Este é o arquivo PDF da empresa, que contém algumas informações básicas sobre a nossa empresa. Pode lê-lo com atenção.
+[5/25] T-00231 left-likely-theodore: Sim eu li tudo TIMI.PDF.pdf
+[7.6] [14:54] T-00232 left-likely-theodore: Baixar 1 .pdf 12 MS Baixar 2.pdf 2.1 MS Baixar (Z) Salvar como... Ah ok era outro. Peço desculpa. Vou ver
+[7.6] [14:54] T-00233 center-ambiguous: (Z) Salvar como...
+[7.6] [14:54 v'] T-00234 center-ambiguous: (Z) Salvar como...
+[7.6] [14:54] T-00235 left-likely-theodore: 3.pdf Baixar
+[7.6] [14:54 v'] T-00236 center-ambiguous: (Z) Salvar como... O primeiro já tinha visto. Foi o que vi logo no início
+[7.6] [15:06] T-00237 left-likely-theodore: OK, fez um ótimo trabalho. Os outros já li mas não tudo
+[7.6] [15:06] T-00238 left-likely-theodore: Sabe quais são os objetivos e o desenvolvimento futuro da empresa?
+[7.6] [16:33] T-00239 left-likely-theodore: A empresa quer expandir-se para o mercado europeu e ameri- O objectivo é ser a número 1 em mobilidade partilhada sustentável O objetivo da TIMI não é apenas entrar no mercado, mas sim tornar-se uma referência e uma marca líder no setor da partilha de bicicletas em Portugal.
+[7.6] [16:33] T-00240 left-likely-theodore: Esperamos tornar o 'Ciclismo azul" parte do quotidiano urbano. Desde as deslocações diárias para o trabalho até às viagens curtas, dos turistas aos residentes locais, o TIMI abrangerá todos os cenários de deslocações frequentes.
+[7.6] [16:33] T-00241 left-likely-theodore: Assim sendo, o nosso principal objetivo é construir uma equipa central altamente eficiente, eficaz e orientada para resultados, e impulsionar a transformação da TIMI de uma "entrante no mercado" para uma "referência no setor" no mercado português, tornando-se, em última instância, uma marca de referência com uma liderança sustentada na indústria de bicicletas partilhadas, impulsionada tanto pelas capacidades da equipa como pelas capacidades sistémicas.
+[7.6] [16:33] T-00242 left-likely-theodore: Ao mesmo tempo, a empresa oferecerá total apoio a todos os parceiros que participam ativamente: Desde que esteja disposto a dedicar-se e a esforçar-se, a empresa irá ajudá-lo a crescer continuamente. As despesas razoáveis geradas durante o processo de promoção (como refeições, transporte e viagens) poderão ser reembolsadas de acordo com as normas, permitindo que se concentre mais no desenvolvimento do negócio e na melhoria dos resultados.
+[7.6] [16:33] T-00243 left-likely-theodore: O que tens de fazer agora é aprender o máximo possível sobre este setor e sobre a TIM]. Se tiveres alguma dúvida, podes contactar-me a qualquer momento. Só quando tiveres conhecimento suficiente é que poderás transmitir a informação correta aos teus amigos.
+[7.6] [18:26] T-00244 left-likely-theodore: Exacto, tenho estado a ver as reuniões e a aprender com ela Sabe por que razão as empresas recrutam parceiros?
+[7.6] [18:28] T-00245 center-ambiguous: Para poderem crescer. Com a recruta tem mais mão de obra para poder chegar aos seus objectivos e tem mais publicidade boca a boca Sabe por que razão as empresas recrutam parceiros?
+[7.6] [20:11] T-00246 left-likely-theodore: Essa pergunta não é igual á última? XO Podes ver no vídeo todo o processo de uma rapariga a usar uma bicicleta elétrica partilhada. Na Ásia, os produtos de bicicletas partilhadas estão por toda parte, resolvendo problemas de mobilidade e também os problemas de congestionamento.
+[7.6] [20:11] T-00247 left-likely-theodore: O Bolt no seu país é um exemplo muito típico. Nas fases iniciais de entrada no mercado, o seu principal objetivo não era gerar lucro, mas sim acumular rapidamente uma base de utilizadores através de diversas estratégias, desenvolvendo simultaneamente as plataformas para motoristas e passageiros. Isto porque a plataforma compreendeu claramente que só quando a base de utilizadores atingisse uma escala significativa é que todo o ecossistema poderia funcionar de facto.
+[7.6] [20:11] T-00248 left-likely-theodore: À medida que a base de utilizadores cresce e a frequência de utilização aumenta, o mercado é gradualmente conquistado e as vantagens da plataforma começam a destacar-se. Nesta fase, tanto a rentabilidade como a estabilidade geral do mercado melhoram naturalmente.
+[7.6] [20:11] T-00249 left-likely-theodore: Por isso, a Bolt tornou-se uma das principais opções de transporte em muitas cidades. A lógica central por detrás disto é, na verdade, muito simples: não se trata de procurar o máximo de lucro desde o início, mas sim de primeiro expandir e depois pensar em lucros.
+[7.6] [21:44] T-00250 left-likely-theodore: linha aqui o mais parecido é a Bird Como parceiro da TIMI, espero que compreenda verdadeiramente a informação da TIMI e o valor que os seus produtos podem acrescentar ao mercado. Isto porque a empresa prefere fazer parcerias com aqueles que estejam dispostos a desenvolver o mercado e a crescer em conjunto, em vez de simplesmente investir sem participar no seu desenvolvimento.
+[7.6] [21:44] T-00251 left-likely-theodore: De facto, muitos investidores com recursos financeiros robustos estão interessados na TIMI.
+[7.6] [21:44] T-00252 left-likely-theodore: Mas sabe porque é que a empresa ainda está disposta a focar-se no desenvolvimento de parcerias locais em Portugal?
+[7.6] [21:56] T-00253 left-likely-theodore: a empresa prefere parcerias locais para poderem fazer o trabp" no terrano. A empresa ja nao esta a procura apenas de investidores. Esta a procura de quem ajude a desenvolver o negocio localmente O motivo é simples. Por ser português, compreende melhor o mercado local, as pessoas e a forma de comunicação local. A empresa está neste momento em plena expansão no mercado português e, nesta fase, o que mais precisa é de alguém como você, que possa ajudar
+[7.6] [21:59] T-00254 left-likely-theodore: a empresa a entrar nesse mercado.
+[7.6] [21:59] T-00255 left-likely-theodore: Só através do esforço conjunto de todos poderemos alcançar verdadeiramente o beneficio mútuo, o desenvolvimento comum e o sucesso comum.
+[7.6] [21:59] T-00256 left-likely-theodore: Além disso, este é um momento muito oportuno para a TIMI. Portugal é ainda um mercado completamente novo, com poucos concorrentes, o que significa que existem grandes oportunidades. Muitas pessoas ainda desconhecem o potencial de crescimento futuro deste mercado.
+[7.6] [21:59] T-00257 left-likely-theodore: Assim, quero colocar-lhe uma questão séria: se ganhar dinheiro com a TIMI no futuro, estaria disposto a ajudar a TIMI a expandir o seu mercado em Portugal? O motivo é simples.
+[7.6] [22:00] T-00258 right-likely-user: claro
+[7.6] [22:02] T-00259 left-likely-theodore: Por ser português, compreende melhor o mercado local, as pessoas e a forma de comunicação local. A empresa está neste momento em plena expansão no mercado português e, nesta fase, o que mais precisa é de alguém como você, que possa ajudar a empresa a entrar nesse mercado.
+[7.6] [22:02] T-00260 left-likely-theodore: Só através do esforço conjunto de todos poderemos alcançar verdadeiramente o benefício mútuo, o desenvolvimento comum e o sucesso comum.
+[7.6] [22:02] T-00261 left-likely-theodore: o sucesso comum. Além disso, este é um momento muito oportuno para a TIMI.
+[7.6] [22:02] T-00262 left-likely-theodore: Portugal é ainda um mercado completamente novo, com poucos concorrentes, o que significa que existem grandes oportunidades. Muitas pessoas ainda desconhecem o potencial de crescimento futuro deste mercado.
+[7.6] [22:02] T-00263 left-likely-theodore: Assim, quero colocar-lhe uma questão séria: se ganhar dinheiro com a TIMI no futuro, estaria disposto a ajudar a TIMI a expandir o seu mercado em Portugal?
+[7.6] [22:08] T-00264 center-ambiguous: sim. A pergunta é repetida. Ja a tinha perguntado ali atras XD
+[7.6] [22:32] T-00265 left-likely-theodore: sim. A pergunta é repetida. Ja a tinha perguntado ali atras XD Certo, está a ficar tarde. Vamos descansar um pouco e continuar amanhã.
+[7.6] [22:36] T-00266 right-likely-user: tudo bem
+[5/26] [18:02] T-00267 left-likely-theodore: Como está hoje, meu amigo? Está tudo bem? bom dia
+[5/26] [18:03] T-00268 left-likely-theodore: esta tudo bem Tem tempo agora? Vamos dar continuidade ao curso de formação de ontem.
+[5/26] [18:03] T-00269 left-likely-theodore: sim podemos continuar Agora que é um parceiro, para além do rendimento básico diário proveniente do equipamento, pode também obter uma quantia considerável de rendimentos passivos, incluindo: recompensas por referências, recompensas por recrutamento, recompensas por promoções, salário mensal de agente e comissão de agente. Sabe
+[5/26] [18:08] T-00270 left-likely-theodore: promoções, salário mensal de agente e comissão de agente. Sabe o que cada uma delas significa?
+[5/26] [18:22] T-00271 left-likely-theodore: sim, estou familiarizado com elas Sabe qual é a recompensa por recomendação que recebe ao convidar um amigo para comprar um dispositivo de nVel T4?
+[5/26] [18:30] T-00272 right-likely-user: recebo 2$ da inscriçao mais 10%
+[5/26] [18:32] T-00273 left-likely-theodore: Receberá um bónus de recomendação de 195 dólares por convidar com sucesso um membro da equipa T4 para se tornar um parceiro integral da empresa.
+[5/26] [18:42] T-00274 center-ambiguous: 16GYCO.LTD as Éoas-vtn%os A1 ada Pra os nossos Darceims a nua os seus PARCEIRO 12 : no Assim que recrutar um novo sucesso. a comissao seta na sua conta IIHI como recorn*asa. certo. Eu tenho a tabela mas estava a tentar dizer de cabeça
+[5/26] [18:42] T-00275 left-likely-theodore: Sabe o que são LI, L2, L3...?
+[5/26] [18:44] T-00276 right-likely-user: são os niveis de refereals LI sao meus L2 sao os referals dos meus LI
+[5/26] [18:44] T-00277 left-likely-theodore: Agora que já conhece estas informações, já pensou em reunir a sua própria equipa para desenvolver o mercado e obter mais fontes de rendimento?
+[5/26] [18:43] T-00278 right-likely-user: eu ainda nao tenho equipa
+[5/26] [18:45] T-00279 center-ambiguous: mas estou a espera que 2 pessoas possivlemente se regitem
+[5/26] [19:04] T-00280 left-likely-theodore: Se conseguir terminar hoje, dar-lhe-ei um bónus extra. Vou tentar mas vai ser muito difícil. Estou a trabalhar até tarde e eles também Sim, não se preocupe. Se conseguir convidar dois membros para se juntarem à empresa hoje, dar-lhe-ei mais 50 dólares. Somando isto ao seu bónus de referência, poderá ganhar 90 dólares hoje.
+[5/26] [18:56] T-00281 right-likely-user: Obrigado as perguntas ja acabaram?
+[5/26] [21:06] T-00282 right-likely-user: 21. Uma última questão. perguntas Jd
+[5/26] [21:06] T-00283 left-likely-theodore: Sabe como aproveitar melhor os diversos benefícios e o apoio oferecidos pela empresa para desenvolver a sua própria equipa?
+[5/26] [21:07] T-00284 center-ambiguous: com jantares, periodo de teste gratis, actividades nas reunioes, etc
+[5/26] [21:13] T-00285 left-likely-theodore: Em primeiro lugar, pode convidar ativamente os seus amigos para participar no período de teste. Esta é também uma forma de desenvolver o mercado, pois desenvolver o mercado não se resume apenas a recrutar parceiros, mas, principalmente, a divulgar o TIMI a mais pessoas.
+[5/26] [21:13] T-00286 left-likely-theodore: À medida que o seu amigo aprende mais sobre a empresa, também oode aanhar recomoensas. ADós comoletar o oeríodo de A meClCa que o seu amigo aprence mais soore a empresa, também pode ganhar recompensas. Após completar o período de teste, pode ganhar 20 LISDT, que podem ser levantados a qualquer momento.
+[5/26] [21:13] T-00287 left-likely-theodore: Também pode convidá-los para organizar reuniões presenciais. Através da comunicação cara a cara, podem não só aprender mais sobre a empresa, como também aumentar a confiança e a relação entre si.
+[5/26] [21:13] T-00288 left-likely-theodore: Se tiver ideias ou planos melhores, sinta-se à vontade para me informar. A TIMI dar-lhe-á apoio durante o desenvolvimento do seu mercado, incluindo o reembolso de despesas com refeições, reuniões e outros custos relacionados.
+[5/26] [21:20] T-00289 right-likely-user: correcto
+[5/26] [3:59] T-00290 left-likely-theodore: esta concluido? Muito bem, parabéns! O nosso treinamento foi concluído com
+[5/26] [22:37] T-00291 left-likely-theodore: Muito bem, parabéns! O nosso treinamento foi concluído com sucesso. Como recompensa, dar-lhe-ei um bónus de US$ 5. Agora que já tem uma compreensão mais profunda do TIMI, o mais importante é começar a agir verdadeiramente. As oportunidades pertencem sempre a quem toma a iniciativa. Vamos trabalhar juntos para desenvolver o mercado!
+[5/26] [23:20] T-00292 left-likely-theodore: obrigado! 22:49 v' Já é muito tarde hoje. Meu amigo, descanse um pouco. Até amanhã. Boa noite.
+[5/27] [3:59] T-00293 right-likely-user: estive a trabalhar ate agora
+[5/27] T-00294 left-likely-theodore: Bom dia! Um lindo dia começa. Como está?
+[5/29] [10:33] T-00295 left-likely-theodore: Bom dia.Fabio
+[5/29] [10:34] T-00296 left-likely-theodore: esta rudo bem Sim, está tudo bem.
+[5/29] [10:23] T-00297 right-likely-user: obrigado. ate amanha
+[5/29] [00:55] T-00298 right-likely-user: bom dia esta rudo bem e por ai?
+[5/29] [10:34] T-00299 left-likely-theodore: Sabias que a loja 4S do Rui vai abrir em breve?
+[5/29] [14:41] T-00300 left-likely-theodore: Sim, tenho estado a acompanhar as novidades A tua esposa trabalha contigo?
+[5/29] [13:42] T-00301 right-likely-user: A minha esposa? porque perguntas?
+[5/29] [20:10] T-00302 left-likely-theodore: O fim de semana está quase a chegar. Podes levar a tua esposa para jantar fora e convidá-la a juntar-se à empresa para ganharem dinheiro juntos.
+[5/31] [13:47] T-00303 left-likely-theodore: Já que viste as minhas mensagens, responde-me só para dizer que estás aqui Sou o Theodore, sou eu pessoalmente a dar esta formação, não é um robô a enviar mensagens em massa. Mesmo que respondas apenas com "recebido", já me faz saber que estás presente, senão começo a achar que estou a dar aulas ao ar vazio Desculpa. Vi quando acordei entretanto tenho estado a tratar de coisas Vim almoçar com o meu pai
+[5/31] [13:47] T-00304 center-ambiguous: Já lhe falei mas ela não está mesmo interessada xD
+[5/31] [13:49] T-00305 right-likely-user: Em inha A comida já foi xD 13:49 v' Hora da fruta :p
+[5/31] [14:20] T-00306 left-likely-theodore: Meu amigo, precisas de me informar do jantar com antecedência e preparar alguns materiais da empresa. Caso contrário, não terei como ajudar-te a pedir o reembolso, porque não vou saber qual é o propósito do teu jantar.
+[5/31] [14:22] T-00307 center-ambiguous: Não estava só a mandar as fotos por mandar Não estava à espera que reembolsasse Como tinhas perguntado quais eram os planos, estava só a mostrar como tinnas perguntaco quais eram os planos, estava so a mostrar :p Com quem é que fizeste o jantar? Hora do cafezinho :p
+[5/31] [15:52] T-00308 left-likely-theodore: Com o meu pai, o meu irmão e o meu filho Percebi. Podes começar por convidá-los a registarem-se e a experimentarem os produtos da empresa. OK, sabes como usar o teu link de convite?
+[5/31] [16:06] T-00309 right-likely-user: Eles já cá estão todos
+[5/31] [16:06] T-00310 center-ambiguous: Sim. Já partilhei com algumas pessoas apesar de nunca se terem reg istado Posso saber a razão de eles não se registarem?
+[5/31] [16:28] T-00311 left-likely-theodore: 180€ é um investimento muito grande. Não tenho assim tantas pessoas também para convidar. Mas muitas pessoas não tem 180€ disponível para investirem numa coisa que por muito que mostre que funciona, não sabem se vai funcionar com eles Irmão, eu compreendo as tuas preocupações, mas muitas oportunidades não começam quando estamos cem por cento certos. Se formos esperar por ter a certeza total antes de agir, as oportunidades acabarão por ser aproveitadas por outros. Quanto a teres muitas pessoas para convidar ou não, isso não é o mais importante. O desenvolvimento de uma equipa constrói-se gradualmente, de poucos para muitos. O que temos de fazer agora não é decidir por outros se eles vão ou não participar, mas sim dar a conhecer esta oportunidade a mais pessoas.
+[5/31] [16:29] T-00312 center-ambiguous: Sim eu explico isso, mas 180€ é mesmo um valor muito alto. É algo que afasta muito as pessoas. E mesmo mostrando, elas ficam sempre com muit receio e acabam por não avançara
+[5/31] [16:33] T-00313 left-likely-theodore: Avançar A empresa oferece um período de garantia de sete dias; caso o cliente não fique satisfeito durante este período, poderá resgatar o seu investimento a qualquer momento. A empresa reembolsará o montante total investido, sendo que quaisquer lucros obtidos durante os sete dias serão também da sua responsabilidade.
+[5/31] [16:38] T-00314 center-ambiguous: 3 D. Ati. DOS Sim, mas o medo deles não são os 7 dias E o facto que demora algum tempo até conseguirem retirar o investimento, e tem medo que a Timi desapareça antes de o retirar
+[5/31] T-00315 center-ambiguous: Assim que digo que tem de entrar com 180€, elas dizem logo que
+[6/1] [16:41] T-00316 left-likely-theodore: Iopes Sim, mas o medo deles não são os 7 dias O nosso mecanismo de garantia não é apenas para 7 dias. Precisas de ler com atenção. O nosso mecanismo de garantia é válido para sempre. Sempre que quiseres sair, a empresa devolve- te a diferença do teu investimento, sem qualquer prejuízo para ti.
+[6/1] [16:42] T-00317 left-likely-theodore: Podes primeiro convidá-los a registar-se para experimentar os produtos da empresa, para experimentarem e conhecerem. Se querem ou não juntar-se à empresa é uma decisão completamente voluntária.
+[6/1] [20:54] T-00318 right-likely-user: ok vou continuar a falar com eles
+[6/1] [22:44] T-00319 center-ambiguous: Theodore Muito bem, parabéns! O nosso treinamento foi concluído com... olha uma coisa. Lembrei-me que tinhas dito isto mas nunca cheguei a receber nada Deixa-me ver. Vou enviar-te já. Aguarda um momento, por favor.
+[6/2] [11:02] T-00320 left-likely-theodore: Bom dia.
+[6/2] [11:02] T-00321 left-likely-theodore: Como correu hoje? Está tudo bem? Estou muito bem. Não tens trabalho hoje? bom dia ja recebi! obrigado
+[6/2] [20:14] T-00322 right-likely-user: bom dia ja acabou o dia esta tudo bem e por ai?
+[6/2] T-00323 left-likely-theodore: Estou muito bem. Não tens trabalho hoje?
+[6/3] [20:30] T-00324 right-likely-user: eu tenho trabalho todos os dias XD
+[6/3] [20:31] T-00325 left-likely-theodore: Estás a trabalhar muito, irmão. A que distância ficas da loja de experiência do Rui?
+[6/3] [20:42] T-00326 right-likely-user: 5kms 20:41 v' é na minha cidade
+[6/3] T-00327 left-likely-theodore: Podes arranjar tempo para ir dar uma vista de olhos, dar algumas sugestões, e também és parceiro oficial da empresa.
+[6/4] [11:14] T-00328 left-likely-theodore: Bom dia. Fabio
+[6/4] T-00329 left-likely-theodore: Como correu hoje? Tens algum plano?
+[6/4] [11:37] T-00330 right-likely-user: tenho dado directamente á marisa bom dia
+[6/4] [13:04] T-00331 left-likely-theodore: hoje vou ficar por casa Podes convidar alguns amigos para tomar um café e apresentar- lhes as informações da empresa. Eu reembolso-te as despesas.
+[6/4] [14:09] T-00332 right-likely-user: tenho um almoço falado para a proxima semana vamos ver o que dá 14
+[6/4] [14:09] T-00333 right-likely-user: vamos ver o que dá
+[6/4] [15:46] T-00334 left-likely-theodore: Quantas pessoas vão participar neste almoço? a partida 3, mas ainda estamos a ver
+[6/4] [15:52] T-00335 left-likely-theodore: OK, sem problema. Se precisares de reembolso por parte da empresa, tens de me avisar com antecedência.
+[6/4] T-00336 center-ambiguous: OK, sem problema. sim tudo bem... assim que souber, eu envio 1554
+[6/6] [15:48] T-00337 left-likely-theodore: Boa tarde. Recentemente, tenho visto muitos parceiros a interessarem-se ativamente pelos equipamentos e a planear com cuidado o seu próprio desenvolvimento. Para ajudar todos a começarem com mais facilidade, este fim de semana vou oferecer um subsídio pessoal adicional de 20 dólares. Somando aos 20 dólares de apoio do período experimental, terão um total de 40 dólares de desconto. Espero que este apoio vos ajude a dar o primeiro passo mais rapidamente, a aproveitar as oportunidades e a iniciar o quanto antes o vosso próprio caminho de geração de rendimento. Esta atividade é válida apenas para este fim de semana. Os parceiros interessados podem contactar-me para mais informações.
+[6/6] [21:27] T-00338 left-likely-theodore: obrigado. vou ver o que consigo fazer :) Ok, podes levá-los para tomar um café e conversar enquanto bebem. Eu reembolso as tuas despesas. Boa tarde. Participaste na reunião do Jonathan ontem à noite?
+[6/6] T-00339 left-likely-theodore: obrigado Boa tarde. Participaste na reunião do Jonathan ontem à noite? OK, há alguma coisa que não tenhas compreendido?
+[6/10] [20:05] T-00340 right-likely-user: Boa noite
+[6/10] [20:05] T-00341 right-likely-user: particiei
+[6/10] [08:34] T-00342 center-ambiguous: acho que nao. acho que percebi tudo o que foi falado
+[6/10] [11:06] T-00343 left-likely-theodore: Bom dia, meu amigo!
+[6/10] [11:06] T-00344 left-likely-theodore: Sabias que a empresa lançou uma atividade especial de sorteio de abertura para celebrar a inauguração da loja de experiências TIMI 4S em Portimão? 1106 4S em Portimão?
+[6/11] [19:58] T-00345 right-likely-user: Sim, tenho visto falarem disso nas reunioes
+[6/11] [20:55] T-00346 left-likely-theodore: Para celebrar a inauguração da nossa loja 4S, preparei algumas recompensas para todos. De g a 28 de junho, cada parceiro que convidar com sucesso 1 colaborador de nVel T2 ou superior receberá 1 número para o sorteio; além disso, cada promoção de nVel concluída com sucesso também dará direito a 1 número para o sorteio.
+[6/11] [20:55] T-00347 left-likely-theodore: Os prémios são muito atrativos e incluem telemóveis Samsung, computadores portáteis, tablets, televisões, frigorficos, projetores, fritadeiras sem óleo, auriculares sem fios e muito mais.
+[6/11] [20:55] T-00348 left-likely-theodore: Tem confiança de levar para casa um destes prémios?
+[6/11] [20:55] T-00349 left-likely-theodore: Cerimonia de inauguraçôo da TIMI-4S Desde conhecer Paragestemunhar Tl
+[6/11] [22:25] T-00350 center-ambiguous: INA G TIMI PORTIMÀ 28 port Portugal Theodore Tem confiança de levar para casa um destes prémios? heheh vamos ver! tentativas estao a ser feitas Excelente! No dia da grande inauguração, poderá trazer os seus amigos e familiares para participarem na cerimónia de abertura. Considere isso como um pequeno passeio em conjunto. Lembre- se de confirmar o número de participantes e informar-me com antecedência.
+[6/11] [22:25] T-00351 left-likely-theodore: Também podes publicar isto no teu status do WhatsApp e nas tuas contas de redes sociais, para que mais amigos possam conhecer o desenvolvimento da TIMI e esta atividade. Depois de publicares, envia-me um print e dou-te 2 dólares de recompensa.
+[6/11] [22:52] T-00352 right-likely-user: TIMi INAUGURA Ã TIMI 4S EXPERIÉNCE feito Estás a fazer um ótimo trabalho. A partir de amanhã, enviam todos estes print ecrã para o grupo 68. Haverá um administrador responsável por enviar os vossos bónus.
+[6/11] [22:54] T-00353 right-likely-user: boa boa
+[6/11] [17:51] T-00354 left-likely-theodore: Bom dia, como estás? Boa tarde.
+[6/14] [17:51] T-00355 left-likely-theodore: Costumas participar nas nossas reuniões de grupo?
+[6/14] [21:48] T-00356 center-ambiguous: sim. estes 2 ultimos dias por acaso nao consegui
+[6/14] [21:49] T-00357 right-likely-user: mas sim. custumo participar nelas
+[6/15] T-00358 left-likely-theodore: AVISO SOBRE AS ATIVIDADES DA EQUIPA PARA ESTA SEMANA REUNIÃO OFICIAL DA EQLAPA / QUARTA '
+[TERÇA] T-00359 left-likely-theodore: QUINTA/
+[SÁBADO] [12:45] T-00360 left-likely-theodore: INTERACÀO E DE BALANÇO • SORTEIO DE AVISO ESPECIAL: Já percebeste que agora temos fixado que todas as noites às 191-130 haverá reunião e interação no grupo, e também serão distribuídas as respetivas recompensas de participação?
+[SÁBADO] [20:44] T-00361 left-likely-theodore: sim, ate tenho achado engraçado os jogos que tem feito Boa noite. Participaste na atividade de sorteio do grupo?
+[6/17] [21:42] T-00362 left-likely-theodore: participei v' mas aqueles codigos desaparecem em menos de nada Haha, sim. Precisamos de estar preparados. Na sexta-feira, vou continuar a enviar bónus com códigos da sorte. Lembrem-se de participar a tempo.
+[6/17] [21:46] T-00363 center-ambiguous: eu participo a tempo, mas 10 segundos, nem da tempo de acabar de escrever o codigo XO Da próxima vez, enviarei mais dinheiro. Não se preocupe.
+[6/17] [22:08] T-00364 right-likely-user: tranquilo
+[6/17] T-00365 left-likely-theodore: Já se vai deitar? / Já se prepara para dormir?
+[6/18] [13:12] T-00366 left-likely-theodore: Bom dia, meu amigo. Já viste a mensagem que a TIMI te enviou?
+[6/20] [21:44 v'] T-00367 right-likely-user: Bom dia.
+[6/20] [12:48] T-00368 right-likely-user: Bom dia.
+[6/20] [12:48] T-00369 right-likely-user: mensagem no site?
+[6/20] [12:48] T-00370 right-likely-user: Tenho lido as do site
+[6/20] [13:14] T-00371 left-likely-theodore: TIMI A loja de experiência 4S em Portimão já terminou a remodelação. Já tinha conhecimento desta informação?
+[6/20] [13:41] T-00372 right-likely-user: Sim, vou a inauguração dia 28
+[6/20] [14:06] T-00373 left-likely-theodore: Está bem. Pode convidar toda a sua família e amigos para participar. Depois de definir o número de pessoas, é só dizer-me.
+[6/22] [16:40] T-00374 left-likely-theodore: Esta noite, depois de terminar a reunião do grupo, enviarei um bónus de sorte de 1000 dólares. Sabes como participar?
+[6/22] [17:04] T-00375 right-likely-user: Boas sim É só meter o código no campo dele Participa pontualmente na reunião do grupo 68 às 191-130. Depois
+[6/22] [17:08] T-00376 left-likely-theodore: Participa pontualmente na reunião do grupo 68 às 191-130. Depois de terminar a reunião, enviarei um código de sorte. Só precisas de copiar e abrir na conta TIMI para receber o bónus de sorte.
+[6/22] T-00377 center-ambiguous: -2 Registro de resgate Valor resgatado
+[15.36] T-00378 left-likely-theodore: 8 4
+[15.36] [17:08] T-00379 center-ambiguous: Valor resgatado Ok obrigado
+[15.36] [17:09] T-00380 center-ambiguous: Fazer referência que tem de ser dentro de 5 segundos, porque depois disso ele já esgotou xD
+[15.36] T-00381 left-likely-theodore: Sim, por isso precisamos de acelerar um pouco o ritmo.
+[6/27] [17:10] T-00382 left-likely-theodore: Boa tarde. Desejo-lhe um bom fim de semana.
+[6/27] T-00383 left-likely-theodore: portuga' FIFA O Parabéns à seleção 9. a qualificação upara o *Campeon do Mundot•— A Todos pelo C ontinuo À Torcer Juntos pela pot E Celebrar Este Momento oe O Já viu o plano de patrocínio do Mundial no grupo?
+[6/28] [20:10] T-00384 right-likely-user: sim, é muito interessante
+[6/28] [20:25] T-00385 left-likely-theodore: OK, fez um ótimo trabalho! Vou explicar-lhe com mais detalhe.
+[6/28] [20:25] T-00386 left-likely-theodore: Se os amigos que convidou, por pressão financeira ou por ainda estarem a ponderar, ainda não decidiram aderir, estou disposto a oferecer, a titulo pessoal, uma parte do financiamento sob a forma de empréstimo para os ajudar a reduzir a barreira de entrada e a dar o primeiro passo com mais facilidade. Por exemplo:
+[6/28] [20:25] T-00387 left-likely-theodore: T2: preço original 230 LISDT empréstimo de SO LISDT + bónus de experiência de 20 LISDT, fica apenas 160 LISDT. T3: preço original 560 LISDT empréstimo de 100 LISDT + bónus de experiência de 20 LISDT, fica apenas 440 LISDT. T4: preço original 1300 LISDT empréstimo de 200 LISDT + bónus de experiência de 20 LISDT, fica apenas 1080 LISDT.
+[6/28] T-00388 left-likely-theodore: O mais importante é que eles não sintam qualquer pressão para reembolsar. Primeiro ganhem dinheiro, depois pensem no reembolso. Este ponto é essencial que transmita claramente aos membros da sua equipa.
+[6/29] [10:13] T-00389 right-likely-user: essa questao do reembolso é interessante essa questdO uo e Bom dia. Um belo dia começa. Como está? Foi ontem à cerimónia de inauguração? TIMI
+[6/29] [12:47] T-00390 right-likely-user: Esta tudo bem
+[6/29] [08:40] T-00391 left-likely-theodore: TIMI Bom dia
+[6/29] [08:40] T-00392 right-likely-user: Sim estive lá
+[6/29] [08:41] T-00393 center-ambiguous: Olha tive uma ideia que gostaria de saber que me permites t V
+[6/29] [08:44] T-00394 center-ambiguous: O meu irmão fala-lhe 188$ para passar para a T4, que é exactamente o valor que eu tenho
+[6/29] [08:46] T-00395 center-ambiguous: Queria fazer-lhe uma surpresa e enviar o meu dinheiro para ele para ele poder passar já
+[6/29] [12:55] T-00396 left-likely-theodore: Achas que podias retirar esse valor da minha conta e creditar na conta dele? 928250447? Bom dia.Fabio 1254 Iopes Achas que podias retirar esse valor da minha conta e creditar A conta TIMI não pode ser utilizada para transações, meu amigo.
+[6/29] [13:36] T-00397 center-ambiguous: Pois percebo. Era uma surpresa que lhe queria fazer. Pensei qu- Pois percebo. Era uma surpresa que lhe queria fazer. Pensei que pudesse haver uma forma de o fazer, a titulo excepcional
+[6/29] [13:07] T-00398 left-likely-theodore: Pode fazer o depósito utilizando criptomoedas.
+[6/29] [14:13] T-00399 left-likely-theodore: Sim, mas pronto. Isso vai envolver perder 25% do valor em taxa Sabe para que serve esta comissão de 25%?
+[6/29] [14:31] T-00400 center-ambiguous: Sim, é para pagar as despesas de manutenção da bicicleta Eu percebo. A minha dúvida é que uma vez que usar o saldo disponível na app para melhorar a bicicleta não paga a taxa dc 25%, como este valor seria usado para fazer a melhoria de u bicicleta, estava com esperança que pudesse dar para fazer isc bicicleta, estava com esperança que pudesse dar para fazer isto sem ter de fazer o levantamento primeiro e pagar os 25% Sim, é para pagar as despesas de manutenção da bicicl... Sim
+[6/29] [14:31] T-00401 left-likely-theodore: Eu percebo. A minha dúvida é que uma vez que usar o saldo . Isto é simples, porque só há comissão quando faz um levantamento.
+[6/29] [14:34 v'] T-00402 center-ambiguous: Sim mas uma vez que vou ter de levantar o meu valor para poder enviar para a conta dele, vou ter de pagar os 25%
+[6/29] [14:35] T-00403 left-likely-theodore: Era isso que queria evitar Isso não pode ser evitado — a empresa também precisa de ganhar dinheiro. Pode optar por fazer o levantamento e, depois, ajudar os seus amigos a fazer os depósitos.
+[6/29] [14:38] T-00404 left-likely-theodore: Sim, vai ter de ser, mas assim vou ter de esperar mais algum tempo para poder compensar esses 25% Ok, sem problema. Se precisar da minha ajuda, contacte-me a qualquer momento. Bom dia. Já viste a última promoção da loja de experiência? LOJA DE EXPERIÊNCIA TIMI - PORTIMhO
+[6/29] [14:00] T-00405 left-likely-theodore: TIMI - PORTIMÁO_———-,; um de 00 0 0 A que distância ficas da loja de experiência? Sim, é interessante Vou ver se consigo
+[6/29] [16:45] T-00406 center-ambiguous: Eu viajo muito entre Portimão e o Porto Quando estou em Portimão, estou a cerca de 5km OK, percebi. Já foste à loja de experiência?
+[6/29] [20:07] T-00407 left-likely-theodore: Estive lá na inauguração Fizeste um ótimo trabalho.
+[6/29] [13:49] T-00408 left-likely-theodore: Fizeste um ótimo trabalho. Bom dia Fabio
+[6/29] [13:49] T-00409 left-likely-theodore: Hoje, às 20hOO, o Gerente Geral Jonathan vai realizar uma reunião importante no grupo 08. Já tens conhecimento desta informação?
+[6/29] [21:22] T-00410 left-likely-theodore: Bom dia Sim estive a assistir Foi mencionado um plano de apoio ao cidadão durante a reunião. Já viu?
+[6/29] [21:24] T-00411 left-likely-theodore: Sim. É uma boa iniciativa T2: preço original 230 LISDT apoio de SO LISDT T3: preço original 560 LISDT — apoio de 100 LISDT T4: preço original 1300 LISDT — apoio de 200 LISDT
+[6/29] [21:24] T-00412 left-likely-theodore: Esta atividade termina oficialmente a 14 de julho. Aproveite-a bem.
+[6/29] [21:24] T-00413 left-likely-theodore: O plano de apoio ao cidadão não cobra quaisquer taxas adicionais, podendo ser liquidado diretamente com os rendimentos da TIM]. Ative primeiro o equipamento, ganhe dinheiro primeiro e, depois, conclua a liquidação de forma simples.
+[6/29] [21:24] T-00414 right-likely-user: Sim exacto
+[6/29] [21:24] T-00415 center-ambiguous: Basicamente era o que já tinhas feito durante o mundial Sim 21
+[6/29] [13:40] T-00416 left-likely-theodore: 21 O Mundial foi um subsídio pessoal do gestor; este já é um subsídio da empresa. Boa tarde. O fim de semana está a chegar e sugiro que organize um encontro presencial com os membros da equipa neste fim de semana. O desenvolvimento da equipa não se faz apenas com mensagens online; a comunicação face a face traz melhores resultados. Precisa que eu o ajude a solicitar?
+[6/29] [13:49] T-00417 left-likely-theodore: Não é preciso. Eu sei como é o processo. Vou ver o que consigo fazer. Obrigado O nosso plano de empréstimo termina no dia 14. Temos de o aproveitar bem, ajudando os amigos que queiram ganhar dinheiro a juntarem-se à empresa e, ao mesmo tempo, usando esta oportunidade para nos promovermos a agentes de nVel superior. Programa de Apoio ao Cidadão 8 14
+[6/29] [14:05] T-00418 left-likely-theodore: Está bem, patrão
+[6/29] T-00419 left-likely-theodore: Bom fim de semana. Como está? Sim vou dar a conhecer issob
+[7/12] [13:56] T-00420 right-likely-user: bom dia
+[7/12] [19:31] T-00421 right-likely-user: IG•an v' Já não é cedo, meu amigo. bom dia
+[7/12] T-00422 right-likely-user: sap 19:30
+[7/15] [19:30] T-00423 right-likely-user: bom dia
+[7/15] T-00424 center-ambiguous: tenho um levantamento pendente desde dia 10.. está tudo ok?
+[10-07-2026] [10:40] T-00425 left-likely-theodore: Bom dia. Fabio
+[10-07-2026] [10:40] T-00426 left-likely-theodore: O teu levantamento chega hoje à tua conta.
+[10-07-2026] [10:37] T-00427 right-likely-user: obrigado
+[10-07-2026] [10:43] T-00428 right-likely-user: 129 USOT
+[10-07-2026] [16:18] T-00429 left-likely-theodore: Boa tarde. Esta noite haverá uma reunião importante. Por favor, avisa os teus amigos e membros da equipa para garantirem a sua participação atempada. Nesta reunião, preparei 3000 euros em prémios de sorte, que serão distribuídos em duas rondas durante o evento. Organizem os vossos horários com antecedência e não percam esta oportunidade!
