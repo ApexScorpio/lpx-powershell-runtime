@@ -1,0 +1,432 @@
+{
+    "protocol":  "TIMI68_THEODORE_MESSAGE_CANDIDATE_SUMMARY_V1",
+    "generatedAt":  "2026-08-17T00:08:56.8023929+01:00",
+    "jobId":  "PSB-20260817-0007-TIMI68-THEODORE-MESSAGE-CONSOLIDATE-PARSE-001",
+    "subject":  "Theodore",
+    "topReachedEvidence":  true,
+    "sourceFrameCount":  185,
+    "exactOverlapFrames":  10,
+    "unmatchedFramesPreserved":  169,
+    "stitchedLineCount":  2091,
+    "collapsedLineCount":  2036,
+    "candidateCount":  429,
+    "leftLikelyTheodore":  263,
+    "rightLikelyUser":  102,
+    "centerOrUnknown":  64,
+    "firstCandidates":  [
+                            {
+                                "id":  "T-00001",
+                                "dateContext":  null,
+                                "timestamp":  "12:27",
+                                "body":  "Olá, eu sou o Theodore, o gerente. É um prazer conhecê-lo(a) aqui",
+                                "side":  "left-likely-theodore",
+                                "medianX":  68,
+                                "medianXRatio":  0.11129296235679215,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F10"
+                                                 ],
+                                "lineCount":  1,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00002",
+                                "dateContext":  null,
+                                "timestamp":  "12:28",
+                                "body":  "Bom dia Antes de começarmos oficialmente, preencha algumas informações básicas. Ajudar-me-á a planear melhor o seu trabalho e a fornecer orientações mais eficazes no futuro. Nome: Sexo: Idade: Profissão atual: Conta TIMI:",
+                                "side":  "left-likely-theodore",
+                                "medianX":  68,
+                                "medianXRatio":  0.11129296235679215,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F10"
+                                                 ],
+                                "lineCount":  9,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00003",
+                                "dateContext":  null,
+                                "timestamp":  "12:29",
+                                "body":  "Antes de começarmos oficialmente, preencha algumas informações básicas. Ajudar-me-á a planear melhor o seu trabalho e a fornecer orientações mais eficazes no futuro. Nome: Sexo: Idade: Profissão atual: Conta TIMI: Fabio 39 Instalador 916621451 Agora, ligue o seu dispositivo TIMI. Vou ensinar-te a ligar a tua",
+                                "side":  "left-likely-theodore",
+                                "medianX":  69,
+                                "medianXRatio":  0.11292962356792144,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F8",
+                                                     "S3-F9"
+                                                 ],
+                                "lineCount":  13,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00004",
+                                "dateContext":  null,
+                                "timestamp":  "12:33",
+                                "body":  "bicicleta e começar a ganhar dinheiro",
+                                "side":  "left-likely-theodore",
+                                "medianX":  69,
+                                "medianXRatio":  0.11292962356792144,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F8"
+                                                 ],
+                                "lineCount":  1,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00005",
+                                "dateContext":  null,
+                                "timestamp":  "",
+                                "body":  "Eu já estou mais ou menos a par de como funciona TIMI-2.pdf",
+                                "side":  "left-likely-theodore",
+                                "medianX":  123,
+                                "medianXRatio":  0.20130932896890344,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F8"
+                                                 ],
+                                "lineCount":  2,
+                                "parseReason":  "date-separator-boundary"
+                            },
+                            {
+                                "id":  "T-00006",
+                                "dateContext":  "7.6",
+                                "timestamp":  "14:28",
+                                "body":  "Baixar Já meti a bicicleta a andar 1428 (Z) Salvar como... Estas são informações da empresa; pode dar uma vista de olhos quando tiver tempo. Depois de as analisar, dar-lhe-ei uma recompensa",
+                                "side":  "left-likely-theodore",
+                                "medianX":  124,
+                                "medianXRatio":  0.20294599018003273,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F8"
+                                                 ],
+                                "lineCount":  7,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00007",
+                                "dateContext":  "7.6",
+                                "timestamp":  "15:00",
+                                "body":  "Já dei uma vista de olhos Certo, sinta-se à vontade para me fazer qualquer pergunta, e eu",
+                                "side":  "left-likely-theodore",
+                                "medianX":  68,
+                                "medianXRatio":  0.11129296235679215,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F7"
+                                                 ],
+                                "lineCount":  2,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00008",
+                                "dateContext":  "7.6",
+                                "timestamp":  "15:08",
+                                "body":  "ajudá-lo-ei a respondê-las.",
+                                "side":  "left-likely-theodore",
+                                "medianX":  68,
+                                "medianXRatio":  0.11129296235679215,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F7"
+                                                 ],
+                                "lineCount":  1,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00009",
+                                "dateContext":  "7.6",
+                                "timestamp":  "15:48",
+                                "body":  "A partida estou a perceber. Se tiver alguma pergunta depois pergunto Certo, adicionei-o ao grupo da empresa onde poderá obter mais informações.",
+                                "side":  "left-likely-theodore",
+                                "medianX":  69,
+                                "medianXRatio":  0.11292962356792144,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F7"
+                                                 ],
+                                "lineCount":  4,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00010",
+                                "dateContext":  "7.6",
+                                "timestamp":  "15:58",
+                                "body":  "Obrigado Encontra-se atualmente no período de teste. Lembre-se de que pode ligar o dispositivo uma vez por dia para ganhar dinheiro. Pode ganhar 20 LISDT em três dias.",
+                                "side":  "left-likely-theodore",
+                                "medianX":  69,
+                                "medianXRatio":  0.11292962356792144,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F7"
+                                                 ],
+                                "lineCount":  4,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00011",
+                                "dateContext":  "7.6",
+                                "timestamp":  "16:02",
+                                "body":  "Sim hoje já meti e amanhã vou meter novamente 16m v\u0027 Sim hoje já meti e amanhã vou meter novamente",
+                                "side":  "center-ambiguous",
+                                "medianX":  181,
+                                "medianXRatio":  0.29623567921440264,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F6",
+                                                     "S3-F7"
+                                                 ],
+                                "lineCount":  3,
+                                "parseReason":  "timestamp-terminated"
+                            },
+                            {
+                                "id":  "T-00012",
+                                "dateContext":  "7.6",
+                                "timestamp":  "16:26",
+                                "body":  "Sim, o dispositivo só precisa de ser ativado uma vez por dia para funcionar corretamente.",
+                                "side":  "left-likely-theodore",
+                                "medianX":  68,
+                                "medianXRatio":  0.11129296235679215,
+                                "sourceSegments":  [
+                                                       3
+                                                   ],
+                                "sourceFrames":  [
+                                                     "S3-F6"
+                                                 ],
+                                "lineCount":  2,
+                                "parseReason":  "timestamp-terminated"
+                            }
+                        ],
+    "lastCandidates":  [
+                           {
+                               "id":  "T-00418",
+                               "dateContext":  "6/29",
+                               "timestamp":  "14:05",
+                               "body":  "Está bem, patrão",
+                               "side":  "left-likely-theodore",
+                               "medianX":  69,
+                               "medianXRatio":  0.11292962356792144,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F2"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00419",
+                               "dateContext":  "6/29",
+                               "timestamp":  "",
+                               "body":  "Bom fim de semana. Como está? Sim vou dar a conhecer issob",
+                               "side":  "left-likely-theodore",
+                               "medianX":  69,
+                               "medianXRatio":  0.11292962356792144,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F2"
+                                                ],
+                               "lineCount":  2,
+                               "parseReason":  "date-separator-boundary"
+                           },
+                           {
+                               "id":  "T-00420",
+                               "dateContext":  "7/12",
+                               "timestamp":  "13:56",
+                               "body":  "bom dia",
+                               "side":  "right-likely-user",
+                               "medianX":  476,
+                               "medianXRatio":  0.779050736497545,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F2"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00421",
+                               "dateContext":  "7/12",
+                               "timestamp":  "19:31",
+                               "body":  "IG•an v\u0027 Já não é cedo, meu amigo. bom dia",
+                               "side":  "right-likely-user",
+                               "medianX":  476,
+                               "medianXRatio":  0.779050736497545,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F1",
+                                                    "S1-F2"
+                                                ],
+                               "lineCount":  3,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00422",
+                               "dateContext":  "7/12",
+                               "timestamp":  "",
+                               "body":  "sap 19:30",
+                               "side":  "right-likely-user",
+                               "medianX":  469,
+                               "medianXRatio":  0.7675941080196399,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F1"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "date-separator-boundary"
+                           },
+                           {
+                               "id":  "T-00423",
+                               "dateContext":  "7/15",
+                               "timestamp":  "19:30",
+                               "body":  "bom dia",
+                               "side":  "right-likely-user",
+                               "medianX":  476,
+                               "medianXRatio":  0.779050736497545,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F1"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00424",
+                               "dateContext":  "7/15",
+                               "timestamp":  "",
+                               "body":  "tenho um levantamento pendente desde dia 10.. está tudo ok?",
+                               "side":  "center-ambiguous",
+                               "medianX":  181,
+                               "medianXRatio":  0.29623567921440264,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F1"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "date-separator-boundary"
+                           },
+                           {
+                               "id":  "T-00425",
+                               "dateContext":  "10-07-2026",
+                               "timestamp":  "10:40",
+                               "body":  "Bom dia. Fabio",
+                               "side":  "left-likely-theodore",
+                               "medianX":  69,
+                               "medianXRatio":  0.11292962356792144,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F0"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00426",
+                               "dateContext":  "10-07-2026",
+                               "timestamp":  "10:40",
+                               "body":  "O teu levantamento chega hoje à tua conta.",
+                               "side":  "left-likely-theodore",
+                               "medianX":  68,
+                               "medianXRatio":  0.11129296235679215,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F0"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00427",
+                               "dateContext":  "10-07-2026",
+                               "timestamp":  "10:37",
+                               "body":  "obrigado",
+                               "side":  "right-likely-user",
+                               "medianX":  470,
+                               "medianXRatio":  0.76923076923076927,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F0"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00428",
+                               "dateContext":  "10-07-2026",
+                               "timestamp":  "10:43",
+                               "body":  "129 USOT",
+                               "side":  "right-likely-user",
+                               "medianX":  525,
+                               "medianXRatio":  0.85924713584288048,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F0"
+                                                ],
+                               "lineCount":  1,
+                               "parseReason":  "timestamp-terminated"
+                           },
+                           {
+                               "id":  "T-00429",
+                               "dateContext":  "10-07-2026",
+                               "timestamp":  "16:18",
+                               "body":  "Boa tarde. Esta noite haverá uma reunião importante. Por favor, avisa os teus amigos e membros da equipa para garantirem a sua participação atempada. Nesta reunião, preparei 3000 euros em prémios de sorte, que serão distribuídos em duas rondas durante o evento. Organizem os vossos horários com antecedência e não percam esta oportunidade!",
+                               "side":  "left-likely-theodore",
+                               "medianX":  69,
+                               "medianXRatio":  0.11292962356792144,
+                               "sourceSegments":  [
+                                                      1
+                                                  ],
+                               "sourceFrames":  [
+                                                    "S1-F0"
+                                                ],
+                               "lineCount":  6,
+                               "parseReason":  "timestamp-terminated"
+                           }
+                       ],
+    "parserStatus":  "candidate-level; speaker side requires calibration before verified final"
+}
