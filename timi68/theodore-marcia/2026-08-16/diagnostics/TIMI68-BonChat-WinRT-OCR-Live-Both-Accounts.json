@@ -1,0 +1,171 @@
+{
+    "protocol":  "TIMI68_BONCHAT_WINRT_OCR_LIVE_BOTH_ACCOUNTS_V1",
+    "generatedAt":  "2026-08-16T23:53:15.7883164+01:00",
+    "jobId":  "PSB-20260816-2355-TIMI68-BONCHAT-WINRT-OCR-LIVE-BOTH-ACCOUNTS-001",
+    "timiBicycleScriptWrites":  0,
+    "bonChatContentWrites":  0,
+    "bonChatWindowActions":  0,
+    "persistentLocalWrites":  0,
+    "targetWindowCount":  2,
+    "successfulOcrCount":  2,
+    "results":  [
+                    {
+                        "account":  "Conta-2",
+                        "title":  "BonChat",
+                        "hwnd":  502532340,
+                        "processId":  58980,
+                        "className":  "Qt5QWindowIcon",
+                        "width":  940,
+                        "height":  620,
+                        "printWindowOk":  true,
+                        "stage":  "completed",
+                        "success":  true,
+                        "recognizerLanguage":  "pt-PT",
+                        "textLength":  115,
+                        "exactTheodoreVisible":  false,
+                        "exactMarciaVisible":  false,
+                        "text":  "O BonChat Ajuda \u0026 Configurações Versão 1.D.135 O BonChat Participe de um servidor BonChat local. TIMIBBI Participar",
+                        "lines":  [
+                                      {
+                                          "text":  "O BonChat"
+                                      },
+                                      {
+                                          "text":  "Ajuda \u0026 Configurações Versão 1.D.135"
+                                      },
+                                      {
+                                          "text":  "O BonChat"
+                                      },
+                                      {
+                                          "text":  "Participe de um servidor BonChat local."
+                                      },
+                                      {
+                                          "text":  "TIMIBBI"
+                                      },
+                                      {
+                                          "text":  "Participar"
+                                      }
+                                  ]
+                    },
+                    {
+                        "account":  "Conta-1",
+                        "title":  "BonChat (99+)",
+                        "hwnd":  259723462,
+                        "processId":  6400,
+                        "className":  "Qt5QWindowIcon",
+                        "width":  940,
+                        "height":  620,
+                        "printWindowOk":  true,
+                        "stage":  "completed",
+                        "success":  true,
+                        "recognizerLanguage":  "pt-PT",
+                        "textLength":  546,
+                        "exactTheodoreVisible":  true,
+                        "exactMarciaVisible":  false,
+                        "text":  "O Bonchat Mensagens p Pesquisar Contatos/Grupos @ Versão 1.D.135 Não lido 153 2S_6k 408 Meus Favoritos Você enviou uma imagem. 05.08 Operador do Servidor:timi001 Você: mkkkk Quinta @ TIMI-68 Theodore: O Diretor-Geral lona... 23 51 TIMI PORTUGAL DREAM T... marinho: boa noite 23:22 O TIMI-N0.08 TIMI—NO.08: As principais difer... 22:32 @ TIMI-NeWs TIM]: LIN WEIGLIANG Nome: T... 22:16 Theodore A tua ideia é muito boa, mas a... 10:26 Grupo de Recompensas por Objeti... Theodore: Recentemente, muita... Aviso Amigos, Notificação: Theodore Qua 01.21",
+                        "lines":  [
+                                      {
+                                          "text":  "O Bonchat"
+                                      },
+                                      {
+                                          "text":  "Mensagens"
+                                      },
+                                      {
+                                          "text":  "p Pesquisar Contatos/Grupos"
+                                      },
+                                      {
+                                          "text":  "@ Versão 1.D.135"
+                                      },
+                                      {
+                                          "text":  "Não lido"
+                                      },
+                                      {
+                                          "text":  "153"
+                                      },
+                                      {
+                                          "text":  "2S_6k"
+                                      },
+                                      {
+                                          "text":  "408"
+                                      },
+                                      {
+                                          "text":  "Meus Favoritos"
+                                      },
+                                      {
+                                          "text":  "Você enviou uma imagem."
+                                      },
+                                      {
+                                          "text":  "05.08"
+                                      },
+                                      {
+                                          "text":  "Operador do Servidor:timi001"
+                                      },
+                                      {
+                                          "text":  "Você: mkkkk"
+                                      },
+                                      {
+                                          "text":  "Quinta"
+                                      },
+                                      {
+                                          "text":  "@ TIMI-68"
+                                      },
+                                      {
+                                          "text":  "Theodore: O Diretor-Geral lona... 23 51"
+                                      },
+                                      {
+                                          "text":  "TIMI PORTUGAL DREAM T..."
+                                      },
+                                      {
+                                          "text":  "marinho: boa noite"
+                                      },
+                                      {
+                                          "text":  "23:22"
+                                      },
+                                      {
+                                          "text":  "O TIMI-N0.08"
+                                      },
+                                      {
+                                          "text":  "TIMI—NO.08: As principais difer..."
+                                      },
+                                      {
+                                          "text":  "22:32"
+                                      },
+                                      {
+                                          "text":  "@ TIMI-NeWs"
+                                      },
+                                      {
+                                          "text":  "TIM]: LIN WEIGLIANG Nome: T..."
+                                      },
+                                      {
+                                          "text":  "22:16"
+                                      },
+                                      {
+                                          "text":  "Theodore"
+                                      },
+                                      {
+                                          "text":  "A tua ideia é muito boa, mas a..."
+                                      },
+                                      {
+                                          "text":  "10:26"
+                                      },
+                                      {
+                                          "text":  "Grupo de Recompensas por Objeti..."
+                                      },
+                                      {
+                                          "text":  "Theodore: Recentemente, muita..."
+                                      },
+                                      {
+                                          "text":  "Aviso"
+                                      },
+                                      {
+                                          "text":  "Amigos, Notificação: Theodore"
+                                      },
+                                      {
+                                          "text":  "Qua"
+                                      },
+                                      {
+                                          "text":  "01.21"
+                                      }
+                                  ]
+                    }
+                ]
+}
