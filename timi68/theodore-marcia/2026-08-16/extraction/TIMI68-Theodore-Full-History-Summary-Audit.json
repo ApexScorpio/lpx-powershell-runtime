@@ -1,0 +1,1962 @@
+{
+    "protocol":  "TIMI68_THEODORE_HISTORY_SUMMARY_AUDIT_V1",
+    "generatedAt":  "2026-08-17T00:02:05.7089703+01:00",
+    "jobId":  "PSB-20260816-2359-TIMI68-THEODORE-HISTORY-SUMMARY-AUDIT-001",
+    "source":  {
+                   "repository":  "ApexScorpio/lpx-powershell-runtime",
+                   "branch":  "timi68-theodore-marcia-2026-08-16",
+                   "path":  "timi68/theodore-marcia/2026-08-16/extraction/TIMI68-Theodore-Full-History-Header-Guard-Fix.json",
+                   "bytes":  1951881,
+                   "sha256":  "7fa92f20384b515135ee195e737691cb2261c35caf0639b2b341f868eeb80594",
+                   "subject":  "Theodore",
+                   "sourceLabel":  "BonChat live Conta-1",
+                   "generatedAt":  "2026-08-16T23:59:28.5340587+01:00"
+               },
+    "safeguards":  {
+                       "timiBicycleScriptWrites":  0,
+                       "bonChatContentWrites":  0,
+                       "bonChatWindowActions":  0,
+                       "persistentLocalWrites":  0
+                   },
+    "scroll":  {
+                   "direction":  "up/history",
+                   "completedScrolls":  48,
+                   "maxScrolls":  48,
+                   "stoppedByRepeatedImage":  false,
+                   "maxScrollLimitReached":  true,
+                   "tailRepeatedFrameCount":  1
+               },
+    "evidence":  {
+                     "frameCount":  49,
+                     "uniqueImageCount":  49,
+                     "uniqueTextFrameCount":  49,
+                     "adjacentImageTransitions":  48,
+                     "adjacentTextTransitions":  48,
+                     "uniqueOcrLineCount":  488,
+                     "historyMovementConfirmed":  true,
+                     "topReachedEvidence":  false,
+                     "fullTraversalEvidence":  false
+                 },
+    "dateLikeValues":  [
+                           "0:26",
+                           "08:34",
+                           "08:40",
+                           "08:41",
+                           "08:44",
+                           "08:46",
+                           "09:37",
+                           "10:13",
+                           "10:25",
+                           "10:37",
+                           "10:40",
+                           "10:43",
+                           "10-07-2026",
+                           "11:02",
+                           "11:06",
+                           "11:14",
+                           "11:37",
+                           "12:45",
+                           "12:47",
+                           "12:48",
+                           "12:55",
+                           "13:04",
+                           "13:07",
+                           "13:08",
+                           "13:12",
+                           "13:14",
+                           "13:36",
+                           "13:40",
+                           "13:41",
+                           "13:47",
+                           "13:49",
+                           "13:56",
+                           "14:00",
+                           "14:05",
+                           "14:06",
+                           "14:09",
+                           "14:13",
+                           "14:20",
+                           "14:22",
+                           "14:31",
+                           "14:34 v\u0027",
+                           "14:35",
+                           "14:38",
+                           "14:55",
+                           "15:46",
+                           "15:48",
+                           "15:52",
+                           "16:06",
+                           "16:18",
+                           "16:21",
+                           "16:28",
+                           "16:29",
+                           "16:33",
+                           "16:38",
+                           "16:40",
+                           "16:41",
+                           "16:42",
+                           "16:45",
+                           "17:01",
+                           "17:02",
+                           "17:04",
+                           "17:08",
+                           "17:09",
+                           "17:10",
+                           "17:23",
+                           "17:51",
+                           "17:53",
+                           "19:30",
+                           "19:31",
+                           "19:58",
+                           "2:16",
+                           "20:05",
+                           "20:07",
+                           "20:10",
+                           "20:14",
+                           "20:25",
+                           "20:30",
+                           "20:31",
+                           "20:42",
+                           "20:44",
+                           "20:54",
+                           "20:55",
+                           "20:56",
+                           "21:22",
+                           "21:24",
+                           "21:27",
+                           "21:42",
+                           "21:44 v\u0027",
+                           "21:46",
+                           "21:48",
+                           "21:49",
+                           "22:00",
+                           "22:08",
+                           "22:25",
+                           "22:44",
+                           "22:52",
+                           "22:54",
+                           "3:22",
+                           "5kms 20:41 v\u0027",
+                           "A comida já foi xD 13:49 v\u0027",
+                           "sap 19:30"
+                       ],
+    "frames":  [
+                   {
+                       "index":  0,
+                       "imageHash":  "510f085921324efbecdbb2be4bd6ca07b2b4a7f85c6dbc89b796f528f72107ea",
+                       "textHash":  "065ba823efa2007a9fc913541f2735d4b1676006780c07905da674c69e115015",
+                       "duplicateImage":  false,
+                       "textLength":  572,
+                       "lineCount":  24,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "10-07-2026",
+                                             "10:40",
+                                             "10:40",
+                                             "10:37",
+                                             "10:43",
+                                             "16:18"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "tenho um levantamento pendente desde dia 10.. está tudo ok?",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "10-07-2026"
+                                      ],
+                       "lastLines":  [
+                                         "Boa tarde. Esta noite haverá uma reunião importante. Por favor,",
+                                         "avisa os teus amigos e membros da equipa para garantirem a sua",
+                                         "participação atempada. Nesta reunião, preparei 3000 euros em",
+                                         "prémios de sorte, que serão distribuídos em duas rondas durante",
+                                         "o evento. Organizem os vossos horários com antecedência e não",
+                                         "percam esta oportunidade!",
+                                         "Enviar uma mensagern_",
+                                         "16:18"
+                                     ]
+                   },
+                   {
+                       "index":  1,
+                       "imageHash":  "50d9a2308a0bc0e29b536bbc2a58aa1eb1629e6311d9fb07c7e227051d3ee8e6",
+                       "textHash":  "9820c6a231776dd81b0f6f9adfa2660bca9ec915a282bd227d5c89acc769bd76",
+                       "duplicateImage":  false,
+                       "textLength":  184,
+                       "lineCount":  15,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "19:31",
+                                             "sap 19:30",
+                                             "19:30",
+                                             "0:26"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Já não é cedo, meu amigo.",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "bom dia",
+                                          "19:31"
+                                      ],
+                       "lastLines":  [
+                                         "19:31",
+                                         "sap 19:30",
+                                         "7/15",
+                                         "bom dia",
+                                         "19:30",
+                                         "tenho um levantamento pendente desde dia 10.. está tudo ok?",
+                                         "0:26",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  2,
+                       "imageHash":  "9e0588e0b84ae28fc4513c14a46eeb9299881d472b2106e053c5846a502917b7",
+                       "textHash":  "1051e1b9f86f76bc5d6ac5858096ecdee5db1ea837f0ecd8ccc1362204d137bb",
+                       "duplicateImage":  false,
+                       "textLength":  176,
+                       "lineCount":  17,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "14:05",
+                                             "17:53",
+                                             "13:56"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Está bem, patrão",
+                                          "14:05"
+                                      ],
+                       "lastLines":  [
+                                         "Enviar uma mensagern_",
+                                         "Sim vou dar a conhecer issob",
+                                         "7/11",
+                                         "17:53",
+                                         "7/12",
+                                         "bom dia",
+                                         "13:56",
+                                         "IG•an v\u0027"
+                                     ]
+                   },
+                   {
+                       "index":  3,
+                       "imageHash":  "92ad361c76515bc16de9eaf7fc51c8b3c97625408de02d5eb53fdd7defd25190",
+                       "textHash":  "9810385f69eddd20cd1218a1d9da06586296fdfde904fd203449eecde0d94361",
+                       "duplicateImage":  false,
+                       "textLength":  275,
+                       "lineCount":  14,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:49"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "aproveitar bem, ajudando os amigos que queiram ganhar",
+                                          "dinheiro a juntarem-se à empresa e, ao mesmo tempo, usando",
+                                          "esta oportunidade para nos promovermos a agentes de nVel",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16"
+                                      ],
+                       "lastLines":  [
+                                         "3:22",
+                                         "2:16",
+                                         "0:26",
+                                         "superior.",
+                                         "Programa de Apoio ao Cidadão",
+                                         "8 14",
+                                         "Enviar uma mensagern_",
+                                         "13:49"
+                                     ]
+                   },
+                   {
+                       "index":  4,
+                       "imageHash":  "1932c10cdd176adb956f77dabe43742ef276590a020c4e2d673ca80c81194997",
+                       "textHash":  "56bb5546185a73f4c5057071d9403719cdaa3ed1e94f6cc9fd437b15f6d8709c",
+                       "duplicateImage":  false,
+                       "textLength":  635,
+                       "lineCount":  23,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "21:24",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:40"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Sim",
+                                          "21",
+                                          "21:24",
+                                          "21",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22"
+                                      ],
+                       "lastLines":  [
+                                         "mensagens online; a comunicação face a face traz melhores",
+                                         "resultados. Precisa que eu o ajude a solicitar?",
+                                         "13:40",
+                                         "Não é preciso. Eu sei como é o processo. Vou ver o que consigo",
+                                         "fazer. Obrigado",
+                                         "O nosso plano de empréstimo termina no dia 14. Temos de o",
+                                         "aproveitar bem, ajudando os amigos que queiram ganhar",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  5,
+                       "imageHash":  "52ef7b5a9762ed3b98bf9a158dd1cded9830f208dec32f0ff29659dff5849251",
+                       "textHash":  "c45d517509434ccc7511d2e373a1e67be22dae1a425d58911cb20f2b48020ced",
+                       "duplicateImage":  false,
+                       "textLength":  620,
+                       "lineCount":  24,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "21:24",
+                                             "21:24",
+                                             "21:24",
+                                             "21:24"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Sim. É uma boa iniciativa",
+                                          "T2: preço original 230 LISDT apoio de SO LISDT"
+                                      ],
+                       "lastLines":  [
+                                         "adicionais, podendo ser liquidado diretamente com os",
+                                         "rendimentos da TIM]. Ative primeiro o equipamento, ganhe",
+                                         "dinheiro primeiro e, depois, conclua a liquidação de forma simples.",
+                                         "21:24",
+                                         "Sim exacto",
+                                         "21:24",
+                                         "Basicamente era o que já tinhas feito durante o mundial",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  6,
+                       "imageHash":  "8d42ab361e6375354eb3826fa5f55eb2203a04207a7b3e8dab89338955b0e77b",
+                       "textHash":  "e8533c28355676fd47c22b8c05c8a87c252a51772b696b637afcec8c1309c3da",
+                       "duplicateImage":  false,
+                       "textLength":  376,
+                       "lineCount":  20,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "13:49",
+                                             "20:07",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:49",
+                                             "21:22"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Fizeste um ótimo trabalho.",
+                                          "Bom dia Fabio",
+                                          "13:49",
+                                          "20:07",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22"
+                                      ],
+                       "lastLines":  [
+                                         "13:49",
+                                         "Bom dia",
+                                         "Sim estive a assistir",
+                                         "Foi mencionado um plano de apoio ao cidadão durante a reunião.",
+                                         "Já viu?",
+                                         "Enviar uma mensagern_",
+                                         "21:22",
+                                         "Sim. É uma boa iniciativa"
+                                     ]
+                   },
+                   {
+                       "index":  7,
+                       "imageHash":  "09cf0d86e899b0fa2eec28c0b4c33d00aa5967283acb76af1856b2d2af64291c",
+                       "textHash":  "7d7aa17a543edfae7e22ae10ef6fb83f5776b132e1d4a85a4dfdcc211f7319b1",
+                       "duplicateImage":  false,
+                       "textLength":  360,
+                       "lineCount":  21,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "14:00",
+                                             "13:07",
+                                             "13:08",
+                                             "13:08",
+                                             "3:22",
+                                             "16:45",
+                                             "2:16",
+                                             "0:26",
+                                             "20:07"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "5.08",
+                                          "Inta",
+                                          "A que distância ficas da loja de experiência?",
+                                          "Sim, é interessante",
+                                          "Vou ver se consigo",
+                                          "14:00",
+                                          "13:07"
+                                      ],
+                       "lastLines":  [
+                                         "OK, percebi. Já foste à loja de experiência?",
+                                         "16:45",
+                                         "Estive lá na inauguração",
+                                         "2:16",
+                                         "Fizeste um ótimo trabalho.",
+                                         "0:26",
+                                         "Enviar uma mensagern_",
+                                         "20:07"
+                                     ]
+                   },
+                   {
+                       "index":  8,
+                       "imageHash":  "06ee16da35752e398173201d902d7b874ee03eba65f77de964f753bb3a2d14fc",
+                       "textHash":  "19e72b96ab9601796d95eb68fa719b2d5f610c083fe6a072c451f828df886ec5",
+                       "duplicateImage":  false,
+                       "textLength":  77,
+                       "lineCount":  8,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26"
+                                         ],
+                       "firstLines":  [
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "TIMI - PORTIMÁO_———-,;",
+                                          "um de",
+                                          "00 0 0",
+                                          "Enviar uma mensagern_"
+                                      ],
+                       "lastLines":  [
+                                         "Inta",
+                                         "3:22",
+                                         "2:16",
+                                         "0:26",
+                                         "TIMI - PORTIMÁO_———-,;",
+                                         "um de",
+                                         "00 0 0",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  9,
+                       "imageHash":  "227a546d0fc735677eea8229787456dc44fdbfebc6a9cf9f5d35aca664515c37",
+                       "textHash":  "3a6416a67ef8e91c15bcc5fa9ee193dcc1debc5dd96570b8cf5c901795a064c4",
+                       "duplicateImage":  false,
+                       "textLength":  509,
+                       "lineCount":  21,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "14:35",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "14:38",
+                                             "14:55"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Isso não pode ser evitado — a empresa também precisa de",
+                                          "ganhar dinheiro. Pode optar por fazer o levantamento e, depois,",
+                                          "ajudar os seus amigos a fazer os depósitos.",
+                                          "14:35",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22"
+                                      ],
+                       "lastLines":  [
+                                         "qualquer momento.",
+                                         "Bom dia. Já viste a última promoção da loja de experiência?",
+                                         "LOJA DE",
+                                         "EXPERIÊNCIA",
+                                         "TIMI - PORTIMhO",
+                                         "Enviar uma mensagern_",
+                                         "14:38",
+                                         "14:55"
+                                     ]
+                   },
+                   {
+                       "index":  10,
+                       "imageHash":  "4a95504da2d1f770a1aff1afeda73d08eb190f6e653a1ce108f6fd08a13d46be",
+                       "textHash":  "8b97799a966c1a7ba668f116083b75a6cc8e1bb7159c891148bd65385cb701b0",
+                       "duplicateImage":  false,
+                       "textLength":  523,
+                       "lineCount":  20,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "14:31",
+                                             "14:31",
+                                             "14:34 v\u0027"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "bicicleta, estava com esperança que pudesse dar para fazer isto",
+                                          "sem ter de fazer o levantamento primeiro e pagar os 25%"
+                                      ],
+                       "lastLines":  [
+                                         "Isto é simples, porque só há comissão quando faz um",
+                                         "levantamento.",
+                                         "14:31",
+                                         "Sim mas uma vez que vou ter de levantar o meu valor para poder",
+                                         "enviar para a conta dele, vou ter de pagar os 25%",
+                                         "14:34 v\u0027",
+                                         "Era isso que queria evitar",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  11,
+                       "imageHash":  "158c033278a349060c43b95064034d6890cc543436c044ec7c9a7870753af8d7",
+                       "textHash":  "c5babe5122cea6e5060d9deb42d671c6a717ae6ba949d7ad74034116b1f5cdbb",
+                       "duplicateImage":  false,
+                       "textLength":  653,
+                       "lineCount":  21,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:36",
+                                             "13:07",
+                                             "13:36",
+                                             "14:13"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Pois percebo. Era uma surpresa que lhe queria fazer. Pensei que",
+                                          "pudesse haver uma forma de o fazer, a titulo excepcional",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "Sabe para que serve esta comissão de 25%?",
+                                         "14:13",
+                                         "Sim, é para pagar as despesas de manutenção da bicicleta",
+                                         "Eu percebo. A minha dúvida é que uma vez que usar o saldo",
+                                         "disponível na app para melhorar a bicicleta não paga a taxa dc",
+                                         "25%, como este valor seria usado para fazer a melhoria de u",
+                                         "bicicleta, estava com esperança que pudesse dar para fazer isc",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  12,
+                       "imageHash":  "ac021c126406f82a994826ceb57aeaf715765f87f2e3c7b24e21d554b20a3520",
+                       "textHash":  "550edd42ea491753d73cb76cb7bf05b2c54fdc7cf85592de3c1d5b3f52ea10b0",
+                       "duplicateImage":  false,
+                       "textLength":  564,
+                       "lineCount":  24,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "08:41",
+                                             "08:44",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "08:46",
+                                             "12:55",
+                                             "08:46"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "08:41",
+                                          "O meu irmão fala-lhe 188$ para passar para a T4, que é",
+                                          "exactamente o valor que eu tenho",
+                                          "08:44",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22"
+                                      ],
+                       "lastLines":  [
+                                         "1254",
+                                         "Iopes",
+                                         "Achas que podias retirar esse valor da minha conta e creditar",
+                                         "A conta TIMI não pode ser utilizada para transações, meu amigo.",
+                                         "12:55",
+                                         "08:46",
+                                         "Pois percebo. Era uma surpresa que lhe queria fazer. Pensei qu-",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  13,
+                       "imageHash":  "ce280613cabe1847b935ab53a384291f209dba27ff41e8e3853e3a70d3e8bf78",
+                       "textHash":  "6664c54aba16c6118fcba7430b4263780bea153545fdad7121daa59920b35aba",
+                       "duplicateImage":  false,
+                       "textLength":  137,
+                       "lineCount":  10,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26",
+                                             "08:40",
+                                             "08:40"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "TIMI",
+                                          "Inta",
+                                          "0:26",
+                                          "Bom dia",
+                                          "08:40",
+                                          "Sim estive lá",
+                                          "08:40"
+                                      ],
+                       "lastLines":  [
+                                         "Inta",
+                                         "0:26",
+                                         "Bom dia",
+                                         "08:40",
+                                         "Sim estive lá",
+                                         "08:40",
+                                         "Olha tive uma ideia que gostaria de saber que me permites t V",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  14,
+                       "imageHash":  "b9dadfb87f6ef06c1540da8f3e254a043f903875ffad7ceeff5fc57833c2d3b0",
+                       "textHash":  "94a5e66137b5c0b4da65dda4fc835851ad04509394b1971ba0c82e1e6661ce79",
+                       "duplicateImage":  false,
+                       "textLength":  172,
+                       "lineCount":  12,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26",
+                                             "10:13",
+                                             "12:47"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "essa questdO uo e",
+                                          "Bom dia. Um belo dia começa. Como está?",
+                                          "5.08",
+                                          "Foi ontem à cerimónia de inauguração?",
+                                          "Inta",
+                                          "TIMI",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "Foi ontem à cerimónia de inauguração?",
+                                         "Inta",
+                                         "TIMI",
+                                         "0:26",
+                                         "Enviar uma mensagern_",
+                                         "10:13",
+                                         "Esta tudo bem",
+                                         "12:47"
+                                     ]
+                   },
+                   {
+                       "index":  15,
+                       "imageHash":  "cf3d0501471f0ca2fafb194fe8676eb661cb48c5b640448bd0cff1b091389677",
+                       "textHash":  "a964b58926178b0ad94180c27227b49d5a1ab0e065bb66a5bbc6bf8ab5f236dc",
+                       "duplicateImage":  false,
+                       "textLength":  779,
+                       "lineCount":  25,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "20:25",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "20:25",
+                                             "20:25"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "de empréstimo para os ajudar a reduzir a barreira de entrada e a",
+                                          "dar o primeiro passo com mais facilidade.",
+                                          "Por exemplo:",
+                                          "20:25",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22"
+                                      ],
+                       "lastLines":  [
+                                         "O mais importante é que eles não sintam qualquer pressão para",
+                                         "reembolsar. Primeiro ganhem dinheiro, depois pensem no",
+                                         "reembolso. Este ponto é essencial que transmita claramente aos",
+                                         "membros da sua equipa.",
+                                         "6/29",
+                                         "20:25",
+                                         "essa questao do reembolso é interessante",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  16,
+                       "imageHash":  "70793ce436ce5ade9d42f95edcc59ff1a585428d81e92afff6d18cc56428dfa8",
+                       "textHash":  "fe4ab76150e865085a82f48aa00bd3b034de0ef96aaa9734b8322c0ed37b1a4e",
+                       "duplicateImage":  false,
+                       "textLength":  550,
+                       "lineCount":  21,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "17:02",
+                                             "20:10",
+                                             "20:10",
+                                             "20:25"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "A Todos pelo C ontinuo À",
+                                          "Torcer Juntos pela pot E",
+                                          "Celebrar Este Momento oe O"
+                                      ],
+                       "lastLines":  [
+                                         "20:10",
+                                         "OK, fez um ótimo trabalho! Vou explicar-lhe com mais detalhe.",
+                                         "20:25",
+                                         "Se os amigos que convidou, por pressão financeira ou por ainda",
+                                         "estarem a ponderar, ainda não decidiram aderir, estou disposto a",
+                                         "oferecer, a titulo pessoal, uma parte do financiamento sob a forma",
+                                         "de empréstimo para os ajudar a reduzir a barreira de entrada e a",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  17,
+                       "imageHash":  "1a763ff2859396c8ed9ccd04fad9cd910cedae15cd09ad1de92859853fe50d8e",
+                       "textHash":  "5c4f8cdebfbe526cbd48c256a85a5002e73ace0dee55e8e4ec5b980c54a763c5",
+                       "duplicateImage":  false,
+                       "textLength":  133,
+                       "lineCount":  11,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26",
+                                             "17:01"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "0:26",
+                                          "Em linha",
+                                          "17:01",
+                                          "portuga\u0027 FIFA O",
+                                          "Parabéns à seleção",
+                                          "9. a qualificação"
+                                      ],
+                       "lastLines":  [
+                                         "Em linha",
+                                         "17:01",
+                                         "portuga\u0027 FIFA O",
+                                         "Parabéns à seleção",
+                                         "9. a qualificação",
+                                         "upara o *Campeon",
+                                         "do Mundot•—",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  18,
+                       "imageHash":  "54c29acb9dc7abbe7fee0272b9253adeb9573bc1798dbf6fab0b17194340ba98",
+                       "textHash":  "d7c5545a854f031a439e5fbba3b601f67aca8c67aa985ed60ce0c8f50d7bbf22",
+                       "duplicateImage":  false,
+                       "textLength":  329,
+                       "lineCount":  22,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "17:08",
+                                             "17:09",
+                                             "17:10",
+                                             "17:01"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "8",
+                                          "5.08",
+                                          "4",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "depois disso ele já esgotou xD",
+                                         "17:09",
+                                         "Sim, por isso precisamos de acelerar um pouco o ritmo.",
+                                         "6/27",
+                                         "Boa tarde. Desejo-lhe um bom fim de semana.",
+                                         "Enviar uma mensagern_",
+                                         "17:10",
+                                         "17:01"
+                                     ]
+                   },
+                   {
+                       "index":  19,
+                       "imageHash":  "7299f4e8103ca6c637b9895058f75609ebd5c6a50633affb679d6e973664b150",
+                       "textHash":  "7e08d8fc9f6092f1f7ca574bd00b59e89e9103d67d511085026edb6bb0bdccdd",
+                       "duplicateImage":  false,
+                       "textLength":  298,
+                       "lineCount":  15,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "17:08"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Participa pontualmente na reunião do grupo 68 às 191-130. Depois",
+                                          "de terminar a reunião, enviarei um código de sorte. Só precisas de"
+                                      ],
+                       "lastLines":  [
+                                         "de terminar a reunião, enviarei um código de sorte. Só precisas de",
+                                         "copiar e abrir na conta TIMI para receber o bónus de sorte.",
+                                         "17:08",
+                                         "-2",
+                                         "Registro de resgate",
+                                         "Valor resgatado",
+                                         "15.36",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  20,
+                       "imageHash":  "7f5d31584df8669b2057c6c0795e9cd6e9c02102d700121c6e2ccc41712701ed",
+                       "textHash":  "861d51cc475769af9d463d61f8cb67bd3d34d4657b276a782ba645d9e8b5310a",
+                       "duplicateImage":  false,
+                       "textLength":  418,
+                       "lineCount":  17,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "14:06",
+                                             "16:40",
+                                             "17:04"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Está bem. Pode convidar toda a sua família e amigos para",
+                                          "participar. Depois de definir o número de pessoas, é só dizer-me.",
+                                          "14:06"
+                                      ],
+                       "lastLines":  [
+                                         "Esta noite, depois de terminar a reunião do grupo, enviarei um",
+                                         "bónus de sorte de 1000 dólares. Sabes como participar?",
+                                         "16:40",
+                                         "Boas sim",
+                                         "É só meter o código no campo dele",
+                                         "Participa pontualmente na reunião do grupo 68 às 191-130. Depois",
+                                         "Enviar uma mensagern_",
+                                         "17:04"
+                                     ]
+                   },
+                   {
+                       "index":  21,
+                       "imageHash":  "ad5ed7ff4f55c6a739bbad70fc8e1b95d7112828864aed7a8450d78032050d85",
+                       "textHash":  "23f7812651f58ca5053460a15e294a19e5d71868fe3b8a69a9a94d2f32ec98ae",
+                       "duplicateImage":  false,
+                       "textLength":  182,
+                       "lineCount":  9,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26",
+                                             "13:14",
+                                             "13:41"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "0:26",
+                                          "A loja de experiência 4S em Portimão já terminou a remodelação.",
+                                          "Já tinha conhecimento desta informação?",
+                                          "13:14",
+                                          "Sim, vou a inauguração dia 28",
+                                          "13:41"
+                                      ],
+                       "lastLines":  [
+                                         "Inta",
+                                         "0:26",
+                                         "A loja de experiência 4S em Portimão já terminou a remodelação.",
+                                         "Já tinha conhecimento desta informação?",
+                                         "13:14",
+                                         "Sim, vou a inauguração dia 28",
+                                         "13:41",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  22,
+                       "imageHash":  "f635fc6d033bbbe57aa8a72c8e3c913cd6fed18d0a31d77416564e5884c251d0",
+                       "textHash":  "a07752d965856514941257a47b5211acda23d8f79dcb6c5da826859cdb06eb4d",
+                       "duplicateImage":  false,
+                       "textLength":  127,
+                       "lineCount":  14,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "12:48",
+                                             "12:48",
+                                             "12:48"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Bom dia.",
+                                          "12:48"
+                                      ],
+                       "lastLines":  [
+                                         "Bom dia.",
+                                         "12:48",
+                                         "mensagem no site?",
+                                         "12:48",
+                                         "Tenho lido as do site",
+                                         "12:48",
+                                         "TIMI",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  23,
+                       "imageHash":  "9adfda5165cf0116e19c4d99572a1f24b5a7f75fc5afb84964e776d0c9f605e9",
+                       "textHash":  "f8ca6ab41689977f7d7ca656751ce41d8096f6941a79da61984f1f75eb731add",
+                       "duplicateImage":  false,
+                       "textLength":  401,
+                       "lineCount":  24,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "21:42",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "21:46",
+                                             "22:08",
+                                             "13:12",
+                                             "21:44 v\u0027",
+                                             "21:46",
+                                             "12:48"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "participar a tempo.",
+                                          "21:42",
+                                          "eu participo a tempo, mas 10 segundos, nem da tempo de acabar",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16"
+                                      ],
+                       "lastLines":  [
+                                         "Bom dia, meu amigo. Já viste a mensagem que a TIMI te enviou?",
+                                         "13:12",
+                                         "6/20",
+                                         "Bom dia.",
+                                         "Enviar uma mensagern_",
+                                         "21:44 v\u0027",
+                                         "21:46",
+                                         "12:48"
+                                     ]
+                   },
+                   {
+                       "index":  24,
+                       "imageHash":  "089ebd83734ecbf180ad41dd5109790edc3fae5054289a4a31d0d965447f1d3d",
+                       "textHash":  "84dc7378fd41361b4d5fbd452c6558add0b725451be8e53f6b7e915c094ac4e7",
+                       "duplicateImage":  false,
+                       "textLength":  398,
+                       "lineCount":  18,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "12:45",
+                                             "3:22",
+                                             "20:44",
+                                             "2:16",
+                                             "0:26",
+                                             "21:42"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "12:45",
+                                          "sim, ate tenho achado engraçado os jogos que tem feito",
+                                          "5.08",
+                                          "Boa noite. Participaste na atividade de sorteio do grupo?",
+                                          "Inta",
+                                          "3:22",
+                                          "20:44"
+                                      ],
+                       "lastLines":  [
+                                         "mas aqueles codigos desaparecem em menos de nada",
+                                         "Haha, sim. Precisamos de estar preparados. Na sexta-feira, vou",
+                                         "2:16",
+                                         "continuar a enviar bónus com códigos da sorte. Lembrem-se de",
+                                         "participar a tempo.",
+                                         "0:26",
+                                         "Enviar uma mensagern_",
+                                         "21:42"
+                                     ]
+                   },
+                   {
+                       "index":  25,
+                       "imageHash":  "f504637513ead9b89b12fa6a0ee1ca4555d6b6dd72bd7121480a6167d75d363b",
+                       "textHash":  "d1c7cb38760abae27a842eba8a610055f86d668a7b1993cb90f8dbdc496c41f6",
+                       "duplicateImage":  false,
+                       "textLength":  310,
+                       "lineCount":  18,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "12:45"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "TERÇA",
+                                          "QUINTA/",
+                                          "SÁBADO",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16"
+                                      ],
+                       "lastLines":  [
+                                         "DE BALANÇO",
+                                         "• SORTEIO DE",
+                                         "AVISO ESPECIAL:",
+                                         "Já percebeste que agora temos fixado que todas as noites às",
+                                         "191-130 haverá reunião e interação no grupo, e também serão",
+                                         "distribuídas as respetivas recompensas de participação?",
+                                         "12:45",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  26,
+                       "imageHash":  "07ef9761a24a13909f2d255faf45c3eafb4dcd6d85d5c0806d06fbf3042aa995",
+                       "textHash":  "7c6ca8be670ff31de2f32e218d4033909d2163cd576b434ddd31b545cd52d62c",
+                       "duplicateImage":  false,
+                       "textLength":  307,
+                       "lineCount":  20,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "17:51",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "21:48",
+                                             "21:48",
+                                             "21:49"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Costumas participar nas nossas reuniões de grupo?",
+                                          "17:51",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "21:49",
+                                         "6/15",
+                                         "AVISO",
+                                         "SOBRE AS ATIVIDADES",
+                                         "DA EQUIPA PARA ESTA SEMANA",
+                                         "REUNIÃO OFICIAL DA EQLAPA",
+                                         "/ QUARTA \u0027",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  27,
+                       "imageHash":  "a44b525e735bd2c218f0da2224514abc11c30e3f82a4649ea1110677b8b291c8",
+                       "textHash":  "a228719d8952c2d16f59440c78f48ac612bb6c6983a6a4c94bdc24be8608d371",
+                       "duplicateImage":  false,
+                       "textLength":  299,
+                       "lineCount":  20,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "22:52",
+                                             "22:54",
+                                             "17:51",
+                                             "10:25"
+                                         ],
+                       "firstLines":  [
+                                          "feito",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Estás a fazer um ótimo trabalho. A partir de amanhã, enviam"
+                                      ],
+                       "lastLines":  [
+                                         "22:54",
+                                         "Bom dia, como estás?",
+                                         "Boa tarde.",
+                                         "17:51",
+                                         "Enviar uma mensagern_",
+                                         "6/12",
+                                         "10:25",
+                                         "6/14"
+                                     ]
+                   },
+                   {
+                       "index":  28,
+                       "imageHash":  "911440373f6ee25dd7f0e1143561412921ae063d00b56d36cdeceaaa8d4479c7",
+                       "textHash":  "3708ac3bf7eb3c298595adb29ef47ed5aadd41d7b1cae65ffbe8dc38cb65d687",
+                       "duplicateImage":  false,
+                       "textLength":  150,
+                       "lineCount":  10,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "22:25",
+                                             "0:26"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "publicares, envia-me um print e dou-te 2 dólares de recompensa.",
+                                          "22:25",
+                                          "5.08",
+                                          "TIMi",
+                                          "Inta",
+                                          "INAUGURA Ã",
+                                          "TIMI 4S EXPERIÉNCE"
+                                      ],
+                       "lastLines":  [
+                                         "22:25",
+                                         "5.08",
+                                         "TIMi",
+                                         "Inta",
+                                         "INAUGURA Ã",
+                                         "TIMI 4S EXPERIÉNCE",
+                                         "0:26",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  29,
+                       "imageHash":  "59ee54be2cb9a692403d54758182a3ad769056355e7592192f95aa1e8c455c31",
+                       "textHash":  "dafcc330b65c6574348a23c108528ba11deb872d93a484eaa6edaa52177c2c75",
+                       "duplicateImage":  false,
+                       "textLength":  691,
+                       "lineCount":  22,
+                       "exactTheodore":  true,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "22:25"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "28",
+                                          "port Portugal",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "se de confirmar o número de participantes e informar-me com",
+                                         "antecedência.",
+                                         "22:25",
+                                         "Também podes publicar isto no teu status do WhatsApp e nas",
+                                         "tuas contas de redes sociais, para que mais amigos possam",
+                                         "conhecer o desenvolvimento da TIMI e esta atividade. Depois de",
+                                         "publicares, envia-me um print e dou-te 2 dólares de recompensa.",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  30,
+                       "imageHash":  "65382d0cbb679ff010ac7da54393f1d113b0bad23b8331e310702dd4def3f545",
+                       "textHash":  "a2b8c7101576905c89de2e49077bf91de81315924578cf980c3957396d0ae10b",
+                       "duplicateImage":  false,
+                       "textLength":  140,
+                       "lineCount":  13,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26",
+                                             "20:55"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "0:26",
+                                          "Em linha",
+                                          "Cerimonia de inauguraçôo",
+                                          "da TIMI-4S",
+                                          "Desde conhecer",
+                                          "Paragestemunhar Tl"
+                                      ],
+                       "lastLines":  [
+                                         "da TIMI-4S",
+                                         "Desde conhecer",
+                                         "Paragestemunhar Tl",
+                                         "Enviar uma mensagern_",
+                                         "20:55",
+                                         "INA G",
+                                         "TIMI",
+                                         "PORTIMÀ"
+                                     ]
+                   },
+                   {
+                       "index":  31,
+                       "imageHash":  "e07427311c1dc289936e6f139e9e56d655906e238861518074524fa85eae3afa",
+                       "textHash":  "38ff2662eb51c29db93e1aff487c2a51aecbd34239150c7ed4349209ba3617f3",
+                       "duplicateImage":  false,
+                       "textLength":  710,
+                       "lineCount":  25,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "11:06",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "19:58",
+                                             "20:55",
+                                             "20:55",
+                                             "20:55"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "4S em Portimão?",
+                                          "11:06",
+                                          "6/11",
+                                          "Sim, tenho visto falarem disso nas reunioes",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22"
+                                      ],
+                       "lastLines":  [
+                                         "20:55",
+                                         "Os prémios são muito atrativos e incluem telemóveis Samsung,",
+                                         "computadores portáteis, tablets, televisões, frigorficos, projetores,",
+                                         "fritadeiras sem óleo, auriculares sem fios e muito mais.",
+                                         "20:55",
+                                         "Tem confiança de levar para casa um destes prémios?",
+                                         "20:55",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  32,
+                       "imageHash":  "7e2b656f7b334ed45d92e955c60d8e38c2c43515dd6d27d05611b9cfde2b9cb4",
+                       "textHash":  "ba0b0087cb3702cdeecdfaf632f0adf15db310607a866b0ea25f601ea0e0fb2d",
+                       "duplicateImage":  false,
+                       "textLength":  446,
+                       "lineCount":  23,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "17:23",
+                                             "20:05",
+                                             "20:05",
+                                             "08:34",
+                                             "11:06"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Boa tarde. Participaste na reunião do Jonathan ontem à noite?",
+                                          "OK, há alguma coisa que não tenhas compreendido?"
+                                      ],
+                       "lastLines":  [
+                                         "08:34",
+                                         "Bom dia, meu amigo!",
+                                         "11:06",
+                                         "Sabias que a empresa lançou uma atividade especial de sorteio de",
+                                         "abertura para celebrar a inauguração da loja de experiências TIMI",
+                                         "4S em Portimão?",
+                                         "Enviar uma mensagern_",
+                                         "1106"
+                                     ]
+                   },
+                   {
+                       "index":  33,
+                       "imageHash":  "ea054febf69d9f3a17c6d917b5cead99d14963bb5170bf075d8e5b3f32a6d29b",
+                       "textHash":  "e9ed81eab71b27b8feb72f3b6f2d29a17b13af59a0ede8afb524fd9e10154501",
+                       "duplicateImage":  false,
+                       "textLength":  787,
+                       "lineCount":  23,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "15:48",
+                                             "21:27"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "começarem com mais facilidade, este fim de semana vou oferecer",
+                                          "um subsídio pessoal adicional de 20 dólares. Somando aos 20"
+                                      ],
+                       "lastLines":  [
+                                         "15:48",
+                                         "obrigado. vou ver o que consigo fazer :)",
+                                         "Ok, podes levá-los para tomar um café e conversar enquanto",
+                                         "bebem. Eu reembolso as tuas despesas.",
+                                         "Boa tarde. Participaste na reunião do Jonathan ontem à noite?",
+                                         "Enviar uma mensagern_",
+                                         "21:27",
+                                         "obrigado"
+                                     ]
+                   },
+                   {
+                       "index":  34,
+                       "imageHash":  "3a6c758fd841e4311b8c9fe7c89c11e62f59bb2e0f572e80600812443b1014d4",
+                       "textHash":  "a9ccc0e6c8cc1f73af967413cd3deaeb3b510979f70853fd9fb86d57aa651d3a",
+                       "duplicateImage":  false,
+                       "textLength":  587,
+                       "lineCount":  23,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "14:09",
+                                             "15:46",
+                                             "15:52"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "vamos ver o que dá",
+                                          "14:09"
+                                      ],
+                       "lastLines":  [
+                                         "sim tudo bem... assim que souber, eu envio",
+                                         "1554",
+                                         "6/6",
+                                         "Boa tarde. Recentemente, tenho visto muitos parceiros a",
+                                         "interessarem-se ativamente pelos equipamentos e a planear com",
+                                         "cuidado o seu próprio desenvolvimento. Para ajudar todos a",
+                                         "começarem com mais facilidade, este fim de semana vou oferecer",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  35,
+                       "imageHash":  "bba922b4d1d4d1cbb0b5f1813f9105b3e93a2636e6ea1c1f3534f72678025503",
+                       "textHash":  "94687e525b6510e81450dde2f5fdfcd8f8e3ce8d3584888ca1c3b36eef32a6f9",
+                       "duplicateImage":  false,
+                       "textLength":  389,
+                       "lineCount":  23,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "11:14",
+                                             "11:37",
+                                             "13:04",
+                                             "14:09"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Bom dia.",
+                                          "Fabio"
+                                      ],
+                       "lastLines":  [
+                                         "Podes convidar alguns amigos para tomar um café e apresentar-",
+                                         "lhes as informações da empresa. Eu reembolso-te as despesas.",
+                                         "13:04",
+                                         "tenho um almoço falado para a proxima semana",
+                                         "vamos ver o que dá",
+                                         "Enviar uma mensagern_",
+                                         "14",
+                                         "14:09"
+                                     ]
+                   },
+                   {
+                       "index":  36,
+                       "imageHash":  "a093c0455ac3982ab385e749774eb85d7e7b614414737bd2ae8a52a39981c310",
+                       "textHash":  "bd86e6839e6186b102d68a98380f9d03cc8113e9fbf8c3811fdc2f8de4690892",
+                       "duplicateImage":  false,
+                       "textLength":  409,
+                       "lineCount":  23,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "20:14",
+                                             "20:30",
+                                             "20:30",
+                                             "3:22",
+                                             "20:31",
+                                             "5kms 20:41 v\u0027",
+                                             "20:42",
+                                             "2:16",
+                                             "0:26",
+                                             "22:00"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Estou muito bem. Não tens trabalho hoje?",
+                                          "6/3",
+                                          "5.08",
+                                          "20:14",
+                                          "20:30",
+                                          "eu tenho trabalho todos os dias XD",
+                                          "20:30"
+                                      ],
+                       "lastLines":  [
+                                         "20:42",
+                                         "Podes arranjar tempo para ir dar uma vista de olhos, dar algumas",
+                                         "sugestões, e também és parceiro oficial da empresa.",
+                                         "2:16",
+                                         "6/4",
+                                         "0:26",
+                                         "Enviar uma mensagern_",
+                                         "22:00"
+                                     ]
+                   },
+                   {
+                       "index":  37,
+                       "imageHash":  "a1ebd2abed4f76571c765a087efb0b2cc47a2e56727a3506d6bc86ac1ed1cdd1",
+                       "textHash":  "6b66ae50b976a31424c8c357b4f2ab9b771a9513eed2e3fd767941d32b573a41",
+                       "duplicateImage":  false,
+                       "textLength":  244,
+                       "lineCount":  21,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "11:02",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "11:02",
+                                             "20:14",
+                                             "09:37",
+                                             "09:37"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "5.08",
+                                          "Bom dia.",
+                                          "11:02",
+                                          "Inta",
+                                          "Como correu hoje? Está tudo bem?",
+                                          "3:22",
+                                          "2:16"
+                                      ],
+                       "lastLines":  [
+                                         "11:02",
+                                         "bom dia",
+                                         "ja acabou o dia",
+                                         "esta tudo bem",
+                                         "e por ai?",
+                                         "20:14",
+                                         "09:37",
+                                         "09:37"
+                                     ]
+                   },
+                   {
+                       "index":  38,
+                       "imageHash":  "227239ab98f8dab04209fe3b097382f96a5f7f61be8571b1a0ac951ef70df7c2",
+                       "textHash":  "86ee31f30ebc59a8ab9c107b6a308035dbcc1804e020c59442959fc75b6f7fa9",
+                       "duplicateImage":  false,
+                       "textLength":  532,
+                       "lineCount":  23,
+                       "exactTheodore":  true,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "16:41",
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "16:42",
+                                             "20:54",
+                                             "22:44",
+                                             "20:56"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "16:41",
+                                          "Podes primeiro convidá-los a registar-se para experimentar os",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "Muito bem, parabéns! O nosso treinamento foi concluído com...",
+                                         "olha uma coisa. Lembrei-me que tinhas dito isto mas nunca",
+                                         "cheguei a receber nada",
+                                         "Deixa-me ver. Vou enviar-te já. Aguarda um momento, por favor.",
+                                         "22:44",
+                                         "6/2",
+                                         "Enviar uma mensagern_",
+                                         "20:56"
+                                     ]
+                   },
+                   {
+                       "index":  39,
+                       "imageHash":  "a427bc1ed1564528bf4d2618e00a7859df11d58419b5700fc1a9d1278eecccc8",
+                       "textHash":  "c10eb9cbda7698793fa3c88b485ffd5f804e1881824488f8fa1a2272ad6d8a9f",
+                       "duplicateImage":  false,
+                       "textLength":  588,
+                       "lineCount":  20,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "16:38"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Sim, mas o medo deles não são os 7 dias",
+                                          "E o facto que demora algum tempo até conseguirem retirar o",
+                                          "investimento, e tem medo que a Timi desapareça antes de o",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16"
+                                      ],
+                       "lastLines":  [
+                                         "6/1",
+                                         "Iopes",
+                                         "Sim, mas o medo deles não são os 7 dias",
+                                         "O nosso mecanismo de garantia não é apenas para 7 dias.",
+                                         "Precisas de ler com atenção. O nosso mecanismo de garantia é",
+                                         "válido para sempre. Sempre que quiseres sair, a empresa devolve-",
+                                         "te a diferença do teu investimento, sem qualquer prejuízo para ti.",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  40,
+                       "imageHash":  "07609b87e90eabf55ece90ffc44c0eb78c054e8180d180cf08fc4b7f19edc9a1",
+                       "textHash":  "0bf11f8391e843c63cda9ba2068e152995fdbee33490fc7cc38dfc31cddbb115",
+                       "duplicateImage":  false,
+                       "textLength":  69,
+                       "lineCount":  9,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "3",
+                                          "D. Ati. DOS",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26"
+                                      ],
+                       "lastLines":  [
+                                         "3",
+                                         "D. Ati. DOS",
+                                         "5.08",
+                                         "Inta",
+                                         "3:22",
+                                         "2:16",
+                                         "0:26",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  41,
+                       "imageHash":  "51eba18c3c7ab84821c1be373b27c862f06f0b0f67cd84e91fa674615f78bdf3",
+                       "textHash":  "381cacab3e7caf95ac876aa18f0bd3120299bb6292bd15e6c63c83fa0b6b8e04",
+                       "duplicateImage":  false,
+                       "textLength":  686,
+                       "lineCount":  21,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "16:28",
+                                             "16:29",
+                                             "16:33"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "agora não é decidir por outros se eles vão ou não participar, mas",
+                                          "sim dar a conhecer esta oportunidade a mais pessoas."
+                                      ],
+                       "lastLines":  [
+                                         "Avançar",
+                                         "A empresa oferece um período de garantia de sete dias; caso o",
+                                         "cliente não fique satisfeito durante este período, poderá resgatar",
+                                         "o seu investimento a qualquer momento. A empresa reembolsará",
+                                         "o montante total investido, sendo que quaisquer lucros obtidos",
+                                         "durante os sete dias serão também da sua responsabilidade.",
+                                         "16:33",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  42,
+                       "imageHash":  "07f01a5218f537baa9e587fa05f3eefb305f07ce8dda4a1bc57e52d0df466bbc",
+                       "textHash":  "9f87e26eb766f8f47251ec7eefce68ca5dc173a0519460f7afe041cf339ca8d8",
+                       "duplicateImage":  false,
+                       "textLength":  906,
+                       "lineCount":  24,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "16:06",
+                                             "16:21"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "Sim. Já partilhei com algumas pessoas apesar de nunca se terem",
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "reg istado"
+                                      ],
+                       "lastLines":  [
+                                         "oportunidades não começam quando estamos cem por cento",
+                                         "certos. Se formos esperar por ter a certeza total antes de agir, as",
+                                         "oportunidades acabarão por ser aproveitadas por outros. Quanto",
+                                         "a teres muitas pessoas para convidar ou não, isso não é o mais",
+                                         "importante. O desenvolvimento de uma equipa constrói-se",
+                                         "gradualmente, de poucos para muitos. O que temos de fazer",
+                                         "agora não é decidir por outros se eles vão ou não participar, mas",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  43,
+                       "imageHash":  "de8170fe4af7e18a91ab89affc08d56b4e718c365cb6bf54c898fff804f2e3cb",
+                       "textHash":  "fd238f7d99c282a3b91878dfe6bec38ddb4019b0e4f7b9e789aca52ac3dd55a7",
+                       "duplicateImage":  false,
+                       "textLength":  332,
+                       "lineCount":  17,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "14:22",
+                                             "15:52",
+                                             "16:06"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Com quem é que fizeste o jantar?",
+                                          "Hora do cafezinho :p"
+                                      ],
+                       "lastLines":  [
+                                         "Com o meu pai, o meu irmão e o meu filho",
+                                         "Percebi. Podes começar por convidá-los a registarem-se e a",
+                                         "experimentarem os produtos da empresa.",
+                                         "OK, sabes como usar o teu link de convite?",
+                                         "Enviar uma mensagern_",
+                                         "15:52",
+                                         "Eles já cá estão todos",
+                                         "16:06"
+                                     ]
+                   },
+                   {
+                       "index":  44,
+                       "imageHash":  "bdc1780b11863a4e6f37b8d48e70a97a859295bb7a6ddcf0178726ff2a0fd165",
+                       "textHash":  "d25cf15ba3eb0b87fb2d85e7421a6ca083f1f08b76fbeeb6449cc1d1df4ce7b6",
+                       "duplicateImage":  false,
+                       "textLength":  113,
+                       "lineCount":  7,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "como tinnas perguntaco quais eram os planos, estava so a",
+                                          "mostrar :p",
+                                          "5.08",
+                                          "Inta",
+                                          "0:26",
+                                          "Enviar uma mensagern_"
+                                      ],
+                       "lastLines":  [
+                                         "Em linha",
+                                         "como tinnas perguntaco quais eram os planos, estava so a",
+                                         "mostrar :p",
+                                         "5.08",
+                                         "Inta",
+                                         "0:26",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  45,
+                       "imageHash":  "3835f095fd79a09223697e92553d55997589d768f93023af523c689002888b7c",
+                       "textHash":  "1b2dafa449a3d6c9e35a2d24e38eed6f4bf0b59fbaac8ec2ff9c5e0960b91ce9",
+                       "duplicateImage":  false,
+                       "textLength":  448,
+                       "lineCount":  18,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:49",
+                                             "14:20"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Hora da fruta :p",
+                                          "13:49"
+                                      ],
+                       "lastLines":  [
+                                         "como ajudar-te a pedir o reembolso, porque não vou saber qual é",
+                                         "o propósito do teu jantar.",
+                                         "14:20",
+                                         "Não estava só a mandar as fotos por mandar",
+                                         "Não estava à espera que reembolsasse",
+                                         "Como tinhas perguntado quais eram os planos, estava só a",
+                                         "mostrar",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  46,
+                       "imageHash":  "cc50a2a28dedb8649c778dd238aedfc6b2bdaefc990200f7e5f19334d506a06b",
+                       "textHash":  "ee723c2348970a1566441d1947d7c866ee435ac5d26dbc495aa8617567238fb0",
+                       "duplicateImage":  false,
+                       "textLength":  35,
+                       "lineCount":  2,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "A comida já foi xD 13:49 v\u0027"
+                                         ],
+                       "firstLines":  [
+                                          "Em inha",
+                                          "A comida já foi xD 13:49 v\u0027"
+                                      ],
+                       "lastLines":  [
+                                         "Em inha",
+                                         "A comida já foi xD 13:49 v\u0027"
+                                     ]
+                   },
+                   {
+                       "index":  47,
+                       "imageHash":  "3b60f1cfe517560e1d865ede173797e1fb8a238724d2d92d3c9ad52add77eb78",
+                       "textHash":  "cc1c0f9c4a38983b248d18cab7ce7351ae4f93537cdb89cf2fa0b714e4fb44c4",
+                       "duplicateImage":  false,
+                       "textLength":  45,
+                       "lineCount":  5,
+                       "exactTheodore":  false,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "0:26"
+                                         ],
+                       "firstLines":  [
+                                          "Em linha",
+                                          "5.08",
+                                          "Inta",
+                                          "0:26",
+                                          "Enviar uma mensagern_"
+                                      ],
+                       "lastLines":  [
+                                         "Em linha",
+                                         "5.08",
+                                         "Inta",
+                                         "0:26",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   },
+                   {
+                       "index":  48,
+                       "imageHash":  "16a054af0356df622d8c95e174bbfb267fedc67f5d7ce4e22b441a5574760e7c",
+                       "textHash":  "114eb78460797355ddce59b109534d0a2eaed7b8a17c85b9e1abe7ca1cf51d5b",
+                       "duplicateImage":  false,
+                       "textLength":  524,
+                       "lineCount":  18,
+                       "exactTheodore":  true,
+                       "exactMarcia":  false,
+                       "dateLikeLines":  [
+                                             "3:22",
+                                             "2:16",
+                                             "0:26",
+                                             "13:47",
+                                             "13:47"
+                                         ],
+                       "firstLines":  [
+                                          "5.08",
+                                          "Inta",
+                                          "3:22",
+                                          "2:16",
+                                          "0:26",
+                                          "Em linha",
+                                          "Já que viste as minhas mensagens, responde-me só para dizer que",
+                                          "estás aqui Sou o Theodore, sou eu pessoalmente a dar esta"
+                                      ],
+                       "lastLines":  [
+                                         "presente, senão começo a achar que estou a dar aulas ao ar vazio",
+                                         "Desculpa. Vi quando acordei entretanto tenho estado a tratar de",
+                                         "coisas",
+                                         "Vim almoçar com o meu pai",
+                                         "13:47",
+                                         "Já lhe falei mas ela não está mesmo interessada xD",
+                                         "13:47",
+                                         "Enviar uma mensagern_"
+                                     ]
+                   }
+               ]
+}
