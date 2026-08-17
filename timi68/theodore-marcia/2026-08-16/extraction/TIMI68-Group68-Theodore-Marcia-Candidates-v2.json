@@ -1,0 +1,1104 @@
+{
+    "protocol":  "TIMI68_GROUP68_THEODORE_MARCIA_CANDIDATES_V2",
+    "generatedAt":  "2026-08-17T01:16:02.0769788+01:00",
+    "jobId":  "PSB-20260817-0115-TIMI68-GROUP68-TARGET-MESSAGE-PARSE-RAW-FIX-001",
+    "sourcePath":  "timi68/theodore-marcia/2026-08-16/extraction/TIMI68-Group68-History-Segment-01-MessagesTab-Fix.json",
+    "targetGroup":  "TIMI-68",
+    "targetSenders":  [
+                          "Theodore",
+                          "Marcia"
+                      ],
+    "privateChatsUsed":  false,
+    "candidateCount":  13,
+    "candidates":  [
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira @Tania Martins ??? Alexandre Souza - Brasil 01a boa noite a todos Cleitin",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                2
+                                            ],
+                           "firstFrame":  2,
+                           "lastFrame":  2,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "quem fez essa frase ?",
+                                                             "xMin":  74,
+                                                             "yMin":  116,
+                                                             "xMax":  203,
+                                                             "yMax":  130
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  149,
+                                                             "xMax":  147,
+                                                             "yMax":  159
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "@Tania Martins ???",
+                                                             "xMin":  74,
+                                                             "yMin":  175,
+                                                             "xMax":  189,
+                                                             "yMax":  187
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Alexandre Souza - Brasil",
+                                                             "xMin":  61,
+                                                             "yMin":  208,
+                                                             "xMax":  205,
+                                                             "yMax":  218
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "01a boa noite a todos",
+                                                             "xMin":  74,
+                                                             "yMin":  234,
+                                                             "xMax":  204,
+                                                             "yMax":  244
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "Cleitin",
+                                                             "xMin":  62,
+                                                             "yMin":  267,
+                                                             "xMax":  97,
+                                                             "yMax":  277
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "boa noite",
+                                                             "xMin":  75,
+                                                             "yMin":  293,
+                                                             "xMax":  132,
+                                                             "yMax":  303
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  2,
+                                                                "lineIndex":  4,
+                                                                "xMin":  62,
+                                                                "yMin":  149,
+                                                                "xMax":  147,
+                                                                "yMax":  159
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira quem fez essa frase ?",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                2
+                                            ],
+                           "firstFrame":  2,
+                           "lastFrame":  2,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "As principais diferenças entre as duas versões são",
+                                                             "xMin":  40,
+                                                             "yMin":  50,
+                                                             "xMax":  341,
+                                                             "yMax":  63
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  90,
+                                                             "xMax":  147,
+                                                             "yMax":  100
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "quem fez essa frase ?",
+                                                             "xMin":  74,
+                                                             "yMin":  116,
+                                                             "xMax":  203,
+                                                             "yMax":  130
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  149,
+                                                             "xMax":  147,
+                                                             "yMax":  159
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "@Tania Martins ???",
+                                                             "xMin":  74,
+                                                             "yMin":  175,
+                                                             "xMax":  189,
+                                                             "yMax":  187
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "Alexandre Souza - Brasil",
+                                                             "xMin":  61,
+                                                             "yMin":  208,
+                                                             "xMax":  205,
+                                                             "yMax":  218
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "01a boa noite a todos",
+                                                             "xMin":  74,
+                                                             "yMin":  234,
+                                                             "xMax":  204,
+                                                             "yMax":  244
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  2,
+                                                                "lineIndex":  2,
+                                                                "xMin":  62,
+                                                                "yMin":  90,
+                                                                "xMax":  147,
+                                                                "yMax":  100
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira Tânia ainda estás aí ? Pedro Tomas feliz domingo a todos",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                3
+                                            ],
+                           "firstFrame":  3,
+                           "lastFrame":  3,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "Boasss",
+                                                             "xMin":  75,
+                                                             "yMin":  299,
+                                                             "xMax":  115,
+                                                             "yMax":  309
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  332,
+                                                             "xMax":  147,
+                                                             "yMax":  342
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "Tânia ainda estás aí ?",
+                                                             "xMin":  74,
+                                                             "yMin":  358,
+                                                             "xMax":  201,
+                                                             "yMax":  368
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Pedro Tomas",
+                                                             "xMin":  62,
+                                                             "yMin":  391,
+                                                             "xMax":  140,
+                                                             "yMax":  401
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "feliz domingo a todos",
+                                                             "xMin":  74,
+                                                             "yMin":  417,
+                                                             "xMax":  206,
+                                                             "yMax":  430
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "21:23",
+                                                             "xMin":  213,
+                                                             "yMin":  304,
+                                                             "xMax":  243,
+                                                             "yMax":  314
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "21:23",
+                                                             "xMin":  263,
+                                                             "yMin":  363,
+                                                             "xMax":  293,
+                                                             "yMax":  373
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  3,
+                                                                "lineIndex":  7,
+                                                                "xMin":  62,
+                                                                "yMin":  332,
+                                                                "xMax":  147,
+                                                                "yMax":  342
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  5,
+                           "frameIndices":  [
+                                                10,
+                                                15,
+                                                17,
+                                                30,
+                                                31
+                                            ],
+                           "firstFrame":  10,
+                           "lastFrame":  31,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "Mobilidade ecológica? Escolhe a TIMI!",
+                                                             "xMin":  97,
+                                                             "yMin":  307,
+                                                             "xMax":  323,
+                                                             "yMax":  320
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  340,
+                                                             "xMax":  147,
+                                                             "yMax":  350
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "21:19",
+                                                             "xMin":  454,
+                                                             "yMin":  312,
+                                                             "xMax":  484,
+                                                             "yMax":  322
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Dizendo que quem ganhou mandar mensagem ao Theo a dizer",
+                                                             "xMin":  75,
+                                                             "yMin":  366,
+                                                             "xMax":  460,
+                                                             "yMax":  379
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "que ganhou e depois comprar o seu presente e mandar fotos ao",
+                                                             "xMin":  74,
+                                                             "yMin":  384,
+                                                             "xMax":  468,
+                                                             "yMax":  397
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "Theodoro e partilhar aqui também (\u0027V",
+                                                             "xMin":  74,
+                                                             "yMin":  399,
+                                                             "xMax":  323,
+                                                             "yMax":  416
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "21:20",
+                                                             "xMin":  454,
+                                                             "yMin":  407,
+                                                             "xMax":  484,
+                                                             "yMax":  417
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  10,
+                                                                "lineIndex":  12,
+                                                                "xMin":  62,
+                                                                "yMin":  340,
+                                                                "xMax":  147,
+                                                                "yMax":  350
+                                                            },
+                                                            {
+                                                                "frameIndex":  15,
+                                                                "lineIndex":  6,
+                                                                "xMin":  62,
+                                                                "yMin":  207,
+                                                                "xMax":  147,
+                                                                "yMax":  217
+                                                            },
+                                                            {
+                                                                "frameIndex":  17,
+                                                                "lineIndex":  11,
+                                                                "xMin":  62,
+                                                                "yMin":  355,
+                                                                "xMax":  147,
+                                                                "yMax":  365
+                                                            },
+                                                            {
+                                                                "frameIndex":  30,
+                                                                "lineIndex":  6,
+                                                                "xMin":  62,
+                                                                "yMin":  215,
+                                                                "xMax":  146,
+                                                                "yMax":  225
+                                                            },
+                                                            {
+                                                                "frameIndex":  31,
+                                                                "lineIndex":  6,
+                                                                "xMin":  62,
+                                                                "yMin":  215,
+                                                                "xMax":  146,
+                                                                "yMax":  225
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira 21hOO peço desculpa g Armando Viva TIMI Parabéns aos vencedores",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                15
+                                            ],
+                           "firstFrame":  15,
+                           "lastFrame":  15,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "AQUI A 21 HOI",
+                                                             "xMin":  74,
+                                                             "yMin":  251,
+                                                             "xMax":  158,
+                                                             "yMax":  264
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  284,
+                                                             "xMax":  147,
+                                                             "yMax":  294
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "21hOO peço desculpa g",
+                                                             "xMin":  74,
+                                                             "yMin":  308,
+                                                             "xMax":  219,
+                                                             "yMax":  323
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Armando",
+                                                             "xMin":  61,
+                                                             "yMin":  343,
+                                                             "xMax":  117,
+                                                             "yMax":  353
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "Viva TIMI",
+                                                             "xMin":  74,
+                                                             "yMin":  369,
+                                                             "xMax":  130,
+                                                             "yMax":  379
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "Parabéns aos vencedores",
+                                                             "xMin":  75,
+                                                             "yMin":  387,
+                                                             "xMax":  228,
+                                                             "yMax":  397
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "Agnalda",
+                                                             "xMin":  61,
+                                                             "yMin":  420,
+                                                             "xMax":  110,
+                                                             "yMax":  433
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  15,
+                                                                "lineIndex":  11,
+                                                                "xMin":  62,
+                                                                "yMin":  284,
+                                                                "xMax":  147,
+                                                                "yMax":  294
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira ATENÇÃO Aline Mércia Pereira",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                16
+                                            ],
+                           "firstFrame":  16,
+                           "lastFrame":  16,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "hahahha",
+                                                             "xMin":  75,
+                                                             "yMin":  138,
+                                                             "xMax":  127,
+                                                             "yMax":  148
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  178,
+                                                             "xMax":  147,
+                                                             "yMax":  188
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "ATENÇÃO",
+                                                             "xMin":  74,
+                                                             "yMin":  202,
+                                                             "xMax":  131,
+                                                             "yMax":  217
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Aline",
+                                                             "xMin":  61,
+                                                             "yMin":  237,
+                                                             "xMax":  90,
+                                                             "yMax":  247
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "Mércia Pereira",
+                                                             "xMin":  84,
+                                                             "yMin":  266,
+                                                             "xMax":  165,
+                                                             "yMax":  275
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "21:17",
+                                                             "xMin":  454,
+                                                             "yMin":  150,
+                                                             "xMax":  484,
+                                                             "yMax":  160
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "21:18",
+                                                             "xMin":  233,
+                                                             "yMin":  209,
+                                                             "xMax":  263,
+                                                             "yMax":  219
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  16,
+                                                                "lineIndex":  5,
+                                                                "xMin":  62,
+                                                                "yMin":  178,
+                                                                "xMax":  147,
+                                                                "yMax":  188
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira Tania Martins",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                19
+                                            ],
+                           "firstFrame":  19,
+                           "lastFrame":  19,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "Andrea Bispo",
+                                                             "xMin":  61,
+                                                             "yMin":  225,
+                                                             "xMax":  141,
+                                                             "yMax":  238
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  284,
+                                                             "xMax":  147,
+                                                             "yMax":  294
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "Tania Martins",
+                                                             "xMin":  83,
+                                                             "yMin":  313,
+                                                             "xMax":  158,
+                                                             "yMax":  322
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "21:16",
+                                                             "xMin":  396,
+                                                             "yMin":  197,
+                                                             "xMax":  426,
+                                                             "yMax":  207
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "21:16",
+                                                             "xMin":  208,
+                                                             "yMin":  256,
+                                                             "xMax":  238,
+                                                             "yMax":  266
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "parabéns a todos",
+                                                             "xMin":  84,
+                                                             "yMin":  332,
+                                                             "xMax":  189,
+                                                             "yMax":  345
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "pra proxima e meu",
+                                                             "xMin":  216,
+                                                             "yMin":  335,
+                                                             "xMax":  330,
+                                                             "yMax":  345
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  19,
+                                                                "lineIndex":  8,
+                                                                "xMin":  62,
+                                                                "yMin":  284,
+                                                                "xMax":  147,
+                                                                "yMax":  294
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "roda de novo até parar em 39, kkkk brincando. Parabéns 20 Andrea Bispo",
+                           "senderLine":  "Marcia roda de novo até parar em 39, kkkk brincando.",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                19
+                                            ],
+                           "firstFrame":  19,
+                           "lastFrame":  19,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "Enviou um vídeo",
+                                                             "xMin":  84,
+                                                             "yMin":  149,
+                                                             "xMax":  185,
+                                                             "yMax":  159
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Marcia roda de novo até parar em 39, kkkk brincando.",
+                                                             "xMin":  75,
+                                                             "yMin":  167,
+                                                             "xMax":  407,
+                                                             "yMax":  180
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "Parabéns 20",
+                                                             "xMin":  75,
+                                                             "yMin":  185,
+                                                             "xMax":  148,
+                                                             "yMax":  195
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Andrea Bispo",
+                                                             "xMin":  61,
+                                                             "yMin":  225,
+                                                             "xMax":  141,
+                                                             "yMax":  238
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  284,
+                                                             "xMax":  147,
+                                                             "yMax":  294
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "Tania Martins",
+                                                             "xMin":  83,
+                                                             "yMin":  313,
+                                                             "xMax":  158,
+                                                             "yMax":  322
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "21:16",
+                                                             "xMin":  396,
+                                                             "yMin":  197,
+                                                             "xMax":  426,
+                                                             "yMax":  207
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  19,
+                                                                "lineIndex":  5,
+                                                                "xMin":  75,
+                                                                "yMin":  167,
+                                                                "xMax":  407,
+                                                                "yMax":  180
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira parabéns ao 20 Santiago",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                21
+                                            ],
+                           "firstFrame":  21,
+                           "lastFrame":  21,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "Parabéns a todos os vendedores",
+                                                             "xMin":  75,
+                                                             "yMin":  340,
+                                                             "xMax":  273,
+                                                             "yMax":  350
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  373,
+                                                             "xMax":  147,
+                                                             "yMax":  383
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "parabéns ao 20",
+                                                             "xMin":  75,
+                                                             "yMin":  399,
+                                                             "xMax":  167,
+                                                             "yMax":  412
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Santiago",
+                                                             "xMin":  62,
+                                                             "yMin":  432,
+                                                             "xMax":  114,
+                                                             "yMax":  445
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "21:16",
+                                                             "xMin":  454,
+                                                             "yMin":  286,
+                                                             "xMax":  484,
+                                                             "yMax":  296
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "21:16",
+                                                             "xMin":  335,
+                                                             "yMin":  345,
+                                                             "xMax":  365,
+                                                             "yMax":  355
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "21:16",
+                                                             "xMin":  291,
+                                                             "yMin":  404,
+                                                             "xMax":  321,
+                                                             "yMax":  414
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  21,
+                                                                "lineIndex":  15,
+                                                                "xMin":  62,
+                                                                "yMin":  373,
+                                                                "xMax":  147,
+                                                                "yMax":  383
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira lamento esta a carregar",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                23
+                                            ],
+                           "firstFrame":  23,
+                           "lastFrame":  23,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "As principais diferenças entre as duas versões são",
+                                                             "xMin":  40,
+                                                             "yMin":  50,
+                                                             "xMax":  341,
+                                                             "yMax":  63
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  207,
+                                                             "xMax":  147,
+                                                             "yMax":  217
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "lamento esta a carregar",
+                                                             "xMin":  75,
+                                                             "yMin":  233,
+                                                             "xMax":  219,
+                                                             "yMax":  246
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "21:15",
+                                                             "xMin":  302,
+                                                             "yMin":  238,
+                                                             "xMax":  332,
+                                                             "yMax":  248
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "Fernanda",
+                                                             "xMin":  62,
+                                                             "yMin":  266,
+                                                             "xMax":  118,
+                                                             "yMax":  276
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "10",
+                                                             "xMin":  75,
+                                                             "yMin":  292,
+                                                             "xMax":  88,
+                                                             "yMax":  302
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "Gouveia",
+                                                             "xMin":  62,
+                                                             "yMin":  325,
+                                                             "xMax":  110,
+                                                             "yMax":  335
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  23,
+                                                                "lineIndex":  2,
+                                                                "xMin":  62,
+                                                                "yMin":  207,
+                                                                "xMax":  147,
+                                                                "yMax":  217
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira ATENÇÃO",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                25
+                                            ],
+                           "firstFrame":  25,
+                           "lastFrame":  25,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "passei longe",
+                                                             "xMin":  75,
+                                                             "yMin":  307,
+                                                             "xMax":  149,
+                                                             "yMax":  320
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  340,
+                                                             "xMax":  147,
+                                                             "yMax":  350
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "ATENÇÃO",
+                                                             "xMin":  74,
+                                                             "yMin":  364,
+                                                             "xMax":  131,
+                                                             "yMax":  379
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "21:14",
+                                                             "xMin":  229,
+                                                             "yMin":  135,
+                                                             "xMax":  259,
+                                                             "yMax":  145
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "21:14",
+                                                             "xMin":  232,
+                                                             "yMin":  253,
+                                                             "xMax":  263,
+                                                             "yMax":  263
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "21:14",
+                                                             "xMin":  210,
+                                                             "yMin":  312,
+                                                             "xMax":  241,
+                                                             "yMax":  322
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "VAMOS AO PRIMEIRO PREMIO QUE VALE 50$",
+                                                             "xMin":  74,
+                                                             "yMin":  384,
+                                                             "xMax":  347,
+                                                             "yMax":  397
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  25,
+                                                                "lineIndex":  11,
+                                                                "xMin":  62,
+                                                                "yMin":  340,
+                                                                "xMax":  147,
+                                                                "yMax":  350
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira parabéns ao 30$ Agnalda Parabéns 30 Telles",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                28
+                                            ],
+                           "firstFrame":  28,
+                           "lastFrame":  28,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "Parabéns 30",
+                                                             "xMin":  75,
+                                                             "yMin":  192,
+                                                             "xMax":  148,
+                                                             "yMax":  203
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  225,
+                                                             "xMax":  147,
+                                                             "yMax":  235
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "parabéns ao 30$",
+                                                             "xMin":  75,
+                                                             "yMin":  251,
+                                                             "xMax":  174,
+                                                             "yMax":  264
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "Agnalda",
+                                                             "xMin":  61,
+                                                             "yMin":  284,
+                                                             "xMax":  110,
+                                                             "yMax":  297
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "Parabéns 30",
+                                                             "xMin":  75,
+                                                             "yMin":  310,
+                                                             "xMax":  148,
+                                                             "yMax":  321
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "Telles",
+                                                             "xMin":  61,
+                                                             "yMin":  343,
+                                                             "xMax":  93,
+                                                             "yMax":  353
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "Parabéns 30!",
+                                                             "xMin":  75,
+                                                             "yMin":  369,
+                                                             "xMax":  151,
+                                                             "yMax":  380
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  28,
+                                                                "lineIndex":  6,
+                                                                "xMin":  62,
+                                                                "yMin":  225,
+                                                                "xMax":  147,
+                                                                "yMax":  235
+                                                            }
+                                                        ]
+                       },
+                       {
+                           "sender":  "Marcia",
+                           "bodyGuess":  "Márcia Pereira número 29 jhordan Fernanda 27",
+                           "senderLine":  "Márcia Pereira",
+                           "confidence":  "medium-high",
+                           "confidenceScore":  0.74,
+                           "occurrenceCount":  1,
+                           "frameIndices":  [
+                                                35
+                                            ],
+                           "firstFrame":  35,
+                           "lastFrame":  35,
+                           "representativeContext":  [
+                                                         {
+                                                             "relativeIndex":  -1,
+                                                             "text":  "44",
+                                                             "xMin":  74,
+                                                             "yMin":  103,
+                                                             "xMax":  89,
+                                                             "yMax":  113
+                                                         },
+                                                         {
+                                                             "relativeIndex":  0,
+                                                             "text":  "Márcia Pereira",
+                                                             "xMin":  62,
+                                                             "yMin":  304,
+                                                             "xMax":  147,
+                                                             "yMax":  314
+                                                         },
+                                                         {
+                                                             "relativeIndex":  1,
+                                                             "text":  "número 29",
+                                                             "xMin":  75,
+                                                             "yMin":  330,
+                                                             "xMax":  140,
+                                                             "yMax":  340
+                                                         },
+                                                         {
+                                                             "relativeIndex":  2,
+                                                             "text":  "jhordan",
+                                                             "xMin":  60,
+                                                             "yMin":  363,
+                                                             "xMax":  107,
+                                                             "yMax":  376
+                                                         },
+                                                         {
+                                                             "relativeIndex":  3,
+                                                             "text":  "Fernanda",
+                                                             "xMin":  84,
+                                                             "yMin":  392,
+                                                             "xMax":  135,
+                                                             "yMax":  401
+                                                         },
+                                                         {
+                                                             "relativeIndex":  4,
+                                                             "text":  "27",
+                                                             "xMin":  83,
+                                                             "yMin":  411,
+                                                             "xMax":  97,
+                                                             "yMax":  421
+                                                         },
+                                                         {
+                                                             "relativeIndex":  5,
+                                                             "text":  "Já foi",
+                                                             "xMin":  73,
+                                                             "yMin":  429,
+                                                             "xMax":  104,
+                                                             "yMax":  442
+                                                         }
+                                                     ],
+                           "allOccurrenceCoordinates":  [
+                                                            {
+                                                                "frameIndex":  35,
+                                                                "lineIndex":  3,
+                                                                "xMin":  62,
+                                                                "yMin":  304,
+                                                                "xMax":  147,
+                                                                "yMax":  314
+                                                            }
+                                                        ]
+                       }
+                   ]
+}
