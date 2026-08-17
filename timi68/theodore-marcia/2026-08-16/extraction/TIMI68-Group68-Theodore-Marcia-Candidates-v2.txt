@@ -1,0 +1,19 @@
+TIMI-68 — Theodore / Marcia candidate messages
+Source: group TIMI-68 only; private chats not used.
+Top reached: True
+Frames: 41
+Candidate counts — Theodore: 0; Marcia: 13
+
+[Marcia] Márcia Pereira @Tania Martins ??? Alexandre Souza - Brasil 01a boa noite a todos Cleitin | confidence=medium-high | frames=2
+[Marcia] Márcia Pereira quem fez essa frase ? | confidence=medium-high | frames=2
+[Marcia] Márcia Pereira Tânia ainda estás aí ? Pedro Tomas feliz domingo a todos | confidence=medium-high | frames=3
+[Marcia] Márcia Pereira | confidence=medium-high | frames=10,15,17,30,31
+[Marcia] Márcia Pereira 21hOO peço desculpa g Armando Viva TIMI Parabéns aos vencedores | confidence=medium-high | frames=15
+[Marcia] Márcia Pereira ATENÇÃO Aline Mércia Pereira | confidence=medium-high | frames=16
+[Marcia] Márcia Pereira Tania Martins | confidence=medium-high | frames=19
+[Marcia] roda de novo até parar em 39, kkkk brincando. Parabéns 20 Andrea Bispo | confidence=medium-high | frames=19
+[Marcia] Márcia Pereira parabéns ao 20 Santiago | confidence=medium-high | frames=21
+[Marcia] Márcia Pereira lamento esta a carregar | confidence=medium-high | frames=23
+[Marcia] Márcia Pereira ATENÇÃO | confidence=medium-high | frames=25
+[Marcia] Márcia Pereira parabéns ao 30$ Agnalda Parabéns 30 Telles | confidence=medium-high | frames=28
+[Marcia] Márcia Pereira número 29 jhordan Fernanda 27 | confidence=medium-high | frames=35
