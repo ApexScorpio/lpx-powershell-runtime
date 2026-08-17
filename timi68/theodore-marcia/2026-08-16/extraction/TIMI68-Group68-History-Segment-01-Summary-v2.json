@@ -1,0 +1,43 @@
+{
+    "protocol":  "TIMI68_GROUP68_HISTORY_SEGMENT01_SUMMARY_V2",
+    "generatedAt":  "2026-08-17T01:16:02.0586396+01:00",
+    "jobId":  "PSB-20260817-0115-TIMI68-GROUP68-TARGET-MESSAGE-PARSE-RAW-FIX-001",
+    "objective":  "Extract only Theodore and Marcia messages sent in group TIMI-68",
+    "sourcePath":  "timi68/theodore-marcia/2026-08-16/extraction/TIMI68-Group68-History-Segment-01-MessagesTab-Fix.json",
+    "sourceProtocol":  "TIMI68_GROUP68_MESSAGES_TAB_HISTORY_SEGMENT_V1",
+    "targetGroup":  "TIMI-68",
+    "targetSenders":  [
+                          "Theodore",
+                          "Marcia"
+                      ],
+    "privateChatsUsed":  false,
+    "frameCount":  41,
+    "uniqueImageCount":  37,
+    "completedScrolls":  40,
+    "topReachedEvidence":  true,
+    "scrollTransportFailure":  false,
+    "sourceFramesContainingTheodore":  0,
+    "sourceFramesContainingMarcia":  1,
+    "exactSenderLineOccurrences":  {
+                                       "Theodore":  0,
+                                       "Marcia":  17,
+                                       "total":  17
+                                   },
+    "deduplicatedCandidateCounts":  {
+                                        "Theodore":  0,
+                                        "Marcia":  13,
+                                        "total":  13
+                                    },
+    "parserNotes":  [
+                        "Counts are candidate counts, not yet final verified message counts.",
+                        "Only OCR lines whose first word is exactly Theodore or Marcia are treated as sender markers.",
+                        "The string marciais is explicitly rejected.",
+                        "Overlapping frame occurrences are deduplicated by normalized sender plus body guess.",
+                        "Representative OCR context and source frame indices are retained for manual verification."
+                    ],
+    "continuationNeeded":  false,
+    "timiBicycleScriptWrites":  0,
+    "bonChatContentWrites":  0,
+    "bonChatMessagesSent":  0,
+    "persistentLocalWrites":  0
+}
