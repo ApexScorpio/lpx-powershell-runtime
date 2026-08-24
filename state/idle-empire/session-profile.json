@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "LPX_IDLE_EMPIRE_GITHUB_PROFILE_V5",
+    "updatedAt":  "2026-08-24T13:58:59.0921777+01:00",
+    "encryptedProfile":  "state/idle-empire/session-profile.lpxenc",
+    "encryption":  "AES-256-CBC + HMAC-SHA512",
+    "keySource":  "Current local ApexScorpio GitHub CLI credential; never stored in repo or runtime output",
+    "localPersistentState":  false,
+    "profileCapture":  "Staged Chromium profile excluding transient caches, locks and Crashpad runtime files",
+    "restorePolicy":  "Decrypt into temporary browser profile only, use/update, then delete local temporary state."
+}
