@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.11
+// @version      2026.10.29.15.5.12
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.11';
+    const VERSION = '15.5.12';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6538,9 +6538,25 @@
         } catch {}
     }
 
+    function fireClick(element) {
+        if (!element) return;
+        const events = ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'];
+        for (const name of events) {
+            try {
+                element.dispatchEvent(new MouseEvent(name, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                }));
+            } catch {}
+        }
+    }
+
     function findSendButton() {
         return document.querySelector('#composer-submit-button')
+            || document.querySelector('[data-testid="composer-submit-button"]')
             || document.querySelector('button#composer-submit-button')
+            || document.querySelector('#prompt-textarea')?.closest('form, [class*="composer"], div.relative')?.querySelector('button[aria-label*="Enviar"], button[aria-label*="Send"], #composer-submit-button, button:last-child')
             || document.querySelector('[data-testid="send-button"]')
             || document.querySelector('button[data-testid="send-button"]')
             || document.querySelector('button[aria-label*="Send"]')
@@ -6572,7 +6588,10 @@
                     send.disabled = false;
                     send.removeAttribute('disabled');
                 }
-                send.click();
+                fireClick(send);
+                try {
+                    send.click();
+                } catch {}
             }
 
             const form = editor.closest('form') || document.querySelector('form:has(#prompt-textarea)');
