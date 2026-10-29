@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.5
+// @version      2026.10.29.15.5.6
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.5';
+    const VERSION = '15.5.6';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -311,7 +311,7 @@
     }
 
     function protocolPromptKey() {
-        return `${PROMPT_SENT_PREFIX}${simpleHash(conversationId())}:${VERSION}`;
+        return `${PROMPT_SENT_PREFIX}${simpleHash(conversationId())}`;
     }
 
     function protocolPromptText() {
@@ -1001,7 +1001,12 @@
             return;
         }
 
-        for (const manifest of manifestsIn(latest)) {
+        const manifests = manifestsIn(latest);
+        if (manifests.length > 0) {
+            GM_setValue(protocolPromptKey(), true);
+        }
+
+        for (const manifest of manifests) {
             if (['PSB_JOB_FILE_V1', 'PSB_JOB_V2', 'PSB_JOB_V3'].includes(manifest.protocol) && manifest.jobId) {
                 markHandled(String(manifest.jobId));
             }
@@ -6433,7 +6438,33 @@
             }
 
             editor.dispatchEvent(new Event('input', { bubbles: true }));
+            editor.dispatchEvent(new Event('change', { bubbles: true }));
             return;
+        }
+
+        try {
+            document.execCommand('selectAll', false, null);
+            const inserted = document.execCommand('insertText', false, text);
+            if (inserted) {
+                editor.dispatchEvent(new Event('input', { bubbles: true }));
+                return;
+            }
+        } catch {
+            // Continua
+        }
+
+        try {
+            const dt = new DataTransfer();
+            dt.setData('text/plain', text);
+            const pasteEvent = new ClipboardEvent('paste', {
+                bubbles: true,
+                cancelable: true,
+                clipboardData: dt
+            });
+            editor.dispatchEvent(pasteEvent);
+            editor.dispatchEvent(new Event('input', { bubbles: true }));
+        } catch {
+            // Continua
         }
 
         editor.replaceChildren();
@@ -6459,12 +6490,16 @@
 
     function findSendButton() {
         return document.querySelector('[data-testid="send-button"]')
-            || [...document.querySelectorAll('button')].find(node => /enviar|send/i.test(node.getAttribute('aria-label') || ''))
+            || document.querySelector('button[aria-label*="Send"]')
+            || document.querySelector('button[aria-label*="Enviar"]')
+            || document.querySelector('button[aria-label*="Submit"]')
+            || document.querySelector('form button[type="submit"]')
+            || [...document.querySelectorAll('button')].find(node => /enviar|send|submit/i.test(node.getAttribute('aria-label') || ''))
             || null;
     }
 
     async function sendMessage(text) {
-        for (let attempt = 0; attempt < 40; attempt++) {
+        for (let attempt = 0; attempt < 30; attempt++) {
             const editor = composer();
 
             if (!editor) {
@@ -6482,10 +6517,23 @@
                 return;
             }
 
+            editor.dispatchEvent(new KeyboardEvent('keydown', {
+                key: 'Enter',
+                code: 'Enter',
+                keyCode: 13,
+                which: 13,
+                bubbles: true,
+                cancelable: true
+            }));
+
             await wait(250);
+
+            if (!composerText()) {
+                return;
+            }
         }
 
-        throw new Error('Não foi possível enviar automaticamente o URL do resultado.');
+        throw new Error('Não foi possível enviar automaticamente a mensagem.');
     }
 
     async function cancelActive() {
