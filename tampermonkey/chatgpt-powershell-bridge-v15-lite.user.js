@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.10
+// @version      2026.10.29.15.5.11
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.10';
+    const VERSION = '15.5.11';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6485,7 +6485,8 @@
 
     function composer() {
         return document.querySelector('#prompt-textarea')
-            || document.querySelector('[contenteditable="true"][data-lexical-editor="true"]')
+            || document.querySelector('div.ProseMirror')
+            || document.querySelector('[contenteditable="true"]')
             || document.querySelector('textarea[placeholder]');
     }
 
@@ -6506,52 +6507,42 @@
             return;
         }
 
-        try {
-            const selection = window.getSelection();
-            const range = document.createRange();
-            range.selectNodeContents(editor);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        } catch {}
-
-        let inserted = false;
-        try {
-            inserted = document.execCommand('insertText', false, text);
-        } catch {
-            inserted = false;
-        }
-
-        if (!inserted || !editor.textContent.trim()) {
-            try {
-                const dt = new DataTransfer();
-                dt.setData('text/plain', text);
-                const pasteEvent = new ClipboardEvent('paste', {
-                    bubbles: true,
-                    cancelable: true,
-                    clipboardData: dt,
-                    composed: true
-                });
-                editor.dispatchEvent(pasteEvent);
-            } catch {}
-        }
-
-        if (!editor.textContent.trim()) {
-            editor.innerText = text;
+        // ProseMirror no ChatGPT:
+        editor.replaceChildren();
+        for (const line of text.split('\n')) {
+            const p = document.createElement('p');
+            if (line) {
+                p.textContent = line;
+            } else {
+                p.appendChild(document.createElement('br'));
+            }
+            editor.appendChild(p);
         }
 
         editor.dispatchEvent(new InputEvent('input', {
             bubbles: true,
             cancelable: true,
-            inputType: 'insertText',
+            inputType: 'insertFromPaste',
             data: text
         }));
         editor.dispatchEvent(new Event('input', { bubbles: true }));
         editor.dispatchEvent(new Event('change', { bubbles: true }));
+
+        try {
+            const range = document.createRange();
+            const sel = window.getSelection();
+            range.selectNodeContents(editor);
+            range.collapse(false);
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } catch {}
     }
 
     function findSendButton() {
-        return document.querySelector('button[data-testid="send-button"]')
+        return document.querySelector('#composer-submit-button')
+            || document.querySelector('button#composer-submit-button')
             || document.querySelector('[data-testid="send-button"]')
+            || document.querySelector('button[data-testid="send-button"]')
             || document.querySelector('button[aria-label*="Send"]')
             || document.querySelector('button[aria-label*="Enviar"]')
             || document.querySelector('button[aria-label*="Submit"]')
