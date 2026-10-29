@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.08.08.15.5.1
+// @version      2026.10.29.15.5.4
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.1';
+    const VERSION = '15.5.4';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -889,17 +889,109 @@
         );
     }
 
+    function isUserTurn(element) {
+        if (!element || element.nodeType !== Node.ELEMENT_NODE) {
+            return false;
+        }
+
+        if (
+            element.getAttribute('data-message-author-role') === 'user' ||
+            element.getAttribute('data-author-role') === 'user' ||
+            element.matches('[data-testid*="user-message"]') ||
+            element.matches('[data-testid*="user_message"]')
+        ) {
+            return true;
+        }
+
+        if (
+            element.querySelector(
+                '[data-message-author-role="user"], [data-author-role="user"], [data-testid*="user-message"], [data-testid*="user_message"], [data-message-id*="user"]'
+            )
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+
     function closestAssistant(node) {
         const element = node?.nodeType === Node.ELEMENT_NODE
             ? node
             : node?.parentElement;
 
-        return element?.closest?.('[data-message-author-role="assistant"]') || null;
+        if (!element) {
+            return null;
+        }
+
+        const direct = element.closest(
+            '[data-message-author-role="assistant"], ' +
+            '[data-author-role="assistant"], ' +
+            '[data-testid*="assistant"], ' +
+            '[data-testid*="agent"], ' +
+            '.agent-turn'
+        );
+
+        if (direct) {
+            return direct;
+        }
+
+        const turn = element.closest(
+            '[data-testid^="conversation-turn-"], article, [data-message-id]'
+        );
+
+        if (turn && !isUserTurn(turn)) {
+            return turn;
+        }
+
+        return null;
     }
 
     function latestAssistantFallback() {
-        const nodes = document.querySelectorAll('[data-message-author-role="assistant"]');
-        return nodes.length ? nodes[nodes.length - 1] : null;
+        const directNodes = document.querySelectorAll(
+            '[data-message-author-role="assistant"], ' +
+            '[data-author-role="assistant"], ' +
+            '[data-testid*="assistant"], ' +
+            '[data-testid*="agent"], ' +
+            '.agent-turn'
+        );
+
+        if (directNodes.length) {
+            return directNodes[directNodes.length - 1];
+        }
+
+        const turns = Array.from(document.querySelectorAll(
+            '[data-testid^="conversation-turn-"], article, [data-message-id]'
+        ));
+
+        for (let index = turns.length - 1; index >= 0; index--) {
+            const turn = turns[index];
+
+            if (!isUserTurn(turn)) {
+                const text = String(turn.textContent || '').trim();
+                if (text.length > 0) {
+                    return turn;
+                }
+            }
+        }
+
+        const probeNodes = Array.from(document.querySelectorAll('main div, #__next div, [role="presentation"] div'));
+
+        for (let index = probeNodes.length - 1; index >= 0; index--) {
+            const node = probeNodes[index];
+            const text = String(node.textContent || '');
+
+            if (
+                text.includes('PSB_JOB_FILE_V1') ||
+                text.includes('PSB_JOB_V3') ||
+                text.includes('PSB_JOB_V2') ||
+                text.includes('PSB_LEARN_V1')
+            ) {
+                const turn = node.closest('[data-testid^="conversation-turn-"], article, [data-message-id]');
+                return turn || node;
+            }
+        }
+
+        return null;
     }
 
     function baselineCurrentAssistant() {
