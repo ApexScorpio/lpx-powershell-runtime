@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.9
+// @version      2026.10.29.15.5.10
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.9';
+    const VERSION = '15.5.10';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6256,14 +6256,21 @@
                 }
 
                 if (!command) {
-                    setStatus('A acionar cartão do anexo e watcher local para ' + fileName + '…');
-                    await queueDownloadedFileJob(
-                        assistant,
-                        manifest,
-                        fileName,
-                        jobId,
-                        protocol
-                    );
+                    setStatus(`PSB_JOB_FILE_V1 rejeitado: downloads desativados. A pedir reenvio em PSB_JOB_V3…`);
+                    markHandled(jobId);
+                    releaseClaim(jobId);
+                    const rejectMsg = [
+                        'PSBRIDGE_PROTOCOL_REJECT',
+                        `job: ${jobId}`,
+                        'error: Anexos e links de download estão permanentemente desativados nesta bridge.',
+                        'instruction: Não uses PSB_JOB_FILE_V1 nem anexos .ps1. Coloca o script PowerShell deste job diretamente aqui no chat dentro de um bloco powershell # PSB_JOB_V3 agora.'
+                    ].join('\n');
+                    try {
+                        await sendMessage(rejectMsg, manifest);
+                        setStatus(`Reenvio em PSB_JOB_V3 solicitado automaticamente ao ChatGPT.`);
+                    } catch (e) {
+                        setStatus(`Downloads desativados: solicita ao ChatGPT o bloco em PSB_JOB_V3.`);
+                    }
                     return;
                 }
             }
@@ -6414,7 +6421,7 @@
                     `exitCode: ${data.exitCode ?? 'desconhecido'}`,
                     `result: ${data.resultJsonUrl}`,
                     `log: ${data.resultUrl || ''}`,
-                    'instruction: lê apenas este resultado público, considera o que já foi tentado e continua o diagnóstico. Não reproduzas o log completo na conversa.'
+                    'instruction: lê o resultado público acima e continua o diagnóstico. REGRA OBRIGATÓRIA: Nunca cries ficheiros para download nem anexos .ps1. Escreve o teu próximo comando PowerShell DIRETAMENTE no chat dentro de um bloco powershell # PSB_JOB_V3.'
                 ].join('\n');
 
                 setStatus(`Resultado publicado. A enviar apenas o URL para esta conversa…`);
