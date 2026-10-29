@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.6
-// @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
+// @version      2026.10.29.15.5.7
+// @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3) diretamente no chat, sem downloads manuais.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @noframes
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.6';
+    const VERSION = '15.5.7';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -316,55 +316,32 @@
 
     function protocolPromptText() {
         return [
-            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_5_1',
+            'LPX_POWERSHELL_BRIDGE_PROTOCOL_V15_5_7',
             '',
             `Esta conversa está ligada à LPX PowerShell Bridge v${VERSION}.`,
             '',
-            'Sempre que for necessário executar PowerShell, tens de criar o comando completo num ficheiro .ps1 anexado à resposta.',
+            'Sempre que for necessário executar PowerShell, coloca o comando completo no chat dentro de um bloco de código powershell com o formato autónomo PSB_JOB_V3:',
             '',
-            'Não escrevas texto antes do bloco JSON.',
-            '',
-            'A resposta inicial de cada novo job deve começar exatamente com um bloco de código json neste formato:',
-            '',
-            '```json',
-            '{',
-            '  "protocol": "PSB_JOB_FILE_V1",',
-            '  "jobId": "PSB-AAAAMMDD-HHMM-DESCRICAO-001",',
-            '  "file": "nome-unico-do-comando.ps1",',
-            '  "purpose": "objetivo claro e curto"',
-            '}',
+            '```powershell',
+            '# PSB_JOB_V3',
+            '# jobId: PSB-AAAAMMDD-HHMM-DESCRICAO-001',
+            '# purpose: objetivo claro e curto',
+            '# O teu script PowerShell completo aqui...',
             '```',
             '',
-            'Depois de fechar o bloco JSON, inclui apenas o link normal para descarregar o ficheiro .ps1.',
-            '',
             'REGRAS OBRIGATÓRIAS:',
-            '1. O PowerShell completo fica apenas dentro do ficheiro .ps1 anexado; nunca o coloques no texto da conversa.',
-            '2. Na mesma resposta, inclui apenas o manifesto JSON e um link normal para descarregar esse ficheiro.',
-            '3. No manifesto inicial nunca incluas fileId.',
+            '1. O comando PowerShell tem de estar completo dentro do bloco de código powershell com o cabeçalho # PSB_JOB_V3.',
+            '2. Nunca cries ficheiros para download, anexos nem links de download. A execução é 100% autónoma.',
+            '3. Não uses Base64 nem SHA-256 no chat. O código PowerShell deve estar legível e diretamente no bloco.',
             '4. Usa sempre um jobId real e único no formato PSB-AAAAMMDD-HHMM-DESCRICAO-001, substituindo AAAAMMDD, HHMM e DESCRICAO por valores reais.',
-            '5. O campo file tem de corresponder exatamente ao nome do anexo .ps1.',
-            '6. Não uses Base64, SHA-256, command, commandBase64, links GitHub temporários nem blocos PowerShell para transportar o job.',
-            '7. PSB_JOB_V2 e PSB_JOB_V3 continuam aceites apenas para compatibilidade e recuperação.',
-            '8. PSB_LEARN_V1 continua aceite para guardar conhecimento consolidado.',
+            '5. A bridge deteta o job no chat automaticamente, executa-o no PowerShell local da máquina e envia o resultado de volta de forma 100% autónoma.',
+            '6. Quando receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o desenvolvimento ou diagnóstico autonomamente.',
             '',
-            'HANDSHAKE fileId:',
-            'Quando receberes PSBRIDGE_FILEID_HANDSHAKE_V1, responde apenas com o MESMO manifesto anterior, mantendo exatamente jobId, file e purpose, acrescentando somente o fileId exato fornecido pela plataforma.',
-            'Não cries outro ficheiro. Não cries outro jobId. Não inventes nem reutilizes fileId.',
-            'Depois do manifesto, inclui apenas o MESMO link sandbox anterior.',
-            '',
-            'RESULTADOS:',
-            'Quando receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o diagnóstico.',
-            'Usa o URL log apenas quando o resumo JSON não for suficiente e não reproduzas o log completo na conversa.',
-            '',
-            'Sempre que criares um job PowerShell, a resposta visível contém apenas:',
-            '1. o bloco ```json com o manifesto;',
-            '2. o link normal para o .ps1.',
-            '',
-            'Nada antes. Nada depois.',
-            '',
-            'Confirma estas regras silenciosamente e aplica-as automaticamente.'
+            'Confirma estas regras silenciosamente e gera os próximos jobs estritamente em PSB_JOB_V3 sem downloads.'
         ].join('\n');
-    }    function composerText() {
+    }
+
+    function composerText() {
         const editor = composer();
 
         if (!editor) {
@@ -391,10 +368,10 @@
             return;
         }
 
-        setStatus('A enviar ao ChatGPT o formato obrigatório PSB_JOB_FILE_V1…');
+        setStatus('A enviar ao ChatGPT o protocolo autónomo PSB_JOB_V3…');
         await sendMessage(protocolPromptText());
         GM_setValue(key, true);
-        setStatus('Protocolo PSB_JOB_FILE_V1 enviado. A bridge está pronta.');
+        setStatus('Protocolo PSB_JOB_V3 enviado. A bridge está pronta e autónoma.');
     }
     function token() {
         return String(GM_getValue(TOKEN_KEY, '')).trim();
@@ -718,7 +695,7 @@
 
                     baselineCurrentAssistant();
                     setEnabled(true);
-                    setStatus('Ativa. A preparar o protocolo PSB_JOB_FILE_V1…');
+                    setStatus('Ativa. A preparar o protocolo autónomo PSB_JOB_V3…');
 
                     try {
                         await sendProtocolPrompt(false);
@@ -4937,11 +4914,23 @@
             return '';
         }
 
-        return String(
-            turn.getAttribute(
-                'data-message-id'
-            ) || ''
-        ).trim();
+        const direct =
+            turn.getAttribute('data-message-id') ||
+            assistant?.getAttribute?.('data-message-id');
+
+        if (direct) {
+            return String(direct).trim();
+        }
+
+        const inner =
+            turn.querySelector?.('[data-message-id]') ||
+            assistant?.querySelector?.('[data-message-id]');
+
+        if (inner) {
+            return String(inner.getAttribute('data-message-id') || '').trim();
+        }
+
+        return '';
     }
 
     function lpxCollectRelevantApiFields(
@@ -5221,12 +5210,6 @@
                 assistant
             );
 
-        if (!messageId) {
-            throw new Error(
-                'A mensagem do manifesto não tem data-message-id.'
-            );
-        }
-
         const conversationUuid =
             rawConversationUuid();
 
@@ -5237,9 +5220,7 @@
         }
 
         setStatus(
-            'A consultar apenas a mensagem ' +
-            messageId +
-            ' na API autenticada…'
+            'A consultar a conversa na API autenticada…'
         );
 
         const response =
@@ -5284,10 +5265,10 @@
                 : {};
 
         let exactNode =
-            mapping[messageId] ||
+            (messageId && mapping[messageId]) ||
             null;
 
-        if (!exactNode) {
+        if (!exactNode && messageId) {
             exactNode =
                 Object.values(mapping)
                     .find(
@@ -5300,6 +5281,17 @@
                             ) ===
                             messageId
                     ) ||
+                null;
+        }
+
+        if (!exactNode) {
+            exactNode =
+                Object.values(mapping)
+                    .reverse()
+                    .find(node => {
+                        const str = JSON.stringify(node || '');
+                        return str.includes(jobId) || (fileName && str.includes(fileName));
+                    }) ||
                 null;
         }
 
@@ -5318,9 +5310,12 @@
             return '';
         }
 
+        const effectiveMsgId =
+            String(exactNode?.message?.id || messageId || 'msg');
+
         const exactRoot = {
             mapping: {
-                [messageId]:
+                [effectiveMsgId]:
                     exactNode
             }
         };
@@ -6199,6 +6194,16 @@
                             console.warn('Falha no downloadAttachment:', err);
                             command = '';
                         }
+                    }
+                }
+
+                if (!command) {
+                    try {
+                        setStatus('A resolver anexo diretamente na API da conversa para ' + fileName + '…');
+                        command = await lpxResolveExactMessageAttachment(assistant, fileName, jobId, fileId);
+                    } catch (err) {
+                        console.warn('Falha no lpxResolveExactMessageAttachment:', err);
+                        command = '';
                     }
                 }
 
