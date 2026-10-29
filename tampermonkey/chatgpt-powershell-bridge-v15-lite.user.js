@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.7
-// @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3) diretamente no chat, sem downloads manuais.
+// @version      2026.10.29.15.5.8
+// @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @noframes
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.7';
+    const VERSION = '15.5.8';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -336,8 +336,9 @@
             '4. Usa sempre um jobId real e único no formato PSB-AAAAMMDD-HHMM-DESCRICAO-001, substituindo AAAAMMDD, HHMM e DESCRICAO por valores reais.',
             '5. A bridge deteta o job no chat automaticamente, executa-o no PowerShell local da máquina e envia o resultado de volta de forma 100% autónoma.',
             '6. Quando receberes PSBRIDGE_RESULT_V2, lê primeiro o URL result e continua o desenvolvimento ou diagnóstico autonomamente.',
+            '7. NUNCA peças ao utilizador para copiar ou colar comandos no terminal. O utilizador não executa nada manualmente; a bridge executa o bloco automaticamente.',
             '',
-            'Confirma estas regras silenciosamente e gera os próximos jobs estritamente em PSB_JOB_V3 sem downloads.'
+            'Confirma estas regras silenciosamente e gera os próximos jobs estritamente em PSB_JOB_V3 sem downloads nem instruções para copiar.'
         ].join('\n');
     }
 
@@ -1034,6 +1035,15 @@
         });
     }
 
+    function generateAutoJobId(codeText) {
+        const d = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        const ymd = `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
+        const hm = `${pad(d.getHours())}${pad(d.getMinutes())}`;
+        const hash = simpleHash(String(codeText || '')).slice(0, 6).toUpperCase();
+        return `PSB-${ymd}-${hm}-AUTO-${hash}`;
+    }
+
     function parseV3PowerShellBlock(text) {
         const normalized = String(text || '')
             .replace(/\r\n?/g, '\n')
@@ -1080,14 +1090,18 @@
             .join('\n')
             .replace(/^\n+/, '');
 
-        if (!jobId || !command.trim()) {
+        if (!command.trim()) {
             return null;
+        }
+
+        if (!jobId) {
+            jobId = generateAutoJobId(command);
         }
 
         return {
             protocol: 'PSB_JOB_V3',
             jobId,
-            purpose,
+            purpose: purpose || 'Execução PSB_JOB_V3',
             command
         };
     }
@@ -1283,8 +1297,42 @@
             ''
         );
 
+        if (manifests.length === 0) {
+            for (const node of root.querySelectorAll(selector)) {
+                if (node.tagName === 'PRE' && node.querySelector('code')) {
+                    continue;
+                }
+
+                const raw = String(node.innerText || node.textContent || '').trim();
+                if (!raw || raw.length < 6) {
+                    continue;
+                }
+
+                if (raw.startsWith('{') || raw.startsWith('LPX_') || raw.includes('PSB_JOB_')) {
+                    continue;
+                }
+
+                const className = String(node.className || '') + ' ' + String(node.parentElement?.className || '');
+                const isExplicitPs = /powershell|pwsh|language-ps/i.test(className);
+                const hasPsKeywords = /(?:Get-|Set-|New-|Start-|Stop-|Invoke-|Test-|Remove-|Select-Object|Where-Object|Write-Host|Write-Output|\$env:|\$[A-Za-z_][A-Za-z0-9_]*\s*=|npm\s+|node\s+|git\s+|cd\s+)/i.test(raw);
+
+                if (isExplicitPs || hasPsKeywords) {
+                    const fallbackJobId = generateAutoJobId(raw);
+                    addManifest({
+                        protocol: 'PSB_JOB_V3',
+                        jobId: fallbackJobId,
+                        purpose: 'Execução autónoma de bloco PowerShell detetado na resposta',
+                        command: raw
+                    });
+                    break;
+                }
+            }
+        }
+
         return manifests;
-    }    async function inspectCandidate(forced) {
+    }
+
+    async function inspectCandidate(forced) {
         if (!enabled() && !forced) {
             return;
         }
