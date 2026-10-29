@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.4
+// @version      2026.10.29.15.5.5
 // @description  Executa ficheiros PowerShell anexados sem colocar o comando no histórico; mantém V2/V3 por compatibilidade.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.4';
+    const VERSION = '15.5.5';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6172,48 +6172,42 @@
                 protocol === 'PSB_JOB_FILE_V1' &&
                 !fileUrl
             ) {
-                if (!fileId) {
-                    releaseClaim(
-                        jobId
-                    );
-
-                    await lpxRequestFileIdHandshake(
-                        assistant,
-                        manifest
-                    );
-
-                    return;
+                if (fileId) {
+                    try {
+                        lpxValidateFileIdHandshake(manifest);
+                        setStatus('fileId recebido. A descarregar anexo…');
+                        command = await resolveExplicitFileId(fileId, fileName, jobId);
+                        lpxClearFileIdHandshake(jobId);
+                    } catch (e) {
+                        console.warn('Falha na resolução por fileId:', e);
+                        command = '';
+                    }
                 }
-
-                lpxValidateFileIdHandshake(
-                    manifest
-                );
-
-                setStatus(
-                    'fileId real recebido. A descarregar exclusivamente o anexo associado a este manifesto…'
-                );
-
-                command =
-                    await resolveExplicitFileId(
-                        fileId,
-                        fileName,
-                        jobId
-                    );
 
                 if (!command) {
-                    throw new Error(
-                        'O fileId explícito não devolveu um ficheiro PowerShell válido. Diagnóstico: ' +
-                        (
-                            lastAttachmentDiagnostic ||
-                            'indisponível'
-                        ) +
-                        '.'
-                    );
+                    const directLink = findAttachmentLink(assistant, fileName);
+                    if (directLink && directLink.href) {
+                        try {
+                            setStatus('A descarregar anexo via link direto: ' + fileName + '…');
+                            command = await downloadAttachment(directLink);
+                        } catch (err) {
+                            console.warn('Falha no downloadAttachment:', err);
+                            command = '';
+                        }
+                    }
                 }
 
-                lpxClearFileIdHandshake(
-                    jobId
-                );
+                if (!command) {
+                    setStatus('A acionar cartão do anexo e watcher local para ' + fileName + '…');
+                    await queueDownloadedFileJob(
+                        assistant,
+                        manifest,
+                        fileName,
+                        jobId,
+                        protocol
+                    );
+                    return;
+                }
             }
 
             else if (protocol === 'PSB_JOB_FILE_V1' && fileUrl) {
