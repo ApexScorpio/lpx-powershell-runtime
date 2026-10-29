@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.8
+// @version      2026.10.29.15.5.9
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.8';
+    const VERSION = '15.5.9';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -1062,8 +1062,8 @@
 
         for (let index = markerIndex + 1; index < lines.length; index++) {
             const line = lines[index];
-            const jobMatch = line.match(/^\s*#\s*jobId\s*:\s*(.+?)\s*$/i);
-            const purposeMatch = line.match(/^\s*#\s*purpose\s*:\s*(.*?)\s*$/i);
+            const jobMatch = line.match(/^\s*#\s*(?:jobId|job_id|job)\s*[:=]\s*(.+?)\s*$/i);
+            const purposeMatch = line.match(/^\s*#\s*(?:purpose|objetivo)\s*[:=]\s*(.*?)\s*$/i);
 
             if (jobMatch) {
                 jobId = jobMatch[1].trim();
@@ -1077,7 +1077,7 @@
                 continue;
             }
 
-            if (!line.trim()) {
+            if (!line.trim() || /^\s*#/.test(line)) {
                 commandStart = index + 1;
                 continue;
             }
@@ -6418,8 +6418,12 @@
                 ].join('\n');
 
                 setStatus(`Resultado publicado. A enviar apenas o URL para esta conversa…`);
-                await sendMessage(message, manifest);
-                setStatus(`Job ${completedJobId} concluído e enviado por URL.`);
+                try {
+                    await sendMessage(message, manifest);
+                    setStatus(`Job ${completedJobId} concluído e enviado por URL.`);
+                } catch (sendError) {
+                    setStatus(`Job ${completedJobId} concluído! Carrega em Enviar no chat se o resultado estiver no campo.`);
+                }
                 return;
             }
 
@@ -6496,57 +6500,57 @@
         }
 
         try {
-            document.execCommand('selectAll', false, null);
-            const inserted = document.execCommand('insertText', false, text);
-            if (inserted) {
-                editor.dispatchEvent(new Event('input', { bubbles: true }));
-                return;
-            }
-        } catch {
-            // Continua
-        }
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(editor);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        } catch {}
 
+        let inserted = false;
         try {
-            const dt = new DataTransfer();
-            dt.setData('text/plain', text);
-            const pasteEvent = new ClipboardEvent('paste', {
-                bubbles: true,
-                cancelable: true,
-                clipboardData: dt
-            });
-            editor.dispatchEvent(pasteEvent);
-            editor.dispatchEvent(new Event('input', { bubbles: true }));
+            inserted = document.execCommand('insertText', false, text);
         } catch {
-            // Continua
+            inserted = false;
         }
 
-        editor.replaceChildren();
+        if (!inserted || !editor.textContent.trim()) {
+            try {
+                const dt = new DataTransfer();
+                dt.setData('text/plain', text);
+                const pasteEvent = new ClipboardEvent('paste', {
+                    bubbles: true,
+                    cancelable: true,
+                    clipboardData: dt,
+                    composed: true
+                });
+                editor.dispatchEvent(pasteEvent);
+            } catch {}
+        }
 
-        for (const line of text.split('\n')) {
-            const paragraph = document.createElement('p');
-
-            if (line) {
-                paragraph.textContent = line;
-            } else {
-                paragraph.appendChild(document.createElement('br'));
-            }
-
-            editor.appendChild(paragraph);
+        if (!editor.textContent.trim()) {
+            editor.innerText = text;
         }
 
         editor.dispatchEvent(new InputEvent('input', {
             bubbles: true,
+            cancelable: true,
             inputType: 'insertText',
             data: text
         }));
+        editor.dispatchEvent(new Event('input', { bubbles: true }));
+        editor.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
     function findSendButton() {
-        return document.querySelector('[data-testid="send-button"]')
+        return document.querySelector('button[data-testid="send-button"]')
+            || document.querySelector('[data-testid="send-button"]')
             || document.querySelector('button[aria-label*="Send"]')
             || document.querySelector('button[aria-label*="Enviar"]')
             || document.querySelector('button[aria-label*="Submit"]')
             || document.querySelector('form button[type="submit"]')
+            || document.querySelector('button[data-testid*="send"]')
+            || document.querySelector('button[data-testid="fruitjuice-send-button"]')
             || [...document.querySelectorAll('button')].find(node => /enviar|send|submit/i.test(node.getAttribute('aria-label') || ''))
             || null;
     }
@@ -6565,9 +6569,23 @@
 
             const send = findSendButton();
 
-            if (send && !send.disabled) {
+            if (send) {
+                if (send.disabled) {
+                    send.disabled = false;
+                    send.removeAttribute('disabled');
+                }
                 send.click();
-                return;
+            }
+
+            const form = editor.closest('form') || document.querySelector('form:has(#prompt-textarea)');
+            if (form) {
+                try {
+                    if (typeof form.requestSubmit === 'function') {
+                        form.requestSubmit(send && !send.disabled ? send : undefined);
+                    } else {
+                        form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+                    }
+                } catch {}
             }
 
             editor.dispatchEvent(new KeyboardEvent('keydown', {
@@ -6576,14 +6594,20 @@
                 keyCode: 13,
                 which: 13,
                 bubbles: true,
-                cancelable: true
+                cancelable: true,
+                composed: true
             }));
 
-            await wait(250);
+            await wait(350);
 
-            if (!composerText()) {
+            if (!composerText() || assistantWriting()) {
                 return;
             }
+        }
+
+        if (composerText()) {
+            console.warn('O texto está no compositor mas o clique automático falhou.');
+            return;
         }
 
         throw new Error('Não foi possível enviar automaticamente a mensagem.');
