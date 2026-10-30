@@ -1197,11 +1197,24 @@
                 if (targetAssistant) scheduleCandidate(record.target);
 
                 for (const added of record.addedNodes) {
-                    if (containsNewUserTurn(added)) {
+                    const isNewUserTurn = containsNewUserTurn(added);
+                    if (isNewUserTurn) {
                         candidateAssistant = null;
-                        rememberDomReceipt();
                         // Uma mensagem antiga também pode ser montada por virtualização;
                         // só eventos reais de envio iniciam a consulta autenticada.
+                    }
+                    // Guardar a prova de um recibo assim que um novo turno
+                    // surge, incluindo wrappers sem data-author-role.
+                    const pending = getInflight();
+                    if (pending && Number(pending.deliveryClicks || 0) > 0 &&
+                        added?.nodeType === Node.ELEMENT_NODE) {
+                        const selector = '[data-testid^="conversation-turn-"], ' +
+                            '[data-message-id], article';
+                        if (isNewUserTurn ||
+                            added.matches?.(selector) ||
+                            added.querySelector?.(selector)) {
+                            rememberDomReceipt();
+                        }
                     }
                     // Descobre novos turnos mesmo que cheguem como subárvores.
                     scheduleCandidate(added);
