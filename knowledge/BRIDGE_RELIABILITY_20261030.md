@@ -189,3 +189,11 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Testes efetuados no código de cliente em ambiente controlado, não no Chrome real do utilizador.
 - Screenshot recebido foi inspecionado visualmente. Não foram produzidas capturas novas da instalação local.
 - O daemon Windows continua sem auditoria: não prometer persistência de jobs após reinício sem acesso ao seu código e armazenamento.
+
+## 2026-10-30 — Passo 22: Integração e verificação pública
+- Pull Request #5 integrada na branch main.
+- Commit de integração: 3168364990c633ec6a861082e736795f68abfddd.
+- Ficheiro de userscript relido da branch main: `const VERSION = '15.5.16'`, `@version 2026.10.30.15.5.16`, parser JS válido.
+- Confirmadas lógica de três 404 consecutivos, arquivo de irresolvidos, impedimento de reexecução pelo botão manual e confirmação de 404 no fluxo de recuperação.
+- Código de recuperação não introduz novos POST /run; as consultas de verificação são GET.
+- Sem confirmação end-to-end no Chrome do utilizador nem acesso ao código do serviço Windows: a causa permanente de perda de jobs no daemon continua por investigar.
