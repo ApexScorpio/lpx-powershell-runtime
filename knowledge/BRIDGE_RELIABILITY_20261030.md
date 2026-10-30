@@ -197,3 +197,25 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmadas lógica de três 404 consecutivos, arquivo de irresolvidos, impedimento de reexecução pelo botão manual e confirmação de 404 no fluxo de recuperação.
 - Código de recuperação não introduz novos POST /run; as consultas de verificação são GET.
 - Sem confirmação end-to-end no Chrome do utilizador nem acesso ao código do serviço Windows: a causa permanente de perda de jobs no daemon continua por investigar.
+
+## 2026-10-30 — Passo 23: Três janelas visíveis, só uma com foco
+- Utilizador informou que três janelas Chrome separadas estão simultaneamente visíveis, mas os trabalhos parecem iniciar-se apenas depois de dar foco à respetiva janela.
+- Comparada documentação oficial Chrome for Developers (timer throttling Chrome 88, background tabs) e MDN Page Visibility API / Document.hasFocus.
+- Factos confirmados: `hasFocus()` e `document.hidden` têm significado distinto; uma janela visível pode estar sem foco. Temporizadores JavaScript podem sofrer throttling em páginas ocultas; não é garantida execução no instante nominal.
+- Inspecionada v15.5.16: `focus` acionava explicitamente `installObserver`, `scheduleCandidate` e `scheduleDeliveryRecovery`; observador original fixava-se em `main` e podia ficar obsoleto quando a aplicação SPA o substituía.
+- Nenhum dado de telemetria local prova ainda quanto da latência real se deve ao Chrome e quanto se deve à substituição do DOM.
+
+## 2026-10-30 — Passo 24: Correção isolada de independência de foco (15.5.17)
+- Criada branch `fix/bridge-no-focus-heartbeat-20261030`.
+- O observador acompanha agora `document.body`, elemento mais estável durante substituição de `main` pelo React.
+- Acrescentado `backgroundHeartbeat` a cada 7 segundos quando a página é visível e a cada 18 segundos se estiver oculta, sujeito aos limites do próprio Chrome, independentemente de `focus` ou `scroll`.
+- O heartbeat revalida o observador, verifica a resposta mais recente, respeita estados ocupado/geração e retoma apenas a recuperação de entrega em `inflight` sem ressubmeter PowerShell.
+- Reforçado rearme após navegação SPA, arranque inicial, e ativação da Bridge.
+- Os temporizadores de recuperação/sondagem são marcados livres quando disparam, permitindo retoma posterior.
+- Sem alterações ao servidor local, permissões Chrome, perfil, Antigravity, Maestro, TIMI, BonChat ou backups.
+
+## 2026-10-30 — Passo 25: Verificação técnica
+- Sintaxe JS validada sem erros.
+- Dez testes simulados PASS: observer ligado ao body mesmo com main existente, apenas um observer, sondagem sem foco, sondagem com documento oculto, estado inflight sem reexecução, job ativo não revisitado, Bridge desligada sem timer, cadência visível, cadência oculta, resposta em streaming não examinada.
+- Limitação explícita: tempos nominais não são SLA de processamento, o Chrome pode suspender/limitar timers em páginas ocultas.
+- Ainda falta screenshot e ensaio end-to-end das três janelas Chrome reais; a entrega via editor ProseMirror em janela sem foco não foi comprovada.
