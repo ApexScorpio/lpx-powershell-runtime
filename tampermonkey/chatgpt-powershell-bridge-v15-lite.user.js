@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.31
+// @version      2026.10.30.15.5.32
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.31';
+    const VERSION = '15.5.32';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -6737,34 +6737,73 @@
         ].join('\n');
     }
 
-    function mayUseSingleUiDelivery(saved, message) {
-        // Sem um ACK da API, permitir UMA única entrega pelo compositor
-        // apenas para um resultado publicado e preparado por esta Bridge.
-        // Não aplica a estados legados, tentativas anteriores, perfis
-        // desconhecidos nem a páginas que não carregaram a conversa.
-        if (!enabled() || !rawConversationUuid() || !saved ||
-            saved.conversation !== conversationId() ||
-            saved.phase !== 'published_pending_delivery' ||
-            !saved.preparedVersion || !saved.jobId ||
-            saved.message !== message ||
-            Number(saved.deliveryClicks || 0) !== 0 ||
+    function firstUiDeliveryGate(saved, message) {
+        // Diagnóstico não destrutivo: em caso de dúvida recusar o envio.
+        if (!enabled()) return { allowed: false, reason: 'ABA_INATIVA' };
+        if (!saved?.jobId) return { allowed: false, reason: 'ESTADO_SEM_JOB' };
+        if (saved.conversation !== conversationId()) {
+            return { allowed: false, reason: 'CONVERSA_DIFERENTE' };
+        }
+        if (saved.phase !== 'published_pending_delivery') {
+            return { allowed: false, reason: 'FASE_' + String(saved.phase || 'DESCONHECIDA') };
+        }
+        if (!saved.preparedVersion) return { allowed: false, reason: 'SEM_PREPARACAO_REGISTADA' };
+        if (saved.message !== message || !message) {
+            return { allowed: false, reason: 'RESULTADO_NAO_COINCIDE' };
+        }
+        if (Number(saved.deliveryClicks || 0) !== 0 ||
             Number(saved.lastDeliveryClickAt || 0) !== 0 ||
-            saved.deliveryMethod || saved.deliveryRescueUsedVersion ||
-            assistantWriting()) return false;
-
+            saved.deliveryMethod || saved.deliveryRescueUsedVersion) {
+            return { allowed: false, reason: 'ENVIO_ANTERIOR_REGISTADO' };
+        }
+        if (assistantWriting()) return { allowed: false, reason: 'ASSISTENTE_A_RESPONDER' };
         const receipt = resultReceipt(message);
         if (!receipt || receipt.jobId !== saved.jobId ||
             !/^https:\/\//.test(receipt.resultUrl) ||
-            !/^https:\/\//.test(receipt.logUrl)) return false;
+            !/^https:\/\//.test(receipt.logUrl)) {
+            return { allowed: false, reason: 'RECIBO_LOCAL_INVALIDO' };
+        }
 
-        // Um compositor isolado numa página de erro não prova que a
-        // conversa foi montada. Exigir pelo menos um turno do assistente.
-        const assistantTurn = document.querySelector(
+        // Esta conversa pode usar um container do tipo
+        // conversation-turn-N, sem data-author-role="assistant".
+        // Reutilizar os mesmos tipos de turno que a deteção de jobs já
+        // aceita, exigindo o ID do comando original para não confundir
+        // conteúdo de outra conversa ou mensagens do utilizador.
+        const candidates = document.querySelectorAll(
             '[data-message-author-role="assistant"], ' +
-            '[data-author-role="assistant"], [data-testid*="assistant-message"]'
+            '[data-author-role="assistant"], ' +
+            '[data-testid*="assistant"], [data-testid*="agent"], ' +
+            '.agent-turn, [data-testid^="conversation-turn-"], article'
         );
-        if (!assistantTurn || userTurnContains(message) || !composer()) return false;
-        return true;
+        let matchingAssistant = false;
+        for (let i = candidates.length - 1; i >= 0; i--) {
+            const node = candidates[i];
+            if (isUserTurn(node)) continue;
+            const content = String(node.textContent || node.innerText || '');
+            if (content.includes(String(saved.jobId)) &&
+                (content.includes('PSB_JOB_V3') ||
+                 content.includes('# jobId:') ||
+                 content.includes('jobId:'))) {
+                matchingAssistant = true;
+                break;
+            }
+        }
+        if (!matchingAssistant) {
+            return { allowed: false, reason: 'TURNO_DO_JOB_NAO_IDENTIFICADO' };
+        }
+
+        // Uma página de erro ou a página de projeto sem conversa real
+        // pode exibir o compositor. Exigir ID de conversa concreto.
+        if (!rawConversationUuid()) return { allowed: false, reason: 'URL_SEM_CONVERSA' };
+        if (!composer()) return { allowed: false, reason: 'COMPOSITOR_NAO_ENCONTRADO' };
+        if (userTurnContains(message)) {
+            return { allowed: false, reason: 'RECIBO_JA_VISIVEL' };
+        }
+        return { allowed: true, reason: 'PRIMEIRA_ENTREGA_VALIDADA' };
+    }
+
+    function mayUseSingleUiDelivery(saved, message) {
+        return firstUiDeliveryGate(saved, message).allowed;
     }
 
     function scheduleDeliveryRecovery(delay = 12000) {
@@ -6850,10 +6889,11 @@
             if (!verify.apiOk && !uiOnly) {
                 delay = apiRetryDelay(verify.retryAfterMs, 16000);
                 const recordedClicks = Number(saved.deliveryClicks || 0);
+                const uiGate = recordedClicks === 0 ? firstUiDeliveryGate(saved, message) : null;
                 setStatus(!AUTOMATIC_CONVERSATION_API_READS
                     ? (recordedClicks > 0
                         ? `Job ${saved.jobId}: ${recordedClicks} clique(s) de envio registados; recibo não encontrado no DOM. Não reenviar sem confirmação.`
-                        : `Job ${saved.jobId}: 0 cliques registados; primeira entrega ainda não autorizada pela interface. Resultado preservado.`)
+                        : `Job ${saved.jobId}: 0 cliques; bloqueio da primeira entrega: ${uiGate?.reason || 'SEM_DIAGNOSTICO'}. Resultado preservado.`)
                     : `Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
                 return;
             }
