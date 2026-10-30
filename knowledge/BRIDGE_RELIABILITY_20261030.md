@@ -436,3 +436,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmadas presença das guardas de sondagem em entrega pendente, exclusão mútua via Web Locks da v15.5.25, e análise sintática JS completa PASS.
 - Link de atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - O utilizador ainda tem de instalar/ativar esta versão no Tampermonkey. Não há confirmação visual nem end-to-end da entrega ao ChatGPT do resultado ROM0FIX-004; no GitHub está efetivamente publicado e a execução terminou com exitCode=0. Nenhum token, sessão ou perfil local foi alterado por esta publicação.
+
+## 2026-10-30 — Passo 54: Correção das confirmações redundantes
+- A análise da v15.5.26 identificou duas consultas consecutivas de confirmação do mesmo resultado: uma na recuperação e outra na função de envio.
+- Implementada a reutilização de uma confirmação recente e vinculada ao job e à conversa na nova versão 15.5.27.
+- A coordenação de consultas entre janelas passou a usar uma fila FIFO, separada da execução dos jobs.
+- Testes isolados: quatro rondas A-B-C-A, envio com confirmação reutilizada sem segunda chamada, casos sem confirmação e resposta incompleta preservam a segurança.
+- Testes de sintaxe aprovados. Falta validação real no Chrome após instalação.
