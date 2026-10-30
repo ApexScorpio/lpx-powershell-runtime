@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.27
+// @version      2026.10.30.15.5.28
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.27';
+    const VERSION = '15.5.28';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -52,7 +52,10 @@
     const HEARTBEAT_HIDDEN_MS = 18000;
     const PUBLISH_WAIT_MS = 90 * 1000;
     const API_BUDGET_KEY = 'lpxPsb15:conversationApiBudget';
-    const API_MIN_INTERVAL_MS = 10000;
+    const API_MIN_INTERVAL_MS = 10000; // Legacy: conservar sem eliminar o histórico
+    const API_LANE_INTERVAL_MS = 25000;
+    const API_LANE_PREFIX = 'lpxPsb15:conversationApiLane:v2:';
+    const API_REMOTE_LIMIT_KEY = 'lpxPsb15:conversationApiRemoteLimit:v2';
 
     let candidateAssistant = null;
     let settleTimer = 0;
@@ -3949,148 +3952,128 @@
         return accessToken;
     }
 
-    function apiLocalQueueResponse(waitMs, position, total) {
+    function apiLocalPause(waitMs, scope) {
         const seconds = Math.max(1, Math.ceil(Math.max(0, waitMs) / 1000));
         return new Response('{}', { status: 429, headers: {
             'Retry-After': String(seconds),
             'X-LPX-Bridge-Cooldown': 'local',
-            'X-LPX-Bridge-Queue-Position': String(position + 1),
-            'X-LPX-Bridge-Queue-Length': String(total)
+            'X-LPX-Bridge-Cooldown-Scope': scope
         } });
     }
 
-    function apiWaitingQueue(raw, now) {
-        const seen = new Set();
-        return (Array.isArray(raw) ? raw : []).filter(entry => {
-            if (!entry || typeof entry.id !== 'string' ||
-                Number(entry.expiresAt || 0) <= now ||
-                seen.has(entry.id)) return false;
-            seen.add(entry.id);
-            return true;
-        }).slice(0, 20).map(entry => ({
-            id: entry.id,
-            expiresAt: Number(entry.expiresAt)
-        }));
+    function apiRemoteWaitMs(now = Date.now()) {
+        const current = GM_getValue(API_REMOTE_LIMIT_KEY, {});
+        // Compatibilidade: um 429 remoto em v15.5.27 deixou failures > 0.
+        // Ignorar filas e intervalos locais antigos, mas nunca ignorar um 429 real.
+        const legacy = GM_getValue(API_BUDGET_KEY, {});
+        const currentUntil = Number(current?.until || 0);
+        const legacyUntil = Number(legacy?.failures || 0) > 0
+            ? Number(legacy.until || 0) : 0;
+        return Math.max(0, currentUntil - now, legacyUntil - now);
+    }
+
+    async function apiRecordRemote429(response) {
+        const header = response.headers?.get('Retry-After');
+        const seconds = Number(header);
+        const parsedDate = Date.parse(header || '');
+        const requested = header && Number.isFinite(seconds)
+            ? Math.max(0, seconds * 1000)
+            : Number.isFinite(parsedDate)
+                ? Math.max(0, parsedDate - Date.now()) : 0;
+
+        const commit = () => {
+            const now = Date.now();
+            const old = GM_getValue(API_REMOTE_LIMIT_KEY, {});
+            const failures = Math.min(6, Number(old.failures || 0) + 1);
+            const backoff = Math.max(
+                60000,
+                requested,
+                Math.min(300000, 15000 * 2 ** failures)
+            );
+            GM_setValue(API_REMOTE_LIMIT_KEY, {
+                failures,
+                until: Math.max(Number(old.until || 0), now + backoff),
+                updatedAt: now
+            });
+        };
+
+        // Só o estado de um 429 REAL é global. Serializar a atualização,
+        // nunca a consulta de três conversas independentes.
+        if (navigator.locks?.request) {
+            await navigator.locks.request(
+                'lpx-psb15-real-429-v2', { mode: 'exclusive' }, commit
+            );
+        } else {
+            commit();
+        }
     }
 
     async function chatgptApiFetch(url, init = {}) {
         const conversationRead = (!init.method || init.method === 'GET') &&
             /^\/backend-api\/conversation\/[^/?]+(?:\?|$)/.test(String(url));
 
-        // A leitura e gravação do orçamento Tampermonkey não é atómica.
-        // Um lock exclusivo do próprio Chrome serializa as três janelas
-        // desta origem, incluindo o pedido e a decisão sobre Retry-After.
-        const perform = async () => {
-        if (conversationRead) {
-            const now = Date.now();
-            const budget = GM_getValue(API_BUDGET_KEY, {});
-            const remaining = Math.max(0, Number(budget.until || 0) - now);
-            // Fila FIFO por separador, guardando apenas IDs efémeros.
-            // O Web Lock torna a reserva atómica entre as janelas Chrome.
-            const ownId = simpleHash(conversationId()) + ':' + TAB_ID;
-            const queue = apiWaitingQueue(budget.queue, now);
-            const expiration = Math.max(now + 60000, Number(budget.until || 0) + 30000);
-            let self = queue.find(item => item.id === ownId);
-            if (!self) {
-                self = { id: ownId, expiresAt: expiration };
-                queue.push(self);
-            } else {
-                self.expiresAt = expiration;
-            }
-            const position = queue.findIndex(item => item.id === ownId);
-            if (remaining > 0 || position > 0) {
-                // Dar primeiro a janela ao participante mais antigo.
-                // Uma janela suspensa perde a reserva quando expira.
-                GM_setValue(API_BUDGET_KEY, { ...budget, queue });
-                const queuedMs = remaining + position * API_MIN_INTERVAL_MS;
-                return apiLocalQueueResponse(queuedMs, position, queue.length);
-            }
-            queue.shift();
-            GM_setValue(API_BUDGET_KEY, {
-                ...budget, queue, until: now + API_MIN_INTERVAL_MS
-            });
-        }
-        let response = null;
+        const execute = async () => {
+            if (conversationRead) {
+                const now = Date.now();
+                const remoteWait = apiRemoteWaitMs(now);
+                if (remoteWait > 0) return apiLocalPause(remoteWait, 'server');
 
-        for (let attempt = 0; attempt < 2; attempt++) {
-            const accessToken =
-                await getChatgptAccessToken(
-                    attempt > 0
-                );
+                // Cada conversa tem o seu orçamento. Não criar uma fila global
+                // artificial entre PokéGuide, TIMI e FiscalGuard.
+                const laneKey = API_LANE_PREFIX + simpleHash(conversationId());
+                const lane = GM_getValue(laneKey, {});
+                const remaining = Math.max(0, Number(lane.until || 0) - now);
+                if (remaining > 0) return apiLocalPause(remaining, 'conversation');
 
-            const headers = new Headers(
-                init.headers || {}
-            );
-
-            headers.set(
-                'Authorization',
-                'Bearer ' + accessToken
-            );
-
-            if (!headers.has('Accept')) {
-                headers.set('Accept', '*/*');
+                GM_setValue(laneKey, {
+                    until: now + API_LANE_INTERVAL_MS,
+                    updatedAt: now
+                });
             }
 
-            response = await fetchWithTimeout(
-                url,
-                {
-                    ...init,
-                    headers,
-                    credentials: 'include',
-                    cache: 'no-store'
+            let response = null;
+            for (let attempt = 0; attempt < 2; attempt++) {
+                const accessToken = await getChatgptAccessToken(attempt > 0);
+                const headers = new Headers(init.headers || {});
+                headers.set('Authorization', 'Bearer ' + accessToken);
+                if (!headers.has('Accept')) headers.set('Accept', '*/*');
+
+                response = await fetchWithTimeout(url, {
+                    ...init, headers, credentials: 'include', cache: 'no-store'
+                });
+
+                if (conversationRead && Number(response.status) === 429) {
+                    await apiRecordRemote429(response);
+                    return response;
                 }
-            );
 
-            if (conversationRead && Number(response.status) === 429) {
-                const budget = GM_getValue(API_BUDGET_KEY, {});
-                const failures = Math.min(6, Number(budget.failures || 0) + 1);
-                const header = response.headers?.get('Retry-After');
-                const seconds = Number(header);
-                const retryDate = Date.parse(header || '');
-                const requested = header && Number.isFinite(seconds)
-                    ? seconds * 1000 : Number.isFinite(retryDate) ? retryDate - Date.now() : 0;
-                const backoff = Math.max(60000, requested, Math.min(300000, 15000 * 2 ** failures));
-                const until = Date.now() + backoff;
-                // Preservar a fila FIFO durante o Retry-After remoto.
-                // Caso contrário, os outros separadores voltariam a
-                // competir em simultâneo depois do backoff.
-                const queue = apiWaitingQueue(budget.queue, Date.now()).map(item => ({
-                    ...item, expiresAt: Math.max(item.expiresAt, until + 30000)
-                }));
-                GM_setValue(API_BUDGET_KEY, { ...budget, failures, until, queue });
-                return response;
+                if (conversationRead && response.ok) {
+                    // Uma resposta válida prova que a limitação terminou.
+                    // Não remover outros dados, incluindo a fila antiga.
+                    const old = GM_getValue(API_REMOTE_LIMIT_KEY, {});
+                    if (Number(old.until || 0) <= Date.now() &&
+                        Number(old.failures || 0) > 0) {
+                        GM_setValue(API_REMOTE_LIMIT_KEY, {
+                            ...old, failures: 0
+                        });
+                    }
+                }
+
+                if (![401, 403].includes(Number(response.status))) return response;
+                chatgptAccessTokenCache = '';
             }
-            if (conversationRead && response.ok) {
-                const budget = GM_getValue(API_BUDGET_KEY, {});
-                GM_setValue(API_BUDGET_KEY, { ...budget, failures: 0 });
-            }
-
-            if (
-                ![401, 403].includes(
-                    Number(response.status)
-                )
-            ) {
-                return response;
-            }
-
-            chatgptAccessTokenCache = '';
-        }
-
-        return response;
+            return response;
         };
 
-        if (conversationRead && navigator.locks &&
-            typeof navigator.locks.request === 'function') {
+        if (conversationRead && navigator.locks?.request) {
+            // Exclusividade só por conversa; três conversas diferentes
+            // executam pedidos em paralelo sem aguardarem por outra.
             return navigator.locks.request(
-                'lpx-psb15-chatgpt-conversation-read',
-                { mode: 'exclusive' },
-                perform
+                'lpx-psb15-conversation-api-v2:' + simpleHash(conversationId()),
+                { mode: 'exclusive' }, execute
             );
         }
-
-        // Compatibilidade para navegadores sem Web Locks:
-        // conserva o orçamento partilhado e todos os controlos de 429.
-        return perform();
+        return execute();
     }
 
     function apiRetryDelay(remainingMs, floorMs = 10000) {
@@ -7258,15 +7241,15 @@
                     : Number.isFinite(dateMs) ? Math.max(0, dateMs - Date.now()) : 0;
                 const budget = GM_getValue(API_BUDGET_KEY, {});
                 const remaining = Math.max(0, Number(budget.until || 0) - Date.now());
-                const queuePosition = Number(response?.headers?.get('X-LPX-Bridge-Queue-Position') || 0);
-                const queueTotal = Number(response?.headers?.get('X-LPX-Bridge-Queue-Length') || 0);
+                const pauseScope = response?.headers?.get('X-LPX-Bridge-Cooldown-Scope') || '';
                 return {
                     confirmed: false,
                     apiOk: false,
                     reason: isLocal
-                        ? (queuePosition > 0 ? 'AGUARDA_FILA_API_' + queuePosition + '_DE_' + queueTotal : 'PAUSA_LOCAL_PARTILHADA')
+                        ? (pauseScope === 'server' ? 'LIMITE_REAL_SERVIDOR_PARTILHADO'
+                            : 'PAUSA_LOCAL_DESTA_CONVERSA')
                         : 'API_HTTP_' + Number(response?.status || 0),
-                    retryAfterMs: Math.max(advertised, remaining)
+                    retryAfterMs: isLocal ? advertised : Math.max(advertised, apiRemoteWaitMs())
                 };
             }
             const data = await response.json();
@@ -7595,9 +7578,10 @@
                     shouldRepeat = false;
                 }
             } else if (Number(response.status) === 429) {
-                const budget = GM_getValue(API_BUDGET_KEY, {});
+                const seconds = Number(response.headers?.get('Retry-After') || 0);
                 nextProbeDelayMs = apiRetryDelay(
-                    Number(budget.until || 0) - Date.now(), 10000
+                    Math.max(0, Number.isFinite(seconds) ? seconds * 1000 : 0,
+                        apiRemoteWaitMs()), 10000
                 );
             }
         } catch (error) {
