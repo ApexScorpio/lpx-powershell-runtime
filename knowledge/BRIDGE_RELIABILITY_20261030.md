@@ -443,3 +443,24 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - A coordenação de consultas entre janelas passou a usar uma fila FIFO, separada da execução dos jobs.
 - Testes isolados: quatro rondas A-B-C-A, envio com confirmação reutilizada sem segunda chamada, casos sem confirmação e resposta incompleta preservam a segurança.
 - Testes de sintaxe aprovados. Falta validação real no Chrome após instalação.
+
+## 2026-10-30 — Passo 55: Captura real da v15.5.27
+- O utilizador enviou um screenshot com PowerShell Bridge v15.5.27 ATIVA e o job PSB-20261030-1630-POKEGUIDE-ROM0FIX-004 em AGUARDA_FILA_API_3_DE_3.
+- A mensagem demonstra bloqueio no controlo LOCAL de acesso à API, não erro HTTP 429 remoto, nem falha na execução do PowerShell. O job já tinha SUCCEEDED e exitCode 0 confirmados por ficheiros do GitHub.
+- A fila FIFO global da 15.5.27 misturava tráfego de conversas diferentes. Uma entrada antiga na cabeça podia impedir o terceiro participante de consultar, até expirar ou o primeiro participar novamente. A prioridade global contrariava a independência entre PokéGuide, TIMI e FiscalGuard.
+- O ramo da 15.5.27 já contém a correção da dupla consulta de ACK; PR #14 permaneceu por integrar em main após bloqueio da ferramenta de merge.
+
+## 2026-10-30 — Passo 56: v15.5.28, filas separadas por conversa
+- Criada a branch fix/bridge-v15-5-28-independent-api-lanes-20261030 sobre a fonte completa da 15.5.27, originalmente derivada da 15.5.22 do utilizador.
+- As reservas locais da API deixam de usar fila global: cada conversa recebe chave API_LANE_PREFIX independente e bloqueio Web Locks específico do respetivo identificador. Conversas distintas podem consultar em paralelo; duas abas da mesma conversa mantêm exclusão mútua.
+- Apenas o HTTP 429 verdadeiro desencadeia pausa PARTILHADA, com Retry-After respeitado e atualização serializada. Histórico de backoff REAL legado é respeitado se failures > 0; filas antigas não são apagadas, mas deixam de bloquear.
+- A API local passa a reportar PAUSA_LOCAL_DESTA_CONVERSA ou LIMITE_REAL_SERVIDOR_PARTILHADO; eliminação do motivo AGUARDA_FILA_API_n_DE_m de operações novas.
+- Mantidos íntegros os estados de jobs, credenciais, sessões, perfis, backups, autenticação, links e proibição de reexecução. Nenhum processo local foi encerrado; nenhum job foi lançado.
+
+## 2026-10-30 — Passo 57: Testes isolados
+- Sintaxe do userscript completo: PASS.
+- Três conversas diferentes em paralelo com entradas antigas de fila global: 3/3 chamadas HTTP permitidas, máximo de 3 simultâneas: PASS.
+- Duas abas da mesma conversa: uma chamada HTTP e uma pausa local: PASS.
+- Resposta HTTP 429 real, Retry-After 120s: segunda conversa impedida de consultar, pausa global respeitada: PASS.
+- Backoff real da versão anterior preservado; orçamento artificial antigo sem falhas ignorado: PASS.
+- Não foi testado ainda o comportamento nas três janelas reais após atualização, nem a entrega do resultado ROM0FIX-004.
