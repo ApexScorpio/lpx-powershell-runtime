@@ -590,3 +590,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Nenhum token, sessão, perfil, cookie, backup, histórico anterior ou job executado foi alterado. Não foi efetuado qualquer POST /run nem clique na instalação do utilizador.
 - Testes simulados PASS: conversa com turno sem atributo antigo autorizada; turno de outro job ou de utilizador rejeitado; UUID ausente, streaming, versão preparadora ausente, fase errada, clique anterior, conversa diferente, compositor ausente e DOM sem turno rejeitados. Sintaxe JavaScript integral PASS.
 - Limitação: testes do DOM simulados; falta validar o motivo real e eventual envio no Chrome do utilizador depois da atualização. Não anunciar entrega real como concluída.
+
+## 2026-10-30 — Passo 74: Publicação e validação final da v15.5.32
+- PR #19 integrada em main, commit de merge `d19b6261eddee6da12e484fd7e51892fac305462`.
+- Código relido após merge: `@version 2026.10.30.15.5.32`, `VERSION='15.5.32'`, blob `561e507d0bf88aef762a665d8cd0c387b54e1817`, sintaxe JavaScript PASS.
+- Confirmadas na versão publicada: `firstUiDeliveryGate` com diagnóstico explícito no painel, aceite de turnos de assistente `conversation-turn` ligados ao job, bloqueio de tentativas anteriores e ausência de leitura automática da API interna.
+- Atualização direta pelo Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- A publicação no GitHub não demonstra instalação local nem envio de PASSIVEIP-019. Necessário print após v15.5.32 para identificar motivo, ou verificar que houve um único clique e recibo visível. Nenhum comando PowerShell foi reexecutado.
