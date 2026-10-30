@@ -623,3 +623,26 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmadas na versão publicada: prova persistente do manifesto original V3, fallback conservador para estados antigos, controlo de um único clique, ausência de leituras automáticas da API interna e histórico anterior preservado.
 - Link direto de atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - A publicação no GitHub não instala automaticamente a versão no Chrome. O desbloqueio real do PASSIVEIP-019 e eventual envio ao ChatGPT ainda carecem de prova em screenshot pós-atualização. Não sugerir `Executar último` nem limpar ou substituir perfis, tokens, cookies, sessões ou backups.
+
+## 2026-10-30 — Passo 79: Screenshot v15.5.33 com clique mas sem ACK DOM
+- Captura do utilizador analisada: painel `PowerShell Bridge v15.5.33 · ATIVA · DOM` e estado `PSB-20261030-1946-POKEGUIDE-PASSIVEIP-019: 1 clique(s) de envio registados; recibo não encontrado no DOM. Não reenviar sem confirmação.`
+- No mesmo screenshot, existe resposta subsequente do ChatGPT acerca da identificação dos dispositivos e novo script em preparação; isto sugere que a conversa avançou, mas não prova sozinho a receção inequívoca do recibo exato.
+- A Bridge registou o clique no estado, mas não encontrou na sua leitura do DOM um turno de utilizador com o envelope exato. O código usa seletor primário limitado a atributos `data-message-author-role`, `data-author-role` e `data-testid*="user-message"`. O turno pode usar outro wrapper ou ser virtualizado; não foi observado o DOM interno do navegador, pelo que não é possível afirmar o motivo HTML exato.
+- O job já estava publicado e `SUCCEEDED/exitCode 0` no GitHub, conforme passos anteriores. Não gerar segundo clique e não repetir o PowerShell.
+
+## 2026-10-30 — Passo 80: v15.5.34 — recolha durável da confirmação pelo DOM
+- Branch `fix/bridge-v15-5-34-durable-dom-ack-20261030` criada sobre main v15.5.33; versão elevada para 15.5.34, mantendo modo DOM sem consultas automáticas à API interna.
+- `userTurnContains` conserva a verificação rigorosa dos turnos com papel `user` e acrescenta suporte a wrappers `conversation-turn`, `data-message-id` e `article` sem papel explícito apenas quando o envelope começa pelo protocolo exato e corresponde a jobId, status, exitCode e URLs de resultado e log. Turnos identificados como assistente, exemplos citados e recibos diferentes são rejeitados.
+- O observador da página passa a capturar e persistir em `inflight` uma prova de recibo exato quando surge (incluindo mensagens com wrapper diferente), antes de o React a poder virtualizar/desmontar. Os dados persistidos são ligados ao job e conversa e só podem existir depois de um clique registado.
+- `recoverPendingDelivery` reconhece o recibo previamente observado mesmo que o turno já não esteja no DOM, liberta o estado e não emite reenvios.
+- Introduzida opção explícita `Confirmar recebido`, disponível no painel para um **job com clique anterior** que o utilizador confirmou visualmente ter chegado. Pede confirmação específica por janela do Chrome e liberta apenas o estado persistente; não envia mensagens, não cancela nem repete PowerShell. Sem autorização do utilizador, sem clique anterior ou se o estado mudar, não altera nada.
+- Regra: uma resposta posterior do assistente, isoladamente, NÃO é ACK automático; o risco de perda de resultado não confirmado continua protegido.
+
+## 2026-10-30 — Passo 81: Testes isolados de v15.5.34
+- Sintaxe do userscript completo: PASS.
+- Wrapper de utilizador sem atributos de papel mas com envelope exato: reconhecido. Turno de assistente, jobId trocado, citação iniciada por texto de exemplo, status diferente ou ausência de turno: rejeitados, PASS.
+- Teste de prova transitória: recibo apresentado após clique fica registado e permanece reconhecível depois de desaparecer do DOM. Sem clique anterior, não grava ACK, PASS.
+- Recuperação com prova DOM persistida válida e vinculada ao job/conversa: limpa estado e marca tratado com 0 novos envios e 0 pedidos HTTP, PASS.
+- Confirmação explícita: aceite -> liberta job já clicado sem reenvio; cancelada -> sem alterações; troca de estado durante confirmação -> bloqueada; zero cliques -> bloqueada, PASS.
+- Teste de mocking inicial falhou por declaração duplicada de `userTurnContains` no simulador; corrigido o **simulador**, não o código de produção; execução final PASS.
+- Não houve acesso ao Chrome do utilizador, captura posterior à atualização ou comprovação do ACK end-to-end. Faltam validação visual real e confirmação do comportamento de `PASSIVEIP-019`.
