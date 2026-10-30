@@ -741,13 +741,8 @@
 
                     baselineCurrentAssistant();
                     setEnabled(true);
-                    setStatus('Ativa. A preparar o protocolo autónomo PSB_JOB_V3…');
-
-                    try {
-                        await sendProtocolPrompt(false);
-                    } catch (error) {
-                        setStatus(`A bridge ficou ativa, mas o protocolo não foi enviado: ${error.message}`);
-                    }
+                    setStatus('Bridge ativa. Protocolo existente preservado; sem reenvio automático.');
+                    scheduleDeliveryRecovery(1200);
                 }, 'primary'),
 
             button('Executar último', () => {
@@ -6544,6 +6539,12 @@
                 delay = 60000;
                 return;
             }
+            // Na versão 15.5.14 não se registava o clique já efetuado:
+            // só recuperar automaticamente se a API confirmar que o job ainda não chegou.
+            if (clicks === 0 && !saved.preparedVersion && !verify.apiOk) {
+                setStatus(`Job ${saved.jobId}: estado antigo sem prova de entrega. À espera de confirmação, sem duplicar.`);
+                return;
+            }
             if (clicks > 0 && (!verify.apiOk || Date.now() - lastClick < 60000)) {
                 setStatus(`Job ${saved.jobId}: a verificar entrega anterior, sem novo envio.`);
                 return;
@@ -6619,7 +6620,10 @@
                 const message = resultMessageForJob(id, data);
                 const prior = getInflight();
                 if (prior?.jobId === id && prior.phase !== 'delivery_clicked') {
-                    updateDeliveryState(id, 'published_pending_delivery', { message });
+                    updateDeliveryState(id, 'published_pending_delivery', {
+                        message,
+                        preparedVersion: VERSION
+                    });
                 } else if (prior?.jobId === id && !prior.message) {
                     updateDeliveryState(id, prior.phase, { message });
                 }
@@ -7147,11 +7151,9 @@
                 `${enabled() ? 'autonomia ativa nesta aba' : 'autonomia parada'}.`
             );
 
-            if (enabled()) {
-                window.setTimeout(() => {
-                    void sendProtocolPrompt(false);
-                }, 900);
-            }
+            // Não enviar o protocolo em cada recarregamento de separador:
+            // evita disputar o compositor com resultados já publicados.
+            if (enabled()) scheduleDeliveryRecovery(1000);
         })
         .catch(() => {
             setStatus('Bridge indisponível. Liga-a pelo atalho do Ambiente de Trabalho.');
