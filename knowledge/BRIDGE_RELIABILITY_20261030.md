@@ -552,3 +552,18 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Verificados no ficheiro publicado: leituras automáticas de conversa desligadas por defeito; sondas após envio desativadas; confirmação DOM; tentativa única com proteções anteriores; lock por conversa; histórico append-only preservado.
 - Link direto: https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js
 - A publicação NÃO instala nem valida automaticamente a versão no Chrome do utilizador; testar captura após atualização. Mensagens virtualizadas fora do DOM podem atrasar deteção/ACK; nenhum clique repetido é autorizado sem prova. Não houve logout, limpeza de sessão, alterações a tokens, ficheiros locais ou apps protegidas.
+
+## 2026-10-30 — Passo 69: Evidência v15.5.30 e resultado publicado PASSIVEIP-019
+- Screenshot do utilizador: painel PowerShell Bridge v15.5.30 ATIVA DOM na conversa PokéGuide; status `PSB-20261030-1946-POKEGUIDE-PASSIVEIP-019: recibo ainda não visível na conversa (modo DOM). Resultado preservado; sem reenvio.`
+- Consultado GitHub runtime: ficheiros JSON e TXT publicados no namespace `runtime/d576e00447c8d0d1`; execução `succeeded`, `exitCode=0`, início `2026-10-30T19:47:14.021Z`, conclusão `19:47:18.764Z`. Isto não comprova envio à conversa.
+- Inspeção do código v15.5.30: `userTurnContains` usa `innerText || textContent`, `sameMessageText` ou `sameResultReceipt`. Um link com texto de apresentação encurtado no DOM pode não preservar o URL completo no texto; portanto, o recibo pode estar montado e ser rejeitado, sem que isso prove que seja a causa neste caso.
+- O painel não indicava `deliveryClicks`, pelo que o screenshot isolado não permite determinar se já houve um clique de envio. Um reenvio automático nessa incerteza seria inseguro.
+
+## 2026-10-30 — Passo 70: Correspondência DOM robusta e telemetria de cliques v15.5.31
+- Branch `fix/bridge-v15-5-31-dom-receipt-20261030` criada a partir de main 15.5.30, preservando o modo DOM sem GET automático da API interna e sem mexer nas sessões.
+- `@version`/`VERSION` alteradas para 15.5.31.
+- Adicionada `domReceiptMatchesTurn`: valida o recibo `PSBRIDGE_RESULT_V2`, jobId, status e exitCode, mais os URLs do resultado e log via texto ou endereços reais de `a[href]`, SEM alargar a pesquisa a turnos do assistente.
+- `userTurnContains` passa a aceitar a correspondência robusta se a igualdade textual e o parser antigo falharem.
+- Na recuperação, o painel distingue resultado já clicado (número de `deliveryClicks`) de zero cliques registados; nenhum estado é apagado apenas por diagnóstico.
+- Regressão isolada: links visíveis abreviados com `href` exato -> ACK; URL, jobId, status ou exitCode errados -> rejeitados; nenhum turno de utilizador -> rejeitado; sintaxe completa JavaScript PASS.
+- **Limitação:** se a mensagem realmente não estiver no DOM, este patch não consegue comprovar a entrega nem reenviá-la em segurança. Não houve validação end-to-end na máquina do utilizador, nem execução de jobs ou capturas remotas pós-alteração.
