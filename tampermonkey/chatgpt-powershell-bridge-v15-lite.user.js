@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.18
+// @version      2026.10.30.15.5.19
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.18';
+    const VERSION = '15.5.19';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6674,9 +6674,21 @@
             const clicks = Number(saved.deliveryClicks || 0);
             const lastClick = Number(saved.lastDeliveryClickAt || 0);
             if (clicks >= 2) {
-                setStatus(`Job ${saved.jobId} preservado; envio por confirmar. Não duplicar cliques.`);
-                delay = 60000;
-                return;
+                // Recuperar no máximo UMA vez resultados antigos que ficaram
+                // no compositor depois de esgotar duas tentativas da v15.5.17.
+                // Sem confirmação da API, não se assume que seja seguro reenviar.
+                const canRescue = clicks === 2 &&
+                    !saved.deliveryRescueUsedVersion &&
+                    verify.apiOk &&
+                    Date.now() - lastClick >= 60000 &&
+                    composerDraftMatches(composer(), message, saved.jobId);
+                if (!canRescue) {
+                    setStatus(`Job ${saved.jobId}: resultado em espera; limite de tentativas ou confirmação insuficiente. Sem reexecução.`);
+                    delay = 60000;
+                    return;
+                }
+                updateDeliveryState(saved.jobId, saved.phase, { deliveryRescueAuthorized: VERSION });
+                saved = getInflight();
             }
             // Na versão 15.5.14 não se registava o clique já efetuado:
             // só recuperar automaticamente se a API confirmar que o job ainda não chegou.
@@ -7097,7 +7109,10 @@
                     throw new Error('O resultado não tem estado de entrega recuperável.');
                 }
                 previousClicks = Number(prior.deliveryClicks || 0);
-                if (previousClicks >= 2) {
+                const rescueAttempt = previousClicks === 2 &&
+                    prior.deliveryRescueAuthorized === VERSION &&
+                    !prior.deliveryRescueUsedVersion;
+                if (previousClicks >= 2 && !rescueAttempt) {
                     throw new Error('Limite de tentativas de entrega atingido. Nenhum novo envio.');
                 }
                 const ageMs = Date.now() - Number(prior.lastDeliveryClickAt || 0);
@@ -7111,6 +7126,8 @@
                     message: text,
                     deliveryClicks: previousClicks + 1,
                     lastDeliveryClickAt: Date.now(),
+                    deliveryRescueUsedVersion: previousClicks === 2 ? VERSION : prior.deliveryRescueUsedVersion,
+                    deliveryRescueAuthorized: '',
                     deliveryMethod
                 });
             }
