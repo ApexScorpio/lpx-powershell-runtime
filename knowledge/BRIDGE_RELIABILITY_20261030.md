@@ -142,3 +142,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Total até agora: 16 verificações PASS, sem falha.
 - O código foi testado em ambiente simulado; o funcionamento real na sessão Chrome do utilizador ainda necessita validação por screenshot e resultado do job.
 - Nenhuma sessão local foi alterada ou encerrada. Sem ficheiros de download criados, sem alterar Antigravity, TIMI, BonChat, Maestro ou FiscalGuard.
+
+## 2026-10-30 — Passo 16: Publicação e validação da 15.5.15
+- Pull Request #4 criada e integrada na branch main do repositório.
+- Commit de integração: 6c0b89a7df6a2c7560a85159245f5d806a6f4209.
+- Verificação posterior ao merge: metadados @version e const VERSION indicam 15.5.15; funções de recuperação e confirmação por API presentes.
+- Verificado novamente que recoverPendingDelivery não contém POST /run e não reexecuta jobs PowerShell.
+- Testes do DOM, backend real do Chrome, sessões de utilizador e screenshots após atualização continuam por realizar. Publicado no GitHub não significa instalado nos separadores.
