@@ -7081,20 +7081,42 @@
             if (!button || button.disabled || button.getAttribute('aria-disabled') === 'true') {
                 throw new Error('Botão Enviar indisponível; nenhuma submissão forçada.');
             }
-            // Registar a intenção ANTES do clique para manter idempotência no reload.
+            // A primeira tentativa usa um único clique. Se falhou e o servidor
+            // confirmou a ausência após o período de segurança, usar um
+            // mecanismo ALTERNATIVO na segunda tentativa, nunca ambos.
+            let deliveryMethod = 'button_click';
+            let previousClicks = 0;
             if (deliveryJobId) {
                 const prior = getInflight();
                 if (!prior || prior.jobId !== deliveryJobId) {
                     throw new Error('O resultado não tem estado de entrega recuperável.');
                 }
+                previousClicks = Number(prior.deliveryClicks || 0);
+                if (previousClicks >= 2) {
+                    throw new Error('Limite de tentativas de entrega atingido. Nenhum novo envio.');
+                }
+                const ageMs = Date.now() - Number(prior.lastDeliveryClickAt || 0);
+                if (previousClicks > 0 && ageMs < 60000) {
+                    throw new Error('Entrega anterior ainda em verificação. Nenhum novo envio.');
+                }
+                if (previousClicks > 0 && button.form &&
+                    button.type === 'submit' &&
+                    typeof button.form.requestSubmit === 'function') {
+                    deliveryMethod = 'form_request_submit';
+                }
+                // Gravar ANTES da única tentativa (inclusive após reload).
                 updateDeliveryState(deliveryJobId, 'delivery_clicked', {
                     message: text,
-                    deliveryClicks: Number(prior.deliveryClicks || 0) + 1,
-                    lastDeliveryClickAt: Date.now()
+                    deliveryClicks: previousClicks + 1,
+                    lastDeliveryClickAt: Date.now(),
+                    deliveryMethod
                 });
             }
-            // Exatamente um clique, sem requestSubmit/Enter a seguir.
-            button.click();
+            if (deliveryMethod === 'form_request_submit') {
+                button.form.requestSubmit(button);
+            } else {
+                button.click();
+            }
             for (let n = 0; n < 30; n++) {
                 if (userTurnContains(text)) return;
                 // A API autentica a entrega mesmo se o ChatGPT virtualizar
