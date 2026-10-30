@@ -298,3 +298,9 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Parser com resultado na cadeia atual à distância de 12 mensagens: identifica jobId exato, rejeita jobId diferente: PASS.
 - Simulação inicial teve duas falhas no teste (omissão de `BRIDGE_URL` no ambiente de mocking e expectativa de uma expressão textual incorreta); corrigido o **simulador**, não o código de produção. Todos os testes finais PASS.
 - Limites: testes simulados, não confirmam comportamento da v15.5.22 instalada nem sucesso real em janelas Chrome; nenhuma sessão, job ou perfil alterado.
+
+## 2026-10-30 — Passo 36: Integração em main e releitura
+- PR #9 integrada no ramo `main`, commit de merge `2e793ec9b5c533f55698e5cba72f7578eb032f3b`.
+- Relido o ficheiro JS em `main`: blob `bb7754d19b6423cc1843100d4151fa09ccac06ba`; rotina `acknowledgeDeliveredResult` presente; reconciliação antecipada presente; proteção contra texto vazio presente; sintaxe PASS.
+- Metadados `@version`/const VERSION mantidos em 15.5.19 porque a máquina do utilizador tem v15.5.22; **não** se deve anunciar uma nova versão ou sobrescrever uma versão instalada que não foi obtida e comparada.
+- Integração pública concluída. Aplicação na 15.5.22, teste de entrega end-to-end e screenshots reais permanecem pendentes.
