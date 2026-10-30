@@ -149,3 +149,12 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Verificação posterior ao merge: metadados @version e const VERSION indicam 15.5.15; funções de recuperação e confirmação por API presentes.
 - Verificado novamente que recoverPendingDelivery não contém POST /run e não reexecuta jobs PowerShell.
 - Testes do DOM, backend real do Chrome, sessões de utilizador e screenshots após atualização continuam por realizar. Publicado no GitHub não significa instalado nos separadores.
+
+## 2026-10-30 — Passo 17: Serviço local deixou de aceitar ligações
+- Utilizador abriu `http://127.0.0.1:17351/health` no Chrome e obteve `ERR_CONNECTION_REFUSED`.
+- O erro confirma recusa da ligação no endereço/porta testado; não comprova qual a causa (serviço parado, falta de listener, filtro ou problema de rede local).
+- Diagnóstico sustentado por Microsoft Learn: confirmar que a porta está em estado LISTENING, antes de agir sobre firewall ou instalações.
+- A branch main contém o userscript e documentação, mas não fornece um executável/launcher Windows validado para arrancar diretamente daqui.
+- Não executar novos jobs, não repetir os três jobs publicados, não reiniciar/encerrar aplicações, não limpar tokens nem tocar no Antigravity.
+- Ação de recuperação não destrutiva proposta: usar o atalho da Bridge que já existe no Ambiente de Trabalho (referido no próprio userscript); voltar a verificar o endpoint /health e o estado real dos jobs após o serviço regressar.
+- Recuperação local ainda NÃO executada nem confirmada.
