@@ -1023,6 +1023,11 @@
 
     function scheduleCandidate(node) {
         const assistant = closestAssistant(node);
+        // Ignorar mutações de outras zonas da página: o compositor e a barra lateral
+        // não devem adiar indefinidamente a deteção de uma resposta nova.
+        if (!assistant && node !== document.body) {
+            return;
+        }
 
         if (assistant) {
             candidateAssistant = assistant;
