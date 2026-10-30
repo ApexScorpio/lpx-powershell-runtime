@@ -48,3 +48,40 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Versão publicada em main: 15.5.13; revisão de leitura confirmada após integração.
 - A publicação não equivale a instalação automática imediata no Chrome do utilizador.
 - A verificação de serviço local, daemon, logs e screenshots do utilizador continua necessária para encerrar o incidente.
+
+## 2026-10-30 — Passo 6: Diagnóstico da dependência de scroll
+- Analisada a versão 15.5.13 do userscript na branch principal.
+- Confirmado que o MutationObserver ignorava respostas inseridas dentro de subárvores porque avaliava sobretudo os ancestrais do nó inserido.
+- Confirmado que não existia mecanismo de recuperação a partir do último turno autenticado após uma submissão cujo conteúdo não fosse montado no DOM.
+- Foram consultadas as notas MDN sobre visibilitychange e os limites de temporizadores de separadores em segundo plano; isto não demonstra qual o comportamento observado na instalação real.
+- Correção criada na branch fix/bridge-scroll-independent-20261030; nenhum processo ou sessão local alterado.
+
+## 2026-10-30 — Passo 7: Versão candidata 15.5.14
+- A deteção por MutationObserver passou a inspecionar as subárvores efetivamente adicionadas, sem percorrer todo o histórico em cada alteração.
+- Evitada a procura integral do histórico durante a geração de uma resposta.
+- Adicionadas escutas de interação no envio (botão, submit e Enter) para acionar uma verificação temporária independente do scroll.
+- Se a resposta não aparecer no DOM, a verificação consulta a conversa autenticada através do endpoint que já era utilizado na Bridge para obter anexos, sem transmitir credenciais a terceiros.
+- Só são elegíveis respostas finais do assistente, posteriores à interação que iniciou a verificação, com bloco PowerShell PSB_JOB_V3 e jobId válido.
+- Ficam excluídos exemplos em prosa, mensagens antigas, mensagens de utilizador, outputs de ferramentas e respostas ainda em streaming.
+- Um mesmo job não pode entrar simultaneamente duas vezes na rotina de processamento.
+- Não existe varrimento permanente do histórico; a verificação tem duração limitada e termina quando a resposta final é confirmada.
+- A deteção de mensagens de utilizador montadas por virtualização não aciona a consulta autenticada, evitando executar trabalhos antigos por efeito do scroll.
+- Nova versão: 15.5.14.
+
+## 2026-10-30 — Passo 8: Testes isolados
+- Validação de sintaxe JavaScript: PASS.
+- Cenário de resposta final com job legítimo sem depender do DOM: PASS.
+- Cenário de utilizador atual sem resposta e job antigo: PASS.
+- Resposta antiga: ignorada — PASS.
+- Resposta em streaming: ignorada — PASS.
+- Prosa simples, bloco sem cabeçalho e jobId-placeholder: ignorados — PASS.
+- Verificação estática adicional: PASS.
+- Resultado: 8 PASS, 0 FAIL.
+- Limite: não foram executados testes end-to-end no Chrome do utilizador; a API interna de conversa pode mudar sem aviso.
+- Não foram capturados screenshots da sessão local, por não existir acesso ao navegador do utilizador; nenhuma validação visual real foi afirmada.
+
+## 2026-10-30 — Passo 9: Testes de subárvores DOM
+- Foram simulados quatro cenários adicionais para a rotina de deteção: resposta dentro de nova subárvore, nó de resposta direto, subárvore apenas de utilizador e nó de texto.
+- Resultado: 4 PASS, 0 FAIL.
+- Total de testes isolados desta correção: 12 PASS, 0 FAIL.
+- A simulação não substitui o teste visual e funcional no Chrome do utilizador.
