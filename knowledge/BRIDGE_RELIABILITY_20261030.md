@@ -496,3 +496,22 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - GitHub runtime confirmado: TIMI PROVAS-V2-050 SUCCEEDED/exitCode 0, terminou 15:44:29 UTC; FiscalGuard AT-019 SUCCEEDED/exitCode 0, terminou 18:45:44 UTC.
 - Evidência: FiscalGuard recuperou e liberou estado automaticamente; TIMI continua por confirmar; PokéGuide avançou para novo job mas continua a depender da entrega. A captura não permite atribuir a origem exata de HTTP 429 a atividade simultânea ou outros pedidos.
 - Não foram executados jobs, reenviados resultados, alteradas sessões nem instaladas versões durante esta verificação.
+
+## 2026-10-30 — Passo 62: Correção da dependência do GET da API na primeira entrega
+- Problema funcional ainda persistente após v15.5.28: um job terminado e publicado podia ficar indefinidamente pendente quando o GET /backend-api/conversation recebia HTTP 429, mesmo com o compositor normal carregado. As execuções do PowerShell são independentes, mas a primeira entrega estava injustificadamente dependente do GET.
+- Alteração v15.5.29 isolada na branch fix/bridge-v15-5-29-once-ui-delivery-20261030, preservando a fonte original do utilizador e as melhorias anteriores.
+- Nova guarda mayUseSingleUiDelivery exige: Bridge ativa, ID real da conversa, estado publicado e preparado por versão conhecida, mensagem integral idêntica à guardada, jobId exato e links HTTPS válidos, zero tentativas/cliques anteriores, nenhum método de entrega anterior, conversa com turno do assistente e compositor disponível, sem resposta em curso, sem recibo de utilizador já visível.
+- Se estas condições forem cumpridas, o envio normal pelo compositor pode ser tentado UMA ÚNICA vez sem GET à API interna. A função de envio continua a gravar delivery_clicked/deliveryClicks=1 ANTES do clique e exige confirmação por turno da conversa depois. Se o envio não puder ser confirmado, o estado fica guardado para recuperação, sem repetição cega.
+- SendMessage passa a usar Web Lock específico por conversa para proteger contra dois cliques simultâneos de separadores da mesma conversa; outras conversas continuam independentes.
+- Se já houve clique, falta prova de publicação, a página não carregou ou a conversa está em estado incerto: não envia; continua a aguardar confirmação pela API. Não é um desbloqueio de reenvios antigos nem permite contornar limites do envio impostos pelo próprio serviço.
+- Não foi executado qualquer POST /run nem foram alterados tokens, sessões, perfis, navegadores, Antigravity, TIMI, Maestro, BonChat ou histórico anterior.
+
+## 2026-10-30 — Passo 63: Testes isolados da v15.5.29
+- Sintaxe JavaScript integral da versão corrigida: PASS.
+- Guarda local aceita estado publicado com zero cliques e rejeita: um clique prévio, timestamp de clique, ausência de preparedVersion, conversa errada, fase running, mensagem diferente, método anterior, resultado já montado, ausência de turno do assistente ou compositor: PASS.
+- Dois separadores da mesma conversa a tentar entregar: Web Lock serializa, apenas UM clique, zero consultas duplicadas à API: PASS.
+- Job anteriormente clicado com API 429: zero cliques e nenhuma edição do compositor: PASS.
+- Envio inicial autorizado com API de leitura 429: exatamente um clique e gravação de deliveryClicks=1 antes da ação: PASS.
+- Recuperação de resultado publicado e ainda não clicado: uma tentativa de envio, estado tratado quando o simulador confirma a entrega, sem consultar API ou daemon: PASS.
+- Recuperação com clique prévio ou interface não carregada: nenhum envio, nenhum ACK indevido, agendamento conservador respeitado: PASS.
+- Estes testes são simulações do código; não provam ainda que o servidor ChatGPT aceite o envio no Chrome do utilizador. Não foram capturadas imagens pós-atualização (não existe acesso ao ecrã local).
