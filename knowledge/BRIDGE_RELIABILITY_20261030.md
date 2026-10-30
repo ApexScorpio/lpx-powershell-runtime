@@ -646,3 +646,11 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmação explícita: aceite -> liberta job já clicado sem reenvio; cancelada -> sem alterações; troca de estado durante confirmação -> bloqueada; zero cliques -> bloqueada, PASS.
 - Teste de mocking inicial falhou por declaração duplicada de `userTurnContains` no simulador; corrigido o **simulador**, não o código de produção; execução final PASS.
 - Não houve acesso ao Chrome do utilizador, captura posterior à atualização ou comprovação do ACK end-to-end. Faltam validação visual real e confirmação do comportamento de `PASSIVEIP-019`.
+
+## 2026-10-30 — Passo 82: Publicação v15.5.34 verificada
+- PR #21 integrada em main, commit de merge `b505dadb69631284cb757e32779343cdac6acc67`.
+- Ficheiro userscript relido em main: `@version 2026.10.30.15.5.34`, `VERSION='15.5.34'`, blob `bdac61887e06cb04477b5dcdd6294b290f5a0dca`, sintaxe completa JavaScript PASS.
+- Confirmados: correspondência de recibos em wrappers adicionais, captura de prova DOM transitória, recuperação sem reenvio com prova persistida, botão de confirmação explícita de job previamente clicado e `AUTOMATIC_CONVERSATION_API_READS=false`.
+- Atualização direta no Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- Não foi alterado o Chrome local nem qualquer sessão, token, perfil ou backup. O job PASSIVEIP-019 tem um clique antigo sem prova DOM capturada; não o reenviar, apenas confirmar se foi recebido e, se necessário, utilizar a opção explícita depois de verificação visual.
+- A publicação e os testes isolados não provam ainda que o novo mecanismo funciona no navegador do utilizador; evidência pós-atualização pendente.
