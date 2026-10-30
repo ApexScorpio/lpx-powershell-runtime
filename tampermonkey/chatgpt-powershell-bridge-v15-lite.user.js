@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.14
+// @version      2026.10.30.15.5.15
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.14';
+    const VERSION = '15.5.15';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -54,6 +54,8 @@
     let activeJobId = '';
     let activeManifest = null;
     let sendingMessage = false;
+    let deliveryRecoveryTimer = 0;
+    let deliveryRecoveryBusy = false;
     let lastAttachmentDiagnostic = '';
     let observer = null;
     let observerRoot = null;
@@ -269,6 +271,17 @@
                 jobId: String(manifest?.jobId || id),
                 purpose: String(manifest?.purpose || '')
             },
+            phase,
+            updatedAt: Date.now()
+        });
+    }
+
+    function updateDeliveryState(id, phase, patch = {}) {
+        const prior = getInflight();
+        if (!prior || prior.jobId !== String(id)) return;
+        GM_setValue(inflightKey(), {
+            ...prior,
+            ...patch,
             phase,
             updatedAt: Date.now()
         });
@@ -6467,6 +6480,95 @@
         }
     }
 
+    function resultMessageForJob(id, data) {
+        if (!data?.resultJsonUrl) return '';
+        return [
+            'PSBRIDGE_RESULT_V2',
+            `job: ${id}`,
+            `status: ${String(data.status || '').toUpperCase()}`,
+            `exitCode: ${data.exitCode ?? 'desconhecido'}`,
+            `result: ${data.resultJsonUrl}`,
+            `log: ${data.resultUrl || ''}`,
+            'instruction: lê o resultado público acima e continua o diagnóstico. REGRA OBRIGATÓRIA: Nunca cries ficheiros para download nem anexos .ps1. Escreve o teu próximo comando PowerShell DIRETAMENTE no chat dentro de um bloco powershell # PSB_JOB_V3.'
+        ].join('\n');
+    }
+
+    function scheduleDeliveryRecovery(delay = 12000) {
+        clearTimeout(deliveryRecoveryTimer);
+        if (!enabled() || !getInflight()) return;
+        deliveryRecoveryTimer = window.setTimeout(() => {
+            void recoverPendingDelivery();
+        }, delay);
+    }
+
+    async function recoverPendingDelivery() {
+        if (deliveryRecoveryBusy || activeJobId || sendingMessage || !enabled()) return;
+        const original = getInflight();
+        if (!original?.jobId || original.phase === 'running') return;
+        deliveryRecoveryBusy = true;
+        let delay = 16000;
+        try {
+            let saved = original;
+            let message = String(saved.message || '');
+            if (!message) {
+                // A versão 15.5.14 guardava só o jobId; nunca reexecutar o POST.
+                const res = await request({
+                    method: 'GET',
+                    url: `${BRIDGE_URL}/job/${encodeURIComponent(saved.jobId)}?metadata=1&_=${Date.now()}`,
+                    headers: { 'X-Bridge-Token': token(), 'Cache-Control': 'no-cache' },
+                    timeout: 8000
+                });
+                const data = parseJson(res);
+                if (res.status < 400 && data.publishStatus === 'published' && data.resultJsonUrl) {
+                    message = resultMessageForJob(saved.jobId, data);
+                    updateDeliveryState(saved.jobId, 'published_pending_delivery', { message });
+                    saved = getInflight();
+                }
+            }
+            if (!message) {
+                setStatus(`Job ${saved.jobId}: à espera de recuperar o resultado publicado; sem reexecução.`);
+                return;
+            }
+            const verify = await checkResultDelivered(saved.jobId, message);
+            if (verify.confirmed) {
+                markHandled(saved.jobId);
+                clearInflight(saved.jobId);
+                releaseClaim(saved.jobId);
+                setStatus(`Job ${saved.jobId}: entrega confirmada após recuperação.`);
+                return;
+            }
+            const clicks = Number(saved.deliveryClicks || 0);
+            const lastClick = Number(saved.lastDeliveryClickAt || 0);
+            if (clicks >= 2) {
+                setStatus(`Job ${saved.jobId} preservado; envio por confirmar. Não duplicar cliques.`);
+                return;
+            }
+            if (clicks > 0 && (!verify.apiOk || Date.now() - lastClick < 60000)) {
+                setStatus(`Job ${saved.jobId}: a verificar entrega anterior, sem novo envio.`);
+                return;
+            }
+            if (assistantWriting()) {
+                setStatus(`Job ${saved.jobId}: a aguardar o ChatGPT terminar a resposta.`);
+                return;
+            }
+            try {
+                await sendMessage(message, null, saved.jobId);
+                markHandled(saved.jobId);
+                clearInflight(saved.jobId);
+                releaseClaim(saved.jobId);
+                setStatus(`Job ${saved.jobId}: resultado entregue e confirmado.`);
+            } catch (error) {
+                setStatus(`Job ${saved.jobId}: entrega pendente (${error.message}). Resultado preservado.`);
+                delay = 16000;
+            }
+        } catch (error) {
+            setStatus(`Recuperação do resultado pendente: ${error.message}`);
+        } finally {
+            deliveryRecoveryBusy = false;
+            if (getInflight() && enabled()) scheduleDeliveryRecovery(delay);
+        }
+    }
+
     async function monitorActiveJob() {
         const started = Date.now();
         let finishedAt = 0;
@@ -6513,27 +6615,35 @@
             if (!finishedAt) finishedAt = Date.now();
 
             if (data.publishStatus === 'published' && data.resultJsonUrl) {
-                const manifest = activeManifest;
-                saveInflight(id, manifest, 'published_pending_delivery');
-                const message = [
-                    'PSBRIDGE_RESULT_V2',
-                    `job: ${id}`,
-                    `status: ${String(data.status || '').toUpperCase()}`,
-                    `exitCode: ${data.exitCode ?? 'desconhecido'}`,
-                    `result: ${data.resultJsonUrl}`,
-                    `log: ${data.resultUrl || ''}`,
-                    'instruction: lê o resultado público acima e continua o diagnóstico. REGRA OBRIGATÓRIA: Nunca cries ficheiros para download nem anexos .ps1. Escreve o teu próximo comando PowerShell DIRETAMENTE no chat dentro de um bloco powershell # PSB_JOB_V3.'
-                ].join('\n');
+                const message = resultMessageForJob(id, data);
+                const prior = getInflight();
+                if (prior?.jobId === id && prior.phase !== 'delivery_clicked') {
+                    updateDeliveryState(id, 'published_pending_delivery', { message });
+                } else if (prior?.jobId === id && !prior.message) {
+                    updateDeliveryState(id, prior.phase, { message });
+                }
 
                 activeJobId = '';
                 activeManifest = null;
                 try {
-                    await sendMessage(message);
-                    markHandled(id);
-                    clearInflight(id);
-                    setStatus(`Job ${id}: entrega confirmada na conversa.`);
+                    const check = await checkResultDelivered(id, message);
+                    const clicks = Number(getInflight()?.deliveryClicks || 0);
+                    if (check.confirmed) {
+                        markHandled(id);
+                        clearInflight(id);
+                        setStatus(`Job ${id}: resultado confirmado na conversa.`);
+                    } else if (clicks === 0) {
+                        await sendMessage(message, null, id);
+                        markHandled(id);
+                        clearInflight(id);
+                        setStatus(`Job ${id}: resultado entregue e confirmado.`);
+                    } else {
+                        setStatus(`Job ${id}: entrega anterior ainda sem confirmação. A recuperar sem duplicar.`);
+                        scheduleDeliveryRecovery();
+                    }
                 } catch (error) {
-                    setStatus(`Job ${id} publicado; envio ao chat não confirmado (${error.message}). Resultado preservado para recuperação.`);
+                    setStatus(`Job ${id} publicado; entrega pendente (${error.message}). Resultado preservado.`);
+                    scheduleDeliveryRecovery();
                 } finally {
                     releaseClaim(id);
                 }
@@ -6659,11 +6769,63 @@
         return false;
     }
 
-    async function sendMessage(text) {
+    function apiMessageText(message) {
+        const parts = message?.content?.parts;
+        return Array.isArray(parts)
+            ? parts.map(p => typeof p === 'string' ? p : typeof p?.text === 'string' ? p.text : '').join('\n')
+            : '';
+    }
+
+    function apiContainsResult(data, id) {
+        const nodes = data?.mapping;
+        if (!nodes || typeof nodes !== 'object') return false;
+        let current = data.current_node;
+        const seen = new Set();
+        // Percorrer só a ramificação atual da conversa, não outras variantes.
+        for (let i = 0; i < 160 && current && !seen.has(current); i++) {
+            seen.add(current);
+            const item = nodes[current];
+            if (!item) break;
+            const message = item.message;
+            const content = apiMessageText(message);
+            if (message?.author?.role === 'user' &&
+                content.includes('PSBRIDGE_RESULT_V2') &&
+                content.includes('job: ' + String(id)) &&
+                new RegExp('(?:^|\\n)job: ' + String(id).replace(/[.*+?^${}()|[\]\\]/g, '\\    async function sendMessage(text) {') + '(?:\\n|$)').test(content)) {
+                return true;
+            }
+            current = item.parent;
+        }
+        return false;
+    }
+
+    async function checkResultDelivered(id, message) {
+        if (userTurnContains(message)) return { confirmed: true, apiOk: false };
+        const uuid = rawConversationUuid();
+        if (!uuid) return { confirmed: false, apiOk: false };
+        try {
+            const response = await chatgptApiFetch(
+                '/backend-api/conversation/' + encodeURIComponent(uuid),
+                { method: 'GET', headers: { Accept: 'application/json' } }
+            );
+            if (!response?.ok) return { confirmed: false, apiOk: false };
+            const data = await response.json();
+            return { confirmed: apiContainsResult(data, id), apiOk: true };
+        } catch {
+            return { confirmed: false, apiOk: false };
+        }
+    }
+
+    async function sendMessage(text, manifest = null, deliveryJobId = '') {
         if (sendingMessage) throw new Error('Já existe uma entrega de mensagem nesta aba.');
         sendingMessage = true;
         try {
-            if (userTurnContains(text)) return;
+            if (deliveryJobId) {
+                const check = await checkResultDelivered(deliveryJobId, text);
+                if (check.confirmed) return;
+            } else if (userTurnContains(text)) {
+                return;
+            }
             const editor = composer();
             if (!editor) throw new Error('Compositor do ChatGPT indisponível.');
             const draft = composerText();
@@ -6684,13 +6846,31 @@
             if (!button || button.disabled || button.getAttribute('aria-disabled') === 'true') {
                 throw new Error('Botão Enviar indisponível; nenhuma submissão forçada.');
             }
-            // Um único clique. Não combinar click, requestSubmit e Enter.
-            button.click();
-            for (let n = 0; n < 60; n++) {
-                if (userTurnContains(text)) return;
-                await wait(250);
+            // Registar a intenção ANTES do clique para manter idempotência no reload.
+            if (deliveryJobId) {
+                const prior = getInflight();
+                if (!prior || prior.jobId !== deliveryJobId) {
+                    throw new Error('O resultado não tem estado de entrega recuperável.');
+                }
+                updateDeliveryState(deliveryJobId, 'delivery_clicked', {
+                    message: text,
+                    deliveryClicks: Number(prior.deliveryClicks || 0) + 1,
+                    lastDeliveryClickAt: Date.now()
+                });
             }
-            throw new Error('O ChatGPT não confirmou a mensagem no histórico. Sem reenvio automático.');
+            // Exatamente um clique, sem requestSubmit/Enter a seguir.
+            button.click();
+            for (let n = 0; n < 30; n++) {
+                if (userTurnContains(text)) return;
+                // A API autentica a entrega mesmo se o ChatGPT virtualizar
+                // o turno do utilizador e não o montar no DOM.
+                if (deliveryJobId && n % 4 === 0) {
+                    const checked = await checkResultDelivered(deliveryJobId, text);
+                    if (checked.confirmed) return;
+                }
+                await wait(650);
+            }
+            throw new Error('Envio não confirmado; verificar a API antes de qualquer nova tentativa.');
         } finally {
             sendingMessage = false;
         }
@@ -6910,6 +7090,7 @@
     window.addEventListener('focus', () => {
         installObserver();
         scheduleCandidate(candidateAssistant || document.body);
+        scheduleDeliveryRecovery(1400);
         void rememberConversation();
     }, true);
 
@@ -6924,6 +7105,7 @@
         if (!document.hidden) {
             installObserver();
             scheduleCandidate(candidateAssistant || document.body);
+            scheduleDeliveryRecovery(1400);
         }
     });
 
@@ -6943,6 +7125,7 @@
     render();
     installObserver();
     scheduleCandidate(document.body);
+    scheduleDeliveryRecovery(3000);
     void rememberConversation();
 
     void healthCheck(true)
