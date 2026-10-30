@@ -678,3 +678,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Simulação do `backgroundHeartbeat`: com estado anterior pendente e novo manifesto, guarda/liberta e retoma inspeção; se o arquivo é recusado, preserva o bloqueio e agenda verificação; zero cliques ou resposta em curso não avançam: PASS.
 - Teste de leitura do arquivo no painel: mostra job, `NÃO CONFIRMADA`, links públicos, sem comandos/tokens; arquivo vazio não abre janela: PASS.
 - São testes simulados, NÃO uma execução end-to-end no Chrome. Foi inspecionada a captura fornecida pelo utilizador, mas não é possível recolher novo screenshot real até à atualização local. Nenhum job, cookie ou sessão foi alterado nestes testes.
+
+## 2026-10-30 — Passo 86: Publicação v15.5.35 verificada em main
+- PR #22 integrada no ramo `main`, commit de merge `11059020ef533b8fbd8add9bd047042609c6adb4`.
+- Userscript relido em `main`: `@version 2026.10.30.15.5.35`, `VERSION='15.5.35'`, blob `5fb0413b4d37e65273aa68d8dfea2b973e33cabe`, análise sintática JavaScript PASS.
+- Confirmados na fonte publicada: preservação do resultado antigo com `deliveryVerification='NOT_CONFIRMED'`, continuação de novos V3 posteriores no heartbeat e em `processJobManifest`, consulta sem alteração pelo botão `Por confirmar`, `AUTOMATIC_CONVERSATION_API_READS=false`.
+- Link direto de atualização no Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- A versão foi publicada no GitHub; NÃO foi instalada diretamente no navegador. A prova real de que o `IUC-033` foi executado e de que o `IUC-032` ficou preservado requer novo screenshot e resultado de execução após instalação local. Não fazer reexecução de `IUC-032`, não limpar sessões/perfis/tokens/backups, nem declarar o seu recibo entregue sem prova.
