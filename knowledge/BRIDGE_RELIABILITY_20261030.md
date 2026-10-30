@@ -312,3 +312,18 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - O método injeta reconciliação por API autenticada no início da recuperação, antes dos limites de tentativas, e só aplica ACK depois de confirmar `PSBRIDGE_RESULT_V2` e jobId no ramo atual. Não faz POST /run, não fecha browser, não altera perfis ou tokens, e prepara alterações no editor sem guardar automaticamente.
 - Testes locais com editor CodeMirror simulado: fonte 15.5.22 e âncoras compatíveis -> versão 15.5.23 preparada, compilação JS PASS, cópia original preservada em memória; versão 15.5.21 -> nenhuma alteração; âncora inesperada -> nenhuma alteração. Resultado real no navegador ainda não comprovado.
 - Nenhum ficheiro foi instalado na máquina do utilizador nem ocorreu gravação automática no Tampermonkey. A execução local exige abrir o editor do script, executar o patch na consola do Chrome e guardar explicitamente depois das validações.
+
+## 2026-10-30 — Passo 38: Recebida a fonte original instalada da Bridge v15.5.22
+- Recebido ficheiro de 7510 linhas identificado como `@version 2026.10.30.15.5.22` e `const VERSION = '15.5.22'`, com URLs de atualização do repositório oficial do utilizador.
+- Inspeção do código: v15.5.22 tem `API_BUDGET_KEY`, intervalo mínimo entre leituras de conversa, validação de recibos do job, `resumeAutonomy` e proteções do compositor. Essas funcionalidades não podem perder-se num downgrade para a base pública 15.5.19.
+- Foram preservados todos os códigos de sessão, armazenamento, runtime local, protocolo e URLs de instalação originais; não foi executado nenhum PowerShell, nem alterada a instalação do navegador.
+
+## 2026-10-30 — Passo 39: Versão 15.5.23 construída a partir do original
+- Atualizados `@version` e `VERSION` para 15.5.23 sobre a fonte de 15.5.22, sem utilizar como base a 15.5.19 pública.
+- A recuperação de entrega chama `checkResultDelivered` antecipadamente se existir mensagem, tentativas antigas ou fase de publicação, antes do GET local ou de qualquer limite de reenvio. ACK confirmado liberta `handled`, `inflight` e `claim`; não emite POST /run.
+- A API recebe apenas leitura autenticada, e compara um recibo `PSBRIDGE_RESULT_V2` válido do utilizador no ramo atual com o `jobId` exato. Se os outros campos divergirem, não duplica um resultado já existente do mesmo job; expõe `receiptMismatch` para diagnóstico.
+- Nenhuma entrega pode ser confirmada por texto vazio no DOM.
+- Quando a consulta está temporariamente indisponível (incluindo HTTP 429 do limitador), o estado permanece guardado e é agendada nova verificação; nenhuma tentativa de envio é consumida.
+- Testes isolados em Node 22: `node --check` PASS; recibo correto/errado, role indevida e vazio no DOM PASS; API HTTP 200 com diferença no recibo PASS; API HTTP 429 PASS; resultado existente com 99 tentativas PASS sem reenvio nem leitura do daemon; recuperação em 429 PASS sem reenvio.
+- Atualização publicada inicialmente na branch `fix/bridge-v15-5-23-from-installed-20261030`. Ficheiro relido no GitHub: versão 15.5.23, sintaxe PASS e alterações de ACK presentes.
+- Limitação: testes foram simulados; não houve acesso à instalação local do Chrome, screenshot após a atualização, nem confirmação end-to-end na máquina do utilizador.
