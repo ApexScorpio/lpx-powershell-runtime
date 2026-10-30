@@ -616,3 +616,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Tentativas prévias, timestamp de clique, conversa diferente, fase incorreta, resposta ainda a decorrer, compositor ausente, URL sem conversa e recibo já visível: rejeitados nos testes isolados: PASS.
 - Simulação integrada `recoverPendingDelivery -> sendMessageLocked` com manifesto V3, sem turno do assistente: **1 clique**, 1 escrita no compositor, 0 pedidos HTTP ao daemon/API, 1 ACK, limpeza do inflight e lock por conversa: PASS.
 - Os testes são simulados e NÃO garantem ainda o comportamento da instalação real; é necessária captura após atualizar a versão no Chrome. O ficheiro de histórico continua append-only.
+
+## 2026-10-30 — Passo 78: Publicação v15.5.33 verificada em main
+- PR #20 integrada no ramo main, commit de merge `8727015abdd103ea762cb32ed1e74419b377cb97`.
+- Ficheiro relido do repositório principal: `@version 2026.10.30.15.5.33`, `VERSION='15.5.33'`, blob `91f9af271a7f30b489ba9da482421fa85e577bbd`; sintaxe JavaScript PASS.
+- Confirmadas na versão publicada: prova persistente do manifesto original V3, fallback conservador para estados antigos, controlo de um único clique, ausência de leituras automáticas da API interna e histórico anterior preservado.
+- Link direto de atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- A publicação no GitHub não instala automaticamente a versão no Chrome. O desbloqueio real do PASSIVEIP-019 e eventual envio ao ChatGPT ainda carecem de prova em screenshot pós-atualização. Não sugerir `Executar último` nem limpar ou substituir perfis, tokens, cookies, sessões ou backups.
