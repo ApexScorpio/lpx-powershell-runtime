@@ -545,3 +545,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Clique anterior com recibo no DOM: estado libertado: PASS.
 - Conversa não montada e sem prova de primeiro envio: preservação, sem envio: PASS.
 - Estes testes são simulados; não provam ainda comportamento real em 4-5 abas, nem garantem recuperação sem DOM durante virtualização da interface. Captura visual pós-instalação e validação de não duplicação permanecem pendentes.
+
+## 2026-10-30 — Passo 68: Publicação DOM-first 15.5.30 confirmada
+- Pull request #17 integrada em main, commit 407e48c014f88f1d684e7b33d69793b5df41a0dc.
+- Ficheiro userscript relido em main: @version 2026.10.30.15.5.30, VERSION 15.5.30, blob 5ded91cb567c8f63c8dba6d9f7d25543c7a9a447, sintaxe JavaScript PASS.
+- Verificados no ficheiro publicado: leituras automáticas de conversa desligadas por defeito; sondas após envio desativadas; confirmação DOM; tentativa única com proteções anteriores; lock por conversa; histórico append-only preservado.
+- Link direto: https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js
+- A publicação NÃO instala nem valida automaticamente a versão no Chrome do utilizador; testar captura após atualização. Mensagens virtualizadas fora do DOM podem atrasar deteção/ACK; nenhum clique repetido é autorizado sem prova. Não houve logout, limpeza de sessão, alterações a tokens, ficheiros locais ou apps protegidas.
