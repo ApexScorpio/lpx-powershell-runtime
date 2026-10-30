@@ -304,3 +304,11 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Relido o ficheiro JS em `main`: blob `bb7754d19b6423cc1843100d4151fa09ccac06ba`; rotina `acknowledgeDeliveredResult` presente; reconciliação antecipada presente; proteção contra texto vazio presente; sintaxe PASS.
 - Metadados `@version`/const VERSION mantidos em 15.5.19 porque a máquina do utilizador tem v15.5.22; **não** se deve anunciar uma nova versão ou sobrescrever uma versão instalada que não foi obtida e comparada.
 - Integração pública concluída. Aplicação na 15.5.22, teste de entrega end-to-end e screenshots reais permanecem pendentes.
+
+## 2026-10-30 — Passo 37: Plano de aplicação aditiva na instalação 15.5.22 sem downgrade
+- Reconsultado o ficheiro `tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js` e a lista de branches do repositório. `main` contém a correção ACK mas a versão continua 15.5.19. A versão local 15.5.22 permanece indisponível na fonte pública.
+- Consulta do contexto de conversas anteriores e ficheiros da Library: não foi encontrada cópia verificável do código instalado 15.5.22.
+- Verificada a documentação oficial Tampermonkey: o editor incorporado usa CodeMirror; a página do editor permite consultar o código instalado. Preparado método de patch aditivo no editor, que só atua se confirmar `@version=2026.10.30.15.5.22`, `VERSION=15.5.22` e todas as âncoras exatas; interrompe sem alterações perante divergências.
+- O método injeta reconciliação por API autenticada no início da recuperação, antes dos limites de tentativas, e só aplica ACK depois de confirmar `PSBRIDGE_RESULT_V2` e jobId no ramo atual. Não faz POST /run, não fecha browser, não altera perfis ou tokens, e prepara alterações no editor sem guardar automaticamente.
+- Testes locais com editor CodeMirror simulado: fonte 15.5.22 e âncoras compatíveis -> versão 15.5.23 preparada, compilação JS PASS, cópia original preservada em memória; versão 15.5.21 -> nenhuma alteração; âncora inesperada -> nenhuma alteração. Resultado real no navegador ainda não comprovado.
+- Nenhum ficheiro foi instalado na máquina do utilizador nem ocorreu gravação automática no Tampermonkey. A execução local exige abrir o editor do script, executar o patch na consola do Chrome e guardar explicitamente depois das validações.
