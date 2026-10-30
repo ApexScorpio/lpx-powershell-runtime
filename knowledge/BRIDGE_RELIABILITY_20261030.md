@@ -334,3 +334,32 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmadas no ficheiro publicado: reconciliação antecipada, bloqueio de envios em API indisponível, controlo de orçamento de API partilhado, método `button_click` e `resumeAutonomy` da v15.5.22. Compilação sintática JavaScript: PASS.
 - Link direto de instalação/atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - Instalação e execução no Chrome do utilizador NÃO comprovadas; evitar concluir que os estados de jobs foram limpos até inspeção visual e leitura da versão do runtime no separador.
+
+## 2026-10-30 — Passo 41: Screenshot real de três janelas na v15.5.23
+- Screenshot recebido e analisado: três janelas Chrome visíveis com Bridge `v15.5.23 · ATIVA`.
+- PokéGuide: job `PSB-20261030-1515-POKEGUIDE-ROM0RETRY-002`, estado `API_HTTP_429`, resultado preservado.
+- TIMI: job `PSB-20261030-1541-TIMI-PROVAS-V2-050`, estado `API_HTTP_429`, resultado preservado.
+- FiscalGuard: job `PSB-20261030-1544-FISCALGUARD-LOGIN-IUC-016`, estado `API_HTTP_429`, resultado preservado, com erro de carregamento da própria conversa do ChatGPT visível por trás do painel.
+- Inspeção da fonte publicada 15.5.23: `chatgptApiFetch` fabrica localmente `new Response('{}',{status:429})` quando o budget partilhado de 10s ainda não expirou. A UI não distingue isto de um HTTP 429 real da API; logo, o print **não comprova** 429 de origem remota. A falha de carregamento do ChatGPT é independente até haver prova em contrário.
+- Foram detetados caminhos de entrega em `monitorActiveJob` e `sendMessage` que ainda podiam avançar para o clique sem confirmação de API disponível; a correção deve impedir esse risco.
+
+## 2026-10-30 — Passo 42: Construção isolada da v15.5.24
+- Criada branch `fix/bridge-15-5-24-rate-gate-ack-20261030` sobre o `main` com v15.5.23, que derivou da fonte real 15.5.22 do utilizador.
+- `@version` e `VERSION` elevadas para 15.5.24. Sem alterações de perfis, tokens, sessões, daemon, Antigravity, TIMI, Maestro, BonChat ou outros programas.
+- Um 429 sintetizado por controlo local recebe cabeçalho `X-LPX-Bridge-Cooldown: local`; a verificação passa a devolver `PAUSA_LOCAL_PARTILHADA` e duração até nova tentativa. Um 429 HTTP real continua classificado `API_HTTP_429` e respeita `Retry-After` / budget.
+- Introduzido `apiRetryDelay` com desfasamento estável por conversa para evitar que três abas retomem leituras simultaneamente, além do orçamento de acesso já partilhado; não força qualquer chamada à API durante a pausa.
+- `recoverPendingDelivery`, `monitorActiveJob` e `sendMessage` preservam resultados se `apiOk=false`, sem POST /run ou cliques de envio; `runApiProbe` adapta a pausa ao orçamento partilhado.
+- `apiContainsResult` aceita recibo válido com links Markdown ou diretos, exigindo simultaneamente role `user`, cabeçalho `PSBRIDGE_RESULT_V2`, jobId em linha exata, status, exitCode, result e log; rejeita conteúdo de assistente, exemplos citados e recibos incompletos.
+- O histórico e os estados dos jobs já existentes não são eliminados.
+
+## 2026-10-30 — Passo 43: Testes isolados v15.5.24
+- Sintaxe JavaScript completa: PASS.
+- Recibo Markdown no ramo atual com jobId exato: PASS. JobId diferente, role assistente, exemplo citado e recibo incompleto: todos rejeitados (PASS).
+- Resposta 429 local com cabeçalho diferenciador: `PAUSA_LOCAL_PARTILHADA`, sem afirmar erro do ChatGPT (PASS).
+- Resposta 429 real com `Retry-After=120`: backoff ~120s respeitado (PASS).
+- Resposta 200 contendo recibo válido em Markdown: ACK confirmado (PASS).
+- Estado pendente com 99 clicks pré-registados: não reenviado nem daemon consultado enquanto API em pausa, retry agendado (PASS).
+- `monitorActiveJob` com publicação concluída e API indisponível: nem `sendMessage` nem `markHandled` / `clearInflight`; retry planeado (PASS).
+- `sendMessage` com API 429: rejeita antes de procurar editor ou clicar, preservando estado (PASS).
+- Simulador intermédio precisou de definição adicional de `VERSION` no contexto de teste; após correção do teste, cenários finais PASS. Não houve correção da produção por esse erro de mocking.
+- Testes não substituem prova end-to-end em três janelas após instalação; não foi possível tirar screenshot remoto da instalação real. Screenshot do utilizador é a evidência visual inicial.
