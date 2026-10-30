@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.16
+// @version      2026.10.30.15.5.17
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.16';
+    const VERSION = '15.5.17';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -48,6 +48,8 @@
     const UNRESOLVED_PREFIX = 'lpxPsb15:unresolved:';
     const POLL_MS = 750;
     const SETTLE_MS = 900;
+    const HEARTBEAT_VISIBLE_MS = 7000;
+    const HEARTBEAT_HIDDEN_MS = 18000;
     const PUBLISH_WAIT_MS = 90 * 1000;
 
     let candidateAssistant = null;
@@ -68,6 +70,8 @@
     let apiProbeConversation = '';
     let apiProbeBusy = false;
     let apiProbeEpoch = 0;
+    let heartbeatTimer = 0;
+    let heartbeatBusy = false;
 
     function randomId() {
         return globalThis.crypto?.randomUUID?.()
@@ -418,6 +422,13 @@
         }
 
         if (!value) stopApiProbe();
+        if (value) {
+            scheduleHeartbeat(1200);
+            if (getInflight()) scheduleDeliveryRecovery(2000);
+        } else {
+            clearTimeout(heartbeatTimer);
+            heartbeatTimer = 0;
+        }
         render();
     }
 
@@ -1141,7 +1152,9 @@
     }
 
     function installObserver() {
-        const root = document.querySelector('main') || document.body;
+        // A raíz principal do ChatGPT pode ser substituída por navegação SPA.
+        // O body é estável mesmo quando o React recria o main.
+        const root = document.body;
         if (observerRoot === root) return;
         observer?.disconnect();
         observerRoot = root;
@@ -1172,6 +1185,45 @@
             subtree: true,
             characterData: true
         });
+    }
+
+    function scheduleHeartbeat(delay = null) {
+        clearTimeout(heartbeatTimer);
+        heartbeatTimer = 0;
+        if (!enabled()) return;
+        const period = document.hidden ? HEARTBEAT_HIDDEN_MS : HEARTBEAT_VISIBLE_MS;
+        heartbeatTimer = window.setTimeout(() => {
+            heartbeatTimer = 0;
+            void backgroundHeartbeat().finally(() => {
+                // O foco NUNCA é pré-requisito; tempos podem ser adiados pelo Chrome.
+                scheduleHeartbeat();
+            });
+        }, delay == null ? period : delay);
+    }
+
+    async function backgroundHeartbeat() {
+        if (!enabled() || heartbeatBusy) return;
+        heartbeatBusy = true;
+        try {
+            installObserver();
+            if (activeJobId || deliveryRecoveryBusy || sendingMessage) return;
+
+            if (getInflight()) {
+                // Não reexecutar o job: apenas recuperar a entrega ou consulta.
+                if (!deliveryRecoveryTimer) scheduleDeliveryRecovery(1200);
+                return;
+            }
+            // Se o React não emitiu mutações observadas, encontrar a resposta
+            // mais recente sem clicar, fazer scroll ou ativar a janela.
+            if (assistantWriting()) return;
+            const newest = latestAssistantFallback();
+            if (newest) candidateAssistant = newest;
+            await inspectCandidate(false);
+        } catch (error) {
+            console.warn('[LPX PSB] Heartbeat independente do foco:', error?.message || error);
+        } finally {
+            heartbeatBusy = false;
+        }
     }
 
     function generateAutoJobId(codeText) {
@@ -6564,6 +6616,7 @@
         clearTimeout(deliveryRecoveryTimer);
         if (!enabled() || !getInflight()) return;
         deliveryRecoveryTimer = window.setTimeout(() => {
+            deliveryRecoveryTimer = 0;
             void recoverPendingDelivery();
         }, delay);
     }
@@ -7061,6 +7114,7 @@
     function queueApiProbe(delay, epoch) {
         clearTimeout(apiProbeTimer);
         apiProbeTimer = window.setTimeout(() => {
+            apiProbeTimer = 0;
             if (epoch === apiProbeEpoch) void runApiProbe(epoch);
         }, delay);
     }
@@ -7211,6 +7265,7 @@
         stopApiProbe();
         candidateAssistant = null;
         installObserver();
+        scheduleHeartbeat(1200);
         render();
     }, true);
 
@@ -7239,6 +7294,7 @@
     installObserver();
     scheduleCandidate(document.body);
     scheduleDeliveryRecovery(3000);
+    scheduleHeartbeat(1200);
     void rememberConversation();
 
     void healthCheck(true)
