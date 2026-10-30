@@ -266,3 +266,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Simulação de `sendMessage`: seis cenários PASS (resgate autorizado, sem permissão, já consumido, recente, texto alterado, tentativa ainda não entregue).
 - Simulação de `recoverPendingDelivery`: quatro cenários PASS (autorização segura, API indisponível, rascunho distinto, intervalo não cumprido).
 - Sintaxe JavaScript PASS. Não foi realizado teste end-to-end no Chrome local.
+
+## 2026-10-30 — Passo 32: Integração e verificação final da correção de entrega
+- PR #8 integrada na branch main; commit de integração c2dd12f4c78a3cedec9eb2f20877d89738854334.
+- Ficheiro de userscript relido em main: versão 15.5.19 no código e metadados, sintaxe JavaScript PASS.
+- Confirmadas no código as funções de identidade de resultados, resgate único de legacy drafts, marcação persistente antes do envio e `requestSubmit(button)` para botões submit reais.
+- Vários resultados já em espera nas caixas do utilizador ainda precisam de entrega real comprovada na conversa; a atualização no GitHub não efetua a submissão do Chrome.
+- O teste de aceitação requer a mensagem PSBRIDGE_RESULT_V2 passar para uma mensagem de utilizador no histórico, com o mesmo jobId, sem nova execução PowerShell.
