@@ -7081,10 +7081,15 @@
             if (!button || button.disabled || button.getAttribute('aria-disabled') === 'true') {
                 throw new Error('Botão Enviar indisponível; nenhuma submissão forçada.');
             }
-            // A primeira tentativa usa um único clique. Se falhou e o servidor
-            // confirmou a ausência após o período de segurança, usar um
-            // mecanismo ALTERNATIVO na segunda tentativa, nunca ambos.
-            let deliveryMethod = 'button_click';
+            // Um único mecanismo por tentativa: submit nativo quando o botão
+            // pertence realmente a um formulário e é do tipo submit.
+            // Para botões React do tipo button, usar o próprio click.
+            // O clique por si só nunca equivale a entrega confirmada.
+            let deliveryMethod = (
+                button.form &&
+                button.type === 'submit' &&
+                typeof button.form.requestSubmit === 'function'
+            ) ? 'form_request_submit' : 'button_click';
             let previousClicks = 0;
             if (deliveryJobId) {
                 const prior = getInflight();
@@ -7099,11 +7104,8 @@
                 if (previousClicks > 0 && ageMs < 60000) {
                     throw new Error('Entrega anterior ainda em verificação. Nenhum novo envio.');
                 }
-                if (previousClicks > 0 && button.form &&
-                    button.type === 'submit' &&
-                    typeof button.form.requestSubmit === 'function') {
-                    deliveryMethod = 'form_request_submit';
-                }
+                // Reutilizar o mecanismo semanticamente correto nas tentativas
+                // permitidas. Nunca executar click e requestSubmit em sequência.
                 // Gravar ANTES da única tentativa (inclusive após reload).
                 updateDeliveryState(deliveryJobId, 'delivery_clicked', {
                     message: text,
@@ -7126,6 +7128,9 @@
                     if (checked.confirmed) return;
                 }
                 await wait(650);
+            }
+            if (deliveryJobId && composerDraftMatches(editor, text, deliveryJobId)) {
+                throw new Error('O resultado do próprio job continua preparado na caixa; a submissão não foi confirmada. Sem novo envio imediato.');
             }
             throw new Error('Envio não confirmado; verificar a API antes de qualquer nova tentativa.');
         } finally {
