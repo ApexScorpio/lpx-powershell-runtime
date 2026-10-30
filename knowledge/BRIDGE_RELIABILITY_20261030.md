@@ -41,3 +41,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Sintaxe novamente validada com sucesso.
 - Consultada documentação MDN: document.execCommand('insertText') é uma API antiga, com comportamento dependente do navegador e que exige validação no Chrome real.
 - A correção não pressupõe que esta API funcione em todas as versões do ChatGPT; uma falha mantém o envio como não confirmado.
+
+## 2026-10-30 — Passo 5: Publicação da versão
+- PR #1 criada e integrada na branch main.
+- Commit de integração: 8ae2b8edcfb9122c5d135b60b001092b79722d11.
+- Versão publicada em main: 15.5.13; revisão de leitura confirmada após integração.
+- A publicação não equivale a instalação automática imediata no Chrome do utilizador.
+- A verificação de serviço local, daemon, logs e screenshots do utilizador continua necessária para encerrar o incidente.
