@@ -85,3 +85,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Resultado: 4 PASS, 0 FAIL.
 - Total de testes isolados desta correção: 12 PASS, 0 FAIL.
 - A simulação não substitui o teste visual e funcional no Chrome do utilizador.
+
+## 2026-10-30 — Passo 10: Integração da correção sem scroll
+- Pull Request #2 criado e integrado na branch main.
+- Commit de integração: 49c61cd805988174c867b5be78650a2d10b9dee4.
+- Ficheiro de userscript relido na branch main e confirmada a versão 15.5.14, com deteção de subárvores, recuperação por API autenticada e mutex de jobs.
+- A publicação no GitHub não garante que o Tampermonkey no Chrome já tenha atualizado a versão instalada.
+- Validação do Chrome local e screenshot da execução sem scroll continuam pendentes; não foram reportadas como concluídas.
