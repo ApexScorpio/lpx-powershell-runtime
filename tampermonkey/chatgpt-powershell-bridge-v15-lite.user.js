@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.33
+// @version      2026.10.30.15.5.34
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.33';
+    const VERSION = '15.5.34';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -1185,6 +1185,7 @@
                 // Alterações de texto são observadas dentro da resposta atual.
                 if (record.type === 'characterData') {
                     scheduleCandidate(record.target);
+                    if (getInflight()) rememberDomReceipt();
                     continue;
                 }
 
@@ -1194,6 +1195,7 @@
                 for (const added of record.addedNodes) {
                     if (containsNewUserTurn(added)) {
                         candidateAssistant = null;
+                        rememberDomReceipt();
                         // Uma mensagem antiga também pode ser montada por virtualização;
                         // só eventos reais de envio iniciam a consulta autenticada.
                     }
@@ -6840,6 +6842,14 @@
         try {
             let saved = original;
             let message = String(saved.message || '');
+            if (persistentDomAck(saved) || (Number(saved.deliveryClicks || 0) > 0 &&
+                message && userTurnContains(message))) {
+                markHandled(saved.jobId);
+                clearInflight(saved.jobId);
+                releaseClaim(saved.jobId);
+                setStatus(`Job ${saved.jobId}: recibo confirmado no DOM e estado libertado sem reenvio.`);
+                return;
+            }
             // Reconciliar a entrega ANTES de obter o resultado do daemon ou
             // aplicar o limite de tentativas. Não gera novo POST /run.
             let preflight = null;
@@ -7309,7 +7319,61 @@
                 return true;
             }
         }
+        // Alguns layouts usam containers de turno sem data-author-role
+        // de utilizador. Aceitar apenas um envelope COMPLETO no início
+        // de um turno não identificado como assistente; não aceitar
+        // explicações, exemplos ou texto de código em respostas.
+        const expected = resultReceipt(text);
+        if (!expected) return false;
+        const turns = document.querySelectorAll(
+            '[data-testid^="conversation-turn-"], [data-message-id], article'
+        );
+        for (let i = turns.length - 1; i >= 0; i--) {
+            const turn = turns[i];
+            const ownRole = turn.getAttribute?.('data-message-author-role') ||
+                turn.getAttribute?.('data-author-role');
+            if (ownRole === 'assistant' ||
+                turn.matches?.('[data-testid*="assistant"], [data-testid*="agent"], .agent-turn') ||
+                turn.closest?.('[data-message-author-role="assistant"], [data-author-role="assistant"], .agent-turn') ||
+                turn.querySelector?.('[data-message-author-role="assistant"], [data-author-role="assistant"], [data-testid*="assistant-message"]')) {
+                continue;
+            }
+            // Se existir um descendente explicitamente user, a prova
+            // continua a ser rigorosamente associada a esse descendente.
+            const userPart = turn.querySelector?.(
+                '[data-message-author-role="user"], [data-author-role="user"], [data-testid*="user-message"]'
+            );
+            const part = userPart || turn;
+            const rendered = String(part.innerText || part.textContent || '');
+            const normalized = normalizeOutgoingText(rendered);
+            if (!normalized.startsWith('PSBRIDGE_RESULT_V2 job: ' + expected.jobId + ' ')) continue;
+            if (sameResultReceipt(rendered, text) ||
+                domReceiptMatchesTurn(part, text)) return true;
+        }
         return false;
+    }
+
+    function persistentDomAck(saved) {
+        return Boolean(saved?.deliveryDomReceiptSeen === true &&
+            saved.deliveryDomReceiptJobId === saved.jobId &&
+            saved.deliveryDomReceiptConversation === conversationId() &&
+            Number(saved.deliveryClicks || 0) > 0 &&
+            resultReceipt(saved.message)?.jobId === saved.jobId);
+    }
+
+    function rememberDomReceipt() {
+        const saved = getInflight();
+        if (!saved?.jobId || !saved.message ||
+            Number(saved.deliveryClicks || 0) < 1 ||
+            persistentDomAck(saved) || !userTurnContains(saved.message)) return false;
+        updateDeliveryState(saved.jobId, saved.phase, {
+            deliveryDomReceiptSeen: true,
+            deliveryDomReceiptJobId: saved.jobId,
+            deliveryDomReceiptConversation: conversationId(),
+            deliveryDomReceiptObservedAt: Date.now()
+        });
+        scheduleDeliveryRecovery(200);
+        return true;
     }
 
     function apiMessageText(message) {
@@ -7546,7 +7610,10 @@
             }
             button.click();
             for (let n = 0; n < 30; n++) {
-                if (userTurnContains(text)) return;
+                if (userTurnContains(text)) {
+                    if (deliveryJobId) rememberDomReceipt();
+                    return;
+                }
                 // Só no modo alternativo: verificar histórico quando o
                 // ChatGPT não montou o recibo de utilizador no DOM.
                 if (AUTOMATIC_CONVERSATION_API_READS && deliveryJobId && n === 29) {
