@@ -522,3 +522,26 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Validadas no ficheiro publicado: função de autorização da primeira entrega UI, lock de envio por conversa, bloqueio de segundo clique se o estado mudou, persistência de deliveryClicks antes do clique e conservação do limitador remoto da API.
 - Atualização disponível no endereço https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js
 - A versão foi publicada, não instalada automaticamente no Chrome. Testes isolados passaram; falta screenshot real da v15.5.29 e prova end-to-end da entrega. Jobs com clique anterior permanecem protegidos, podendo continuar pendentes até confirmação por DOM ou API. Não há garantia de superar limites do servidor para mensagens de saída.
+
+## 2026-10-30 — Passo 65: Identificação da origem histórica da dependência da API
+- Utilizador reporta que versões antigas operavam com 4 ou 5 abas durante todo o dia sem os bloqueios atuais de API; perguntou se a API interna é necessária. Não há evidência que justifique exigir essa dependência para PowerShell local e envio normal de mensagens.
+- Histórico GitHub verificado: v15.5.11/15.5.12/15.5.13 usavam MutationObserver e interface normal, sem checkResultDelivered e sem apiProbe, apesar de alguns acessos à API de conversa para anexos; v15.5.14 acrescentou recuperação de turnos virtualizados, e v15.5.15 tornou a leitura de conversa dependência do ACK e da recuperação de entregas.
+- A rota /backend-api/conversation é interna ao ChatGPT; não corresponde à API pública do desenvolvedor nem a uma API que o utilizador precise de contratar. A leitura alternativa pode ser útil para turnos virtualizados, mas não deve obrigar o caminho normal a parar por 429.
+
+## 2026-10-30 — Passo 66: Modo DOM-first sem consultas automáticas, v15.5.30
+- Branch fix/bridge-dom-first-20261030 criada sobre main 15.5.29, preservando toda a base instalada v15.5.22, as proteções posteriores e os estados persistentes.
+- @version e VERSION elevadas para 15.5.30. Introduzida constante AUTOMATIC_CONVERSATION_API_READS=false. O painel mostra DOM para distinguir o modo.
+- armApiProbe e runApiProbe desativam a sondagem automática de /backend-api/conversation. checkResultDelivered consulta primeiro o turno de utilizador no DOM, devolvendo resultado sem confirmação quando o recibo não está visível, sem GET à API interna.
+- A confirmação posterior ao clique não faz consulta à API no modo DOM. O primeiro envio pelo compositor continua sujeito à validação de resultado publicado, jobId, página e zero cliques anteriores, com registo antes do clique e Web Lock por conversa. Falhas não autorizam reenvio.
+- O código para recurso alternativo de API permanece preservado, mas desativado por defeito; tal como nas versões antigas, mensagens que o ChatGPT não monte no DOM podem não ser detetadas ou confirmadas até se tornarem visíveis.
+- Não há alteração a cookies, sessões, token, perfis, backups, Antigravity ou trabalhos já publicados. Não há novos POST /run. Nenhum processo local foi reiniciado.
+
+## 2026-10-30 — Passo 67: Testes isolados de regressão v15.5.30
+- Sintaxe do script completo: PASS.
+- Cinco instâncias de sonda de API simuladas e tentativas de armApiProbe: zero consultas à API: PASS.
+- Recibo no DOM confirma job; ausência de recibo não consulta a API: PASS.
+- Recuperação de primeiro resultado publicado preparado com zero cliques: um único envio via compositor, sem leitura API ou pedido ao daemon, e ACK após simulação de entrega: PASS.
+- Clique anterior e sem recibo: estado preservado, sem novo envio: PASS.
+- Clique anterior com recibo no DOM: estado libertado: PASS.
+- Conversa não montada e sem prova de primeiro envio: preservação, sem envio: PASS.
+- Estes testes são simulados; não provam ainda comportamento real em 4-5 abas, nem garantem recuperação sem DOM durante virtualização da interface. Captura visual pós-instalação e validação de não duplicação permanecem pendentes.
