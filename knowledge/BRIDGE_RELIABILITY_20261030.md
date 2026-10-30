@@ -34,3 +34,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmar semântica do endpoint /job em caso de timeout, HTTP 404 e expiração real do lado servidor.
 - Confirmar processo de atualização do Tampermonkey da versão 15.5.11.
 - Não apresentar a correção como testada no Windows até receber evidência real.
+
+## 2026-10-30 — Passo 4: Proteção da deteção e revisão de compatibilidade
+- A observação de alterações ignora mutações alheias às respostas do assistente, para impedir que alterações contínuas no compositor adiem a deteção de jobs.
+- A monitorização também acompanha jobs iniciados manualmente através do painel, mesmo quando a autonomia não está ativa.
+- Sintaxe novamente validada com sucesso.
+- Consultada documentação MDN: document.execCommand('insertText') é uma API antiga, com comportamento dependente do navegador e que exige validação no Chrome real.
+- A correção não pressupõe que esta API funcione em todas as versões do ChatGPT; uma falha mantém o envio como não confirmado.
