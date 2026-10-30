@@ -6612,6 +6612,19 @@
         ].join('\n');
     }
 
+    async function acknowledgeDeliveredResult(id, message = '') {
+        // Consultar a conversa antes de limitar novos envios ou exigir
+        // resultados no serviço local. Não reexecutar o job.
+        const checked = await checkResultDelivered(id, message);
+        if (!checked.confirmed) return false;
+
+        markHandled(id);
+        clearInflight(id);
+        releaseClaim(id);
+        setStatus(`Job ${id}: entrega confirmada no ChatGPT. Estado libertado sem reexecução.`);
+        return true;
+    }
+
     function scheduleDeliveryRecovery(delay = 12000) {
         clearTimeout(deliveryRecoveryTimer);
         if (!enabled() || !getInflight()) return;
@@ -6630,6 +6643,12 @@
         try {
             let saved = original;
             let message = String(saved.message || '');
+
+            // Confirmar primeiro a presença real no histórico do ChatGPT:
+            // aplicar o ACK mesmo com tentativas esgotadas, rascunho
+            // pendente ou registo do daemon já indisponível.
+            if (await acknowledgeDeliveredResult(saved.jobId, message)) return;
+
             if (!message) {
                 // A versão 15.5.14 guardava só o jobId; nunca reexecutar o POST.
                 const res = await request({
@@ -7002,7 +7021,8 @@
         const nodes = document.querySelectorAll(
             '[data-message-author-role="user"], [data-author-role="user"], [data-testid*="user-message"]'
         );
-        const probe = text.trim();
+        const probe = String(text || '').trim();
+        if (!probe) return false;
         for (let i = nodes.length - 1; i >= Math.max(0, nodes.length - 6); i--) {
             const content = String(nodes[i].innerText || nodes[i].textContent || '').trim();
             if (content === probe || (content.includes(probe.slice(0, 80)) &&
@@ -7044,7 +7064,8 @@
     }
 
     async function checkResultDelivered(id, message) {
-        if (userTurnContains(message)) return { confirmed: true, apiOk: false };
+        // Uma mensagem ausente nunca comprova entrega pelo DOM.
+        if (message && userTurnContains(message)) return { confirmed: true, apiOk: false };
         const uuid = rawConversationUuid();
         if (!uuid) return { confirmed: false, apiOk: false };
         try {
