@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.34
+// @version      2026.10.30.15.5.35
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.34';
+    const VERSION = '15.5.35';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -51,6 +51,7 @@
     const CLAIM_TTL_MS = 10 * 60 * 1000;
     const INFLIGHT_PREFIX = 'lpxPsb15:inflight:';
     const UNRESOLVED_PREFIX = 'lpxPsb15:unresolved:';
+    const PARKED_UNCONFIRMED_PREFIX = 'lpxPsb15:preservedUnconfirmedResult:v1:';
     const POLL_MS = 750;
     const SETTLE_MS = 900;
     const HEARTBEAT_VISIBLE_MS = 7000;
@@ -309,6 +310,133 @@
         }
     }
 
+
+    function parkedUnconfirmedKey() {
+        return PARKED_UNCONFIRMED_PREFIX + simpleHash(conversationId());
+    }
+
+    function parkedUnconfirmedJobs() {
+        const value = GM_getValue(parkedUnconfirmedKey(), []);
+        return Array.isArray(value) ? value : [];
+    }
+
+    function showPreservedUnconfirmedResults() {
+        const records = parkedUnconfirmedJobs();
+        if (!records.length) {
+            setStatus('Não existem entregas antigas por confirmar nesta conversa.');
+            return;
+        }
+        // Apenas links públicos de resultados; nunca imprimir comandos,
+        // tokens, perfis, cookies ou credenciais.
+        const list = records.map(record => {
+            const receipt = resultReceipt(record.message);
+            return [
+                'Job: ' + record.jobId,
+                'Entrega: NÃO CONFIRMADA',
+                'Cliques: ' + Number(record.deliveryClicks || 0),
+                'Preservado em: ' + String(record.parkedAt || ''),
+                'Seguiu para: ' + String(record.nextJobId || ''),
+                'Resultado: ' + String(receipt?.resultUrl || ''),
+                'Log: ' + String(receipt?.logUrl || '')
+            ].join('\n');
+        }).join('\n\n');
+        window.prompt(
+            'Resultados anteriores com confirmação pendente. ' +
+            'Registo de leitura, sem reenvio nem execução:',
+            list
+        );
+    }
+
+    function jobClockMinute(id) {
+        const match = String(id || '').match(
+            /^PSB-(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})-[A-Z0-9-]+-\d{3}$/i
+        );
+        if (!match) return NaN;
+        const y = Number(match[1]), m = Number(match[2]), d = Number(match[3]);
+        const h = Number(match[4]), minute = Number(match[5]);
+        const stamp = Date.UTC(y, m - 1, d, h, minute);
+        const date = new Date(stamp);
+        if (date.getUTCFullYear() !== y || date.getUTCMonth() !== m - 1 ||
+            date.getUTCDate() !== d || date.getUTCHours() !== h ||
+            date.getUTCMinutes() !== minute) return NaN;
+        return stamp / 60000;
+    }
+
+    async function preserveUnconfirmedAndAdvance(pending, nextManifest, assistant) {
+        // Há um novo comando posterior na mesma conversa, mas o recibo
+        // anterior NÃO ficou comprovado. Preservar o estado completo com
+        // rótulo "entrega não confirmada"; nunca declarar entrega feita.
+        if (!navigator.locks?.request || !enabled() || assistantWriting() ||
+            !assistant || isUserTurn(assistant) ||
+            nextManifest?.protocol !== 'PSB_JOB_V3' ||
+            !nextManifest?.jobId || !nextManifest?.purpose ||
+            !String(nextManifest.command || '').trim() ||
+            !rawConversationUuid() || !pending?.jobId ||
+            pending.conversation !== conversationId() ||
+            pending.phase !== 'delivery_clicked' ||
+            Number(pending.deliveryClicks || 0) !== 1 ||
+            !Number(pending.lastDeliveryClickAt || 0) ||
+            !pending.preparedVersion ||
+            !pending.manifest || pending.manifest.jobId !== pending.jobId ||
+            pending.manifest.protocol !== 'PSB_JOB_V3' ||
+            resultReceipt(pending.message)?.jobId !== pending.jobId ||
+            userTurnContains(pending.message) || persistentDomAck(pending)) return false;
+
+        const oldMinute = jobClockMinute(pending.jobId);
+        const newMinute = jobClockMinute(nextManifest.jobId);
+        if (!Number.isFinite(oldMinute) || !Number.isFinite(newMinute) ||
+            newMinute <= oldMinute || newMinute - oldMinute > 1440) return false;
+
+        // O novo manifesto deve ter sido lido do turno REAL do assistente.
+        // A mera existência de um jobId mais recente não chega.
+        const candidates = manifestsIn(assistant);
+        if (!candidates.some(candidate =>
+            candidate.protocol === 'PSB_JOB_V3' &&
+            candidate.jobId === nextManifest.jobId &&
+            candidate.command === nextManifest.command
+        )) return false;
+
+        return navigator.locks.request(
+            'lpx-psb15-preserve-pending:' + simpleHash(conversationId()),
+            { mode: 'exclusive' },
+            async () => {
+                const current = getInflight();
+                if (!current || current.jobId !== pending.jobId ||
+                    current.conversation !== pending.conversation ||
+                    current.message !== pending.message ||
+                    current.phase !== 'delivery_clicked' ||
+                    Number(current.deliveryClicks || 0) !== 1 ||
+                    !Number(current.lastDeliveryClickAt || 0) ||
+                    userTurnContains(current.message) || persistentDomAck(current)) return false;
+
+                const key = parkedUnconfirmedKey();
+                const records = parkedUnconfirmedJobs();
+                if (!records.some(item => item.jobId === current.jobId)) {
+                    records.push({
+                        ...current,
+                        parkedAt: new Date().toISOString(),
+                        nextJobId: String(nextManifest.jobId),
+                        deliveryVerification: 'NOT_CONFIRMED',
+                        preservationReason: 'NEW_ASSISTANT_JOB_AFTER_PREVIOUS_SEND_CLICK'
+                    });
+                    GM_setValue(key, records);
+                    const persisted = parkedUnconfirmedJobs();
+                    if (!persisted.some(item => item.jobId === current.jobId &&
+                        item.message === current.message &&
+                        item.deliveryVerification === 'NOT_CONFIRMED')) return false;
+                }
+
+                // Evitar reexecutar o antigo sem fingir que o ACK foi recebido.
+                markHandled(current.jobId);
+                clearInflight(current.jobId);
+                releaseClaim(current.jobId);
+                setStatus('Job ' + current.jobId +
+                    ': entrega não confirmada, referência integral preservada. ' +
+                    'A continuar para ' + nextManifest.jobId + ' sem repetir o anterior.');
+                return true;
+            }
+        );
+    }
 
     function unresolvedKey() {
         return UNRESOLVED_PREFIX + simpleHash(conversationId());
@@ -784,7 +912,10 @@
 
         const title = document.createElement('div');
         title.id = 'lpx-psb15-title';
-        title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'} · DOM`;
+        title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'} · DOM` +
+            (parkedUnconfirmedJobs().length
+                ? ` · ${parkedUnconfirmedJobs().length} resultado(s) por confirmar`
+                : '');
 
         const header = document.createElement('div');
         header.id = 'lpx-psb15-header';
@@ -848,6 +979,10 @@
             button('Confirmar recebido', () => {
                 void confirmAlreadyDeliveredManually();
             }),
+
+            ...(parkedUnconfirmedJobs().length ? [
+                button('Por confirmar', showPreservedUnconfirmedResults)
+            ] : []),
 
             button('Cancelar', () => {
                 void cancelActive();
@@ -1250,7 +1385,28 @@
             if (activeJobId || deliveryRecoveryBusy || sendingMessage) return;
 
             if (getInflight()) {
-                // Não reexecutar o job: apenas recuperar a entrega ou consulta.
+                // Se o assistente já produziu um novo job após um clique
+                // anterior, tentar continuar sem descartar a referência
+                // do resultado anterior. Nada é reenviado automaticamente.
+                const pending = getInflight();
+                if (pending?.phase === 'delivery_clicked' &&
+                    Number(pending.deliveryClicks || 0) === 1 &&
+                    !assistantWriting()) {
+                    const newest = latestAssistantFallback();
+                    if (newest) {
+                        const successors = manifestsIn(newest).filter(item =>
+                            item.protocol === 'PSB_JOB_V3' &&
+                            item.jobId !== pending.jobId
+                        );
+                        for (const next of successors) {
+                            if (await preserveUnconfirmedAndAdvance(pending, next, newest)) {
+                                candidateAssistant = newest;
+                                await inspectCandidate(false);
+                                return;
+                            }
+                        }
+                    }
+                }
                 if (!deliveryRecoveryTimer) scheduleDeliveryRecovery(1200);
                 return;
             }
@@ -6538,9 +6694,16 @@
         // O botão manual também respeita esta ordem.
         const pendingDelivery = getInflight();
         if (pendingDelivery && pendingDelivery.jobId !== jobId) {
-            setStatus(`Job ${jobId} em espera: concluir primeiro a entrega de ${pendingDelivery.jobId}.`);
-            scheduleDeliveryRecovery(1200);
-            return;
+            // Um novo manifesto do assistente pode avançar sem ACK
+            // apenas após preservar integralmente o estado anterior.
+            const parked = !forced && await preserveUnconfirmedAndAdvance(
+                pendingDelivery, manifest, assistant
+            );
+            if (!parked) {
+                setStatus(`Job ${jobId} em espera: resultado anterior ${pendingDelivery.jobId} sem confirmação. Não reexecutar.`);
+                scheduleDeliveryRecovery(1200);
+                return;
+            }
         }
         if (sendingMessage || deliveryRecoveryBusy || (activeJobId && activeJobId !== jobId)) return;
         if (assistantWriting()) {

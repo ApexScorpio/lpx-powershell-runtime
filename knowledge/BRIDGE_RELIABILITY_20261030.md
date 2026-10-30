@@ -654,3 +654,27 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Atualização direta no Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - Não foi alterado o Chrome local nem qualquer sessão, token, perfil ou backup. O job PASSIVEIP-019 tem um clique antigo sem prova DOM capturada; não o reenviar, apenas confirmar se foi recebido e, se necessário, utilizar a opção explícita depois de verificação visual.
 - A publicação e os testes isolados não provam ainda que o novo mecanismo funciona no navegador do utilizador; evidência pós-atualização pendente.
+
+## 2026-10-30 — Passo 83: Screenshot v15.5.34 com FiscalGuard IUC-032 bloqueante
+- Screenshot do utilizador analisado visualmente: `PowerShell Bridge v15.5.34 · ATIVA · DOM`; job `PSB-20261030-2039-FISCALGUARD-IUC-UNICODE-032` tem **1 clique registado**, mas `recibo não encontrado no DOM`, sem reenvio.
+- Na mesma conversa, a resposta mais recente do assistente contém um novo comando `PSB-20261030-2042-FISCALGUARD-IUC-VALORES-033`. Não é prova automática do recebimento do recibo anterior, mas é uma continuação efetiva que fica bloqueada pelo estado anterior.
+- Consultado o GitHub branch runtime: o `IUC-032` tem JSON e TXT, `status=succeeded`, `exitCode=0`, finalização `2026-10-30T20:40:00.725Z`. Ainda não existem ficheiros publicados do `IUC-033` no snapshot consultado.
+- Causa de bloqueio validada no código: `processJobManifest` recusa executar um job diferente quando `getInflight` refere um anterior; `backgroundHeartbeat` termina cedo sempre que há entrega pendente; a confirmação pela API automática está desativada e o DOM não encontrou o recibo. Não repetir o IUC-032 nem fazer ACK fictício.
+
+## 2026-10-30 — Passo 84: Nova estratégia v15.5.35, continuação sem presumir ACK
+- Criada branch `fix/bridge-v15-5-35-unconfirmed-continuation-20261030` sobre main v15.5.34; versão elevada para 15.5.35.
+- Quando um resultado anterior V3 foi publicado e tem **exatamente um clique registado**, mas permanece sem confirmação, e existe um **novo manifesto PSB_JOB_V3 genuíno do assistente** com jobId cronologicamente posterior até 24h, a Bridge pode preservar a informação completa anterior num arquivo persistente específico dessa conversa, rotulado `NOT_CONFIRMED`, e prosseguir para o novo comando. O arquivo mantém jobId, finalidade, mensagem com os URLs de resultado e log, timestamp, estado anterior e job sucessor.
+- A operação é protegida por Web Lock por conversa, releitura do estado imediatamente antes de arquivar, gravação do arquivo antes de limpar inflight e verificação de persistência. Marca o job antigo como não reexecutável, mas **nunca afirma que o recibo foi entregue**. Limpa exclusivamente o estado bloqueante antigo depois da preservação validada.
+- Requisitos adicionais: conversa com ID real, Bridge ativa, resposta terminada, turno do assistente identificado pelo parser, manifesto V3 com comando válido, versão original preparada, clique e timestamp, mensagem/manifesto original correspondentes, sem prova de entrega existente. Se qualquer condição falhar, bloqueia sem descartar o estado.
+- `backgroundHeartbeat` passa a procurar o novo manifesto do assistente mesmo com entrega antiga pendente, e `processJobManifest` verifica a preservação antes de avançar. Não há polling automático à API interna nem novos reenvios de resultados antigos.
+- O título do painel mostra o número de registos com entrega por confirmar. O botão opcional `Por confirmar` permite consultar em modo apenas de leitura os IDs e os links públicos dos resultados preservados, sem criar ficheiros nem expor comandos, sessões ou tokens.
+- A nova arquitetura mantém execuções independentes por conversa; não interfere com Antigravity, TIMI, Maestro, BonChat, perfis do Chrome ou backups.
+
+## 2026-10-30 — Passo 85: Testes de regressão e rejeição v15.5.35
+- Fonte JavaScript integral analisada sintaticamente: PASS.
+- Caso FiscalGuard: IUC-032 com um clique e IUC-033 validado como manifesto posterior, registo completo `NOT_CONFIRMED` armazenado antes de libertar inflight; sem ACK presumido: PASS.
+- Rejeitados nos testes: zero cliques, fase `running`, timestamp de clique ausente, conversa errada, job seguinte cronologicamente anterior ou mais de 24h posterior, manifesto ausente da resposta do assistente, prova anterior já visível, prova DOM persistida, turno de utilizador em vez de assistente, streaming, manifesto antigo inexistente, protocolo diferente, turno assistente nulo, comando novo vazio e versão preparadora ausente: PASS.
+- Repetição da operação após libertar o estado não volta a arquivar nem a libertar: PASS.
+- Simulação do `backgroundHeartbeat`: com estado anterior pendente e novo manifesto, guarda/liberta e retoma inspeção; se o arquivo é recusado, preserva o bloqueio e agenda verificação; zero cliques ou resposta em curso não avançam: PASS.
+- Teste de leitura do arquivo no painel: mostra job, `NÃO CONFIRMADA`, links públicos, sem comandos/tokens; arquivo vazio não abre janela: PASS.
+- São testes simulados, NÃO uma execução end-to-end no Chrome. Foi inspecionada a captura fornecida pelo utilizador, mas não é possível recolher novo screenshot real até à atualização local. Nenhum job, cookie ou sessão foi alterado nestes testes.
