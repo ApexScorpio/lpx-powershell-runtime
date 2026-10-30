@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.29.15.5.12
+// @version      2026.10.30.15.5.13
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.12';
+    const VERSION = '15.5.13';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -43,7 +43,8 @@
     const PANEL_GEOMETRY_KEY = 'lpxPsb15:panelGeometry';
     const PANEL_COLLAPSED_KEY = 'lpxPsb15:panelCollapsed';
     const FILEID_HANDSHAKE_PREFIX = 'lpxPsb15:fileIdHandshake:';
-    const CLAIM_TTL_MS = 2 * 60 * 1000;
+    const CLAIM_TTL_MS = 10 * 60 * 1000;
+    const INFLIGHT_PREFIX = 'lpxPsb15:inflight:';
     const POLL_MS = 750;
     const SETTLE_MS = 900;
     const PUBLISH_WAIT_MS = 90 * 1000;
@@ -52,6 +53,7 @@
     let settleTimer = 0;
     let activeJobId = '';
     let activeManifest = null;
+    let sendingMessage = false;
     let lastAttachmentDiagnostic = '';
     let observer = null;
     let observerRoot = null;
@@ -241,40 +243,62 @@
         return clean;
     }
 
+    function inflightKey() {
+        return INFLIGHT_PREFIX + simpleHash(conversationId());
+    }
+
+    function getInflight() {
+        const value = GM_getValue(inflightKey(), null);
+        return value && typeof value === 'object' && value.conversation === conversationId()
+            ? value : null;
+    }
+
+    function saveInflight(id, manifest, phase = 'submitted') {
+        GM_setValue(inflightKey(), {
+            jobId: String(id),
+            conversation: conversationId(),
+            manifest: {
+                protocol: String(manifest?.protocol || 'PSB_JOB_V3'),
+                jobId: String(manifest?.jobId || id),
+                purpose: String(manifest?.purpose || '')
+            },
+            phase,
+            updatedAt: Date.now()
+        });
+    }
+
+    function clearInflight(id) {
+        const value = getInflight();
+        if (value && value.jobId === String(id)) {
+            GM_deleteValue(inflightKey());
+        }
+    }
+
     function claim(id) {
         const claims = cleanClaims();
         const existing = claims[id];
         const now = Date.now();
-
-        if (existing) {
-            const sameConversation =
-                existing.conversation ===
-                conversationId();
-
-            const claimedAt =
-                Number(existing.claimedAt || 0);
-
-            const recent =
-                claimedAt > 0 &&
-                now - claimedAt < 30 * 1000;
-
-            if (!sameConversation || recent) {
-                return false;
-            }
-
-            delete claims[id];
+        // Não roubar um job a outra aba, mesmo que seja da mesma conversa.
+        if (existing && existing.instanceId !== INSTANCE_ID) {
+            return false;
         }
-
         claims[id] = {
             tabId: TAB_ID,
             instanceId: INSTANCE_ID,
             conversation: conversationId(),
-            claimedAt: now,
+            claimedAt: existing?.claimedAt || now,
             expiresAt: now + CLAIM_TTL_MS
         };
-
         GM_setValue(CLAIMS_KEY, claims);
         return true;
+    }
+
+    function renewClaim(id) {
+        const claims = cleanClaims();
+        if (claims[id]?.instanceId === INSTANCE_ID) {
+            claims[id].expiresAt = Date.now() + CLAIM_TTL_MS;
+            GM_setValue(CLAIMS_KEY, claims);
+        }
     }
 
     function releaseClaim(id) {
@@ -986,7 +1010,9 @@
 
         for (const manifest of manifests) {
             if (['PSB_JOB_FILE_V1', 'PSB_JOB_V2', 'PSB_JOB_V3'].includes(manifest.protocol) && manifest.jobId) {
-                markHandled(String(manifest.jobId));
+                if (getInflight()?.jobId !== String(manifest.jobId)) {
+                    markHandled(String(manifest.jobId));
+                }
             }
 
             if (manifest.protocol === 'PSB_LEARN_V1' && manifest.id) {
@@ -997,6 +1023,11 @@
 
     function scheduleCandidate(node) {
         const assistant = closestAssistant(node);
+        // Ignorar mutações de outras zonas da página: o compositor e a barra lateral
+        // não devem adiar indefinidamente a deteção de uma resposta nova.
+        if (!assistant && node !== document.body) {
+            return;
+        }
 
         if (assistant) {
             candidateAssistant = assistant;
@@ -6212,6 +6243,15 @@
             return;
         }
 
+        const inflight = getInflight();
+        if (inflight && inflight.jobId === jobId) {
+            activeJobId = jobId;
+            activeManifest = manifest;
+            setStatus(`A recuperar acompanhamento do job ${jobId}, sem o voltar a executar.`);
+            await monitorActiveJob();
+            return;
+        }
+
         try {
             let command = '';
 
@@ -6334,6 +6374,8 @@
                 `Job ${jobId}: UTF-8/LF local · ${byteLength} bytes · SHA ${localHash.slice(0, 12)}…`
             );
 
+            // Guardar a intenção antes do POST: um timeout não prova que o servidor rejeitou o job.
+            saveInflight(jobId, manifest, 'submitting');
             const response = await request({
                 method: 'POST',
                 url: `${BRIDGE_URL}/run`,
@@ -6364,59 +6406,72 @@
 
             activeJobId = String(data.jobId);
             activeManifest = manifest;
+            saveInflight(activeJobId, manifest, 'running');
             setStatus(`Job ${activeJobId} em execução. O ficheiro ficou fora do histórico; Base64 e SHA-256 foram calculados localmente.`);
             await monitorActiveJob();
         } catch (error) {
             releaseClaim(jobId);
             activeJobId = '';
             activeManifest = null;
-            setStatus(`Falha no job ${jobId}: ${error.message}`);
+            if (getInflight()?.jobId === jobId) {
+                setStatus(`Job ${jobId} em estado incerto. Não será reenviado automaticamente: ${error.message}`);
+            } else {
+                setStatus(`Falha no job ${jobId}: ${error.message}`);
+            }
         }
     }
 
     async function monitorActiveJob() {
         const started = Date.now();
         let finishedAt = 0;
+        let failures = 0;
 
-        while (activeJobId) {
-            const response = await request({
-                method: 'GET',
-                url: `${BRIDGE_URL}/job/${encodeURIComponent(activeJobId)}?metadata=1&_=${Date.now()}`,
-                headers: {
-                    'X-Bridge-Token': token(),
-                    'Cache-Control': 'no-cache'
-                },
-                timeout: 8000
-            });
-
-            const data = parseJson(response);
-
-            if (response.status >= 400) {
-                throw new Error(data.error || `HTTP ${response.status}`);
+        const watchedConversation = conversationId();
+        while (activeJobId && conversationId() === watchedConversation) {
+            const id = activeJobId;
+            renewClaim(id);
+            let response;
+            try {
+                response = await request({
+                    method: 'GET',
+                    url: `${BRIDGE_URL}/job/${encodeURIComponent(id)}?metadata=1&_=${Date.now()}`,
+                    headers: {
+                        'X-Bridge-Token': token(),
+                        'Cache-Control': 'no-cache'
+                    },
+                    timeout: 8000
+                });
+            } catch (error) {
+                failures++;
+                setStatus(`Job ${id}: ligação de monitorização indisponível (${failures}). A recuperar sem reexecutar…`);
+                await wait(Math.min(30000, 2000 * failures));
+                continue;
             }
 
+            const data = parseJson(response);
+            if (response.status >= 400) {
+                failures++;
+                setStatus(`Job ${id}: HTTP ${response.status}. A acompanhar sem reenvio do comando…`);
+                await wait(Math.min(30000, 2000 * failures));
+                continue;
+            }
+            failures = 0;
+
             if (data.running) {
-                setStatus(`Job ${activeJobId} em execução · ${Math.floor((Date.now() - started) / 1000)} s.`);
+                saveInflight(id, activeManifest, 'running');
+                setStatus(`Job ${id} em execução · ${Math.floor((Date.now() - started) / 1000)} s.`);
                 await wait(POLL_MS);
                 continue;
             }
 
-            if (!finishedAt) {
-                finishedAt = Date.now();
-            }
+            if (!finishedAt) finishedAt = Date.now();
 
             if (data.publishStatus === 'published' && data.resultJsonUrl) {
                 const manifest = activeManifest;
-                const completedJobId = activeJobId;
-
-                markHandled(completedJobId);
-                releaseClaim(completedJobId);
-                activeJobId = '';
-                activeManifest = null;
-
+                saveInflight(id, manifest, 'published_pending_delivery');
                 const message = [
                     'PSBRIDGE_RESULT_V2',
-                    `job: ${completedJobId}`,
+                    `job: ${id}`,
                     `status: ${String(data.status || '').toUpperCase()}`,
                     `exitCode: ${data.exitCode ?? 'desconhecido'}`,
                     `result: ${data.resultJsonUrl}`,
@@ -6424,25 +6479,31 @@
                     'instruction: lê o resultado público acima e continua o diagnóstico. REGRA OBRIGATÓRIA: Nunca cries ficheiros para download nem anexos .ps1. Escreve o teu próximo comando PowerShell DIRETAMENTE no chat dentro de um bloco powershell # PSB_JOB_V3.'
                 ].join('\n');
 
-                setStatus(`Resultado publicado. A enviar apenas o URL para esta conversa…`);
+                activeJobId = '';
+                activeManifest = null;
                 try {
-                    await sendMessage(message, manifest);
-                    setStatus(`Job ${completedJobId} concluído e enviado por URL.`);
-                } catch (sendError) {
-                    setStatus(`Job ${completedJobId} concluído! Carrega em Enviar no chat se o resultado estiver no campo.`);
+                    await sendMessage(message);
+                    markHandled(id);
+                    clearInflight(id);
+                    setStatus(`Job ${id}: entrega confirmada na conversa.`);
+                } catch (error) {
+                    setStatus(`Job ${id} publicado; envio ao chat não confirmado (${error.message}). Resultado preservado para recuperação.`);
+                } finally {
+                    releaseClaim(id);
                 }
                 return;
             }
 
             if (data.publishStatus === 'failed' || data.publishStatus === 'disabled') {
-                throw new Error(data.publishError || 'A publicação no GitHub falhou.');
+                setStatus(`Job ${id}: publicação falhou. Resultado preservado para diagnóstico.`);
+                return;
             }
 
             if (Date.now() - finishedAt > PUBLISH_WAIT_MS) {
-                throw new Error('O job terminou, mas a publicação no GitHub ultrapassou o tempo limite.');
+                setStatus(`Job ${id} terminado; publicação ainda pendente. A continuar a verificar…`);
+            } else {
+                setStatus(`Job ${id} terminado; a aguardar publicação…`);
             }
-
-            setStatus(`Job terminado. A publicar o resultado no GitHub…`);
             await wait(POLL_MS);
         }
     }
@@ -6490,144 +6551,103 @@
             || document.querySelector('textarea[placeholder]');
     }
 
+    function sameMessageText(a, b) {
+        const normalize = value => String(value || '')
+            .replace(/\r\n?/g, '\n')
+            .replace(/[\u00a0\u200b]/g, ' ')
+            .replace(/\n\s*\n/g, '\n')
+            .trim();
+        return normalize(a) === normalize(b);
+    }
+
     function setComposerText(editor, text) {
         editor.focus();
-
         if (editor instanceof HTMLTextAreaElement || editor instanceof HTMLInputElement) {
             const setter = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(editor), 'value')?.set;
-
-            if (setter) {
-                setter.call(editor, text);
-            } else {
-                editor.value = text;
-            }
-
+            if (setter) setter.call(editor, text);
+            else editor.value = text;
             editor.dispatchEvent(new Event('input', { bubbles: true }));
             editor.dispatchEvent(new Event('change', { bubbles: true }));
             return;
         }
 
-        // ProseMirror no ChatGPT:
-        editor.replaceChildren();
-        for (const line of text.split('\n')) {
-            const p = document.createElement('p');
-            if (line) {
-                p.textContent = line;
-            } else {
-                p.appendChild(document.createElement('br'));
-            }
-            editor.appendChild(p);
+        // ProseMirror: inserir pelo mecanismo nativo de edição do navegador.
+        // A substituição direta de filhos não atualiza necessariamente o estado interno do editor.
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(editor);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        if (document.execCommand('insertText', false, text) && sameMessageText(composerText(), text)) {
+            return;
         }
-
-        editor.dispatchEvent(new InputEvent('input', {
-            bubbles: true,
-            cancelable: true,
-            inputType: 'insertFromPaste',
-            data: text
-        }));
-        editor.dispatchEvent(new Event('input', { bubbles: true }));
-        editor.dispatchEvent(new Event('change', { bubbles: true }));
-
-        try {
-            const range = document.createRange();
-            const sel = window.getSelection();
-            range.selectNodeContents(editor);
-            range.collapse(false);
-            sel.removeAllRanges();
-            sel.addRange(range);
-        } catch {}
-    }
-
-    function fireClick(element) {
-        if (!element) return;
-        const events = ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'];
-        for (const name of events) {
-            try {
-                element.dispatchEvent(new MouseEvent(name, {
-                    bubbles: true,
-                    cancelable: true,
-                    view: window
-                }));
-            } catch {}
-        }
+        throw new Error('O editor não aceitou a inserção nativa; mensagem original preservada para verificação.');
     }
 
     function findSendButton() {
-        return document.querySelector('#composer-submit-button')
-            || document.querySelector('[data-testid="composer-submit-button"]')
-            || document.querySelector('button#composer-submit-button')
-            || document.querySelector('#prompt-textarea')?.closest('form, [class*="composer"], div.relative')?.querySelector('button[aria-label*="Enviar"], button[aria-label*="Send"], #composer-submit-button, button:last-child')
-            || document.querySelector('[data-testid="send-button"]')
-            || document.querySelector('button[data-testid="send-button"]')
-            || document.querySelector('button[aria-label*="Send"]')
-            || document.querySelector('button[aria-label*="Enviar"]')
-            || document.querySelector('button[aria-label*="Submit"]')
-            || document.querySelector('form button[type="submit"]')
-            || document.querySelector('button[data-testid*="send"]')
-            || document.querySelector('button[data-testid="fruitjuice-send-button"]')
-            || [...document.querySelectorAll('button')].find(node => /enviar|send|submit/i.test(node.getAttribute('aria-label') || ''))
-            || null;
+        const editor = composer();
+        const scoped = editor?.closest('form') || editor?.closest('[data-testid="composer"]');
+        const selector = [
+            '#composer-submit-button',
+            '[data-testid="composer-submit-button"]',
+            '[data-testid="send-button"]',
+            'button[aria-label="Send message"]',
+            'button[aria-label="Enviar mensagem"]',
+            'button[type="submit"]'
+        ].join(', ');
+        return scoped?.querySelector(selector) || document.querySelector(selector);
+    }
+
+    function userTurnContains(text) {
+        const nodes = document.querySelectorAll(
+            '[data-message-author-role="user"], [data-author-role="user"], [data-testid*="user-message"]'
+        );
+        const probe = text.trim();
+        for (let i = nodes.length - 1; i >= Math.max(0, nodes.length - 6); i--) {
+            const content = String(nodes[i].innerText || nodes[i].textContent || '').trim();
+            if (content === probe || (content.includes(probe.slice(0, 80)) &&
+                content.includes(probe.slice(-80)) && content.length >= probe.length - 20)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     async function sendMessage(text) {
-        for (let attempt = 0; attempt < 30; attempt++) {
+        if (sendingMessage) throw new Error('Já existe uma entrega de mensagem nesta aba.');
+        sendingMessage = true;
+        try {
+            if (userTurnContains(text)) return;
             const editor = composer();
+            if (!editor) throw new Error('Compositor do ChatGPT indisponível.');
+            const draft = composerText();
+            if (draft && !sameMessageText(draft, text)) {
+                throw new Error('A caixa contém outra mensagem; não foi substituída.');
+            }
+            if (!draft) setComposerText(editor, text);
+            if (!sameMessageText(composerText(), text)) {
+                throw new Error('Texto não confirmado no compositor.');
+            }
 
-            if (!editor) {
+            let button = null;
+            for (let n = 0; n < 24; n++) {
+                button = findSendButton();
+                if (button && !button.disabled && button.getAttribute('aria-disabled') !== 'true') break;
                 await wait(250);
-                continue;
             }
-
-            setComposerText(editor, text);
-            await wait(250);
-
-            const send = findSendButton();
-
-            if (send) {
-                if (send.disabled) {
-                    send.disabled = false;
-                    send.removeAttribute('disabled');
-                }
-                fireClick(send);
-                try {
-                    send.click();
-                } catch {}
+            if (!button || button.disabled || button.getAttribute('aria-disabled') === 'true') {
+                throw new Error('Botão Enviar indisponível; nenhuma submissão forçada.');
             }
-
-            const form = editor.closest('form') || document.querySelector('form:has(#prompt-textarea)');
-            if (form) {
-                try {
-                    if (typeof form.requestSubmit === 'function') {
-                        form.requestSubmit(send && !send.disabled ? send : undefined);
-                    } else {
-                        form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-                    }
-                } catch {}
+            // Um único clique. Não combinar click, requestSubmit e Enter.
+            button.click();
+            for (let n = 0; n < 60; n++) {
+                if (userTurnContains(text)) return;
+                await wait(250);
             }
-
-            editor.dispatchEvent(new KeyboardEvent('keydown', {
-                key: 'Enter',
-                code: 'Enter',
-                keyCode: 13,
-                which: 13,
-                bubbles: true,
-                cancelable: true,
-                composed: true
-            }));
-
-            await wait(350);
-
-            if (!composerText() || assistantWriting()) {
-                return;
-            }
+            throw new Error('O ChatGPT não confirmou a mensagem no histórico. Sem reenvio automático.');
+        } finally {
+            sendingMessage = false;
         }
-
-        if (composerText()) {
-            console.warn('O texto está no compositor mas o clique automático falhou.');
-            return;
-        }
-
-        throw new Error('Não foi possível enviar automaticamente a mensagem.');
     }
 
     async function cancelActive() {
@@ -6712,6 +6732,7 @@
     installPanelInteractions();
     render();
     installObserver();
+    scheduleCandidate(document.body);
     void rememberConversation();
 
     void healthCheck(true)
