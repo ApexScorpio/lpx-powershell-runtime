@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.19
+// @version      2026.10.30.15.5.23
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.19';
+    const VERSION = '15.5.23';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -51,6 +51,8 @@
     const HEARTBEAT_VISIBLE_MS = 7000;
     const HEARTBEAT_HIDDEN_MS = 18000;
     const PUBLISH_WAIT_MS = 90 * 1000;
+    const API_BUDGET_KEY = 'lpxPsb15:conversationApiBudget';
+    const API_MIN_INTERVAL_MS = 10000;
 
     let candidateAssistant = null;
     let settleTimer = 0;
@@ -816,8 +818,7 @@
                         return;
                     }
 
-                    baselineCurrentAssistant();
-                    setEnabled(true);
+                    resumeAutonomy();
                     setStatus('Bridge ativa. Protocolo existente preservado; sem reenvio automático.');
                     scheduleDeliveryRecovery(1200);
                 }, 'primary'),
@@ -977,7 +978,13 @@
         return Boolean(
             document.querySelector(
                 '[data-testid="stop-button"], ' +
+                'button[aria-label="Parar"], button[title="Parar"], ' +
+                'button[aria-label="Stop"], button[title="Stop"], ' +
                 'button[aria-label*="Stop generating"], ' +
+                'button[aria-label*="Stop streaming" i], ' +
+                '#composer-submit-button[aria-label*="Stop" i], ' +
+                '#composer-submit-button[aria-label*="Parar" i], ' +
+                '[data-is-streaming="true"], ' +
                 'button[aria-label*="Parar de gerar"], ' +
                 'button[aria-label*="Parar resposta"]'
             )
@@ -1112,6 +1119,13 @@
                 markHandled(`learn:${manifest.id}`);
             }
         }
+    }
+
+    function resumeAutonomy() {
+        // Uma retoma com resultado pendente não deve marcar como tratado
+        // o próximo job que o ChatGPT possa entretanto ter terminado.
+        if (!getInflight()) baselineCurrentAssistant();
+        setEnabled(true);
     }
 
     function assistantInsideAddedNode(node) {
@@ -3936,6 +3950,19 @@
     }
 
     async function chatgptApiFetch(url, init = {}) {
+        const conversationRead = (!init.method || init.method === 'GET') &&
+            /^\/backend-api\/conversation\/[^/?]+(?:\?|$)/.test(String(url));
+        if (conversationRead) {
+            const budget = GM_getValue(API_BUDGET_KEY, {});
+            const remaining = Number(budget.until || 0) - Date.now();
+            if (remaining > 0) {
+                return new Response('{}', { status: 429, headers: {
+                    'Retry-After': String(Math.ceil(remaining / 1000))
+                } });
+            }
+            // A reserva é partilhada por todas as abas do mesmo userscript.
+            GM_setValue(API_BUDGET_KEY, { ...budget, until: Date.now() + API_MIN_INTERVAL_MS });
+        }
         let response = null;
 
         for (let attempt = 0; attempt < 2; attempt++) {
@@ -3966,6 +3993,23 @@
                     cache: 'no-store'
                 }
             );
+
+            if (conversationRead && Number(response.status) === 429) {
+                const budget = GM_getValue(API_BUDGET_KEY, {});
+                const failures = Math.min(6, Number(budget.failures || 0) + 1);
+                const header = response.headers?.get('Retry-After');
+                const seconds = Number(header);
+                const retryDate = Date.parse(header || '');
+                const requested = header && Number.isFinite(seconds)
+                    ? seconds * 1000 : Number.isFinite(retryDate) ? retryDate - Date.now() : 0;
+                const backoff = Math.max(60000, requested, Math.min(300000, 15000 * 2 ** failures));
+                GM_setValue(API_BUDGET_KEY, { failures, until: Date.now() + backoff });
+                return response;
+            }
+            if (conversationRead && response.ok) {
+                const budget = GM_getValue(API_BUDGET_KEY, {});
+                GM_setValue(API_BUDGET_KEY, { ...budget, failures: 0 });
+            }
 
             if (
                 ![401, 403].includes(
@@ -6407,6 +6451,20 @@
             return;
         }
 
+        // Uma conversa só avança depois de confirmar a entrega anterior.
+        // O botão manual também respeita esta ordem.
+        const pendingDelivery = getInflight();
+        if (pendingDelivery && pendingDelivery.jobId !== jobId) {
+            setStatus(`Job ${jobId} em espera: concluir primeiro a entrega de ${pendingDelivery.jobId}.`);
+            scheduleDeliveryRecovery(1200);
+            return;
+        }
+        if (sendingMessage || deliveryRecoveryBusy || (activeJobId && activeJobId !== jobId)) return;
+        if (assistantWriting()) {
+            setStatus(`Job ${jobId}: a aguardar o fim da resposta antes de executar.`);
+            scheduleCandidate(assistant || document.body);
+            return;
+        }
         if (processingJobIds.has(jobId)) return;
         processingJobIds.add(jobId);
         if (!claim(jobId)) {
@@ -6612,19 +6670,6 @@
         ].join('\n');
     }
 
-    async function acknowledgeDeliveredResult(id, message = '') {
-        // Consultar a conversa antes de limitar novos envios ou exigir
-        // resultados no serviço local. Não reexecutar o job.
-        const checked = await checkResultDelivered(id, message);
-        if (!checked.confirmed) return false;
-
-        markHandled(id);
-        clearInflight(id);
-        releaseClaim(id);
-        setStatus(`Job ${id}: entrega confirmada no ChatGPT. Estado libertado sem reexecução.`);
-        return true;
-    }
-
     function scheduleDeliveryRecovery(delay = 12000) {
         clearTimeout(deliveryRecoveryTimer);
         if (!enabled() || !getInflight()) return;
@@ -6643,12 +6688,20 @@
         try {
             let saved = original;
             let message = String(saved.message || '');
-
-            // Confirmar primeiro a presença real no histórico do ChatGPT:
-            // aplicar o ACK mesmo com tentativas esgotadas, rascunho
-            // pendente ou registo do daemon já indisponível.
-            if (await acknowledgeDeliveredResult(saved.jobId, message)) return;
-
+            // Reconciliar a entrega ANTES de obter o resultado do daemon ou
+            // aplicar o limite de tentativas. Não gera novo POST /run.
+            let preflight = null;
+            if (message || Number(saved.deliveryClicks || 0) > 0 ||
+                saved.phase === 'published_pending_delivery') {
+                preflight = await checkResultDelivered(saved.jobId, message);
+                if (preflight.confirmed) {
+                    markHandled(saved.jobId);
+                    clearInflight(saved.jobId);
+                    releaseClaim(saved.jobId);
+                    setStatus(`Job ${saved.jobId}: resultado já presente na conversa. Estado libertado sem reexecução.`);
+                    return;
+                }
+            }
             if (!message) {
                 // A versão 15.5.14 guardava só o jobId; nunca reexecutar o POST.
                 const res = await request({
@@ -6682,12 +6735,19 @@
                 setStatus(`Job ${saved.jobId}: à espera de recuperar o resultado publicado; sem reexecução.`);
                 return;
             }
-            const verify = await checkResultDelivered(saved.jobId, message);
+            const verify = preflight || await checkResultDelivered(saved.jobId, message);
             if (verify.confirmed) {
                 markHandled(saved.jobId);
                 clearInflight(saved.jobId);
                 releaseClaim(saved.jobId);
                 setStatus(`Job ${saved.jobId}: entrega confirmada após recuperação.`);
+                return;
+            }
+            // Se a consulta autenticada estiver limitada/indisponível,
+            // adiar sem clicar nem consumir qualquer tentativa de envio.
+            if (!verify.apiOk) {
+                delay = 25000;
+                setStatus(`Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Resultado preservado; sem reenvio.`);
                 return;
             }
             const clicks = Number(saved.deliveryClicks || 0);
@@ -6941,6 +7001,24 @@
         };
     }
 
+    function resultReceipt(value) {
+        const plain = normalizeResultRendering(value);
+        const match = plain.match(
+            /^PSBRIDGE_RESULT_V2\s+job:\s*(PSB-[A-Za-z0-9._-]+)\s+status:\s*(\S+)\s+exitCode:\s*(\S+)\s+result:\s*(https:\/\/\S+)\s+log:\s*(https:\/\/\S+)(?:\s|$)/u
+        );
+        if (!match) return null;
+        return {
+            jobId: match[1], status: match[2], exitCode: match[3],
+            resultUrl: match[4], logUrl: match[5]
+        };
+    }
+
+    function sameResultReceipt(actual, expected) {
+        const a = resultReceipt(actual);
+        const b = resultReceipt(expected);
+        return Boolean(a && b && Object.keys(b).every(key => a[key] === b[key]));
+    }
+
     function samePreparedResultDraft(actual, expected, jobId) {
         if (sameMessageText(actual, expected)) return true;
         if (!jobId) return false;
@@ -7018,15 +7096,17 @@
     }
 
     function userTurnContains(text) {
+        // Um texto vazio não comprova entrega e nunca deve gerar ACK.
+        if (!String(text || '').trim()) return false;
         const nodes = document.querySelectorAll(
             '[data-message-author-role="user"], [data-author-role="user"], [data-testid*="user-message"]'
         );
-        const probe = String(text || '').trim();
-        if (!probe) return false;
-        for (let i = nodes.length - 1; i >= Math.max(0, nodes.length - 6); i--) {
-            const content = String(nodes[i].innerText || nodes[i].textContent || '').trim();
-            if (content === probe || (content.includes(probe.slice(0, 80)) &&
-                content.includes(probe.slice(-80)) && content.length >= probe.length - 20)) {
+        for (let i = nodes.length - 1; i >= 0; i--) {
+            const content = String(nodes[i].innerText || nodes[i].textContent || '');
+            // A mensagem publicada pode ter links decorados, parágrafos e
+            // instruções recolhidas em "Mostrar mais". Confirmar os campos
+            // imutáveis do recibo; nunca confundir texto do assistente.
+            if (sameMessageText(content, text) || sameResultReceipt(content, text)) {
                 return true;
             }
         }
@@ -7040,7 +7120,7 @@
             : '';
     }
 
-    function apiContainsResult(data, id) {
+    function apiContainsResult(data, id, expectedMessage = '') {
         const nodes = data?.mapping;
         if (!nodes || typeof nodes !== 'object') return false;
         let current = data.current_node;
@@ -7052,10 +7132,10 @@
             if (!item) break;
             const message = item.message;
             const content = apiMessageText(message);
+            const receipt = resultReceipt(content);
             if (message?.author?.role === 'user' &&
-                content.includes('PSBRIDGE_RESULT_V2') &&
-                content.includes('job: ' + String(id)) &&
-                content.split(/\r?\n/).some(line => line.trim() === 'job: ' + String(id))) {
+                receipt?.jobId === String(id) &&
+                (!expectedMessage || sameResultReceipt(content, expectedMessage))) {
                 return true;
             }
             current = item.parent;
@@ -7064,7 +7144,6 @@
     }
 
     async function checkResultDelivered(id, message) {
-        // Uma mensagem ausente nunca comprova entrega pelo DOM.
         if (message && userTurnContains(message)) return { confirmed: true, apiOk: false };
         const uuid = rawConversationUuid();
         if (!uuid) return { confirmed: false, apiOk: false };
@@ -7073,11 +7152,20 @@
                 '/backend-api/conversation/' + encodeURIComponent(uuid),
                 { method: 'GET', headers: { Accept: 'application/json' } }
             );
-            if (!response?.ok) return { confirmed: false, apiOk: false };
+            if (!response?.ok) return { confirmed: false, apiOk: false, reason: 'API_HTTP_' + Number(response?.status || 0) };
             const data = await response.json();
-            return { confirmed: apiContainsResult(data, id), apiOk: true };
+            // Para não repetir um job já comunicado, o recibo válido com o
+            // mesmo jobId no ramo atual é suficiente. Um texto antigo do
+            // protocolo pode ter URLs/instruções formatadas diferentemente.
+            const exact = apiContainsResult(data, id, message);
+            const existing = exact || apiContainsResult(data, id);
+            return {
+                confirmed: existing,
+                apiOk: true,
+                receiptMismatch: Boolean(existing && message && !exact)
+            };
         } catch {
-            return { confirmed: false, apiOk: false };
+            return { confirmed: false, apiOk: false, reason: 'API_UNAVAILABLE' };
         }
     }
 
@@ -7090,6 +7178,11 @@
                 if (check.confirmed) return;
             } else if (userTurnContains(text)) {
                 return;
+            }
+            // Não inserir um resultado no rascunho enquanto a resposta anterior
+            // ainda está a ser gerada. A recuperação tratará da entrega depois.
+            if (assistantWriting()) {
+                throw new Error('ChatGPT ainda está a responder; resultado preservado fora do compositor.');
             }
             const editor = composer();
             if (!editor) throw new Error('Compositor do ChatGPT indisponível.');
@@ -7118,11 +7211,9 @@
             // pertence realmente a um formulário e é do tipo submit.
             // Para botões React do tipo button, usar o próprio click.
             // O clique por si só nunca equivale a entrega confirmada.
-            let deliveryMethod = (
-                button.form &&
-                button.type === 'submit' &&
-                typeof button.form.requestSubmit === 'function'
-            ) ? 'form_request_submit' : 'button_click';
+            // O click dispara o handler React e a submissão HTML normal.
+            // requestSubmit sozinho não dispara handlers onClick.
+            const deliveryMethod = 'button_click';
             let previousClicks = 0;
             if (deliveryJobId) {
                 const prior = getInflight();
@@ -7152,16 +7243,12 @@
                     deliveryMethod
                 });
             }
-            if (deliveryMethod === 'form_request_submit') {
-                button.form.requestSubmit(button);
-            } else {
-                button.click();
-            }
+            button.click();
             for (let n = 0; n < 30; n++) {
                 if (userTurnContains(text)) return;
                 // A API autentica a entrega mesmo se o ChatGPT virtualizar
                 // o turno do utilizador e não o montar no DOM.
-                if (deliveryJobId && n % 4 === 0) {
+                if (deliveryJobId && n === 29) {
                     const checked = await checkResultDelivered(deliveryJobId, text);
                     if (checked.confirmed) return;
                 }
