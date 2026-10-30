@@ -394,3 +394,12 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Exceção de rede: erro propagado e lock libertado: PASS.
 - Ausência da Web Locks API: fallback anterior preservado: PASS.
 - Estes resultados são simulações numa sandbox JavaScript, não um ensaio end-to-end com três janelas Chrome nem prova de desbloqueio dos três jobs. Captura visual inicial inspecionada; captura pós-atualização ainda pendente.
+
+## 2026-10-30 — Passo 48: Integração e verificação pública v15.5.25
+- PR #12 integrada em `main`; commit de merge `340cbd1a107a407fe0cb7bc1d1873f7aea25d18a`.
+- Relido o userscript na origem após merge: `@version 2026.10.30.15.5.25`, `VERSION='15.5.25'`, blob `2046370b37e18653e8b4572ef04b082d72e34b3e`.
+- Código de exclusão mútua `navigator.locks.request` presente; `Retry-After`/backoff preservados; sintaxe JS PASS.
+- Link de atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- Atualização do repositório não implica instalação ou alteração dos separadores Chrome: ainda falta confirmação visual do runtime 15.5.25 e dos resultados dos três jobs.
+- O HTTP 429 real exige respeitar `Retry-After` ou backoff registado; nenhuma correção pode garantir que o servidor responda 200 antes do limite terminar.
+- Recomendar atualização pelo Tampermonkey e recarregamento controlado apenas quando não houver jobs locais ativos. Nunca usar `Executar último` para recuperar a entrega. Nenhuma sessão/token/perfil/browser/processo foi alterado por esta publicação GitHub.
