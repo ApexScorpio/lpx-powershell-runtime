@@ -597,3 +597,22 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmadas na versão publicada: `firstUiDeliveryGate` com diagnóstico explícito no painel, aceite de turnos de assistente `conversation-turn` ligados ao job, bloqueio de tentativas anteriores e ausência de leitura automática da API interna.
 - Atualização direta pelo Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - A publicação no GitHub não demonstra instalação local nem envio de PASSIVEIP-019. Necessário print após v15.5.32 para identificar motivo, ou verificar que houve um único clique e recibo visível. Nenhum comando PowerShell foi reexecutado.
+
+## 2026-10-30 — Passo 75: Evidência visual de bloqueio por turno não identificado na v15.5.32
+- Screenshot enviado pelo utilizador, analisado visualmente: painel `PowerShell Bridge v15.5.32 · ATIVA · DOM`, job `PSB-20261030-1946-POKEGUIDE-PASSIVEIP-019`, `0 cliques`, `TURNO_DO_JOB_NAO_IDENTIFICADO`. A imagem mostra o bloco PowerShell original e o compositor do ChatGPT, mas o seletor do código não devolveu um turno de assistente reconhecido.
+- O JSON público do job já tinha sido verificado: execução `succeeded`, `exitCode=0`, resultado e log publicados no GitHub. Não fazer POST /run nem repetir PowerShell.
+- A leitura do código confirmou uma exigência redundante em `firstUiDeliveryGate`: o turno original tem de continuar montado no DOM, apesar de o manifesto PSB_JOB_V3 já ter sido persistido por conversa em `saveInflight`, de `monitorActiveJob` ter confirmado a publicação e de `updateDeliveryState` preservar o manifesto.
+- A mensagem de erro prova a falha na exigência de um turno reconhecível, mas não identifica precisamente que atributo de HTML deixou de corresponder ao seletor. Não afirmar seletor concreto sem inspeção do DOM real.
+
+## 2026-10-30 — Passo 76: v15.5.33 com prova persistente do job
+- Branch `fix/bridge-v15-5-33-durable-job-proof-20261030` criada sobre a v15.5.32 original; `@version` e `VERSION` elevados para 15.5.33.
+- Para a **primeira entrega** sem cliques prévios, aceitar como prova primária o manifesto `PSB_JOB_V3` persistido pela própria Bridge, com `manifest.jobId === saved.jobId` e finalidade não vazia. Só aplicável a job com publicação, mensagem íntegra, `preparedVersion`, conversa corrente identificada, compositor presente, recibo local com URLs HTTPS, resposta do assistente concluída e nenhuma tentativa anterior.
+- Caso não exista manifesto persistido válido, manter a exigência anterior de turno do assistente contendo jobId e marcador do comando; nunca autorizar apenas por existir compositor.
+- Mantida serialização do clique por Web Lock da conversa, gravação do estado `delivery_clicked` antes de clicar e reconhecimento DOM, sem GET da API interna. Nenhum novo POST /run, token, cookie, perfil, sessão, backup ou aplicação protegida modificado.
+
+## 2026-10-30 — Passo 77: Regressão e percurso completo simulado
+- Ficheiro integral JavaScript compilado por `new Function`: PASS.
+- Caso observado — manifesto V3 válido e turno original ausente do DOM: autoriza primeira entrega; ID/protocolo/finalidade errados e ausência de manifesto sem prova do turno: recusados. Estado legado com turno válido mantém compatibilidade: PASS.
+- Tentativas prévias, timestamp de clique, conversa diferente, fase incorreta, resposta ainda a decorrer, compositor ausente, URL sem conversa e recibo já visível: rejeitados nos testes isolados: PASS.
+- Simulação integrada `recoverPendingDelivery -> sendMessageLocked` com manifesto V3, sem turno do assistente: **1 clique**, 1 escrita no compositor, 0 pedidos HTTP ao daemon/API, 1 ACK, limpeza do inflight e lock por conversa: PASS.
+- Os testes são simulados e NÃO garantem ainda o comportamento da instalação real; é necessária captura após atualizar a versão no Chrome. O ficheiro de histórico continua append-only.
