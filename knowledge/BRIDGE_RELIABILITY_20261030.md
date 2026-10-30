@@ -158,3 +158,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Não executar novos jobs, não repetir os três jobs publicados, não reiniciar/encerrar aplicações, não limpar tokens nem tocar no Antigravity.
 - Ação de recuperação não destrutiva proposta: usar o atalho da Bridge que já existe no Ambiente de Trabalho (referido no próprio userscript); voltar a verificar o endpoint /health e o estado real dos jobs após o serviço regressar.
 - Recuperação local ainda NÃO executada nem confirmada.
+
+## 2026-10-30 — Passo 18: Recuperação solicitada após fecho da janela PowerShell
+- O utilizador indicou ter iniciado anteriormente a Bridge por comando PowerShell e que provavelmente fechou a janela.
+- Procuradas conversas anteriores pelo comando de arranque exato; não foi encontrado caminho verificável para o serviço local.
+- Confirmado na documentação Microsoft que Get-NetTCPConnection identifica listeners e Start-Process inicia programas; não foi recuperado o lançador exato da Bridge.
+- Proposta uma recuperação local por PowerShell, sem downloads, com guarda de porta 17351 e pesquisa de lançadores realmente existentes (atalhos ou script .ps1 registado em histórico PSReadLine); só arrancar um candidato único e validado; caso contrário emitir diagnóstico e não executar código desconhecido.
+- O script não foi executado no computador do utilizador e não há screenshot local disponível neste momento.
