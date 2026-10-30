@@ -102,3 +102,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Identificada documentação 15.2.0 no ficheiro CHATGPT_PROTOCOL_PROMPT.md ainda intitulada "protocolo ativo", contrariando o protocolo atual PSB_JOB_V3.
 - Criado ACTIVE_BRIDGE_PROTOCOL_V15.md com formato real e diagnóstico; apensa retificação ao documento histórico original, sem remover quaisquer entradas.
 - Nenhum acesso à sessão Chrome real nem ao daemon Windows. Não foram alterados tokens, perfis, backups ou processos.
+
+## 2026-10-30 — Passo 12: Integração e verificação do protocolo
+- Pull Request #3 integrada na branch main; commit de integração d61f9e189e78973bbe0a5d3f816fd0297b7aad51.
+- Confirmada a existência do novo knowledge/ACTIVE_BRIDGE_PROTOCOL_V15.md e a retificação aditiva em knowledge/CHATGPT_PROTOCOL_PROMPT.md.
+- Relido cabeçalho do userscript em main: VERSION=15.5.14 e @updateURL permanece ligado à branch main.
+- A imagem fornecida continua a comprovar apenas que o separador fotografado tinha o runtime 15.5.11, não que a atualização tenha sido aplicada.
+- Não foi feita reinicialização, atualização de perfis/tokens ou execução local; a correção do cliente no Chrome depende da instalação efetiva de versão recente pelo Tampermonkey.
