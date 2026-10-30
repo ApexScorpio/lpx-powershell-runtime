@@ -290,3 +290,11 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Testes prévios à publicação: sintaxe JavaScript PASS; cenário de ACK confirmado PASS; ausência de ACK sem mutações PASS.
 - Commit de código: `c74af6f7bcabd018202fbc230b81910e4074b5ac`; o `@version` continua 15.5.19 para evitar promover a base antiga acima da 15.5.22 instalada.
 - **Pendente**: obter o código efetivamente instalado da 15.5.22, integrar a alteração sem perder as funções mais recentes e provar o desbloqueio real no Chrome do utilizador.
+
+## 2026-10-30 — Passo 35: Testes isolados da reconciliação de entrega
+- Ficheiro JS completo da branch compilável por `new Function`: PASS (sintaxe).
+- Simulador da recuperação: resultado já presente na conversa, 99 tentativas registadas e ausência de texto local: ACK aplicado imediatamente, sem consulta ao daemon e sem reenvio: PASS.
+- Simulador da recuperação: confirmação negativa e GET local HTTP 503: estado persistido, sem reenvio, recuperações posteriores permitidas: PASS.
+- Parser com resultado na cadeia atual à distância de 12 mensagens: identifica jobId exato, rejeita jobId diferente: PASS.
+- Simulação inicial teve duas falhas no teste (omissão de `BRIDGE_URL` no ambiente de mocking e expectativa de uma expressão textual incorreta); corrigido o **simulador**, não o código de produção. Todos os testes finais PASS.
+- Limites: testes simulados, não confirmam comportamento da v15.5.22 instalada nem sucesso real em janelas Chrome; nenhuma sessão, job ou perfil alterado.
