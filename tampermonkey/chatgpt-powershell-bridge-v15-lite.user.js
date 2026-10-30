@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.23
+// @version      2026.10.30.15.5.24
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.23';
+    const VERSION = '15.5.24';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -3956,8 +3956,11 @@
             const budget = GM_getValue(API_BUDGET_KEY, {});
             const remaining = Number(budget.until || 0) - Date.now();
             if (remaining > 0) {
+                // A pausa local NÃO é um HTTP 429 recebido do ChatGPT.
+                // Assinalá-la explicitamente para o diagnóstico e o retry.
                 return new Response('{}', { status: 429, headers: {
-                    'Retry-After': String(Math.ceil(remaining / 1000))
+                    'Retry-After': String(Math.ceil(remaining / 1000)),
+                    'X-LPX-Bridge-Cooldown': 'local'
                 } });
             }
             // A reserva é partilhada por todas as abas do mesmo userscript.
@@ -4023,6 +4026,14 @@
         }
 
         return response;
+    }
+
+    function apiRetryDelay(remainingMs, floorMs = 10000) {
+        // Distância estável por conversa: evita que as três abas voltem
+        // a consultar exatamente ao mesmo tempo após uma pausa partilhada.
+        const stagger = parseInt(simpleHash(conversationId()), 16) % 4500;
+        const remaining = Math.max(0, Number(remainingMs) || 0);
+        return Math.max(floorMs, Math.min(300000, Math.ceil(remaining) + 1200 + stagger));
     }
 
     function attachmentUrlsFromValue(value) {
@@ -6746,8 +6757,8 @@
             // Se a consulta autenticada estiver limitada/indisponível,
             // adiar sem clicar nem consumir qualquer tentativa de envio.
             if (!verify.apiOk) {
-                delay = 25000;
-                setStatus(`Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Resultado preservado; sem reenvio.`);
+                delay = apiRetryDelay(verify.retryAfterMs, 16000);
+                setStatus(`Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
                 return;
             }
             const clicks = Number(saved.deliveryClicks || 0);
@@ -6879,6 +6890,9 @@
                         markHandled(id);
                         clearInflight(id);
                         setStatus(`Job ${id}: resultado confirmado na conversa.`);
+                    } else if (!check.apiOk) {
+                        setStatus(`Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
+                        scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
                     } else if (clicks === 0) {
                         await sendMessage(message, null, id);
                         markHandled(id);
@@ -7120,6 +7134,20 @@
             : '';
     }
 
+    function apiHasValidJobReceipt(content, id) {
+        // O ChatGPT pode devolver ligações em Markdown. Só uma mensagem
+        // de utilizador que começa pelo protocolo e contém todos os campos
+        // do recibo pode servir de prova; exemplos em código não servem.
+        const lines = String(content || '').replace(/\r/g, '').trimStart()
+            .split('\n').map(line => line.trim());
+        if (lines[0] !== 'PSBRIDGE_RESULT_V2') return false;
+        return lines.some(line => line === 'job: ' + String(id)) &&
+            lines.some(line => /^status:\s*[A-Z_]+$/i.test(line)) &&
+            lines.some(line => /^exitCode:\s*(?:-?\d+|desconhecido)$/i.test(line)) &&
+            lines.some(line => /^result:\s*(?:https:\/\/|\[https:\/\/)/i.test(line)) &&
+            lines.some(line => /^log:\s*(?:https:\/\/|\[https:\/\/)/i.test(line));
+    }
+
     function apiContainsResult(data, id, expectedMessage = '') {
         const nodes = data?.mapping;
         if (!nodes || typeof nodes !== 'object') return false;
@@ -7134,7 +7162,7 @@
             const content = apiMessageText(message);
             const receipt = resultReceipt(content);
             if (message?.author?.role === 'user' &&
-                receipt?.jobId === String(id) &&
+                (receipt?.jobId === String(id) || apiHasValidJobReceipt(content, id)) &&
                 (!expectedMessage || sameResultReceipt(content, expectedMessage))) {
                 return true;
             }
@@ -7152,7 +7180,23 @@
                 '/backend-api/conversation/' + encodeURIComponent(uuid),
                 { method: 'GET', headers: { Accept: 'application/json' } }
             );
-            if (!response?.ok) return { confirmed: false, apiOk: false, reason: 'API_HTTP_' + Number(response?.status || 0) };
+            if (!response?.ok) {
+                const isLocal = response?.headers?.get('X-LPX-Bridge-Cooldown') === 'local';
+                const retryAfter = response?.headers?.get('Retry-After');
+                const seconds = Number(retryAfter);
+                const dateMs = Date.parse(retryAfter || '');
+                const advertised = retryAfter && Number.isFinite(seconds)
+                    ? Math.max(0, seconds * 1000)
+                    : Number.isFinite(dateMs) ? Math.max(0, dateMs - Date.now()) : 0;
+                const budget = GM_getValue(API_BUDGET_KEY, {});
+                const remaining = Math.max(0, Number(budget.until || 0) - Date.now());
+                return {
+                    confirmed: false,
+                    apiOk: false,
+                    reason: isLocal ? 'PAUSA_LOCAL_PARTILHADA' : 'API_HTTP_' + Number(response?.status || 0),
+                    retryAfterMs: Math.max(advertised, remaining)
+                };
+            }
             const data = await response.json();
             // Para não repetir um job já comunicado, o recibo válido com o
             // mesmo jobId no ramo atual é suficiente. Um texto antigo do
@@ -7176,6 +7220,10 @@
             if (deliveryJobId) {
                 const check = await checkResultDelivered(deliveryJobId, text);
                 if (check.confirmed) return;
+                if (!check.apiOk) {
+                    throw new Error('Entrega adiada: consulta de confirmação indisponível (' +
+                        (check.reason || 'SEM_CONFIRMACAO') + '). Nenhum clique efetuado.');
+                }
             } else if (userTurnContains(text)) {
                 return;
             }
@@ -7415,6 +7463,7 @@
 
         apiProbeBusy = true;
         let shouldRepeat = true;
+        let nextProbeDelayMs = 10000;
         try {
             const response = await chatgptApiFetch(
                 '/backend-api/conversation/' + encodeURIComponent(uuid),
@@ -7433,6 +7482,11 @@
                     }
                     shouldRepeat = false;
                 }
+            } else if (Number(response.status) === 429) {
+                const budget = GM_getValue(API_BUDGET_KEY, {});
+                nextProbeDelayMs = apiRetryDelay(
+                    Number(budget.until || 0) - Date.now(), 10000
+                );
             }
         } catch (error) {
             // API não documentada: falhar em segurança, sem alterar sessão,
@@ -7442,7 +7496,7 @@
             apiProbeBusy = false;
             if (epoch === apiProbeEpoch && shouldRepeat && enabled() &&
                 Date.now() <= apiProbeDeadline && !activeJobId) {
-                queueApiProbe(10000, epoch);
+                queueApiProbe(nextProbeDelayMs, epoch);
             } else if (epoch === apiProbeEpoch) {
                 stopApiProbe();
             }
