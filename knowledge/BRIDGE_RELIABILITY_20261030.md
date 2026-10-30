@@ -403,3 +403,29 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Atualização do repositório não implica instalação ou alteração dos separadores Chrome: ainda falta confirmação visual do runtime 15.5.25 e dos resultados dos três jobs.
 - O HTTP 429 real exige respeitar `Retry-After` ou backoff registado; nenhuma correção pode garantir que o servidor responda 200 antes do limite terminar.
 - Recomendar atualização pelo Tampermonkey e recarregamento controlado apenas quando não houver jobs locais ativos. Nunca usar `Executar último` para recuperar a entrega. Nenhuma sessão/token/perfil/browser/processo foi alterado por esta publicação GitHub.
+
+## 2026-10-30 — Passo 49: Captura de v15.5.25 com resultado ROM0FIX-004 pendente
+- Captura real fornecida pelo utilizador: painel `PowerShell Bridge v15.5.25 · ATIVA`, `PSB-20261030-1630-POKEGUIDE-ROM0FIX-004` com aviso `PAUSA_LOCAL_PARTILHADA`, resultado preservado, sem envio. Não existe nessa imagem prova de entrega ao ChatGPT, nem de bloqueio irreversível.
+- Consultado o ramo GitHub `runtime`: ficheiros JSON e TXT do job estão presentes sob `runtime/d576e00447c8d0d1/`.
+- O JSON confirma `status=succeeded`, `exitCode=0`, início 17:14:04 UTC e conclusão 17:14:24 UTC, relatório com `outputLength=8984`.
+- O TXT confirma `CORRECAO_ROM0=CONFIRMADA`, `ASM_TARGETED_PASS=70`, `FULL_SUITE_PASS=676`, `FULL_SUITE_SKIPPED=1`, `CERTIFICACAO=APROVADA`. Isso não equivale a mapeamento integral sem lacunas: relatório mantém `ROM_RED_ROM0_EFFECTS_STILL_UNKNOWN=537` e equivalentes Blue/Green, `semanticallyCertified=0`.
+- Problema atual separado: a confirmação da entrega na conversa ainda não está demonstrada. Jamais reexecutar o job para reparar uma entrega pendente.
+
+## 2026-10-30 — Passo 50: Análise do desperdício de orçamento API
+- Inspecionada a fonte publicada da v15.5.25. `runApiProbe` e `armApiProbe` continuavam a consultar a conversa para procurar novos jobs mesmo depois da existência de um `getInflight()` com entrega anterior por confirmar.
+- `recoverPendingDelivery` usa o mesmo limite de consultas para verificar entregas. As sondagens redundantes podiam competir pela reserva partilhada de API, aumentando a duração da pausa local sem contribuir para resolver a entrega.
+- Trata-se de risco de concorrência verificável pelo código, não prova de que seja a única causa das pausas vistas no Chrome.
+
+## 2026-10-30 — Passo 51: v15.5.26 — prioridade à entrega pendente
+- Criada a branch `fix/bridge-v15-5-26-prioritize-pending-ack-20261030` com base na v15.5.25 pública; atualizados `@version` e `VERSION` para 15.5.26.
+- `armApiProbe` não inicia novas pesquisas quando existe `getInflight()` na conversa.
+- `runApiProbe` encerra uma pesquisa existente ao encontrar um resultado pendente antes da consulta, ou no `finally` se o estado ficou pendente enquanto a consulta decorria.
+- Após `saveInflight(...,'submitting')`, `processJobManifest` encerra a sonda para evitar consumir a API durante o acompanhamento do job.
+- A recuperação de entrega e os mecanismos de proteção anti-reexecução permanecem inalterados. Nenhum `POST /run` adicionado; nenhuma alteração nas sessões, cookies, tokens ou perfis.
+
+## 2026-10-30 — Passo 52: Validação isolada v15.5.26
+- Sintaxe de todo o JavaScript: PASS.
+- `armApiProbe` com `getInflight()` preenchido não agenda API; após libertação do estado, um novo evento pode armá-la: PASS.
+- `runApiProbe` com job pendente fecha a sonda antes de qualquer leitura autenticada: PASS.
+- Race condition simulada: `getInflight` torna-se preenchido durante a chamada de API; `finally` encerra a sonda e não agenda outra: PASS.
+- Testes isolados; NÃO comprova ainda a conclusão de entrega real em qualquer janela Chrome.
