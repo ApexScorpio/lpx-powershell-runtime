@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.26
+// @version      2026.10.30.15.5.27
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.26';
+    const VERSION = '15.5.27';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -3949,6 +3949,30 @@
         return accessToken;
     }
 
+    function apiLocalQueueResponse(waitMs, position, total) {
+        const seconds = Math.max(1, Math.ceil(Math.max(0, waitMs) / 1000));
+        return new Response('{}', { status: 429, headers: {
+            'Retry-After': String(seconds),
+            'X-LPX-Bridge-Cooldown': 'local',
+            'X-LPX-Bridge-Queue-Position': String(position + 1),
+            'X-LPX-Bridge-Queue-Length': String(total)
+        } });
+    }
+
+    function apiWaitingQueue(raw, now) {
+        const seen = new Set();
+        return (Array.isArray(raw) ? raw : []).filter(entry => {
+            if (!entry || typeof entry.id !== 'string' ||
+                Number(entry.expiresAt || 0) <= now ||
+                seen.has(entry.id)) return false;
+            seen.add(entry.id);
+            return true;
+        }).slice(0, 20).map(entry => ({
+            id: entry.id,
+            expiresAt: Number(entry.expiresAt)
+        }));
+    }
+
     async function chatgptApiFetch(url, init = {}) {
         const conversationRead = (!init.method || init.method === 'GET') &&
             /^\/backend-api\/conversation\/[^/?]+(?:\?|$)/.test(String(url));
@@ -3958,18 +3982,33 @@
         // desta origem, incluindo o pedido e a decisão sobre Retry-After.
         const perform = async () => {
         if (conversationRead) {
+            const now = Date.now();
             const budget = GM_getValue(API_BUDGET_KEY, {});
-            const remaining = Number(budget.until || 0) - Date.now();
-            if (remaining > 0) {
-                // A pausa local NÃO é um HTTP 429 recebido do ChatGPT.
-                // Assinalá-la explicitamente para o diagnóstico e o retry.
-                return new Response('{}', { status: 429, headers: {
-                    'Retry-After': String(Math.ceil(remaining / 1000)),
-                    'X-LPX-Bridge-Cooldown': 'local'
-                } });
+            const remaining = Math.max(0, Number(budget.until || 0) - now);
+            // Fila FIFO por separador, guardando apenas IDs efémeros.
+            // O Web Lock torna a reserva atómica entre as janelas Chrome.
+            const ownId = simpleHash(conversationId()) + ':' + TAB_ID;
+            const queue = apiWaitingQueue(budget.queue, now);
+            const expiration = Math.max(now + 60000, Number(budget.until || 0) + 30000);
+            let self = queue.find(item => item.id === ownId);
+            if (!self) {
+                self = { id: ownId, expiresAt: expiration };
+                queue.push(self);
+            } else {
+                self.expiresAt = expiration;
             }
-            // A reserva é partilhada por todas as abas do mesmo userscript.
-            GM_setValue(API_BUDGET_KEY, { ...budget, until: Date.now() + API_MIN_INTERVAL_MS });
+            const position = queue.findIndex(item => item.id === ownId);
+            if (remaining > 0 || position > 0) {
+                // Dar primeiro a janela ao participante mais antigo.
+                // Uma janela suspensa perde a reserva quando expira.
+                GM_setValue(API_BUDGET_KEY, { ...budget, queue });
+                const queuedMs = remaining + position * API_MIN_INTERVAL_MS;
+                return apiLocalQueueResponse(queuedMs, position, queue.length);
+            }
+            queue.shift();
+            GM_setValue(API_BUDGET_KEY, {
+                ...budget, queue, until: now + API_MIN_INTERVAL_MS
+            });
         }
         let response = null;
 
@@ -4011,7 +4050,14 @@
                 const requested = header && Number.isFinite(seconds)
                     ? seconds * 1000 : Number.isFinite(retryDate) ? retryDate - Date.now() : 0;
                 const backoff = Math.max(60000, requested, Math.min(300000, 15000 * 2 ** failures));
-                GM_setValue(API_BUDGET_KEY, { failures, until: Date.now() + backoff });
+                const until = Date.now() + backoff;
+                // Preservar a fila FIFO durante o Retry-After remoto.
+                // Caso contrário, os outros separadores voltariam a
+                // competir em simultâneo depois do backoff.
+                const queue = apiWaitingQueue(budget.queue, Date.now()).map(item => ({
+                    ...item, expiresAt: Math.max(item.expiresAt, until + 30000)
+                }));
+                GM_setValue(API_BUDGET_KEY, { ...budget, failures, until, queue });
                 return response;
             }
             if (conversationRead && response.ok) {
@@ -6817,7 +6863,7 @@
                 return;
             }
             try {
-                await sendMessage(message, null, saved.jobId);
+                await sendMessage(message, null, saved.jobId, verify);
                 markHandled(saved.jobId);
                 clearInflight(saved.jobId);
                 releaseClaim(saved.jobId);
@@ -6916,7 +6962,7 @@
                         setStatus(`Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
                         scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
                     } else if (clicks === 0) {
-                        await sendMessage(message, null, id);
+                        await sendMessage(message, null, id, check);
                         markHandled(id);
                         clearInflight(id);
                         setStatus(`Job ${id}: resultado entregue e confirmado.`);
@@ -7212,10 +7258,14 @@
                     : Number.isFinite(dateMs) ? Math.max(0, dateMs - Date.now()) : 0;
                 const budget = GM_getValue(API_BUDGET_KEY, {});
                 const remaining = Math.max(0, Number(budget.until || 0) - Date.now());
+                const queuePosition = Number(response?.headers?.get('X-LPX-Bridge-Queue-Position') || 0);
+                const queueTotal = Number(response?.headers?.get('X-LPX-Bridge-Queue-Length') || 0);
                 return {
                     confirmed: false,
                     apiOk: false,
-                    reason: isLocal ? 'PAUSA_LOCAL_PARTILHADA' : 'API_HTTP_' + Number(response?.status || 0),
+                    reason: isLocal
+                        ? (queuePosition > 0 ? 'AGUARDA_FILA_API_' + queuePosition + '_DE_' + queueTotal : 'PAUSA_LOCAL_PARTILHADA')
+                        : 'API_HTTP_' + Number(response?.status || 0),
                     retryAfterMs: Math.max(advertised, remaining)
                 };
             }
@@ -7224,27 +7274,52 @@
             // mesmo jobId no ramo atual é suficiente. Um texto antigo do
             // protocolo pode ter URLs/instruções formatadas diferentemente.
             const exact = apiContainsResult(data, id, message);
+            if (!data?.mapping || typeof data.mapping !== 'object' ||
+                !data.current_node || !data.mapping[data.current_node]) {
+                return { confirmed: false, apiOk: false, reason: 'API_CONVERSA_INCOMPLETA' };
+            }
             const existing = exact || apiContainsResult(data, id);
             return {
                 confirmed: existing,
                 apiOk: true,
-                receiptMismatch: Boolean(existing && message && !exact)
+                receiptMismatch: Boolean(existing && message && !exact),
+                // Comprovativo de ausência válido apenas nesta conversa
+                // e durante alguns segundos; evita uma segunda consulta
+                // imediata que a própria bridge bloquearia localmente.
+                absenceVerified: !existing,
+                checkedAt: Date.now(),
+                checkedConversation: conversationId(),
+                checkedJobId: String(id)
             };
         } catch {
             return { confirmed: false, apiOk: false, reason: 'API_UNAVAILABLE' };
         }
     }
 
-    async function sendMessage(text, manifest = null, deliveryJobId = '') {
+    async function sendMessage(text, manifest = null, deliveryJobId = '', absenceProof = null) {
         if (sendingMessage) throw new Error('Já existe uma entrega de mensagem nesta aba.');
         sendingMessage = true;
         try {
+            let deliveryCheck = null;
             if (deliveryJobId) {
-                const check = await checkResultDelivered(deliveryJobId, text);
-                if (check.confirmed) return;
-                if (!check.apiOk) {
+                // Verificar primeiro o DOM, sem tocar no orçamento da API.
+                if (userTurnContains(text)) return;
+                const age = Date.now() - Number(absenceProof?.checkedAt || 0);
+                const freshProof = Boolean(
+                    absenceProof?.apiOk === true &&
+                    absenceProof?.confirmed === false &&
+                    absenceProof?.absenceVerified === true &&
+                    absenceProof?.checkedJobId === String(deliveryJobId) &&
+                    absenceProof?.checkedConversation === conversationId() &&
+                    age >= 0 && age <= 10000
+                );
+                deliveryCheck = freshProof
+                    ? absenceProof
+                    : await checkResultDelivered(deliveryJobId, text);
+                if (deliveryCheck.confirmed) return;
+                if (!deliveryCheck.apiOk) {
                     throw new Error('Entrega adiada: consulta de confirmação indisponível (' +
-                        (check.reason || 'SEM_CONFIRMACAO') + '). Nenhum clique efetuado.');
+                        (deliveryCheck.reason || 'SEM_CONFIRMACAO') + '). Nenhum clique efetuado.');
                 }
             } else if (userTurnContains(text)) {
                 return;
@@ -7286,6 +7361,13 @@
             const deliveryMethod = 'button_click';
             let previousClicks = 0;
             if (deliveryJobId) {
+                // Não usar um comprovativo antigo após espera pelo compositor.
+                if (Date.now() - Number(deliveryCheck?.checkedAt || 0) > 10000 ||
+                    deliveryCheck?.checkedConversation !== conversationId() ||
+                    userTurnContains(text)) {
+                    if (userTurnContains(text)) return;
+                    throw new Error('A confirmação anterior expirou; revalidar sem novo envio.');
+                }
                 const prior = getInflight();
                 if (!prior || prior.jobId !== deliveryJobId) {
                     throw new Error('O resultado não tem estado de entrega recuperável.');
