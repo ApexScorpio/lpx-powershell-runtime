@@ -6499,7 +6499,7 @@
     async function recoverPendingDelivery() {
         if (deliveryRecoveryBusy || activeJobId || sendingMessage || !enabled()) return;
         const original = getInflight();
-        if (!original?.jobId || original.phase === 'running') return;
+        if (!original?.jobId) return;
         deliveryRecoveryBusy = true;
         let delay = 16000;
         try {
@@ -6514,6 +6514,13 @@
                     timeout: 8000
                 });
                 const data = parseJson(res);
+                if (res.status < 400 && data.running) {
+                    // Acompanhamento de job já aceite: apenas GET, nunca novo POST.
+                    activeJobId = saved.jobId;
+                    activeManifest = saved.manifest || { jobId: saved.jobId, protocol: 'PSB_JOB_V3' };
+                    await monitorActiveJob();
+                    return;
+                }
                 if (res.status < 400 && data.publishStatus === 'published' && data.resultJsonUrl) {
                     message = resultMessageForJob(saved.jobId, data);
                     updateDeliveryState(saved.jobId, 'published_pending_delivery', { message });
