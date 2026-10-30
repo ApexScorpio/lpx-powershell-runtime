@@ -226,3 +226,27 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmados body observer, heartbeat independente do foco e arranque automático da verificação.
 - Verificação sintática JavaScript: PASS.
 - Não se realizou prova no Chrome do utilizador; particularmente, envio via editor do ChatGPT em janela sem foco continua sem confirmação end-to-end.
+
+## 2026-10-30 — Passo 27: Screenshot real mostra resultados presos no compositor
+- Captura mostra v15.5.17 ATIVA, job `PSB-20261030-1404-FISCALGUARD-IUC-DOCUMENTOS-009` com aviso `A caixa contém outra mensagem; não foi substituída`.
+- O compositor já contém uma mensagem `PSBRIDGE_RESULT_V2` do mesmo job, com `status: SUCCEEDED`, `exitCode: 0`, URLs `result` e `log`. Não havia confirmação de submissão ao ChatGPT.
+- O utilizador confirma a existência de várias mensagens de resultado em espera e que o processamento das conversas fica bloqueado sem o envio.
+- O ficheiro JSON público do job FiscalGuard 009 foi consultado: `succeeded`, `exitCode=0`, `elapsedMs=364`, `outputLength=0`. Isto não comprova leitura real de documentos AT ou importação DPAPI.
+- Causa demonstrada no código v15.5.17: `sendMessage` exige texto do editor idêntico ao texto do resultado após normalização limitada; editores ricos podem incluir quebras duplas, espaços especiais ou ícones de links; isso rejeita incorretamente uma mensagem preparada que é do próprio job.
+
+## 2026-10-30 — Passo 28: Correção isolada v15.5.18
+- Criada branch `fix/bridge-same-job-draft-20261030`, sem alterar runtime local.
+- Normalização Unicode NFC, espaços Unicode, quebras de linha e ícones de links exclusivamente nos campos result/log.
+- Reconhecimento de mensagem preparada exige cabeçalho, identificador exato, estado, exitCode, URLs e instrução equivalentes. Qualquer diferença de job, URL, estado, instrução ou texto extra é rejeitada.
+- Rascunhos privados do utilizador nunca são substituídos; resultado de outro job também não.
+- Se botão estiver associado a form como submit, prefere `form.requestSubmit(button)`, caso contrário usa um único `button.click()`; nunca executa os dois na mesma tentativa.
+- Mantém registo persistente do número de tentativas, restrição temporal, confirmação por consulta da conversa autenticada e proteção contra reenvios cegos.
+- Se o resultado continuar visível na caixa após a tentativa, o estado distingue `resultado preparado mas envio por confirmar`, sem declarar entrega.
+- Sem apagar dados de perfis, sessões, cookies, tokens e backups. Sem reinícios, downloads ou execução de comandos PowerShell na máquina do utilizador.
+
+## 2026-10-30 — Passo 29: Testes isolados e limites
+- Sintaxe JavaScript: PASS.
+- Treze testes de identidade e formatação de resultados: 13 PASS.
+- Onze testes simulados de envio: form submit para resultado preparado, botão React, rascunho privado, conteúdo alterado, já entregue, caixa vazia, botão desativado, repetição após período de segurança, limite de tempo, limite de tentativas e resultado que continua em caixa — 11 PASS.
+- Documentação MDN verificada: requestSubmit gera validação e submit event; submit() direto não é equivalente. A API execCommand de edição está descontinuada e pode não disparar eventos de input consistentemente.
+- Ausência de teste end-to-end no Chrome real; o código não prova que o ChatGPT aceite eventos de envio sintéticos nem garante entrega com janelas sem foco. Requer screenshots do resultado após atualização.
