@@ -371,3 +371,26 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Link de atualização Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - Não executar `Executar último` nem `Cancelar` nos três jobs pendentes. Confirmar versão 15.5.24 após atualização e recarregamento controlado da página quando não houver jobs ativos. Tokens, cookies, armazenamento de perfis e backups não foram modificados por esta alteração do repositório.
 - Continua por provar em produção: as três entregas, resposta da API real após o período de limitação e o erro de carregamento da terceira conversa. Não afirmar que os jobs foram desbloqueados localmente até existirem evidências.
+
+## 2026-10-30 — Passo 45: Nova captura da v15.5.24 com três janelas
+- Screenshot do utilizador recebido e analisado: as três Bridges apresentam `v15.5.24 · ATIVA`.
+- PokéGuide `PSB-20261030-1515-POKEGUIDE-ROM0RETRY-002`: `PAUSA_LOCAL_PARTILHADA`, resultado preservado, nova consulta agendada.
+- TIMI `PSB-20261030-1541-TIMI-PROVAS-V2-050`: `PAUSA_LOCAL_PARTILHADA`, resultado preservado, nova consulta agendada.
+- FiscalGuard `PSB-20261030-1544-FISCALGUARD-LOGIN-IUC-016`: `API_HTTP_429` na interface, resultado preservado e nova consulta agendada. Pela implementação v15.5.24, esta classificação indica resposta 429 não sintetizada pela pausa local, sem provar o mecanismo exato do limite do servidor.
+- Ainda não existe evidência de que o tempo de backoff terminou nem de que as três entregas foram confirmadas. Não confundir o estado de pausa com bloqueio definitivo.
+- Fonte externa consultada: MDN Web Locks API (serialização entre separadores da mesma origem, `navigator.locks.request`); MDN HTTP 429 e `Retry-After` (obrigação de não repetir pedidos prematuramente).
+- Falha observável no código: a reserva do orçamento utiliza `GM_getValue` seguida de `GM_setValue` sem exclusão mútua, permitindo que várias janelas façam a reserva simultaneamente.
+
+## 2026-10-30 — Passo 46: Correção de concorrência isolada v15.5.25
+- Branch `fix/bridge-v15-5-25-cross-tab-api-lock-20261030` criada a partir do `main` com v15.5.24, que preserva a base real v15.5.22 enviada pelo utilizador.
+- `@version` e `VERSION` alterados para 15.5.25. Função `chatgptApiFetch` passou a serializar os pedidos GET da conversa pela Web Locks API com lock exclusivo `lpx-psb15-chatgpt-conversation-read`, cobrindo a leitura/reserva do orçamento, a consulta e atualização do backoff.
+- A coordenação exclusiva opera entre os separadores na mesma origem e contexto do browser, conforme MDN; se `navigator.locks.request` não estiver disponível, conserva-se o comportamento anterior com orçamento partilhado e backoff. Não se promete coordenação forte nesse fallback.
+- Preservados controlos de 429 local/real, período `Retry-After`, estados pendentes, proteções de não-reexecução, autenticação, dados e sessões existentes. Nenhuma operação de reinício, limpeza, POST /run ou alteração da máquina do utilizador.
+
+## 2026-10-30 — Passo 47: Testes simulados da v15.5.25
+- Ficheiro JavaScript completo validado sintaticamente: PASS.
+- Três pedidos simultâneos ao mesmo endpoint no simulador: três tentativas de lock, máximo uma secção crítica simultânea e apenas uma consulta HTTP; duas pausas locais produzidas: PASS.
+- HTTP 429 remoto seguido de pedido concorrente: apenas uma consulta HTTP remota; segundo pedido limitado localmente e backoff partilhado, sem repetição: PASS.
+- Exceção de rede: erro propagado e lock libertado: PASS.
+- Ausência da Web Locks API: fallback anterior preservado: PASS.
+- Estes resultados são simulações numa sandbox JavaScript, não um ensaio end-to-end com três janelas Chrome nem prova de desbloqueio dos três jobs. Captura visual inicial inspecionada; captura pós-atualização ainda pendente.
