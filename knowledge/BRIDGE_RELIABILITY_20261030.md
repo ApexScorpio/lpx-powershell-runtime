@@ -273,3 +273,20 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmadas no código as funções de identidade de resultados, resgate único de legacy drafts, marcação persistente antes do envio e `requestSubmit(button)` para botões submit reais.
 - Vários resultados já em espera nas caixas do utilizador ainda precisam de entrega real comprovada na conversa; a atualização no GitHub não efetua a submissão do Chrome.
 - O teste de aceitação requer a mensagem PSBRIDGE_RESULT_V2 passar para uma mensagem de utilizador no histórico, com o mesmo jobId, sem nova execução PowerShell.
+
+
+## 2026-10-30 — Passo 33: Evidência de entrega confirmada, mas estado pendente na Bridge 15.5.22
+- Evidência fornecida pelo utilizador para `PSB-20261030-1515-POKEGUIDE-ROM0RETRY-002`: sessão HTTP 200; conversa HTTP 200; resultado presente na API e no ramo atual (`true`); distância de 12 mensagens; formato exato reconhecido.
+- O limite de leitura de 160 mensagens não explica este caso.
+- Screenshot também mostra `PSB-20261030-1541-TIMI-PROVAS-V2-050` numa segunda conversa a verificar tentativa de entrega anterior; **não** existe ainda prova por API de que este segundo resultado foi recebido.
+- Origem local instalada v15.5.22 permanece desconhecida; no repositório público só foi identificada a base 15.5.19. Não substituir o runtime do utilizador nem anunciar uma atualização instalada.
+
+## 2026-10-30 — Passo 34: Correção de reconciliação ACK isolada na base pública
+- Branch `fix/bridge-ack-existing-results-20261030` criada sem alterar `main` nem o Tampermonkey instalado.
+- Inserida a rotina `acknowledgeDeliveredResult`: consulta a entrega na conversa atual antes de avaliar limites de tentativas ou solicitar o resultado ao daemon; só assinala tratado, liberta o estado inflight e a reserva do job perante confirmação positiva.
+- Recuperação com mensagem ausente passa a consultar a API primeiro; isto permite recuperar entregas comprovadas mesmo quando o daemon já não conserva o resultado.
+- Resultado não confirmado (falha de API, ausência no ramo atual) mantém a recuperação conservadora e nunca origina novo POST `/run`.
+- Corrigida confirmação enganadora por texto vazio no DOM: `userTurnContains` rejeita texto vazio e `checkResultDelivered` só consulta o DOM quando o corpo da mensagem existe.
+- Testes prévios à publicação: sintaxe JavaScript PASS; cenário de ACK confirmado PASS; ausência de ACK sem mutações PASS.
+- Commit de código: `c74af6f7bcabd018202fbc230b81910e4074b5ac`; o `@version` continua 15.5.19 para evitar promover a base antiga acima da 15.5.22 instalada.
+- **Pendente**: obter o código efetivamente instalado da 15.5.22, integrar a alteração sem perder as funções mais recentes e provar o desbloqueio real no Chrome do utilizador.
