@@ -327,3 +327,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Testes isolados em Node 22: `node --check` PASS; recibo correto/errado, role indevida e vazio no DOM PASS; API HTTP 200 com diferença no recibo PASS; API HTTP 429 PASS; resultado existente com 99 tentativas PASS sem reenvio nem leitura do daemon; recuperação em 429 PASS sem reenvio.
 - Atualização publicada inicialmente na branch `fix/bridge-v15-5-23-from-installed-20261030`. Ficheiro relido no GitHub: versão 15.5.23, sintaxe PASS e alterações de ACK presentes.
 - Limitação: testes foram simulados; não houve acesso à instalação local do Chrome, screenshot após a atualização, nem confirmação end-to-end na máquina do utilizador.
+
+## 2026-10-30 — Passo 40: Integração e verificação de publicação v15.5.23
+- PR #10 integrada em `main`, commit de merge `28cb6cb18935851e315ef225a73b46e43611c144`.
+- Relida a versão principal no GitHub: `@version 2026.10.30.15.5.23` e `VERSION = '15.5.23'`; blob publicado `58ab8e4d32ec7deac4b1cb54443617e98be3a2af`.
+- Confirmadas no ficheiro publicado: reconciliação antecipada, bloqueio de envios em API indisponível, controlo de orçamento de API partilhado, método `button_click` e `resumeAutonomy` da v15.5.22. Compilação sintática JavaScript: PASS.
+- Link direto de instalação/atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- Instalação e execução no Chrome do utilizador NÃO comprovadas; evitar concluir que os estados de jobs foram limpos até inspeção visual e leitura da versão do runtime no separador.
