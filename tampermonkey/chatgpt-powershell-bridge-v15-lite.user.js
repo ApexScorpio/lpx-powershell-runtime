@@ -6541,6 +6541,7 @@
             const lastClick = Number(saved.lastDeliveryClickAt || 0);
             if (clicks >= 2) {
                 setStatus(`Job ${saved.jobId} preservado; envio por confirmar. Não duplicar cliques.`);
+                delay = 60000;
                 return;
             }
             if (clicks > 0 && (!verify.apiOk || Date.now() - lastClick < 60000)) {
@@ -6701,10 +6702,20 @@
     }
 
     function composer() {
-        return document.querySelector('#prompt-textarea')
-            || document.querySelector('div.ProseMirror')
-            || document.querySelector('[contenteditable="true"]')
-            || document.querySelector('textarea[placeholder]');
+        // Nunca confundir os editores de código ou caixas de diálogo com o
+        // compositor principal do ChatGPT. Filtrar elementos ocultos.
+        const candidates = document.querySelectorAll(
+            '#prompt-textarea, [data-testid="composer"] [contenteditable="true"], ' +
+            'form [contenteditable="true"], form textarea, div.ProseMirror[contenteditable="true"]'
+        );
+        for (let i = candidates.length - 1; i >= 0; i--) {
+            const node = candidates[i];
+            if (!node.isConnected || node.closest('[aria-hidden="true"], [inert]')) continue;
+            if (typeof node.getClientRects === 'function' && node.getClientRects().length === 0) continue;
+            const form = node.closest('form, [data-testid="composer"]');
+            if (form || node.id === 'prompt-textarea') return node;
+        }
+        return null;
     }
 
     function sameMessageText(a, b) {
@@ -6791,7 +6802,7 @@
             if (message?.author?.role === 'user' &&
                 content.includes('PSBRIDGE_RESULT_V2') &&
                 content.includes('job: ' + String(id)) &&
-                new RegExp('(?:^|\\n)job: ' + String(id).replace(/[.*+?^${}()|[\]\\]/g, '\\    async function sendMessage(text) {') + '(?:\\n|$)').test(content)) {
+                content.split(/\r?\n/).some(line => line.trim() === 'job: ' + String(id))) {
                 return true;
             }
             current = item.parent;
