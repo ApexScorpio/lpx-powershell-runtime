@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.15
+// @version      2026.10.30.15.5.16
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.15';
+    const VERSION = '15.5.16';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -45,6 +45,7 @@
     const FILEID_HANDSHAKE_PREFIX = 'lpxPsb15:fileIdHandshake:';
     const CLAIM_TTL_MS = 10 * 60 * 1000;
     const INFLIGHT_PREFIX = 'lpxPsb15:inflight:';
+    const UNRESOLVED_PREFIX = 'lpxPsb15:unresolved:';
     const POLL_MS = 750;
     const SETTLE_MS = 900;
     const PUBLISH_WAIT_MS = 90 * 1000;
@@ -292,6 +293,71 @@
         if (value && value.jobId === String(id)) {
             GM_deleteValue(inflightKey());
         }
+    }
+
+
+    function unresolvedKey() {
+        return UNRESOLVED_PREFIX + simpleHash(conversationId());
+    }
+
+    function unresolvedJobs() {
+        const saved = GM_getValue(unresolvedKey(), []);
+        return Array.isArray(saved) ? saved : [];
+    }
+
+    function archiveUnresolvedJob(id, reason, httpStatus) {
+        const jobId = String(id || '').trim();
+        if (!jobId) return;
+        const records = unresolvedJobs();
+        if (records.some(row => row?.jobId === jobId)) return;
+        const saved = getInflight();
+        // Guardar apenas metadados, sem comandos, credenciais ou tokens.
+        records.push({
+            jobId,
+            conversation: conversationId(),
+            purpose: String(saved?.manifest?.purpose || ''),
+            previousPhase: String(saved?.phase || ''),
+            reason: String(reason),
+            httpStatus: Number(httpStatus || 0),
+            archivedAt: new Date().toISOString(),
+            resultJsonUrl: String(saved?.resultJsonUrl || '')
+        });
+        GM_setValue(unresolvedKey(), records);
+    }
+
+    function stopMissingJob(id) {
+        archiveUnresolvedJob(id, 'server_job_not_found_after_retries', 404);
+        // Marca apenas como não-reexecutável pela automatização.
+        // NÃO declarar execução/conclusão do comando.
+        markHandled(id);
+        releaseClaim(id);
+        clearInflight(id);
+        if (activeJobId === id) {
+            activeJobId = '';
+            activeManifest = null;
+        }
+        setStatus(`Job ${id}: HTTP 404 confirmado. Servidor não conhece este job. Referência preservada; sem reexecução.`);
+    }
+
+    async function confirmsMissingJob(id, repeats = 2) {
+        // A primeira resposta 404 veio da chamada original. Exigir mais
+        // leituras independentes evita confundir falha transitória com perda.
+        for (let attempt = 0; attempt < repeats; attempt++) {
+            await wait(1200 * (attempt + 1));
+            let response;
+            try {
+                response = await request({
+                    method: 'GET',
+                    url: `${BRIDGE_URL}/job/${encodeURIComponent(id)}?metadata=1&_=${Date.now()}`,
+                    headers: { 'X-Bridge-Token': token(), 'Cache-Control': 'no-cache' },
+                    timeout: 8000
+                });
+            } catch {
+                return false;
+            }
+            if (Number(response.status) !== 404) return false;
+        }
+        return true;
     }
 
     function claim(id) {
@@ -6514,6 +6580,13 @@
                     timeout: 8000
                 });
                 const data = parseJson(res);
+                if (Number(res.status) === 404) {
+                    setStatus(`Job ${saved.jobId}: HTTP 404. A confirmar antes de suspender o acompanhamento…`);
+                    if (await confirmsMissingJob(saved.jobId)) {
+                        stopMissingJob(saved.jobId);
+                    }
+                    return;
+                }
                 if (res.status < 400 && data.running) {
                     // Acompanhamento de job já aceite: apenas GET, nunca novo POST.
                     activeJobId = saved.jobId;
@@ -6582,6 +6655,7 @@
         const started = Date.now();
         let finishedAt = 0;
         let failures = 0;
+        let consecutive404 = 0;
 
         const watchedConversation = conversationId();
         while (activeJobId && conversationId() === watchedConversation) {
@@ -6606,9 +6680,20 @@
             }
 
             const data = parseJson(response);
+            if (Number(response.status) === 404) {
+                consecutive404++;
+                if (consecutive404 >= 3) {
+                    stopMissingJob(id);
+                    return;
+                }
+                setStatus(`Job ${id}: HTTP 404 (${consecutive404}/3). A verificar se o servidor recupera o registo…`);
+                await wait(1500 * consecutive404);
+                continue;
+            }
+            consecutive404 = 0;
             if (response.status >= 400) {
                 failures++;
-                setStatus(`Job ${id}: HTTP ${response.status}. A acompanhar sem reenvio do comando…`);
+                setStatus(`Job ${id}: HTTP ${response.status}. Serviço respondeu com erro; nenhum comando reenviado.`);
                 await wait(Math.min(30000, 2000 * failures));
                 continue;
             }
