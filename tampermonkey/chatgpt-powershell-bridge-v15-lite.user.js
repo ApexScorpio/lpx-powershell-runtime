@@ -61,6 +61,7 @@
     const processingJobIds = new Set();
     let apiProbeTimer = 0;
     let apiProbeDeadline = 0;
+    let apiProbeStartedAt = 0;
     let apiProbeConversation = '';
     let apiProbeBusy = false;
     let apiProbeEpoch = 0;
@@ -1084,7 +1085,8 @@
                 for (const added of record.addedNodes) {
                     if (containsNewUserTurn(added)) {
                         candidateAssistant = null;
-                        armApiProbe();
+                        // Uma mensagem antiga também pode ser montada por virtualização;
+                        // só eventos reais de envio iniciam a consulta autenticada.
                     }
                     // Descobre novos turnos mesmo que cheguem como subárvores.
                     scheduleCandidate(added);
@@ -1405,7 +1407,8 @@
         }
 
         if (assistantWriting()) {
-            scheduleCandidate(candidateAssistant || document.body);
+            clearTimeout(settleTimer);
+            settleTimer = window.setTimeout(() => void inspectCandidate(false), SETTLE_MS);
             return;
         }
 
@@ -6745,6 +6748,7 @@
         clearTimeout(apiProbeTimer);
         apiProbeTimer = 0;
         apiProbeDeadline = 0;
+        apiProbeStartedAt = 0;
         apiProbeConversation = '';
         apiProbeEpoch++;
     }
@@ -6754,6 +6758,7 @@
         const current = conversationId();
         if (apiProbeConversation !== current || !apiProbeDeadline) {
             apiProbeConversation = current;
+            apiProbeStartedAt = Date.now();
             apiProbeDeadline = Date.now() + 5 * 60 * 1000;
             apiProbeEpoch++;
         }
@@ -6787,6 +6792,13 @@
                 if (message.end_turn !== true || message.status !== 'finished_successfully') {
                     return { state: 'pending' };
                 }
+                // O turno final tem de ser posterior ao envio que armou a pesquisa:
+                // impede a execução de um job de uma resposta anterior.
+                const createdAt = Number(message.create_time);
+                if (!Number.isFinite(createdAt) || createdAt <= 0 ||
+                    createdAt * 1000 < apiProbeStartedAt - 1500) {
+                    return { state: 'pending' };
+                }
                 const parts = message?.content?.parts;
                 if (!Array.isArray(parts)) return { state: 'finished', text: '' };
                 return {
@@ -6815,8 +6827,12 @@
     }
 
     async function runApiProbe(epoch) {
-        if (apiProbeBusy || epoch !== apiProbeEpoch || !enabled() ||
+        if (epoch !== apiProbeEpoch || !enabled() ||
             conversationId() !== apiProbeConversation || activeJobId) return;
+        if (apiProbeBusy) {
+            queueApiProbe(2000, epoch);
+            return;
+        }
 
         if (Date.now() > apiProbeDeadline) {
             stopApiProbe();
