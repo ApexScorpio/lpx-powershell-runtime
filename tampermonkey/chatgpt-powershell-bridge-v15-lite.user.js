@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.17
+// @version      2026.10.30.15.5.18
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.17';
+    const VERSION = '15.5.18';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6873,13 +6873,79 @@
         return null;
     }
 
-    function sameMessageText(a, b) {
-        const normalize = value => String(value || '')
-            .replace(/\r\n?/g, '\n')
-            .replace(/[\u00a0\u200b]/g, ' ')
-            .replace(/\n\s*\n/g, '\n')
+    function normalizeOutgoingText(value) {
+        // innerText reflecte a apresentação, textContent os nós DOM. O editor
+        // pode converter parágrafos em quebras de linha e links em elementos.
+        return String(value || '')
+            .normalize('NFC')
+            .replace(/[\u200b-\u200d\u2060\ufeff]/g, '')
+            .replace(/[\u00a0\u202f]/g, ' ')
+            .replace(/\s+/g, ' ')
             .trim();
-        return normalize(a) === normalize(b);
+    }
+
+    function sameMessageText(a, b) {
+        return normalizeOutgoingText(a) === normalizeOutgoingText(b);
+    }
+
+    function normalizeResultRendering(value) {
+        // O compositor pode adicionar um ícone decorativo ao link.
+        // A remoção está limitada a result/log para não alterar outro texto.
+        return normalizeOutgoingText(value)
+            .replace(/\b(result|log):\s*[🌐🔗]\s*/gu, '$1: ');
+    }
+
+    function parsedResultEnvelope(value) {
+        const plain = normalizeResultRendering(value);
+        const pattern = /^PSBRIDGE_RESULT_V2 job:\s*(PSB-\S+) status:\s*(\S+) exitCode:\s*(\S+) result:\s*(https:\/\/\S+) log:\s*(https:\/\/\S+) instruction:\s*(.+)$/su;
+        const match = plain.match(pattern);
+        if (!match) return null;
+        return {
+            jobId: match[1],
+            status: match[2],
+            exitCode: match[3],
+            resultUrl: match[4],
+            logUrl: match[5],
+            instruction: match[6]
+        };
+    }
+
+    function samePreparedResultDraft(actual, expected, jobId) {
+        if (sameMessageText(actual, expected)) return true;
+        if (!jobId) return false;
+        const a = parsedResultEnvelope(actual);
+        const b = parsedResultEnvelope(expected);
+        if (!a || !b) return false;
+        return (
+            a.jobId === jobId &&
+            b.jobId === jobId &&
+            a.status === b.status &&
+            a.exitCode === b.exitCode &&
+            a.resultUrl === b.resultUrl &&
+            a.logUrl === b.logUrl &&
+            a.instruction === b.instruction
+        );
+    }
+
+    function composerDraftMatches(editor, text, deliveryJobId) {
+        if (!editor) return false;
+        const candidates = [
+            composerText(),
+            editor instanceof HTMLTextAreaElement || editor instanceof HTMLInputElement
+                ? String(editor.value || '')
+                : String(editor.textContent || '')
+        ];
+        return candidates.some(candidate =>
+            deliveryJobId
+                ? samePreparedResultDraft(candidate, text, deliveryJobId)
+                : sameMessageText(candidate, text)
+        );
+    }
+
+    function composerHasOwnJobDraft(editor, jobId) {
+        if (!editor || !jobId) return false;
+        const text = String(editor.innerText || editor.textContent || '');
+        return normalizeOutgoingText(text).startsWith('PSBRIDGE_RESULT_V2 job: ' + jobId + ' ');
     }
 
     function setComposerText(editor, text) {
@@ -6995,12 +7061,15 @@
             const editor = composer();
             if (!editor) throw new Error('Compositor do ChatGPT indisponível.');
             const draft = composerText();
-            if (draft && !sameMessageText(draft, text)) {
-                throw new Error('A caixa contém outra mensagem; não foi substituída.');
+            if (draft && !composerDraftMatches(editor, text, deliveryJobId)) {
+                if (composerHasOwnJobDraft(editor, deliveryJobId)) {
+                    throw new Error('O resultado deste job já está na caixa, mas o conteúdo difere. Preservado sem enviar nem substituir.');
+                }
+                throw new Error('A caixa contém um rascunho diferente; preservado sem substituir.');
             }
             if (!draft) setComposerText(editor, text);
-            if (!sameMessageText(composerText(), text)) {
-                throw new Error('Texto não confirmado no compositor.');
+            if (!composerDraftMatches(editor, text, deliveryJobId)) {
+                throw new Error('Não foi possível validar integralmente o resultado na caixa; não enviado.');
             }
 
             let button = null;
