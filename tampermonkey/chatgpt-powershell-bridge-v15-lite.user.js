@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.32
+// @version      2026.10.30.15.5.33
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.32';
+    const VERSION = '15.5.33';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -6764,32 +6764,43 @@
             return { allowed: false, reason: 'RECIBO_LOCAL_INVALIDO' };
         }
 
-        // Esta conversa pode usar um container do tipo
-        // conversation-turn-N, sem data-author-role="assistant".
-        // Reutilizar os mesmos tipos de turno que a deteção de jobs já
-        // aceita, exigindo o ID do comando original para não confundir
-        // conteúdo de outra conversa ou mensagens do utilizador.
-        const candidates = document.querySelectorAll(
-            '[data-message-author-role="assistant"], ' +
-            '[data-author-role="assistant"], ' +
-            '[data-testid*="assistant"], [data-testid*="agent"], ' +
-            '.agent-turn, [data-testid^="conversation-turn-"], article'
+        // Prova primária: a Bridge reconheceu o manifesto do comando,
+        // guardou-o por conversa, executou-o no daemon e só marcou
+        // published_pending_delivery após obter o resultado publicado.
+        // Não exigir que o React ainda mostre o mesmo turno no DOM:
+        // o Chrome pode virtualizar, substituir ou fragmentar esse turno.
+        const persistentJobProof = (
+            saved.manifest?.protocol === 'PSB_JOB_V3' &&
+            saved.manifest?.jobId === saved.jobId &&
+            String(saved.manifest?.purpose || '').length > 0
         );
+
+        // Compatibilidade conservadora para estados antigos sem manifesto.
+        // Nesses casos manter a prova pelo turno original; nunca deduzir
+        // uma entrega segura só porque o compositor existe.
         let matchingAssistant = false;
-        for (let i = candidates.length - 1; i >= 0; i--) {
-            const node = candidates[i];
-            if (isUserTurn(node)) continue;
-            const content = String(node.textContent || node.innerText || '');
-            if (content.includes(String(saved.jobId)) &&
-                (content.includes('PSB_JOB_V3') ||
-                 content.includes('# jobId:') ||
-                 content.includes('jobId:'))) {
-                matchingAssistant = true;
-                break;
+        if (!persistentJobProof) {
+            const candidates = document.querySelectorAll(
+                '[data-message-author-role="assistant"], ' +
+                '[data-author-role="assistant"], ' +
+                '[data-testid*="assistant"], [data-testid*="agent"], ' +
+                '.agent-turn, [data-testid^="conversation-turn-"], article'
+            );
+            for (let i = candidates.length - 1; i >= 0; i--) {
+                const node = candidates[i];
+                if (isUserTurn(node)) continue;
+                const content = String(node.textContent || node.innerText || '');
+                if (content.includes(String(saved.jobId)) &&
+                    (content.includes('PSB_JOB_V3') ||
+                     content.includes('# jobId:') ||
+                     content.includes('jobId:'))) {
+                    matchingAssistant = true;
+                    break;
+                }
             }
-        }
-        if (!matchingAssistant) {
-            return { allowed: false, reason: 'TURNO_DO_JOB_NAO_IDENTIFICADO' };
+            if (!matchingAssistant) {
+                return { allowed: false, reason: 'SEM_MANIFESTO_PERSISTENTE_NEM_TURNO' };
+            }
         }
 
         // Uma página de erro ou a página de projeto sem conversa real
@@ -6799,7 +6810,12 @@
         if (userTurnContains(message)) {
             return { allowed: false, reason: 'RECIBO_JA_VISIVEL' };
         }
-        return { allowed: true, reason: 'PRIMEIRA_ENTREGA_VALIDADA' };
+        return {
+            allowed: true,
+            reason: persistentJobProof
+                ? 'PRIMEIRA_ENTREGA_COM_MANIFESTO_PERSISTENTE'
+                : 'PRIMEIRA_ENTREGA_COM_TURNO_VISIVEL'
+        };
     }
 
     function mayUseSingleUiDelivery(saved, message) {
