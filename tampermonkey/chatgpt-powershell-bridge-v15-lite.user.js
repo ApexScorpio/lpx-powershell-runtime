@@ -6345,6 +6345,12 @@
             return;
         }
 
+        // Mesmo "Executar último" não deve repetir um job cujo registo
+        // desapareceu do servidor. Exige diagnóstico antes de um novo jobId.
+        if (unresolvedJobs().some(row => row?.jobId === jobId)) {
+            setStatus(`Job ${jobId}: estado não confirmado após HTTP 404. Reexecução bloqueada para proteger os dados.`);
+            return;
+        }
         if (isHandled(jobId) && !forced) {
             return;
         }
@@ -7242,6 +7248,11 @@
                 `GitHub ${data.githubConfigured ? 'OK' : 'não configurado'} · ` +
                 `${enabled() ? 'autonomia ativa nesta aba' : 'autonomia parada'}.`
             );
+            const unresolved = unresolvedJobs();
+            if (unresolved.length && !getInflight()) {
+                const last = unresolved[unresolved.length - 1];
+                setStatus(`Job ${last.jobId}: registo ausente do servidor (HTTP ${last.httpStatus}). Guardado como por esclarecer. Não reexecutar.`);
+            }
 
             // Não enviar o protocolo em cada recarregamento de separador:
             // evita disputar o compositor com resultados já publicados.
