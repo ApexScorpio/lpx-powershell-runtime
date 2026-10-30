@@ -574,3 +574,19 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Reconfirmados `domReceiptMatchesTurn`, diagnóstico explícito de cliques prévios e `AUTOMATIC_CONVERSATION_API_READS = false`.
 - Link para atualizar: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - Instalado no GitHub, NÃO na máquina do utilizador. Ainda falta confirmar se o recibo PASSIVEIP-019 está efetivamente no DOM, se a nova correspondência o encontra, ou se já ocorreu um clique de envio; dados de sessão preservados.
+
+## 2026-10-30 — Passo 72: Screenshot v15.5.31 com zero cliques e primeiro envio impedido
+- Screenshot real enviado pelo utilizador, conversa PokéGuide: `PowerShell Bridge v15.5.31 · ATIVA · DOM`; job `PSB-20261030-1946-POKEGUIDE-PASSIVEIP-019`; estado `0 cliques registados; primeira entrega ainda não autorizada pela interface`.
+- Código inspecionado: a recusa ocorre em `mayUseSingleUiDelivery`, que exige metadados de publicação, conversa com ID, compositor, resposta terminada e presença de turno do assistente num seletor mais restrito do que o já utilizado por `latestAssistantFallback`.
+- O screenshot não permite identificar qual destas condições falhou; não inferir causa única sem diagnóstico. A imagem confirma apenas que não há clique de envio registado.
+- JSON público do job confirmado no GitHub runtime: `succeeded`, `exitCode=0`, resultado JSON e TXT publicados, finalização `2026-10-30T19:47:18.764Z`. Não foi feito novo POST de execução.
+- `resultReceipt()` testado isoladamente com a mensagem real do PASSIVEIP-019: devolve jobId, status, exitCode e os dois URLs esperados. O parser local não explica o bloqueio.
+
+## 2026-10-30 — Passo 73: Diagnóstico da primeira entrega v15.5.32
+- Branch `fix/bridge-v15-5-32-delivery-gate-20261030` criada sobre main v15.5.31, preservando modo DOM e estados antigos.
+- Substituída a guarda opaca por `firstUiDeliveryGate`, que devolve uma razão específica para bloqueio: fase, versão preparadora, conversa, clique prévio, streaming, recibo, compositor, turno do job ou ausência de UUID.
+- O reconhecimento do turno original passa a aceitar também os mesmos tipos de elementos `conversation-turn`/agent/article usados pela deteção de mensagens, mas exige simultaneamente o jobId e o marcador PSB_JOB_V3 / # jobId; conteúdo de utilizador não é utilizado como prova de turno do assistente.
+- No estado de zero cliques, o painel mostra `bloqueio da primeira entrega: <motivo>` em vez de texto genérico. Quando todos os critérios estão cumpridos, mantém-se um único clique com estado gravado previamente e bloqueio por conversa, sem consulta à API interna.
+- Nenhum token, sessão, perfil, cookie, backup, histórico anterior ou job executado foi alterado. Não foi efetuado qualquer POST /run nem clique na instalação do utilizador.
+- Testes simulados PASS: conversa com turno sem atributo antigo autorizada; turno de outro job ou de utilizador rejeitado; UUID ausente, streaming, versão preparadora ausente, fase errada, clique anterior, conversa diferente, compositor ausente e DOM sem turno rejeitados. Sintaxe JavaScript integral PASS.
+- Limitação: testes do DOM simulados; falta validar o motivo real e eventual envio no Chrome do utilizador depois da atualização. Não anunciar entrega real como concluída.
