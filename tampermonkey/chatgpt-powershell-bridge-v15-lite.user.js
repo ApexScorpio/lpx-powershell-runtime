@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.17
+// @version      2026.10.30.15.5.18
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.17';
+    const VERSION = '15.5.18';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6873,13 +6873,79 @@
         return null;
     }
 
-    function sameMessageText(a, b) {
-        const normalize = value => String(value || '')
-            .replace(/\r\n?/g, '\n')
-            .replace(/[\u00a0\u200b]/g, ' ')
-            .replace(/\n\s*\n/g, '\n')
+    function normalizeOutgoingText(value) {
+        // innerText reflecte a apresentação, textContent os nós DOM. O editor
+        // pode converter parágrafos em quebras de linha e links em elementos.
+        return String(value || '')
+            .normalize('NFC')
+            .replace(/[\u200b-\u200d\u2060\ufeff]/g, '')
+            .replace(/[\u00a0\u202f]/g, ' ')
+            .replace(/\s+/g, ' ')
             .trim();
-        return normalize(a) === normalize(b);
+    }
+
+    function sameMessageText(a, b) {
+        return normalizeOutgoingText(a) === normalizeOutgoingText(b);
+    }
+
+    function normalizeResultRendering(value) {
+        // O compositor pode adicionar um ícone decorativo ao link.
+        // A remoção está limitada a result/log para não alterar outro texto.
+        return normalizeOutgoingText(value)
+            .replace(/\b(result|log):\s*[🌐🔗]\s*/gu, '$1: ');
+    }
+
+    function parsedResultEnvelope(value) {
+        const plain = normalizeResultRendering(value);
+        const pattern = /^PSBRIDGE_RESULT_V2 job:\s*(PSB-\S+) status:\s*(\S+) exitCode:\s*(\S+) result:\s*(https:\/\/\S+) log:\s*(https:\/\/\S+) instruction:\s*(.+)$/su;
+        const match = plain.match(pattern);
+        if (!match) return null;
+        return {
+            jobId: match[1],
+            status: match[2],
+            exitCode: match[3],
+            resultUrl: match[4],
+            logUrl: match[5],
+            instruction: match[6]
+        };
+    }
+
+    function samePreparedResultDraft(actual, expected, jobId) {
+        if (sameMessageText(actual, expected)) return true;
+        if (!jobId) return false;
+        const a = parsedResultEnvelope(actual);
+        const b = parsedResultEnvelope(expected);
+        if (!a || !b) return false;
+        return (
+            a.jobId === jobId &&
+            b.jobId === jobId &&
+            a.status === b.status &&
+            a.exitCode === b.exitCode &&
+            a.resultUrl === b.resultUrl &&
+            a.logUrl === b.logUrl &&
+            a.instruction === b.instruction
+        );
+    }
+
+    function composerDraftMatches(editor, text, deliveryJobId) {
+        if (!editor) return false;
+        const candidates = [
+            composerText(),
+            editor instanceof HTMLTextAreaElement || editor instanceof HTMLInputElement
+                ? String(editor.value || '')
+                : String(editor.textContent || '')
+        ];
+        return candidates.some(candidate =>
+            deliveryJobId
+                ? samePreparedResultDraft(candidate, text, deliveryJobId)
+                : sameMessageText(candidate, text)
+        );
+    }
+
+    function composerHasOwnJobDraft(editor, jobId) {
+        if (!editor || !jobId) return false;
+        const text = String(editor.innerText || editor.textContent || '');
+        return normalizeOutgoingText(text).startsWith('PSBRIDGE_RESULT_V2 job: ' + jobId + ' ');
     }
 
     function setComposerText(editor, text) {
@@ -6995,12 +7061,15 @@
             const editor = composer();
             if (!editor) throw new Error('Compositor do ChatGPT indisponível.');
             const draft = composerText();
-            if (draft && !sameMessageText(draft, text)) {
-                throw new Error('A caixa contém outra mensagem; não foi substituída.');
+            if (draft && !composerDraftMatches(editor, text, deliveryJobId)) {
+                if (composerHasOwnJobDraft(editor, deliveryJobId)) {
+                    throw new Error('O resultado deste job já está na caixa, mas o conteúdo difere. Preservado sem enviar nem substituir.');
+                }
+                throw new Error('A caixa contém um rascunho diferente; preservado sem substituir.');
             }
             if (!draft) setComposerText(editor, text);
-            if (!sameMessageText(composerText(), text)) {
-                throw new Error('Texto não confirmado no compositor.');
+            if (!composerDraftMatches(editor, text, deliveryJobId)) {
+                throw new Error('Não foi possível validar integralmente o resultado na caixa; não enviado.');
             }
 
             let button = null;
@@ -7012,20 +7081,44 @@
             if (!button || button.disabled || button.getAttribute('aria-disabled') === 'true') {
                 throw new Error('Botão Enviar indisponível; nenhuma submissão forçada.');
             }
-            // Registar a intenção ANTES do clique para manter idempotência no reload.
+            // Um único mecanismo por tentativa: submit nativo quando o botão
+            // pertence realmente a um formulário e é do tipo submit.
+            // Para botões React do tipo button, usar o próprio click.
+            // O clique por si só nunca equivale a entrega confirmada.
+            let deliveryMethod = (
+                button.form &&
+                button.type === 'submit' &&
+                typeof button.form.requestSubmit === 'function'
+            ) ? 'form_request_submit' : 'button_click';
+            let previousClicks = 0;
             if (deliveryJobId) {
                 const prior = getInflight();
                 if (!prior || prior.jobId !== deliveryJobId) {
                     throw new Error('O resultado não tem estado de entrega recuperável.');
                 }
+                previousClicks = Number(prior.deliveryClicks || 0);
+                if (previousClicks >= 2) {
+                    throw new Error('Limite de tentativas de entrega atingido. Nenhum novo envio.');
+                }
+                const ageMs = Date.now() - Number(prior.lastDeliveryClickAt || 0);
+                if (previousClicks > 0 && ageMs < 60000) {
+                    throw new Error('Entrega anterior ainda em verificação. Nenhum novo envio.');
+                }
+                // Reutilizar o mecanismo semanticamente correto nas tentativas
+                // permitidas. Nunca executar click e requestSubmit em sequência.
+                // Gravar ANTES da única tentativa (inclusive após reload).
                 updateDeliveryState(deliveryJobId, 'delivery_clicked', {
                     message: text,
-                    deliveryClicks: Number(prior.deliveryClicks || 0) + 1,
-                    lastDeliveryClickAt: Date.now()
+                    deliveryClicks: previousClicks + 1,
+                    lastDeliveryClickAt: Date.now(),
+                    deliveryMethod
                 });
             }
-            // Exatamente um clique, sem requestSubmit/Enter a seguir.
-            button.click();
+            if (deliveryMethod === 'form_request_submit') {
+                button.form.requestSubmit(button);
+            } else {
+                button.click();
+            }
             for (let n = 0; n < 30; n++) {
                 if (userTurnContains(text)) return;
                 // A API autentica a entrega mesmo se o ChatGPT virtualizar
@@ -7035,6 +7128,9 @@
                     if (checked.confirmed) return;
                 }
                 await wait(650);
+            }
+            if (deliveryJobId && composerDraftMatches(editor, text, deliveryJobId)) {
+                throw new Error('O resultado do próprio job continua preparado na caixa; a submissão não foi confirmada. Sem novo envio imediato.');
             }
             throw new Error('Envio não confirmado; verificar a API antes de qualquer nova tentativa.');
         } finally {
