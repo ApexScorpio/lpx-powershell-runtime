@@ -515,3 +515,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Recuperação de resultado publicado e ainda não clicado: uma tentativa de envio, estado tratado quando o simulador confirma a entrega, sem consultar API ou daemon: PASS.
 - Recuperação com clique prévio ou interface não carregada: nenhum envio, nenhum ACK indevido, agendamento conservador respeitado: PASS.
 - Estes testes são simulações do código; não provam ainda que o servidor ChatGPT aceite o envio no Chrome do utilizador. Não foram capturadas imagens pós-atualização (não existe acesso ao ecrã local).
+
+## 2026-10-30 — Passo 64: Publicação e validação de integridade da v15.5.29
+- PR #16 integrada no ramo main pelo commit 4b1abe7e137ec67a08598f33f20d214ee1482589.
+- Userscript relido diretamente de main: @version 2026.10.30.15.5.29, VERSION 15.5.29, blob ee4cebd62d63f908ca1fedefb482b935afe29432, sintaxe integral PASS.
+- Validadas no ficheiro publicado: função de autorização da primeira entrega UI, lock de envio por conversa, bloqueio de segundo clique se o estado mudou, persistência de deliveryClicks antes do clique e conservação do limitador remoto da API.
+- Atualização disponível no endereço https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js
+- A versão foi publicada, não instalada automaticamente no Chrome. Testes isolados passaram; falta screenshot real da v15.5.29 e prova end-to-end da entrega. Jobs com clique anterior permanecem protegidos, podendo continuar pendentes até confirmação por DOM ou API. Não há garantia de superar limites do servidor para mensagens de saída.
