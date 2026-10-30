@@ -92,3 +92,13 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Ficheiro de userscript relido na branch main e confirmada a versão 15.5.14, com deteção de subárvores, recuperação por API autenticada e mutex de jobs.
 - A publicação no GitHub não garante que o Tampermonkey no Chrome já tenha atualizado a versão instalada.
 - Validação do Chrome local e screenshot da execução sem scroll continuam pendentes; não foram reportadas como concluídas.
+
+## 2026-10-30 — Passo 11: Screenshot real denuncia versão antiga e entrega por confirmar
+- Screenshot fornecida pelo utilizador apresenta no painel Tampermonkey "PowerShell Bridge v15.5.11 · ATIVA".
+- Estado visível: "Resultado publicado. A enviar apenas o URL para esta conversa..."; publicação não comprova entrega.
+- A resposta visível anuncia um job FiscalGuard; na parte visível da captura não aparece o bloco PSB_JOB_V3. A região abaixo da captura não é observável, pelo que não foi afirmada ausência no turno inteiro.
+- Confirmado no GitHub que o userscript 15.5.11 já tinha @updateURL e @downloadURL para o mesmo raw URL da versão publicada 15.5.14. A versão local é antiga; atualização do repositório não equivale a atualização da aba.
+- Confirmada na documentação oficial Tampermonkey a opção de verificar atualizações do userscript.
+- Identificada documentação 15.2.0 no ficheiro CHATGPT_PROTOCOL_PROMPT.md ainda intitulada "protocolo ativo", contrariando o protocolo atual PSB_JOB_V3.
+- Criado ACTIVE_BRIDGE_PROTOCOL_V15.md com formato real e diagnóstico; apensa retificação ao documento histórico original, sem remover quaisquer entradas.
+- Nenhum acesso à sessão Chrome real nem ao daemon Windows. Não foram alterados tokens, perfis, backups ou processos.
