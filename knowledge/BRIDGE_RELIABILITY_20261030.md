@@ -165,3 +165,27 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmado na documentação Microsoft que Get-NetTCPConnection identifica listeners e Start-Process inicia programas; não foi recuperado o lançador exato da Bridge.
 - Proposta uma recuperação local por PowerShell, sem downloads, com guarda de porta 17351 e pesquisa de lançadores realmente existentes (atalhos ou script .ps1 registado em histórico PSReadLine); só arrancar um candidato único e validado; caso contrário emitir diagnóstico e não executar código desconhecido.
 - O script não foi executado no computador do utilizador e não há screenshot local disponível neste momento.
+
+## 2026-10-30 — Passo 19: Screenshot real — job 1128 em HTTP 404 contínuo
+- Captura fornecida pelo utilizador mostra o runtime v15.5.15 ATIVA a consultar `PSB-20261030-1128-POKEGUIDE-ASMDEPTH-001` e reportar `HTTP 404. A acompanhar sem reenvio do comando...`.
+- Confirma-se diretamente no código 15.5.15 que `monitorActiveJob()` continua a consultar indefinidamente para qualquer resposta HTTP >= 400.
+- Consultada a árvore completa e atual da branch pública `runtime` (151 entradas, resultado sem truncagem). A árvore contém resultados PokéGuide ASM626 anteriores, mas não contém o ficheiro com jobId ASMDEPTH-001.
+- Um 404 não prova se o trabalho foi ou não executado, nem se a ausência é permanente; referência externa: MDN HTTP 404.
+- Hipótese por verificar: o serviço Windows pode ter perdido o registo em memória depois de ter sido reaberto; não há nesta branch o código do daemon para comprovar ou corrigir a persistência do servidor.
+
+## 2026-10-30 — Passo 20: Correção browser isolada 15.5.16
+- Criada branch `fix/bridge-missing-job-404-20261030` sem interferir na instalação local.
+- Em modo de monitorização, três 404 consecutivos provocam paragem de polling, libertação do estado ativo e preservação de metadados do job na estrutura local `lpxPsb15:unresolved:<conversation>`.
+- Em modo de recuperação depois de reload, o primeiro 404 é confirmado por duas leituras GET adicionais antes de registar o job como estado por esclarecer.
+- O arquivo guarda identificador, conversa, propósito, estado anterior, código HTTP e data — nunca o comando PowerShell completo nem tokens.
+- A resposta HTTP 404 não é interpretada como falha comprovada do comando.
+- O job arquivado fica bloqueado contra novas execuções automáticas, incluindo o botão "Executar último"; um novo trabalho deve ter novo jobId apenas depois de diagnóstico.
+- O painel volta a apresentar o último job por esclarecer após recarregar a conversa; jobs futuros não são bloqueados por polling eterno.
+- Nenhum POST `/run` introduzido na recuperação, nenhum job foi reexecutado e nenhuma sessão ou programa do utilizador foi alterado.
+
+## 2026-10-30 — Passo 21: Validação limitada
+- Sintaxe JavaScript validada: PASS.
+- Quatro cenários simulados: três 404 em monitorização; três 404 após reload; 404 temporário seguido de resultado publicado; 404 seguido de recuperação transitória durante confirmações. Todos PASS.
+- Testes efetuados no código de cliente em ambiente controlado, não no Chrome real do utilizador.
+- Screenshot recebido foi inspecionado visualmente. Não foram produzidas capturas novas da instalação local.
+- O daemon Windows continua sem auditoria: não prometer persistência de jobs após reinício sem acesso ao seu código e armazenamento.
