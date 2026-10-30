@@ -567,3 +567,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Na recuperação, o painel distingue resultado já clicado (número de `deliveryClicks`) de zero cliques registados; nenhum estado é apagado apenas por diagnóstico.
 - Regressão isolada: links visíveis abreviados com `href` exato -> ACK; URL, jobId, status ou exitCode errados -> rejeitados; nenhum turno de utilizador -> rejeitado; sintaxe completa JavaScript PASS.
 - **Limitação:** se a mensagem realmente não estiver no DOM, este patch não consegue comprovar a entrega nem reenviá-la em segurança. Não houve validação end-to-end na máquina do utilizador, nem execução de jobs ou capturas remotas pós-alteração.
+
+## 2026-10-30 — Passo 71: Publicação v15.5.31 e releitura do ficheiro
+- PR #18 integrada em main, merge `12d13a54a8cdcc08eb4d63fbf92d0f8ac90edde8`.
+- Userscript relido em main: `@version 2026.10.30.15.5.31`, `VERSION=15.5.31`, blob `2e5d1a2d3d0176c3523d723b428480874cd7886e`, sintaxe JS PASS.
+- Reconfirmados `domReceiptMatchesTurn`, diagnóstico explícito de cliques prévios e `AUTOMATIC_CONVERSATION_API_READS = false`.
+- Link para atualizar: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- Instalado no GitHub, NÃO na máquina do utilizador. Ainda falta confirmar se o recibo PASSIVEIP-019 está efetivamente no DOM, se a nova correspondência o encontra, ou se já ocorreu um clique de envio; dados de sessão preservados.
