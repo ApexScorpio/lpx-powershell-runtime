@@ -429,3 +429,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - `runApiProbe` com job pendente fecha a sonda antes de qualquer leitura autenticada: PASS.
 - Race condition simulada: `getInflight` torna-se preenchido durante a chamada de API; `finally` encerra a sonda e não agenda outra: PASS.
 - Testes isolados; NÃO comprova ainda a conclusão de entrega real em qualquer janela Chrome.
+
+## 2026-10-30 — Passo 53: Publicação verificada de v15.5.26
+- PR #13 integrada em `main`, commit `1f63fb8e3e4b7eb919bb694feab3736457153555`.
+- Ficheiro do userscript relido no repositório público: `@version 2026.10.30.15.5.26`, `VERSION=15.5.26`, blob `bbd0fb6686874182cfe3db0763323d364a58e16e`.
+- Confirmadas presença das guardas de sondagem em entrega pendente, exclusão mútua via Web Locks da v15.5.25, e análise sintática JS completa PASS.
+- Link de atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- O utilizador ainda tem de instalar/ativar esta versão no Tampermonkey. Não há confirmação visual nem end-to-end da entrega ao ChatGPT do resultado ROM0FIX-004; no GitHub está efetivamente publicado e a execução terminou com exitCode=0. Nenhum token, sessão ou perfil local foi alterado por esta publicação.
