@@ -363,3 +363,11 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - `sendMessage` com API 429: rejeita antes de procurar editor ou clicar, preservando estado (PASS).
 - Simulador intermédio precisou de definição adicional de `VERSION` no contexto de teste; após correção do teste, cenários finais PASS. Não houve correção da produção por esse erro de mocking.
 - Testes não substituem prova end-to-end em três janelas após instalação; não foi possível tirar screenshot remoto da instalação real. Screenshot do utilizador é a evidência visual inicial.
+
+## 2026-10-30 — Passo 44: Publicação da 15.5.24 e releitura final
+- PR #11 integrada em `main`, commit de merge `d6392501bbf764d5802c4ad9529f08b9e389ce13`.
+- Código relido de `main`: `@version 2026.10.30.15.5.24`, `VERSION=15.5.24`, blob `0d71c7b9359cba4dee56f43b661e99037e351f88`.
+- Verificados na publicação: cabeçalho de pausa local, retentativas desfasadas, envio bloqueado sem confirmação, reconhecimento de recibos Markdown, sintaxe JS PASS.
+- Link de atualização Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- Não executar `Executar último` nem `Cancelar` nos três jobs pendentes. Confirmar versão 15.5.24 após atualização e recarregamento controlado da página quando não houver jobs ativos. Tokens, cookies, armazenamento de perfis e backups não foram modificados por esta alteração do repositório.
+- Continua por provar em produção: as três entregas, resposta da API real após o período de limitação e o erro de carregamento da terceira conversa. Não afirmar que os jobs foram desbloqueados localmente até existirem evidências.
