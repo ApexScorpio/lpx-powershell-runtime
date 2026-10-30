@@ -845,6 +845,10 @@
                 void healthCheck(false);
             }),
 
+            button('Confirmar recebido', () => {
+                void confirmAlreadyDeliveredManually();
+            }),
+
             button('Cancelar', () => {
                 void cancelActive();
             }, 'danger'),
@@ -7351,6 +7355,41 @@
                 domReceiptMatchesTurn(part, text)) return true;
         }
         return false;
+    }
+
+    function confirmAlreadyDeliveredManually() {
+        const saved = getInflight();
+        if (!saved || Number(saved.deliveryClicks || 0) < 1 ||
+            saved.conversation !== conversationId() ||
+            resultReceipt(saved.message)?.jobId !== saved.jobId) {
+            setStatus('Confirmação manual indisponível: não existe recibo validado com clique anterior nesta conversa.');
+            return false;
+        }
+        // O utilizador deve ter comprovado visualmente que ESTE resultado
+        // chegou ao chat. Nunca considerar o clique do botão como prova.
+        const approved = window.confirm(
+            'Confirmaste que o resultado do job ' + saved.jobId +
+            ' JÁ FOI RECEBIDO nesta conversa do ChatGPT?\n\n' +
+            'Sim: libertar apenas o estado pendente, SEM reenviar a mensagem ' +
+            'nem voltar a executar o PowerShell.\n' +
+            'Cancelar: manter tudo como está.'
+        );
+        if (!approved) return false;
+        const current = getInflight();
+        if (!current || current.jobId !== saved.jobId ||
+            current.conversation !== saved.conversation ||
+            current.message !== saved.message ||
+            Number(current.deliveryClicks || 0) < 1) {
+            setStatus('O estado mudou durante a confirmação. Não foi alterado.');
+            return false;
+        }
+        markHandled(current.jobId);
+        clearInflight(current.jobId);
+        releaseClaim(current.jobId);
+        setStatus('Job ' + current.jobId +
+            ': entrega confirmada pelo utilizador; estado libertado sem reenvio.');
+        scheduleHeartbeat(1200);
+        return true;
     }
 
     function persistentDomAck(saved) {
