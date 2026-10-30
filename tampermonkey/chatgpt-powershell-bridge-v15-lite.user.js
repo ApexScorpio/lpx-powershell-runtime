@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.25
+// @version      2026.10.30.15.5.26
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.25';
+    const VERSION = '15.5.26';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6640,6 +6640,9 @@
 
             // Guardar a intenção antes do POST: um timeout não prova que o servidor rejeitou o job.
             saveInflight(jobId, manifest, 'submitting');
+            // A partir deste ponto a conversa já tem trabalho em curso:
+            // parar a consulta da API que detetava novos turnos.
+            stopApiProbe();
             const response = await request({
                 method: 'POST',
                 url: `${BRIDGE_URL}/run`,
@@ -7388,7 +7391,9 @@
     }
 
     function armApiProbe() {
-        if (!enabled() || activeJobId) return;
+        // Quando existe uma entrega pendente, não consumir o orçamento
+        // escasso da API com sondagens de novos jobs da mesma conversa.
+        if (!enabled() || activeJobId || getInflight()) return;
         const current = conversationId();
         if (apiProbeConversation !== current || !apiProbeDeadline) {
             apiProbeConversation = current;
@@ -7464,6 +7469,12 @@
     async function runApiProbe(epoch) {
         if (epoch !== apiProbeEpoch || !enabled() ||
             conversationId() !== apiProbeConversation || activeJobId) return;
+        if (getInflight()) {
+            // A entrega em espera tem prioridade sobre novas sondagens.
+            // Não altera o estado do job e não envia qualquer mensagem.
+            stopApiProbe();
+            return;
+        }
         if (apiProbeBusy) {
             queueApiProbe(2000, epoch);
             return;
@@ -7513,7 +7524,9 @@
             console.debug('[LPX PSB] Verificação sem scroll indisponível:', error.message);
         } finally {
             apiProbeBusy = false;
-            if (epoch === apiProbeEpoch && shouldRepeat && enabled() &&
+            if (epoch === apiProbeEpoch && getInflight()) {
+                stopApiProbe();
+            } else if (epoch === apiProbeEpoch && shouldRepeat && enabled() &&
                 Date.now() <= apiProbeDeadline && !activeJobId) {
                 queueApiProbe(nextProbeDelayMs, epoch);
             } else if (epoch === apiProbeEpoch) {
