@@ -79,3 +79,9 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Resultado: 8 PASS, 0 FAIL.
 - Limite: não foram executados testes end-to-end no Chrome do utilizador; a API interna de conversa pode mudar sem aviso.
 - Não foram capturados screenshots da sessão local, por não existir acesso ao navegador do utilizador; nenhuma validação visual real foi afirmada.
+
+## 2026-10-30 — Passo 9: Testes de subárvores DOM
+- Foram simulados quatro cenários adicionais para a rotina de deteção: resposta dentro de nova subárvore, nó de resposta direto, subárvore apenas de utilizador e nó de texto.
+- Resultado: 4 PASS, 0 FAIL.
+- Total de testes isolados desta correção: 12 PASS, 0 FAIL.
+- A simulação não substitui o teste visual e funcional no Chrome do utilizador.
