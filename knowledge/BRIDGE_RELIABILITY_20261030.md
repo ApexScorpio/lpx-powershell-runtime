@@ -250,3 +250,9 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Onze testes simulados de envio: form submit para resultado preparado, botão React, rascunho privado, conteúdo alterado, já entregue, caixa vazia, botão desativado, repetição após período de segurança, limite de tempo, limite de tentativas e resultado que continua em caixa — 11 PASS.
 - Documentação MDN verificada: requestSubmit gera validação e submit event; submit() direto não é equivalente. A API execCommand de edição está descontinuada e pode não disparar eventos de input consistentemente.
 - Ausência de teste end-to-end no Chrome real; o código não prova que o ChatGPT aceite eventos de envio sintéticos nem garante entrega com janelas sem foco. Requer screenshots do resultado após atualização.
+
+## 2026-10-30 — Passo 30: Publicação da correção de resultados em espera
+- PR #7 integrada em main; commit de merge `90898c7ad386d39b599165ad41859384767ef6b0`.
+- Verificada na branch main a versão `15.5.18` (metadados e código), sintaxe JavaScript PASS.
+- Confirmadas funções `samePreparedResultDraft`, `requestSubmit(button)` para botão submit real e atualização persistente de deliveryClicks antes de cada tentativa.
+- Não ocorreu qualquer atualização do Tampermonkey nem envio real no Chrome do utilizador nesta etapa; somente publicação GitHub. O problema end-to-end continua por validar por screenshot e evidência de nova mensagem em histórico.
