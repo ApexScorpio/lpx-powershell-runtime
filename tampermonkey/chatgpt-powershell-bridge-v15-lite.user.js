@@ -6421,7 +6421,8 @@
         let finishedAt = 0;
         let failures = 0;
 
-        while (activeJobId && enabled()) {
+        const watchedConversation = conversationId();
+        while (activeJobId && conversationId() === watchedConversation) {
             const id = activeJobId;
             renewClaim(id);
             let response;
@@ -6545,6 +6546,15 @@
             || document.querySelector('textarea[placeholder]');
     }
 
+    function sameMessageText(a, b) {
+        const normalize = value => String(value || '')
+            .replace(/\r\n?/g, '\n')
+            .replace(/[\u00a0\u200b]/g, ' ')
+            .replace(/\n\s*\n/g, '\n')
+            .trim();
+        return normalize(a) === normalize(b);
+    }
+
     function setComposerText(editor, text) {
         editor.focus();
         if (editor instanceof HTMLTextAreaElement || editor instanceof HTMLInputElement) {
@@ -6563,7 +6573,7 @@
         range.selectNodeContents(editor);
         selection.removeAllRanges();
         selection.addRange(range);
-        if (document.execCommand('insertText', false, text) && composerText() === text.trim()) {
+        if (document.execCommand('insertText', false, text) && sameMessageText(composerText(), text)) {
             return;
         }
         throw new Error('O editor não aceitou a inserção nativa; mensagem original preservada para verificação.');
@@ -6606,11 +6616,11 @@
             const editor = composer();
             if (!editor) throw new Error('Compositor do ChatGPT indisponível.');
             const draft = composerText();
-            if (draft && draft !== text.trim()) {
+            if (draft && !sameMessageText(draft, text)) {
                 throw new Error('A caixa contém outra mensagem; não foi substituída.');
             }
             if (!draft) setComposerText(editor, text);
-            if (composerText() !== text.trim()) {
+            if (!sameMessageText(composerText(), text)) {
                 throw new Error('Texto não confirmado no compositor.');
             }
 
