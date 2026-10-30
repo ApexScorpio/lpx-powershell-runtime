@@ -219,3 +219,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Dez testes simulados PASS: observer ligado ao body mesmo com main existente, apenas um observer, sondagem sem foco, sondagem com documento oculto, estado inflight sem reexecução, job ativo não revisitado, Bridge desligada sem timer, cadência visível, cadência oculta, resposta em streaming não examinada.
 - Limitação explícita: tempos nominais não são SLA de processamento, o Chrome pode suspender/limitar timers em páginas ocultas.
 - Ainda falta screenshot e ensaio end-to-end das três janelas Chrome reais; a entrega via editor ProseMirror em janela sem foco não foi comprovada.
+
+## 2026-10-30 — Passo 26: Publicação e verificação da 15.5.17
+- PR #6 integrada em main, commit b3e00ca0e38fb6a4ec95af1cbb34bb99698f5248.
+- Relido userscript na branch main: @version=2026.10.30.15.5.17 e VERSION=15.5.17.
+- Confirmados body observer, heartbeat independente do foco e arranque automático da verificação.
+- Verificação sintática JavaScript: PASS.
+- Não se realizou prova no Chrome do utilizador; particularmente, envio via editor do ChatGPT em janela sem foco continua sem confirmação end-to-end.
