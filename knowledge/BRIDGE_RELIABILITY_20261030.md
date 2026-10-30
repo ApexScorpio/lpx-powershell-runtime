@@ -464,3 +464,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Resposta HTTP 429 real, Retry-After 120s: segunda conversa impedida de consultar, pausa global respeitada: PASS.
 - Backoff real da versão anterior preservado; orçamento artificial antigo sem falhas ignorado: PASS.
 - Não foi testado ainda o comportamento nas três janelas reais após atualização, nem a entrega do resultado ROM0FIX-004.
+
+## 2026-10-30 — Passo 58: Integração e verificação da v15.5.28
+- PR #15 integrada em main no commit d68d3c682a8687335e91938198626512f11313e6.
+- Releitura independente do userscript publicado: VERSION 15.5.28, @version 2026.10.30.15.5.28, blob 5d1d7dc563a34db1a7ee5b2d98df91f313c2fa83; sintaxe JavaScript PASS.
+- Confirmada a ausência da mensagem AGUARDA_FILA_API e da função de fila global antiga. Confirmadas as chaves de leitura por conversa, o bloqueio Web Locks por conversa e o controlo separado de HTTP 429 remoto.
+- Link de instalação atualizado no ramo principal: https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js
+- A instalação efetiva no Chrome e o desbloqueio da entrega de ROM0FIX-004 continuam sem comprovação visual. O resultado do job está publicado no GitHub. Não repetir execução ou eliminar estado pendente para desbloquear.
