@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.29
+// @version      2026.10.30.15.5.30
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,12 @@
     }
 
 
-    const VERSION = '15.5.29';
+    const VERSION = '15.5.30';
+    // Modo operacional antigo: observar os turnos na interface do Chrome.
+    // Nunca consultar automaticamente a API interna de conversa.
+    // O código de leitura fica preservado para desenvolvimento posterior,
+    // sem alterar cookies, tokens ou a sessão autenticada.
+    const AUTOMATIC_CONVERSATION_API_READS = false;
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -779,7 +784,7 @@
 
         const title = document.createElement('div');
         title.id = 'lpx-psb15-title';
-        title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'}`;
+        title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'} · DOM`;
 
         const header = document.createElement('div');
         header.id = 'lpx-psb15-header';
@@ -6844,7 +6849,9 @@
             const uiOnly = mayUseSingleUiDelivery(saved, message);
             if (!verify.apiOk && !uiOnly) {
                 delay = apiRetryDelay(verify.retryAfterMs, 16000);
-                setStatus(`Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
+                setStatus(!AUTOMATIC_CONVERSATION_API_READS
+                    ? `Job ${saved.jobId}: a aguardar recibo na conversa (modo DOM). Resultado preservado; não repete envio.`
+                    : `Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
                 return;
             }
             if (uiOnly) {
@@ -7261,7 +7268,15 @@
     }
 
     async function checkResultDelivered(id, message) {
+        // O turno de utilizador é o único ACK automático deste modo.
         if (message && userTurnContains(message)) return { confirmed: true, apiOk: false };
+        if (!AUTOMATIC_CONVERSATION_API_READS) {
+            return {
+                confirmed: false, apiOk: false,
+                reason: 'RECIBO_AINDA_NAO_VISIVEL',
+                retryAfterMs: 30000
+            };
+        }
         const uuid = rawConversationUuid();
         if (!uuid) return { confirmed: false, apiOk: false };
         try {
@@ -7454,7 +7469,9 @@
             if (deliveryJobId && composerDraftMatches(editor, text, deliveryJobId)) {
                 throw new Error('O resultado do próprio job continua preparado na caixa; a submissão não foi confirmada. Sem novo envio imediato.');
             }
-            throw new Error('Envio não confirmado; verificar a API antes de qualquer nova tentativa.');
+            throw new Error(AUTOMATIC_CONVERSATION_API_READS
+                ? 'Envio não confirmado; verificar a API antes de qualquer nova tentativa.'
+                : 'Envio não confirmado no DOM; tentativa preservada sem novo clique.');
         } finally {
             sendingMessage = false;
         }
@@ -7518,6 +7535,9 @@
     }
 
     function armApiProbe() {
+        // A deteção é feita pelo MutationObserver e pelo heartbeat DOM.
+        // Sem polling autenticado de conversa após cada mensagem.
+        if (!AUTOMATIC_CONVERSATION_API_READS) return;
         // Quando existe uma entrega pendente, não consumir o orçamento
         // escasso da API com sondagens de novos jobs da mesma conversa.
         if (!enabled() || activeJobId || getInflight()) return;
@@ -7594,6 +7614,10 @@
     }
 
     async function runApiProbe(epoch) {
+        if (!AUTOMATIC_CONVERSATION_API_READS) {
+            stopApiProbe();
+            return;
+        }
         if (epoch !== apiProbeEpoch || !enabled() ||
             conversationId() !== apiProbeConversation || activeJobId) return;
         if (getInflight()) {
