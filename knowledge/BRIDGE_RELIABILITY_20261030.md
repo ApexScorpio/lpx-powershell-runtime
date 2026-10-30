@@ -471,3 +471,13 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmada a ausência da mensagem AGUARDA_FILA_API e da função de fila global antiga. Confirmadas as chaves de leitura por conversa, o bloqueio Web Locks por conversa e o controlo separado de HTTP 429 remoto.
 - Link de instalação atualizado no ramo principal: https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js
 - A instalação efetiva no Chrome e o desbloqueio da entrega de ROM0FIX-004 continuam sem comprovação visual. O resultado do job está publicado no GitHub. Não repetir execução ou eliminar estado pendente para desbloquear.
+
+## 2026-10-30 — Passo 59: Screenshot das três conversas ativas na v15.5.28
+- Captura real recebida: as três janelas apresentam PowerShell Bridge v15.5.28 ATIVA.
+- PokéGuide mostra `PSB-20261030-1900-POKEGUIDE-WORLDFLAGS-009` com entrega preservada e `LIMITE_REAL_SERVIDOR_PARTILHADO`.
+- TIMI mostra `PSB-20261030-1541-TIMI-PROVAS-V2-050` com confirmação da API pendente no mesmo estado.
+- FiscalGuard mostra `PSB-20261030-1839-FISCALGUARD-AT-019` em execução, 31 segundos no momento da captura. Isto demonstra que a execução local de pelo menos uma conversa continuava, mas NÃO prova que as outras estavam impedidas de executar por causa dela: aguardavam entrega/confirmacao.
+- Consultado `runtime` no GitHub: `POKEGUIDE-WORLDFLAGS-009` terminou com status failed/exitCode 1 às 18:41:01 UTC e foi publicado; `TIMI-PROVAS-V2-050` terminou succeeded/exitCode 0 às 15:44:29 UTC e foi publicado.
+- Fonte v15.5.28 inspecionada: `apiRemoteWaitMs` consulta um estado de limitação remoto partilhado (e legado com failures > 0); `chatgptApiFetch` aplica essa pausa aos GETs de todas as conversas; `getInflight` continua separado por conversa. O estado LIMITE_REAL_SERVIDOR_PARTILHADO pode derivar de um 429 remoto anterior em backoff, sem provar que o servidor está a devolver 429 neste instante.
+- Limitação de arquitetura: três execuções PowerShell independentes não implicam três verificações/entregas ChatGPT independentes durante limitação do mesmo backend. Não desativar indiscriminadamente a pausa remota; isso multiplicaria pedidos sujeitos ao mesmo limite. Melhorias futuras devem reduzir a dependência de GET para entrega, conservar as provas de clique/DOM e evitar duplicados.
+- Nenhuma sessão, processo, ficheiro local ou estado pendente foi alterado durante esta análise. Os resultados publicados não foram reexecutados.
