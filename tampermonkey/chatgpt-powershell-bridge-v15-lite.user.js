@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.24
+// @version      2026.10.30.15.5.25
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.24';
+    const VERSION = '15.5.25';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -3952,6 +3952,11 @@
     async function chatgptApiFetch(url, init = {}) {
         const conversationRead = (!init.method || init.method === 'GET') &&
             /^\/backend-api\/conversation\/[^/?]+(?:\?|$)/.test(String(url));
+
+        // A leitura e gravação do orçamento Tampermonkey não é atómica.
+        // Um lock exclusivo do próprio Chrome serializa as três janelas
+        // desta origem, incluindo o pedido e a decisão sobre Retry-After.
+        const perform = async () => {
         if (conversationRead) {
             const budget = GM_getValue(API_BUDGET_KEY, {});
             const remaining = Number(budget.until || 0) - Date.now();
@@ -4026,6 +4031,20 @@
         }
 
         return response;
+        };
+
+        if (conversationRead && navigator.locks &&
+            typeof navigator.locks.request === 'function') {
+            return navigator.locks.request(
+                'lpx-psb15-chatgpt-conversation-read',
+                { mode: 'exclusive' },
+                perform
+            );
+        }
+
+        // Compatibilidade para navegadores sem Web Locks:
+        // conserva o orçamento partilhado e todos os controlos de 429.
+        return perform();
     }
 
     function apiRetryDelay(remainingMs, floorMs = 10000) {
