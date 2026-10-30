@@ -489,3 +489,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Consultado o ramo runtime no GitHub: FiscalGuard AT-019 succeeded/exitCode 0, PokéGuide WORLDFLAGS-009 failed/exitCode 1, TIMI PROVAS-V2-050 succeeded/exitCode 0; todos têm JSON e TXT públicos.
 - O facto de o utilizador não ter feito ações e duas conversas terem avançado mostra funcionamento da recuperação automática neste episódio; não comprova que todos os bloqueios anteriores estejam permanentemente resolvidos.
 - Nesta análise não se alterou código, dados do navegador, sessões, perfis, tokens, jobs nem estados pendentes; não foi feito reenvio.
+
+## 2026-10-30 — Passo 61: Captura após recuperação parcial da v15.5.28
+- Screenshot das três janelas: PokéGuide v15.5.28 ATIVA com WORLDFLAGSFIX-010 e API_HTTP_429; TIMI v15.5.28 ATIVA com PROVAS-V2-050 e LIMITE_REAL_SERVIDOR_PARTILHADO; FiscalGuard v15.5.28 ATIVA com AT-019 já presente na conversa e estado libertado sem reexecução.
+- GitHub runtime confirmado: WORLDFLAGSFIX-010 FAILED/exitCode 1, terminou 18:51:00 UTC; certificação ASM: 83 testes, 80 aprovados e 3 falhados (casos 40/41/42, Red/Blue/Green, referências ROM).
+- GitHub runtime confirmado: TIMI PROVAS-V2-050 SUCCEEDED/exitCode 0, terminou 15:44:29 UTC; FiscalGuard AT-019 SUCCEEDED/exitCode 0, terminou 18:45:44 UTC.
+- Evidência: FiscalGuard recuperou e liberou estado automaticamente; TIMI continua por confirmar; PokéGuide avançou para novo job mas continua a depender da entrega. A captura não permite atribuir a origem exata de HTTP 429 a atividade simultânea ou outros pedidos.
+- Não foram executados jobs, reenviados resultados, alteradas sessões nem instaladas versões durante esta verificação.
