@@ -109,3 +109,36 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Relido cabeçalho do userscript em main: VERSION=15.5.14 e @updateURL permanece ligado à branch main.
 - A imagem fornecida continua a comprovar apenas que o separador fotografado tinha o runtime 15.5.11, não que a atualização tenha sido aplicada.
 - Não foi feita reinicialização, atualização de perfis/tokens ou execução local; a correção do cliente no Chrome depende da instalação efetiva de versão recente pelo Tampermonkey.
+
+## 2026-10-30 — Passo 13: Evidência visual de falha generalizada na entrega
+- Captura fornecida pelo utilizador mostra três separadores independentes com o runtime v15.5.14 ativo: PokéGuide, TIMI e FiscalGuard.
+- Todos têm resultados publicados e entrega automática não confirmada; não é uma falha de instalação ou reconhecimento dos três jobs.
+- Jobs visíveis na imagem: PSB-20261030-1116-POKEGUIDE-ASM626-005; PSB-20261030-1127-TIMI-VOUCHER-PREFLIGHT-033; PSB-20261030-1124-FISCALGUARD-AT-REAL-003.
+- Dois separadores mostram erro de confirmação da mensagem no histórico; um mostra compositor ocupado com outro texto.
+- O código v15.5.14 verificava a entrega principalmente por nós de utilizador no DOM e, após falha, preservava o inflight sem rotina de recuperação automática suficientemente eficaz.
+- O histórico de utilizador pode estar virtualizado; uma ausência no DOM não equivale a ausência da mensagem no servidor.
+
+## 2026-10-30 — Passo 14: Implementação isolada v15.5.15
+- Branch: fix/bridge-delivery-ack-recovery-20261030.
+- Confirmar entrega por leitura autenticada de /backend-api/conversation/{id} no mesmo domínio do ChatGPT, percorrendo a ramificação atual e exigindo role=user e jobId exato.
+- O resultado é guardado no estado local da conversa antes de tentar submetê-lo.
+- Registo dos cliques de envio antes de executá-los; não repetir cegamente um clique com confirmação pendente.
+- Recuperação de estados v15.5.14 por GET /job, sem repetição do POST /run nem execução PowerShell.
+- Respeito por rascunhos do utilizador e pelo editor correto, verificando visibilidade e pertença ao formulário do ChatGPT.
+- Verificação de resultados após carregamento, foco e visibilidade de cada aba.
+- Protocolo não é reenviado automaticamente ao ativar ou recarregar a aba; opção manual continua disponível.
+- O estado antigo sem contagem de cliques exige prova de ausência do resultado na conversa antes de tentar uma nova entrega.
+- Jobs previamente aceites e ainda em execução podem recuperar acompanhamento por GET sem reexecutar comandos.
+
+## 2026-10-30 — Passo 15: Testes de unidade isolados
+- Sintaxe JavaScript: PASS.
+- Confirmação por linha exata de jobId: PASS.
+- Rejeição de identificação errada: PASS.
+- Rejeição de mensagens de assistente e de variantes de ramificação não ativas: PASS.
+- Isolamento de identificadores entre as três conversas: PASS.
+- Recuperação sem POST /run: PASS.
+- Garantia de preservação de rascunhos e disparos automáticos ao carregar/focar: PASS.
+- Testes de recuperação simulada: seis cenários aprovados, incluindo resultado já entregue, entrega antiga com API indisponível, entrega antiga ausente verificada, nova entrega pendente, clique incerto e obtenção de resultado já publicado via GET.
+- Total até agora: 16 verificações PASS, sem falha.
+- O código foi testado em ambiente simulado; o funcionamento real na sessão Chrome do utilizador ainda necessita validação por screenshot e resultado do job.
+- Nenhuma sessão local foi alterada ou encerrada. Sem ficheiros de download criados, sem alterar Antigravity, TIMI, BonChat, Maestro ou FiscalGuard.
