@@ -256,3 +256,13 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Verificada na branch main a versão `15.5.18` (metadados e código), sintaxe JavaScript PASS.
 - Confirmadas funções `samePreparedResultDraft`, `requestSubmit(button)` para botão submit real e atualização persistente de deliveryClicks antes de cada tentativa.
 - Não ocorreu qualquer atualização do Tampermonkey nem envio real no Chrome do utilizador nesta etapa; somente publicação GitHub. O problema end-to-end continua por validar por screenshot e evidência de nova mensagem em histórico.
+
+## 2026-10-30 — Passo 31: Recuperação de rascunhos anteriores já no limite de tentativas
+- Depois da publicação 15.5.18, foi identificado que resultados pendentes da 15.5.17 podiam já ter dois `deliveryClicks`, impedindo qualquer recuperação mesmo com texto do próprio job na caixa.
+- Criada branch `fix/bridge-legacy-stuck-draft-rescue-20261030`.
+- Candidata 15.5.19: uma única recuperação de rascunho legado acima do limite, sujeita em simultâneo a duas tentativas prévias, ausência de entrega confirmada pela API autenticada, editor com envelope integral do mesmo job, intervalo mínimo de 60 segundos, e inexistência de resgate anterior.
+- Permissão de resgate marcada por versão em `deliveryRescueAuthorized`; o envio valida esta marca, regista o terceiro clique antes da ação e grava `deliveryRescueUsedVersion` para não repetir após refresh.
+- API indisponível, rascunho diferente, tentativa recente ou resgate já usado impedem reenviar. Nenhum POST /run ou PowerShell executado por esta correção.
+- Simulação de `sendMessage`: seis cenários PASS (resgate autorizado, sem permissão, já consumido, recente, texto alterado, tentativa ainda não entregue).
+- Simulação de `recoverPendingDelivery`: quatro cenários PASS (autorização segura, API indisponível, rascunho distinto, intervalo não cumprido).
+- Sintaxe JavaScript PASS. Não foi realizado teste end-to-end no Chrome local.
