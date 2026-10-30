@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.30
+// @version      2026.10.30.15.5.31
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.30';
+    const VERSION = '15.5.31';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -6849,8 +6849,11 @@
             const uiOnly = mayUseSingleUiDelivery(saved, message);
             if (!verify.apiOk && !uiOnly) {
                 delay = apiRetryDelay(verify.retryAfterMs, 16000);
+                const recordedClicks = Number(saved.deliveryClicks || 0);
                 setStatus(!AUTOMATIC_CONVERSATION_API_READS
-                    ? `Job ${saved.jobId}: a aguardar recibo na conversa (modo DOM). Resultado preservado; não repete envio.`
+                    ? (recordedClicks > 0
+                        ? `Job ${saved.jobId}: ${recordedClicks} clique(s) de envio registados; recibo não encontrado no DOM. Não reenviar sem confirmação.`
+                        : `Job ${saved.jobId}: 0 cliques registados; primeira entrega ainda não autorizada pela interface. Resultado preservado.`)
                     : `Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
                 return;
             }
@@ -6987,8 +6990,9 @@
                         clearInflight(id);
                         setStatus(`Job ${id}: resultado confirmado na conversa.`);
                     } else if (!check.apiOk && !mayUseSingleUiDelivery(getInflight(), message)) {
+                        const recordedClicks = Number(getInflight()?.deliveryClicks || 0);
                         setStatus(!AUTOMATIC_CONVERSATION_API_READS
-                            ? `Job ${id}: recibo ainda não visível na conversa (modo DOM). Resultado preservado; sem reenvio.`
+                            ? `Job ${id}: modo DOM; ${recordedClicks} cliques registados, recibo não reconhecido. Resultado preservado, sem reenvio.`
                             : `Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
                         scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
                     } else if (clicks === 0) {
@@ -7207,6 +7211,31 @@
         return scoped?.querySelector(selector) || document.querySelector(selector);
     }
 
+    function domReceiptMatchesTurn(node, expectedText) {
+        // Os URLs de links podem ser apresentados com texto truncado no DOM.
+        // Nunca utilizar texto de turnos do assistente como prova de entrega.
+        const expected = resultReceipt(expectedText);
+        if (!expected || !node?.querySelectorAll) return false;
+
+        const rendered = String(node.innerText || '') + '\n' +
+            String(node.textContent || '');
+        const normalized = normalizeOutgoingText(rendered);
+        if (!/(?:^|\s)PSBRIDGE_RESULT_V2(?:\s|$)/u.test(normalized)) return false;
+
+        const currentJob = normalized.match(
+            /(?:^|\s)job:\s*(PSB-[A-Za-z0-9._-]+)(?=\s|$)/u
+        )?.[1];
+        if (currentJob !== expected.jobId) return false;
+        if (!normalized.includes('status: ' + expected.status) ||
+            !normalized.includes('exitCode: ' + expected.exitCode)) return false;
+
+        const urls = [...node.querySelectorAll('a[href]')].map(link =>
+            String(link.href || link.getAttribute?.('href') || '').trim()
+        );
+        const matchesUrl = url => normalized.includes(url) || urls.includes(url);
+        return matchesUrl(expected.resultUrl) && matchesUrl(expected.logUrl);
+    }
+
     function userTurnContains(text) {
         // Um texto vazio não comprova entrega e nunca deve gerar ACK.
         if (!String(text || '').trim()) return false;
@@ -7218,7 +7247,9 @@
             // A mensagem publicada pode ter links decorados, parágrafos e
             // instruções recolhidas em "Mostrar mais". Confirmar os campos
             // imutáveis do recibo; nunca confundir texto do assistente.
-            if (sameMessageText(content, text) || sameResultReceipt(content, text)) {
+            if (sameMessageText(content, text) ||
+                sameResultReceipt(content, text) ||
+                domReceiptMatchesTurn(nodes[i], text)) {
                 return true;
             }
         }
