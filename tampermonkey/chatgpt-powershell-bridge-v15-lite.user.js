@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.28
+// @version      2026.10.30.15.5.29
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.28';
+    const VERSION = '15.5.29';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -6732,6 +6732,36 @@
         ].join('\n');
     }
 
+    function mayUseSingleUiDelivery(saved, message) {
+        // Sem um ACK da API, permitir UMA única entrega pelo compositor
+        // apenas para um resultado publicado e preparado por esta Bridge.
+        // Não aplica a estados legados, tentativas anteriores, perfis
+        // desconhecidos nem a páginas que não carregaram a conversa.
+        if (!enabled() || !rawConversationUuid() || !saved ||
+            saved.conversation !== conversationId() ||
+            saved.phase !== 'published_pending_delivery' ||
+            !saved.preparedVersion || !saved.jobId ||
+            saved.message !== message ||
+            Number(saved.deliveryClicks || 0) !== 0 ||
+            Number(saved.lastDeliveryClickAt || 0) !== 0 ||
+            saved.deliveryMethod || saved.deliveryRescueUsedVersion ||
+            assistantWriting()) return false;
+
+        const receipt = resultReceipt(message);
+        if (!receipt || receipt.jobId !== saved.jobId ||
+            !/^https:\/\//.test(receipt.resultUrl) ||
+            !/^https:\/\//.test(receipt.logUrl)) return false;
+
+        // Um compositor isolado numa página de erro não prova que a
+        // conversa foi montada. Exigir pelo menos um turno do assistente.
+        const assistantTurn = document.querySelector(
+            '[data-message-author-role="assistant"], ' +
+            '[data-author-role="assistant"], [data-testid*="assistant-message"]'
+        );
+        if (!assistantTurn || userTurnContains(message) || !composer()) return false;
+        return true;
+    }
+
     function scheduleDeliveryRecovery(delay = 12000) {
         clearTimeout(deliveryRecoveryTimer);
         if (!enabled() || !getInflight()) return;
@@ -6755,7 +6785,11 @@
             let preflight = null;
             if (message || Number(saved.deliveryClicks || 0) > 0 ||
                 saved.phase === 'published_pending_delivery') {
-                preflight = await checkResultDelivered(saved.jobId, message);
+                // O primeiro envio autenticado pelo estado local da Bridge
+                // não precisa disputar uma leitura da API que está em 429.
+                preflight = mayUseSingleUiDelivery(saved, message)
+                    ? { confirmed: false, apiOk: false, reason: 'UI_UNICA_AUTORIZADA' }
+                    : await checkResultDelivered(saved.jobId, message);
                 if (preflight.confirmed) {
                     markHandled(saved.jobId);
                     clearInflight(saved.jobId);
@@ -6807,10 +6841,14 @@
             }
             // Se a consulta autenticada estiver limitada/indisponível,
             // adiar sem clicar nem consumir qualquer tentativa de envio.
-            if (!verify.apiOk) {
+            const uiOnly = mayUseSingleUiDelivery(saved, message);
+            if (!verify.apiOk && !uiOnly) {
                 delay = apiRetryDelay(verify.retryAfterMs, 16000);
                 setStatus(`Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
                 return;
+            }
+            if (uiOnly) {
+                setStatus(`Job ${saved.jobId}: primeira entrega única pelo compositor; sem consulta adicional à API.`);
             }
             const clicks = Number(saved.deliveryClicks || 0);
             const lastClick = Number(saved.lastDeliveryClickAt || 0);
@@ -6941,7 +6979,7 @@
                         markHandled(id);
                         clearInflight(id);
                         setStatus(`Job ${id}: resultado confirmado na conversa.`);
-                    } else if (!check.apiOk) {
+                    } else if (!check.apiOk && !mayUseSingleUiDelivery(getInflight(), message)) {
                         setStatus(`Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
                         scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
                     } else if (clicks === 0) {
@@ -7280,6 +7318,19 @@
     }
 
     async function sendMessage(text, manifest = null, deliveryJobId = '', absenceProof = null) {
+        // Serializar o clique (e a persistência deliveryClicks) entre abas
+        // da MESMA conversa. Conversas diferentes não partilham este lock.
+        if (deliveryJobId && navigator.locks?.request) {
+            return navigator.locks.request(
+                'lpx-psb15-ui-delivery-once:' + simpleHash(conversationId()),
+                { mode: 'exclusive' },
+                () => sendMessageLocked(text, manifest, deliveryJobId, absenceProof)
+            );
+        }
+        return sendMessageLocked(text, manifest, deliveryJobId, absenceProof);
+    }
+
+    async function sendMessageLocked(text, manifest = null, deliveryJobId = '', absenceProof = null) {
         if (sendingMessage) throw new Error('Já existe uma entrega de mensagem nesta aba.');
         sendingMessage = true;
         try {
@@ -7296,11 +7347,18 @@
                     absenceProof?.checkedConversation === conversationId() &&
                     age >= 0 && age <= 10000
                 );
-                deliveryCheck = freshProof
-                    ? absenceProof
-                    : await checkResultDelivered(deliveryJobId, text);
+                const localOnly = mayUseSingleUiDelivery(getInflight(), text);
+                deliveryCheck = localOnly
+                    ? {
+                        confirmed: false, apiOk: false, localOnly: true,
+                        checkedAt: Date.now(), checkedConversation: conversationId(),
+                        checkedJobId: String(deliveryJobId)
+                    }
+                    : freshProof
+                        ? absenceProof
+                        : await checkResultDelivered(deliveryJobId, text);
                 if (deliveryCheck.confirmed) return;
-                if (!deliveryCheck.apiOk) {
+                if (!deliveryCheck.apiOk && !deliveryCheck.localOnly) {
                     throw new Error('Entrega adiada: consulta de confirmação indisponível (' +
                         (deliveryCheck.reason || 'SEM_CONFIRMACAO') + '). Nenhum clique efetuado.');
                 }
@@ -7356,6 +7414,10 @@
                     throw new Error('O resultado não tem estado de entrega recuperável.');
                 }
                 previousClicks = Number(prior.deliveryClicks || 0);
+                if (deliveryCheck.localOnly &&
+                    (previousClicks !== 0 || !mayUseSingleUiDelivery(prior, text))) {
+                    throw new Error('Primeira entrega UI já tentada ou estado alterado; sem novo clique.');
+                }
                 const rescueAttempt = previousClicks === 2 &&
                     prior.deliveryRescueAuthorized === VERSION &&
                     !prior.deliveryRescueUsedVersion;
