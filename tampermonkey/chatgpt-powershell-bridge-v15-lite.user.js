@@ -320,6 +320,33 @@
         return Array.isArray(value) ? value : [];
     }
 
+    function showPreservedUnconfirmedResults() {
+        const records = parkedUnconfirmedJobs();
+        if (!records.length) {
+            setStatus('Não existem entregas antigas por confirmar nesta conversa.');
+            return;
+        }
+        // Apenas links públicos de resultados; nunca imprimir comandos,
+        // tokens, perfis, cookies ou credenciais.
+        const list = records.map(record => {
+            const receipt = resultReceipt(record.message);
+            return [
+                'Job: ' + record.jobId,
+                'Entrega: NÃO CONFIRMADA',
+                'Cliques: ' + Number(record.deliveryClicks || 0),
+                'Preservado em: ' + String(record.parkedAt || ''),
+                'Seguiu para: ' + String(record.nextJobId || ''),
+                'Resultado: ' + String(receipt?.resultUrl || ''),
+                'Log: ' + String(receipt?.logUrl || '')
+            ].join('\n');
+        }).join('\n\n');
+        window.prompt(
+            'Resultados anteriores com confirmação pendente. ' +
+            'Registo de leitura, sem reenvio nem execução:',
+            list
+        );
+    }
+
     function jobClockMinute(id) {
         const match = String(id || '').match(
             /^PSB-(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})-[A-Z0-9-]+-\d{3}$/i
@@ -952,6 +979,10 @@
             button('Confirmar recebido', () => {
                 void confirmAlreadyDeliveredManually();
             }),
+
+            ...(parkedUnconfirmedJobs().length ? [
+                button('Por confirmar', showPreservedUnconfirmedResults)
+            ] : []),
 
             button('Cancelar', () => {
                 void cancelActive();
