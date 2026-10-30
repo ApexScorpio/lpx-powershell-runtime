@@ -481,3 +481,11 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Fonte v15.5.28 inspecionada: `apiRemoteWaitMs` consulta um estado de limitação remoto partilhado (e legado com failures > 0); `chatgptApiFetch` aplica essa pausa aos GETs de todas as conversas; `getInflight` continua separado por conversa. O estado LIMITE_REAL_SERVIDOR_PARTILHADO pode derivar de um 429 remoto anterior em backoff, sem provar que o servidor está a devolver 429 neste instante.
 - Limitação de arquitetura: três execuções PowerShell independentes não implicam três verificações/entregas ChatGPT independentes durante limitação do mesmo backend. Não desativar indiscriminadamente a pausa remota; isso multiplicaria pedidos sujeitos ao mesmo limite. Melhorias futuras devem reduzir a dependência de GET para entrega, conservar as provas de clique/DOM e evitar duplicados.
 - Nenhuma sessão, processo, ficheiro local ou estado pendente foi alterado durante esta análise. Os resultados publicados não foram reexecutados.
+
+## 2026-10-30 — Passo 60: Recuperação autónoma observada em três janelas, versão 15.5.28
+- Screenshot novo do utilizador mostra PokéGuide com estado «resultado já presente na conversa; estado libertado sem reexecução» para PSB-20261030-1900-POKEGUIDE-WORLDFLAGS-009, e resposta do ChatGPT em curso.
+- FiscalGuard mostra mensagem PSBRIDGE_RESULT_V2 já inserida na conversa e o ChatGPT a processar, mas o painel mantém API_HTTP_429 para PSB-20261030-1839-FISCALGUARD-AT-019: possível desfasamento do estado da UI, por confirmar.
+- TIMI continua com «API_UNAVAILABLE» e resultado pendente; no código a causa concreta da exceção é omitida no catch de checkResultDelivered, não sendo possível identificar por este texto se houve timeout, erro de rede ou de análise do JSON.
+- Consultado o ramo runtime no GitHub: FiscalGuard AT-019 succeeded/exitCode 0, PokéGuide WORLDFLAGS-009 failed/exitCode 1, TIMI PROVAS-V2-050 succeeded/exitCode 0; todos têm JSON e TXT públicos.
+- O facto de o utilizador não ter feito ações e duas conversas terem avançado mostra funcionamento da recuperação automática neste episódio; não comprova que todos os bloqueios anteriores estejam permanentemente resolvidos.
+- Nesta análise não se alterou código, dados do navegador, sessões, perfis, tokens, jobs nem estados pendentes; não foi feito reenvio.
