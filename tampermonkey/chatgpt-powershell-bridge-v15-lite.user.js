@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.13
+// @version      2026.10.30.15.5.14
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.13';
+    const VERSION = '15.5.14';
     const BRIDGE_URL = 'http://127.0.0.1:17351';
     const TOKEN_KEY = 'lpxPsb15:token';
     const CLAIMS_KEY = 'lpxPsb15:claims';
@@ -58,6 +58,12 @@
     let observer = null;
     let observerRoot = null;
     let lastStatus = 'A iniciar…';
+    const processingJobIds = new Set();
+    let apiProbeTimer = 0;
+    let apiProbeDeadline = 0;
+    let apiProbeConversation = '';
+    let apiProbeBusy = false;
+    let apiProbeEpoch = 0;
 
     function randomId() {
         return globalThis.crypto?.randomUUID?.()
@@ -331,6 +337,7 @@
             sessionStorage.removeItem(BOUND_CONVERSATION_KEY);
         }
 
+        if (!value) stopApiProbe();
         render();
     }
 
@@ -1021,18 +1028,37 @@
         }
     }
 
-    function scheduleCandidate(node) {
-        const assistant = closestAssistant(node);
-        // Ignorar mutações de outras zonas da página: o compositor e a barra lateral
-        // não devem adiar indefinidamente a deteção de uma resposta nova.
-        if (!assistant && node !== document.body) {
-            return;
-        }
+    function assistantInsideAddedNode(node) {
+        const direct = closestAssistant(node);
+        if (direct) return direct;
+        if (node?.nodeType !== Node.ELEMENT_NODE) return null;
 
+        // Uma resposta pode chegar como subárvore inteira: procurar só dentro
+        // do nó recentemente inserido, nunca no histórico todo.
+        const descendants = node.querySelectorAll(
+            '[data-message-author-role="assistant"], [data-author-role="assistant"], ' +
+            '[data-testid^="conversation-turn-"], .agent-turn'
+        );
+        for (let i = descendants.length - 1; i >= 0; i--) {
+            const candidate = descendants[i];
+            if (!isUserTurn(candidate)) return candidate;
+        }
+        return null;
+    }
+
+    function containsNewUserTurn(node) {
+        if (node?.nodeType !== Node.ELEMENT_NODE) return false;
+        const userSelector = '[data-message-author-role="user"], [data-author-role="user"], [data-testid*="user-message"]';
+        return node.matches(userSelector) || Boolean(node.querySelector(userSelector));
+    }
+
+    function scheduleCandidate(node) {
+        if (!enabled()) return;
+        const assistant = assistantInsideAddedNode(node);
+        if (!assistant && node !== document.body) return;
         if (assistant) {
             candidateAssistant = assistant;
         }
-
         clearTimeout(settleTimer);
         settleTimer = window.setTimeout(() => {
             void inspectCandidate(false);
@@ -1041,24 +1067,30 @@
 
     function installObserver() {
         const root = document.querySelector('main') || document.body;
-
-        if (observerRoot === root) {
-            return;
-        }
-
+        if (observerRoot === root) return;
         observer?.disconnect();
         observerRoot = root;
-
         observer = new MutationObserver(records => {
             for (const record of records) {
-                scheduleCandidate(record.target);
+                // Alterações de texto são observadas dentro da resposta atual.
+                if (record.type === 'characterData') {
+                    scheduleCandidate(record.target);
+                    continue;
+                }
+
+                const targetAssistant = closestAssistant(record.target);
+                if (targetAssistant) scheduleCandidate(record.target);
 
                 for (const added of record.addedNodes) {
+                    if (containsNewUserTurn(added)) {
+                        candidateAssistant = null;
+                        armApiProbe();
+                    }
+                    // Descobre novos turnos mesmo que cheguem como subárvores.
                     scheduleCandidate(added);
                 }
             }
         });
-
         observer.observe(root, {
             childList: true,
             subtree: true,
@@ -1379,10 +1411,12 @@
 
         const assistant = forced
             ? latestAssistantFallback()
-            : (candidateAssistant || latestAssistantFallback());
+            : (candidateAssistant?.isConnected
+                ? candidateAssistant
+                : latestAssistantFallback());
 
         if (!assistant) {
-            setStatus('Não foi encontrada uma resposta do assistente.');
+            if (forced) setStatus('Não foi encontrada uma resposta do assistente.');
             return;
         }
 
@@ -6238,7 +6272,10 @@
             return;
         }
 
+        if (processingJobIds.has(jobId)) return;
+        processingJobIds.add(jobId);
         if (!claim(jobId)) {
+            processingJobIds.delete(jobId);
             setStatus(`O job ${jobId} já está a ser tratado noutra aba.`);
             return;
         }
@@ -6248,7 +6285,11 @@
             activeJobId = jobId;
             activeManifest = manifest;
             setStatus(`A recuperar acompanhamento do job ${jobId}, sem o voltar a executar.`);
-            await monitorActiveJob();
+            try {
+                await monitorActiveJob();
+            } finally {
+                processingJobIds.delete(jobId);
+            }
             return;
         }
 
@@ -6418,6 +6459,8 @@
             } else {
                 setStatus(`Falha no job ${jobId}: ${error.message}`);
             }
+        } finally {
+            processingJobIds.delete(jobId);
         }
     }
 
@@ -6695,6 +6738,155 @@
         }
     }
 
+
+    // Recuperação sem scroll: só consulta a conversa depois de uma interação
+    // de envio/novo turno, nunca percorre periodicamente o histórico HTML.
+    function stopApiProbe() {
+        clearTimeout(apiProbeTimer);
+        apiProbeTimer = 0;
+        apiProbeDeadline = 0;
+        apiProbeConversation = '';
+        apiProbeEpoch++;
+    }
+
+    function armApiProbe() {
+        if (!enabled() || activeJobId) return;
+        const current = conversationId();
+        if (apiProbeConversation !== current || !apiProbeDeadline) {
+            apiProbeConversation = current;
+            apiProbeDeadline = Date.now() + 5 * 60 * 1000;
+            apiProbeEpoch++;
+        }
+        queueApiProbe(4000, apiProbeEpoch);
+    }
+
+    function queueApiProbe(delay, epoch) {
+        clearTimeout(apiProbeTimer);
+        apiProbeTimer = window.setTimeout(() => {
+            if (epoch === apiProbeEpoch) void runApiProbe(epoch);
+        }, delay);
+    }
+
+    function latestFinalAssistantFromApi(data) {
+        const mapping = data?.mapping;
+        let current = data?.current_node;
+        if (!mapping || typeof mapping !== 'object' || typeof current !== 'string') {
+            return { state: 'pending' };
+        }
+
+        const visited = new Set();
+        for (let n = 0; n < 32 && current && !visited.has(current); n++) {
+            visited.add(current);
+            const node = mapping[current];
+            if (!node) return { state: 'pending' };
+            const message = node.message;
+            const role = message?.author?.role;
+            if (role === 'user') return { state: 'pending' };
+            if (role === 'assistant' && (!message.recipient || message.recipient === 'all')) {
+                // Excluir mensagens intermédias, chamadas a ferramentas e streaming.
+                if (message.end_turn !== true || message.status !== 'finished_successfully') {
+                    return { state: 'pending' };
+                }
+                const parts = message?.content?.parts;
+                if (!Array.isArray(parts)) return { state: 'finished', text: '' };
+                return {
+                    state: 'finished',
+                    text: parts.filter(x => typeof x === 'string').join('\n')
+                };
+            }
+            current = node.parent;
+        }
+        return { state: 'pending' };
+    }
+
+    function jobFromApiText(text) {
+        // Só blocos PowerShell explicitamente identificados como PSB_JOB_V3.
+        // Não executar exemplos em prosa ou comandos de outras mensagens.
+        const fences = /\`\`\`(?:powershell|pwsh|ps1)[^\n]*\n([\s\S]*?)\`\`\`/gi;
+        for (const match of String(text || '').matchAll(fences)) {
+            const block = match[1].trim();
+            if (!/^#\s*PSB_JOB_V3\s*$/im.test(block)) continue;
+            const candidate = parseV3PowerShellBlock(block);
+            if (!candidate || manifestLooksLikePlaceholder(candidate)) continue;
+            if (!/^PSB-\d{8}-\d{4}-[A-Z0-9-]+-\d{3}$/i.test(candidate.jobId)) continue;
+            return candidate;
+        }
+        return null;
+    }
+
+    async function runApiProbe(epoch) {
+        if (apiProbeBusy || epoch !== apiProbeEpoch || !enabled() ||
+            conversationId() !== apiProbeConversation || activeJobId) return;
+
+        if (Date.now() > apiProbeDeadline) {
+            stopApiProbe();
+            return;
+        }
+
+        const uuid = rawConversationUuid();
+        if (!uuid) {
+            queueApiProbe(7000, epoch);
+            return;
+        }
+
+        apiProbeBusy = true;
+        let shouldRepeat = true;
+        try {
+            const response = await chatgptApiFetch(
+                '/backend-api/conversation/' + encodeURIComponent(uuid),
+                { method: 'GET', headers: { Accept: 'application/json' } }
+            );
+            if (response.ok) {
+                const data = await response.json();
+                if (epoch !== apiProbeEpoch || !enabled() ||
+                    conversationId() !== apiProbeConversation) return;
+                const latest = latestFinalAssistantFromApi(data);
+                if (latest.state === 'finished') {
+                    const manifest = jobFromApiText(latest.text);
+                    if (manifest && !isHandled(manifest.jobId)) {
+                        setStatus('Job detetado pela conversa autenticada, sem scroll.');
+                        await processJobManifest(null, manifest, false);
+                    }
+                    shouldRepeat = false;
+                }
+            }
+        } catch (error) {
+            // API não documentada: falhar em segurança, sem alterar sessão,
+            // publicar tokens ou enviar um comando duplicado.
+            console.debug('[LPX PSB] Verificação sem scroll indisponível:', error.message);
+        } finally {
+            apiProbeBusy = false;
+            if (epoch === apiProbeEpoch && shouldRepeat && enabled() &&
+                Date.now() <= apiProbeDeadline && !activeJobId) {
+                queueApiProbe(10000, epoch);
+            } else if (epoch === apiProbeEpoch) {
+                stopApiProbe();
+            }
+        }
+    }
+
+    function installNoScrollTriggers() {
+        // Suporta submit por botão e Enter, mesmo quando a resposta não é
+        // montada no DOM enquanto estiver fora da zona visível.
+        document.addEventListener('submit', event => {
+            if (event.target?.querySelector?.('#prompt-textarea, div.ProseMirror')) {
+                armApiProbe();
+            }
+        }, true);
+        document.addEventListener('keydown', event => {
+            if (event.key !== 'Enter' || event.shiftKey || event.isComposing) return;
+            const editor = composer();
+            if (editor && (event.target === editor || editor.contains(event.target))) {
+                armApiProbe();
+            }
+        }, true);
+        document.addEventListener('click', event => {
+            if (event.target?.closest?.('#composer-submit-button, [data-testid="composer-submit-button"], [data-testid="send-button"]')) {
+                armApiProbe();
+            }
+        }, true);
+    }
+
     function wait(ms) {
         return new Promise(resolve => window.setTimeout(resolve, ms));
     }
@@ -6706,6 +6898,7 @@
     }, true);
 
     window.addEventListener('popstate', () => {
+        stopApiProbe();
         candidateAssistant = null;
         installObserver();
         render();
@@ -6730,6 +6923,7 @@
     }
 
     installPanelInteractions();
+    installNoScrollTriggers();
     render();
     installObserver();
     scheduleCandidate(document.body);
