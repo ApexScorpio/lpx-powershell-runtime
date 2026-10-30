@@ -6987,7 +6987,9 @@
                         clearInflight(id);
                         setStatus(`Job ${id}: resultado confirmado na conversa.`);
                     } else if (!check.apiOk && !mayUseSingleUiDelivery(getInflight(), message)) {
-                        setStatus(`Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
+                        setStatus(!AUTOMATIC_CONVERSATION_API_READS
+                            ? `Job ${id}: recibo ainda não visível na conversa (modo DOM). Resultado preservado; sem reenvio.`
+                            : `Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
                         scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
                     } else if (clicks === 0) {
                         await sendMessage(message, null, id, check);
@@ -7458,9 +7460,9 @@
             button.click();
             for (let n = 0; n < 30; n++) {
                 if (userTurnContains(text)) return;
-                // A API autentica a entrega mesmo se o ChatGPT virtualizar
-                // o turno do utilizador e não o montar no DOM.
-                if (deliveryJobId && n === 29) {
+                // Só no modo alternativo: verificar histórico quando o
+                // ChatGPT não montou o recibo de utilizador no DOM.
+                if (AUTOMATIC_CONVERSATION_API_READS && deliveryJobId && n === 29) {
                     const checked = await checkResultDelivered(deliveryJobId, text);
                     if (checked.confirmed) return;
                 }
