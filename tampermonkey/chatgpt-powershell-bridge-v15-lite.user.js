@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.31.15.5.36
+// @version      2026.10.31.15.5.37
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.36';
+    const VERSION = '15.5.37';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -7032,6 +7032,10 @@
                 setStatus(`Job ${saved.jobId}: recibo confirmado no DOM e estado libertado sem reenvio.`);
                 return;
             }
+            // Este caso não requer GET à API interna ou novo clique.
+            // Arquivar a entrega como incerta quando há sinais robustos
+            // de submissão e a resposta já avançou.
+            if (await parkAfterObservedUiSubmit()) return;
             // Reconciliar a entrega ANTES de obter o resultado do daemon ou
             // aplicar o limite de tentativas. Não gera novo POST /run.
             let preflight = null;
@@ -7338,6 +7342,100 @@
             formSubmitSeen: saved?.deliveryFormSubmitSeen === true,
             receiptSeen: Boolean(saved?.message && userTurnContains(saved.message))
         };
+    }
+
+    function strongUiSubmitEvidence(saved) {
+        // Isto NÃO é ACK de recebimento. Permite apenas estacionar um
+        // resultado sem confirmação, quando uma submissão observada
+        // foi seguida de novo conteúdo do assistente e editor vazio.
+        if (!saved || !enabled() || !rawConversationUuid() ||
+            saved.conversation !== conversationId() ||
+            saved.phase !== 'delivery_clicked' ||
+            Number(saved.deliveryClicks || 0) !== 1 ||
+            !saved.preparedVersion ||
+            saved.manifest?.protocol !== 'PSB_JOB_V3' ||
+            saved.manifest?.jobId !== saved.jobId ||
+            resultReceipt(saved.message)?.jobId !== saved.jobId ||
+            !saved.deliveryButtonClickReturned ||
+            !saved.deliveryFormSubmitSeen ||
+            assistantWriting() || persistentDomAck(saved) ||
+            userTurnContains(saved.message)) return false;
+
+        const clickedAt = Number(saved.lastDeliveryClickAt || 0);
+        const submittedAt = Number(saved.deliveryFormSubmitObservedAt || 0);
+        if (!Number.isFinite(clickedAt) || !Number.isFinite(submittedAt) ||
+            clickedAt <= 0 || submittedAt < clickedAt ||
+            submittedAt - clickedAt > 15000 ||
+            Date.now() - clickedAt < 3000) return false;
+
+        const currentFingerprint = latestAssistantFingerprint();
+        if (!saved.deliveryAssistantBeforeHash ||
+            !currentFingerprint ||
+            currentFingerprint === saved.deliveryAssistantBeforeHash) return false;
+
+        return deliveryUiTelemetry(saved).composer === 'EDITOR_VAZIO';
+    }
+
+    async function parkAfterObservedUiSubmit() {
+        // A única transição automática sem recibo é para NOT_CONFIRMED:
+        // nunca marcar a mensagem como entregue nem repetir POST /run.
+        if (!navigator.locks?.request) return false;
+        const initial = getInflight();
+        if (!strongUiSubmitEvidence(initial)) return false;
+
+        return navigator.locks.request(
+            'lpx-psb15-preserve-pending:' + simpleHash(conversationId()),
+            { mode: 'exclusive' },
+            async () => {
+                const current = getInflight();
+                if (!current ||
+                    current.jobId !== initial.jobId ||
+                    current.message !== initial.message ||
+                    !strongUiSubmitEvidence(current)) return false;
+
+                const key = parkedUnconfirmedKey();
+                const records = parkedUnconfirmedJobs();
+                const previous = records.find(row => row.jobId === current.jobId);
+                if (previous && (previous.message !== current.message ||
+                    previous.deliveryVerification !== 'NOT_CONFIRMED')) return false;
+
+                if (!previous) {
+                    records.push({
+                        ...current,
+                        parkedAt: new Date().toISOString(),
+                        nextJobId: null,
+                        deliveryVerification: 'NOT_CONFIRMED',
+                        preservationReason: 'UI_SUBMIT_OBSERVED_EDITOR_EMPTY_ASSISTANT_CHANGED',
+                        uiEvidence: {
+                            buttonClickReturned: true,
+                            formSubmitSeen: true,
+                            composerEmpty: true,
+                            assistantDomChanged: true
+                        }
+                    });
+                    GM_setValue(key, records);
+                }
+                const persisted = parkedUnconfirmedJobs();
+                if (!persisted.some(row =>
+                    row.jobId === current.jobId &&
+                    row.message === current.message &&
+                    row.deliveryVerification === 'NOT_CONFIRMED' &&
+                    row.preservationReason ===
+                        'UI_SUBMIT_OBSERVED_EDITOR_EMPTY_ASSISTANT_CHANGED')) {
+                    return false;
+                }
+
+                markHandled(current.jobId); // Nunca executar o mesmo job outra vez
+                clearInflight(current.jobId);
+                releaseClaim(current.jobId);
+                setStatus('Job ' + current.jobId +
+                    ': submissão observada e resposta posterior detetada; ' +
+                    'recibo NÃO CONFIRMADO, resultado arquivado sem reenvio. ' +
+                    'Autonomia retomada para novos jobs.');
+                scheduleHeartbeat(1200);
+                return true;
+            }
+        );
     }
 
     function showDeliveryDiagnostics() {
