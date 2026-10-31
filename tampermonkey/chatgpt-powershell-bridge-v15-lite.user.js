@@ -1524,7 +1524,8 @@
                 setSmartScrollPaused(false);
             }
         } else if (movedUp &&
-            Date.now() - smartScroll.lastAutoWriteAt > 250) {
+            (smartScroll.draggingScrollbar ||
+                Date.now() - smartScroll.lastAutoWriteAt > 250)) {
             // Inclui arrastar a barra nativa de scroll sem wheel/keydown.
             setSmartScrollPaused(true);
         }
