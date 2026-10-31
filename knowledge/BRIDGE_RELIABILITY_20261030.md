@@ -710,3 +710,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Evento `submit` atribuído apenas à tentativa recente e ao formulário do compositor; eventos tardios ou de outros formulários não criam telemetria falsa: PASS.
 - O teste inicial tinha ambiente simulado incompleto (faltavam `AUTOMATIC_CONVERSATION_API_READS` e `rememberDomReceipt`), corrigido apenas no simulador e repetido com PASS. Não implica defeito de produção.
 - Testes são simulações; ainda falta captura do botão `Diagnóstico` no navegador do utilizador para separar efetiva falha de submissão, sucesso não reconhecido e assistente que termina sem novo PSB_JOB_V3. As provas visuais do screenshot recebido foram inspecionadas.
+
+## 2026-10-31 — Passo 90: Publicação da v15.5.36 confirmada
+- PR #23 integrada em main, commit `1364994ee7e8a4d9b589d06bdd7b4a4f5deb3589`.
+- Ficheiro relido do GitHub main: `@version 2026.10.31.15.5.36`, `VERSION='15.5.36'`, blob `c40d52cec168de1f4a088412a7e18cb6aa55b223`, sintaxe JavaScript PASS.
+- Confirmados na fonte publicada: telemetria `deliveryUiTelemetry`, relatório `showDeliveryDiagnostics`, botão `Diagnóstico`, captura de evento submit do compositor, registo de retorno do clique e estado do editor, proteção do histórico `preserveUnconfirmedAndAdvance`, ausência de consulta automática à API interna.
+- Link de atualização: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- Não foi instalado no Chrome do utilizador: ainda falta ler o diagnóstico real do job preso. A versão 15.5.36 é um instrumento de localização da falha e NÃO uma certificação de recuperação autónoma nem autorização para reenvios. Nenhum PowerShell foi repetido nesta análise. Não limpar sessão, cookies, tokens, perfis nem backups.
