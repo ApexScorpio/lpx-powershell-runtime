@@ -738,3 +738,10 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Simulação integrada da função real `recoverPendingDelivery`: `0` pedidos HTTP, `0` envios, `1` ACK de estado **não confundir com ACK de entrega**, `1` arquivo `NOT_CONFIRMED`, `1` heartbeat agendado, PASS.
 - Simulação concorrente com três recuperações na mesma conversa: `[true,false,false]`, um arquivo, uma marcação não-reexecutável, uma limpeza de inflight, uma libertação de claim: PASS.
 - A instalação real no Chrome e a confirmação de continuação de jobs após atualização ainda não foram comprovadas. A resposta posterior do ChatGPT é sinal de progresso, não confirmação criptográfica/servidor do recibo exato; o arquivo preserva essa incerteza. Nenhum screenshot foi produzido por acesso remoto ao Chrome (apenas analisada a captura recebida).
+
+## 2026-10-31 — Passo 94: v15.5.37 publicada e relida no ramo principal
+- PR #24 integrada em `main`, merge `f9dcb1c7c9f0a10bed088b9402415dc0ca46b1df`.
+- Userscript principal relido: `@version 2026.10.31.15.5.37`, `VERSION=15.5.37`, blob `a33532b0ce87b6866056520b326055ac03c41ba3`; sintaxe integral PASS.
+- Confirmados na versão publicada: `strongUiSubmitEvidence`, `parkAfterObservedUiSubmit`, chamada de recuperação antes de consultas ao daemon, nenhuma consulta automática à API de conversa, regras de um clique e arquivo anterior `NOT_CONFIRMED`.
+- Atualização direta: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
+- O código foi integrado no GitHub mas ainda não instalado no Chrome do utilizador; a recuperação automática de `DL-STORAGE-072` requer validação visual após atualização. A ausência de recibo exato mantém-se registada como incerteza, não como entrega comprovada. Perfis, cookies, tokens, logins, backups e jobs locais mantidos intactos.
