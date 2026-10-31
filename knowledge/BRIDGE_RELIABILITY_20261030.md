@@ -774,3 +774,25 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmados no código publicado o mecanismo de seguimento, a prioridade a arrastar manualmente a barra, scroll com `requestAnimationFrame`, estados por conversa em `sessionStorage`, indicadores e botões no painel, integração no MutationObserver, ResizeObserver e eventos de foco/visibilidade/navegação.
 - Link direto Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - Nenhuma instalação foi feita diretamente no navegador local. Comportamento real por screenshot, funcionamento de janela minimizada e eventuais diferenças da árvore DOM do ChatGPT ainda por validar. Não há alteração de tokens, cookies, sessão autenticada, perfis, Antigravity, trabalhos pendentes ou dados guardados.
+
+## 2026-10-31 — Passo 99: Screenshot v15.5.38 PokéGuide LIVEREAD-064 preso antes do primeiro envio
+- Screenshot real enviado pelo utilizador: `PowerShell Bridge v15.5.38 · ATIVA · DOM · SCROLL AUTO`, estado `PSB-20261031-1800-POKEGUIDE-LIVEREAD-064: modo DOM; nenhuma tentativa de envio registada. Resultado preservado`; bloco PowerShell de certificação no ecrã.
+- O screenshot prova instalação do modo `SCROLL AUTO`, mas não prova ainda o comportamento perante scroll manual para cima. Não afirmar que o auto-scroll passou testes no Chrome real sem observar esse gesto.
+- Verificados no GitHub runtime os ficheiros JSON e TXT `runtime/2fb8a751095dbe65/PSB-20261031-1800-POKEGUIDE-LIVEREAD-064`. O job efetivamente terminou `status=failed`, `exitCode=1`, resultado publicado, às `2026-10-31T19:05:54.672Z`. Isto não deve impedir entregar o diagnóstico ao ChatGPT.
+- Log do job: fase de certificação falhou na suite `romClientCampaignIntegration.test.js` com `SyntaxError: await is only valid in async functions and the top level bodies of modules` durante `vm.runInNewContext`, incluindo testes nas linhas 297, 327 e 371. Esta causa é diferente da falha da Bridge na entrega; não confundir falha de testes com prova de incapacidade do live read.
+- Código v15.5.38 inspecionado: `monitorActiveJob` só mostra `nenhuma tentativa de envio registada` quando `mayUseSingleUiDelivery` devolve false, ocultando a razão `firstUiDeliveryGate` ao contrário da recuperação posterior. Um zero-click pode depender de resposta ainda a decorrer, URL de conversa, compositor, manifesto, fase, etc.; o screenshot não especifica qual. Não forçar clique sem prova nem repetir o PowerShell.
+
+## 2026-10-31 — Passo 100: Implementação v15.5.39 — diagnóstico da primeira entrega e reavaliação sem API
+- Branch `fix/bridge-v15-5-39-first-delivery-visibility-20261031` criada a partir de main v15.5.38; incrementadas `@version` e `VERSION` para 15.5.39.
+- Em `monitorActiveJob`, quando o job está publicado mas ainda sem clique, mostrar no painel `firstUiDeliveryGate(...).reason` em vez de mensagem opaca, preservando o resultado e o estado antigo; agendar reavaliação DOM em 5000 ms sem GET à API interna.
+- Em `recoverPendingDelivery`, quando o estado local não autoriza primeira entrega e há zero cliques, voltar a avaliar após 5000 ms em vez da antiga pausa de API; mantém proteção de um único clique e Web Lock por conversa. Após um clique registado, não é criado nenhum reenvio.
+- `Diagnóstico` passa a mostrar `FIRST_DELIVERY_GATE`, `ASSISTANT_WRITING`, `COMPOSER_AVAILABLE` e `CONVERSATION_UUID_AVAILABLE`, sem scripts, tokens, cookies, resultados privados ou outros segredos.
+- Não houve alteração de execução do daemon, limpeza de jobs, C:, perfis, tokens, sessões, Antigravity, TIMI, Maestro, backups ou scripts de produção. Código anterior e histórico preservados.
+
+## 2026-10-31 — Passo 101: Testes da v15.5.39
+- Sintaxe integral do userscript com `new Function`: PASS.
+- Simulação da função real `monitorActiveJob` com primeiro envio bloqueado porque o assistente está a responder: motivo explícito `ASSISTENTE_A_RESPONDER`, reavaliação agendada para 5000 ms, estado `published_pending_delivery` intacto, sem envio: PASS.
+- Simulação `monitorActiveJob` quando as condições de envio estão prontas: uma tentativa de envio e libertação do estado; sem múltiplas tentativas: PASS.
+- Simulação da função real `recoverPendingDelivery` com zero cliques: bloqueio agenda 5000 ms e preserva o resultado; sem chamadas ao daemon nem GET da API de conversa: PASS.
+- Simulação da mesma recuperação com primeira entrega autorizada: um único envio e libertação do estado: PASS.
+- Os testes são isolados com mocks, não capturas do Chrome local; ainda falta observar motivo exato exibido após atualização e confirmar entrega do resultado real. Não foi executado nem reexecutado o `LIVEREAD-064`.
