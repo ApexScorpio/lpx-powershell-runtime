@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.30.15.5.35
+// @version      2026.10.31.15.5.36
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.35';
+    const VERSION = '15.5.36';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -975,6 +975,8 @@
             button('Testar', () => {
                 void healthCheck(false);
             }),
+
+            button('Diagnóstico', showDeliveryDiagnostics),
 
             button('Confirmar recebido', () => {
                 void confirmAlreadyDeliveredManually();
@@ -7098,7 +7100,7 @@
                 const uiGate = recordedClicks === 0 ? firstUiDeliveryGate(saved, message) : null;
                 setStatus(!AUTOMATIC_CONVERSATION_API_READS
                     ? (recordedClicks > 0
-                        ? `Job ${saved.jobId}: ${recordedClicks} clique(s) de envio registados; recibo não encontrado no DOM. Não reenviar sem confirmação.`
+                        ? deliveryUiStatus(saved)
                         : `Job ${saved.jobId}: 0 cliques; bloqueio da primeira entrega: ${uiGate?.reason || 'SEM_DIAGNOSTICO'}. Resultado preservado.`)
                     : `Job ${saved.jobId}: verificação da API pendente (${verify.reason || 'SEM_CONFIRMACAO'}). Nova consulta programada; resultado preservado, sem reenvio.`);
                 return;
@@ -7238,7 +7240,9 @@
                     } else if (!check.apiOk && !mayUseSingleUiDelivery(getInflight(), message)) {
                         const recordedClicks = Number(getInflight()?.deliveryClicks || 0);
                         setStatus(!AUTOMATIC_CONVERSATION_API_READS
-                            ? `Job ${id}: modo DOM; ${recordedClicks} cliques registados, recibo não reconhecido. Resultado preservado, sem reenvio.`
+                            ? (recordedClicks > 0
+                                ? deliveryUiStatus(getInflight())
+                                : `Job ${id}: modo DOM; nenhuma tentativa de envio registada. Resultado preservado.`)
                             : `Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
                         scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
                     } else if (clicks === 0) {
@@ -7307,6 +7311,76 @@
         } catch (error) {
             setStatus(`Falha ao guardar a lição ${id}: ${error.message}`);
         }
+    }
+
+    function latestAssistantFingerprint() {
+        const node = latestAssistantFallback();
+        if (!node || isUserTurn(node)) return '';
+        const content = String(node.textContent || node.innerText || '')
+            .replace(/\s+/g, ' ').trim();
+        return content ? simpleHash(content.slice(0, 8000)) : '';
+    }
+
+    function deliveryUiTelemetry(saved) {
+        const editor = composer();
+        const text = String(composerText() || '');
+        const state = !editor ? 'SEM_EDITOR'
+            : !text.trim() ? 'EDITOR_VAZIO'
+                : composerDraftMatches(editor, saved?.message || '', saved?.jobId || '')
+                    ? 'RESULTADO_NA_CAIXA'
+                    : 'OUTRO_RASCUNHO';
+        const baseline = String(saved?.deliveryAssistantBeforeHash || '');
+        const current = latestAssistantFingerprint();
+        return {
+            composer: state,
+            assistantDomChanged: Boolean(baseline && current && baseline !== current),
+            buttonClickReturned: saved?.deliveryButtonClickReturned === true,
+            formSubmitSeen: saved?.deliveryFormSubmitSeen === true,
+            receiptSeen: Boolean(saved?.message && userTurnContains(saved.message))
+        };
+    }
+
+    function showDeliveryDiagnostics() {
+        const saved = getInflight();
+        const records = parkedUnconfirmedJobs();
+        const report = saved
+            ? [
+                'BRIDGE=' + VERSION + ' DOM',
+                'JOB=' + String(saved.jobId),
+                'PHASE=' + String(saved.phase),
+                'DELIVERY_ATTEMPTS=' + Number(saved.deliveryClicks || 0),
+                'BUTTON_CLICK_RETURNED=' + Boolean(saved.deliveryButtonClickReturned),
+                'FORM_SUBMIT_EVENT_SEEN=' + Boolean(saved.deliveryFormSubmitSeen),
+                'COMPOSER=' + deliveryUiTelemetry(saved).composer,
+                'ASSISTANT_DOM_CHANGED=' + deliveryUiTelemetry(saved).assistantDomChanged,
+                'RESULT_RECEIPT_DOM=' + Boolean(saved.message && userTurnContains(saved.message)),
+                'PERSISTED_DOM_ACK=' + persistentDomAck(saved),
+                'ARCHIVED_UNCONFIRMED_COUNT=' + records.length,
+                'AUTOMATIC_CHATGPT_CONVERSATION_API_READS=' +
+                    AUTOMATIC_CONVERSATION_API_READS,
+                'NOTE=Sem valores de comandos, texto de mensagens, URLs privados ou tokens.'
+            ].join('\n')
+            : [
+                'BRIDGE=' + VERSION + ' DOM',
+                'PENDING_JOB=NONE',
+                'ARCHIVED_UNCONFIRMED_COUNT=' + records.length,
+                'AUTOMATIC_CHATGPT_CONVERSATION_API_READS=' +
+                    AUTOMATIC_CONVERSATION_API_READS
+            ].join('\n');
+        // Janela apenas de leitura para cópia; não executa comandos.
+        window.prompt('Diagnóstico de envio (sem dados de sessão)', report);
+    }
+
+    function deliveryUiStatus(saved) {
+        const evidence = deliveryUiTelemetry(saved);
+        const attempt = Number(saved?.deliveryClicks || 0);
+        return 'Job ' + saved.jobId + ': ' + attempt +
+            ' tentativa(s) de clique registadas; recibo não reconhecido. ' +
+            'Editor=' + evidence.composer +
+            '; clique=' + (evidence.buttonClickReturned ? 'DISPARADO' : 'NÃO_CONFIRMADO') +
+            '; evento submit=' + (evidence.formSubmitSeen ? 'OBSERVADO' : 'NÃO_OBSERVADO') +
+            '; DOM assistente mudou=' + (evidence.assistantDomChanged ? 'SIM' : 'NÃO_COMPROVADO') +
+            '. Sem reenvio nem reexecução.';
     }
 
     function composer() {
@@ -7818,12 +7892,24 @@
                     message: text,
                     deliveryClicks: previousClicks + 1,
                     lastDeliveryClickAt: Date.now(),
+                    deliveryAssistantBeforeHash: latestAssistantFingerprint(),
+                    deliveryButtonClickReturned: false,
+                    deliveryFormSubmitSeen: false,
+                    deliveryUiComposerState: 'RESULTADO_NA_CAIXA',
                     deliveryRescueUsedVersion: previousClicks === 2 ? VERSION : prior.deliveryRescueUsedVersion,
                     deliveryRescueAuthorized: '',
                     deliveryMethod
                 });
             }
             button.click();
+            if (deliveryJobId) {
+                const current = getInflight();
+                if (current?.jobId === deliveryJobId) {
+                    updateDeliveryState(deliveryJobId, current.phase, {
+                        deliveryButtonClickReturned: true
+                    });
+                }
+            }
             for (let n = 0; n < 30; n++) {
                 if (userTurnContains(text)) {
                     if (deliveryJobId) rememberDomReceipt();
@@ -7836,6 +7922,16 @@
                     if (checked.confirmed) return;
                 }
                 await wait(650);
+            }
+            if (deliveryJobId) {
+                const saved = getInflight();
+                if (saved?.jobId === deliveryJobId) {
+                    const evidence = deliveryUiTelemetry(saved);
+                    updateDeliveryState(deliveryJobId, saved.phase, {
+                        deliveryUiComposerState: evidence.composer,
+                        deliveryAssistantDomChanged: evidence.assistantDomChanged
+                    });
+                }
             }
             if (deliveryJobId && composerDraftMatches(editor, text, deliveryJobId)) {
                 throw new Error('O resultado do próprio job continua preparado na caixa; a submissão não foi confirmada. Sem novo envio imediato.');
@@ -8059,6 +8155,21 @@
     }
 
     function installNoScrollTriggers() {
+        // Registar apenas o evento submit observado nesta conversa e
+        // próximo de uma tentativa de envio da Bridge. Não ler tokens,
+        // corpo do pedido, cookies nem chamadas internas à API.
+        document.addEventListener('submit', event => {
+            const saved = getInflight();
+            if (!saved || saved.phase !== 'delivery_clicked' ||
+                Number(saved.deliveryClicks || 0) < 1 ||
+                Date.now() - Number(saved.lastDeliveryClickAt || 0) > 15000) return;
+            const target = event.target;
+            if (!target?.querySelector?.('#prompt-textarea, div.ProseMirror, [contenteditable="true"], textarea')) return;
+            updateDeliveryState(saved.jobId, saved.phase, {
+                deliveryFormSubmitSeen: true,
+                deliveryFormSubmitObservedAt: Date.now()
+            });
+        }, true);
         // Suporta submit por botão e Enter, mesmo quando a resposta não é
         // montada no DOM enquanto estiver fora da zona visível.
         document.addEventListener('submit', event => {
