@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.31.15.5.37
+// @version      2026.10.31.15.5.38
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.37';
+    const VERSION = '15.5.38';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -52,6 +52,8 @@
     const INFLIGHT_PREFIX = 'lpxPsb15:inflight:';
     const UNRESOLVED_PREFIX = 'lpxPsb15:unresolved:';
     const PARKED_UNCONFIRMED_PREFIX = 'lpxPsb15:preservedUnconfirmedResult:v1:';
+    const SCROLL_PAUSED_PREFIX = 'lpxPsb15:manualScrollPaused:v1:';
+    const SCROLL_BOTTOM_TOLERANCE_PX = 56;
     const POLL_MS = 750;
     const SETTLE_MS = 900;
     const HEARTBEAT_VISIBLE_MS = 7000;
@@ -83,6 +85,12 @@
     let apiProbeEpoch = 0;
     let heartbeatTimer = 0;
     let heartbeatBusy = false;
+    const smartScroll = {
+        conversation: '', paused: false, scroller: null, anchor: null,
+        resizeObserver: null, frame: 0, lastTop: 0, lastAutoWriteAt: 0,
+        lastManualDownAt: 0, draggingScrollbar: false, touchY: null,
+        controlsInstalled: false
+    };
 
     function randomId() {
         return globalThis.crypto?.randomUUID?.()
@@ -568,6 +576,7 @@
             heartbeatTimer = 0;
         }
         render();
+        if (value) queueSmartScrollFollow();
     }
 
     function protocolPromptKey() {
@@ -912,7 +921,7 @@
 
         const title = document.createElement('div');
         title.id = 'lpx-psb15-title';
-        title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'} · DOM` +
+        title.textContent = `PowerShell Bridge v${VERSION} · ${enabled() ? 'ATIVA' : 'PARADA'} · DOM · ${smartScrollLabel()}` +
             (parkedUnconfirmedJobs().length
                 ? ` · ${parkedUnconfirmedJobs().length} resultado(s) por confirmar`
                 : '');
@@ -977,6 +986,8 @@
             }),
 
             button('Diagnóstico', showDeliveryDiagnostics),
+
+            smartScrollControlButton(),
 
             button('Confirmar recebido', () => {
                 void confirmAlreadyDeliveredManually();
@@ -1357,12 +1368,301 @@
                     scheduleCandidate(added);
                 }
             }
+            queueSmartScrollFollow();
         });
         observer.observe(root, {
             childList: true,
             subtree: true,
             characterData: true
         });
+    }
+
+    function smartScrollPauseKey(id = conversationId()) {
+        return SCROLL_PAUSED_PREFIX + simpleHash(id);
+    }
+
+    function smartScrollLabel() {
+        return smartScroll.paused ? 'SCROLL PAUSA' : 'SCROLL AUTO';
+    }
+
+    function refreshSmartScrollPanel() {
+        const title = document.getElementById('lpx-psb15-title');
+        if (title) {
+            title.textContent =
+                'PowerShell Bridge v' + VERSION + ' · ' +
+                (enabled() ? 'ATIVA' : 'PARADA') + ' · DOM · ' +
+                smartScrollLabel() +
+                (parkedUnconfirmedJobs().length
+                    ? ' · ' + parkedUnconfirmedJobs().length +
+                        ' resultado(s) por confirmar'
+                    : '');
+        }
+        const button = document.getElementById('lpx-psb15-follow-toggle');
+        if (button) button.textContent =
+            smartScroll.paused ? 'Ir ao fim' : 'Pausar scroll';
+    }
+
+    function forgetSmartScrollTarget() {
+        if (smartScroll.scroller) {
+            smartScroll.scroller.removeEventListener('scroll', onSmartScroll);
+        }
+        smartScroll.resizeObserver?.disconnect();
+        smartScroll.scroller = null;
+        smartScroll.anchor = null;
+        smartScroll.lastTop = 0;
+        smartScroll.draggingScrollbar = false;
+        smartScroll.touchY = null;
+        if (smartScroll.frame) window.cancelAnimationFrame(smartScroll.frame);
+        smartScroll.frame = 0;
+    }
+
+    function ensureSmartScrollConversation() {
+        const id = conversationId();
+        if (smartScroll.conversation === id) return;
+        forgetSmartScrollTarget();
+        smartScroll.conversation = id;
+        // Estado de leitura manual exclusivo DESTA aba e DESTA conversa.
+        // Não tocar em cookies, tokens nem sessões autenticadas.
+        smartScroll.paused =
+            sessionStorage.getItem(smartScrollPauseKey(id)) === '1';
+        refreshSmartScrollPanel();
+    }
+
+    function setSmartScrollPaused(paused) {
+        ensureSmartScrollConversation();
+        if (smartScroll.paused === Boolean(paused)) return;
+        smartScroll.paused = Boolean(paused);
+        sessionStorage.setItem(
+            smartScrollPauseKey(), smartScroll.paused ? '1' : '0'
+        );
+        refreshSmartScrollPanel();
+    }
+
+    function smartScrollIsScrollable(node) {
+        if (!(node instanceof HTMLElement) ||
+            node.clientHeight < 120) return false;
+        const overflow = window.getComputedStyle(node).overflowY;
+        return /^(auto|scroll|overlay)$/.test(overflow);
+    }
+
+    function findSmartScrollTarget() {
+        const turns = document.querySelectorAll(
+            'main [data-testid^="conversation-turn-"], ' +
+            'main [data-message-author-role], main [data-author-role], ' +
+            'main article'
+        );
+        // Seguir o contentor da conversa, NUNCA as caixas de código,
+        // painel da Bridge, barra lateral ou editor.
+        for (let i = turns.length - 1; i >= 0; i--) {
+            const turn = turns[i];
+            if (turn.closest?.('#lpx-psb15-panel')) continue;
+            for (let node = turn.parentElement;
+                node && node !== document.body; node = node.parentElement) {
+                if (smartScrollIsScrollable(node)) {
+                    return { scroller: node, anchor: turn };
+                }
+            }
+        }
+
+        const main = document.querySelector('main');
+        if (!main) return null;
+        for (let node = main; node && node !== document.body;
+            node = node.parentElement) {
+            if (smartScrollIsScrollable(node)) {
+                return { scroller: node, anchor: main };
+            }
+        }
+        const doc = document.scrollingElement;
+        if (doc && doc.scrollHeight > doc.clientHeight + 12) {
+            return { scroller: doc, anchor: main };
+        }
+        return null;
+    }
+
+    function smartScrollGap(node) {
+        return Math.max(0, node.scrollHeight - node.clientHeight -
+            node.scrollTop);
+    }
+
+    function bindSmartScrollTarget() {
+        const found = findSmartScrollTarget();
+        if (!found) return null;
+        if (smartScroll.scroller !== found.scroller) {
+            forgetSmartScrollTarget();
+            smartScroll.scroller = found.scroller;
+            smartScroll.lastTop = found.scroller.scrollTop;
+            found.scroller.addEventListener('scroll', onSmartScroll, {
+                passive: true
+            });
+        }
+        if (smartScroll.anchor !== found.anchor) {
+            smartScroll.anchor = found.anchor;
+            if (typeof ResizeObserver !== 'undefined') {
+                if (!smartScroll.resizeObserver) {
+                    smartScroll.resizeObserver = new ResizeObserver(() => {
+                        queueSmartScrollFollow();
+                    });
+                }
+                smartScroll.resizeObserver.disconnect();
+                smartScroll.resizeObserver.observe(found.anchor);
+            }
+        }
+        return found.scroller;
+    }
+
+    function onSmartScroll() {
+        const node = smartScroll.scroller;
+        if (!node) return;
+        const current = node.scrollTop;
+        const movedUp = current < smartScroll.lastTop - 5;
+        const atBottom = smartScrollGap(node) <=
+            SCROLL_BOTTOM_TOLERANCE_PX;
+        if (smartScroll.paused) {
+            // Só voltar a seguir quando o UTILIZADOR descer até ao fundo.
+            if (atBottom && (smartScroll.draggingScrollbar ||
+                Date.now() - smartScroll.lastManualDownAt < 1800)) {
+                setSmartScrollPaused(false);
+            }
+        } else if (movedUp &&
+            (smartScroll.draggingScrollbar ||
+                Date.now() - smartScroll.lastAutoWriteAt > 250)) {
+            // Inclui arrastar a barra nativa de scroll sem wheel/keydown.
+            setSmartScrollPaused(true);
+        }
+        smartScroll.lastTop = current;
+    }
+
+    function smartScrollIsFromConversation(target) {
+        const host = smartScroll.scroller;
+        if (!host || !(target instanceof Node) ||
+            !host.contains(target)) return false;
+        // Scroll numa caixa de código com scroll próprio não equivale a
+        // pedir para abandonar a leitura da conversa.
+        for (let node = target instanceof Element ? target : target.parentElement;
+            node && node !== host; node = node.parentElement) {
+            if (smartScrollIsScrollable(node) &&
+                node.scrollHeight > node.clientHeight + 8) return false;
+        }
+        return true;
+    }
+
+    function onSmartScrollWheel(event) {
+        if (!enabled() || !smartScrollIsFromConversation(event.target)) return;
+        if (event.deltaY < -2) {
+            setSmartScrollPaused(true);
+        } else if (event.deltaY > 2) {
+            smartScroll.lastManualDownAt = Date.now();
+        }
+    }
+
+    function onSmartScrollKey(event) {
+        if (!enabled() || event.altKey || event.ctrlKey || event.metaKey) return;
+        const target = event.target;
+        if (target?.closest?.(
+            'input,textarea,select,[contenteditable="true"],' +
+            '#lpx-psb15-panel'
+        )) return;
+        if (['ArrowUp', 'PageUp', 'Home'].includes(event.key) ||
+            (event.key === ' ' && event.shiftKey)) {
+            setSmartScrollPaused(true);
+        } else if (['ArrowDown', 'PageDown', 'End'].includes(event.key) ||
+            event.key === ' ' && !event.shiftKey) {
+            smartScroll.lastManualDownAt = Date.now();
+        }
+    }
+
+    function onSmartScrollTouchStart(event) {
+        if (!smartScrollIsFromConversation(event.target)) return;
+        smartScroll.touchY = event.touches?.[0]?.clientY ?? null;
+    }
+
+    function onSmartScrollTouchMove(event) {
+        if (!enabled() || smartScroll.touchY == null ||
+            !smartScrollIsFromConversation(event.target)) return;
+        const y = event.touches?.[0]?.clientY;
+        if (!Number.isFinite(y)) return;
+        if (y > smartScroll.touchY + 5) {
+            setSmartScrollPaused(true);
+        } else if (y < smartScroll.touchY - 5) {
+            smartScroll.lastManualDownAt = Date.now();
+        }
+        smartScroll.touchY = y;
+    }
+
+    function onSmartScrollPointerDown(event) {
+        if (!enabled() || !smartScroll.scroller) return;
+        const host = smartScroll.scroller;
+        const rect = host.getBoundingClientRect();
+        if (event.target === host ||
+            (smartScrollIsFromConversation(event.target) &&
+            event.clientX >= rect.right - 25)) {
+            smartScroll.draggingScrollbar = true;
+            smartScroll.lastManualDownAt = Date.now();
+        }
+    }
+
+    function queueSmartScrollFollow() {
+        if (!enabled()) return;
+        ensureSmartScrollConversation();
+        if (smartScroll.paused || smartScroll.frame) return;
+        smartScroll.frame = window.requestAnimationFrame(() => {
+            smartScroll.frame = 0;
+            if (!enabled() || smartScroll.paused) return;
+            const node = bindSmartScrollTarget();
+            if (!node) return;
+            if (smartScrollGap(node) <= 2) return;
+            smartScroll.lastAutoWriteAt = Date.now();
+            node.scrollTop = node.scrollHeight;
+            smartScroll.lastTop = node.scrollTop;
+        });
+    }
+
+    function installSmartScrollControls() {
+        if (smartScroll.controlsInstalled) return;
+        smartScroll.controlsInstalled = true;
+        document.addEventListener('wheel', onSmartScrollWheel, {
+            capture: true, passive: true
+        });
+        document.addEventListener('keydown', onSmartScrollKey, true);
+        document.addEventListener('touchstart', onSmartScrollTouchStart, {
+            capture: true, passive: true
+        });
+        document.addEventListener('touchmove', onSmartScrollTouchMove, {
+            capture: true, passive: true
+        });
+        document.addEventListener('touchend', () => {
+            smartScroll.touchY = null;
+        }, true);
+        document.addEventListener('pointerdown', onSmartScrollPointerDown,
+            true);
+        document.addEventListener('pointerup', () => {
+            smartScroll.draggingScrollbar = false;
+        }, true);
+        document.addEventListener('pointercancel', () => {
+            smartScroll.draggingScrollbar = false;
+        }, true);
+        window.addEventListener('resize', queueSmartScrollFollow, {
+            passive: true
+        });
+        ensureSmartScrollConversation();
+        queueSmartScrollFollow();
+    }
+
+    function smartScrollControlButton() {
+        const element = button(smartScroll.paused
+            ? 'Ir ao fim' : 'Pausar scroll', () => {
+            if (smartScroll.paused) {
+                setSmartScrollPaused(false);
+                queueSmartScrollFollow();
+            } else {
+                setSmartScrollPaused(true);
+            }
+        });
+        element.id = 'lpx-psb15-follow-toggle';
+        element.title = smartScroll.paused
+            ? 'Retomar seguimento e ir ao fundo'
+            : 'Parar o seguimento para ler o histórico';
+        return element;
     }
 
     function scheduleHeartbeat(delay = null) {
@@ -8295,6 +8595,7 @@
 
     window.addEventListener('focus', () => {
         installObserver();
+        queueSmartScrollFollow();
         scheduleCandidate(candidateAssistant || document.body);
         scheduleDeliveryRecovery(1400);
         void rememberConversation();
@@ -8304,6 +8605,8 @@
         stopApiProbe();
         candidateAssistant = null;
         installObserver();
+        ensureSmartScrollConversation();
+        queueSmartScrollFollow();
         scheduleHeartbeat(1200);
         render();
     }, true);
@@ -8311,6 +8614,7 @@
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden) {
             installObserver();
+            queueSmartScrollFollow();
             scheduleCandidate(candidateAssistant || document.body);
             scheduleDeliveryRecovery(1400);
         }
@@ -8328,6 +8632,7 @@
     }
 
     installPanelInteractions();
+    installSmartScrollControls();
     installNoScrollTriggers();
     render();
     installObserver();

@@ -745,3 +745,25 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmados na versão publicada: `strongUiSubmitEvidence`, `parkAfterObservedUiSubmit`, chamada de recuperação antes de consultas ao daemon, nenhuma consulta automática à API de conversa, regras de um clique e arquivo anterior `NOT_CONFIRMED`.
 - Atualização direta: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - O código foi integrado no GitHub mas ainda não instalado no Chrome do utilizador; a recuperação automática de `DL-STORAGE-072` requer validação visual após atualização. A ausência de recibo exato mantém-se registada como incerteza, não como entrega comprovada. Perfis, cookies, tokens, logins, backups e jobs locais mantidos intactos.
+
+## 2026-10-31 — Passo 95: Pedido do utilizador de scroll automático com prioridade à leitura manual
+- Pedido explícito: manter visível o conteúdo mais recente nas conversas ChatGPT em execução pela Bridge; ao fazer scroll manual para cima, NUNCA repor automaticamente a página no fundo durante a leitura.
+- Inspecionado o userscript `v15.5.37` no GitHub: `installObserver` já observa mutações de texto e turnos da conversa; ausência de seguimento vertical próprio. A implementação deve reutilizar essa infraestrutura, sem consultar a API interna, sem interagir com jobs e sem roubar foco.
+- Criada a branch isolada `feat/bridge-v15-5-38-smart-autoscroll-20261031` a partir de `main`; fonte principal original preservada enquanto decorreram os testes. Nenhuns processos do utilizador, perfis, tokens, sessões, cookies, ficheiros C:, TIMI, Maestro, Antigravity ou backups foram alterados.
+
+## 2026-10-31 — Passo 96: v15.5.38 — seguir o fim da conversa sem contrariar o utilizador
+- A versão de origem `15.5.37` foi elevada para `@version 2026.10.31.15.5.38` e `VERSION='15.5.38'`.
+- Criado `smartScroll` por aba, com pausa guardada num único campo de `sessionStorage` próprio e exclusivo de cada conversa, prefixo `lpxPsb15:manualScrollPaused:v1:`. Não modifica cookies, estado de autenticação nem o armazenamento de jobs.
+- `findSmartScrollTarget` resolve o contentor vertical a partir dos turnos renderizados em `main`, subindo aos ancestrais com `overflow-y: auto/scroll/overlay`. Exclui o painel da Bridge e não trata scroll independente de blocos de código como scroll da conversa.
+- Ao receber novas mensagens, mutações do texto em streaming ou alterações de tamanho detetadas pelo `ResizeObserver`, `queueSmartScrollFollow` usa `requestAnimationFrame` para seguir o fundo apenas quando a Bridge está ativa e não existe pausa manual. Não utiliza `scrollIntoView`, não altera foco e não faz novas consultas à API.
+- Scroll manual para cima pela roda/trackpad, PageUp/ArrowUp/Home/Shift+Espaço, toque ou arrasto de barra vertical suspende imediatamente o seguimento; novos conteúdos não deslocam a posição de leitura. Arrasto da barra prevalece mesmo nos 250 ms posteriores a um scroll programático.
+- O seguimento retoma quando o utilizador desce manualmente até aos últimos 56 px do fundo (wheel, teclado, touch ou barra), ou carrega no botão `Ir ao fim`. Incluído `Pausar scroll` no painel e indicador `SCROLL AUTO` / `SCROLL PAUSA`.
+- O estado de pausa mantém-se por conversa/aba, inclusive após recarregamento, e não contamina outras conversas simultâneas. A deteção do DOM não necessita de foco; há reaplicação em `popstate`, `focus`, `visibilitychange` e `resize`.
+- O código de execução, entrega, proteção de jobs e histórico anterior ficou intacto; nenhum resultado foi reenviado ou reexecutado.
+
+## 2026-10-31 — Passo 97: Regressão isolada do seguimento inteligente
+- O userscript completo passou a compilação sintática JavaScript com `new Function`: PASS.
+- O código real das funções `smartScroll` foi extraído da branch e executado num simulador V8 de DOM com `HTMLElement`, `sessionStorage`, `requestAnimationFrame`, `ResizeObserver`, scroll com clamp de browser e eventos de utilizador.
+- 15 verificações PASS: primeiro arranque leva ao fundo, crescimento de mensagem mantém seguimento, roda para cima suspende, novos conteúdos não alteram scroll suspenso, regresso manual ao fundo retoma, conteúdos posteriores seguem, arrasto da barra manual tem prioridade sobre scroll recente, touch suspende/retoma, PageUp suspende, End retoma, scroll dentro de bloco de código não suspende a conversa, pausa é isolada/preservada por conversa e Bridge parada não movimenta a página.
+- Um simulador inicial não limitava `scrollTop` ao valor máximo permitido, fazendo falhar artificialmente o teste de novo conteúdo; corrigido apenas o simulador para refletir o clamp real de browsers e todos os 15 testes passaram. Nenhum defeito de produção foi inferido desse erro do simulador.
+- A versão ainda NÃO foi instalada no Chrome do utilizador; falta prova visual de execução real, especialmente nas janelas de fundo com throttling do navegador. Nenhuma captura foi tirada remotamente porque não existe controlo do ecrã local; próximo screenshot deverá mostrar o indicador do modo e o resultado do comportamento.
