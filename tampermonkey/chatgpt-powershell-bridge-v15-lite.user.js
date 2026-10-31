@@ -976,6 +976,8 @@
                 void healthCheck(false);
             }),
 
+            button('Diagnóstico', showDeliveryDiagnostics),
+
             button('Confirmar recebido', () => {
                 void confirmAlreadyDeliveredManually();
             }),
@@ -7336,6 +7338,37 @@
             formSubmitSeen: saved?.deliveryFormSubmitSeen === true,
             receiptSeen: Boolean(saved?.message && userTurnContains(saved.message))
         };
+    }
+
+    function showDeliveryDiagnostics() {
+        const saved = getInflight();
+        const records = parkedUnconfirmedJobs();
+        const report = saved
+            ? [
+                'BRIDGE=' + VERSION + ' DOM',
+                'JOB=' + String(saved.jobId),
+                'PHASE=' + String(saved.phase),
+                'DELIVERY_ATTEMPTS=' + Number(saved.deliveryClicks || 0),
+                'BUTTON_CLICK_RETURNED=' + Boolean(saved.deliveryButtonClickReturned),
+                'FORM_SUBMIT_EVENT_SEEN=' + Boolean(saved.deliveryFormSubmitSeen),
+                'COMPOSER=' + deliveryUiTelemetry(saved).composer,
+                'ASSISTANT_DOM_CHANGED=' + deliveryUiTelemetry(saved).assistantDomChanged,
+                'RESULT_RECEIPT_DOM=' + Boolean(saved.message && userTurnContains(saved.message)),
+                'PERSISTED_DOM_ACK=' + persistentDomAck(saved),
+                'ARCHIVED_UNCONFIRMED_COUNT=' + records.length,
+                'AUTOMATIC_CHATGPT_CONVERSATION_API_READS=' +
+                    AUTOMATIC_CONVERSATION_API_READS,
+                'NOTE=Sem valores de comandos, texto de mensagens, URLs privados ou tokens.'
+            ].join('\n')
+            : [
+                'BRIDGE=' + VERSION + ' DOM',
+                'PENDING_JOB=NONE',
+                'ARCHIVED_UNCONFIRMED_COUNT=' + records.length,
+                'AUTOMATIC_CHATGPT_CONVERSATION_API_READS=' +
+                    AUTOMATIC_CONVERSATION_API_READS
+            ].join('\n');
+        // Janela apenas de leitura para cópia; não executa comandos.
+        window.prompt('Diagnóstico de envio (sem dados de sessão)', report);
     }
 
     function deliveryUiStatus(saved) {
