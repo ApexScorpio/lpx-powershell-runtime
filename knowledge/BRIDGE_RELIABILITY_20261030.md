@@ -685,3 +685,28 @@ Registo cumulativo: não substituir nem remover as entradas anteriores.
 - Confirmados na fonte publicada: preservação do resultado antigo com `deliveryVerification='NOT_CONFIRMED'`, continuação de novos V3 posteriores no heartbeat e em `processJobManifest`, consulta sem alteração pelo botão `Por confirmar`, `AUTOMATIC_CONVERSATION_API_READS=false`.
 - Link direto de atualização no Tampermonkey: `https://raw.githubusercontent.com/ApexScorpio/lpx-powershell-runtime/main/tampermonkey/chatgpt-powershell-bridge-v15-lite.user.js`.
 - A versão foi publicada no GitHub; NÃO foi instalada diretamente no navegador. A prova real de que o `IUC-033` foi executado e de que o `IUC-032` ficou preservado requer novo screenshot e resultado de execução após instalação local. Não fazer reexecução de `IUC-032`, não limpar sessões/perfis/tokens/backups, nem declarar o seu recibo entregue sem prova.
+
+## 2026-10-31 — Passo 87: Padrão após 3–4 jobs e captura LIVESAFETY-027
+- O utilizador refere que a Bridge trabalha durante 3–4 jobs, pára e parece reanimar quando usa `Executar último`; screenshot de 31/10/2026 às 10:01 mostra `PSB-20261031-0750-POKEGUIDE-LIVESAFETY-027` com uma tentativa de clique registada e recibo não identificado no DOM, com resposta do assistente ainda a mostrar o script anterior.
+- Confirmados os ficheiros de resultado no branch `runtime`: `LIVESAFETY-027` terminou com `succeeded`, `exitCode=0`, às 07:52:37 UTC. Os logs indicam 246/246 testes ASM direcionados, suite completa com 872 PASS e 1 SKIPPED, certificação do live server como configuração estática e `ROM_100_PERCENT_CERTIFIED=FALSE`.
+- Inspeção do código v15.5.35: `sendMessageLocked` grava `deliveryClicks` **ANTES** de chamar `button.click()`. Portanto «1 clique» não comprova receção pelo ChatGPT e pode representar uma tentativa sem submissão efetiva.
+- Depois do clique o código faz até 30 iterações de espera de 650 ms por recibo no DOM. Se não o encontrar e o resultado continuar na caixa ou desaparecer sem confirmação, mantém o estado `delivery_clicked` como pendente e não deve voltar a enviar às cegas.
+- A recuperação só pode avançar para um manifesto PSB_JOB_V3 novo e válido quando preservar o antigo como `NOT_CONFIRMED` (v15.5.35). Se não existe manifesto posterior, a Bridge não pode inventar o próximo comando. `Executar último` usa `inspectCandidate(true)` e pode contornar o controlo de `handled`; não é um mecanismo de reparação de recibos e pode ser inseguro.
+- Não é possível determinar a partir deste screenshot se a submissão chegou ao servidor ou se o compositor não a enviou; não atribuir a falha a APIs, modelo, Chrome ou DOM sem telemetria adicional. Nenhum login, sessão, token, perfil ou estado local foi alterado durante a inspeção.
+
+## 2026-10-31 — Passo 88: v15.5.36 — telemetria não destrutiva da submissão
+- Criada a branch `fix/bridge-v15-5-36-send-lifecycle-20261031` a partir da v15.5.35, sem limpar ou substituir o runtime antigo. A fonte foi atualizada para `@version 2026.10.31.15.5.36`, `VERSION=15.5.36`.
+- O estado de uma primeira tentativa passa a registar: hash do último turno do assistente antes do clique, retorno do `button.click()`, evento `submit` do formulário se observado em até 15 segundos, estado do compositor após o clique e mudança do texto do assistente no DOM. Não é guardado texto de conversa, tokens, cookies, URL de autenticação nem quaisquer credenciais nesta telemetria.
+- Em `deliveryUiStatus`, os casos ficam distinguíveis: `EDITOR_VAZIO`, `RESULTADO_NA_CAIXA`, `OUTRO_RASCUNHO`, `SEM_EDITOR`; clique disparado/não confirmado, evento `submit` observado/não observado e DOM de assistente alterado/não comprovado. NENHUM desses sinais, isolado, é marcado como ACK.
+- Introduzido botão `Diagnóstico` com relatório curto e apenas de leitura, sem dados da sessão ou conteúdo dos scripts. O modo DOM continua com `AUTOMATIC_CONVERSATION_API_READS=false`.
+- Não alteradas as regras de retry: zero envio adicional, zero reexecução, sem alterar a fase `delivery_clicked` por diagnóstico. A informação destina-se a apurar a causa exata da falha sem voltar a publicar alterações especulativas.
+
+## 2026-10-31 — Passo 89: Testes isolados da v15.5.36
+- Script integral analisado por `new Function`: PASS.
+- Um `button.click()` com resultado ainda no editor: registo de uma tentativa, editor `RESULTADO_NA_CAIXA`, sem reenvio e zero consultas à API: PASS.
+- Um `button.click()` com editor vazio mas sem recibo DOM: estado `EDITOR_VAZIO` e entrega incerta preservada, sem novo clique: PASS.
+- Um recibo DOM após primeira tentativa: reconhecido sem consulta da API: PASS.
+- Alteração do conteúdo do assistente após a tentativa não é indevidamente classificada como prova de entrega: PASS.
+- Evento `submit` atribuído apenas à tentativa recente e ao formulário do compositor; eventos tardios ou de outros formulários não criam telemetria falsa: PASS.
+- O teste inicial tinha ambiente simulado incompleto (faltavam `AUTOMATIC_CONVERSATION_API_READS` e `rememberDomReceipt`), corrigido apenas no simulador e repetido com PASS. Não implica defeito de produção.
+- Testes são simulações; ainda falta captura do botão `Diagnóstico` no navegador do utilizador para separar efetiva falha de submissão, sucesso não reconhecido e assistente que termina sem novo PSB_JOB_V3. As provas visuais do screenshot recebido foram inspecionadas.
