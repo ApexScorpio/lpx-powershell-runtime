@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChatGPT PowerShell Bridge — v15 Lite Multi-Conversation
 // @namespace    apexscorpio.local
-// @version      2026.10.31.15.5.38
+// @version      2026.10.31.15.5.39
 // @description  Execução autónoma de jobs PowerShell (PSB_JOB_V3 + auto-detetor) diretamente no chat, sem downloads manuais nem copy-paste.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -31,7 +31,7 @@
     }
 
 
-    const VERSION = '15.5.38';
+    const VERSION = '15.5.39';
     // Modo operacional antigo: observar os turnos na interface do Chrome.
     // Nunca consultar automaticamente a API interna de conversa.
     // O código de leitura fica preservado para desenvolvimento posterior,
@@ -7399,9 +7399,13 @@
             // adiar sem clicar nem consumir qualquer tentativa de envio.
             const uiOnly = mayUseSingleUiDelivery(saved, message);
             if (!verify.apiOk && !uiOnly) {
-                delay = apiRetryDelay(verify.retryAfterMs, 16000);
                 const recordedClicks = Number(saved.deliveryClicks || 0);
                 const uiGate = recordedClicks === 0 ? firstUiDeliveryGate(saved, message) : null;
+                // Sem GET à API interna: voltar a avaliar rapidamente
+                // o compositor e a conclusão da resposta anterior.
+                delay = !AUTOMATIC_CONVERSATION_API_READS && recordedClicks === 0
+                    ? 5000
+                    : apiRetryDelay(verify.retryAfterMs, 16000);
                 setStatus(!AUTOMATIC_CONVERSATION_API_READS
                     ? (recordedClicks > 0
                         ? deliveryUiStatus(saved)
@@ -7542,13 +7546,21 @@
                         clearInflight(id);
                         setStatus(`Job ${id}: resultado confirmado na conversa.`);
                     } else if (!check.apiOk && !mayUseSingleUiDelivery(getInflight(), message)) {
-                        const recordedClicks = Number(getInflight()?.deliveryClicks || 0);
+                        const pending = getInflight();
+                        const recordedClicks = Number(pending?.deliveryClicks || 0);
+                        const gate = recordedClicks === 0
+                            ? firstUiDeliveryGate(pending, message)
+                            : null;
                         setStatus(!AUTOMATIC_CONVERSATION_API_READS
                             ? (recordedClicks > 0
-                                ? deliveryUiStatus(getInflight())
-                                : `Job ${id}: modo DOM; nenhuma tentativa de envio registada. Resultado preservado.`)
+                                ? deliveryUiStatus(pending)
+                                : `Job ${id}: 0 cliques; primeira entrega bloqueada: ${gate?.reason || 'ESTADO_INDEFINIDO'}. Resultado preservado, nova verificação automática.`)
                             : `Job ${id}: API indisponível (${check.reason || 'SEM_CONFIRMACAO'}). Entrega preservada; sem envio.`);
-                        scheduleDeliveryRecovery(apiRetryDelay(check.retryAfterMs, 16000));
+                        scheduleDeliveryRecovery(
+                            !AUTOMATIC_CONVERSATION_API_READS && recordedClicks === 0
+                                ? 5000
+                                : apiRetryDelay(check.retryAfterMs, 16000)
+                        );
                     } else if (clicks === 0) {
                         await sendMessage(message, null, id, check);
                         markHandled(id);
@@ -7753,6 +7765,12 @@
                 'ASSISTANT_DOM_CHANGED=' + deliveryUiTelemetry(saved).assistantDomChanged,
                 'RESULT_RECEIPT_DOM=' + Boolean(saved.message && userTurnContains(saved.message)),
                 'PERSISTED_DOM_ACK=' + persistentDomAck(saved),
+                'FIRST_DELIVERY_GATE=' + (Number(saved.deliveryClicks || 0) === 0
+                    ? firstUiDeliveryGate(saved, String(saved.message || '')).reason
+                    : 'JA_EXISTE_TENTATIVA'),
+                'ASSISTANT_WRITING=' + assistantWriting(),
+                'COMPOSER_AVAILABLE=' + Boolean(composer()),
+                'CONVERSATION_UUID_AVAILABLE=' + Boolean(rawConversationUuid()),
                 'ARCHIVED_UNCONFIRMED_COUNT=' + records.length,
                 'AUTOMATIC_CHATGPT_CONVERSATION_API_READS=' +
                     AUTOMATIC_CONVERSATION_API_READS,
